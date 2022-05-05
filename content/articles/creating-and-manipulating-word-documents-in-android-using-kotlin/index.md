@@ -14,7 +14,7 @@ images:
   - url: /engineering-education/creating-and-manipulating-word-documents-in-android-using-kotlin/hero.jpg
     alt: Manipulating Word Documents in Android using Kotlin and the Apache POI library Hero Image
 ---
-In this article, we will look at how to create a Word document, format, as well as, extract text from it using Kotlin.
+In this article, we will look at how to create a Word document, format it, as well as, extract text from it using Kotlin.
 <!--more-->
 ### Prerequisites
 To follow along, you need:
@@ -24,7 +24,7 @@ To follow along, you need:
 - Basic hands-on Android programming skills. 
 
 ### Goal
-We will use the Apache POI library to create a Word(**.docx**) document. We will begin by looking at the library's components for creating Word documents. 
+We will use the Apache POI library to create a Word(`.docx`) document. We will begin by looking at the library's components for creating Word documents. 
 
 Next, we will discuss how to set up the library in our `Gradle` files. We will then create a Word document, add and format text, as well as insert headers, footers, and tables. 
 
@@ -45,7 +45,7 @@ For manipulating Word documents, the library provides us with these components:
 ### Setting up the library
 To avoid `build` errors, it’s best to add the dependencies separately instead of the single Apache POI library dependency. 
 
-Therefore, we will start by modifying the project-level `build.gradle` file by including the line below to the repositories section:
+Therefore, we will start by modifying the project-level `build.gradle` file by including the line below in the repositories section:
 
 ```kotlin
 dependencies {
@@ -121,14 +121,14 @@ We will create an `addParagraph()` method and then pass it into the document's o
     }
 ```
 
-The `paragraph(XWPFParagraph)` object is returned from the `createParagraph()` method. Note how we set the paragraph text alignment to the left using the alignment property. 
+The `paragraph(XWPFParagraph)` object is returned from the `createParagraph()` method. Note how we set the paragraph text alignment to the left using the `alignment` property. 
 
-This paragraph object lets us create text regions using runs. We get a run(XWPFRun) object using the `createRun()` method.
+This paragraph object lets us create text regions using runs. We get a run(`XWPFRun`) object using the `createRun()` method.
 
-- Using run objects, we can format the text using properties such as *isBold* for boldening, 8fontFamily* for setting the typeface, adding sentence breaks, etc. You can explore other properties on your own. We add text to the run using the `setText()` method.
+- Using run objects, we can format the text using properties such as `isBold` for boldening, `fontFamily` for setting the typeface, adding sentence breaks, etc. You can explore other properties on your own. We add text to the run using the `setText()` method.
 
 #### Inserting a table
-This is easily done the same way we did for adding a paragraph. A table(XWPFTable) object is returned from the `createTable()` method.
+This is easily done the same way we did for adding a paragraph. A table(`XWPFTable`) object is returned from the `createTable()` method.
 
 ```kotlin
     //creating a table
@@ -152,8 +152,8 @@ This is easily done the same way we did for adding a paragraph. A table(XWPFTabl
     }
 ```
 
-- Using the table object, we can create rows, add cells, and add values to them. There is a catch here, though. The first row is created differently from the rest of the rows. When we try to create it the same way as the rest of the rows, we get an error. We must get the row in the first position using the `getRow(0)` method. We pass in 0 to set it as a first row. Next, we get the first cell position using the `getCell(0)`. After that, we can add other cells using the `addNewTableCell()` method. Finally, we add values to the cells using the text property. This doesn’t look like a clean way. Unfortunately, this is the only way we can create the first row. If I get a cleaner way of doing it, I will share it in the comment section below.
-- To create another row, we use the `createRow()` method which returns a row(XWPFTableRow) object. We can add cells using the `getCell(position)` method using the returned row object.
+- Using the table(`ourTable`) object, we can create rows and cells, and then add values to them. There is a catch here, though. The first row is created differently from the rest of the rows. When we try to create it in the same manner as the rest of the rows, we get an error. We must get the row in the first position using the `getRow(0)` method. 0 is passed in as a parameter to set it as the first row. To get the first cell position, we use the `getCell(0)` method. After that, we can add other cells using the `addNewTableCell()` method. Values for the cells are set using the `text` property. This doesn’t look like a clean way of doing things. But unfortunately, this is the only way we can create the first row. If I get a cleaner way of doing it, I will share it in the comment section below.
+- To create another row, we use the `createRow()` method which returns a row(`XWPFTableRow`) object. We can add cells using the `getCell(position)` method of the returned row object.
 
 #### Inserting headers and footers
 We will use a method called `addHeaderAndFooter()`. 
@@ -182,8 +182,8 @@ We will use a method called `addHeaderAndFooter()`.
     }
 ```
 
-- To add a header, we use a header(XWPFHeader) object returned by the `createHeader()` method. We use a footer(XWPFFooter) object returned by the `createFooter()` method for the footer. We pass in the default header and footer style. There are three types: DEFAULT, EVEN, and FIRST. Feel free to explore and test them. 
-- To add text to the headers and footers, we create runs and then format them the same way we did for paragraphs.
+- To add a header, we use a header(`XWPFHeader`) object returned by the `createHeader()` method. We use a footer(`XWPFFooter`) object returned by the `createFooter()` method for the footer. We pass in the default header and footer style. There are three types: `DEFAULT`, `EVEN`, and `FIRST`. Feel free to explore and test them. 
+- To add text to the headers and footers, we create runs and then format them as we did for paragraphs.
 
 #### Saving the document
 When creating a document, we need to save it. So, we first check whether it exists or not. 
@@ -211,10 +211,10 @@ When creating a document, we need to save it. So, we first check whether it exis
     }
 ```
 
-- If it doesn’t exist, we create one in our app’s file directory. Then, you can choose any other storage location you wish to save your file. The rest of the code is for saving and exception-handling, which we won't explore because that isn’t the cope of this article.
+- If it doesn’t exist, we create one in our app’s file directory. You can choose any other storage location you wish to save your file. The rest of the code is for saving and exception-handling.
 
 #### Extracting the text
-We first have to load the document. So we will create a method called `loadDoc(`) for that.
+We first have to load the document using a method called `loadDoc()`.
 
 ```kotlin
     //retrieving the document from the file system
@@ -234,7 +234,7 @@ We first have to load the document. So we will create a method called `loadDoc(`
     }
 ```
 
-- We only retrieve the file when it exists. We check its existence using the if conditional block. If it is present in the directory, we retrieve and return it at the end of the method.
+- We only retrieve the file when it exists. We check its existence using the `if` conditional block. If it is present in the directory, we retrieve and return it at the end of the method.
 
 We use a method called `readDoc()` for the extraction. 
 
@@ -259,10 +259,10 @@ We use a method called `readDoc()` for the extraction.
     }
 ```
 
-- In this method, we first read the file using an input stream. We then create a document object by passing the stream to the XWPFDocument constructor. Next, we create a Word extractor(XWPFWordExtractor) object for extracting text from the Word document. The text property is used for accessing the extracted text. Finally, we display the text read from the document in a TextView.
+- In this method, we first read the file using an input stream. We then create a document object by passing the stream to the `XWPFDocument` constructor. The next step is creating a Word extractor(`XWPFWordExtractor`) object for extracting text from the Word document. The `text` property is used for accessing the extracted text. Finally, we display the text read from the document in a `TextView.`
 
 #### The full code
-Here’s the full `MainActivity.kt` code.
+Here is the full `MainActivity.kt` code.
 
 ```kotlin
 import android.os.Bundle
@@ -426,14 +426,14 @@ We get this on running the app.
 
 ![App screenshot](/engineering-education/android-apache-poi-word/screen.png)
 
-To access the word document created, open the Device Explorer using your IDE and then navigate to your app’s data location(`View Tab -> Tool Windows -> Device File Explorer -> data > your-package-name -> files`). It resembles this screenshot.
+To access the word document created, open the **Device Explorer** using your IDE and then navigate to your app’s data location(`View Tab -> Tool Windows -> Device File Explorer -> data > your-package-name -> files`). It resembles the screenshot below.
 
 ![Doc screenshot](/engineering-education/android-apache-poi-word/shot-doc.png)
 
 Check this [GitHub repository](https://github.com/munubi254/apache-word-android) for the code.
 
 ### Conclusion
-That was it. This library contains many methods that only a dedicated book can exhaust. You can add footnotes, a table of contents, and almost everything you can get in an MS Office Word application. Although this library has many functionalities, it doesn’t have very clear documentation. You have to explore them on your own. The IDEs I pointed out initially have intelligent capabilities that allow you to check the library's classes, methods, and descriptions. You only have to hover on the method, and a pop-up is displayed. There’s a localhost link section which you can click, and a browser tab is opened, giving you all the methods and classes for the code you hovered through. Check the screenshot below.
+That was it. This library contains numerous methods which can't be exhausted in a single article. You can add footnotes, a table of contents, and almost everything you can get in an MS Office Word application. Although this library has many functionalities, it doesn’t have very clear documentation. You have to explore the methods on your own. The IDEs I pointed out initially have intelligent capabilities that allow you to check the library's classes, methods, and descriptions. You only have to hover on the method, and a pop-up is displayed. There’s a `localhost` link section which you can click, and a browser tab is opened, giving you all the methods and classes for the code you hovered through. Check the screenshot below.
 
 ![popup](/engineering-education/android-apache-poi-word/shot-conc.png)
 
