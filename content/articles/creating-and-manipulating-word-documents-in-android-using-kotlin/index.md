@@ -14,8 +14,10 @@ images:
   - url: /engineering-education/creating-and-manipulating-word-documents-in-android-using-kotlin/hero.jpg
     alt: Manipulating Word Documents in Android using Kotlin and the Apache POI library Hero Image
 ---
+
 In this article, we will look at how to create a Word document, format it, as well as, extract text from it using Kotlin.
 <!--more-->
+
 ### Prerequisites
 To follow along, you need:
 - An Android Integrated Development Environment, e.g. Android Studio or IntellijIDEA.
@@ -26,20 +28,20 @@ To follow along, you need:
 ### Goal
 We will use the Apache POI library to create a Word(`.docx`) document. We will begin by looking at the library's components for creating Word documents. 
 
-Next, we will discuss how to set up the library in our `Gradle` files. We will then create a Word document, add and format text, as well as insert headers, footers, and tables. 
+Next, we will discuss how to set up the library in our `Gradle` files. We will then create a Word document, add and format text, and insert headers, footers, and tables. 
 
 Finally, we will extract the text from our Word document.
 
 ### Apache POI Word
-[Apache POI]((https://poi.apache.org/components/document/)) is a Java library used to create Office documents such as Spreadsheets, Word, and Publisher files. Since Kotlin works perfectly in the Java ecosystem, we can use this library to create these files in Android.
+[Apache POI](https://poi.apache.org/components/document/) is a Java library used to create Office documents such as Spreadsheets, Word, and Publisher files. Since Kotlin works perfectly in the Java ecosystem, we can use this library to create these files in Android.
 
 For manipulating Word documents, the library provides us with these components:
 
 - **XML Word Processor Format(XWPF)**- This component provides classes and methods for processing `.docx` files. 
 
-- **Horrible Word Processor Format(HWPF)**- It's the same as XWPF. The major difference is that it's used to process `.doc` files.
+- **Horrible Word Processor Format(HWPF)**- It's the same as XWPF. The major difference is that it processes `.doc` files.
 
-- **Horrible Property Set Format(HPSF)**- As the name suggests, it's used to extract property sets from MS Office documents. However, we won't be using this component in our article.
+- **Horrible Property Set Format(HPSF)**- As the name suggests, it extracts property sets from MS Office documents. However, we won't be using this component in our article.
 
 
 ### Setting up the library
@@ -81,7 +83,7 @@ Let’s begin writing the code.
 We will write this code in the `MainActivity.kt` file. We will also break the article into smaller sections for easier understandability.
 
 #### Creating an empty document object
-To add items to a document, we first have to create a `document(XWPFDocument)` object. This object will provide us with all the necessary methods for manipulating Word documents:
+To add items to a document, we must create a `document(XWPFDocument)` object. This object will provide us with all the necessary methods for manipulating Word documents:
 
 ```kotlin
     //initializing an empty word document
@@ -123,7 +125,7 @@ We will create an `addParagraph()` method and then pass it into the document's o
 
 The `paragraph(XWPFParagraph)` object is returned from the `createParagraph()` method. Note how we set the paragraph text alignment to the left using the `alignment` property. 
 
-This paragraph object lets us create text regions using runs. We get a run(`XWPFRun`) object using the `createRun()` method.
+This paragraph object lets us create text regions using runs. We get a `run("XWPFRun")` object using the `createRun()` method.
 
 - Using run objects, we can format the text using properties such as `isBold` for boldening, `fontFamily` for setting the typeface, adding sentence breaks, etc. You can explore other properties on your own. We add text to the run using the `setText()` method.
 
@@ -152,8 +154,8 @@ This is easily done the same way we did for adding a paragraph. A table(`XWPFTab
     }
 ```
 
-- Using the table(`ourTable`) object, we can create rows and cells, and then add values to them. There is a catch here, though. The first row is created differently from the rest of the rows. When we try to create it in the same manner as the rest of the rows, we get an error. We must get the row in the first position using the `getRow(0)` method. 0 is passed in as a parameter to set it as the first row. To get the first cell position, we use the `getCell(0)` method. After that, we can add other cells using the `addNewTableCell()` method. Values for the cells are set using the `text` property. This doesn’t look like a clean way of doing things. But unfortunately, this is the only way we can create the first row. If I get a cleaner way of doing it, I will share it in the comment section below.
-- To create another row, we use the `createRow()` method which returns a row(`XWPFTableRow`) object. We can add cells using the `getCell(position)` method of the returned row object.
+- Using the `table("ourTable")` object, we can create rows and cells, and then add values to them. There is a catch here, though. The first row is created differently from the rest of the rows. When we try to create it the same way as the rest of the rows, we get an error. We must get the row in the first position using the `getRow(0)` method. 0 is passed in as a parameter to set it as the first row. We use the `getCell(0)` method to get the first cell position. After that, we can add other cells using the `addNewTableCell()` method. Finally, values for the cells are set using the `text` property. This doesn’t look like a clean way of doing things. But unfortunately, this is the only way to create the first row. If I get a cleaner way of doing it, I will share it in the comment section below.
+- To create another row, we use the `createRow()` method which returns a `row("XWPFTableRow")` object. We can add cells using the `getCell(position)` method of the returned row object.
 
 #### Inserting headers and footers
 We will use a method called `addHeaderAndFooter()`. 
@@ -182,7 +184,7 @@ We will use a method called `addHeaderAndFooter()`.
     }
 ```
 
-- To add a header, we use a header(`XWPFHeader`) object returned by the `createHeader()` method. We use a footer(`XWPFFooter`) object returned by the `createFooter()` method for the footer. We pass in the default header and footer style. There are three types: `DEFAULT`, `EVEN`, and `FIRST`. Feel free to explore and test them. 
+- To add a header, we use a header(`XWPFHeader`) object returned by the `createHeader()` method. We use a `footer("XWPFFooter")` object returned by the `createFooter()` method for the footer. We pass in the default header and footer style. There are three types: `DEFAULT`, `EVEN`, and `FIRST`. Feel free to explore and test them. 
 - To add text to the headers and footers, we create runs and then format them as we did for paragraphs.
 
 #### Saving the document
@@ -211,7 +213,7 @@ When creating a document, we need to save it. So, we first check whether it exis
     }
 ```
 
-- If it doesn’t exist, we create one in our app’s file directory. You can choose any other storage location you wish to save your file. The rest of the code is for saving and exception-handling.
+- If it doesn’t exist, we create one in our app’s file directory. Then, you can choose any other storage location you wish to save your file. The rest of the code is for saving and exception-handling.
 
 #### Extracting the text
 We first have to load the document using a method called `loadDoc()`.
@@ -259,7 +261,7 @@ We use a method called `readDoc()` for the extraction.
     }
 ```
 
-- In this method, we first read the file using an input stream. We then create a document object by passing the stream to the `XWPFDocument` constructor. The next step is creating a Word extractor(`XWPFWordExtractor`) object for extracting text from the Word document. The `text` property is used for accessing the extracted text. Finally, we display the text read from the document in a `TextView.`
+- In this method, we first read the file using an input stream. We then create a document object by passing the stream to the `XWPFDocument` constructor. The next step is creating a Word `extractor("XWPFWordExtractor")` object for extracting text from the Word document. The `text` property is used for accessing the extracted text. Finally, we display the text read from the document in a `TextView.`
 
 #### The full code
 Here is the full `MainActivity.kt` code.
