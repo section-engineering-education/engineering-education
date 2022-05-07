@@ -113,7 +113,7 @@ JSP code, on the other hand, does not necessitate the creation of a class and Se
 ```
 #### Process of converting JSPs to Servlets
 
-1. Tomcat offers the `HttpServlet` parent class, which is extended by the newly formed class. The name of the Servlet class is determined by concatenating the JSP file name with the `.jsp` extension.
+1. Tomcat offers the `HttpServlet` parent class, which is extended by the newly formed class.
 2. Tomcat or any equivalent web server provides the `_jspService`, `doPost` or `doGet` method, as well as the `request` and `response` parameters as shown:
    ```java
    public void _jspService(HttpServletRequest request, HttpServletResponse response)                        
