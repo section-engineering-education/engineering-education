@@ -1,8 +1,24 @@
-### Prerequisites
+---
+layout: engineering-education
+status: publish
+published: true
+url: /understanding-when-to-use-jsp-and-when-to-use-servlet/
+title: Understanding when to use JSP and when to use Servlets
+description: This article will help the reader understand how JSP is converted to Servlets and how the two differ
+author: stephine-katul
+date: 2022-05-07T00:00:00-11:00
+topics: [API]
+excerpt_separator: <!--more-->
+images:
+
+ - url: /engineering-education/understanding-when-to-use-jsp-and-when-to-use-servlet/hero.jpg
+   alt: JSP Servlet Diagram
+---
 Before beginning this lesson, you should have:
 1. A basic understanding of Java and expertise in using a Java IDE. In my case, I will be using [Netbeans](https://netbeans.apache.org/download/index.html), but you can also use an IDE like [Eclipse](https://www.eclipse.org/downloads/packages/release/kepler/sr1eclipse-ide-java-developers)
-2. Basic knowledge of Java [Servlet](https://www.section.io/engineering-education/introduction-to-java-servlets/), [Servlet request and Servlet Collaboration](https://www.section.io/engineering-education/servlet-request-and-servlet-collaboration/), and [how to run Servlet programs using any Java IDE](https://www.section.io/engineering-education/servlet-request-and-servlet-collaboration/#servletrequest-interface-example)
-3. Basic understanding of JSP and how to launch a JSP program using any Java IDE
+2. Basic knowledge of [Java Servlets](https://www.section.io/engineering-education/introduction-to-java-servlets/), [Servlet request and Servlet Collaboration](https://www.section.io/engineering-education/servlet-request-and-servlet-collaboration/), and [how to run Servlet programs using any Java IDE](https://www.section.io/engineering-education/servlet-request-and-servlet-collaboration/#servletrequest-interface-example)
+3. A basic understanding of JSP and how to launch a JSP program using any Java IDE
+<!--more-->
 ### Table of contents
 - [Definitions](#definitions)
 - [When to use JSP](#when-to-use-jsp)
@@ -292,3 +308,6 @@ The code shown above is an example of the generated Servlet code after we ran ou
 ### Conclusion
 
 In this article, we described JSP, spoke about when a programmer should use JSP or Servlets, the advantages of JSP, and how JSP is turned to a Servlet page during execution.
+
+---
+Peer Review Contributions by: [John Amiscaray](/engineering-education/authors/john-amiscaray/)
