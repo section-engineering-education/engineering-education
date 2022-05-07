@@ -25,13 +25,12 @@ Before beginning this lesson, you should have:
   - [JSP code snippet](#jsp-code-snippet)
 - [When should you use a Servlet](#when-should-you-use-a-servlet)
   - [JSP code snippet](#jsp-code-snippet-1)
-- [JSP benefits](#jsp-benefits)
-- [How does Tomcat convert code written in JSP to a corresponding Servlet code](#how-does-tomcat-convert-code-written-in-jsp-to-a-corresponding-servlet-code)
+- [How does Tomcat convert code written in JSP to the corresponding Servlet code](#converting-jsp-code-to-servlet-code)
   - [Process of converting JSPs to Servlets](#process-of-converting-jsps-to-servlets)
 - [Example](#example)
   - [Steps to take](#steps-to-take)
   - [Step 1: Create a new project](#step-1-create-a-new-project)
-  - [Step 1: Create JSP file](#step-1-create-jsp-file)
+  - [Step 2: Create JSP file](#step-2-create-jsp-file)
   - [Generated Servlet code](#generated-servlet-code)
 - [Conclusion](#conclusion)
 
@@ -80,7 +79,7 @@ public class ConnectionProvider extends HttpServlet {
 ```
 The above code sample shows how to use Servlets to create a controller class. In this case, we created `ConnectionProvider` which includes the `getCon()` method for database connectivity. 
 
-### Converting JSP code to servlet code
+### Converting JSP code to Servlet code
 
 Everything written in a Servlet program is organized into classes and objects. To create a Servlet program, you must define a Servlet class and extend `HttpServlet`. Create a `Service` method such as `doGet` or `doPost` and pass the two parameters `request` of type `HttpServletRequest` and `response` of type `HttpServletResponse` to these methods. Then create a `PrintWriter` object:
 
@@ -144,7 +143,7 @@ To explain how JSP gets converted to the matching `Servlet` during code executio
 #### Step 1: Create a new project
 Using Netbeans IDE click on File -> New Project -> Java Web -> Web Application and select next. Last but not least, give the project a name and click finish. In my case, I'll call it **JSPToServlet**. Finally, choose an appropriate server and click finish. In my case, I'll be using Tomcat version 9. 
 
-#### Step 1: Create JSP file
+#### Step 2: Create JSP file
 
 To create a new JSP file, right-click on the project name, choose JSP, and then name it `new_jsp` as shown.
 
