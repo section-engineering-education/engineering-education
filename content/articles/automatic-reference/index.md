@@ -180,7 +180,7 @@ However, there is a serious flaw in the project: A reference cycle hidden some
 
 ![](/section/engineering-education/arc3.png)
 
-**Step five:** Pick one of the affected contact objects in the navigator. The cycle in between is brought out. By referencing each other, the Contact and Number objects retain one another. This means there is a strong reference cycle between the two. These problems should prompt a user to examine the code. Observe the fact that a contact variable can exist without a variable number. On the other hand, a number would not exist without a contact.
+**Step five:** Pick one of the affected contact objects in the navigator. The cycle in between is brought out. By referencing each other, the contact and number objects retain one another. This means there is a strong reference cycle between the two. These problems should prompt a user to examine the code. Observe the fact that a contact variable can exist without a variable number. On the other hand, a number would not exist without a contact.
 ### Conclusion
 When an object or an instance of a class is no longer required, it must be deallocated. The memory held by an object is released when it is deallocated hence creating more space. This is critical for the system's performance and efficiency. ARC allows this hence smooth running of iOS applications.
 
