@@ -1,7 +1,6 @@
 ---
 title: Rajendra Prasad P
 type: authors
-authors: rajendra-prasad-p
 github: https://github.com/rajendraprasadp
 linkedin: https://www.linkedin.com/in/rajendra-prasad-p-0ba8a3176
 images:
