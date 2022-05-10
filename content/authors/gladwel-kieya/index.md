@@ -1,7 +1,8 @@
 ---
 title: Gladwel Kieya
 type: authors
- -url: /engineering-education/authors/gladwel-kieya/avatar.jpg
 github: https://github.com/gladwel-kieya
+images:
+  - url: /engineering-education/authors/gladwel-kieya/avatar.jpg
 ---
-Gladwel Kieya Is an undergraduate student studying Information Technology. She enjoys contributing to the exciting technological advances that happen every day in our lives and she loves team building.
+Gladwel Kieya is an undergraduate student studying Information Technology. She enjoys contributing to the exciting technological advances that happen every day in our lives and she loves team building.
