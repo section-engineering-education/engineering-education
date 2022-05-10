@@ -13,7 +13,6 @@ Feed-forward and recurrent neural networks will be discussed in this tutorial. S
 - [Feed-forward neural network implimentation](#feed-forward-neural-network-implimentation)
 - [Applications of Feed-forward neural network](#applications-of-feed-forward-neural-network)
 - [Recurrent neural network](#recurrent-neural-network)
-- [Recurrent neural network gradient problems ](#recurrent-neural-network-gradient-problems )  
 - [RNN implementation](#rnn-implementation)
 - [Difference between RNN and Feed-forward neural network](#difference-between-rnn-and-feed-forward-neural-network)
 - [Conclusion](#conclusion)
@@ -63,38 +62,51 @@ outputlayer_dimensionality = 3
 hiddenlayer_dimensionality = 6 
 ```
 
+In the above code;
+- We generated and plotted the datasets as a first step.
+- We then defined our neural network architecture including the three layers or nodes.
+- On each node we gave a different dimesion.
+
 #### Step Three: Including weights 
-In the first hidden layer, weights will be used to calculate the weighted sum that arrives at the neurons.
 
 ```python
-a1 = num.random.randn(inputlayer_dimensionality, hiddenlayer_dimensionality)
-c1 = num.zeros((1, hiddenlayer_dimensionality))
+a1 = num.random.randn(inputlayer_dimensionality, hiddenlayer_dimensionality)# weights for layer 1
+c1 = num.zeros((1, hiddenlayer_dimensionality))# bias for layer 1
 
-a2= num.random.randn(hiddenlayer_dimensionality, hiddenlayer_dimensionality)
-c2 = num.zeros((1, hiddenlayer_dimensionality))
+a2= num.random.randn(hiddenlayer_dimensionality, hiddenlayer_dimensionality)# weights for layer 2
+c2 = num.zeros((1, hiddenlayer_dimensionality))# bias for layer 2
 
-a3= num.random.randn(hiddenlayer_dimensionality, outputlayer_dimensionality)
-c3 = num.zeros((1, outputlayer_dimensionality))
+a3= num.random.randn(hiddenlayer_dimensionality, outputlayer_dimensionality)# weights for layer 3
+c3 = num.zeros((1, outputlayer_dimensionality))# bias for layer 3
 ```
+In the above code;
+- All weights provided in the first, second, and third layers are used to calculate the weighted sum of neurons in the first, second, and third hidden layers, respectively.
+
+> Note that weighted sum is the sum of weights, input signal, and bias element.
+
+- A softmax fuction is applied in the last layer. The list of numbers sent to this function is transformed into a probability list whose probabilities are proportional to the numbers in the list.
 
 #### Step four: Foward propagation of the input signal 
 To reach the output layer, the propagation will take place over several layers.
 
 ```python
+#First hidden layer
 d1 = X.dot(a1) + c1
 q1 = num.tanh(z1)
-
+#second hidden layer
 d2 = q1.dot(a2) + c2
 q2 = num.tanh(z2)
-
+#third hidden layer
 d3 = q2.dot(a3) + c3
 
 probs = num.exp(d3) / num.sum(num.exp(d3), axis=1, keepdims=True)
 ```
 
-In the above codwe:
-- In this model, the weight values are multiplied by a series of inputs to obtain weighted input values. Finally, the weighted input values are multiplied together to arrive at a final output. Multiplication is done to help in optimization of the neural network. Once a predetermined threshold, which is commonly set to 0, has been crossed, one of two numbers is returned: one for exceeding the threshold, and one for failing to do so.
-- 
+In the above code:
+- Forward propagation of activation signals is calculated based tanh function to 6 neurons in the first layer.
+- Forward propagation of activation signals from the first layer is calculated based tanh function to 6 neurons in the second layer.
+- Forward propagation of activation signals from the second layer is calculated based tanh function to 3 neurons in output layer.
+- Probability is calculated as an output using the softmax function.
 
 ### Applications of Feed-forward neural network
 1. An illustrious network of genetic regulation and feedforward has been found to be a feedforward system for the detection of non-temporary atmospheric modifications.
@@ -103,7 +115,9 @@ In the above codwe:
 
 ### Recurrent neural network
 One of the most frequent types of artificial neural networks, it is called a recurrent neural network. As a tool for automatic voice recognition and machine translation (RNN). It is possible to forecast the most likely future situation utilizing patterns in sequential data by employing recurrent neural networks.
-### Recurrent neural network gradient problems 
+
+Recurrent neural networks (RNN), a type of neural network, make it easier to model sequence data. RNNs, which come from feedforward networks, act in a way that is similar to how human brains do. In other words, recurrent neural networks can predict sequential data in ways that other algorithms can't.
+### RNN implementation
 Recurrent neural networks, as strong as they are, are vulnerable to gradient-related training issues. The $n$ derivatives of a network with $n$ hidden layers will be multiplied together. When these derivatives are significant, the gradient increases exponentially as it propagates backwards until it bursts. This is known as the `exploding gradient` problem. A problem known as the `vanishing gradient` problem occurs when the gradient propagates yet the derivatives are so small that the gradient finally vanishes.
 
 We will minimise the issues in the following ways:
@@ -111,7 +125,6 @@ We will minimise the issues in the following ways:
 - We will simply limit the amount of the gradients when training the model to prevent them from exploding. Gradient Clipping is a term for this.
 - We will prevent the weights from shrinking to zero by setting their initial values to identity matrices and zero for their biases. Weight initialization is the technical term for this procedure.
 
-### RNN implementation
 We will use this [dataset](hhttps://raw.githubusercontent.com/jbrownlee/Datasets/master/monthly-sunspots.csv) to train a simple RNN.
 
 #### Importing libraries
@@ -161,7 +174,7 @@ In the above code;
 - My interpretations of the data may differ from yours because we employed a randomized weighting technique in our analysis The most critical component of the process is figuring out how the many elements work together to create the final output.
 
 #### Reshaping Inputs
-Here, we reshape the input to the required `sample_size`, `time_steps` and features.
+Here, we reshape the input to the required `imput_shape`, `time_steps` and features. In this case, `time_steps` indicates the amount of prior time steps to use for forecasting the next value of the time series data, and `input_shape` defines the parameter.
 
 ```python
 x = num.array([1, 2, 3])#  returns an array, or any sequence. 
@@ -193,7 +206,7 @@ Computational Prediction [[-4.47498683]]
 In the above code, for three time steps, we provide the network with an input of $x$ and let it generate an output. We then figure out what the hidden units were doing at each of the first three points in time. The zero vector is used to set the value of $d0$. $d3$ and $x3$ are used to calculate $c3$. We don't need an activation function because we're working with linear units.
 
 #### Testing the network
-To test the RNN, we'll use a simple time series dataset using the SimpleRNN and Dense layers we learned about earlier.
+To test the RNN, we'll use a simple time series dataset.This is a data that is recorded over consistent intervals of time.
 
 ```python
 
