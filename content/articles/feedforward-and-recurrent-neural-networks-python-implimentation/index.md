@@ -103,10 +103,12 @@ probs = num.exp(d3) / num.sum(num.exp(d3), axis=1, keepdims=True)
 ```
 
 In the above code:
-- Forward propagation of activation signals is calculated based tanh function to 6 neurons in the first layer.
-- Forward propagation of activation signals from the first layer is calculated based tanh function to 6 neurons in the second layer.
-- Forward propagation of activation signals from the second layer is calculated based tanh function to 3 neurons in output layer.
+- Forward propagation of activation  is calculated based tanh function to 6 neurons in the first layer.
+- Forward propagation of activation from the first layer is calculated based tanh function to 6 neurons in the second layer.
+- Forward propagation of activation from the second layer is calculated based tanh function to 3 neurons in output layer.
 - Probability is calculated as an output using the softmax function.
+
+> How the weighted sum of the input is transformed into an output from a layer of the network is defined by an activation function.
 
 ### Applications of Feed-forward neural network
 1. An illustrious network of genetic regulation and feedforward has been found to be a feedforward system for the detection of non-temporary atmospheric modifications.
