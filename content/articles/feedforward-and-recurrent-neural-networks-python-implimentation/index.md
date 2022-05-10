@@ -1,12 +1,13 @@
-It is possible to create a computational learning system that uses a neural network to understand and translate data inputs in one form into desired outputs in another, and this is called a neural network learning algorithm or neural network. A computer's ability to learn and improve over time is enhanced by its ability to recognize hidden patterns and correlations in raw data.
+It is possible to create a computational learning system that uses a neural network to understand and translate data inputs in one form into desired outputs in another, and this is called `neural network`. A computer's ability to learn and improve over time is enhanced by its ability to recognize hidden patterns and correlations in raw data.
 
-This post will go into great detail about feed-forward and recurrent neural networks.
+Feed-forward and recurrent neural networks will be discussed in this tutorial. Starting with the feed-forward neural network, we'll work our way up to the recurrent neural network. Both networks will be implemented on python and their differences will be examined. 
 
 ### Prerequisites
 - Have a basic knowledge of [Python](https://www.python.org/).
 - Have python environment of your choice installed.
 
 ### Table of contents
+- [Neural networks ](#neural-networks)
 - [Importance of neural networks ](#importance-of-neural-networks)
 - [Feed-forward neural network](#feed-forward-neural-network)
 - [Feed-forward neural network implimentation](#feed-forward-neural-network-implimentation)
@@ -17,33 +18,46 @@ This post will go into great detail about feed-forward and recurrent neural netw
 - [Difference between RNN and Feed-forward neural network](#difference-between-rnn-and-feed-forward-neural-network)
 - [Conclusion](#conclusion)
 - [Reference](#reference)
+### Neural networks 
+Neuronal networks are a collection of algorithms that use a technique that mimics the human brain's ability to spot patterns in a dataset. Instead, a neural network is a way of teaching computers to interpret data in a manner inspired by the human brain in artificial intelligence. Using interconnected nodes, or neurons, in a layered structure that resembles the human brain, deep learning is a sort of machine learning.
+
+Below are types of neural networks that we will be discussing on:
+- Recurrent Neural Networks(RNN)
+- Feed-forward neural network(FFN)
+
 ### Importance of neural networks 
-1. Rather than relying on a database, neural netwworks store data on the network as a whole, as is the case with traditional programming. Even if a few bits of data are lost, the network as a whole continues to operate normally.
-2. These networks have a lot of computational power, so they can handle multiple tasks at once.
-3. A network gradually degrades and slows down over time. However, the network is not immediately harmed.
-4. Corruption of one or more artificial neural network cells has no effect on the output. As a result, networks are better able to deal with errors.
-5. They are able to work with limited information.
+Complex problems such as pattern recognition and facial recognition are the core focus of neural networks. Handwriting recognition for check processing, signal processing,  data analysis, speech-to-text transcription and weather forecasting are other examples of other applications. You can follow [here](https://mindmajix.com/neural-network-in-artificial-intelligence) for more.
 
 ### Feed-forward neural network
-A Feed-Forward Neural Network (FFN) is a single-layer perceptron in its most fundamental form. In this model, the weight values are multiplied by a series of inputs. Finally, the weighted input values are multiplied together to arrive at a final output. Once a predetermined threshold, which is commonly set to 0, has been crossed, one of two numbers is returned: one for exceeding the threshold, and one for failing to do so.
+A Feed-Forward Neural Network (FFN) is a single-layer perceptron in its most fundamental form. Componets of this network includes the hidden layer, output layer and the input layer. 
+
+![Feed-forward neural network](/section-engineering/feedforward-and-recurrent-neural-networks-python-implimentation/feedforward.png)
+
+There are input node, output node and hidden layer in the above shown image. Due to the absence of connections, information leaving the output node cannot return to the network. As the name suggests, information goes in only one direction.
+
+- Input layer :comprises neurons that receive input.
+- Hidden layer: contains a large number of neurons that modify the inputs and interact with the output layer.
+- Output layer: is the expected characteristic, since you are aware of the desired result.
 
 ### Feed-forward neural network implimentation
-A feed-forward neural network will be implimented in Python.
+A feed-forward neural network will be implimented in Python. 
 
 #### Step one: Importing libraries
 
 ```python 
-import numpy as num
+import numpy as num# Contains a variety of mathematical functions, including random number generators, linear algebra procedures, Fourier transforms, and more
 from sklearn import datasets
 ```
 
 #### Step Two: Creating sample weights
+Weights are used to describe the strength of a neuronal connection and vary from 0 to 1.
+
 The input hidden layer will use these samples.
 
 ```python
 num.random.seed(0)
-X, y = datasets.make_moons(200, noise=0.20)
-
+X, y = datasets.make_moons(200, noise=0.20)# Generating and plotting the dataset 
+# nodes
 inputlayer_dimensionality = 4 
 outputlayer_dimensionality = 3 
 hiddenlayer_dimensionality = 6 
@@ -78,21 +92,9 @@ d3 = q2.dot(a3) + c3
 probs = num.exp(d3) / num.sum(num.exp(d3), axis=1, keepdims=True)
 ```
 
-A linear neural network is one that does not have any activation functions in any of its layers. Non-linear neural networks are those that have action functions such as the relu, sigmoid, or tanh in any of their layers, or even in multiple layers.
-
-In most cases, joining two different curves results in a more complicated shape. In addition to introducing hyper-curves like hyperplanes and non-linear objects, these activation functions introduce non-linearity at every layer. When we apply nonlinear functions to nonlinear objects, we're creating a nonlinear entity out of a nonlinear object.
-
-A single linear regression model can simply replace a neural network in the absence of an activating function.
-
-$y = ax + d$
-
-$Q= ky + t $
-
-$=k(ax+d) + t $
-
-$=kax + kd + t$
-
-$ =(ka)x + (kc+t)$
+In the above codwe:
+- In this model, the weight values are multiplied by a series of inputs to obtain weighted input values. Finally, the weighted input values are multiplied together to arrive at a final output. Multiplication is done to help in optimization of the neural network. Once a predetermined threshold, which is commonly set to 0, has been crossed, one of two numbers is returned: one for exceeding the threshold, and one for failing to do so.
+- 
 
 ### Applications of Feed-forward neural network
 1. An illustrious network of genetic regulation and feedforward has been found to be a feedforward system for the detection of non-temporary atmospheric modifications.
