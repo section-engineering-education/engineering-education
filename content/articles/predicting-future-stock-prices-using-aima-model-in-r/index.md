@@ -3,22 +3,22 @@ layout: engineering-education
 status: publish
 published: true
 url: /predicting-future-stock-prices-using-aima-model-in-r/
-title: Predicting Stock Prices Using ARIMA Model in R
+title: Predicting Stock Prices using ARIMA Model in R
 description: This tutorial will walk the reader through how to predicting stock prices using ARIMA Model in R.
 author: hosea-kipngetich
-date: 2022-03-05T00:00:00-02:19
+date: 2022-05-10T00:00:00-12:19
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/predicting-future-stock-prices-using-aima-model-in-r/hero.png
+  - url: /engineering-education/predicting-future-stock-prices-using-aima-model-in-r/hero.jpg
     alt: Predicting Stock Prices Using ARIMA Model in R Hero Image
 ---
-### Introduction
-With the rise of so many investors in the stock and cryptocurrencies market space. 
+With the rise of so many investors in the stock and cryptocurrencies market space. It would be great to create a program that can predict the market prices to help investors.
 <!--more-->
-It would be great to create a program that can predict the market prices to help investors make the best decision on whether or not it's the right time to invest, so that they can make more profits or money.
+Help them make the best decision on whether or not it's the right time to invest, so that they can make more profits or money.
 
+### Introduction
 ARIMA model is one of the most useful and accurate time series models in making predictions about future trends. In our case we will predict stock market prices using R programming language. 
 
 ### Table of contents
@@ -38,66 +38,67 @@ To follow along with this tutorial, the reader will need the following:
 - A basic knowledge on how to analyze and interpret charts.
 
 ### Importing Yahoo Finance data in R
-In this tutorial, we are going to demonstrate stock price forecasting using the Amazon stock price, we will be using the `NASDAQ: AMZN
-`which will be imported into Yahoo Finance using the quantmod package in R.  
+In this tutorial, we are going to demonstrate stock price forecasting using the Amazon stock price, we will be using the `NASDAQ` symbol: AMZN which will be imported into Yahoo Finance using the quantmod package in R.  
 
 The data will consist of OHLC (Open, High, Low, and Closed) type, but for simplicity sake we will use the close price to make our model a univariate time series.
 
-First of all, install the quantmond packages using;
+We need to install the quantmond packages using;
 
 ```bash
 install.packages("quantmod")
 ```
 
-![installing quantmod](/engineering-education/predicting-future-stock-prices-using-arima-model-in-r/psp.jpg)
+![installing quantmod](/engineering-education/predicting-future-stock-prices-using-aima-model-in-r/psp.jpg)
 
-After installing the quantmod package, open the library to activate it using this code `library(quantmod)`
+After installing the quantmod package, open the library to activate it using this code `library(quantmod)`.
 
-![activating quantmod](/engineering-education/predicting-future-stock-prices-using-arima-model-in-r/arima.jpg)
+![activating quantmod](/engineering-education/predicting-future-stock-prices-using-aima-model-in-r/arima.jpg)
 
-Then to import Amazon data, use `getSymbols()`  function
+Then to import Amazon data, use `getSymbols()` function.
 
-![importing amazon data](/engineering-education/predicting-future-stock-prices-using-arima-model-in-r/amazon.jpg)
+![importing amazon data](/engineering-education/predicting-future-stock-prices-using-aima-model-in-r/amazon.jpg)
 
 ### Stock charting
-To start analyzing the stock, we need to add technical indicators such as moving average, Bollinger bands(20, sd=1), relative strength index of 14 days, and Moving Average Convergence Divergence (12, 25) as the technical tools of analysis before forecasting.
+To start analyzing the stock, we need to add technical indicators such as moving average, Bollinger bands (20, sd=1), relative strength index of 14 days, and Moving Average Convergence Divergence (12, 25) as the technical tools of analysis before forecasting.
 
-![stock charting](/engineering-education/predicting-future-stock-prices-using-arima-model-in-r/stock.jpg)
+![stock charting](/engineering-education/predicting-future-stock-prices-using-aima-model-in-r/stock.jpg)
 
-![graph](/engineering-education/predicting-future-stock-prices-using-arima-model-in-r/graph.jpg)
+![graph](/engineering-education/predicting-future-stock-prices-using-aima-model-in-r/graph.jpg)
 
 To make our analysis easier, we will do a log transformation of the data to depict the growth rate of the stock and scale the unit value as shown below.
 
-Plotting the log transformation of the data;
+Plotting the log transformation of the data:
 
-![log](/engineering-education/predicting-future-stock-prices-using-arima-model-in-r/log.jpg)
+![log](/engineering-education/predicting-future-stock-prices-using-aima-model-in-r/log.jpg)
 
-![log transformation](/engineering-education/predicting-future-stock-prices-using-arima-model-in-r/trans.jpg)
+![log transformation](/engineering-education/predicting-future-stock-prices-using-aima-model-in-r/trans.jpg)
 
 The stock shows an upward trend, but there is also a slight downward trend showing that there is a high volatility which means that the data is non-stationary like most financial data. 
 
 Therefore, we can assume that it's a random walk; meaning that the current price is equal to the price at the time (t-1) plus white noise therefore in order to fit the data in ARIMA model, we should differentiate the data in a particular lag.
 
-![differencing log data](/engineering-education/predicting-future-stock-prices-using-arima-model-in-r/difference.jpg)
+![differencing log data](/engineering-education/predicting-future-stock-prices-using-aima-model-in-r/difference.jpg)
 
 ### Analyze the correlation of data
-The AutoCorrelation function (ACF) and partial AutoCorrelation perform analysis if there is any correlation between today's and yesterday's price.
+We analyze the AutoCorrelation function (ACF) and partial AutoCorrelation perform analysis to see if there is any correlation between today's and yesterday's price.
 
 ### Differencing data to be stationary
 Now that we know that our data is not stationary, we need to make it stationary by differentiating it at a certain lag for it to fit our ARIMA model. 
 
 Making the data stationary is important in that it helps us predict that the past statistical properties of our data will remain the same in the future. Here, the log-transformed data will be differenced by 1 lag to make it stationary. 
 
-First, we'll have to, make sure that we fill in missing values with values from the observations after the missing value.
+We'll have to make sure that we fill in missing values with values from the observations after the missing value.
 
-![differencing data to be stationary](/engineering-education/predicting-future-stock-prices-using-arima-model-in-r/amazondiff.jpg)
+![differencing data to be stationary](/engineering-education/predicting-future-stock-prices-using-aima-model-in-r/amazondiff.jpg)
 
 ### Do stationary testing using unit root testing
-After differentiating the data at lag 1 and making our data stationary, we'll test if the data are stationary using Unit Root Testing. 
+After differentiating the data at lag 1 and making our data stationary, we'll test if the data is stationary using Unit Root Testing. 
 
-We'll test this using the Augmented Dickey Fuller test, which tests the hypothesis of the stationary data, and if the resulting p-value is below 0.05, we will reject the null hypothesis and conclude that the data is stationary. We are going to test our differenced data.
+We'll test this using the Augmented Dickey Fuller test. This tests the hypothesis of the stationary data. 
 
-To do this, activate the `tseries` package using library(tseries) then we perform `adf` test using;
+If the resulting p-value is below 0.05, we will reject the null hypothesis and conclude that the data is stationary. We are going to test our differenced data.
+
+To do this, activate the `tseries` package using library (tseries) then we perform `adf` test using:
 
 ```R
 adf<-adf.test(AMAZON_diff, alternative=c(“stationary”,”explosive”), k=0)
@@ -105,7 +106,7 @@ adf<-adf.test(AMAZON_diff, alternative=c(“stationary”,”explosive”), k=0)
 adf
 ```
 
-![doing stationary test](/engineering-education/predicting-future-stock-prices-using-arima-model-in-r/stationary.jpg)
+![doing stationary test](/engineering-education/predicting-future-stock-prices-using-aima-model-in-r/stationary.jpg)
 
 The p-value is 0.01 meaning that our data is now stationary with no unit root making it appropriate for our ARIMA model.
 
@@ -127,10 +128,10 @@ To select our train data, we will use;
 
 `train_data<-AMAZON_diff[1:3355]`
 
-![differencing log data](/engineering-education/predicting-future-stock-prices-using-arima-model-in-r/difference.jpg)
+![differencing log data](/engineering-education/predicting-future-stock-prices-using-aima-model-in-r/difference.jpg)
 
 ### Building ARIMA model
-ARIMA model in R is found in the package ‘forecast’ which we will first install and then activate as follows;
+The ARIMA model in R is found in the package ‘forecast’ which we will first install and then activate as follows:
 
 ```bash
 install.packages(“forecast”)
@@ -138,25 +139,25 @@ install.packages(“forecast”)
 
 `library(forecast)`
 
-`Auto.arima` is used to generate the ARIMA model
+`Auto.arima` is used to generate the ARIMA model.
 
-![generating ARIMA model](/engineering-education/predicting-future-stock-prices-using-arima-model-in-r/auto.jpg)
+![generating ARIMA model](/engineering-education/predicting-future-stock-prices-using-aima-model-in-r/auto.jpg)
 
-To check the summary for chosen best fit ARIMA model, we use;
+To check the summary of our best fit ARIMA model, we use;
 
 `summary(arima_mode)`
 
-![summary for our model](/engineering-education/predicting-future-stock-prices-using-arima-model-in-r/fit.jpg)
+![summary for our model](/engineering-education/predicting-future-stock-prices-using-aima-model-in-r/fit.jpg)
 
-We then check for any residual in our ARIMA model, and judging by the Ljung-Box test, we conclude that the p-value > 0.05 (insignificant) means that the model’s residuals are independent and not auto correlated which means we don't have to do volatility modeling using models like Garch, commonly used on financial data with heteroscedasticity problem.
+We then check for any residual in our ARIMA model, and judging by the Ljung-Box test, we conclude that the p-value > 0.05 (insignificant). This means that the model’s residuals are independent and not auto correlated. Which means we don't have to do volatility modeling using models like Garch, commonly used on financial data with heteroscedasticity problem.
 
-![checking for residuals](/engineering-education/predicting-future-stock-prices-using-arima-model-in-r/hetero.jpg)
+![checking for residuals](/engineering-education/predicting-future-stock-prices-using-aima-model-in-r/hetero.jpg)
 
-Assuming that ARIMA(0,0,2) is our model, days ahead shows a straight line indicating that our ARIMA model fits well as it is supposed to follow a normal distribution and should be stationary. 
+Assuming that ARIMA (0,0,2) is our model, days ahead shows a straight line indicating that our ARIMA model fits well as it is supposed to follow a normal distribution and should be stationary. 
  
-The plot of our Residuals from our ARIMA model shows that our forecast for 100
+The plot of our Residuals from our ARIMA model shows our forecast for 100.
 
-![residuals form ARIMA](/engineering-education/predicting-future-stock-prices-using-arima-model-in-r/from.jpg)
+![residuals form ARIMA](/engineering-education/predicting-future-stock-prices-using-aima-model-in-r/from.jpg)
 
 ### Fitting the ARIMA model and forecasting
 Now, to fit the model into the training data set, we use;
@@ -165,26 +166,23 @@ Now, to fit the model into the training data set, we use;
 
 `summary(arima)`
 
-![fitting our model](/engineering-education/predicting-future-stock-prices-using-arima-model-in-r/model.jpg)
+![fitting our model](/engineering-education/predicting-future-stock-prices-using-aima-model-in-r/model.jpg)
 
-Now, we can make our forecast for the next 100 days using the `forecast` package with h=100
+Now, we can make our forecast for the next 100 days using the `forecast` package with h=100.
 
-And we can plot our forecast using
-`plot(forecast)`
+And we can plot our forecast using `plot(forecast)`.
 
-![plotting our forecast](/engineering-education/predicting-future-stock-prices-using-arima-model-in-r/plotting.jpg)
+![plotting our forecast](/engineering-education/predicting-future-stock-prices-using-aima-model-in-r/plotting.jpg)
 
-And then check residuals in our model using
+And then check residuals in our model using `checkresiduals(arima)`.
 
- `checkresiduals(arima)`
+![checking residual](/engineering-education/predicting-future-stock-prices-using-aima-model-in-r/residual.jpg)
 
-![checking residual](/engineering-education/predicting-future-stock-prices-using-arima-model-in-r/residual.jpg)
+![our arima](/engineering-education/predicting-future-stock-prices-using-aima-model-in-r/fore.jpg)
 
-![our arima](/engineering-education/predicting-future-stock-prices-using-arima-model-in-r/fore.jpg)
+Our forecast will be:
 
-Our forecast will be;
-
-![our forecast](/engineering-education/predicting-future-stock-prices-using-arima-model-in-r/forecast.jpg)
+![our forecast](/engineering-education/predicting-future-stock-prices-using-aima-model-in-r/forecast.jpg)
 
 This shows that in the next 100 days, there will be a rise in AMAZON’s stock prices with a slight downward movement in the next few days and then an almost steady rise. 
 
@@ -192,7 +190,8 @@ Now that the investor knows the expected trends for the next 100 days in Amazon 
 
 ### Conclusion
 We learned how to predict Amazon stock prices using R programming language, perform financial modeling, and then use time series models in forecasting. There are various automated functions that can fit into models, which will give accurate results when fed with enough data. 
-You can go ahead and learn more on how to perform forecasting in R and Python using the resources below.
+
+You can go ahead and learn more about how to perform forecasting in R and Python using the resources below.
 
 Happy coding!
 
