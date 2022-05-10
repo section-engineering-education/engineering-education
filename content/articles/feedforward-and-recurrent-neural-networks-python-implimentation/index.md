@@ -28,7 +28,7 @@ This post will go into great detail about feed-forward and recurrent neural netw
 A Feed-Forward Neural Network (FFN) is a single-layer perceptron in its most fundamental form. In this model, the weight values are multiplied by a series of inputs. Finally, the weighted input values are multiplied together to arrive at a final output. Once a predetermined threshold, which is commonly set to 0, has been crossed, one of two numbers is returned: one for exceeding the threshold, and one for failing to do so.
 
 ### Feed-forward neural network implimentation
-A feed-forward neural network will be represented in Python.
+A feed-forward neural network will be implimented in Python.
 
 #### Step one: Importing libraries
 
