@@ -2,14 +2,29 @@ It is possible to create a computational learning system that uses a neural netw
 
 This post will go into great detail about feed-forward and recurrent neural networks.
 
-### Importance of neural netwworks 
+### Prerequisites
+- Have a basic knowledge of [Python](https://www.python.org/).
+- Have python environment of your choice installed.
+
+### Table of contents
+- [Importance of neural networks ](#importance-of-neural-networks)
+- [Feed-forward neural network](#feed-forward-neural-network)
+- [Feed-forward neural network implimentation](#feed-forward-neural-network-implimentation)
+- [Applications of Feed-forward neural network](#applications-of-feed-forward-neural-network)
+- [Recurrent neural network](#recurrent-neural-network)
+- [Recurrent neural network gradient problems ](#recurrent-neural-network-gradient-problems )  
+- [RNN implementation](#rnn-implementation)
+- [Difference between RNN and Feed-forward neural network](#difference-between-rnn-and-feed-forward-neural-network)
+- [Conclusion](#conclusion)
+- [Reference](#reference)
+### Importance of neural networks 
 1. Rather than relying on a database, neural netwworks store data on the network as a whole, as is the case with traditional programming. Even if a few bits of data are lost, the network as a whole continues to operate normally.
 2. These networks have a lot of computational power, so they can handle multiple tasks at once.
 3. A network gradually degrades and slows down over time. However, the network is not immediately harmed.
 4. Corruption of one or more artificial neural network cells has no effect on the output. As a result, networks are better able to deal with errors.
 5. They are able to work with limited information.
 
-### Feed-forward neural network(FFN)
+### Feed-forward neural network
 A Feed-Forward Neural Network (FFN) is a single-layer perceptron in its most fundamental form. In this model, the weight values are multiplied by a series of inputs. Finally, the weighted input values are multiplied together to arrive at a final output. Once a predetermined threshold, which is commonly set to 0, has been crossed, one of two numbers is returned: one for exceeding the threshold, and one for failing to do so.
 
 ### Feed-forward neural network implimentation
@@ -79,12 +94,12 @@ $=kax + kd + t$
 
 $ =(ka)x + (kc+t)$
 
-### Applications of Feedforward neural network
+### Applications of Feed-forward neural network
 1. An illustrious network of genetic regulation and feedforward has been found to be a feedforward system for the detection of non-temporary atmospheric modifications.
 2. In the field of automation and machine management, feedforward control may be a discipline.
 3. Derivative parallel feedforward compensation can be used to transform an open-loop transfer system into one that operates at its minimum.
 
-### Recurrent neural network(RNN)
+### Recurrent neural network
 One of the most frequent types of artificial neural networks, it is called a recurrent neural network. As a tool for automatic voice recognition and machine translation (RNN). It is possible to forecast the most likely future situation utilizing patterns in sequential data by employing recurrent neural networks.
 ### Recurrent neural network gradient problems 
 Recurrent neural networks, as strong as they are, are vulnerable to gradient-related training issues. The $n$ derivatives of a network with $n$ hidden layers will be multiplied together. When these derivatives are significant, the gradient increases exponentially as it propagates backwards until it bursts. This is known as the `exploding gradient` problem. A problem known as the `vanishing gradient` problem occurs when the gradient propagates yet the derivatives are so small that the gradient finally vanishes.
