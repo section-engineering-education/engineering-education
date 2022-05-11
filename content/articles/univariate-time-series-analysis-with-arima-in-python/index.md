@@ -2,16 +2,16 @@
 layout: engineering-education
 status: publish
 published: true
-url: /univariate-time-series-analysis-and-forecasting-with-arima-and-seasonal-arima-in-python/
+url: /univariate-time-series-analysis-with-arima-in-python/
 title: Univariate time series analysis and forecasting with ARIMA and Seasonal ARIMA in Python
 description: This tutorial will first discuss a few concepts that are essential to understanding time series with ARIMA and Seasonal ARIMA. It will finally implement the ARIMA and Seasonal ARIMA models with Python.
 author: joseph-gatura
-date: 2022-04-08T00:00:00-21:20
+date: 2022-05-11T00:00:00-14:20
 topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
 
- - url: /engineering-education/univariate-time-series-analysis-and-forecasting-with-arima-and-seasonal-arima-in-python/hero.jpg
+ - url: /engineering-education/univariate-time-series-analysis-with-arima-in-python/hero.jpg
    alt: Forecasting with ARIMA and Seasonal ARIMA in Python Hero Image
 ---
 A time series is a sequence of data points that occur over regular time intervals. A time series shows all the time-dependent variables in the dataset. An example of time series data is stock prices and weather records. 
@@ -149,7 +149,7 @@ df.head()
 ```
 First five data points:
 
-![First five](/engineering-education/univariate-time-series-analysis-and-forecasting-with-arima-and-seasonal-arima-in-python/first-five.png)
+![First five](/engineering-education/univariate-time-series-analysis-with-arima-in-python/first-five.png)
 
 To display the last five data points of the dataset, use this code:
 
@@ -158,7 +158,7 @@ df.tail()
 ```
 Last five data points:
 
-![Last five](/engineering-education/univariate-time-series-analysis-and-forecasting-with-arima-and-seasonal-arima-in-python/last-five.png)
+![Last five](/engineering-education/univariate-time-series-analysis-with-arima-in-python/last-five.png)
 
 From this output, the 105th and the 106th data points/rows have missing values. We will have to drop these data points. First, we have to rename the columns.
 
@@ -171,7 +171,7 @@ df.head()
 ```
 The output of the renamed columns:
 
-![New column names](/engineering-education/univariate-time-series-analysis-and-forecasting-with-arima-and-seasonal-arima-in-python/renamed-columns.png)
+![New column names](/engineering-education/univariate-time-series-analysis-with-arima-in-python/renamed-columns.png)
 
 #### Drop the data points
 To drop the 105th and the 106th data points/rows, use this code:
@@ -183,7 +183,7 @@ df.tail()
 ```
 Output:
 
-![Dropping the rows](/engineering-education/univariate-time-series-analysis-and-forecasting-with-arima-and-seasonal-arima-in-python/dropping-rows.png)
+![Dropping the rows](/engineering-education/univariate-time-series-analysis-with-arima-in-python/dropping-rows.png)
 
 We have dropped these rows. The new dataset will now have 104 data points/rows.
 
@@ -200,7 +200,7 @@ df.head()
 ```
 Output:
 
-![Columns](/engineering-education/univariate-time-series-analysis-and-forecasting-with-arima-and-seasonal-arima-in-python/datetime-columns.png)
+![Columns](/engineering-education/univariate-time-series-analysis-with-arima-in-python/datetime-columns.png)
 
 We also need to set the `month` column as the index column. Use this code:
 
@@ -214,7 +214,7 @@ df.head()
 ```
 Output:
 
-![Index column](/engineering-education/univariate-time-series-analysis-and-forecasting-with-arima-and-seasonal-arima-in-python/index-column.png)
+![Index column](/engineering-education/univariate-time-series-analysis-with-arima-in-python/index-column.png)
 
 ### Visualizing the time series data
 We will plot time series data and check for trends or seasonality/repeating cycles. As mentioned earlier, this is a simple method to check for time series stationarity or non-stationarity. We will use `Matplotlib` for plotting.
@@ -229,7 +229,7 @@ df.plot()
 ```
 It produces the following line chart:
 
-![Line chart](/engineering-education/univariate-time-series-analysis-and-forecasting-with-arima-and-seasonal-arima-in-python/monthly-sales-line-chart.png)
+![Line chart](/engineering-education/univariate-time-series-analysis-with-arima-in-python/monthly-sales-line-chart.png)
 
 The line chart plots the `sales` against `month`. Through visualization, the time series has seasonality or repeating cycles. The spikes and dips keep on repeating during certain months of the year. We can conclude that the time series is non-stationary since it has seasonality. We still need to perform a statistical test on the time series to prove this non-stationarity. As mentioned earlier, we will use the Augmented Dickey-Fuller test.
 
@@ -267,7 +267,7 @@ adf_test(df['Sales'])
 ```
 It produces the following results:
 
-![ADF test results](/engineering-education/univariate-time-series-analysis-and-forecasting-with-arima-and-seasonal-arima-in-python/adf-test-results.png)
+![ADF test results](/engineering-education/univariate-time-series-analysis-with-arima-in-python/adf-test-results.png)
 
 From the output above, we have different output values that show the nature of our dataset. We are only interested in the `p-value` result. The `p-value` is 0.363915771660247. This number is greater than 0.05. It implies that the time series is non-stationary. We will have to make the time series stationary using the differencing approach.
 
@@ -286,7 +286,7 @@ adf_test(df['Differencing'].dropna())
 ```
 The test results.
 
-![ADF test results](/engineering-education/univariate-time-series-analysis-and-forecasting-with-arima-and-seasonal-arima-in-python/testing-again.png)
+![ADF test results](/engineering-education/univariate-time-series-analysis-with-arima-in-python/testing-again.png)
 
 From the test results the `p-value` is 2.519620447387081e-10 (0.0000000002519620447387081). This number is < 0.05, therefore the dataset has become stationary. We will plot this new time series to see whether we have removed the seasonal components.
 
@@ -296,7 +296,7 @@ To plot the new dataset,  use this code:
 ```python
 df['Differencing'].plot()
 ```
-![New dataset plot](/engineering-education/univariate-time-series-analysis-and-forecasting-with-arima-and-seasonal-arima-in-python/new-dataset-plot.png)
+![New dataset plot](/engineering-education/univariate-time-series-analysis-with-arima-in-python/new-dataset-plot.png)
 
 From the output above, we have removed the seasonal components. We can start applying the ARIMA model to the dataset.
 
@@ -327,7 +327,7 @@ fig = sm.graphics.tsa.plot_acf(df['Differencing'].iloc[13:],lags=40,ax=ax1)
 ```
 The code above produces the following plot:
 
-![ACF plot](/engineering-education/univariate-time-series-analysis-and-forecasting-with-arima-and-seasonal-arima-in-python/acf-plot.png)
+![ACF plot](/engineering-education/univariate-time-series-analysis-with-arima-in-python/acf-plot.png)
 
 We will use this plot to get the best value of `q`. From the ACF plot, lag number one stands out. The red arrow shows the lag point. It is slightly above (cuts off) the significance line (the blue line). We will select this lag as the best value of `q`. Therefore, `q=1`.
 
@@ -342,7 +342,7 @@ fig = sm.graphics.tsa.plot_pacf(df['Differencing'].iloc[13:],lags=40,ax=ax2)
 ```
 It produces the following plot:
 
-![PACF plot](/engineering-education/univariate-time-series-analysis-and-forecasting-with-arima-and-seasonal-arima-in-python/pacf-plot.png)
+![PACF plot](/engineering-education/univariate-time-series-analysis-with-arima-in-python/pacf-plot.png)
 
 We will use this plot to get the best value of `p`. From the PACF plot, we can observe that lags 1 and 13 stand out. The red arrow shows the lag points. These points are above (cuts off) the significance line (the blue shaded line). We select lag number one as the best value of `p`. It is the first lag that is above the blue line. Therefore, `p=1`. 
 
@@ -376,7 +376,7 @@ df[['Sales','forecast']].plot(figsize=(12,8))
 ```
 It produces the following line chart:
 
-![ARIMA line-chart](/engineering-education/univariate-time-series-analysis-and-forecasting-with-arima-and-seasonal-arima-in-python/arima-line-chart.png)
+![ARIMA line-chart](/engineering-education/univariate-time-series-analysis-with-arima-in-python/arima-line-chart.png)
 
 From the output above:
 - The blue line is the actual monthly sales.
@@ -410,7 +410,7 @@ df[['Sales','forecast']].plot(figsize=(12,8))
 
 It produces the following line chart:
 
-![SARIMA line-chart](/engineering-education/univariate-time-series-analysis-and-forecasting-with-arima-and-seasonal-arima-in-python/sarima-line-chart.png)
+![SARIMA line-chart](/engineering-education/univariate-time-series-analysis-with-arima-in-python/sarima-line-chart.png)
 
 From the output above:
 - The blue line is the actual monthly sales.
