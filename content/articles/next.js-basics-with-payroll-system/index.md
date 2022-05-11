@@ -257,8 +257,8 @@ In our next tutorial we are going to create pages for payslips and send payments
 Happy coding!
 
 ### Reference
-[Introduction to Next.js](https://Nextjs.org)
-[Payroll system](https://www.betterplace.co.in/blog/3-stages-of-payroll-processing/amp)
+- [Introduction to Next.js](https://Nextjs.org)
+- [Payroll system](https://www.betterplace.co.in/blog/3-stages-of-payroll-processing/amp)
 
 
 
