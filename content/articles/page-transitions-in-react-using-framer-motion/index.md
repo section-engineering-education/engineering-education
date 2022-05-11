@@ -14,14 +14,14 @@ images:
   - url: /engineering-education/page-transition-in-react-using-framer-motion/hero.jpg
     alt: Page transistions in ReactJS using Framer Motion Hero Image
 ---
-React.js framework allows us to create single-page applications (commonly referred as SPA). SPA is a application in which the pages would not reload for in-page actions like clicking a hyperlink or clicking of a button.
+React.js framework allows us to create single-page applications (commonly referred to as SPA). SPA is an application in which the pages would not reload for in-page actions like clicking a hyperlink or clicking a button.
 <!--more-->
 The webpage transition is so quick that it's difficult to notice when the DOM content changes, thus improving the application's user experience.
 
 In this tutorial, we will learn about framer motion and how it helps with page transitions.
 
 ### Prerequisites
-To follow through this article, the reader should have the following:
+To follow through with this article, the reader should have the following:
 - A basic understanding of Javascript.
 - Should understand how react-router works.
 
@@ -43,13 +43,13 @@ npx create react-app framer-motion
 
 Before we proceed further, let's delete some boilerplate files like `App.css`, `App.test.js`, `Index.css`, `reportWebvitals.js`, `setupWebVitals.js`.
 
-Locate `App.js` file which under the `src` folder and edit it as shown in the image:
+Locate `App.js` file under the `src` folder and edit it as shown in the image:
 
 ![app.js](/engineering-education/page-transition-in-react-using-framer-motion/app.png)
 
 Then, we change the directory to the app. Now, we install the packages that we’ll be using in this tutorial.
 
-The packages that we are going to install are: `react-router-dom` and `framer-motion`.
+The packages that we are going to install are `react-router-dom` and `framer-motion`.
 
 To navigate across the pages, we'll use the `react-router-dom`:
 
@@ -76,7 +76,7 @@ Inside the `src` folder, let's create a folder called `pages` (you can name it a
 4. `Navbar.js`
 5. `AnimatedRoutes.js`.
 
-We will be using the `Home.js`, `About.js`, and `Contact.js` to show the transitions. We’ll also be embed them into the `Navbar.js` file. The `AnimatedRoutes` will contain all the routes to navigate between these pages.
+We will be using the `Home.js`, `About.js`, and `Contact.js` to show the transitions. We’ll also embed them into the `Navbar.js` file. The `AnimatedRoutes` will contain all the routes to navigate between these pages.
 
 Let’s create a folder inside our `src` folder called `pages`. Inside this folder, create a file `Home.js` with the following code:
 
@@ -335,12 +335,12 @@ export default Contact;
 ```
 
 In the above code:
-- We import `motion` from `framer-motion` into all the three pages. `motion` allow us to define how our animation will run.
+- We import `motion` from `framer-motion` into all three pages. `motion` allows us to define how our animation will run.
 - We add some properties to `motion` like:
   - `initial`: This defines an element's initial state.
   - `animate`: This property defines the animation on the component mount. If the values differ from style or initial, it will animate these values.
   - `exit`: This specifies the animation that occurs when the component is unmounted.
-  - `transistion`: This allows us to change the properties of the animation. They include the duration, easing, type of animation, duration, and many other properties.
+  - `transition`: This allows us to change the properties of the animation. They include the duration, easing, type of animation, duration, and many other properties.
 
 These are some of the extra props that we talked about earlier in the article.
 
@@ -372,7 +372,7 @@ Let’s now check out the webpage in the browser:
 ### Conclusion
 In this tutorial, we learned about framer motion as a tool for making page transitions in React. We learned how to make page transitions by building a simple project.
 
-You can checkout the source code [here](https://github.com/oyedeletemitope/page-transition-in-react-using-framer-motion).
+You can check out the source code [here](https://github.com/oyedeletemitope/page-transition-in-react-using-framer-motion).
 
 To learn more about framer-motion, it is suggested to go through [their documentation](https://www.framer.com/docs/examples/).
 
