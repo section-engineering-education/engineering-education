@@ -1,5 +1,21 @@
-React.js framework allows us to create single-page applications (commonly referred as SPA). SPA is a application in which the pages would not reload for in-page actions like clicking a hyperlink or clicking of a button.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /page-transition-in-react-using-framer-motion/
+title: Page transistions in ReactJS using Framer Motion
+description: This tutorial will be an introduction to Framer motion. We will walk through what framer-motion is, and why and when we should use it. We will also be building a simple website to demonstrate page transistions using framer-motion.
+author: oyedele-temitope
+date: 2022-05-12T00:00:00-01:00
+topics: []
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/page-transition-in-react-using-framer-motion/hero.jpg
+    alt: Page transistions in ReactJS using Framer Motion Hero Image
+---
+React.js framework allows us to create single-page applications (commonly referred as SPA). SPA is a application in which the pages would not reload for in-page actions like clicking a hyperlink or clicking of a button.
+<!--more-->
 The webpage transition is so quick that it's difficult to notice when the DOM content changes, thus improving the application's user experience.
 
 In this tutorial, we will learn about framer motion and how it helps with page transitions.
@@ -359,3 +375,6 @@ In this tutorial, we learned about framer motion as a tool for making page trans
 You can checkout the source code [here](https://github.com/oyedeletemitope/page-transition-in-react-using-framer-motion).
 
 To learn more about framer-motion, it is suggested to go through [their documentation](https://www.framer.com/docs/examples/).
+
+---
+Peer Review Contributions by: [Srishilesh P S](/engineering-education/authors/srishilesh-p-s/)
