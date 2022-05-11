@@ -6,7 +6,7 @@ This tutorial will equip you with the basic arithmetic operators in Next.js and 
 ### Table of Content
 - [Prerequisites](#Prerequisites)
 - [Next.js Environment Setup](#Next.js-Environment-Setup)
-- [Introduction to Payroll System](Introduction-to-Payroll-System)
+- [Introduction to Payroll System](#Introduction-to-Payroll-System)
 - [Payroll Arithmetic Calculations](#payroll-Arithmetic-Calculations)
 - [Creating a JSON File and Functions in Next.js](#Creating-a-JSON-File-and-Functions-in-Next.js)
 - [Fetching Payroll Data and Computing Calculations in Next.js](#Fetching-Payroll-Data-and-Computing-Calculations-in-Next.js)
@@ -258,7 +258,7 @@ Happy coding!
 
 ### Reference
 [Introduction to Next.js](https://Nextjs.org)
-[Payroll system](https://www.google.com/amp/s/www.betterplace.co.in/blog/3-stages-of-payroll-processing/amp)
+[Payroll system](https://www.betterplace.co.in/blog/3-stages-of-payroll-processing/amp)
 
 
 
