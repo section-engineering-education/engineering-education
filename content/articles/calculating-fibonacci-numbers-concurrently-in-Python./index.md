@@ -1,7 +1,24 @@
-### Fibonacci Numbers Concurrently in Python – How to Calculate Them
+---
+layout: engineering-education
+status: publish
+published: true
+url: /calculating-fibonacci-numbers-concurrently-in-Python./
+title: Calculating Fibonacci Numbers Concurrently in Python
+description: This article will cover how to calculate Fibonacci numbers concurrently in Python.
+author:
+date: 2022-05-11T00:00:00-18:30
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
 
-What’s so special about Fibonacci numbers? They are numbers that can be used to calculate other mathematical problems, but they also have magnetic properties that don’t apply to other types of numbers. One of these properties is recursion, and it’s used to calculate Fibonacci numbers concurrently in Python using the fastest available algorithms today. What does that mean? You can find the nth Fibonacci number using far fewer computational steps than you might think! Here’s how you can do it too!
-### Table of Content
+  - url: /engineering-education/calculating-fibonacci-numbers-concurrently-in-Python./hero.jpg
+    alt: Calculating Fibonacci Numbers Concurrently in Python with examples
+---
+What is so special about Fibonacci numbers? They are numbers used to calculate other mathematical problems. They also have magnetic properties that do not apply to other types of numbers.
+<!--more-->
+One of these properties is recursion used to calculate Fibonacci numbers concurrently in Python using the fastest available algorithms today. What does that mean? You can find the nth Fibonacci number using far fewer computational steps than you think! This article will cover how to calculate Fibonacci numbers concurrently in Python.
+
+### Table of contents
 - Calculating Fibonacci numbers concurrently
 - Adding Items
 - Subtracting Items
@@ -9,10 +26,13 @@ What’s so special about Fibonacci numbers? They are numbers that can be used t
 - Finding the sum of two Fibo numbers
 
 ### Prerequisites
-- written Code using Python 3.6.2 and is compatible with all versions above it (Python 2 support dropped in version 3).
--  It requires basic knowledge of asyncio 
-- Experienced in using python libraries.
-### Calculating Fibonacci numbers concurrently
+- [Python](https://www.python.org/) installed. Preferably Python 3.6.2 version.
+- Basic knowledge and understanding of asyncio
+- Experience in using python libraries.
+
+Let us get started!
+
+#### Step one: Calculating Fibonacci numbers concurrently
 In most programming languages, the calculation of Fibonacci numbers is sequential. However, we can calculate them concurrently if we know how many Fibonacci numbers we calculate and their values. For example, consider a program that calculates the first 5 Fibonacci numbers. There will be no more than five calls to function fib(n) since n=0..4, so we can run fib(0), fib(1), fib(2), fib(3), and fib(4) in parallel. The following example shows you how to do it in Python #!/user/bin/env python # -*- coding: utf-8 -*-  Calculating Fibonacci numbers concurrently  import time def fib(n): global count count += 1 return count print Calculating Fibonacci numbers concurrently start = time.time() for i in range(5): print i, fib(i) end = time.time() print Time took: end - start print Number of calls: count Output 0 1 1 2 3 2 3 4 5 3 5 8 13 4 8 21 34 5 13 34 55 Time taken: 0.0006 Number of calls: 6 . This output shows us that running all these functions concurrently took only 0.0006 seconds, and the total number of calls was six, which means that all functions were called at least once by the main thread. I am using range(5) instead of explicitly writing out every number because they would take up too much space. When I want to iterate over multiple numbers, it’s better to use range instead of writing out every value.
 
 ### Adding Items
