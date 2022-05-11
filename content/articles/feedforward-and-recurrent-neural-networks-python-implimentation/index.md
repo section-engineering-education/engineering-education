@@ -32,11 +32,11 @@ A Feed-Forward Neural Network (FFN) is a single-layer perceptron in its most fun
 
 ![Feed-forward neural network](/section-engineering/feedforward-and-recurrent-neural-networks-python-implimentation/feedforward.png)
 
-The above-shown image has input nodes, output nodes, and hidden layers. Due to the absence of connections, information leaving the output node cannot return to the network. As the name suggests, the information goes in only one direction.
+The above-shown image has input nodes, output nodes, and hidden layers. Due to the absence of connections, information leaving the output node cannot return to the network. As the name https://github.com/vincentkims49/NeuralNetworks.gitof the network suggests, the information goes in only one direction.
 
 - Input layer: comprises neurons that receive input.
-- Hidden layer: contains a large number of neurons that modify the inputs and interact with the output layer.
-- Output layer: this is the expected characteristic since you know the desired result.
+- Hidden layer: Contains a large number of neurons that modify the inputs and interact with the output layer.
+- Output layer: This is the expected characteristic since you know the desired result.
 
 ### Feed-forward neural network implementation
 A feed-forward neural network will be implemented in Python. 
@@ -51,8 +51,6 @@ from sklearn import datasets
 #### Step Two: Creating sample weights
 Weights are used to describe the strength of a neuronal connection and vary from 0 to 1.
 
-The input hidden layer will use these samples.
-
 ```python
 num.random.seed(0)
 X, y = datasets.make_moons(200, noise=0.20)# Generating and plotting the dataset 
@@ -63,9 +61,9 @@ hiddenlayer_dimensionality = 6
 ```
 
 In the above code;
-- We generated and plotted the datasets as a first step.
-- We then defined our neural network architecture, including the three layers of nodes.
-- On each node, we gave a different dimension.
+- We generated and plotted the datasets.
+- We then defined our neural network architecture, including the three nodes.
+- On each node, we gave a different dimension. The dimensions will be used later to calculate the weighted sum of neurons.
 
 #### Step Three: Including weights 
 
@@ -79,15 +77,15 @@ c2 = num.zeros((1, hiddenlayer_dimensionality))# bias for layer 2
 a3= num.random.randn(hiddenlayer_dimensionality, outputlayer_dimensionality)# weights for layer 3
 c3 = num.zeros((1, outputlayer_dimensionality))# bias for layer 3
 ```
-In the above code;
-- All weights provided in the first, second, and third layers are used to calculate the weighted sum of neurons in the first, second, and third hidden layers.
 
 > Note that weighted sum is the sum of weights, input signal, and bias element.
 
+In the above code;
+- All weights provided in the first, second, and third layers are used to calculate the weighted sum of neurons in the first, second, and third hidden layers.
 - A softmax function is applied in the last layer. The list of numbers sent to this function is transformed into a probability list whose probabilities are proportional to the numbers in the list.
 
 #### Step four: Foward propagation of the input signal 
-To reach the output layer, the propagation will occur over several layers.
+To reach the output layer, the propagation will occur over several layers which include the first, second and the third hidden layer.
 
 ```python
 #First hidden layer
@@ -101,14 +99,13 @@ d3 = q2.dot(a3) + c3
 
 probs = num.exp(d3) / num.sum(num.exp(d3), axis=1, keepdims=True)
 ```
+> How the weighted sum of the input is transformed into an output from a layer of the network is defined by an activation function.
 
 In the above code:
 - Forward propagation of activation is calculated based tanh function to 6 neurons in the first layer.
 - Forward propagation of activation from the first layer is calculated based tanh function to 6 neurons in the second layer.
 - Forward propagation of activation from the second layer is calculated based tanh function to 3 neurons in the output layer.
 - Probability is calculated as an output using the softmax function.
-
-> How the weighted sum of the input is transformed into an output from a layer of the network is defined by an activation function.
 
 ### Applications of Feed-forward neural network
 1. An illustrious network of genetic regulation and feedforward is a feedforward system for detecting non-temporary atmospheric modifications.
@@ -118,7 +115,8 @@ In the above code:
 ### Recurrent neural network
 One of the most frequent types of artificial neural networks is called a recurrent neural network as a tool for automatic voice recognition and machine translation (RNN). It is possible to forecast the most likely future situation utilizing patterns in sequential data by employing recurrent neural networks.
 
-Recurrent neural networks (RNN), a type of neural network, make it easier to model sequence data. RNNs, which come from feedforward networks, act in a way that is similar to how human brains do. In other words, recurrent neural networks can predict sequential data in ways that other algorithms can't.
+Recurrent neural networks (RNN) make it easier to model sequence data. RNNs, which come from feedforward networks, act in a way that is similar to how human brains do. In other words, recurrent neural networks can predict sequential data in ways that other algorithms can't.
+
 ### RNN implementation
 As strong as they are, recurrent neural networks are vulnerable to gradient-related training issues. The $n$ derivatives of a network with $n$ hidden layers will be multiplied. When these derivatives are significant, the gradient increases exponentially as it propagates backward until it bursts. This is known as the `exploding gradient` problem. A problem known as the `vanishing gradient` problem occurs when the gradient propagates yet the derivatives are so small that the gradient finally vanishes.
 
@@ -177,6 +175,7 @@ In the above code;
 
 #### Reshaping Inputs
 We reshape the input to the required `imput_shape,` `time_steps,` and features. In this case, `time_steps` indicates the number of prior time steps to use for forecasting the next value of the time-series data, and `input_shape` defines the parameter. 
+
 > Time-series data is a data that is recorded over consistent intervals of time.
 
 ```python
@@ -206,7 +205,10 @@ Network Prediction [[-4.474987]]
 Computational Prediction [[-4.47498683]]
 ```
 
-In the above code, we provide the network with an input of $x$ and let it generate output for three-time steps. We then figured out what the hidden units were doing at each of the first three points in time. The zero vector is used to set the value of $d0$. $d3$ and $x3$ are used to calculate $c3$. We don't need an activation function because we work with linear units.
+In the above code;
+- We provide the network with an input of $x$ and let it generate output for three-time steps.
+- We then figured out what the hidden units were doing at each of the first three points in time. 
+- The zero vector is used to set the value of $d0$. $d3$ and $x3$ are used to calculate $c3$. We don't need an activation function because we work with linear units.
 
 #### Testing the network
 To test the RNN, we'll use a simple time-series dataset. 
@@ -294,9 +296,9 @@ In the above code;
 - We begin by creating rows of non-overlapping time steps for Keras model training. This is done in preparation for training with time-series data.
 - We create the RNN model and train.
 - Afterwards, we calculate the mean square error, which measures how far the actual values deviate from the forecast ones.
-- In the end, we view the result.
+- In the end, we plot the result using `plot_result()` mwethod.
 
-You can view the whole code [here](https://colab.research.google.com/drive/12qCImoXnP-WesLZXJZzRqZ0FMlsvEjwc?usp=sharing).
+You can run the above code [here](https://colab.research.google.com/drive/12qCImoXnP-WesLZXJZzRqZ0FMlsvEjwc?usp=sharing).
 
 ### Difference between RNN and Feed-forward neural network
 - In contrast to feedforward networks, recurrent neural networks feature a single weight parameter across all network layers. Reinforcement learning can still be achieved by adjusting these weights using backpropagation and gradient descent.
@@ -305,6 +307,8 @@ You can view the whole code [here](https://colab.research.google.com/drive/12qCI
 
 ### Conclusion
 In this tutorial, we learned about both feed-forward and recurrent neural networks. We also learned about their implementations using python language, and in addition, we covered their difference. 
+
+Find the whole code for this tutorial [here](https://github.com/vincentkims49/NeuralNetworks.git).
 
 Happy coding!
 
