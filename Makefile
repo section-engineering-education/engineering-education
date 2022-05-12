@@ -37,6 +37,9 @@ deploy:
 	docker run --env-file .env --rm --volume "$$(pwd)/public:/src/public" $(IMAGE_NAME) aws s3 sync --acl public-read --delete --exclude "docs/*" public/ s3://section-enged.section.io/
 	@rm .env
 
+deployKEI:
+	bash ./ci/kei-build-push.sh main
+
 deploy-beta:
 	@# capture AWS environment variables from the environment, and inject them into the container
 	@env | grep ^AWS > .env

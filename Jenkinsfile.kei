@@ -1,0 +1,34 @@
+#!groovy
+
+pipeline {
+  agent { 
+    label 'docker'
+    registryUrl 'https://hub.docker.com/u/hborrelli12'
+    registryCredentialsId 'HARRY_DOCKERHUB_CREDENTIALS'
+  }
+
+  options {
+    ansiColor('xterm')
+  }
+
+  environment {
+    AWS_DEFAULT_REGION = 'ap-southeast-2'
+  }
+
+  stages {
+
+    stage('Deploy') {
+      steps {
+        withCredentials([[
+          $class: 'AmazonWebServicesCredentialsBinding',
+          credentialsId: 'jenkins-section-website',
+          varaible: 'KEI_USER_TOKEN'
+        ]]) {
+          sh 'make build'
+          sh 'make generate'
+          sh 'make deployKEI'
+        }
+      }
+    }
+  }
+}

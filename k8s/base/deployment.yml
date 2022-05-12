@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: section-enged-deployment
+  labels:
+    app: section-enged
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: section-enged
+  template:
+    metadata:
+      labels:
+        app: section-enged
+    spec:
+      containers:
+        - name: section-enged
+          image: hborrelli12/section-enged:6ba2d
+          imagePullPolicy: Always
+          ports:
+          - containerPort: 3000
+          resources:
+            requests:
+              memory: ".5Gi"
+              cpu: "500m"
+            limits:
+              memory: ".5Gi"
+              cpu: "500m"
+          # livenessProbe:
+          #   httpGet:
+          #     path: /health
+          #     port: 3000
+          #   periodSeconds: 5
+          # readinessProbe:
+          #     httpGet:
+          #       path: /health
+          #       port: 3000
+          #     periodSeconds: 10
