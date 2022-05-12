@@ -18,9 +18,9 @@
               {{ if (gt (len .Params.images) 0) }}
               {{ if (index .Params.images 0).url }}
               {{ if hugo.Environment | eq "development" }}
-              <img src="{{ replace (index .Params.images 0).url "/engineering-education/" "/" }}" {{ if (index .Params.images 0).alt}} alt="{{ (index .Params.images 0).alt }}"{{ end }}>
+              <img width="282" height="188" src="{{ replace (index .Params.images 0).url "/engineering-education/" "/" }}" {{ if (index .Params.images 0).alt}} alt="{{ (index .Params.images 0).alt }}"{{ end }}>
               {{ else }}
-              <img src="{{ (index .Params.images 0).url }}" {{ if (index .Params.images 0).alt}} alt="{{ (index .Params.images 0).alt }}"{{ end }}>
+              <img width="282" height="188" src="{{ (index .Params.images 0).url }}" {{ if (index .Params.images 0).alt}} alt="{{ (index .Params.images 0).alt }}"{{ end }}>
               {{ end }}
               {{ end }}
               {{ end }}

@@ -18,7 +18,7 @@ We learned to implement algorithms from scratch and highlighted the reasons why 
 <!--more-->
 We created machine learning models in C++ which were not only cumbersome but missed out on a majority of aspects contained in Machine learning. 
 
-That article can be found [here](/engineering-ed/an-introduction-to-machine-learning-using-c++/).
+That article can be found [here](/engineering-education/an-introduction-to-machine-learning-using-c++/).
 
 Libraries enable the reuse of code for solving problems. Nowadays solutions to common problems come in form of libraries and packages which have been thoroughly tested and optimized. 
 

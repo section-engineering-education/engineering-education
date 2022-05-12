@@ -25,10 +25,6 @@
         padding: 20px 45px;
         width: 100%;
 
-        // &.-active {
-        //   @include button-green;
-        // }
-
         @include mq($from: $breakpoint-small) {
           width: 20%;
         }
@@ -40,10 +36,6 @@
         padding: 20px 45px;
         width: 100%;
         text-decoration: none;
-
-        // &.-active {
-        //   @include button-blue;
-        // }
 
         @include mq($from: $breakpoint-small) {
           width: 20%;
@@ -111,12 +103,12 @@
   }
 
   &-posts-container {
-    max-width: pxem(990);
+    max-width: pxem(1200);
+    padding: 0 30px;
   }
 
   &-posts-item {
     border-top: 1px solid $border-color;
-    margin: 0 5%;
 
     @include mq($from: 1020px ) {
       margin: 0;
@@ -142,10 +134,88 @@
 
     &-content {
       flex: 0 1 auto;
-      max-width: 100%;
+      max-width:100%;
 
       @include mq($from: $breakpoint-medium) {
         max-width: 67%;
+      }
+
+      @include mq($to: $breakpoint-medium) {
+        max-width: 100%;
+      }
+    }
+
+    &-insights-data {
+      display: flex;
+      flex-direction: row;
+      margin-top: 20px;
+
+      .data-point {
+        height: 50%;
+        text-align: center;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        color: $text-dark-40;
+        margin-right: 50px;
+
+        p {
+          font-size: 14px;
+          margin-right: 10px;
+        }
+
+        .icon {
+          width: 30px;
+          height: 30px;
+        }
+        
+        span {
+          display: block;
+          font-size: 18px;
+        }
+
+        &.page-views {
+          display: none;
+
+          &.visible {
+            display: flex;
+          }
+        }
+      }
+
+      @include mq($to: $breakpoint-medium) {
+        width: 100%;
+        flex-direction: row;
+        border-left: 0;
+        margin-top: 20px;
+
+        .data-point {
+          flex-direction: row;
+          padding: 10px 0;
+
+          span {
+            margin: 0 0 0 10px;
+          }
+        }
+      }
+
+      @include mq($to: $breakpoint-small) {
+        justify-content: space-between;
+        .data-point {
+          flex-direction: column;
+          margin-right: 0;
+
+          p, span {
+            margin: 0;
+          }
+        }
+      }
+
+    }
+    @include mq($to: $breakpoint-medium) {
+      &:hover {
+        box-shadow: unset;          
       }
     }
   }

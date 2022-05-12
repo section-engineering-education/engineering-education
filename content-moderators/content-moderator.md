@@ -20,13 +20,13 @@ They will:
 - assign open PRs out (if needed)
 - approve new peer reviewers (when needed - see docs)
 - approve new article topics (see docs)
-- merge fully polished PRs to EngEd site (publish/merge) [minimum 4-5 published weekly]
+- merge fully polished PRs to EngEd site (publish/merge), CM will go through list of "ready for final review" and publish the oldest ones in the queue [estimating a minimum of 30 total articles published weekly]
 - communicate with Section EngEd Program Managers on overall program status
-- help create community docs to guide and instruct new contributors and peer
-reviewers.
+- help create community docs to guide and instruct new contributors and peer reviewers.
 
 ### What is in it for the Moderator?
-- $200 a week retainer? (~10-12 hours a week time commitment)
+*update 12/12/21*
+- $225 a week retainer (~12-15 hours a week time commitment per CM)
 - will be able to approve future content steward (peer reviewers)
 - moderator role in the Peer Review Channel & EngEd Channel (Slack) - be able to respond and communicate messages to the EngEd community.
 - help create the next phases of the EngEd program

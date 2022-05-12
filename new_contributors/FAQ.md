@@ -3,6 +3,9 @@
 ### How do I suggest a topic to write about?
 We encourage all new contributors to go over our new contributor folder which has a list of resources to prepare to submit a new topic and article idea. We also suggest to review the most [recently published articles](https://www.section.io/engineering-education/) to avoid topic overlap (and to get a good sense on article style tonality, and quality that we are accepting) submit a topic using [this issue form](https://github.com/section-io/engineering-education/issues/new?assignees=&labels=topic+suggestion&template=enged-content-idea-suggestion.md&title=).
 
+### How do I submit a EngEd feature suggestion?
+To suggest a (potential) EngEd feature suggestion [fill this form out](https://github.com/section-engineering-education/engineering-education/issues/new?assignees=&labels=enhancement&template=enged-feature-suggestion.md&title=Feature+suggestion). 
+
 ### How do I submit my 1st article?
 Visit our step-by-step guide on [how to upload your 1st EngEd article](https://github.com/section-io/engineering-education/blob/master/new_contributors/UPLOAD_INSTRUCTIONS.md#how-to-upload-an-article-for-sections-engineering-education-program) to the GitHub repo.
 
@@ -11,7 +14,6 @@ Here is a link to a [short video](https://www.youtube.com/watch?v=nT8KGYVurIU&am
 
 ### How do GitHub forks work?
 Here is a link to a [short video](https://www.youtube.com/watch?v=nT8KGYVurIU&amp;t=47s) further explaining what a pull request is and how to fork a Github repository.
-
 
 ### How do I add my author page
 Include a short Author Biography (index.md file) and Headshot image (avatar file). Include these files in the [authors folder](https://github.com/section-engineering-education/engineering-education/tree/master/authors) within the GitHub repo via your forked repo similar to the article files. We want to credit you for your hard work.
@@ -37,7 +39,7 @@ The only requirement is that the article has to be at least 750 words, there is 
 **Articles should be a minimum of 750 words.**
 
 ### How does the revision process work?
-Articles with (little to no extra revisions needed) payout will be $100.00 USD ($150.00 USD for Tutorials)
+Articles with (little to no extra revisions needed) will recieve priorty in the queue.
 
 For the full details on our [review, approval, & payment processes](https://github.com/section-io/engineering-education/blob/master/new_contributors/CONTRIBUTING.md#review-approval--payment-processes) check out the provided link.
 
@@ -66,8 +68,8 @@ The position is a compensated position - 50 USD per successful article review.
 ### Are the positions voluntary or are Peer Reviewers compensated?
 We always encourage friendly reviews among the community to help each other out before article submission. Verified Peer Reviewers are paid $50.00 USD per successful article revision.
 
-### How often are article payouts?
-We typically send article payouts once a week (usually of Fridays) but that may vary depending on holidays, sick, or OOO (out-of-office) days.
+### Are articles published compensated?
+No. The value that the EngEd program is providing to students is that of career building, skill enrichments, community building, and portfolio that can be referenced and leveraged upon entering the workforce.
 
 ### Does Section provide revision services?
 We will look over the all articles that come in to ensure they are publish worthy - but our peer reviewer team is only looking to improve the content by making suggestions. 
@@ -75,4 +77,7 @@ For revisions services we recommend using a few of the [services we have vetted]
 
 ### Can we re-post our work elsewhere?  
 We ask that if you would like to repost your Section work elsewhere, that new work reference the original Section (EngEd) article. Adding a rel=canonical tag is the preferred path forward. This does **not** mean that published work on EngEd can be previosly published elsewhere - we still ask for original and unique work.
+
+### How do I respond to comments on my article?
+After you have published your article with us - be sure to check on your content periodically to respond to any comments or questions that the audience may post. Please [sign up with HyvorTalk](https://auth.hyvor.com/signup/?redirect=https%3A%2F%2Ftalk.hyvor.com%2Fapi%2Fembed%2Flogin%3FwebsiteId%3D5716%26pageId%3D31662502%26isSignup%3D%255Bobject%2520PointerEvent%255D%26isLogout%3Dfalse) to reply to any comments or questions left on your articles.
 

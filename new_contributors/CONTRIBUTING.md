@@ -1,12 +1,14 @@
 ## Contribution Guidelines
-Welcome to Section’s Engineering Education program. This program is dedicated to providing a community-generated pool of educational content that is useful for engineers of every level. 
+Welcome to Section’s Engineering Education program. This program is dedicated to providing a community that provides students/contributors a friendly and inviting place to contribute to, build up their skills, while growing their professional portfolios/profiles (upon entering the DEV career space). 
+
+- Students can contribute to the EngEd community generated pool of educational content that is useful for engineers of every level. 
 
 To begin, we’d recommend reviewing our most recently published content [here](www.section.io/engineering-education/) to get a sense of:
 
 - Article structures
+- Quality of articles we are looking for
 - Type of content that has been contributed (to help avoid topic overlap)
 - Topics you can begin working on
-- Quality of articles we are looking for
 
 Articles do not need to be Section-specific or strongly Section-related. This is not necessarily about Section or Edge Compute directly, but rather an effort to provide educational value to software developers within the diverse ecosystem of web technologies. 
 
@@ -22,8 +24,8 @@ In order to achieve a level of consistent style and increasingly elevated qualit
 - GitHub account (Please be sure to have a basic understanding of [GitHub and Gitflows.](https://www.youtube.com/watch?v=MnUd31TvBoU&t=510s) Eg: Pull requests, commits, merge, etc.
 - Text editor, such as [Visual Studio Code](https://code.visualstudio.com/), [Sublime Text](https://www.sublimetext.com/), [Atom](https://atom.io/)
 - Prepared Markdown (.md) file. (Note: All articles must be submitted in properly-formatted Markdown.)
-- Verified PayPal account. (At this time, we only service payments through PayPal. If you don’t have a PayPal account, please check whether [PayPal is available in your region](https://www.paypal.com/en/webapps/mpp/country-worldwide).) Otherwise, payouts may experience delays.
 - To ensure expedite reviews, publishing, and payouts for articles, we request that ***all first drafts submitted be error-free (pre-checked for English grammar, technically accurate, properly cited, formatted, etc.) and it be ready for publishing*** by meeting our suggested article guidelines as outlined below. 
+
 Here is a [free tool](https://writeandimprove.com/?lang=en-GB) to help improve your writing skills. Please be sure to go over our [resources page](https://github.com/section-engineering-education/engineering-education/blob/master/new_contributors/resources-page.md) to take a look at all the listed resources to help improve overall techinical writing abilities.)
 
 All contributors are expected to review and adhere to [Our Code of Conduct](https://github.com/section-io/engineering-education/blob/master/CODE_OF_CONDUCT.md) before submitting articles.
@@ -37,18 +39,12 @@ Below is an example article and some suggested templates to help get you started
 
 - [Example Article Submission](https://github.com/section-engineering-education/engineering-education/blob/master/new_contributors/example_article_submission.md): An example of a history of technology article
 
-- [How to Guide Template](https://github.com/section-engineering-education/engineering-education/blob/master/new_contributors/how-to-guide-template.md): A suggested structure for How to Guide articles
-
-- [Software Review Template](https://github.com/section-engineering-education/engineering-education/blob/master/new_contributors/software-review-template.md): A suggested structure for Software Review articles
-
-- [Tutorial Template](https://github.com/section-engineering-education/engineering-education/blob/master/new_contributors/tutorial-template.md): A suggested structure for Tutorial articles
-
-Once your topic has been approved and you have a final draft of your article ready to submit, follow these [step-by-step instructions](https://github.com/section-io/engineering-education/blob/master/UPLOAD_INSTRUCTIONS.md).The instructions walk through how to submit a PR (pull request) in Github with  your fully prepared article.
+Once your topic has been approved and you have a final draft of your article ready to submit, follow these [step-by-step instructions](https://github.com/section-engineering-education/engineering-education/blob/master/new_contributors/UPLOAD_INSTRUCTIONS.md).The instructions walk through how to submit a PR (pull request) in Github with  your fully prepared article.
 
 ## Submitting your article
-Only submit or create a PR (pull request) when your draft is completely polished and publish ready, (that is, the article could be published as is - take in mind this is an opportunity to create a presense in the larger developer community and your work may be seen by future potential employers). 
+Only submit or create a PR (pull request) when your draft is completely polished and publish ready, (that is, the article could be published as is - take in mind this is an opportunity to create a presence in the larger developer community and your work may be seen by future potential employers). 
 
-Once again you can follow these [step-by-step instructions](https://github.com/section-io/engineering-education/blob/master/UPLOAD_INSTRUCTIONS.md) once your article is ready to be published.
+Once again you can follow these [step-by-step instructions](https://github.com/section-engineering-education/engineering-education/blob/master/new_contributors/UPLOAD_INSTRUCTIONS.md) once your article is ready to be published.
 
 The instructions walk through how to submit a PR in GitHub with  your fully prepared article.
 
@@ -64,6 +60,21 @@ We suggest using [Quetext this is a free tool](https://www.quetext.com/) and has
 
 These guidelines are intended to help EngEd contributors grow as authors and to enrich the larger engineering community as a whole by continuing to create higher quality educational articles, tutorials, how-to’s,technology reviews, etc. 
 
+## EngEd Community Contribution Initiative
+One of our primary goals for the EngEd community is to provide students/contributors a friendly and inviting place to contribute to real-world projects to help students build up their professional portfolios and profiles (upon entering the DEV career space).
+
+We have created a process for the EngEd community to suggest, contribute, add, and build features for the EngEd community. By allowing the community to build the features/enhancements they want to see in the EngEd program, we can create the best community.
+
+This initiative works on increasing and building upon the skills the community already has in a real world setting, and having a place to showcase those achievements and accomplishments (via the EngEd content program).
+
+This Contribution Initiative is strictly restricted to the EngEd community.
+
+## EngEd Community Contribution Submission Process
+1. To submit an EngEd feature contribution for consideration, be sure to first check [past feature suggestons](https://github.com/section-engineering-education/engineering-education/issues?q=is%3Aopen+is%3Aissue+label%3Aenhancement) to ensure relevance and prevent overlap. **Hint**: Use the this EngEd Content Suggestion form to propose article topic for approval and get feedback on topic ideas. [*View content form here*](https://github.com/section-engineering-education/engineering-education/issues/new?assignees=&labels=enhancement&template=enged-feature-suggestion.md&title=Feature+suggestion)
+2. When you're ready to submit a suggestion for review, submit your issue with details on what you would like to see added to the EngEd application/program. 
+3. Suggestions will be reviewed by the Section team for relevance, and quality. 
+4. Once suggested features have been incorporated into our backlog, the Section team will approve your issue and create a pull request to be worked on by the EngEd community.
+
 ## Communicating your key takeaways
 Articles should be clear, accurate, and fully explained. We are more interested in substance than length, and supporting examples are always encouraged. At the same time, articles that include mostly code with very little narrative lack sufficient depth and guidance for the audience to fully grasp important concepts.
 
@@ -78,27 +89,21 @@ If your article is about serving ML models with Django, then the reader should h
 
 The details your article gives should help further grow the readers’ skills as they practice on their own projects.
 ```
-## Review, approval, & payment processes
+## Review process
 Once you have opened a PR with your fully prepared article and accompanying images (according to the provided instructions), it enters a queue of articles to be reviewed by our technical review committee. Any required edits will be requested via comments within the PR in GitHub.  Articles will either be approved (for publishing) or sent back with requested revisions. 
 
 Note: Articles requiring very few edits will be given priority in the review queue, and **we reserve the right to refuse any articles that do not adhere to quality standards.** PRs with no response from members (comments, edits) after a period of 10 days will be closed (but are able to be reopened if needed).
 
 As a community, we are continually striving to add value to our content pool through trusted pieces of content that help enrich the larger engineering community.
 
-To continue increasing that level of quality and value for the community - we’d like to notify everyone of an update in the payout structure. *3/3/21*
+Updated to continue increasing that level of quality and value for the community - we’d like to notify everyone of an update in the payout structure. *3/3/21*
 
-Over the next few months, we will publish the first 60 approved articles within the month (i.e. 60 articles per month).
 
-Our new payout structure will be:
-- $150 for tutorials
-- $100 for non-tutorial content
-- $50/article for peer reviews
+
 
 Updates to review processes:
 We are introducing an [improved topic suggestion form](https://github.com/section-engineering-education/engineering-education/issues/new?assignees=&labels=topic+suggestion&template=enged-content-idea-suggestion.md&title=) that will gather more developed details of your content idea.
 Acceptance of article ideas will consider originality, expected value for readers, overlap with existing content, and quality of the topic outline provided.
-
-Our pay structure is meant to incentivize contributors who submit polished (and near-ready to be published) articles consistently. 
 
 Articles are expected to be clearly understood, well-written, pre-checked for English grammatical issues, and technically accurate (with code tested).
 

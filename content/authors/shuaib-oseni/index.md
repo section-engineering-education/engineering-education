@@ -1,5 +1,8 @@
 ---
 title: Shuaib Oseni
 type: authors
+images:
+  - url: /engineering-education/authors/shuaib-oseni/avatar.jpg 
+skills: ["Penetration Testing", "Django", "Web Development"]
 ---
-Shuaib is a cyber-security student and web developer. He is passionate about computer security and STEM education. He spends his free time volunteering and watching movies.
+Shuaib Oseni has a keen interest in web application penetration testing. He is an occassional web developer and volunteer advocate. He also loves getting involved in cybersecurity awareness.

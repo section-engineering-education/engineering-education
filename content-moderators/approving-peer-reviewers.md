@@ -6,19 +6,46 @@ A lot of our students may speak English as a second language - which is perfectl
 
 That is why we try to only train veteran authors - who are familiar with the level of quality we are looking for to help others get their work (portfolios) published.
 
-We can advise any potential Peer Reviewers to go through our resources page to see what resources can be shared with students who may need them. 
+### Approval Process
+If a student show interest in becoming a peer reviewer. We should 1st see how many articles/tutorials the contributors has published with us. 3-4 is minimum number of articles needed, to able to determine that the student is familiar with our EngEd process and how to contribute/submit an article. 
 
-We should see how many articles/tutorials the contributors has published with us. 3-4 is minimum number of articles to able to determine that the student is familiar with our EngEd process and how to contribute/submit an article. 
+We advise any potential Peer Reviewers to go through our entire resources page to see what resources are available and what they can share with students who may need them during a review.
 
-If we determine that the contributor is an ideal candidate to become a Peer Reviewer we can share our peer reviewer folder documents to help them start the onboarding process.
+### Tryout
+We recently created the "tryout label" to let the team know that these students have NOT done a test review yet BUT have expressed interest in performing a test review to join the PR team. 
+This new "tryout" extra step should help identify quality reviewers. By checking the quality of latest incoming article before allowing the student to do a test is should help us better evaluate potential peer reviewers.
 
-We can either look back at past published articles to gauge quality - or ask the student to perform a test review. 
+Current labels:
+- *Tryout label: Student is interested in doing a test review.*
+- *Test review label: student is in the process of doing a test review to see if they are an ideal addition to the PR team.*
 
-With a test review we ask the potential peer reviewer to go through the list of pull requests (PRs) and find one (the older the better since we typically review 1st come 1st serve) they would like to review.
+The final decisions will be voted on by the CM team.
 
-We can add the "test reviewer" label to the PR via GitHub to help us keep track. 
+### Test Review
+If we determine that the contributor is an ideal candidate to perform a test review we share our peer reviewer folder documents to help them start the onboarding process. 
+
+>NOTE: In some case we can either look back at past published articles to gauge quality - or ask the student to perform a test review w/o a tryout phase.
+
+To perform a test review we ask the potential peer reviewer to go through the list of pull requests (PRs) and find one (**the older the better since we typically review 1st come 1st serve**) they would like to review.
+
+We then add the "test reviewer" label to the PR via GitHub to help us keep track. 
 
 After the test review - we can go over the PR with a Final Review and see where the student could improve their reviews. 
+
+### Test Review Pull Request Merged 
+The Content Moderators who are doing final reviews that week - will be responsible for reviewing, analyzing, and approving/denying the potential reviewer.
+
+If the test review was NOT passed - the student can try again (at the discretion of the CM) if the review was on the fence. (3 reviews Max - if the student needs more test reviews than that - they can try out again at a later date when we need more peer reviewers.)
+
+The final decisions will be voted on by the Content Moderator team. 
+
+Criteria to approve a potential peer reviewer:
+- Attention to detail (grammar, formatting, etc.)
+- Pull requests are formatted correctly
+- Checking for quality content (closes sub par content)
+- Provides much value to the CM team
+- Improves quality of incoming content and great mentor to authors
+- Understands front matter
 
 Once we have detrimined that the student is comfortable with the material provided and is ready to do real reviews - we can ping Hector or Molly to get the student set up with the proper GitHub permissions and invited into the proper Slack channel(s).
 

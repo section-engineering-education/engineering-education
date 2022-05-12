@@ -28,6 +28,7 @@
 | Miller Juma | [EngEd Author Page](https://www.section.io/engineering-education/authors/miller-juma/) | [GitHub Profile](https://github.com/jumamiller) | - PHP - JavaScript - Laravel - Angular Web Development |
 | Monica Masae | [EngEd Author Page](https://www.section.io/engineering-education/authors/monica-masae/) | [GitHub Profile](https://github.com/M0nicah) | - JavaScript - Web Development |
 | John Amiscaray | [EngEd Author Page](https://www.section.io/engineering-education/authors/john-amiscaray/) | [Github Profile](https://github.com/john-amiscaray) | - Spring Framework - Java - Angular - Javascript - Web Development |
+| Jethro Magaji | [EngEd Author Page](https://www.section.io/engineering-education/authors/jethro-magaji/) | [Github Profile](https://github.com/jethro-magaji) | - Web Development - Android - Javascript - Java - Blockchain - Python - React - Flutter - AWS - Kubernetes - Docker |
 |  - |  - |  - | -|
 |  - |  - |  - | -|
 |  - |  - |  - | -|

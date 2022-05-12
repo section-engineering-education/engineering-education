@@ -7,10 +7,11 @@
 {{ $vue := resources.Get "js/vendor/vue.js" }}
 {{ $vuepagination := resources.Get "js/vendor/vuepagination.js" }}
 {{ $search := resources.Get "js/search.js" }}
+{{ $stickyAuthorSidebar := resources.Get "js/stickyAuthorSidebarHandler.js" }}
 
 {{ $main := resources.Get "js/app.js" }}
 
-{{ $defaultJS := slice $jquery $lunr $aos $axios $slick $lozad $main | resources.Concat "js/app.js" | resources.Minify }}
+{{ $defaultJS := slice $jquery $lunr $aos $axios $slick $lozad $main $stickyAuthorSidebar | resources.Concat "js/app.js" | resources.Minify }}
 
 {{ $secureJS := $defaultJS | resources.Fingerprint "sha512" }}
 <script type="text/javascript" src="{{ $secureJS.Permalink }}" integrity="{{ $secureJS.Data.Integrity }}"></script>
@@ -20,6 +21,10 @@
 {{ $secureSearchJS := $searchJS | resources.Fingerprint "sha512" }}
 <script type="text/javascript" src="{{ $secureSearchJS.Permalink }}" integrity="{{ $secureSearchJS.Data.Integrity }}"></script>
 
-<script async>(function(s,u,m,o,j,v){j=u.createElement(m);v=u.getElementsByTagName(m)[0];j.async=1;j.src=o;j.dataset.sumoSiteId='ec63874eefe248a0d5fe95d15859a8ad72d2179845ec3154e593a3ef56ec6d2d';v.parentNode.insertBefore(j,v)})(window,document,'script','//load.sumo.com/');</script>
-
 {{- block "additionalFooterScripts" . -}}{{- end -}}
+
+{{if eq .Params.layout "engineering-education" }}
+  <!-- Go to www.addthis.com/dashboard to customize your tools -->
+  <script defer type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5c813f776d53bc87"></script>
+{{end}}
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>

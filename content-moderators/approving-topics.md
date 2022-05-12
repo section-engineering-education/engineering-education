@@ -30,3 +30,8 @@ We are looking for content that solves pain points for developers in the real wo
 ### Topic Approval Frequency
 Our goal should be similar to our PR (touch point) goal which is to keep the queue (in this case meaning the topic forms waiting for approval) down to 48hrs.
 A student should hear back from us within 48hrs - we are working to improve that.
+
+### Inactive Topic Closure  
+The content moderator that is responsible for approving of the topics (for that week) is also responsible for going through the list of topic suggestions to close any inactive topic that have been approved but has had no Pull Request attached. Any topic suggestion that has been approved for more than 20 days and has not progressed should be closed. 
+
+These topic suggestions are closed to make room in the queue - and can be re-opened anytime at a later date.

@@ -5,7 +5,7 @@ published: true
 url: /how-to-troubleshoot-and-monitor-a-database/
 title: Troubleshooting and Monitoring a Database
 description: This article will guide you on how to monitor and troubleshoot databases. This process helps in the identification and prevention of errors
-author: extravaganza-77
+author: newton-osage
 date: 2021-09-28T00:00:00-01:30
 topics: []
 excerpt_separator: <!--more-->

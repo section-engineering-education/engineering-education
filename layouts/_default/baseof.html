@@ -16,7 +16,7 @@
 
       {{- block "navigation" . -}}
         {{/* Use this block to override the navigation for any layout */}}
-          {{- partial "components/header" . -}}
+          {{- partialCached "components/header" . .IsHome -}}
       {{- end -}}
 
       <div class="main-wrapper fill-white xs-mt-80">
@@ -27,13 +27,18 @@
 
       {{- block "footer" . -}}
         {{/* Use this block to override the footer for any layout */}}
-        {{- partial "components/footer-collapsible" . -}}
-        {{- partial "components/footer" . -}}
+        {{- partialCached "components/footer" . .Type -}}
       {{- end -}}
 
       {{- block "scripts" . -}}
       {{/* Use this block to override the scripts for any layout */}}
-      {{- partial "footer-scripts" . -}}
+
+      {{ $paramsLayout := "null" }}
+      {{ if isset .Params "layout" }}
+      {{ $paramsLayout = .Params.layout }}
+      {{ end }}
+      
+      {{- partialCached "footer-scripts" . $paramsLayout -}}
     {{- end -}}
 
   </body>
