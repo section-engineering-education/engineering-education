@@ -14,11 +14,11 @@ images:
   - url: /engineering-education/how-to-build-templates-for-django-applications-with-htmx/hero.jpg
     alt: How to Build templates for Django Applications with HTMX Hero Image
 ---
-Did you know it is possible to use AJAX without writing a single line of JavaScript code? Are you a Django developer that is not really familiar with JavaScript and will like to display components of your application asynchronously?
+Did you know it is possible to use AJAX without writing a single line of JavaScript code? Are you a Django developer who is not really familiar with JavaScript and who would like to display components of your application asynchronously?
 <!--more-->
-If these questions have come to your mind, you are in the right place. In this article, I will build a simple Django application that creates, deletes content from the database, and displays the current content asynchronously without the page refreshing. 
+If you've asked these questions before, then you are in the right place. In this article, I will build a simple Django application that creates, deletes content from the database, and displays the current content asynchronously without the page refreshing.
 
-This is important if you don't want to go through the stress of using a library like React or Vue. The project built in this tutorial can be found on [GitHub](https://github.com/khabdrick/django-htmx-tutorial).
+This is important if you don’t want to go through the stress of using a library like React or Vue. We can find the project built in this tutorial on  [GitHub](https://github.com/khabdrick/django-htmx-tutorial).
 
 #### Prerequisites
 - Basic understanding of Django
