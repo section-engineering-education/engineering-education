@@ -1,7 +1,7 @@
 ### Introduction
-Data encryption standard (DES) had a significant security crisis making the invention of a more intense encryption tool necessary. The security status led to the development of Rijndael Key by Vincent Rijmen and Joan Daemen, who were cryptologists from Belgium. Rijndael is a block cipher that uses a symmetric key encryption technique. It employs three discrete and invertible layers: `Linear Mix Transform`, `Non-linear Transform` and `Key Addition Transform`.
+Data encryption standard (DES) had a significant security crisis making the invention of a more intense encryption tool necessary. The security status led to the development of Rijndael Key by Vincent Rijmen and Joan Daemen, who were cryptologists from Belgium. Rijndael is a block cipher that uses a symmetric key encryption technique. It employs three discrete and invertible layers: `Linear Mix Transform`, `Non-linear Transform`, and `Key Addition Transform`.
 
-In C#, Rijndael Key supports key lengths of 128, 192, and 256 bits and blocks of 128(default), 192, and 256 bits. In this tutorial, we will discuss about encrypting and decrypting a file using `AES/Rijndael Key` and its importance.
+In C#, Rijndael Key supports key lengths of 128, 192, and 256 bits and blocks of 128(default), 192, and 256 bits. In this tutorial, we will discuss encrypting and decrypting a file using `AES/Rijndael Key` and its importance.
 
 ### Table of contents
 - [Introduction](#introduction)
@@ -139,12 +139,12 @@ Output:
 section engineering education
 ```
 
-The encrypted string `bIwl1Y/220KPke+MzXxKErqBT5jkOEbDJnVEPxCzs7I=` is converted to its original meaning `section engineering education` using `publickey` and `secretkey` keys.
+The encrypted string `bIwl1Y/220KPke+MzXxKErqBT5jkOEbDJnVEPxCzs7I=` is converted into its original meaning `section engineering education` using `publickey` and `secretkey` keys.
 
-`Symmetric Cryptography Algorithms` are used in data encryption and decryption. Symmetric Cryptography Algorithms use one key and store large data volumes, thus appropriate for use in DES and Rijndael platforms. `Asymmetric keys` use two keys for encryption and decryption, i.e., private and public keys. The public key encrypts data, whereas the private key decrypts data. `RSA` and `digital` signatures are a few examples of asymmetric encryption using asymmetric keys.
+`Symmetric Cryptography Algorithms` are used in data encryption and decryption. Symmetric Cryptography Algorithms use one key and store large data volumes, thus appropriate for DES and Rijndael platforms. `Asymmetric keys` use two keys for encryption and decryption, i.e., private and public keys. The public key encrypts data, whereas the private key decrypts data. `RSA` and `digital` signatures are a few examples of asymmetric encryption using asymmetric keys.
 
 ### Adding encryption to a project in C#
-We will learn how to add encryption to a C# project or any .NET platform in the following illustrations. The example below shows how easy it is to use the functions provided.  
+In the following illustrations, we will learn how to add encryption to a C# project or any. NET platform. The example below shows how easy it is to use the functions provided.  
 
 Encryption formula:
 
@@ -168,7 +168,7 @@ Rijndael class creates new objects such as a key and an initialization vector. W
 Lastly, decryption conducts the stream transformation and generates the encryption streams. Data is written to the stream, and an encrypted byte is returned from the memory stream.
 
 ### Asymmetric and symmetric encryption
-Here we will be contrasting asymmetric and symmetric encryption:
+Here we will contrast asymmetric and symmetric encryption:
 
 1. Small ciphertext is used in the symmetric key, while the asymmetric process requires a larger ciphertext than the file used. 
 2. The size of data used in symmetric encryption carries extensive data size, whereas small data are employed in asymmetric encryption.
