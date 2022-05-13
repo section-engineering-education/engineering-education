@@ -23,7 +23,7 @@ pipeline {
           credentialsId: 'jenkins-section-website',
         ],
         usernamePassword(credentialsId: 'HARRY_DOCKER_HUB_USER', usernameVariable: 'DOCKER_USERNAME', passwordVariable: 'DOCKER_PASSWORD'),
-        string(credentialsId: 'KEI_USER_TOKEN',
+        string(credentialsId: 'www.section.io-kei-user-token',
           variable: 'KEI_USER_TOKEN')
         ]) {
           // echo "KEI_USER_TOKEN: ${env.KEI_USER_TOKEN}"
