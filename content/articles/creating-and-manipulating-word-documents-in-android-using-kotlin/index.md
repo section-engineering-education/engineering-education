@@ -428,11 +428,11 @@ class MainActivity : AppCompatActivity() {
 
 We get this when running the app.
 
-![App screenshot](/engineering-education/android-apache-poi-word/screen.png)
+![App screenshot](/engineering-education/creating-and-manipulating-word-documents-in-android-using-kotlin/screen.png)
 
 To access the word document created, open the **Device Explorer** using your IDE and then navigate to your app’s data location (`View Tab -> Tool Windows -> Device File Explorer -> data > your-package-name -> files`). It should resemble the screenshot below.
 
-![Doc screenshot](/engineering-education/android-apache-poi-word/shot-doc.png)
+![Doc screenshot](/engineering-education/creating-and-manipulating-word-documents-in-android-using-kotlin/shot-doc.png)
 
 Check this [GitHub repository](https://github.com/munubi254/apache-word-android) for the code.
 
@@ -441,7 +441,7 @@ That was it. This library contains numerous methods which can't be exhausted in 
 
 You have to explore the methods on your own. The IDEs I pointed out initially have intelligent capabilities that allow you to check the library's classes, methods, and descriptions. You only have to hover on the method, and a pop-up is displayed. There’s a `localhost` link section which you can click, and a browser tab is opened, giving you all the methods and classes for the code you hovered through. Check the screenshot below.
 
-![popup](/engineering-education/android-apache-poi-word/shot-conc.png)
+![popup](/engineering-education/creating-and-manipulating-word-documents-in-android-using-kotlin/shot-conc.png)
 
 Happy coding!
 
