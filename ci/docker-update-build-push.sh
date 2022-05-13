@@ -77,7 +77,8 @@ main () {
     fi
     docker_args+=(--platform=linux/amd64)
   fi
-  docker image build "${docker_args[@]}" --tag "${full_image_name}" --file "${image_dir}/${dockerfilename}" "${image_dir}"
+
+  docker image build --memory="1g" "${docker_args[@]}" --tag "${full_image_name}" --file "${image_dir}/${dockerfilename}" "${image_dir}"
 
   if [ "$skip_push" != "true" ]; then
     # Push to docker hub.
