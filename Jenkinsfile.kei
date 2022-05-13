@@ -3,8 +3,6 @@
 pipeline {
   agent { 
     label 'docker'
-    registryUrl 'https://hub.docker.com/u/hborrelli12'
-    registryCredentialsId 'HARRY_DOCKERHUB_CREDENTIALS'
   }
 
   options {
@@ -18,11 +16,15 @@ pipeline {
   stages {
 
     stage('Deploy') {
+      environment { 
+        registryUrl = 'hborrelli12' 
+        KEI_USER_TOKEN = credentials('KEI_USER_TOKEN') 
+        registryCredentialsId = credentials('HARRY_DOCKERHUB_CREDENTIALS') 
+      }
       steps {
         withCredentials([[
           $class: 'AmazonWebServicesCredentialsBinding',
           credentialsId: 'jenkins-section-website',
-          varaible: 'KEI_USER_TOKEN'
         ]]) {
           sh 'make build'
           sh 'make generate'
