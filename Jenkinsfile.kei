@@ -22,7 +22,7 @@ pipeline {
           $class: 'AmazonWebServicesCredentialsBinding',
           credentialsId: 'jenkins-section-website',
         ],
-        usernamePassword(credentialsId: 'HARRY_DOCKERHUB_CREDENTIALS', usernameVariable: 'DOCKER_USERNAME', passwordVariable: 'DOCKER_PASSWORD'),
+        usernamePassword(credentialsId: 'HARRY_DOCKER_HUB_USER', usernameVariable: 'DOCKER_USERNAME', passwordVariable: 'DOCKER_PASSWORD'),
         string(credentialsId: 'KEI_USER_TOKEN',
           variable: 'KEI_USER_TOKEN')
         ]) {
