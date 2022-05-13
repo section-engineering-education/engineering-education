@@ -26,7 +26,7 @@ pipeline {
           credentialsId: 'jenkins-section-website',
           variable: 'KEI_USER_TOKEN'
         ]]) {
-          sh 'KEI_USER_TOKEN: ${KEI_USER_TOKEN}'
+          echo 'KEI_USER_TOKEN: ${KEI_USER_TOKEN}'
           sh 'make build'
           sh 'make generate'
           sh 'make deployKEI'
