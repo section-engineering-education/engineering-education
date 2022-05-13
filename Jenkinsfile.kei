@@ -16,12 +16,12 @@ pipeline {
   stages {
 
     stage('Deploy') {
-      environment { 
-        registryUrl = 'hborrelli12' 
-        KEI_USER_TOKEN = credentials('KEI_USER_TOKEN') 
-        registryCredentialsId = credentials('HARRY_DOCKERHUB_CREDENTIALS') 
-      }
       steps {
+        environment { 
+          registryUrl = 'hborrelli12' 
+          KEI_USER_TOKEN = credentials('KEI_USER_TOKEN') 
+          registryCredentialsId = credentials('HARRY_DOCKERHUB_CREDENTIALS') 
+        }
         withCredentials([[
           $class: 'AmazonWebServicesCredentialsBinding',
           credentialsId: 'jenkins-section-website',

@@ -25,10 +25,6 @@ setCluster() {
   --server=https://1723596800.kube.api.section.io/ \
   --certificate-authority=$cert
 
-  # 
-  # Add $KEI_USER_TOKEN to repo....
-  # Will this work as students will be creating PRs from forked repos???
-  # 
   kubectl config set-credentials section-user --token=$KEI_USER_TOKEN
 
   kubectl config set-context my-section-application --cluster=section --user=section-user --namespace=default
