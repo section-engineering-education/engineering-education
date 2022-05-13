@@ -18,7 +18,7 @@ pipeline {
     stage('Deploy') {
       environment { 
         registryUrl = 'hborrelli12' 
-        registryCredentialsId = credentials('HARRY_DOCKERHUB_CREDENTIALS') 
+        registryCredentialsId = 'HARRY_DOCKERHUB_CREDENTIALS' 
       }
       steps {
         withCredentials([[
