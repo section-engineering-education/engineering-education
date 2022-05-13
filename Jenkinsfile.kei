@@ -20,16 +20,20 @@ pipeline {
         KEI_USER_TOKEN: credentials('KEI_USER_TOKEN')
       }
       steps {
-        docker.withRegistry('https://hub.docker.com/hborrelli12', 'HARRY_DOCKERHUB_CREDENTIALS') {
-          withCredentials([[
-            $class: 'AmazonWebServicesCredentialsBinding',
-            credentialsId: 'jenkins-section-website',
-          ]]) {
-            echo "KEI_USER_TOKEN: ${env.KEI_USER_TOKEN}"
-            sh 'make build'
-            sh 'make generate'
-            sh 'make deployKEI'
-          }
+        withCredentials([
+        [
+          $class: 'AmazonWebServicesCredentialsBinding',
+          credentialsId: 'jenkins-section-website',
+        ],
+        [
+          usernamePassword(credentialsId: 'HARRY_DOCKERHUB_CREDENTIALS', usernameVariable: 'DOCKER_USERNAME', passwordVariable: 'DOCKER_PASSWORD')
+        ]
+        ]) {
+          // echo "KEI_USER_TOKEN: ${env.KEI_USER_TOKEN}"
+          sh 'docker login https://hub.docker.com/hborrelli12 --username=$DOCKER_USERNAME --password=$DOCKER_PASSWORD'
+          sh 'make build'
+          sh 'make generate'
+          sh 'make deployKEI'
         }
       }
     }
