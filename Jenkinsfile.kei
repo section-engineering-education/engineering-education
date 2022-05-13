@@ -16,18 +16,15 @@ pipeline {
   stages {
 
     stage('Deploy') {
-      environment { 
-        KEI_USER_TOKEN: credentials('KEI_USER_TOKEN')
-      }
       steps {
         withCredentials([
         [
           $class: 'AmazonWebServicesCredentialsBinding',
           credentialsId: 'jenkins-section-website',
         ],
-        [
-          usernamePassword(credentialsId: 'HARRY_DOCKERHUB_CREDENTIALS', usernameVariable: 'DOCKER_USERNAME', passwordVariable: 'DOCKER_PASSWORD')
-        ]
+        usernamePassword(credentialsId: 'HARRY_DOCKERHUB_CREDENTIALS', usernameVariable: 'DOCKER_USERNAME', passwordVariable: 'DOCKER_PASSWORD'),
+        string(credentialsId: 'KEI_USER_TOKEN',
+          variable: 'KEI_USER_TOKEN')
         ]) {
           // echo "KEI_USER_TOKEN: ${env.KEI_USER_TOKEN}"
           sh 'docker login https://hub.docker.com/hborrelli12 --username=$DOCKER_USERNAME --password=$DOCKER_PASSWORD'
