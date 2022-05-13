@@ -40,13 +40,13 @@ To set up Firebase go to the [Firebase Console](https://console.firebase.google.
 
 After successfully creating your Firebase Android app. Go to the menu in the dashboard and select `Storage` and select `Get Started` as shown below:
 
-![Getting started with Firebase Storage](./get-started.png)
+![Getting started with Firebase Storage](\engineering-education\content\articles\file-upload-compression-and-encryption-using-aes-algorithm-in-flutter-applications\get-started.png)
 
 Select to start in test mode and select the location of your Firebase server and click done.
 
 After the process is complete, go to the `Rules` tab and the change the rules as shown below:
 
-![Firebase Storage Rules](./Firebase-Storage-Rules.png)
+![Firebase Storage Rules](\engineering-education\content\articles\file-upload-compression-and-encryption-using-aes-algorithm-in-flutter-applications\Firebase-Storage-Rules.png)
 
 This rule is not recommended when on production mode. It makes your data insecure.
 
@@ -537,7 +537,7 @@ A new album is created by the name provided and the image is saved there.
 
 This is the final output when we run the application:
 
-![Image Screen](./image-screen.gif)
+![Image Screen](\engineering-education\content\articles\file-upload-compression-and-encryption-using-aes-algorithm-in-flutter-applications\image-screen.gif)
 
 #### Video Screen
 
@@ -734,7 +734,7 @@ videoFile = File(result.file!.path);
 
 This is the final output when we run the application:
 
-![Video Screen](./video-screen.gif)
+![Video Screen](\engineering-education\content\articles\file-upload-compression-and-encryption-using-aes-algorithm-in-flutter-applications\video-screen.gif)
 
 #### Document Screen
 
@@ -887,7 +887,7 @@ await FileSaver.instance.saveAs(fileName, result!, "aes", MimeType.OTHER); //Sav
 
 This is the final output when we run the application:
 
-![Document Screen](./document-screen.gif)
+![Document Screen](\engineering-education\content\articles\file-upload-compression-and-encryption-using-aes-algorithm-in-flutter-applications\document-screen.gif)
 
 #### main.dart
 
