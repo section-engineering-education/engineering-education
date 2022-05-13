@@ -20,7 +20,6 @@ A portfolio is a collection of photos or photographs of examples of your works u
 <!-- more -->
 
 ### What Is Threejs
-
 Three.js is a JavaScript framework that allows you to quickly build a 3D or 2D graphic on your web page. With Three.js, we don't have to use  WebGL directly. It's an abstract layer built on WebGL to make it easier to use. Anyone can use a web browser to view 3D graphics without downloading any extra frameworks. Since Three.js is built on JavaScript, adding interactivity between 3D objects and user interfaces is quite simple. This makes Three.js ideal for creating 3D games on the web platform. It also offers exceptional features such as effects, scenes, cameras, etc.
 
 Three.js has been around for a long time. To understand Three.js, we must first understand what WebGL is. WebGL is a JavaScript API for generating high-performance interactive 3D and 2D graphics. WebGL can be used without any plug-ins in any supported web browser. WebGL is based on OpenGL ES (embedded systems). The main drawback of WebGL is that the application development has extensive and heavy code. You can check out their [documentation to know more](https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API).
@@ -30,7 +29,6 @@ Three.js allows you to write short lines of code. With Three.js, you can create 
 The main limitation of using Three.js is the performance. We don’t have the same performance between a native application and a web application with WebGL.
 
 ### What Is Vitejs?
-
 It's a JavaScript development server that significantly improves the frontend development experience. So we can say it is a build tool for your development. It takes your code and transforms it into something that your browser understands.
 
 Vite allows you to have a development server running. It also handles and refreshes your files based on what has changed. This process is done extremely fast to reflect your changes on the browser. Other features include:
@@ -41,14 +39,12 @@ Vite allows you to have a development server running. It also handles and refres
 - Advance configuration.
 
 ### Prerequisites
-
 To follow along with this guide, you need to have:
 
 - Basic understanding of the JavaScript programming language.
 - A set of image templates
 
 ### Building The Portfolio
-
 First, navigate to the folder where you want your project to live and run the following command:
 
 ```bash
@@ -479,8 +475,16 @@ Check out the result in our browser.
 We have created a portfolio website using Three.js. You can go ahead and add more Three.js features.
 
 ### Conclusion
+This article discussed what Three.js is and what it can be used for, its relationship with WebGL. We also talked briefly about some terms and concepts while building our portfolio project. I hope you enjoyed this article. Here’s a link to the [GitHub](https://github.com/oyedeletemitope/Build-a-portfolio-website-with-vite-and-threejs) repository for this project. 
 
-This article discussed what Three.js is and what it can be used for, its relationship with WebGL. We also talked briefly about some terms and concepts while building our portfolio project. I hope you enjoyed this article. Here’s a link to the [GitHub](https://github.com/oyedeletemitope/Build-a-portfolio-website-with-vite-and-threejs) repository for this project. Please share if you find this helpful. Happy coding!
+Please share if you find this helpful. 
+
+Happy coding!
+
+### References
+- [Three.js Beginner’s Tutorial](https://www.youtube.com/watch?v=Q7AOvWpIVHU)
+- [WebGL Docs](https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API)
+- [Threejs Docs](https://threejs.org/)
 
 ---
 Peer Review Contributions by: [Joseph Chege](/engineering-education/authors/joseph-chege/)

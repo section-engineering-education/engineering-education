@@ -5,4 +5,4 @@ twitter: https://twitter.com/ndonga_raphael
 images:
   - url: /engineering-education/authors/raphael-ndonga/avatar.jpg 
 ---
-Raphael Ndonga is an Android Developer, Kotlin specialist. He is currently undertaking Computer Science at JKUAT University in Kenya. He is very passionate about building awesome software and contributing to open source.
+Raphael Ndonga is focused on building the future Web using Blockchain technologies. Developing Smart Contracts for the Ethereum blockchain is my passion. Former Android Developer. Forever a Problem Solver.

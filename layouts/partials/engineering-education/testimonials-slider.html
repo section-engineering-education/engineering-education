@@ -1,0 +1,23 @@
+<section class="testimonials-wrapper xs-pt-50 xs-pb-50 xs-mt-50 xs-mb-50">
+  <div class="content-margins">
+    <div class="testimonials-header text-center">
+      <h2 class="title-3 xs-mb-20">Community testimonials</h2>
+      <p class="text-18-regular">Real input from community members on how the EngEd program has contributed to their development career journey.</p>
+    </div>
+    <div class="testimonials-slider">
+      {{ range $index, $slide := .context.Site.Data.testimonialsData.testimonials }}
+        <div class="testimonial">
+          <div class="testimonial-image">
+            <img src="{{ if eq site.Params.env "local" }}{{ $slide.image }}{{ else }}/engineering-education{{ $slide.image }}{{ end }}" alt="{{ $slide.image }} Testimonial." />
+          </div>
+          <div class="testimonial-content">
+            <p class="testimonial-text text-15-medium">"{{ $slide.testimonial }}"</p>
+            <h4 class="author-name"><a href="{{ if eq site.Params.env "local" }}{{ $slide.profileUrl }}{{ else }}/engineering-education{{ $slide.profileUrl }}{{ end }}">{{ $slide.name }}</a></h4>
+            <p class="roles">{{ delimit $slide.roles " / " }}</span>
+            <p class="location">{{ $slide.location }}</span>
+          </div>
+        </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
