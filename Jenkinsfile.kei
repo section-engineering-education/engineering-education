@@ -17,14 +17,14 @@ pipeline {
 
     stage('Deploy') {
       environment { 
-        variable: 'KEI_USER_TOKEN'
+        KEI_USER_TOKEN: credentials('KEI_USER_TOKEN')
       }
       steps {
-        withCredentials([[
-          $class: 'AmazonWebServicesCredentialsBinding',
-          credentialsId: 'jenkins-section-website',
-        ]]) {
-          docker.withRegistry('https://hub.docker.com/hborrelli12', 'HARRY_DOCKERHUB_CREDENTIALS') {
+        docker.withRegistry('https://hub.docker.com/hborrelli12', 'HARRY_DOCKERHUB_CREDENTIALS') {
+          withCredentials([[
+            $class: 'AmazonWebServicesCredentialsBinding',
+            credentialsId: 'jenkins-section-website',
+          ]]) {
             echo "KEI_USER_TOKEN: ${env.KEI_USER_TOKEN}"
             sh 'make build'
             sh 'make generate'
