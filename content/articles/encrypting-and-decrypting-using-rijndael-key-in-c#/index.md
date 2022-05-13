@@ -1,4 +1,20 @@
-### Introduction
+
+---
+layout: engineering-education
+status: publish
+published: true
+url: /encrypt-decrypt-using-rijndael-key-in-c-sharp/
+title: Encrypt/Decrypt using Rijndael Key in C#
+description: This tutorial will help the reader to encrypt & decrypt using Rijndael key in C#.
+author: Betty Korir
+date: 2022-05-13T00:00:00-09:00
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/encrypt-decrypt-using-rijndael-key-in-c-sharp/hero.jpg
+    alt: Encrypt/Decrypt using Rijndael Key in C# Hero Image
+---
 Data encryption standard (DES) had a significant security crisis making the invention of a more intense encryption tool necessary. The security status led to the development of Rijndael Key by Vincent Rijmen and Joan Daemen, who were cryptologists from Belgium. Rijndael is a block cipher that uses a symmetric key encryption technique. It employs three discrete and invertible layers: `Linear Mix Transform`, `Non-linear Transform`, and `Key Addition Transform`.
 
 In C#, Rijndael Key supports key lengths of 128, 192, and 256 bits and blocks of 128(default), 192, and 256 bits. In this tutorial, we will discuss encrypting and decrypting a file using `AES/Rijndael Key` and its importance.
@@ -187,3 +203,6 @@ An encryption algorithm appropriate for the task should be used during any progr
 ### Further reading
 - [Why](https://us.norton.com/internetsecurity-privacy-what-is-encryption.html#) encrypt data during transmission.
 - [Appication areas](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwie8MWv6cD3AhVKyYUKHRvBDu8QFnoECEYQAQ&url=https%3A%2F%2Fiopscience.iop.org%2Farticle%2F10.1088%2F1742-6596%2F1237%2F2%2F022049%2Fpdf&usg=AOvVaw1ZelxbCgC1MGyc1JY1aasY) of data encryption.
+
+---
+Peer Review Contributions by: [Mohamed Alghadban](/engineering-education/authors/mohamed-alghadban/)
