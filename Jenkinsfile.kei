@@ -27,7 +27,7 @@ pipeline {
           variable: 'KEI_USER_TOKEN')
         ]) {
           // echo "KEI_USER_TOKEN: ${env.KEI_USER_TOKEN}"
-          sh 'echo "$DOCKER_PASSWORD" | docker login https://hub.docker.com/hborrelli12 --username=$DOCKER_USERNAME --password-stdin'
+          sh 'echo "$DOCKER_PASSWORD" | docker login --username=$DOCKER_USERNAME --password-stdin'
           sh 'make build'
           sh 'make generate'
           sh 'make deployKEI'
