@@ -6,22 +6,21 @@ url: /creating-and-manipulating-word-documents-in-android-using-kotlin/
 title: Manipulating Word Documents in Android using Kotlin and the Apache POI library
 description: This article will help the reader understand how to create and manipulate Word documents in Android using the Apache POI library
 author: sandra-moringa
-date: 2022-05-05T00:00:00-13:10
+date: 2022-05-13T00:00:00-13:10
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/creating-and-manipulating-word-documents-in-android-using-kotlin/hero.jpg
-    alt: Manipulating Word Documents in Android using Kotlin and the Apache POI library Hero Image
+    alt: Manipulating Word Documents Android  Kotlin Apache POI library Hero Image
 ---
-
 In this article, we will look at how to create a Word document, format it, as well as, extract text from it using Kotlin.
 <!--more-->
 
 ### Prerequisites
-To follow along, you need:
+To follow along, the reader will need:
 - An Android Integrated Development Environment, e.g. Android Studio or IntellijIDEA.
-- Java Development Kit 8 or higher installed in our machines. However, you get this one automatically when you install Android Studio. However, if you are using IntellijIDEA, you must install it manually.
+- Java Development Kit 8 or higher installed. However, this is automatically included when you install Android Studio. However, if you are using IntellijIDEA, you must install it manually.
 - Knowledge of Kotlin and the general OOP concepts.
 - Basic hands-on Android programming skills. 
 
@@ -30,7 +29,7 @@ We will use the Apache POI library to create a Word(`.docx`) document. We will b
 
 Next, we will discuss how to set up the library in our `Gradle` files. We will then create a Word document, add and format text, and insert headers, footers, and tables. 
 
-Finally, we will extract the text from our Word document.
+Then, we will extract the text from our Word document.
 
 ### Apache POI Word
 [Apache POI](https://poi.apache.org/components/document/) is a Java library used to create Office documents such as Spreadsheets, Word, and Publisher files. Since Kotlin works perfectly in the Java ecosystem, we can use this library to create these files in Android.
@@ -123,7 +122,9 @@ We will create an `addParagraph()` method and then pass it into the document's o
     }
 ```
 
-The `paragraph(XWPFParagraph)` object is returned from the `createParagraph()` method. Note how we set the paragraph text alignment to the left using the `alignment` property. 
+The `paragraph(XWPFParagraph)` object is returned from the `createParagraph()` method. 
+
+>Note how we set the paragraph text alignment to the left using the `alignment` property. 
 
 This paragraph object lets us create text regions using runs. We get a `run("XWPFRun")` object using the `createRun()` method.
 
@@ -154,7 +155,8 @@ This is easily done the same way we did for adding a paragraph. A table(`XWPFTab
     }
 ```
 
-- Using the `table("ourTable")` object, we can create rows and cells, and then add values to them. There is a catch here, though. The first row is created differently from the rest of the rows. When we try to create it the same way as the rest of the rows, we get an error. We must get the row in the first position using the `getRow(0)` method. 0 is passed in as a parameter to set it as the first row. We use the `getCell(0)` method to get the first cell position. After that, we can add other cells using the `addNewTableCell()` method. Finally, values for the cells are set using the `text` property. This doesn’t look like a clean way of doing things. But unfortunately, this is the only way to create the first row. If I get a cleaner way of doing it, I will share it in the comment section below.
+- Using the `table("ourTable")` object, we can create rows and cells, and then add values to them. There is a catch here, though. The first row is created differently from the rest of the rows. When we try to create it the same way as the rest of the rows, we get an error. We must get the row in the first position using the `getRow(0)` method. 0 is passed in as a parameter to set it as the first row. We use the `getCell(0)` method to get the first cell position. After that, we can add other cells using the `addNewTableCell()` method. Finally, values for the cells are set using the `text` property. This doesn’t look like a clean way of doing things. But unfortunately, this is the only way to create the first row. If I discover a cleaner way of doing it, I will share it in the comment section below.
+
 - To create another row, we use the `createRow()` method which returns a `row("XWPFTableRow")` object. We can add cells using the `getCell(position)` method of the returned row object.
 
 #### Inserting headers and footers
@@ -188,7 +190,7 @@ We will use a method called `addHeaderAndFooter()`.
 - To add text to the headers and footers, we create runs and then format them as we did for paragraphs.
 
 #### Saving the document
-When creating a document, we need to save it. So, we first check whether it exists or not. 
+When creating a document, we need to save it. So, we must first check whether it exists or not. 
 
 ```kotlin
     //saving the word document
@@ -424,18 +426,20 @@ class MainActivity : AppCompatActivity() {
 }
 ```
 
-We get this on running the app.
+We get this when running the app.
 
 ![App screenshot](/engineering-education/android-apache-poi-word/screen.png)
 
-To access the word document created, open the **Device Explorer** using your IDE and then navigate to your app’s data location(`View Tab -> Tool Windows -> Device File Explorer -> data > your-package-name -> files`). It resembles the screenshot below.
+To access the word document created, open the **Device Explorer** using your IDE and then navigate to your app’s data location (`View Tab -> Tool Windows -> Device File Explorer -> data > your-package-name -> files`). It should resemble the screenshot below.
 
 ![Doc screenshot](/engineering-education/android-apache-poi-word/shot-doc.png)
 
 Check this [GitHub repository](https://github.com/munubi254/apache-word-android) for the code.
 
 ### Conclusion
-That was it. This library contains numerous methods which can't be exhausted in a single article. You can add footnotes, a table of contents, and almost everything you can get in an MS Office Word application. Although this library has many functionalities, it doesn’t have very clear documentation. You have to explore the methods on your own. The IDEs I pointed out initially have intelligent capabilities that allow you to check the library's classes, methods, and descriptions. You only have to hover on the method, and a pop-up is displayed. There’s a `localhost` link section which you can click, and a browser tab is opened, giving you all the methods and classes for the code you hovered through. Check the screenshot below.
+That was it. This library contains numerous methods which can't be exhausted in a single article. You can add footnotes, a table of contents, and almost everything you can get in an MS Office Word application. Although this library has many functionalities, it doesn’t have very clear documentation. 
+
+You have to explore the methods on your own. The IDEs I pointed out initially have intelligent capabilities that allow you to check the library's classes, methods, and descriptions. You only have to hover on the method, and a pop-up is displayed. There’s a `localhost` link section which you can click, and a browser tab is opened, giving you all the methods and classes for the code you hovered through. Check the screenshot below.
 
 ![popup](/engineering-education/android-apache-poi-word/shot-conc.png)
 
