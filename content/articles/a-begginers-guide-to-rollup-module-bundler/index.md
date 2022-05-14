@@ -1,6 +1,22 @@
-### Introduction
+---
+layout: engineering-education
+status: publish
+published: true
+url: /a-begginers-guide-to-rollup-module-bundler/
+title: A Begginers Guide to Rollup Module Bundler
+description: This article will guide on you how to use Rollup to bundle your JavaScript modules.
+author: esther-maina
+date: 2022-05-15T00:00:00-12:30
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/a-begginers-guide-to-rollup-module-bundler/hero.jpg
+    alt: A Begginers Guide to Rollup Module Bundler
+---
 
 Being quick and lightweight, Rollup is credited with compressing multiple JavaScript files to a single file. In this post, you will learn how to use the Rollup module bundler in JavaScript.
+<!--more-->
 
 ### Table of content
 
@@ -18,7 +34,7 @@ Being quick and lightweight, Rollup is credited with compressing multiple JavaSc
 To follow along with this tutorial, you are required to have the following:
 
 - Fundamentals of JavaScript programming language.
-- A code editor(VS Code will be reffered in this article).
+- A code editor (VS Code will be reffered in this article).
 - [Node.js](https://nodejs.org/en/) installed on your machine.
 
 ### Why should you use Rollup?
@@ -33,7 +49,7 @@ Here are some reasons why you should consider using Rollup in your projects.
 
 Open VS Code, create a new folder, and name it `bundler`. We will initialize the folder as an `npm` package. To do that open your VS Code terminal and change into the `bundler` directory through `cd bundler`. In my case, I will have the following.
 
-![Terminal](terminal.png)
+![Terminal](/engineering-education/a-begginers-guide-to-rollup-module-bundler/terminal.png)
 
 Run the below code to initialize the folder as an `npm` package.
 
@@ -41,7 +57,7 @@ Run the below code to initialize the folder as an `npm` package.
 npm init -y
 ```
 
-![npm-package](npm-package.png)
+![npm-package](/engineering-education/a-begginers-guide-to-rollup-module-bundler/npm-package.png)
 
 Next up is to install `rollup` in our folder by running the following command.
 
@@ -51,21 +67,21 @@ npm i -D rollup
 
 > Note that by including `-D` in the installation command, Rollup will be installed as a development dependency.
 
-If your installation was successful you should have the following with you in your folder.
+If your installation was successful you should have the following in your folder.
 
-![install-rollup](install-rollup.png)
+![install-rollup](/engineering-education/a-begginers-guide-to-rollup-module-bundler/install-rollup.png)
 
 ### Step 2: Creating your first Rollup bundle
 
-Start by creating a folder for example, in my case I have named the folder `src`. This folder will house several JavaScript files and in that case, create two files in this folder and name them `main.js` and `foo.js`.
+Start by creating a `src` folder. This folder will house several JavaScript files and in that case, create two files in this folder and name them `main.js` and `foo.js`.
 
-In `foo.js` we are going to export a default string but you can export functions, variables, or any valid data types.
+In `foo.js` we are going to export a string, but you can export functions, variables, or any valid data types.
 
 ```javascript
 export default "I'm trying out Rollup Module Bundler";
 ```
 
-We will import `foo.js` in the `main.js` file and export a function using `module.export` which will then grab and display the string value from `foo.js`.
+We will import `foo.js` in the `main.js` file and export a function using `module.export` which will then display the string from `foo.js`.
 
 ```javascript
 import foo from "./foo.js";
@@ -79,7 +95,7 @@ module.export = function () {
 
 To create a bundle we will have to create a `start` command in the `package.json` file and specify the format as `cjs` (common JavaScipt) as shown below.
 
-![script-cmd](script.png)
+![script-cmd](/engineering-education/a-begginers-guide-to-rollup-module-bundler/script.png)
 
 Open the terminal and run the start command to create the bundle
 
@@ -87,9 +103,9 @@ Open the terminal and run the start command to create the bundle
 npm start
 ```
 
-You should have a bundle created in your terminal as shown below.
+You should have the bundle printed in your terminal as shown below.
 
-![create-a-bundle](create-a-bundle.png)
+![create-a-bundle](/engineering-education/a-begginers-guide-to-rollup-module-bundler/create-a-bundle.png)
 
 If you want to have the bundle code in a file you have to specify the output file.
 
@@ -103,9 +119,9 @@ In the start command located in `package.json`, specify the output file such tha
 
 The `-o` flag specifies the output file which in this case is `build/bundle.js`. The format (`-f`) will remain as common javascript. Now on executing the `start` command, a `build` folder will be created with a new `bundle.js` file that has combined all our code as shown below.
 
-![file-bundle](file-bundle.png)
+![file-bundle](/engineering-education/a-begginers-guide-to-rollup-module-bundler/file-bundle.png)
 
-![bundle-js](bundle-js.png)
+![bundle-js](/engineering-education/a-begginers-guide-to-rollup-module-bundler/bundle-js.png)
 
 One more way in which you could create a bundle is by creating a Rollup config file at the root of our project and naming it `rollup.config.js`.
 
@@ -123,19 +139,19 @@ export default {
 };
 ```
 
-Now that you have a config file, instead of having the filepath in `package.json`. We will simply have:
+Now that you have a config file, instead of having the output filepath in `package.json`. We will simply have:
 
 ```json
 "scripts": {
     "start": "rollup --config"
-  }
+}
 ```
 
 ### Step 3: Plugins
 
-Plugins allow you to customize Rollup behavior. For example, transpiling code before bundling, and finding third-party modules in your node module folder. Let's see an example of how we can use a CSS plugin in Rollup. By default, Rollup will only transpile files with the `.js` extension.
+Plugins allow you to customize Rollup behavior. For example, transpiling code before bundling, and finding third-party modules in your node module folder.
 
-For example let's suppose we want to bundle a stylesheet with the following code.
+Let's see an example of how we can use a CSS plugin in Rollup. By default, Rollup will only transpile files with the `.js` extension. Let's suppose we want to bundle a stylesheet with the following code.
 
 ```css
 body {
@@ -153,11 +169,11 @@ module.export = function () {
 };
 ```
 
-When you try to bundle this file in the terminal, the following error will show up. This is because we have not installed any plugin to handle stylesheet(CSS) files.
+When you try to bundle this file, the following error will show up. This is because we have not installed any plugin to handle CSS stylesheets.
 
-![error](error.png)
+![error](/engineering-education/a-begginers-guide-to-rollup-module-bundler/error.png)
 
-To solve this error, let's first install the CSS plugin from the terminal as shown below:
+To solve this, let's first install the CSS plugin from the terminal as shown below:
 
 ```bash
 npm i rollup-plugin-css-only
@@ -182,16 +198,19 @@ export default {
 };
 ```
 
-Head to the terminal, run your file and the in your `build` folder you should now have two files as shown below.
+Head to the terminal, run your file and in your `build` folder you should now have a CSS bundle file as shown below.
 
-![plugin](plugin.png)
+![bundle success](/engineering-education/a-begginers-guide-to-rollup-module-bundler/plugin.png)
 
-![plugin](plugin-css.png)
+![css bundled](/engineering-education/a-begginers-guide-to-rollup-module-bundler/plugin-css.png)
 
 ### Conclusion
 
-From this post, you learned how you can use the Rollup module bundler at a basic level. If you want to learn more about Rollup see the official documentation [here](https://rollupjs.org/guide/en/).
+From this tutorial, you learned how you can use the Rollup module bundler at a basic level. If you want to learn more about Rollup see the official documentation [here](https://rollupjs.org/guide/en/).
 
 ### Further reading
 
 [An Beginners Introduction to Browsify - Medium](https://medium.com/@christopherphillips_88739/a-beginners-guide-to-browserify-1170a724ceb2)
+
+---
+Peer Review Contributions by: [Geoffrey Mungai](/engineering-education/authors/geoffrey-mungai/)
