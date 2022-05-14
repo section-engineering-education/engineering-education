@@ -1,6 +1,6 @@
 ### Introduction
 
-Being quick and lightweight Rollup is credited with compressing multiple JavaScript files to a single file. In this post, you will learn how to use the rollup module bundler in JavaScript.
+Being quick and lightweight, Rollup is credited with compressing multiple JavaScript files to a single file. In this post, you will learn how to use the Rollup module bundler in JavaScript.
 
 ### Table of content
 
@@ -9,31 +9,33 @@ Being quick and lightweight Rollup is credited with compressing multiple JavaScr
 - [Prerequisites](#prerequisites)
 - [Why should you use Rollup](#why-should-you-use-rollup)
 - [Step 1: Rollup Installation and Configuration](#step-1-rollup-installation-and-configuration)
-- [Step 2: Create your First Rollup Bundle](#step-2-create-your-first-rollup-bundle)
+- [Step 2: Creating your First Rollup Bundle](#step-2-creating-your-first-rollup-bundle)
 - [Step 3: Plugins](#step-3-plugins)
 - [Conclusion](#conclusion)
 - [Further reading](#further-reading)
 
 ### Prerequisites
+To follow along with this tutorial, you are required to have the following:
 
 - Fundamentals of JavaScript programming language.
-- Text editor(vs code will be used in this article).
-- You need to have [NodeJs](https://nodejs.org/en/) installed on your machine.
+- A code editor(VS Code will be reffered in this article).
+- [Node.js](https://nodejs.org/en/) installed on your machine.
 
-### Why should you use Rollup
+### Why should you use Rollup?
+Here are some reasons why you should consider using Rollup in your projects.
 
-1. It offers tree-shaking which removes unused codes to ease project development.
+1. It offers tree-shaking which removes unused codes to easier project development.
 2. Eases application development since it is easier to work with small manageable files.
 3. Rollup is pretty fast and lightweight.
-4. It is compatible with EcmaScript 5.
+4. It is compatible with ECMAScript 5.
 
-### Step 1: Rollup Installation and Configuration
+### Step 1: Rollup installation and configuration
 
-Open `vscode`, create a new folder, and name it `bundler`. We will initialize the folder as an `npm` package and to do that open your vscode terminal and change the current directory to the one you have just created through `cd bundler`. In my case, I will have the following.
+Open VS Code, create a new folder, and name it `bundler`. We will initialize the folder as an `npm` package. To do that open your VS Code terminal and change into the `bundler` directory through `cd bundler`. In my case, I will have the following.
 
 ![Terminal](terminal.png)
 
-Run the below code to initialize the folder as an `npm` package
+Run the below code to initialize the folder as an `npm` package.
 
 ```bash
 npm init -y
@@ -41,70 +43,75 @@ npm init -y
 
 ![npm-package](npm-package.png)
 
-Next up is to install rollup in our folder by running the following command.
+Next up is to install `rollup` in our folder by running the following command.
 
 ```bash
 npm i -D rollup
 ```
 
-> Note that by including `-D` in the installation command, rollup will be installed as a development dependency.
+> Note that by including `-D` in the installation command, Rollup will be installed as a development dependency.
 
 If your installation was successful you should have the following with you in your folder.
+
 ![install-rollup](install-rollup.png)
 
-### Step 2: Create your First Rollup Bundle
+### Step 2: Creating your first Rollup bundle
 
-Start by creating a folder for example, in my case I have named the folder `src`. This folder will house several JavaScript files and in that case, create two files in this folder and name them `main.js` and `foo.js`. In the `foo.js` file we are going to export a default string and if you want you can export functions, variables, or any valid data type.
+Start by creating a folder for example, in my case I have named the folder `src`. This folder will house several JavaScript files and in that case, create two files in this folder and name them `main.js` and `foo.js`.
+
+In `foo.js` we are going to export a default string but you can export functions, variables, or any valid data types.
 
 ```javascript
-export default "I'm a beginner to Rollup Module Bundler";
+export default "I'm trying out Rollup Module Bundler";
 ```
 
 We will import `foo.js` in the `main.js` file and export a function using `module.export` which will then grab and display the string value from `foo.js`.
 
 ```javascript
-// import foo.js
-import foo from "/foo.js";
-// Export a function using module.export and grab the string value in foo.js. The statement will return Im a begginer to Rollup Module Bundler
+import foo from "./foo.js";
+
+// Export a function using module.export and grab the string value in foo.js. The statement will return "I'm trying out Rollup Module Bundler"
+
 module.export = function () {
   console.log(foo);
 };
 ```
 
-To create a bundle we will have to create a `script command` in the pakage.json file and specify the format as `cjs` (common JavaScipt) as shown below.
+To create a bundle we will have to create a `start` command in the `package.json` file and specify the format as `cjs` (common JavaScipt) as shown below.
 
 ![script-cmd](script.png)
 
-open the terminal and run the script command to create the bundle
+Open the terminal and run the start command to create the bundle
 
 ```bash
 npm start
 ```
 
 You should have a bundle created in your terminal as shown below.
+
 ![create-a-bundle](create-a-bundle.png)
 
-If you would prefer to have the bundle code in a file rather than the terminal you have to carry out the following.
+If you want to have the bundle code in a file you have to specify the output file.
 
-In the start command located in `package.json`, specify the output file such that when you execute it, you are going to get your code in a file. Let's see how you go about it.
+In the start command located in `package.json`, specify the output file such that when you execute it, you are going to get your code in a file. Like this:
 
 ```json
 "scripts": {
     "start": "rollup src/main.js -o build/bundle.js -f cjs"
-  }
+}
 ```
 
-`-o` is a flag that specifies the output file which in this case is `bundle.js`. The format will remain as common javascript. Now executing the `start` command a folder(build) will be created with a file(bundle.js) that has combined all our code as shown below.
+The `-o` flag specifies the output file which in this case is `build/bundle.js`. The format (`-f`) will remain as common javascript. Now on executing the `start` command, a `build` folder will be created with a new `bundle.js` file that has combined all our code as shown below.
 
 ![file-bundle](file-bundle.png)
 
 ![bundle-js](bundle-js.png)
 
-One more way in which you could create a bundle is by creating a javaScript file and naming it `rollup.config.js`.
+One more way in which you could create a bundle is by creating a Rollup config file at the root of our project and naming it `rollup.config.js`.
 
-> Note that the file should only be named as stated so that rollup can find it with ease
+> Note that the file should only be named as stated so that Rollup can find it.
 
-In our case here, our config file will entail the following:
+In our case, our config file will entail the following:
 
 ```javascript
 export default {
@@ -116,7 +123,7 @@ export default {
 };
 ```
 
-Now that you have a config file, instead of having all that path address in the `script` command of the package.json. We will simply have.
+Now that you have a config file, instead of having the filepath in `package.json`. We will simply have:
 
 ```json
 "scripts": {
@@ -126,9 +133,9 @@ Now that you have a config file, instead of having all that path address in the 
 
 ### Step 3: Plugins
 
-Plugins allow you to customize Rollup behavior. For example, transpiling code before bundling, and finding third-party modules in your node module folder. Let's see an example of how we can use CSS plugins in the rollup. By default, rollup will only transpile files with the `.js` extension. Importing other files for example let's suppose we have a stylesheet it will result in an error as demonstrated below.
+Plugins allow you to customize Rollup behavior. For example, transpiling code before bundling, and finding third-party modules in your node module folder. Let's see an example of how we can use a CSS plugin in Rollup. By default, Rollup will only transpile files with the `.js` extension.
 
-- Here is our stylesheet that we wish to include in the `main.js` file.
+For example let's suppose we want to bundle a stylesheet with the following code.
 
 ```css
 body {
@@ -136,10 +143,9 @@ body {
 }
 ```
 
-- main.js
+We will import it in our `main.js` file like this:
 
 ```js
-// import style.css
 import "./style.css";
 
 module.export = function () {
@@ -147,17 +153,17 @@ module.export = function () {
 };
 ```
 
-When you run this file in the terminal, the following error will show up. This is because we have installed any plugin to handle stylesheet(CSS) files since rollup will only work with JavaScript files.
+When you try to bundle this file in the terminal, the following error will show up. This is because we have not installed any plugin to handle stylesheet(CSS) files.
 
 ![error](error.png)
 
-To solve this error let's first install the CSS plugin from the terminal as shown below:
+To solve this error, let's first install the CSS plugin from the terminal as shown below:
 
 ```bash
 npm i rollup-plugin-css-only
 ```
 
-In your `rollup.config.js` file, import the module and create an object, plugins, and set its value as an array since it may contain more than one value as shown below.
+In your `rollup.config.js` file, import the module, create a `plugins` entry, and set its value as an array since it may contain more than one value as shown below.
 
 ```javascript
 import css from "rollup-plugin-css-only";
@@ -176,7 +182,7 @@ export default {
 };
 ```
 
-Head to the terminal run your file and the in your build folder you should have two files as shown below.
+Head to the terminal, run your file and the in your `build` folder you should now have two files as shown below.
 
 ![plugin](plugin.png)
 
@@ -184,8 +190,8 @@ Head to the terminal run your file and the in your build folder you should have 
 
 ### Conclusion
 
-From this post, you learned how you can use a rollup module bundler at a beginner's level. If you want to learn more about rollup see the official documentation [here](https://rollupjs.org/guide/en/).
+From this post, you learned how you can use the Rollup module bundler at a basic level. If you want to learn more about Rollup see the official documentation [here](https://rollupjs.org/guide/en/).
 
 ### Further reading
 
-[An Beginners Introduction to Browsify](https://medium.com/@christopherphillips_88739/a-beginners-guide-to-browserify-1170a724ceb2)
+[An Beginners Introduction to Browsify - Medium](https://medium.com/@christopherphillips_88739/a-beginners-guide-to-browserify-1170a724ceb2)
