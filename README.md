@@ -4,9 +4,9 @@
 [ENROLL HERE](https://docs.google.com/forms/d/e/1FAIpQLSfTbj3kqvEJEb5RLjqJurfbHa8ckzQx0CjRzaizblue9ZOK5A/viewform?usp=sf_link)
 
 ### Program Purpose
-Our program was created to promote and cultivate relevant career building/skill enrichment resources, a community for students to share their knowledge with peers around the world, and to help catapult their careers.”
+The program was created to promote and cultivate relevant career building/skill enrichment resources, a community for students to share their knowledge with peers around the world, and to help catapult their careers.”
 
-Our community content can be found at [https://section.io/engineering-education](https://section.io/engineering-education).
+EngEd community content can be found at [https://section.io/engineering-education](https://section.io/engineering-education).
 
 The Section team will monitor and manage the overall Program.
 
