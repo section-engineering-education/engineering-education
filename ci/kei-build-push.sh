@@ -21,9 +21,6 @@ setCluster() {
     cert=/usr/local/etc/ca-certificates/cert.pem
   fi
 
-  curl -LO "https://storage.googleapis.com/kubernetes-release/release/v1.20.5/bin/linux/amd64/kubectl"
-  chmod u+x ./kubectl
-
   kubectl config set-cluster section \
   --server=https://1723596800.kube.api.section.io/ \
   --certificate-authority=$cert
