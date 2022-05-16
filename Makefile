@@ -7,6 +7,7 @@ IMAGE_NAME_BETA=section-enged.beta
 all: build generate
 
 build:
+	docker image prune -f
 	docker build --tag $(IMAGE_NAME) .
 
 build-beta:
@@ -38,7 +39,6 @@ deploy:
 	@rm .env
 
 deployKEI:
-	docker image prune -f
 	bash ./ci/kei-build-push.sh main
 
 deploy-beta:
