@@ -38,7 +38,7 @@ COPY package.json yarn.lock /src/
 RUN yarn install
 COPY . /src/
 
-run npm run build
+RUN npm run build
 
 # Copy build files into /engineering-education directory.
 FROM nginx
