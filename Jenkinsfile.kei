@@ -28,7 +28,9 @@ pipeline {
         ]) {
           // echo "KEI_USER_TOKEN: ${env.KEI_USER_TOKEN}"
           sh 'echo "$DOCKER_PASSWORD" | docker login --username=$DOCKER_USERNAME --password-stdin'
-          // sh 'make build'
+          sh 'curl -LO "https://storage.googleapis.com/kubernetes-release/release/v1.20.5/bin/linux/amd64/kubectl"'  
+          sh 'chmod u+x ./kubectl'
+          sh 'make build'
           sh 'make generate'
           sh 'make deployKEI'
         }
