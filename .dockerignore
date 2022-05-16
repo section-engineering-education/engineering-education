@@ -2,3 +2,5 @@
 k8s/
 node_modules/
 README.md
+Dockerfile
+Dockerfile.kei

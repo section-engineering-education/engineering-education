@@ -8,7 +8,7 @@ cert=/etc/ssl/certs/ca-certificates.crt
 
 main() {
   # Build new image with hash and push to docker
-  bash docker-update-build-push.sh ../ Dockerfile section-enged
+  bash docker-update-build-push.sh ../ Dockerfile.kei section-enged
   
   setCluster
 }
