@@ -42,4 +42,4 @@ RUN hugo
 
 # Copy build files into /engineering-education directory.
 FROM nginx
-COPY --from=base /src/public /usr/share/nginx/html/engineering-education
+COPY --from=base /src/public /usr/share/nginx/html/engineering-education/

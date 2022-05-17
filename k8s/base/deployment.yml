@@ -16,24 +16,26 @@ spec:
     spec:
       containers:
         - name: section-enged
-          image: hborrelli12/section-enged:6ba2d
+          image: hborrelli12/section-enged:9c2d9
           imagePullPolicy: Always
           ports:
-          - containerPort: 3000
+          - containerPort: 80
           resources:
             requests:
-              memory: ".5Gi"
-              cpu: "500m"
+              memory: "1Gi"
+              cpu: "1000m"
             limits:
-              memory: ".5Gi"
-              cpu: "500m"
-          # livenessProbe:
-          #   httpGet:
-          #     path: /health
-          #     port: 3000
-          #   periodSeconds: 5
-          # readinessProbe:
-          #     httpGet:
-          #       path: /health
-          #       port: 3000
-          #     periodSeconds: 10
+              memory: "1Gi"
+              cpu: "1000m"
+          livenessProbe:
+            httpGet:
+              path: /engineering-education/
+              port: 80
+            periodSeconds: 5
+            initialDelaySeconds: 60
+          readinessProbe:
+            httpGet:
+              path: /engineering-education/
+              port: 80
+            periodSeconds: 10
+            initialDelaySeconds: 60
