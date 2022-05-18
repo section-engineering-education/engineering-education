@@ -6,7 +6,7 @@ url: /building-an-animated-vertical-timeline-chart-with-html-css-and-javascript/
 title: Building an Animated Vertical Timeline Chart with HTML, CSS, and JavaScript
 description: This article will cover how to use HTML5, CSS3, and Vanilla JavaScript to create a vertical timeline chart.
 author: bobate-segun
-date: 2022-05-09T00:00:00-12:30
+date: 2022-05-18T00:00:00-12:30
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -96,7 +96,7 @@ Within the `main` tag, create another `section` tag with a class named `timeline
 </main>
 ```
 
-Below is the final HTML code for the timeline chart, which contains two sections - a header section and the timeline events section. You can replace the dummy texts with your desired contents. To generate the `lorem ipsum` text, follow the instructions [here](https://marketplace.visualstudio.com/items?itemName=Tyriar.lorem-ipsum#:~:text=A%20tiny%20VS%20Code%20extension,either%20a%20line%20or%20paragraph.) if you are using Visual studio code.
+Below is the final HTML code for the timeline chart, which contains two sections - a header section and the timeline events section. You can replace the dummy text with your desired contents. To generate the `lorem ipsum` text, follow the instructions [here](https://marketplace.visualstudio.com/items?itemName=Tyriar.lorem-ipsum#:~:text=A%20tiny%20VS%20Code%20extension,either%20a%20line%20or%20paragraph.) if you are using Visual studio code.
 
 ```html
 <!DOCTYPE html>
@@ -241,6 +241,7 @@ This is the expected view of the HTML content on your web browser:
 The next step is to style your timeline chart using CSS to give it an aesthetic look. Use the universal selector (*) to select all the elements. 
 
 With this selector, we can set values for the margin, padding, and box-sizing attributes using the code below:
+
 /*use the universal selector to set some styles*/
 
 ```css
