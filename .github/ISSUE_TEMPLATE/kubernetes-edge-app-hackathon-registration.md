@@ -22,7 +22,7 @@ Open to all EngEd students (participants can work individually or in teams of En
 
 **We will need the information below to follow up with next steps - and get you set up with a test enviroment:**
 
-**Your Full Name, email, and Domain (URL) project link (can be a dummy link) - we need this info to get credentials sent to you.**
+**Your Full Name and email we need this info to get credentials sent to you.**
 
 ### Requirements
 Once your K8s Edge application is complete and deployed, create a pull request to attach your submission to. 
@@ -56,6 +56,8 @@ The top 3 winning applications will be points of reference at our booth at the K
 
 All other projects will receive honorable mentions on our website.
 
+NOTE: *Teams will recieve prize split among participants.*
+
 ### Judging criteria: 
 - The quality of the project (code effectiveness and code clarity) points for creativity and originality.
 - Implementation of the Idea: Includes how well and quickly the project was developed and deployed using the KEI process.
@@ -68,4 +70,4 @@ All other projects will receive honorable mentions on our website.
 - [Nate Grieb](https://www.linkedin.com/in/nate-grieb-44241654/)
 
 
-### Deadline: April 22nd 2022 @ 11:59 MST
+### Deadline: April 22nd 2022 @ 11:59 PM MST
