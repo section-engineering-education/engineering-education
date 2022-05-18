@@ -27,7 +27,7 @@ In this tutorial, we'll learn how to create an Augmented Reality App in Kotlin t
 ### Objectives
 By the end of this tutorial, the reader will have learned the following:
 - What Augmented Reality is.
-- How to setup Android studio for augmented reality.
+- How to set up an Android studio for augmented reality.
 - How to place 3D objects in the AR scene.
 
 ### What is Augmented Reality (AR)?
@@ -57,7 +57,7 @@ After the IDE restarts, you might notice an error that pops up. This error reads
 You can solve this error by using Sceneform SDK v1.16.0. Also, you can set up everything manually.
 
 ### Setting up manually is done as follows:
-1. Download the Sceneform files from [here](https://drive.google.com/file/d/1D4NFEC2TGaILhJfnKC6L0kEtFhim9yfU/view?usp=sharing). Extract this files on your app's folder and head to the next step.
+1. Download the Sceneform files from [here](https://drive.google.com/file/d/1D4NFEC2TGaILhJfnKC6L0kEtFhim9yfU/view?usp=sharing). Extract these files into your app's folder and head to the next step.
 
 2. Go to Gradle and open `gradle.settings` and add the following lines:
    
