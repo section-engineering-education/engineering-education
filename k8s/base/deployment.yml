@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: section-enged
-          image: hborrelli12/section-enged:9c2d9
+          image: hborrelli12/section-enged:0a0ef
           imagePullPolicy: Always
           ports:
           - containerPort: 80

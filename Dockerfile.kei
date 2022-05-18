@@ -38,7 +38,7 @@ COPY package.json yarn.lock /src/
 RUN yarn install
 COPY . /src/
 
-RUN hugo
+RUN hugo --environment production
 
 # Copy build files into /engineering-education directory.
 FROM nginx
