@@ -1,4 +1,21 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /creating-a-simple-augmented-reality-app-in-android/
+title: Creating a Simple Augmented Reality app in Android
+description: This tutorial will guide the reader on how to create a simple augmented reality (AR) app in Android. AR allows people to process the physical and digital simultaneously, eliminating the need to mentally bridge the two.
+author: Kirwa-Elyjah
+date: 2022-05-18T00:00:00-16:20
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/creating-a-simple-augmented-reality-app-in-android/hero.png
+    alt: Creating a Simple Augmented Reality app in Android
+---
 In this tutorial, we'll learn how to create an Augmented Reality App in Kotlin to keep up with the quickly evolving tech world. This application will allow you to add properties to an image using your phone's camera.
+<!--more-->
 
 ### Prerequisites
 - You should have the latest version of [Android Studio](https://developer.android.com/studio) installed on your machine.
@@ -21,7 +38,7 @@ It is a new technology that merges digital elements with real-world objects. Mob
 ### Creating an Android project
 Launch Android Studio and create a new project.
 
-![create-project](/engineering-education/creating-a-simple-ar-app/create-ar-project.png)
+![create-project](/engineering-education/creating-a-simple-augmented-reality-app-in-android/create-ar-project.png)
 
 >NOTE: The minimum SDK version should be API 24: Android 7 (Nougat).
 
@@ -31,7 +48,7 @@ On the Android Studio menu, click on `File` then `Settings` and a new window wil
 
 ### Installing Sceneform plugin
 
-![install-plugin](/engineering-education/creating-a-simple-ar-app/install-sceneform-plugin.png)
+![install-plugin](/engineering-education/creating-a-simple-augmented-reality-app-in-android/install-sceneform-plugin.png)
 
 After the IDE restarts, you might notice an error that pops up. This error reads as follows:
 
@@ -172,7 +189,7 @@ private fun addModelToScene(arFragment: ArFragment, anchor: Anchor, renderable: 
 }
 ```
 
-And finally, the last thing is to place objects in the AR scene. This can be done as follows:
+Finally, the last thing is to place objects in the AR scene. This can be done as follows:
 
 ```kotlin
 @RequiresApi(Build.VERSION_CODES.N)
@@ -292,3 +309,6 @@ To run the app, first, make sure you have an active internet connection on your 
 In this tutorial, we have learned how we can create an Augmented Reality app and place objects in a scene. AR does more than this. Keep exploring more about Augmented Reality by reading more articles on this topic.
 
 Happy Coding :)
+
+---
+Peer Review Contributions by: [Eric Gacoki](/engineering-education/authors/eric-gacoki/)
