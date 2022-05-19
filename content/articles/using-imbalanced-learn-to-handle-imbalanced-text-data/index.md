@@ -3,10 +3,10 @@ layout: engineering-education
 status: publish
 published: true
 url: /using-imbalanced-learn-to-handle-imbalanced-text-data/
-title: Using Imbalanced-Learn to handle imbalanced text data in Natural Language Processing
+title: Using Imbalanced-Learn to Handle Imbalanced Text Data in NLP
 description: This tutorial will guide a reader on how to build a spam classifier model using Python and natural language processing without balancing the classes in the dataset.
 author: donnex-wafula
-date: 2022-04-20T00:00:00-20:00
+date: 2022-05-19T00:00:00-13:00
 topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
@@ -16,11 +16,13 @@ images:
 ---
 An imbalanced dataset in Natural Language Processing is a dataset whose number of data samples is not the same in the different classes. One class has more data samples than the other class. 
 <!--more-->
-For example, one class has 3000 samples, and the other has 300. The class with more data samples is known as the majority class, while the other one is known as the minority class. When we train a model with an imbalanced dataset, the model will be biased towards the majority class. The model may make wrong predictions and give inaccurate results. It has a negative impact when we use the model in production, and the stakeholders depend on it for business operations.
+For example, one class has 3000 samples, and the other may have 300. The class with more data samples is known as the majority class, while the other one is known as the minority class. 
+
+When we train a model with an imbalanced dataset, the model will be biased towards the majority class. The model may make wrong predictions and give inaccurate results. It has a negative impact when we use the model in production, and the stakeholders depend on it for business operations.
  
 In Natural Language Processing (NLP), we have various libraries that can handle text data that have an imbalance. We will use the [Imbalanced-learn](https://imbalanced-learn.org/stable/) library. This library will balance the classes in the dataset. It will also reduce model bias and enhance the NLP performance.
 
-We will first build a spam classifier model with natural language processing without balancing the classes in the dataset. We will implement the same model but use `Imbalanced-Learn` to balance the classes. Finally, we will compare the two models (before and after balancing) and evaluate their performance.
+We will first build a spam classifier model with natural language processing without balancing the classes in the dataset. We will implement the same model but use `Imbalanced-Learn` to balance the classes. Then, we will compare the two models (before and after balancing) and evaluate their performance.
 
 ### Table of contents
 - [Prerequisites](#prerequisites)
@@ -46,14 +48,16 @@ We will first build a spam classifier model with natural language processing wit
 - [References](#references)
 
 ### Prerequisites
-To follow along easily and understand the tutorial, ensure you know the following concepts:
+To follow easily along this tutorial, ensure you know the following concepts:
 - [Python Programming](https://www.w3schools.com/python/) concepts.
 - Natural language concepts and how to [implement an NLP model](/engineering-education/building-autocorrect-feature-using-nlp-with-python/).
 - Understand [machine learning modelling](/engineering-education/house-price-prediction/) and other related concepts.
 - Implement the spam classification model in [Google Colab](https://research.google.com/colaboratory/) to get the same results.
 
 ### Spam classification dataset
-We will use the SMS collection dataset to train the NLP model. It has two labeled classes. (`spam` and `ham`). The `spam` class contains all the spam SMS. The `ham` class has all the SMS that are not spam. The NLP model will classify an SMS as either spam or not spam. Ensure you can download the SMS collection dataset from [here](https://drive.google.com/file/d/1OLdz-fSUBEARnMqUdrTW4bkmGy8yUpCE/view?usp=sharing). The link will give you the complete SMS collection dataset. 
+We will use the SMS collection dataset to train the NLP model. It has two labeled classes. (`spam` and `ham`). The `spam` class contains all the spam SMS. The `ham` class has all the SMS that are not spam. 
+
+The NLP model will classify an SMS as either spam or not spam. Ensure you can download the SMS collection dataset from [here](https://drive.google.com/file/d/1OLdz-fSUBEARnMqUdrTW4bkmGy8yUpCE/view?usp=sharing). The link will give you the complete SMS collection dataset. 
 
 We load the dataset using Pandas.
 
@@ -92,6 +96,7 @@ We rename the columns, `0` becomes `label`, and `1` becomes `text`.
 ```python
 df.rename(columns={0: 'label', 1: 'text'}, inplace=True)
 ```
+
 To see our dataset with the applied new column names, input this code:
 
 ```python
@@ -139,28 +144,25 @@ It gives this output:
 We will begin cleaning the text.
 
 ### Text cleaning
-Before building the spam classification model, we will clean the dataset to have the required format. Many text cleaning steps will format the text. It includes removing unnecessary words, punctuation, stop words, white spaces, and unnecessary symbols from the text dataset. For this tutorial, we will implement the following steps:
+Before building the spam classification model, we will clean the dataset to have the required format. Many text cleaning steps will format the text. It includes removing unnecessary words, punctuation, stop words, white spaces, and unnecessary symbols from the text dataset. 
 
-- Removing stop words.
-Stop words do not contribute to the meaning of a sentence since they are common in a language. Stop words for the English language are pronouns, conjunctions, and articles. Removing stop words enables the NLP model to focus on unique words in the SMS messages that will add value. 
+For this tutorial, we will implement the following steps:
 
-- Converting all the SMS messages to lower case.
-It ensures that we have a uniform dataset.
+- Removing stop words: Stop words do not contribute to the meaning of a sentence since they are common in a language. Stop words for the English language are pronouns, conjunctions, and articles. Removing stop words enables the NLP model to focus on unique words in the SMS messages that will add value. 
 
-- Removing numbers and other numeric values.
-It ensures that only text that remains in the dataset adds value to the model.
+- Converting all the SMS messages to lower case: It ensures that we have a uniform dataset.
 
-- Removing punctuations.
-It involves removing full stops and other punctuation marks. These are the unnecessary symbols in the dataset.
+- Removing numbers and other numeric values: It ensures that only text that remains in the dataset adds value to the model.
 
-- Removing extra white spaces
-White space occupies the dataset, but they do not carry information. Removing the extra white spaces ensures we only remain with the text that the model will use.
+- Removing punctuations: It involves removing full stops and other punctuation marks. These are the unnecessary symbols in the dataset.
 
-- Lemmatizing the texts
-Stemming reduces inflected forms of a text/word into its lemma or dictionary form. For example, the words/texts "running", "ran", and "runs" are all reduced to the root form "run".
+- Removing extra white spaces: White space occupies the dataset, but they do not carry information. Removing the extra white spaces ensures we only remain with the text that the model will use.
 
-- Tokenization
-It is the splitting/breaking of the raw texts into smaller words or phrases known as tokens. We will implement the text cleaning steps using Natural Language Toolkit (NLTK). We install NLTK as follows:
+- Lemmatizing the texts: Stemming reduces inflected forms of a text/word into its lemma or dictionary form. For example, the words/texts "running", "ran", and "runs" are all reduced to the root form "run".
+
+- Tokenization: It is the splitting/breaking of the raw texts into smaller words or phrases known as tokens. We will implement the text cleaning steps using Natural Language Toolkit (NLTK). 
+
+We install NLTK as follows:
 
 #### Installing NLTK
 
@@ -172,14 +174,17 @@ Import `nltk` as follows:
 ```python
 import nltk
 ```
+
 NLTK has smaller sub-libraries that perform specific text cleaning tasks. These smaller libraries also have methods for text cleaning. 
+
 The next step is to download the smaller sub-libraries from NLTK as follows:
 
-#### Downloading `punkt`
+#### Downloading `punk`
 
 ```bash
 nltk.download('punkt')
 ```
+
 It will tokenize the text in the dataset.
 
 #### Downloading stop words
@@ -205,7 +210,9 @@ from nltk import word_tokenize
 ```
 
 #### Importing `stopwords`
-We will use it to remove all the stop words in the dataset. We will then create custom functions for text cleaning and pass in the imported methods as parameters. To implement the custom functions, we will require Python regular expression (RegEx) module. We import it as follows:
+We will use it to remove all the stop words in the dataset. We will then create custom functions for text cleaning and pass in the imported methods as parameters. To implement the custom functions, we will require Python regular expression (RegEx) module. 
+
+We import it as follows:
 
 ```python
 import re
@@ -238,6 +245,7 @@ def remove_numbers(text):
     without_number = re.sub(pattern=number_pattern, repl=" ", string=text)
     return without_number
 ```
+
 The function takes in `text` as an argument. We then apply this function to the `text` column as follows:
 
 ```python
@@ -303,6 +311,7 @@ def lemmatizing(text):
         tokens[i] = lemma_word
     return " ".join(tokens)
 ```
+
 The function also takes in `text` as an argument. It also uses the imported `WordNetLemmatizer` method. The `word_tokenize` method will then tokenize the lemmatized words. We use the for loop to iterate through the text dataset. We then apply this function to the `text` column as follows:
 
 ```python
@@ -329,7 +338,9 @@ It gives this output:
 From the output above, we have reduced the lengths of the data samples. Thus, our applied functions have worked.
 
 ### Converting the class labels into integer values
-The class labels are `spam` and `ham`. We can not just feed these labels into the model because it does not understand strings/text. We will have to create a label map that converts the class labels into integer values. The model will understand the integer values. We create the label map as follows:
+The class labels are `spam` and `ham`. We can not just feed these labels into the model because it does not understand strings/text. We will have to create a label map that converts the class labels into integer values. The model will understand the integer values.
+
+We can create the label map as follows:
 
 ```python
 label_map = {
@@ -337,6 +348,7 @@ label_map = {
     'spam': 1,
 }
 ```
+
 We have assigned ham to 0 and spam to 1. We then apply/add these integer values to the `label` column using the `map` function.
 
 ```python
@@ -354,7 +366,9 @@ It gives this output:
 The output above shows the `label` column has the assigned integer values (0 and 1). The next step is to implement text vectorization.
 
 ### Implementing text vectorization
-It converts the raw text into a format the NLP model can understand and use. Vectorization will create a numerical representation of the text strings called a [sparse matrix](https://www.geeksforgeeks.org/sparse-matrix-representation/) or word vectors. The model works with numbers and not raw text. We will use `TfidfVectorizer` to create the sparse matrix. We import it as follows:
+It converts the raw text into a format the NLP model can understand and use. Vectorization will create a numerical representation of the text strings called a [sparse matrix](https://www.geeksforgeeks.org/sparse-matrix-representation/) or word vectors. The model works with numbers and not raw text. We will use `TfidfVectorizer` to create the sparse matrix. 
+
+We import it as follows:
 
 ```python
 from sklearn.feature_extraction.text import TfidfVectorizer
@@ -369,6 +383,7 @@ We then apply the initialized method to the `text` column so that it can transfo
 ```python
 X_tf = tf_wb.fit_transform(df['text'])
 ```
+
 ### Converting the sparse matrix into an array
 We will use NumPy.
 
@@ -392,7 +407,9 @@ It gives this output:
 We will feed the array into the model for training. 
 
 ### Splitting the vectorized dataset
-We will split the vectorized dataset into two portions/sets. The first portion will be for model training and the second portion for model testing. We will use the `train_test_split` method to split the vectorized dataset. We import it as follows:
+We will split the vectorized dataset into two portions/sets. The first portion will be for model training and the second portion for model testing. We will use the `train_test_split` method to split the vectorized dataset. 
+
+We import it as follows:
 
 ```python
 from sklearn.model_selection import train_test_split
@@ -402,6 +419,7 @@ We apply the method to the vectorized dataset and `label` column.
 ```python
 X_train_tf, X_test_tf, y_train_tf, y_test_tf = train_test_split(X_tf, df['label'].values, test_size=0.3)
 ```
+
 The `test_size` will define the training and testing sizes. The training size will be 70% of the dataset, while the testing size will be 30%. We have cleaned and prepared the dataset. We can start building the model with this dataset.
 
 ### Model building
@@ -463,7 +481,8 @@ We will use the ` RandomOverSampler` function to balance the classes.
 ```python
 from imblearn.over_sampling import RandomOverSampler
 ```
-`RandomOverSampler` will increase the data samples in the minority class(spam). It makes the minority class have the same data samples as the majority class (ham). The function synthesizes new dummy data samples in the minority class to enable class balancing.
+
+`RandomOverSampler` will increase the data samples in the minority class (spam). It makes the minority class have the same data samples as the majority class (ham). The function synthesizes new dummy data samples in the minority class to enable class balancing.
 
 ### Splitting the text dataset
 We spit the dataset as follows:
@@ -584,7 +603,8 @@ It prints the following accuracy score:
 This accuracy score is `90.3708`. The accuracy score has increased from `87.623%` to `90.3708`. Therefore, balancing the classes has enhanced the model performance giving better results.
 
 ### Conclusion
-We have learned to use Imbalanced-learn to handle imbalanced text data in natural language processing. We cleaned the text dataset and implemented the text preprocessing steps using the NLTK library. We implemented text vectorization and fed the model the sparse matrix.
+We learned to use Imbalanced-learn to handle imbalanced text data in natural language processing. We cleaned the text dataset and implemented the text preprocessing steps using the NLTK library. We implemented text vectorization and fed the model the sparse matrix.
+
 We then implemented a spam classifier model without balancing the dataset and calculated the accuracy score. We also implemented the same model but used Imbalanced-Learn to balance the classes. 
 
 Finally, we compared the two models (before and after balancing). The accuracy score increased from `87.623%` to `90.3708`. Therefore, balancing the classes gives better results.
