@@ -26,7 +26,7 @@ Sometimes, developers need to automate things like writing data into the databas
 - [Jobs scheduling automation with django_cron library](#jobs-scheduling-automation-with-django_cron-library)
 
 ### Prerequisites
-To follow along with this tutorial, you are required to have the following:
+To follow along with this tutorial, the reader is required to have the following:
 - An understanding of the Python programming language.
 - A pre-installed IDE, preferably [Visual Studio Code](https://code.visualstudio.com/download).
 - A pre-installed API tester, preferably [Postman](https://www.postman.com/downloads/).
@@ -44,7 +44,7 @@ Every repeated task carried out in the background is reffered to as a `job` in s
 
 Schedulers used in the industry follow the company's requirements. For instance, Oracle FLEXCUBE FCJ uses the two types of jobs schedulers named `Quartz` and `Flux`.
 
-Furthermore, jobs schedulers are important where repetitive tasks are needed. For example, notifications sent by social media applications to user accounts sent are through this process.
+Furthermore, jobs schedulers are important where repetitive tasks are needed. For example, notifications sent by social media applications to user accounts are sent through this process.
 
 It is possible to schedule a job that needs to carry out once a particular action is accomplished or executed. In every social application, the `Like` button keeps updating once clicked, and this action updates the database or cache too. However, millions of users can like the content at a time.
 
@@ -55,10 +55,14 @@ Next, I will be introducing a library called `django_cron` for this automation.
 ### How django_cron works
 Here, we will talk about achieving job scheduling automation with the library. It allows the `Django-Python` code to run on repeated basics.
 
-It helps in tracking and execute recurring tasks. There are two main ways of going about the automation stuff. They are as follows:
+It helps in tracking and execute recurring tasks. There are two main ways of going about the automation stuff. 
+
+They are as follows:
 
 #### 1. Through a custom script file
-In this case, developers write their scripts to achieve the queueing of jobs. It can take time while engineers get to design what they want based on their needs. Here is how the file might look like;
+In this case, developers write their scripts to achieve the queueing of jobs. It can take time while engineers get to design what they want based on their needs. 
+
+Here is how the file might look like;
 
 ```yaml
 cron:
@@ -89,9 +93,9 @@ pip install django_cron
 
 The convention is to prepare a Python script file for the code. The python class extends the `CronJobBase` class from the installed library in the file.
 
-Also, a method called `Schedule` takes an argument of `minutes` will be imported. Such a job will run in a repeated manner in the interval of minutes provided. However, this will execute a `do()` method inside the cron job class.
+Also, a method called `Schedule` takes an argument of `minutes` that will be imported. Such a job will run in a repeated manner in the interval of minutes provided. However, this will execute a `do()` method inside the cron job class.
 
-Finally, the job can be run manually by executing the snippet below.
+Then, the job can be run manually by executing the snippet below.
 
 ```bash
 python manage.py runcrons
@@ -183,7 +187,7 @@ class HackerNewsID(models.Model):
         return str(self.hackernews)
 ```
 
-- Note: The `save` method under the class `HackerNewsID` saves data when called. This only formats the primary key to the `id` fetched.
+>Note: The `save` method under the class `HackerNewsID` saves data when called. This only formats the primary key to the `id` fetched.
 
 #### Making cron jobs
 Here, we will make the cron job class. This class is needed by the `django_cron` to execute every minute(s) as configured in the code below.
@@ -220,7 +224,7 @@ class MyCronJob(CronJobBase):
             news_id.save()
 ```
 
-- Note:  Run the command below to add the latest hacker news id to the database. It also executes the cron job class(es) by looping through the response from API and then calling the `save()` method on each.
+>Note: Run the command below to add the latest hacker news id to the database. It also executes the cron job class(es) by looping through the response from API and then calling the `save()` method on each.
 
 ```bash
 python manage.py runcrons
@@ -246,7 +250,7 @@ class NewsIdSerializer(serializers.ModelSerializer):
         fields = ('hackernews',)
 ```
 
-> Note: In this application, we only care about the `id`, and that's why we made the fields a tuple with only one element from our model.
+>Note: In this application, we only care about the `id`, and that's why we made the fields a tuple with only one element from our model.
 
 #### Setting up the views
 We will make two class-based views called `NewsIdView` and `NewsItemView`. The first view requests to the external endpoint and then gets the list of ids for the endpoint through the `get` method under the class.
@@ -350,7 +354,7 @@ urlpatterns = [
 ```
 
 #### Creating an admin site
-As a Django developer, you are familiar with the default admin page that is configured by default. Executing the command below makes a new administration page where administrative activities are all done.
+As a Django developer, you should be familiar with the default admin page that is configured by default. Executing the command below makes a new administration page where administrative activities are all done.
 
 ```bash
 python manage.py createsuperuser
@@ -386,16 +390,16 @@ python manage.py runcrons
 
 ![Admin page](/engineering-education/automating-jobs-schedule-with-django-cron-in-python/admin.png)
 
-In addition, you can make an API request to the endpoint <http://127.0.0.1:8000/api/v0/items/hackernews> to fetch the data that each of the saved ids returns. You would get something like the images below.
+In addition, you can make an API request to the endpoint <http://127.0.0.1:8000/api/v0/items/hackernews> to fetch the data that each of the saved ids returns. You should get something like the images below.
 
 ![Response page](/engineering-education/automating-jobs-schedule-with-django-cron-in-python/response.png)
 
 ![Response page 2](/engineering-education/automating-jobs-schedule-with-django-cron-in-python/response2.png)
 
 ### Conclusion
-In this tutorial, you have learned how to make a cron job in a Python application from the library.
+In this tutorial, we learned how to make a cron job in a Python application from the library.
 
-You also performed API requests to an external source by fetching their data and writing it to your database using job scheduling. You can now apply your job-scheduling skills in a real-world application.
+We also performed API requests to an external source by fetching data and writing it to the database using job scheduling. You can now apply your job-scheduling skills in a real-world application.
 
 Happy coding!
 
