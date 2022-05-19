@@ -2,16 +2,16 @@
 layout: engineering-education
 status: publish
 published: true
-url: /job-scheduling-with-django-cron/
+url: /automating-jobs-schedule-with-django-cron-in-python/
 title: Automating Job Scheduling with Django_cron in a Python Application
 description: This article will explain how to use the Django_cron library to schedule jobs in a Python application.
 author: francisca-adekanye
-date: 2022-03-24T00:00:00-15:30
+date: 2022-05-19T00:00:00-15:30
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/job-scheduling-with-django-cron/hero.png
+  - url: /engineering-education/automating-jobs-schedule-with-django-cron-in-python/hero.png
     alt: Job Scheduling Django Cron in a Python Application
 ---
 Job scheduling is crucial in all streaming applications. There are various ways of streaming data from an external API into an application through automation.
@@ -134,7 +134,7 @@ python manage.py runserver
 
 If you open your browser to <http://127.0.0.1:8000>, you should see the default Django welcome page as shown below:
 
-![First page](/engineering-education/job-scheduling-with-django-cron/firstpage.png)
+![First page](/engineering-education/automating-jobs-schedule-with-django-cron-in-python/firstpage.png)
 
 Now open to the project `settings.py` file, navigate to the `INSTALLED_APPS` and add the snippet below:
 
@@ -384,13 +384,13 @@ Running the command showcased below will perform the API requests to the externa
 python manage.py runcrons
 ```
 
-![Admin page](/engineering-education/job-scheduling-with-django-cron/admin.png)
+![Admin page](/engineering-education/automating-jobs-schedule-with-django-cron-in-python/admin.png)
 
 In addition, you can make an API request to the endpoint <http://127.0.0.1:8000/api/v0/items/hackernews> to fetch the data that each of the saved ids returns. You would get something like the images below.
 
-![Response page](/engineering-education/job-scheduling-with-django-cron/response.png)
+![Response page](/engineering-education/automating-jobs-schedule-with-django-cron-in-python/response.png)
 
-![Response page 2](/engineering-education/job-scheduling-with-django-cron/response2.png)
+![Response page 2](/engineering-education/automating-jobs-schedule-with-django-cron-in-python/response2.png)
 
 ### Conclusion
 In this tutorial, you have learned how to make a cron job in a Python application from the library.
