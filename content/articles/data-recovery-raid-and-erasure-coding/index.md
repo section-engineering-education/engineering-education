@@ -1,4 +1,4 @@
----
+ ---
 layout: engineering-education
 status: publish
 published: true
@@ -6,7 +6,7 @@ url: /data-recovery-raid-and-erasure-coding/
 title: Data Recovery - A Look at RAID and Erasure Coding 
 description: In this article, we consider the data recovery problem and how RAID and Erasure Coding can help.
 author:
-date: 2022-04-19T00:00:00-18:00
+date: 2022-05-19T00:00:00-18:00
 topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
@@ -14,141 +14,133 @@ images:
  - url: /engineering-education/data-recovery-raid-and-erasure-coding/hero.jpg
    alt:  example image
 ---
+Securing and ensuring data availability is a vital consideration in any organization. Large firms such as Google, Facebook, and Amazon use robust data recovery methods.
+<!--more-->
+Erasure coding and RAID are some of the popular data recovery techniques.
 
-Data is an essential asset in the current world. The popularity of what data can do, coupled with the revenues generated from the sale and utilization of different data sets, has caused a sharp valuation of how organizations treat their data. Securing and ensuring data availability is a vital consideration in any organization. Large organizations such as Google, Facebook, and Amazon use robust data recovery methods to ensure the availability of their data. Among the numerous ways of data recovery include Erasure coding and RAID.
+### Goal
+From this article, you will understand:
+- The different RAID methods available in the market and which to use to fulfil your data recovery needs.
+- Erasure coding schemes.
+- The best method for a given hardware , architecture, performance needs, and available storage.
 
-#### After reading this article, you will gain:
-- The different types of RAID methods available in the market and which to use to fulfil your data recovery needs.
-- The various erasure coding schemes and which one to use.
-- The best method for a given hardware type, architecture, performance needs, and available storage.
+Below are some of the technical terms used in the article:
 
-#### Vocabularies in the article
-The article features technical terms that we'll go through below.
+- *RAID*: A redundant array of disks.
 
-- **RAID**: redundant array of disks.
-
-- **Parity**: They are distributed information formed by adding bits to a data block to ensure they are even or odd. Adding the bits places checksums on the data, thus allowing a system to detect errors and determine what data was lost during data transmission or disk failure.     
+- *Parity*: It refers to distributed information formed by adding bits to a data block to ensure they are even or odd. Adding the bits places checksums on the data, thus allowing a system to detect errors and determine what data was lost during data transmission or disk failure.     
      
-- **Data backup**: generating copies of your system’s data that you can use to recover your original data.
+- *Data backup*: This is a copy of your system’s data that you can use to recover files.
      
-- **Mirroring**: copying data from one disk onto another disk(s).
+- *Mirroring*: Copying data from one disk onto another disk(s).
      
-- **Stripping**: splitting logically linear data across multiple drives allows for concurrent access to the data.     
+- *Stripping*: It involves splitting logically linear data across multiple drives which facilitates concurrent access to data.     
      
-- **Block**: the logical space on every drive where data is stored.     
+- *Block*: The logical space on each drive where data is stored.     
      
-- **Encoding/decoding**: this is the process of converting a sequence of characters into a unique format to improve transmission or storage. On the other hand, decoding converts an encoded format back to its original form.     
+- *Encoding/decoding*: This is the process of converting a sequence of characters into a unique format to improve transmission or storage. On the other hand, decoding converts an encoded format back to its original form.     
      
-- **Encoding/decoding complexity**: is the amount of time and resources required to encode and decode a message. The level of complexity is affected by the size of a message, the level of redundancy in the message, and the type of encoding and decoding algorithms utilized.
+- *Encoding/decoding complexity*: It's the amount of time and resources required to encode and decode a message. The level of complexity is affected by the size of a message, the level of redundancy in the message, and the type of encoding and decoding algorithms utilized.
 
 ### RAID levels
-Depending on your data recovery needs, RAID provides various levels that you can select and tune to suit a given requirement. There are at least five RAID levels, each with its utilization area. The different RAID levels are discussed below:
+RAID provides several levels that one can use for a given requirement. The five major RAID levels are discussed below:
 
 #### 1. RAID 0
-It is the first RAID level and focuses on meeting performance needs rather than fault tolerance. The level is commonly known as stripping since it separates data into at least two drives in a stripping aggregation. In a RAID 0 configuration, data is written to all the disks in the array in parallel.
+This level focuses on meeting performance needs rather than fault tolerance. The level is commonly known as stripping since it separates data into at least two drives in a stripping aggregation. In a *RAID 0* configuration, data is written to all disks in the array in parallel.
 
-The main advantage of this level is its performance factor. Performance within the level increases when you add a disk to your RAID stack. Adding more drives increases performance further when you use a dedicated RAID controller. The RAID controller allows your system to read and write data stored in the different drives concurrently.
+The main advantage of this level is its performance factor. This level's efficiency increases when you add a disk to your RAID stack. A dedicated RAID controller also boosts performance. 
 
- ![RAID 0](/engineering-education/data-recovery-raid-and-erasure-coding/raid0.svg)
+The RAID controller allows your system to read and write data stored in different drives concurrently.
 
-#### When to use the level?
-The level is most suitable for individuals who need increased data processing speeds. For instance:
-- Gamers prefer the method as it provides an advantage of a few milliseconds on latency over their peers.
+The  *RAID 0* level is most suitable for individuals who need increased data processing speeds. For instance:
+- Gamers prefer this method as it provides an advantage of a few milliseconds on latency over their peers.
 - Multimedia companies prefer the method due to its concurrency ability when reading and writing data.
-- RAID 0’s storage needs are low. Thus, you can store more data using the level. However, its users must be content that it does not offer redundancy since the level is more of a performance alternative than a data backup method. Hence, in case of a disk failure, you will lose data.
-- The RAID 0 method is not favourable for any data recovery needs.
+- RAID 0’s storage needs are low. Thus, you can store more data using the level. However, it does not offer redundancy since its more of a performance alternative than a data backup method. Therefore, in case of a disk failure, you will end up losing data.
+- The RAID 0 method is not favourable for other data recovery needs.
 
 #### 2. RAID 1
-RAID 1 is a level of RAID that disregards performance and favours fault tolerance. The method is often referred to as the mirroring technique. Data from one disk is copied to another disk. Thus, you can seamlessly access data from the secondary disk in case of disk crashes.
+The RAID 1 level disregards performance and favours fault tolerance. This method is often referred to as the mirroring technique. Data from one disk is copied to another disk. Thus, you can seamlessly access data from the secondary disk in case of disk crashes.
 
-In a RAID 1 system, you can only use 50% of the maximum available storage on your system due to mirroring. The system offers a way to backup data and recovers data with ease as the data does not have to be rebuilt but copied to a replacement drive.
+In a RAID 1 system, you can only use 50% of the maximum available storage on your system due to mirroring. The system offers a way to backup data and recovers data with ease since it does not have to be rebuilt from scratch.
 
- ![RAID 1](/engineering-education/data-recovery-raid-and-erasure-coding/raid1.svg)
-
-#### When to use the method
-Some individuals prefer RAID 1 due to its redundancy capabilities. A few of the people who like the method include:
-- Those looking to maintain data security, such as in accounting systems. The method protects its mirrored backups.
-- In-time-critical operations can result in significant damages after data failure.
-- Preferred storage alternative in low storage systems.
+Some individuals prefer RAID 1 due to its redundancy capabilities. A few of the people who like RAID 1 include those looking to promote data security, such as in accounting systems. The method protects mirrored backups.
 
 #### 3. RAID 5
-This is the most utilized level as it offers a few advantages of RAID 0 and 1. the level guarantees the security and performance of your data while increasing its expenses as it requires at least three drives to implement.
+This is the most utilized level as it offers more advantages over RAID 0 and 1. This level guarantees security and performance of your data. However, it increases overall expenses since it requires at least three drives to implement.
 
-RAID 5 uses parity bits stored on one drive to guarantee data security and strips data across multiple drives to improve performance. Thus, in a RAID 5 implementation of at least four drives, the system will use three for storage while one is used to storing parity bits.
+RAID 5 uses parity bits stored on one drive to guarantee data security and strips data across multiple drives to improve performance. Thus, in a RAID 5 implementation of four drives, the system will use three drives for storage while one drive for storing parity bits.
 
- ![RAID 5](/engineering-education/data-recovery-raid-and-erasure-coding/raid5.svg)
+RAID 5 is preferred by people looking to build well-performing and fault-tolerant systems. RAID 5 can tolerate breakdowns that occur to an entire disk in an array.
 
-#### When to use the method
-- RAID 5 is preferred by people looking to build good performance and fault-tolerant systems. RAID 5 can tolerate breakdowns that occur to an entire disk in a disk array.
-
-- The level is suitable for people who need medium performance, high storage systems. The data reconstruction process impacts performance since the system utilizes parity bits that require computational power during data recovery.
+RAID 5 is also suitable for people who need medium performance and high storage systems. The data reconstruction process impacts performance since the system utilizes parity bits that require significant computational power during data recovery.
 
 #### RAID 6
-This type of RAID uses two parity drives to ensure improved data security. However, it is similar to RAID 5 in other aspects apart from the number of parity drives that ensure data security.
-A RAID 6 system can continue to operate even after two drive failures. However, such a scenario is rare in the real world.
+This type of RAID uses two parity drives to improve data security. However, it is similar to RAID 5 in other aspects apart from the number of parity drives.
+
+A RAID 6 system can continue to operate even after two drive fail. However, such a scenario is rare in the real world.
 
 #### RAID 10
-A RAID 10 system is a combination of RAID 1 and 0. The system aggregates the advantages of mirroring(RAID 0) and stripping(RAID 1) to produce a security-focused high-performance system.
+A RAID 10 system is a combination of RAID 1 and 0. The system aggregates the advantages of mirroring (RAID 0) and stripping (RAID 1) to produce a security-focused high-performance system.
 
-In a RAID 10 implementation, at least four drives are required to handle the stripping and mirroring required to build the system.
+In a RAID 10 implementation, at least four drives are required to handle the stripping and mirroring functionalities in a system.
 
-The drives under a RAID 10 configuration are divided equally, whereby two drives handle stripping while the remaining ones handle mirroring. The RAID 10 configuration allows a system to offer upscaled performance through its simultaneous read and write operations, provides better security and reduces chances of data loss. However, the system is expensive to set up and maintain, and it only offers half of the combined disk storage.
+The drives under a RAID 10 configuration are divided equally, whereby two drives handle stripping while the remaining ones handle mirroring. The RAID 10 configuration allows a system to offer upscaled performance through its simultaneous read and write operations.
 
- ![RAID 10](/engineering-education/data-recovery-raid-and-erasure-coding/raid10.svg)
+It also provides better security and reduces chances of data loss. However, the system is expensive to set up and maintain. Furthermore, it only offers half of the combined disk storage.
 
-#### When to use the method
-Due to the system offering both the advantages of RAID 1 and 0, the system is preferred in the following areas:
-- The system is ideal for low to medium workload environments.
-- Best for entry-level servers, blade servers, and external storage systems.
-- It is ideal for gamers, music, and video editors who require high performance and reliability in their systems.
+Since it offers both the advantages of RAID 1 and 0, the system is preferred in the following areas:
+-  Low to medium workload environments.
+-  Entry-level servers, blade servers, and external storage systems.
+- Gaming, music, and video editing .
 
 ### Erasure coding schemes
-Erasure coding is an efficient method for data recovery and error correction. The different implementations of the method are known as schemes. All erasure coding schemes add redundant data to a message to reconstruct data and identify errors.
+Erasure coding is an efficient method for data recovery and error correction. The different implementations of the method are known as schemes. All erasure coding schemes add redundant data to a message to reconstruct information and identify errors.
 
 Before selecting an erasure coding scheme, you should consider the following:
-- How many nodes do you intend to use with the scheme?
-- What are the anticipated failure rate and number that may affect your system?
-- How long do you intend to spend waiting for a node to rebuild?
+- How many nodes you intend to use with the scheme.
+- Anticipated failure rate.
+- How long you intend to spend waiting for a node to rebuild.
 
-Below are the various erasure coding schemes:
+Below are some of the erasure coding schemes:
 
-#### 1. Reed-Solomon Erasure Coding
-This is perhaps the most popular erasure coding scheme. Reed Solomon is the preferred option for protecting data against transmission errors.
-The code works by encoding the data to be sent using a polynomial, then sends the encoded data over a channel. The receiver can then use the polynomial to decode the data, correcting any errors that may have occurred during transmission.
+#### 1. Reed-Solomon erasure coding
+This is perhaps the most popular erasure coding scheme. Reed Solomon is the preferred option for protecting data against transmission errors. Data is encoded using a polynomial, then sent over a channel. 
 
-Reed Solomon codes are very efficient in storage and encoding/decoding complexity, but they are not robust against correcting and identifying errors. Most Reed Solomon systems can handle 4 or 5 errors before failing. This is because they use a relatively small number of parity symbols. They are also efficient in encoding/decoding complexity as they can be encoded and decoded using simple algorithms. These simple algorithms include the Berlekamp-Massey algorithm, the Euclidean algorithm, and the Chinese Remainder Theorem.
+The receiver can then use the polynomial to decode the data, correcting any errors that may have occurred during transmission.
 
-#### When to use the scheme
-Reed Solomon based systems are best for people who:
+The Reed Solomon technique is efficient in storing data, as well as encoding/decoding complexity. However, it's  not robust in correcting and identifying errors. Most Reed Solomon systems can handle 4 or 5 errors before failing. 
+
+This is because they use a relatively small number of parity symbols. This method also uses simple algorithms such as Berlekamp-Massey algorithm, the Euclidean algorithm, and the Chinese Remainder Theorem.
+
+Reed Solomon based systems are best for:
 - Cloud storage vendors
 - Data transmission and recovery experts
+
 #### 2. XOR E. C
-This scheme is more efficient in identifying and correcting errors in data than reed-Solomon codes. The parity bits and parity checking are the vital components that allow an XOR E.C. system to achieve high error detection and correction operations. Parity checking uses generated parity bits to check for errors in and after data transmission.
+This scheme is more efficient in identifying and correcting errors in data than Reed Solomon codes. The parity bits and parity checking are the vital components that allow an XOR E.C. system to achieve high error detection and correction operations.
 
-The parity checking process begins with Exclusive-ORing (XORing) the data bits with a parity bit. Then If the parity bit is set to 1, the XORed result will be 1 if the data contains an odd number of 1s and 0 if the data contains an even number of 1s. If the parity bit is set to 0, the XORed result will be 1 if the data contains an even number of 1s and 0 if the data contains an odd number of 1s.
+Parity checking uses generated parity bits to check for errors in and after data transmission. The process begins with Exclusive-ORing (XORing). 
 
-#### When to use the scheme
-The high error detection and correcting ability of XOR codes makes them suitable in the following fields:
-- The codes are utilized in identifying and correcting data transmission as they are more efficient than reed Solomon codes.
-- They are also utilized in the bar and Q.R. code readers.
+The high error detection ability of XOR E.C codes makes it quite efffective. This technique is utilized in identifying and correcting data transmission since its more efficient than Reed Solomon. The codes are also utilized in the bar and Q.R. code readers.
 
 #### 3. Product Matrix E. C
-This scheme uses Reed Solomon codes and XOR codes to form a data recovery system that is efficient in data transmission and error detection and correction. The scheme is mainly preferred when handling errors in digital data.
+This scheme uses Reed Solomon and XOR codes to form a data recovery system that is efficient in data transmission, error detection and correction. 
 
-The product matrix E. C scheme uses product coding to protect data from eavesdropping and tampering. Product coding encodes data in a way that makes it resistant to errors. Product coding encodes data using a matrix that is multiplied by a vector. This multiplication creates a code that is resistant to errors.
-
-#### When to use the scheme
-Product matrix E.C. codes are preferred in data security and communication where the goal is to protect data from eavesdropping and tampering and increase the reliability of data storage.
+The product matrix E. C scheme uses product coding to ensure that data does not leak. Product coding encodes data using a matrix that is multiplied by a vector. This multiplication creates data that is resistant to errors.
 
 ### Other factors to consider
-#### a. Hardware Type
+#### Hardware Type
 In this context, hardware type refers to the specific hard drive technology. For example, erasure coding is generally more efficient than RAID when using SSD storage.
 
-Erasure coding encodes data into smaller chunks and then distributes those chunks across several different storage devices, which helps improve data durability and availability. On the other hand, RAID relies on mirroring or parity to protect data, which is less space-efficient, as discussed before.
-#### b. Architecture
-Erasure coding is a newer technology preferred in the cloud and hyper-converged systems. Erasure coding is more efficient than RAID in storage overhead and can provide better protection against data loss.
+Erasure coding encodes data into smaller chunks and then distributes those chunks across different storage devices, which helps improve data durability and availability. 
+
+On the other hand, RAID relies on mirroring or parity to protect data, which is less space-efficient.
+
+#### Architecture
+Erasure coding is a new technology preferred in cloud and hyper-converged systems. Erasure coding is more efficient than RAID in storage overhead and can provide better protection against data loss.
 
 Erasure coding breaks data into smaller pieces and encodes them using a scheme. The encoded data is stored across different storage devices such as hyper-converged systems. In data loss, the data can be reconstructed from the encoded data.
+
 #### c. Available storage
 All erasure coding schemes are characterized as being storage efficient. To implement an erasure coding system, you need at least two drives. However, this isn't the case for a raid system.
 
@@ -159,11 +151,9 @@ When selecting a suitable data recovery method, there is no one size fit for all
 
 After reading this article, I hope that choosing the proper data recovery methods should be straightforward.
 
-Till next time
-
-Happy Reading!!!
+Happy Reading!
 
 
 
 ---
-Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Wanja Mike](/engineering-education/authors/michael-barasa/)
