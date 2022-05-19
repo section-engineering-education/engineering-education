@@ -2,16 +2,16 @@
 layout: engineering-education
 status: publish
 published: true
-url: /how-to-verify-emails-using-tuya-apis/
-title: How to Verify Emails Using Tuya APIs.
+url: /how-to-send-code-and-verify-email-using-tuya-api/
+title: How to Verify Emails using Tuya APIs
 description: This article will explain how to use the Tuya Mail API to send a random code to a user's email address and verify it using a Node app.
 author: jedidah-mwangi
-date: 2022-04-20T00:00:00-13:30
-topics: [Languages]
+date: 2022-05-19T00:00:00-13:30
+topics: [API]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/how-to-verify-emails-using-tuya-apis/hero.jpg
+  - url: /engineering-education/how-to-send-code-and-verify-email-using-tuya-api/hero.jpg
     alt: How to Verify Emails Using Tuya APIs.
 ---
 Email is still one of the most preferred and effective communication channels with most people checking their emails daily. Use of email validation is still the most effective way of preventing spamming. Email verification helps to prevent fraud and increases the ability to validate a sender.
@@ -42,19 +42,19 @@ First, we need to create an account on the [Tuya Cloud](https://developer.tuya.c
 
 Fill out the form to register your project. For the best experience, choose the **Data Center** geographically closest to you. Then select **Create**:
 
-![create_cloud_project](/engineering-education/how-to-verify-emails-using-tuya-apis/create_cloud_project.png)
+![create_cloud_project](/engineering-education/how-to-send-code-and-verify-email-using-tuya-api/create_cloud_project.png)
 
 The IoT Core and Authorization options will be shown by default in the **Configuration Wizard** window under **Selected API Services**. Choose **Email Service Trial Version API** from the **Select API Services** list, and then click **Authorize** to complete the process:
 
-![configuration_wizard](/engineering-education/how-to-verify-emails-using-tuya-apis/configuration_wizard.png)
+![configuration_wizard](/engineering-education/how-to-send-code-and-verify-email-using-tuya-api/configuration_wizard.png)
 
 Fill in the details of your assets in the next window:
 
-![project_configuration](/engineering-education/how-to-verify-emails-using-tuya-apis/project_configuration.png)
+![project_configuration](/engineering-education/how-to-send-code-and-verify-email-using-tuya-api/project_configuration.png)
 
 Your cloud project is now ready, and you'll get your **Access ID/Client ID** and **Access Secret/Client Secret**:
 
-![email_services](/engineering-education/how-to-verify-emails-using-tuya-apis/email_services.png)
+![email_services](/engineering-education/how-to-send-code-and-verify-email-using-tuya-api/email_services.png)
 
 From here, we can now set up our project locally.
 
@@ -63,7 +63,7 @@ We will have both a frontend and a backend/server in this project. The frontend 
 
 The backend will handle generating a random code for email verification and making a request to Tuya for sending the verification email. It will also be responsible for verifying the code too. We are generating the code in the server to prevent a user from knowing the generated code.
 
-### Folder Structure
+### Folder structure
 Choose a good name for your working directory and navigate to it. Assuming you've already installed [Node.js](https://nodejs.org/en/), run the following command to create a ` package.json` file for your project:
 
 ```bash
@@ -72,7 +72,7 @@ $ npm init -y
 
 The file structure for this project should look like this:
 
-```
+```bash
 ├── public
     ├── index.html
     ├── script.js
@@ -130,12 +130,12 @@ app.get("/", function (req, res) {
 
 Since clients retrieve static files from the server in their original form, we use the `express.static` middleware to serve our `index.html`.
 
-We use the `app.get` method to create a route for our frontend and handle the `GET` requests. The `res.sendFile` method will send the Html file to the `/` path. In order to show our `index.html` in our public folder, we will visit <http://localhost:8000> in the browser.
+We use the `app.get` method to create a route for our frontend and handle the `GET` requests. The `res.sendFile` method will send the HTML file to the `/` path. In order to show our `index.html` in our public folder, we will visit <http://localhost:8000> in the browser.
 
 ### Using the Email route
 Fill in all of the information to create a new `TuyaContext`. Enter our project's `accessKey` and `secretKey`. The `BaseUrl` should be chosen based on the locality:
 
-![baseUrl](/engineering-education/how-to-verify-emails-using-tuya-apis/baseUrl.jpg)
+![baseUrl](/engineering-education/how-to-send-code-and-verify-email-using-tuya-api/baseUrl.jpg)
 
 Let's now create a new `TuyaContext` by adding it to our `server.js` file:
 
@@ -148,9 +148,10 @@ app.post("/sendcode", async (req, res) => {
   });
 });
 ```
+
 > Note: Replace `CLIENT-ID-HERE` and `CLIENT-SECRET-HERE` with your own `accessKey` and `secretKey` from your Tuya Cloud project.
 
-To receive an email from the user (a frontend request), generate a random code, and ask Tuya to send a verification email, the POST method will be utilized. <http://localhost:8000/sendcode/> will be the URL for emails sent from your local machine.
+To receive an email from the user (a frontend request), generate a random code snippet, and ask Tuya to send a verification email, the POST method will be utilized. <http://localhost:8000/sendcode/> will be the URL for emails sent from your local machine.
 
 ### Random code generation
 To access the verification code to both the generator and verification route, we need to declare it as a global variable. Let's declare a variable `verificationCode` in our `server.js` file.
@@ -172,7 +173,6 @@ if (verificationCode < 1000) {
 ```
 
 ### Sending email using Tuya
-
 The `tuyaContext.request` method can be used to make a request, which we can save in a data variable. The request should be a POST request, and the route is our API endpoint, which is `/v1.0/iot-03/messages/mails/actions/push`:
 
 ```javascript
@@ -189,13 +189,12 @@ const data = await tuyaContext.request({
 ```
 
 Let's look at the parameters included in the request body:
-
 - `to_address`: It's the recipient's email address here. We'll get an email as a result of the request we make from the frontend.
 - `reply_to_address`: Emails that the user may react to.
 - `template_id : MAIL_1624531323`: Tuya's pre-configured email template id for the correct code.
-- `template_param`:The email field. Our code will be included in the `verificationCode: ${verificationCode}` parameter.
+- `template_param`: The email field. Our code will be included in the `verificationCode: ${verificationCode}` parameter.
 
-### Route for verifying the code:
+### Route for verifying the code
 Comparing the user-entered code to the code we provide is a simple operation. When making a request to the backend, the verification code will be included in the body:
 
 ```javascript
@@ -247,9 +246,9 @@ Let's include the following code in our `index.html` file:
 
 The `sendCode()` function will be called when the user clicks the `Send Code` button. The `verifyCode()` function will be called when the user clicks the `Verify Code` button. The `sendCode()` function will send a request to the backend to send a code to the user's email. The `verifyCode()` function will send a request to the backend to check the code.
 
-This is how our frontend will look like:
+This is what our frontend will look like:
 
-![frontend](/engineering-education/how-to-verify-emails-using-tuya-apis/frontend.png)
+![frontend](/engineering-education/how-to-send-code-and-verify-email-using-tuya-api/frontend.png)
 
 ### Verifying the code
 With the email address provided in the body of the request, the `sendCode()` method will contact our server. A POST request will be made since it includes a body. We will use `json.stringify()`, to turn the body into JSON, which is what the server can read.
@@ -298,7 +297,7 @@ const verifyCode = () => {
 };
 ```
 
-Run the server by running the command:
+Run the server by running the command below:
 
 ```bash
 $ node server.js
@@ -306,11 +305,11 @@ $ node server.js
 
 On <http://localhost:8000>, enter your email and click `send email`. Tuya API will send the code to the supplied email address:
 
-![verification code](/engineering-education/how-to-verify-emails-using-tuya-apis/verification-code.png)
+![verification code](/engineering-education/how-to-send-code-and-verify-email-using-tuya-api/verification-code.png)
 
 Once the user enters the code and clicks `verify code`, it will automatically be verified:
 
-![verified-email](/engineering-education/how-to-verify-emails-using-tuya-apis/verified-email.jpeg)
+![verified-email](/engineering-education/how-to-send-code-and-verify-email-using-tuya-api/verified-email.jpeg)
 
 [This GitHub repo](https://github.com/Jeddy947/tuya-email-verification) contains the fully working code used in this tutorial. [Click here](https://tuya-email-verification.herokuapp.com/) to see the live version of this code deployed on Heroku.
 
