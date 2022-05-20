@@ -4,9 +4,9 @@ status: publish
 published: true
 url: /cirq-for-quantum-computing/
 title: Cirq for Quantum Computing
-description: This tutorial will give an overview of the Cirq framework and demonstrate how one can use it to learn about Quantum computing.
+description: This tutorial will give the reader an overview of the Cirq framework and demonstrate how one can use it to learn about Quantum computing.
 author: lilian-tonia
-date: 2022-04-20T00:00:00-24:00
+date: 2022-05-20T00:00:00-10:00
 topics: [Networking]
 excerpt_separator: <!--more-->
 images:
@@ -14,12 +14,12 @@ images:
   - url: /engineering-education/cirq-for-quantum-computing/hero.png 
     alt: Cirq for Quantum Computing Hero Image
 ---
-This tutorial will give an overview of the framework and demonstrate to our readers how they can use this framework to learn about Quantum computing.
+This tutorial will give an overview of the framework and demonstrate to readers how they can use this framework to learn about Quantum computing.
 <!--more-->
 
 ### Prerequisite
 To follow along with this tutorial, you need to have:
-- Basic knowledge in Quantum Computing
+- Basic knowledge in Quantum Computing.
 - Google Colab or Jupyter notebook.
 > We will use Google Colab for this build.  
 
@@ -31,7 +31,9 @@ To follow along with this tutorial, you need to have:
 ### A Brief History 
 In 2019, Google announced that it had reached a quantum advantage. Quantum advantage is the threshold where a quantum computer can outperform a classical computer for a certain problem. This was a huge achievement in the world of quantum computers.
 
-There are several Google Quantum Hardware that has been used by the Google Research team to date. [Foxtail](https://quantumai.google/cirq/google/devices#foxtail) is one of the hardware devices that was released in 2016, [Bristlecone](https://quantumai.google/cirq/google/devices#bristlecone) is a 72-qubit device and was released in 2018, and most recently, [Sycamore](https://quantumai.google/cirq/google/devices#sycamore) released in 2019. Sycamore is the 54-qubit quantum hardware device that was used to reach the quantum advantage mentioned above. These results are published in the, [Quantum supremacy using a programmable superconducting processor](https://www.nature.com/articles/s41586-019-1666-5) research paper in the Nature journal.  
+There is several Google Quantum Hardware that has been used by the Google Research team to date. [Foxtail](https://quantumai.google/cirq/google/devices#foxtail) is one of the hardware devices that was released in 2016, [Bristlecone](https://quantumai.google/cirq/google/devices#bristlecone) is a 72-qubit device and was released in 2018, and most recently, [Sycamore](https://quantumai.google/cirq/google/devices#sycamore) released in 2019. 
+
+Sycamore is the 54-qubit quantum hardware device that was used to reach the quantum advantage mentioned above. These results are published in the, [Quantum supremacy using a programmable superconducting processor](https://www.nature.com/articles/s41586-019-1666-5) research paper in the Nature journal.  
 
 Cirq is a quantum computing programming language. It is an open-source Python framework for writing, manipulating, and optimizing quantum circuits. It is used to run these programs on simulators and real quantum computers. 
 
@@ -52,16 +54,20 @@ Next, we need to define the two qubits that we need to use for this circuit.
 x = cirq.NamedQubit("x")
 y = cirq.NamedQubit("y")
 ```
+
 With classical computing, there is a set of commonly known gates; AND, OR, NAND, NOR, and XOR. These gates perform any form of computing in classical computers. But, they are irreversible because the information is lost.
 
 What do we mean when we say it is irreversible?
 
-For example, if we do an `AND` gate and we get an output of `0`. For this case, we don't know if the first gate was `1` and the second gate was `0`. Or that both of the two inputs were `0`. We tend to lose that information in this process.
-In addition, [fanout](https://en.wikipedia.org/wiki/Fan-out), a technique used in classical computing, requires the cloning of states. But, this technique is prohibited by the [no-cloning](https://en.wikipedia.org/wiki/No-cloning_theorem) theorem in quantum computing. 
+For example, if we do an `AND` gate and we get an output of `0`. For this case, we don't know if the first gate was `1` and the second gate was `0`. Or that both of the two inputs were `0`. 
+
+We tend to lose that information in this process. In addition, [fanout](https://en.wikipedia.org/wiki/Fan-out), a technique used in classical computing, requires the cloning of states. But, this technique is prohibited by the [no-cloning](https://en.wikipedia.org/wiki/No-cloning_theorem) theorem in quantum computing. 
  
 Since we cannot use these sets of classical gates, we'll use Quantum gates. 
 
-Quantum computing has its own set of special gates. You can learn about them [here](https://en.wikipedia.org/wiki/Quantum_logic_gate). But, two popular gates enhance the power of quantum superposition and quantum entanglement. Using a [Hadamard (H) gate](https://www.quantum-inspire.com/kbase/hadamard/), we can put a qubit into a superposition state. Additionally, using a [CNOT gate](https://www.quantum-inspire.com/kbase/cnot/) to entangle these two qubits.
+Quantum computing has its own set of special gates. You can learn about them [here](https://en.wikipedia.org/wiki/Quantum_logic_gate). But, two popular gates that enhance the power of quantum are superposition and quantum entanglement. 
+
+Using a [Hadamard (H) gate](https://www.quantum-inspire.com/kbase/hadamard/), we can put a qubit into a superposition state. Additionally, using a [CNOT gate](https://www.quantum-inspire.com/kbase/cnot/) to entangle these two qubits.
 
 Let's build the circuit by adding these two gates to our circuit.
 
@@ -94,7 +100,9 @@ simulator = cirq.Simulator()
 output = simulator.run(q_circuit, repetitions = 20)
 print(output)
 ```
-We usually run circuits a lot of time to get the results. That is why we are running the simulator for `20` repetitions. The results of this run is shown below:
+We usually run circuits a lot of time to get the results. That is why we are running the simulator for `20` repetitions. 
+
+The results of this run is shown below:
 
 ```bash
 x,y=11011000000111111111, 11011000000111111111
