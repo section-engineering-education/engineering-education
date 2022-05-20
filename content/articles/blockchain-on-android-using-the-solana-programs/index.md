@@ -3,26 +3,24 @@ layout: engineering-education
 status: publish
 published: true
 url: /blockchain-on-android-using-the-solana-programs/
-title: How to Build an Android Blockchain Wallet using Solana
+title: How to Implement the Solana Blockchain Concept in Android
 description: This tutorial will guide the reader on how to build an Android Blockchain wallet using Solana.
 author: moses-chege
-date: 2022-04-15T00:00:00-04:13
-topics: [Languages, Android]
+date: 2022-05-20T00:00:00-11:30
+topics: [Blockchain, Android]
 excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/blockchain-on-android-using-the-solana-programs/hero.png
     alt: How to Build an Android Blockchain Wallet using Solana Hero Image
 ---
-Web 3.0 is an evolution of the internet utilizing blockchain technology and decentralization tools.
+Web 3.0 is an evolution of the internet that utilizes blockchain technology and decentralization tools. Solana is a fast, cheap, and monstrous blockchain tool. It is a high-performance, scalable blockchain that supports crypto applications.
 <!--more-->
-On the other side, Solana is a fast, cheap, and monstrous blockchain tool. It is a high-performance, scalable blockchain that supports crypto applications.
-
-[Solana ($SOL)](https://coinmarketcap.com/currencies/solana/) is a decentralized blockchain network just like the likes of Bitcoin, Ethereum, and Litecoin. It also has programmable blockchains that allow you to use smart contracts and create your own token, or NFTs. 
+[Solana ($SOL)](https://coinmarketcap.com/currencies/solana/) is a decentralized blockchain network just like Bitcoin, Ethereum, and Litecoin. It also has programmable blockchains that allow you to use smart contracts and create your own token, or NFTs. 
 
 Solana aims to be more scalable and a faster network, it can currently handle 50k transactions per second with an average 400ms block time. This extremely fast transaction speed makes Solana one of the most scalable layer one blockchain solutions.
 
-This guide will implement the Solana blockchain concept in Android. We will consume a Solana API using the android Retrofit library.
+This guide will implement the Solana blockchain concept in Android. We will consume a Solana API using the Android Retrofit library.
 
 ### Table of contents
 - [Prerequisites](#prerequisites)
@@ -56,9 +54,9 @@ Also, you need to ensure you have added internet permission to the manifest file
 <uses-permission android:name="android.permission.INTERNET" />
 ```
 
-Next, you need a Solana wallet that will provide you with the wallet address. This address helps you access the Solana wallet, get the balances and even receive or Transfer Solana to another wallet. 
+Next, you need a Solana wallet that will provide you with the wallet address. This address helps you access the Solana wallet, get the balances and receive or Transfer Solana to another wallet. 
 
-Check this guide and learn how to set up a [Salona wallet](https://solpadfinance.medium.com/how-to-create-a-solana-wallet-in-the-sollet-web-wallet-4e050587aca6#:~:text=Sollet%20%E2%80%94%20Solana%20SPL%20token%20wallet&text=Go%20to%20https%3A%2F%2Fwww,wallet%20seed%20using%20a%20password.) using the [Solana SPL token wallet](https://www.sollet.io/).
+Check this guide and learn how to set up a [Solana wallet](https://solpadfinance.medium.com/how-to-create-a-solana-wallet-in-the-sollet-web-wallet-4e050587aca6#:~:text=Sollet%20%E2%80%94%20Solana%20SPL%20token%20wallet&text=Go%20to%20https%3A%2F%2Fwww,wallet%20seed%20using%20a%20password.) using the [Solana SPL token wallet](https://www.sollet.io/).
 
 ![solana-devnet](/engineering-education/blockchain-on-android-using-the-solana-programs/solana-devnet.png)
 
@@ -146,7 +144,9 @@ Here we want to get the results of the request we sent. We want a response back 
 
 We will then get the results of context, this will give us the details that the Solana server has sent to the application. In this example, we want the application to return the Solana slot and its value.
 
-Finally, add this `POST` retrofit method. This defines A relative or absolute path or full URL of the endpoint. This value is optional if the first parameter of the method is annotated with a URL. We will set the Base URL in the main activity later. In this case, the Base URLs should always end in `/`. So go ahead and add this as shown below:
+Now add this `POST` retrofit method. This defines a relative or absolute path or full URL of the endpoint. This value is optional if the first parameter of the method is annotated with a URL. 
+
+We will set the Base URL in the main activity later. In this case, the Base URLs should always end in `/`. So go ahead and add this as shown below:
 
 ```java
 @POST("/")
@@ -183,7 +183,9 @@ Let's now access the `SInterface` we created earlier using the `retrofit.create(
 SInterface solanaInterface = retrofit.create(SInterface.class);
 ```
 
-To access the Salona, you now need to add your wallet address. In this case, we are using the address `8tfDNiaEyrV6Q1U4DEXrEigs9DoDtkugzFbybENEbCDz` from the list of available and ready-made wallets we explained earlier. Then call the `SInterface` together with its `GetBalanceResponse` and `GetBalanceRequest` classes.
+To access the Solana, you now need to add your wallet address. We are using the address `8tfDNiaEyrV6Q1U4DEXrEigs9DoDtkugzFbybENEbCDz` from the list of available and ready-made wallets we explained earlier. 
+
+Then call the `SInterface` together with its `GetBalanceResponse` and `GetBalanceRequest` classes.
 
 ```java
 String[] walletAddress = {"8tfDNiaEyrV6Q1U4DEXrEigs9DoDtkugzFbybENEbCDz"};
@@ -197,7 +199,7 @@ Call<SInterface.GetBalanceResponse> responseCall = solanaInterface.retreiveBalan
 );
 ```
 
-Now we need to set up the application will showcase based on the response status, either success or failure. To do so, add the `enqueue` Retrofit method to the `responseCall`. Then set the `GetBalanceResponse` as the callback.
+Now we need to set up the application. This will be showcased based on the response status, either success or failure. To do so, add the `enqueue` Retrofit method to the `responseCall`. Then set the `GetBalanceResponse` as the callback.
 
 ```java
 responseCall.enqueue(new Callback<SInterface.GetBalanceResponse>() {
@@ -215,7 +217,7 @@ public void onResponse(@NonNull Call<SInterface.GetBalanceResponse> call, Respon
         if(response.isSuccessful()){
             textView.setText("Success: " + response.body().toString());
         } else {
-            textView.setText("Failed to access Salona wallet: " + response.errorBody().string());
+            textView.setText("Failed to access Solana wallet: " + response.errorBody().string());
         }
     } catch (IOException exception){
         textView.setText(exception.getMessage());
@@ -223,7 +225,7 @@ public void onResponse(@NonNull Call<SInterface.GetBalanceResponse> call, Respon
 }
 ```
 
-This was also set to update the UI based on the received Solana response. If the response becomes successful, the textView will be updated with the Salona JSON response. Otherwise, the textView will be updated with the `errorBody()` or the exception message.
+This was also set to update the UI based on the received Solana response. If the response becomes successful, the textView will be updated with the Solana JSON response. Otherwise, the textView will be updated with the `errorBody()` or the exception message.
 
 Likewise, if an error occurs talking to the server, add this `onFailure` method to keep track of such instances and update the view accordingly.
 
