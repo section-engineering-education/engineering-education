@@ -43,7 +43,139 @@ Initially, we talked about the path and said, the path is a Jetpack compose clas
 ### Step 4 - Creating a Scratchpad in the main activity 
 There are several composables used to create a scratchpad. Let us dive deep into each composable used. A `TopAppBar` composable is used to create the app bar with the app name and an icon which is used for deleting errors. The paint body is used to define all the components used in drawing that is the drawing canvas and drawing tool are all placed in a layout box. The composable uses the path of type `PathState` to listen to all the drawings done on the screen. The last composable used is drawing Canva which is used to listen to all the movements. Using the states of path color and brush it can detect movements from current to the next state. It uses the composable `Canva` with the modifier property `pointerInteropFilter` which is used to detect down and upward movement of the path across the X/Y axis.
 
-![main](/engineering-education/creating-a-scratch-pad-with-jetpack-compose/main.png)
+#### Scratchpad
+```
+@Composable
+fun ScratchPad() {
+    val path = remember {mutableStateOf(mutableListOf<PathState>())}
+    Scaffold(
+        topBar = {
+            ComposePaintAppBar{
+                path.value = mutableListOf()
+            }
+        }
+    ) {
+        PaintBody(path)
+    }
+}
+
+@Composable
+fun ComposePaintAppBar(
+    onDelete:()-> Unit
+) {
+    TopAppBar(
+        title = {
+            Text(text = "ScratchPad")
+        },
+        actions = {
+            IconButton(onClick = onDelete) {
+                Icon(
+                    imageVector = Icons.Default.Delete,
+                    contentDescription ="Delete"
+                )
+            }
+        }
+    ) 
+}
+
+@OptIn(ExperimentalAnimationApi::class)
+@Composable
+fun PaintBody(path:MutableState<MutableList<PathState>>) {
+    Box(
+        modifier = Modifier.fillMaxSize()
+    ) {
+        val drawColor = remember{ mutableStateOf(Color.Black)}
+        val drawBrush = remember{ mutableStateOf(5f)}
+        val usedColor = remember { mutableStateOf(mutableSetOf(Color.Black,Color.White,Color.Gray))}
+
+        path.value.add(PathState(Path(),drawColor.value,drawBrush.value))
+
+        DrawingCanvas(
+                drawColor,
+                drawBrush,
+                usedColor,
+                path.value
+        )
+
+        DrawingTools(
+            drawColor = drawColor,
+            drawBrush = drawBrush,
+            usedColors = usedColor.value
+        )
+
+    }
+}
+
+@OptIn(ExperimentalComposeUiApi::class)
+@Composable
+fun DrawingCanvas(
+    drawColor: MutableState<Color>,
+    drawBrush: MutableState<Float>,
+    usedColor: MutableState<MutableSet<Color>>,
+    path: MutableList<PathState>
+) {
+    val currentPath = path.last().path
+    val movePath = remember{ mutableStateOf<Offset?>(null)}
+
+    Canvas(
+        modifier = Modifier
+            .fillMaxSize()
+            .padding(top = 100.dp)
+            .pointerInteropFilter {
+                    when(it.action){
+                        MotionEvent.ACTION_DOWN ->{
+                            currentPath.moveTo(it.x,it.y)
+                            usedColor.value.add(drawColor.value)
+                        }
+                        MotionEvent.ACTION_MOVE ->{
+                            movePath.value = Offset(it.x,it.y)
+                        }
+                        else ->{
+                            movePath.value =null
+                        }
+                    }
+                true
+            }
+    ){
+        movePath.value?.let {
+            currentPath.lineTo(it.x,it.y)
+            drawPath(
+                path = currentPath,
+                color = drawColor.value,
+                style = Stroke(drawBrush.value)
+            )
+        }
+        path.forEach {
+            drawPath(
+                path = it.path,
+                color = it.color,
+                style  = Stroke(it.stroke)
+            )
+        }
+    }
+}
+```
+
+Finally, your `MainActivity` should look like this.
+
+```kotlin
+class MainActivity : ComponentActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContent {
+            ScratchPadDemoTheme {
+                // A surface container using the 'background' color from the theme
+                Surface(
+                    modifier = Modifier.fillMaxSize(),
+                    color = MaterialTheme.colors.background
+                ) {
+                    ScratchPad()
+                }
+            }
+        }
+    }
+}
+```
 
 ### Demo
 
