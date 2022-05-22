@@ -41,10 +41,10 @@ Initially, we talked about the path and said, the path is a Jetpack compose clas
 
 
 ### Step 4 - Creating a Scratchpad in the main activity 
-There are several composables used to create a scratchpad. Let us dive deep into each composable used. A `TopAppBar` composable is used to create the app bar with the app name and an icon which is used for deleting errors. The paint body is used to define all the components used in drawing that is the drawing canvas and drawing tool are all placed in a layout box. The composable uses the path of type `PathState` to listen to all the drawings done on the screen. The last composable used is drawing Canva which is used to listen to all the movements. Using the states of path color and brush it can detect movements from current to the next state. It uses the composable `Canva` with the modifier property `pointerInteropFilter` which is used to detect down and upward movement of the path across the X/Y axis.
+There are several composables used to create a scratchpad. Let us dive deep into each composable used. A `TopAppBar` composable is used to create the app bar with the app name and an icon which is used for deleting errors. The paint body is used to define all the components used in drawing that is the drawing canvas and drawing tool all placed in a layout box. The composable uses the path of type `PathState` to listen to all the drawings done on the screen. The last composable used is drawing Canva which is used to listen to all the movements. Using the states of path color and brush it can detect movements from current to the next state. It uses the composable `Canva` with the modifier property `pointerInteropFilter` which is used to detect down and upward movement of the path across the X/Y axis.
 
-#### Scratchpad
-```
+```kotlin 
+
 @Composable
 fun ScratchPad() {
     val path = remember {mutableStateOf(mutableListOf<PathState>())}
@@ -58,7 +58,7 @@ fun ScratchPad() {
         PaintBody(path)
     }
 }
-
+//Top app Bar composable with application name and Icon
 @Composable
 fun ComposePaintAppBar(
     onDelete:()-> Unit
@@ -78,8 +78,11 @@ fun ComposePaintAppBar(
     ) 
 }
 
+//Define all the components used in drawing that is the drawing canvas and drawing tool
 @OptIn(ExperimentalAnimationApi::class)
 @Composable
+
+//uses path of type Path state to listen to all location on the screen drawn
 fun PaintBody(path:MutableState<MutableList<PathState>>) {
     Box(
         modifier = Modifier.fillMaxSize()
@@ -106,6 +109,7 @@ fun PaintBody(path:MutableState<MutableList<PathState>>) {
     }
 }
 
+// a composable that listen to all the movements across the X/Y axis from the current path to all other movments made and draws the line on each movement detected.
 @OptIn(ExperimentalComposeUiApi::class)
 @Composable
 fun DrawingCanvas(
