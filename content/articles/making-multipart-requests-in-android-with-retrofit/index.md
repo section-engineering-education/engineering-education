@@ -1,30 +1,43 @@
-The multipart content type is very common. You may not realize it, but you've probably used it several times in your life. A multipart message is made up of several parts. A part is made up of headers and a body. The body of the parts can be any type of media and can contain text or binary data. A multipart media type can be included in a part.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /making-multipart-requests-in-android-with-retrofit/
+title: How to make Multipart Requests in Android with Retrofit
+description: This tutorial will help the reader understand how to make a multipart request in Android using Kotlin and Retrofit.
+author: esther-wanjiru
+date: 2022-04-21T00:00:00-11:00
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
 
-Retrofit can make has the capability of making requests that are in parts.
-In this tutorial, we'll make a basic multipart request to a Ktor backend that accepts user profiles. 
+- url: /engineering-education/making-multipart-requests-in-android-with-retrofit/hero.jpg
+  alt: How to make Multipart Requests in Android with Retrofit Hero Image
+---
+A multipart request is an HTTP request that HTTP clients create to send files and data to an HTTP server.
+<!--more-->
+A multipart message is made up of several parts. A part consists of a header and a body. The body can be any type of media and can contain text or binary data. A multipart media type can be included in a part.
+
+Retrofit supports requests that are in parts. In this tutorial, we will make a basic multipart request to a *Ktor* backend that accepts user profiles. 
 
 ### Prerequisites
-To follow along with this tutorial, you must have the following skills:
+To follow along with this tutorial, you need:
 - A solid understanding of how to create and run Android apps.
-- You must have Android Studio installed.
+- Android Studio installed.
 - Basic knowledge of the Kotlin programming language.
 - Using Retrofit to make network requests. 
 
 ### What is a multipart request
 MIME, an Internet standard that extends the format of emails, is the source of multipart.
 
-Multipart requests combine one or more sets of data into a single, boundary-separated body.
-These requests are typically used for file uploads and transferring multiple types of data in a single request (for example, a file along with a JSON object).
+Multipart requests combine one or more sets of data into a single, boundary-separated body. These requests are typically used for file uploads and transferring multiple types of data in a single request (for example, a file along with a JSON object).
 
-A multipart request is an HTTP request that HTTP clients create to send files and data to an HTTP Server.
-Browsers and HTTP clients frequently use it to upload files to the server. 
+A multipart request is an HTTP request that HTTP clients create to send files and data to an HTTP server. Browsers and HTTP clients frequently use it to upload files to the server. 
 
 ### Getting started
-In this tutorial, we will try and simulate how a user registers to an app. A user usually selects a profile image and enters some details to register to the app. This data is then uploaded to a server where the user is authenticated.
+In this tutorial, we will try and simulate how a user registers in an app. A user usually selects a profile image and enters some details to register. This data is then uploaded to a server where the user is authenticated.
 
-First of all, here is the Ktor route (endpoint) that we are going to make our multipart request. 
-
-This is what a multipart request looks like when you create it on your Ktor backend.
+This is what a multipart request looks like when you create it on a Ktor backend:
 
 ```kotlin
 fun Route.registerAccount(
@@ -81,36 +94,36 @@ fun Route.registerAccount(
 }
 ```
 
-PartData - Represents form-data entry which could be:
-    - FormItem - Represents a multipart form item e.g user input data.
-    - FileItem - Represents a file content e.g a picture, document, etc.
-    - BinaryItem - Represents a binary item.
+PartData which represents form-data entry which could be:
+- FormItem - Represents a multipart form item e.g user input data.
+- FileItem - Represents a file content e.g a picture, document, etc.
+- BinaryItem - Represents a binary item.
 
-### Step 1 - Creating Project
-Open your IDE (Android studio) and create an empty Android Studio project as illustrated below: 
+### Step 1 - Creating the project
+Open Android Studio and create an empty project as shown below: 
 
-[!New Project](engineering-education/making-multipart-requests-in-android-with-retrofit/new-project.png)
+[!New Project](/engineering-education/making-multipart-requests-in-android-with-retrofit/new-project.png)
 
 ### Step 2 - Add necessary dependencies
-In your app-level gradle file, add the following dependencies.
+In your `app-level` build.gradle file, add the following dependencies.
 
 ```kotlin
-    // Coroutines
-    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.2'
-    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.2'
+// Coroutines
+implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.2'
+implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.2'
 
-    // Retrofit
-    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
-    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
-    implementation "com.squareup.okhttp3:okhttp:5.0.0-alpha.2"
-    implementation "com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.2"
+// Retrofit
+implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+implementation "com.squareup.okhttp3:okhttp:5.0.0-alpha.2"
+implementation "com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.2"
 
-    // Coil
-    implementation("io.coil-kt:coil-compose:1.4.0")
+// Coil
+implementation("io.coil-kt:coil-compose:1.4.0")
 ```
 
 ### Step 3 - Defining the multipart request
-First, define the response that we are going to get.
+First, we need to define the response that we are going to retrieve, as shown below:
 
 ```kotlin
 data class BasicApiResponse<T>(
@@ -120,21 +133,21 @@ data class BasicApiResponse<T>(
 )
 ```
 
-Then, in your `ApiService` define the following POST method.
+Then, in your `ApiService` file, define the following *POST* method:
 
 ```kotlin
-    @Multipart
-    @POST("/api/user/create")
-    suspend fun createUser(
-        @Part userData: MultipartBody.Part,
-        @Part profileImage: MultipartBody.Part
-    ): BasicApiResponse<Unit>
+@Multipart
+@POST("/api/user/create")
+suspend fun createUser(
+    @Part userData: MultipartBody.Part,
+    @Part profileImage: MultipartBody.Part
+): BasicApiResponse<Unit>
 ```
 
-The first part will take user registration details that he/she has inputted and the second part will take the profile image.
+The first part will take user registration details while the second part will fetch the profile image.
 
 ### Step 4 - Making the request
-In your repository class, define the method to create a user, which will take the image `Uri` and details of a user.
+In your repository class, define the method to create a user object. It will take the image's `Uri` and user details.
 
 ```kotlin
     suspend fun createUser(
@@ -189,47 +202,51 @@ In your repository class, define the method to create a user, which will take th
 In your `ViewModel`, create a wrapper method that calls the `createUser` method from the repository, passing all the required parameters.
 
 ```kotlin
-    fun register() {
-        if (chosenImageUri.value == null) {
-            Log.d("TAG", "register: No image picked, please pick an photo")
-            return
-        }
-
-        if (emailState.value.isBlank() || nameState.value.isBlank() || phoneState.value.isBlank() || passwordState.value.isBlank()) {
-            Log.d("TAG", "register: Fields cannot be blank")
-            return
-        }
-
-        viewModelScope.launch {
-            _isLoading.value = true
-            val result = repository.createUser(
-                email = emailState.value,
-                name = nameState.value,
-                phone = phoneState.value,
-                password = passwordState.value,
-                imageUri = chosenImageUri.value
-            )
-
-            when (result) {
-                is Resource.Success -> {
-                    Log.d("TAG", "register: Successfully created post")
-                }
-                is Resource.Error -> {
-                    Log.d("TAG", "register: ${result.message}")
-                }
-                else -> {}
-            }
-            _isLoading.value = false
-        }
+fun register() {
+    if (chosenImageUri.value == null) {
+        Log.d("TAG", "register: No image picked, please pick an photo")
+        return
     }
+
+    if (emailState.value.isBlank() || nameState.value.isBlank() || phoneState.value.isBlank() || passwordState.value.isBlank()) {
+        Log.d("TAG", "register: Fields cannot be blank")
+        return
+    }
+
+    viewModelScope.launch { //launching a Couroutine scope
+        _isLoading.value = true
+        val result = repository.createUser(
+            email = emailState.value,
+            name = nameState.value,
+            phone = phoneState.value,
+            password = passwordState.value,
+            imageUri = chosenImageUri.value
+        )
+
+        when (result) {
+            is Resource.Success -> {
+                Log.d("TAG", "register: Successfully created post")
+            }
+            is Resource.Error -> {
+                Log.d("TAG", "register: ${result.message}")
+            }
+            else -> {}
+        }
+        _isLoading.value = false
+    }
+}
 ```
 
-From here, create your screen and call the `ViewModel` `register` function, passing the actual arguments.
+From here, create your screen and call the `ViewModel` `register` function, parsing the actual arguments.
 
 ### Conclusion
-In this brief tutorial, we have learned what a multipart request is and what it looks like in a Ktor backend route. We also went ahead and made a multipart request to the route with the help of the Retrofit library. Keep exploring more and happy learning.
+In this brief tutorial, we have learned what a multipart request is and what it looks like in a Ktor backend route. 
 
-Check out this Github repository for the full implementation of this tutorial - [MultipartRequestDemo](https://github.com/essy-shiro/MultipartRequestDemo)
+We also went ahead and created a multipart request to the route using the Retrofit library. Check out this Github repository for the full implementation of this tutorial - [MultipartRequestDemo](https://github.com/essy-shiro/MultipartRequestDemo)
 
-### References: 
+### Further reading 
 - [Retrofit Documention](https://square.github.io/retrofit/2.x/retrofit/index.html?retrofit2/http/Part.html)
+
+
+---
+Peer Review Contributions by: [Wanja Mike](/engineering-education/authors/michael-barasa/)
