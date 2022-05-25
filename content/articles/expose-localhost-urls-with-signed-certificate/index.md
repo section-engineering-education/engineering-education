@@ -279,3 +279,6 @@ The images are rendered as secure if we head over to the browser, as shown below
 
 ### Conclsuion
 We wrote a Django REST API using the Django REST framework in this article. Then, we tested our API locally and later exposed it using Ngrok. Next, we installed a custom Certificate Authority in our local machines and then generated a self-signed certificate to secure our localhost endpoints. Lastly, we tested the secured endpoints to see if they were secured.  
+
+---
+Peer Review Contributions by: [Jerim Kaura](/engineering-education/authors/jerim-kaura/)
