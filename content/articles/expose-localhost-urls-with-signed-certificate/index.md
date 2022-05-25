@@ -4,9 +4,9 @@ status: publish
 published: true
 url: /expose-localhost-urls-with-signed-certificate/
 title: Securing Localhost URLs using Ngrok and self-signed Certificates in Django
-description: This article aims to build a custom Django application that exposes endpoints and configures a self-signed SSL certificate to ensure that the endpoints are secured. Finally, it will direct the reader on how to expose the secured endpoint using Ngrok.
+description: This article aims to build a custom Django application that exposes endpoints and configures a self-signed SSL certificate to secure the endpoints. Finally, it will direct the reader on how to expose the secured endpoint using Ngrok.
 author: phina-kersly
-date: 2022-04-17T00:00:00-16:15
+date: 2022-05-25T00:00:00-16:15
 topics: [API, Languages]
 excerpt_separator: <!--more-->
 images:
@@ -15,13 +15,13 @@ images:
     alt:  Securing Localhost URLs using Ngrok and self-signed Certificates in Django Image
 ---
 
-Developing application locally is fast and reliable in terms of response time and debugging processes as it does not need an internet connection. However, it comes with some challenges though. 
+Developing application locally is fast and reliable in response time and debugging processes as it does not need an internet connection. However, it comes with some challenges though. 
 <!--more-->
 For instance, let us say you want to build an API that uploads images to a server and an android application that consumes your API  on a mobile phone with your computer as a server. Then, it is efficient to use Ngrok to expose the endpoints.
 
 When the images are uploaded to a static file folder in your application, the application constructs a static URL that can be used to access the images automatically. However, the URL appears in the format `http://localhost/media.imagename.png`, but the android studio cannot work with `HTTP` resources. So instead, it uses `HTTPS` resources.
 
-This tutorial aims at going around this problem by creating a self-signed certificate and making our site a trusted source so that when Ngrok exposes our endpoint to the public, our images appear as they have come to form a trusted source.
+This tutorial aims at going around this problem by creating a self-signed certificate and making our site a trusted source so that when Ngrok exposes our endpoint to the public, our images appear as if they have come to form a trusted source.
 
 We will build a Django Posts API and test the scenarios using REST frameworks browsable API.
 
