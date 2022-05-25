@@ -1,19 +1,35 @@
-### Introduction
-Weka is a collection of machine learning algorithms for data mining tasks. Most of the operations on Weka are performed on the Graphical User Interface. However, this limits the users from the programming experience and understanding of the behind the scenes operations.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /feature-selection-weka-python/
+title: Feature selection in Weka using Python
+description: This tutorial will walk the reader through perfoming feature selection in weka using Python.
+author: paul-romans
+date: 2022-05-25T00:00:00-03:15
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/feature-selection-weka-python/hero.jpg
+    alt: Feature selection in Weka using Python Image
+---
+
+Weka is a collection of machine learning algorithms for data mining tasks. Most of the operations on Weka are performed on the Graphical User Interface. However, this limits the users from the programming experience and understanding of the behind the scenes operations.
+<!--more-->
 This is the inspiration for this article, which sets to illustrate feature selection in WekaW by actually writing the python code for the implementation. 
 
 ### What is Feature Selection
 Feature selection is a method of reducing the number of inputs supplied to a machine learning model such that only the relevant inputs are used. The technique is applied to improve the accuracy of the machine learning model. 
 
 ### Types of Feature Selection
-There are three feature selection techniques; the wrapper, filter, and embedded methods. The wrapper feature selection method creates several models with different subsets of the input features and then selects the best performing model based on a performing matrix preset before the selection. 
+There are three feature selection techniques; wrapper, filter, and embedded methods. The wrapper feature selection method creates several models with different subsets of the input features. It then selects the best performing model based on a performing matrix preset before the selection. 
 
 The filter feature selection takes the value of the relationship between each input variable and the target output. Then, the scores of each relationship are used to choose what attributes to be included in the dataset.
 
 The embedded method leverages the benefits of both wrapper and filter methods. In addition, it carefully selects the most critical attributes that contributed to the results of a particular training iteration.
 
-### Benefits of Feature Selection
+### Benefits of Feature Selection?
 Feature selection is applied to improve the machine learning process and accelerate the speed at which the prediction is made. Since it only selects the essential variables, the time to utilise all the attributes in the data set is minimised. It also eliminates redundant and irrelevant features, which would have taken even more time.
 
 ### Prerequisites
@@ -51,7 +67,7 @@ six==1.16.0
 tomli==2.0.1
 weka==1.0.6
 ```
-The easiest way to install them is by creating a `requirements.txt` file in the root directory where the virtual environment was created, then execute the command below:
+The easiest way to install them is by creating a `requirements.txt` file in the root directory where the virtual environment was created, then executing the command below:
 
 ```bash
 pip install -r requirements.txt
@@ -246,6 +262,9 @@ Attribute importance (heuristic):
 ```
 
 ### Conlcusion
-In this tutorial, we used the Weka wrapper library to demonstrate how to conduct feature selection using the python programming language. First, we loaded the data and used three algorithms to determine the most important features in classifying the Diabetes dataset. Then, we finally showed the essential features selected by our program.
+In this tutorial, we used the Weka wrapper library to demonstrate how to conduct feature selection using the python programming language. First, we loaded the data and used three algorithms to determine the most critical features in classifying the Diabetes dataset. Then, we finally showed the essential features selected by our program.
 
 You can find the code [here](https://replit.com/@paulromans/Feature-Selection#main.py), but you must set up the libraries to run it on your local machine.
+
+---
+Peer Review Contributions by: [Jerim Kaura](/engineering-education/authors/jerim-kaura/)
