@@ -1,6 +1,22 @@
-A computational learning system that understands and translates data inputs in one form into desired outputs is called a `neural network`. It can also be defined as a computer's ability to learn and improve over time by recognizing hidden patterns and correlations from the raw data.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /feedforward-and-recurrent-neural-networks-python-implementation/
+title: Feed-forward and Recurrent Neural Networks Python Implementation
+description: In this article, we will learn about feed-forward neural network and recurrent neural network. Also, we will learn to implement both using Python.
+author: vincent-kimanzi
+date: 2022-05-25T00:00:00-23:10
+topics: [Machine Learning]
+excerpt_separator: <!--more-->
+images:
 
-In this tutorial, we will discuss about feed-forward and recurrent neural networks. We'll work our way up to the recurrent neural network starting with the feed-forward neural network. Both networks will be implemented in python, and their differences will be examined. 
+  - url: /engineering-education/feedforward-and-recurrent-neural-networks-python-implementation/hero.png
+    alt: Feed-forward and Recurrent Neural Networks Python Implementation Hero Image
+---
+A computational learning system that understands and translates data inputs in one form into desired outputs is called a `neural network`. It can also be defined as a computer's ability to learn and improve over time by recognizing hidden patterns and correlations from the raw data.
+<!--more-->
+In this tutorial, we will discuss feed-forward and recurrent neural networks. We'll work our way up to the recurrent neural network starting with the feed-forward neural network. Both networks will be implemented in python, and their differences will be examined. 
 
 ### Prerequisites
 - Have a basic knowledge of [Python](https://www.python.org/).
@@ -16,7 +32,7 @@ In this tutorial, we will discuss about feed-forward and recurrent neural networ
   - [Import libraries](#import-libraries)
   - [Create sample weights](#create-sample-weights)
   - [Include weights](#include-weights)
-  - [Foward propagation of the input signal](#foward-propagation-of-the-input-signal)
+  - [Forward propagation of the input signal](#forward-propagation-of-the-input-signal)
 - [Applications of Feed-forward neural network](#applications-of-feed-forward-neural-network)
 - [Recurrent neural network](#recurrent-neural-network)
 - [RNN implementation](#rnn-implementation)
@@ -29,7 +45,7 @@ In this tutorial, we will discuss about feed-forward and recurrent neural networ
 - [Reference](#reference)
 
 ### Neural networks 
-Neural networks mimics the human brain's ability to spot patterns in a dataset. With neural networks, we can teach computers to learn and interpret data in a manner inspired by the human brain.
+Neural networks mimic the human brain's ability to spot patterns in a dataset. With neural networks, we can teach computers to learn and interpret data in a manner inspired by the human brain.
 
 In this tutorial, we will be discussing:
 - Recurrent Neural Networks (RNN)
@@ -46,9 +62,9 @@ A feed-forward neural network (FFN) is a single-layer perceptron in its most fun
 
 In the above image, the neural network has input nodes, output nodes, and hidden layers. Due to the absence of connections, information leaving the output node cannot return to the network. As the name of the network suggests, the information goes in only one direction.
 
-- Input layer comprises neurons that receive input.
-- Hidden layer contains a large number of neurons that modify the inputs and interact with the output layer.
-- Output layer contains the result of the computation.
+- The input layer comprises neurons that receive input.
+- The hidden layer contains a large number of neurons that modify the inputs and interact with the output layer.
+- The output layer contains the result of the computation.
 
 ### Feed-forward neural network implementation
 Let's implement a feed-forward neural network in Python.
@@ -94,7 +110,7 @@ In the above code:
 - All weights provided in the first, second, and third layers are used to calculate the weighted sum of neurons in the first, second, and third hidden layers.
 - A softmax function is applied in the last layer. The list of numbers sent to this function is transformed into a probability list whose probabilities are proportional to the numbers in the list.
 
-#### Foward propagation of the input signal 
+#### Forward propagation of the input signal 
 To reach the output layer, the propagation will occur over several layers which include the first, second and the third hidden layer.
 
 ```python
@@ -125,7 +141,7 @@ In the above code:
 ### Recurrent neural network
 One of the most frequent types of artificial neural networks is called a recurrent neural network. It is commonly used for automatic voice recognition and machine translation (RNN). It is possible to forecast the most likely future situation utilizing patterns in sequential data by employing recurrent neural networks.
 
-Recurrent neural networks (RNN) makes it easier to model sequence data. RNNs, which come from feedforward networks, act in a way that is similar to how human brains do. In other words, recurrent neural networks can predict sequential data in ways that other algorithms can't.
+Recurrent neural networks (RNN) make it easier to model sequence data. RNNs, which come from feedforward networks, act in a way that is similar to how human brains do. In other words, recurrent neural networks can predict sequential data in ways that other algorithms can't.
 
 ### RNN implementation
 As strong as they are, recurrent neural networks are vulnerable to gradient-related training issues. The $n$ derivatives of a network with $n$ hidden layers will be multiplied.
@@ -188,7 +204,7 @@ In the above code:
 #### Reshaping inputs
 We reshape the input to the required `imput_shape,` `time_steps`, and features. In this case, `time_steps` indicates the number of prior time steps to use for forecasting the next value of the time-series data, and `input_shape` defines the parameter. 
 
-> Time-series data is a data that is recorded over consistent intervals of time.
+> Time-series data is data that is recorded over consistent intervals of time.
 
 ```python
 x = num.array([1, 2, 3])#  returns an array, or any sequence. 
@@ -306,14 +322,14 @@ In the above codeL
 - You read the data from an URL to get a percentage of the data for the test, and then you can divide that percentage by the percentage of train data. The train and test data are returned as single-dimensional arrays once the data has been scaled.
 - We begin by creating rows of non-overlapping time steps for Keras model training. This is done in preparation for training with time-series data.
 - We create the RNN model and train.
-- Afterwards, we calculate the mean square error, which measures how far the actual values deviate from the forecast ones.
-- In the end, we plot the result using `plot_result()` mwethod.
+- Afterward, we calculate the mean square error, which measures how far the actual values deviate from the forecast ones.
+- In the end, we plot the result using `plot_result()` method.
 
 You can run the above code [here](https://colab.research.google.com/drive/12qCImoXnP-WesLZXJZzRqZ0FMlsvEjwc?usp=sharing).
 
 ### Difference between RNN and Feed-forward neural network
 - In contrast to feedforward networks, recurrent neural networks feature a single weight parameter across all network layers. Reinforcement learning can still be achieved by adjusting these weights using backpropagation and gradient descent.
-- Unlike recurrent neural networks, which continuously feeds information from input to output, feedforward neural networks constantly feeds data back into the input for further processing and final output.
+- Unlike recurrent neural networks, which continuously feed information from input to output, feedforward neural networks constantly feed data back into the input for further processing and final output.
 - Recurrent neural networks contain a feedback loop that allows data to be recycled back into the input before being forwarded again for further processing and final output, whereas feedforward neural networks just forward data from input to output. Data can only flow in one direction in feedforward neural networks. Data from prior levels can't be saved because of this forward traveling pattern; hence there is no internal state or memory. RNN, on the other hand, uses a loop for cycling through the data, allowing it to keep track of both old and new information.
 
 ### Conclusion
@@ -327,3 +343,6 @@ Happy coding!
 - [Recurrent Neural Network Algorithms for Deep Learning](https://machinelearningmastery.com/recurrent-neural-network-algorithms-for-deep-learning/).
 - [Introduction to Backpropagation Through Time](https://machinelearningmastery.com/gentle-introduction-backpropagation-time/).
 - [Feed-forward neural network](https://towardsdatascience.com/deep-learning-feedforward-neural-network-26a6705dbdc7).
+
+---
+Peer Review Contributions by: [Srishilesh P S](/engineering-education/authors/srishilesh-p-s/)
