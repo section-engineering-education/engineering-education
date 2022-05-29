@@ -2,16 +2,16 @@
 layout: engineering-education
 status: publish
 published: true
-url: /implementing-techniques-to-handle-imbalanced-data-in-deep-neural-networks/
+url: /how-to-handle-imbalanced-data-in-deep-neural-networks/
 title: Implementing undersampling, oversampling, and SMOTE techniques to handle imbalanced data in deep neural networks
 description: This tutorial will implement undersampling, oversampling, and SMOTE techniques to balance the dataset.
 author: willyngashu
-date: 2022-05-02T00:00:00-14:48
+date: 2022-05-28T00:00:00-23:48
 topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/implementing-techniques-to-handle-imbalanced-data-in-deep-neural-networks/hero.jpg
+  - url: /engineering-education/how-to-handle-imbalanced-data-in-deep-neural-networks/hero.jpg
     alt: Handling imbalanced data in deep neural networks Hero image
 ---
 In Deep Neural Networks (DNN), the goal is always to implement various machine learning techniques to balance the classes before using the dataset. This tutorial will implement undersampling, oversampling, and SMOTE techniques to balance the dataset.
@@ -74,7 +74,7 @@ df.head()
 ```
 The code displays the following data points:
 
-![Imbalanced dataset](/engineering-education/implementing-techniques-to-handle-imbalanced-data-in-deep-neural-networks/imbalanced-dataset.png)
+![Imbalanced dataset](/engineering-education/how-to-handle-imbalanced-data-in-deep-neural-networks/imbalanced-dataset.png)
 
 Let's further explore our imbalanced dataset to have a detailed understanding of the dataset.
 
@@ -86,7 +86,7 @@ df.Churn.value_counts()
 ```
 The code will display the following output:
 
-![Counting the data samples](/engineering-education/implementing-techniques-to-handle-imbalanced-data-in-deep-neural-networks/counting-data-samples.png)
+![Counting the data samples](/engineering-education/how-to-handle-imbalanced-data-in-deep-neural-networks/counting-data-samples.png)
 
 The `0` class has 5163 data samples, and the `1` class has 1869 data samples. It shows we have a class imbalance, and we will balance the classes later on when implementing the three techniques. The `0` class is the majority class in the imbalanced dataset, and the `1` class is the minority.
 
@@ -98,7 +98,7 @@ print(df.columns)
 ```
 The code will print the following columns:
 
-![Printing columns](/engineering-education/implementing-techniques-to-handle-imbalanced-data-in-deep-neural-networks/printing-columns.png)
+![Printing columns](/engineering-education/how-to-handle-imbalanced-data-in-deep-neural-networks/printing-columns.png)
 
 These are all the dataset columns. We have to select the input and output columns from this list.
 
@@ -133,7 +133,7 @@ y_train.value_counts()
 ```
 It gives the following output:
 
-![Train value count](/engineering-education/implementing-techniques-to-handle-imbalanced-data-in-deep-neural-networks/train-value-count.png)
+![Train value count](/engineering-education/how-to-handle-imbalanced-data-in-deep-neural-networks/train-value-count.png)
 
 We can also check the number of data samples in each class for the testing set as follows:
 
@@ -142,7 +142,7 @@ y_test.value_counts()
 ```
 It gives the following numbers:
 
-![Test value count](/engineering-education/implementing-techniques-to-handle-imbalanced-data-in-deep-neural-networks/test-value-count.png)
+![Test value count](/engineering-education/how-to-handle-imbalanced-data-in-deep-neural-networks/test-value-count.png)
 
 We have explored and prepared the imbalanced dataset. Let's implement the deep neural network.
 
@@ -199,7 +199,7 @@ dnn_model.fit(X_train, y_train, epochs=100)
 ```
 The compiled deep neural network uses the `fit` function to learn from the training sample. The deep neural network will run for 100 epochs to increase the overall performance scores. The code will display the following output:
 
-![Fitting the deep neural network](/engineering-education/implementing-techniques-to-handle-imbalanced-data-in-deep-neural-networks/fitting-the-dnn.png)
+![Fitting the deep neural network](/engineering-education/how-to-handle-imbalanced-data-in-deep-neural-networks/fitting-the-dnn.png)
 
 The deep neural network produces a final accuracy score of `0.8064`. We can not use the accuracy score when evaluating the performance of a model that uses an imbalanced dataset because the model will have a bias toward the majority class. The model will always predict the same class even if it has a high accuracy score. 
 
@@ -244,7 +244,7 @@ print(classification_report(y_test,dnn_pred))
 ```
 The code displays the following classification report:
 
-![Classification report](/engineering-education/implementing-techniques-to-handle-imbalanced-data-in-deep-neural-networks/classification-report.png)
+![Classification report](/engineering-education/how-to-handle-imbalanced-data-in-deep-neural-networks/classification-report.png)
 
 Keenly observe the precision, recall, and f1-score values for both the classes (0 and 1). You will notice that the `0` class has higher score values than the `1` class. The scores need to be almost uniform for both the classes to ensure we can trust the model. 
 
@@ -280,7 +280,7 @@ print(df_balanced.Churn.value_counts())
 ```
 It prints the following output:
 
-![Data samples after undersampling](/engineering-education/implementing-techniques-to-handle-imbalanced-data-in-deep-neural-networks/after-undersampling.png)
+![Data samples after undersampling](/engineering-education/how-to-handle-imbalanced-data-in-deep-neural-networks/after-undersampling.png)
 
 We can see that the two classes have the same data samples. We have achieved a balanced dataset. Let's select the input and output column from the balanced dataset as follows:
 
@@ -300,7 +300,7 @@ dnn_model.fit(X_train_bus, y_train_bus, epochs=100)
 ```
 The code will train the deep neural network using the balanced dataset and display the following output:
 
-![Training after undersampling](/engineering-education/implementing-techniques-to-handle-imbalanced-data-in-deep-neural-networks/training-after-undersampling.png)
+![Training after undersampling](/engineering-education/how-to-handle-imbalanced-data-in-deep-neural-networks/training-after-undersampling.png)
 
 We will also not use the accuracy to measure the performance of the deep neural network. Let's make predictions and get the classification report:
 
@@ -321,7 +321,7 @@ To print the classification report execute this code:
 ```python
 print(classification_report(y_test_bus,dnn_preds_bus))
 ```
-![Classification report after undersampling](/engineering-education/implementing-techniques-to-handle-imbalanced-data-in-deep-neural-networks/report-after-undersampling.png)
+![Classification report after undersampling](/engineering-education/how-to-handle-imbalanced-data-in-deep-neural-networks/report-after-undersampling.png)
 
 From the classification report, keenly observe the precision, recall, and f1-score values for the `1` class. We can see the scores have improved compared to using the imbalanced dataset:
 - The precision has increased from 0.64 to 0.73. 
@@ -351,7 +351,7 @@ print(df_balanced_os.Churn.value_counts())
 ```
 It prints the following output:
 
-![Data samples after oversampling](/engineering-education/implementing-techniques-to-handle-imbalanced-data-in-deep-neural-networks/after-oversampling.png)
+![Data samples after oversampling](/engineering-education/how-to-handle-imbalanced-data-in-deep-neural-networks/after-oversampling.png)
 
 We can see that the two classes have the same data samples. We have achieved a balanced dataset. Let's also select the input and output column from the balanced dataset as follows:
 
@@ -371,7 +371,7 @@ dnn_model.fit(X_train_bos, y_train_bos, epochs=100)
 ```
 The code will train the deep neural network using the balanced dataset and display the following output:
 
-![Training after undersampling](/engineering-education/implementing-techniques-to-handle-imbalanced-data-in-deep-neural-networks/training-after-oversampling.png)
+![Training after undersampling](/engineering-education/how-to-handle-imbalanced-data-in-deep-neural-networks/training-after-oversampling.png)
 
 We will also not use the accuracy to measure the deep neural network performance. Let's make predictions and get the classification report:
 
@@ -392,7 +392,7 @@ To print the classification report execute this code:
 ```python
 print(classification_report(y_test_bos,dnn_preds_bos))
 ```
-![Classification report after oversampling](/engineering-education/implementing-techniques-to-handle-imbalanced-data-in-deep-neural-networks/report-after-oversampling.png)
+![Classification report after oversampling](/engineering-education/how-to-handle-imbalanced-data-in-deep-neural-networks/report-after-oversampling.png)
 
 From the classification report, observe the precision, recall, and f1-score for the `1` class. We can see the scores have also improved. This technique has performed much better:
 - The precision has increased from 0.64 to 0.75. 
@@ -431,7 +431,7 @@ y_smt.value_counts()
 ```
 It displays the following:
 
-![Data samples after SMOTE](/engineering-education/implementing-techniques-to-handle-imbalanced-data-in-deep-neural-networks/after-applying-smote.png)
+![Data samples after SMOTE](/engineering-education/how-to-handle-imbalanced-data-in-deep-neural-networks/after-applying-smote.png)
 
 We can see that the two classes have the same data samples. Let's get the train and test splits as follows:
 
@@ -443,7 +443,7 @@ We then feed the dataset to the deep neural network.
 ```python
 dnn_model.fit(X_train_smt, y_train_smt, epochs=100)
 ```
-![Training using SMOTE](/engineering-education/implementing-techniques-to-handle-imbalanced-data-in-deep-neural-networks/training-using-smote.png)
+![Training using SMOTE](/engineering-education/how-to-handle-imbalanced-data-in-deep-neural-networks/training-using-smote.png)
 
 We will also not use the accuracy to measure the deep neural network performance. Let's make the predictions and get the classification report:
 
@@ -460,7 +460,7 @@ To get a classification report after applying SMOTE, execute this code:
 ```python
 print(classification_report(y_test_smt,dnn_preds_smt))
 ```
-![Classification report after applying SMOTE ](/engineering-education/implementing-techniques-to-handle-imbalanced-data-in-deep-neural-networks/report-after-smote.png)
+![Classification report after applying SMOTE ](/engineering-education/how-to-handle-imbalanced-data-in-deep-neural-networks/report-after-smote.png)
 
 From the classification report, observe the precision, recall, and f1-score for the `1` class. We can see the scores have also improved:
 - The precision has increased from 0.64 to 0.75. 
