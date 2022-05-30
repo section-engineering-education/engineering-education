@@ -3,10 +3,10 @@ layout: engineering-education
 status: publish
 published: true
 url: /build-mern-stack-application-to-manage-isp/
-title: Build a MERN stack application to manage ISP
-description: In this guide, we will blearn to build a MERN stack web application using MongoDB, ExpressJS, ReactJS, and NodeJS to build a customer management portal to manage ISPs.
+title: Building a MERN Stack Application to Manage ISP
+description: In this guide, we will learn to build a MERN stack web application using MongoDB, ExpressJS, ReactJS, and Node.js to build a customer management portal to manage ISPs.
 author: bernice-waweru
-date: 2022-04-21T00:00:00-01:00
+date: 2022-05-30T00:00:00-13:00
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -14,7 +14,7 @@ images:
  - url: /engineering-education/build-mern-stack-application-to-manage-isp/hero.jpg
    alt: Build a MERN stack application to manage ISP Hero Image
 ---
-In this tutorial, we will learn how to build a full-stack web application using MongoDB, ExpressJS, ReactJS, and NodeJS (commonly referred to as MERN stack).
+In this tutorial, we will learn how to build a full-stack web application using MongoDB, ExpressJS, ReactJS, and Node.js (commonly referred to as MERN stack).
 <!--more-->
 We will build a customer management system for Internet Service Providers (ISPs), where a user can create, read, update, and delete customer information.
 
@@ -27,21 +27,22 @@ The tutorial aims to provide foundational knowledge on how to create a MERN stac
 ### Prerequisites
 To follow along with this tutorial, the reader should have the following:
 - An understanding of JavaScript.
-- Basic knowledge of ReactJS and NodeJS.
+- Basic knowledge of ReactJS and Node.js.
 - Basic knowledge of MongoDB.
-- You should also have [NodeJS](https://nodejs.org/en/download/) installed on your machine.
+- You should also have [Node.js](https://nodejs.org/en/download/) installed on your machine.
 
 ### Backend
-To begin with, let's start to build the backend.
+To begin with, let's start to build the backend. Our web application will consists of a client, a server, and a database. 
 
-Our web application consists of a client, a server, and a database. You can find the architecture below:
+You can find the architecture below:
 
 ![Web Architecture](/engineering-education/build-mern-stack-application-to-manage-isp/webapp.jpg)
 
-We will handle all the backend functionality of our app using a [REST API](https://www.smashingmagazine.com/2018/01/understanding-using-rest-api/) that we will create using NodeJS, ExpressJS, and MongoDB.
-- **MongoDB** - A NoSQL database that uses a document-oriented data model.
-- **ExpressJS** - A web application framework used to build APIs.
-- **Node.js** - A JavaScript runtime environment used to build servers and applications.
+We will handle all the backend functionality of our app using a [REST API](https://www.smashingmagazine.com/2018/01/understanding-using-rest-api/) that we will create using Node.js, ExpressJS, and MongoDB.
+
+- **MongoDB:**  A NoSQL database that uses a document-oriented data model.
+- **ExpressJS:** A web application framework used to build APIs.
+- **Node.js:** A JavaScript runtime environment used to build servers and applications.
 
 #### Setup the environment
 Let us first set up the development environment.
@@ -94,9 +95,7 @@ npm install dotenv --save-dev
 ```
 
 #### Setup the server
-Create a `.env` file within the server folder.
-
-Here, we will add the database URL that we will connect to and a port to listen for new connections.
+Create a `.env` file within the server folder. Here, we will add the database URL that we will connect to and a port to listen for new connections.
 
 The `.env` file allows us to define environment variables that remain constant throughout a given development stage. It also helps in keeping the credentials safe, as you can include it in the `.gitignore` file.
 
@@ -117,7 +116,7 @@ const mongoose = require('mongoose')
 const PORT = process.env.PORT || 5010
 ```
 
-In the above code:
+In the code above:
 - Load the environment variables from the `.env` file by configuring the `dotenv` package.
 - The environment variables will be loaded into the `process.env` object. 
 - Import the `mongoose` package and load the `PORT` variable.
@@ -129,7 +128,7 @@ const express = require('express')
 const app = express()
 ```
 
-We also import `cors` and enable the `app` to use the CORS middleware:
+We will also import `cors` and enable the `app` to use the CORS middleware:
 
 ```javascript
 const cors = require('cors')
@@ -234,7 +233,7 @@ By exporting the model, we will make the model available to other files in our a
 module.exports = mongoose.model('Customer', customerSchema)
 ```
 
-- Finally, we compile the schema into a model and export it.
+- Now we can compile the schema into a model and export it.
 
 #### Setup API endpoints
 API endpoints are URLs that provide the location of different resources on the server. The endpoints allow the API to receive requests and send responses.
@@ -245,7 +244,7 @@ In this tutorial, we will work with the `POST`, `GET`, `PATCH`, and `DELETE` HTT
 - The `PATCH` request is used to update data.
 - The `DELETE` request is used to delete the specified resource.
 
-Now, let's get to building the endpoints.
+Now, let's start building the endpoints.
 
 - Create a `routes` folder with `customers.js` file inside this folder.
 - Import `express` and create a new router object using `express.Router()` to handle the HTTP requests.
@@ -275,7 +274,8 @@ router.get('/', async (req, res) => {
 })
 ```
 
-- Use the `router.get()` to retrieve information. If the request is successful, we return the customers in JSON format, else we use the status code `500` to indicate that the server has encountered an error.
+- Use the `router.get()` to retrieve information. If the request is successful, we return the customers in JSON format, otherwise we use the status code `500` to indicate that the server has encountered an error.
+
 - Add a route to create a new customer.
 
 ```javaScript
@@ -386,7 +386,7 @@ router.delete('/:id', getCustomer, async (req, res) => {
 
 - Use the `remove()` method to delete the customer and show a success message if the response is completed successfully.
 - The status code `500` indicates an error on the server.
-- Export the router,
+- Export the router.
 
 ```javaScript
 module.exports = router
@@ -499,9 +499,7 @@ React apps are made of different reusable components. Our app will have three ma
 Create a `components` folder under the `src` folder and add `createCustomer.js`, `editCustomer.js`, and `customerList.js` files inside it.
 
 ##### createCustomer component
-This component will render a form that allows user to submit their details.
-
-We will use Material UI's `Grid`, `Paper`, `TextField`, and `Button` components to create our customer details form.
+This component will render a form that allows user to submit their details. We will use Material UI's `Grid`, `Paper`, `TextField`, and `Button` components to create our customer details form.
 
 In the `createCustomer.js` file, let us create the form as shown:
 
@@ -587,9 +585,7 @@ The select field should have the following code:
 ```
 
 ##### customerList component
-This component will display a list of all the customers and their details.
-
-We use Material UI's `Table` component to display the customer details and offer the internet service provider options to update customer details or delete a customer.
+This component will display a list of all the customers and their details. We use Material UI's `Table` component to display the customer details and offer the internet service provider options to update customer details or delete a customer.
 
 In `customerList.js`, let us create the table by adding the following code:
 
@@ -628,13 +624,10 @@ From the above code:
 - Import `Table`, `TableCell`, `TableContainer`, `TableHead`, `TableRow`, `Paper` from Material UI, which will be used to create a table of all the customer details.
 - Create an outline of the table inside the `TableContainer` component, with each `TableCell` representing a column in the table.
 
-So far, we have defined the structure of the table, which will be populated by customer data from the database.
-We will implement this later in our app while connecting the frontend to the backend.
+So far, we have defined the structure of the table, which will be populated by customer data from the database. We will implement this later in our app while connecting the frontend to the backend.
 
 ##### editCustomer component 
-This component will render a page that will help us update customer details.
-
-It will be pre-populated with the customer details of the selected customer allowing the ISP to make only the needed changes.
+This component will render a page that will help us update customer details. It will be pre-populated with the customer details of the selected customer allowing the ISP to make only the needed changes.
 
 The component is similar to the `createCustomer` component but has different functionality.
 
@@ -678,9 +671,7 @@ We will make additional changes to pre-populate the fields and create the update
 The goal is to send the customer data from the UI to the database and fetch data to perform CRUD operations.
 
 #### createCustomer component
-Let's begin with posting customer details in the `createCustomer` component.
-
-We need to manage the state of different variables storing our customer details. Therefore, we will use the `useState` react hook ,because we are using functional components.
+Let's begin with posting customer details in the `createCustomer` component. We need to manage the state of different variables storing our customer details. Therefore, we will use the `useState` react hook, because we are using functional components.
 
 The `useState` hook takes the initial state of the customer details and returns the current state and the `setCustomer` function, which updates the state.
 
@@ -759,7 +750,7 @@ Our CreateCustomer component renders out as follows when we navigate to `http://
 #### customerList component 
 The list of customers from the database will make up our table body in the rendered by the customerList component.
 
-- Declare state variable and fetch the data from the database
+- Declare state variable and fetch the data from the database.
 
 The `useEffect` hook is used to fetch data and set the data in the local state of the component.
 
@@ -827,9 +818,7 @@ Our `CustomerList` component renders out as follows when we navigate to `http://
 So far, we have achieved the `CREATE`, `READ`, and `DELETE` functionalities.
 
 #### editCustomer component
-Use `axios.patch()` method to update customer details after getting the specified customer by `id`.
-
-Use the `useParams()` hook to access URL parameters and extract the `id` used to pre-populate the fields in the editCustomer form.
+Use `axios.patch()` method to update customer details after getting the specified customer by `id`. Use the `useParams()` hook to access URL parameters and extract the `id` used to pre-populate the fields in the editCustomer form.
 
 Set customer variable and get customer by `id` as shown:
 
@@ -898,16 +887,16 @@ The `EditCustomer` component renders a page when we click on the edit action on 
 ![EditCustomer](/engineering-education/build-mern-stack-application-to-manage-isp/updateCustomer.jpg)
 
 ### Conclusion
-In this tutorial, we successfully learned to create a full-stack management system for ISPs.
+In this tutorial, we successfully learned how to create a full-stack management system for ISPs.
 
 In summary, we have learned:
-- how to create REST API in Node.js, Express, and MongoDB
-- how to create a user interface with React.
-- how to connect the server and client using Axios and React hooks.
+- How to create REST API in Node.js, Express, and MongoDB
+- How to create a user interface with React.
+- How to connect the server and client using Axios and React hooks.
 
 You can access the complete project [here](https://github.com/wanguiwaweru/MERN-STACK).
 
-Happy learning!
+Happy coding!
 
 ---
 Peer Review Contributions by: [Srishilesh P S](/engineering-education/authors/srishilesh-p-s/)
