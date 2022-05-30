@@ -16,9 +16,13 @@ images:
 ---
 In Deep Neural Networks (DNN), the goal is always to implement various machine learning techniques to balance the classes before using the dataset. This tutorial will implement undersampling, oversampling, and SMOTE techniques to balance the dataset.
 <!--more-->
-A deep neural network is an artificial neural network that has many hidden layers between the input and output layers. It uses different datasets to produce a deep learning model. The final model can perform image classification, computer vision, and natural language processing. It can either use a balanced or imbalanced dataset. A balanced dataset is the best since it will produce an optimized deep learning model. An imbalanced dataset has an unequal number of data samples in the dataset classes and will not give the best model.
+A deep neural network is an artificial neural network that has many hidden layers between the input and output layers. It uses different datasets to produce a deep learning model. The final model can perform image classification, computer vision, and natural language processing. 
 
-The goal is always to implement various machine learning techniques to balance the classes before using the dataset. We will implement undersampling, oversampling, and SMOTE techniques to balance the dataset. We will first build a deep neural network model using an imbalanced dataset and get the performance score. We will then implement the three techniques to balance the dataset classes and compare the performance scores of the model before and after balancing the dataset.
+It can either use a balanced or imbalanced dataset. A balanced dataset is the best since it will produce an optimized deep learning model. An imbalanced dataset has an unequal number of data samples in the dataset classes and will not give the best model.
+
+The goal is to implement various machine learning techniques to balance the classes before using the dataset. We will implement undersampling, oversampling, and SMOTE techniques to balance the dataset. 
+
+We will start by building a deep neural network model using an imbalanced dataset and get the performance score. We will then implement the three techniques to balance the dataset classes and compare the performance scores of the model before and after balancing the dataset.
 
 ### Table of contents
 - [Prerequisites](#prerequisites)
@@ -45,17 +49,16 @@ The goal is always to implement various machine learning techniques to balance t
 - [References](#references)
 
 ### Prerequisites
-To easily understand the techniques implemented in this tutorial, the reader should:
-
+To better understand the techniques implemented in this tutorial, the reader should:
 - Have [Python programming](https://www.programiz.com/python-programming) knowledge.
-- Know [Deep Learning](https://www.section.io/engineering-education/introduction-to-deep-learning/).
+- Know [Deep Learning](/engineering-education/introduction-to-deep-learning/).
 - Know some of the [Deep Learning algorithms](https://www.simplilearn.com/tutorials/deep-learning-tutorial/deep-learning-algorithm).
 - Understand [neural networks](/engineering-education/introduction-to-neural-networks/).
 - Know how to implement a simple [neural network with TensorFlow's Keras](https://www.tensorflow.org/guide/keras/sequential_model).
 - Use [Google Colab](https://research.google.com/colaboratory/) to implement the techniques.
 
 ### Building the deep neural network model using an imbalanced dataset
-We will build a customer churn classification model. The model will predict the number of customers who will close their accounts and leave the bank. We will use an imbalanced dataset to build the model. You will get the imbalanced dataset for this tutorial [here](https://drive.google.com/file/d/1Hlb7T2MssGpPXSdDZ8LqQfXgsrdMCC33/view?usp=sharing)
+We will build a customer churn classification model. The model will predict the number of customers who will close their accounts and leave the bank. We will use an imbalanced dataset to build the model. You will get the imbalanced dataset for this tutorial [here](https://drive.google.com/file/d/1Hlb7T2MssGpPXSdDZ8LqQfXgsrdMCC33/view?usp=sharing).
 
 After downloading the dataset, we will load the dataset into our project using Pandas.
 
@@ -165,14 +168,11 @@ dnn_model = keras.Sequential([
 ```
 The `Sequential` function will initialize the model. The deep neural network has multiple `Dense` layers as follows:
 
-- 1st Dense layer
-It acts as the input layer. It has 26 neurons since this is the number of input columns. We apply `relu` as an activation function because the output of this layer will be between 0 and positive infinite values.
+- 1st Dense layer: It acts as the input layer. It has 26 neurons since this is the number of input columns. We apply `relu` as an activation function because the output of this layer will be between 0 and positive infinite values.
 
-- 2nd Dense layer
-It acts as the hidden/intermediate layer. It has 15 neurons which further enhances the performance. We also apply the `relu` activation function.
+- 2nd Dense layer: It acts as the hidden/intermediate layer. It has 15 neurons which further enhances the performance. We also apply the `relu` activation function.
 
-- 3rd Dense layer
-It acts as the output layer. It has one neuron that will output the neural network results. We apply `sigmoid` as the activation function since the output will be between 0 and 1.
+- 3rd Dense layer: It acts as the output layer. It has one neuron that will output the neural network results. We can apply `sigmoid` as the activation function since the output will be between 0 and 1.
 
 ### Compiling the deep neural network
 To compile the deep neural network, execute this code in Google Colab.
@@ -185,11 +185,11 @@ dnn_model.compile(optimizer='adam',
 
 We compile the deep neural network architecture using the `compile` function. The compilation process also has the following essential parameters.
 
-- optimizer -It will improve and enhance the performance of the deep neural network. It also handles the errors of the deep neural network. We apply `adam` as the deep neural network optimizer during the compilation process.
+- optimizer: It will improve and enhance the performance of the deep neural network. It also handles the errors of the deep neural network. We apply `adam` as the deep neural network optimizer during the compilation process.
 
-- loss - It is the function that will calculate and accumulate all the errors that the neural network encounters when the training process starts. We use `binary_crossentropy` since the imbalanced dataset has two classes.
+- loss: It is the function that will calculate and accumulate all the errors that the neural network encounters when the training process starts. We use `binary_crossentropy` since the imbalanced dataset has two classes.
 
-- metrics - It is the function that will get the overall deep neural network performance scores after the training process. We set its value to `accuracy`.
+- metrics: It is the function that will get the overall deep neural network performance scores after the training process. We set its value to `accuracy`.
 
 ### Fitting the compiled deep neural network
 To fit the compiled deep neural network to the training samples, execute this code in Google Colab:
@@ -206,16 +206,13 @@ The deep neural network produces a final accuracy score of `0.8064`. We can not 
 We therefore use the [Recall](https://towardsdatascience.com/methods-for-dealing-with-imbalanced-data-5b761be45a18), [Precision](https://developers.google.com/machine-learning/crash-course/classification/precision-and-recall) and the [F1-score](https://towardsdatascience.com/the-f1-score-bec2bbc38aa6) performance scores. They focus on the performance of the individual classes after the neural network has made predictions.
 
 ### The performance scores
-- Precision
-The precision performance score indicates the true positive values in the prediction result divided by all the prediction values (both true positives and false positives values). 
+- Precision: The precision performance score indicates the true positive values in the prediction result divided by all the prediction values (both true positives and false positives values). 
 
-- Recall
-Recall performance score indicates the true positive values in the prediction result divided by the number of actual values in the test samples.  It represents the true positive values that the deep neural network fails to identify after a prediction.
+- Recall: Recall performance score indicates the true positive values in the prediction result divided by the number of actual values in the test samples. It represents the true positive values that the deep neural network fails to identify after a prediction.
 
-- F1-score
-F1-score calculates the average of the precision and recall performance scores.
+- F1-score: F1-score calculates the average of the precision and recall performance scores.
 
-Read this [guide](https://developers.google.com/machine-learning/crash-course/classification/precision-and-recall) to have a detailed understanding. Let's make predictions using the test samples and get the performance scores. We will then print a classification report to show these performance scores for the two classes.
+Read this [guide](https://developers.google.com/machine-learning/crash-course/classification/precision-and-recall) to have a more detailed understanding. Let's make predictions using the test samples and get the performance scores. We will then print a classification report to show these performance scores for the two classes.
 
 ### Predictions using the test samples
 To make a prediction using the test samples, execute this code:
@@ -248,7 +245,9 @@ The code displays the following classification report:
 
 Keenly observe the precision, recall, and f1-score values for both the classes (0 and 1). You will notice that the `0` class has higher score values than the `1` class. The scores need to be almost uniform for both the classes to ensure we can trust the model. 
 
-Implementing dataset balancing using the three-technique will ensure we give fair treatment to both classes. It will increase the performance score for the minority class. After implementing these three techniques, we will compare the precision, recall, and f1-score to see any improvements. Let's start by implementing the undersampling technique.
+Implementing dataset balancing using the three-techniques will ensure we give fair treatment to both classes. It will increase the performance score for the minority class. 
+
+After implementing these three techniques, we will compare the precision, recall, and f1-score to see any improvements. Let's start by implementing the undersampling technique.
 
 ### Implementing the undersampling technique
 The undersampling technique will reduce the data samples in the majority class (0) to have the same number as the minority class. We will use the Pandas `sample` method to perform undersampling. Let's execute this code to keep track of the number of data samples in each class:
@@ -267,6 +266,7 @@ Lets now apply the `sample` method as follows:
 ```python
 df_class_undersample = df_majority_class.sample(count_minority_class)
 ```
+
 We concatenate the undersampled majority class with the minority class. It will form a single data frame.
 
 ```python
@@ -321,14 +321,15 @@ To print the classification report execute this code:
 ```python
 print(classification_report(y_test_bus,dnn_preds_bus))
 ```
+
 ![Classification report after undersampling](/engineering-education/how-to-handle-imbalanced-data-in-deep-neural-networks/report-after-undersampling.png)
 
-From the classification report, keenly observe the precision, recall, and f1-score values for the `1` class. We can see the scores have improved compared to using the imbalanced dataset:
+From the classification report, observe the precision, recall, and f1-score values for the `1` class. We can see the scores have improved compared to using the imbalanced dataset:
 - The precision has increased from 0.64 to 0.73. 
 - The recall has improved from 0.40 to 0.76. 
 - The f-score has improved from 0.49 to 0.75.
 
-These scores are also almost uniform for both classes. It ensures fair treatment for both dataset classes during the classification process.
+These scores are also almost uniform for both classes. It ensures a fair treatment for both dataset classes during the classification process.
 
 Let's move to oversampling technique.
 
@@ -364,7 +365,7 @@ We also need to get train and test splits as follows:
 ```python
 X_train_bos, X_test_bos, y_train_bos, y_test_bos = train_test_split(X, y, test_size=0.2, random_state=15, stratify=y)
 ```
-We again feed the dataset to our deep neural network as follows:
+We feed the dataset to our deep neural network as follows:
 
 ```python
 dnn_model.fit(X_train_bos, y_train_bos, epochs=100)
@@ -394,7 +395,9 @@ print(classification_report(y_test_bos,dnn_preds_bos))
 ```
 ![Classification report after oversampling](/engineering-education/how-to-handle-imbalanced-data-in-deep-neural-networks/report-after-oversampling.png)
 
-From the classification report, observe the precision, recall, and f1-score for the `1` class. We can see the scores have also improved. This technique has performed much better:
+From the classification report, observe the precision, recall, and f1-score for the `1` class. We can see the scores have also improved. 
+
+This technique has performed much better:
 - The precision has increased from 0.64 to 0.75. 
 - The recall has improved from 0.40 to 0.86. 
 - The f-score has improved from 0.49 to 0.80.  
@@ -445,7 +448,7 @@ dnn_model.fit(X_train_smt, y_train_smt, epochs=100)
 ```
 ![Training using SMOTE](/engineering-education/how-to-handle-imbalanced-data-in-deep-neural-networks/training-using-smote.png)
 
-We will also not use the accuracy to measure the deep neural network performance. Let's make the predictions and get the classification report:
+We will not use the accuracy to measure the deep neural network performance. Let's make the predictions and get the classification report:
 
 ### Making predictions after implementing SMOTE
 To predict after applying SMOTE, execute this code:
@@ -462,7 +465,9 @@ print(classification_report(y_test_smt,dnn_preds_smt))
 ```
 ![Classification report after applying SMOTE ](/engineering-education/how-to-handle-imbalanced-data-in-deep-neural-networks/report-after-smote.png)
 
-From the classification report, observe the precision, recall, and f1-score for the `1` class. We can see the scores have also improved:
+From the classification report, observe the precision, recall, and f1-score for the `1` class. 
+
+We can see the scores have also improved:
 - The precision has increased from 0.64 to 0.75. 
 - The recall has improved from 0.40 to 0.89. 
 - The f1-score has increased from 0.49 to 0.82. 
