@@ -1,7 +1,21 @@
-### Getting started with the resource monitoring in Laravel 9
-### Introduction
-Most systems already exist that provides us with a way to monitor the CPU and memory usage of the system. However, they might not be very flexible to support our daily needs.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /server-monitor/
+title: Getting started with the resource monitoring in Laravel 9
+description: This article introduces the reader through the concepts of resource management and monitoring.
+author: odiwuor-amos
+date: 2022-05-31T00:00:00-07:40
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/server-monitor/hero.png
+    alt: Server monitor image 
+---
+Most systems already exist that provides us with a way to monitor the CPU and memory usage of the system. However, they might not be very flexible to support our daily needs.
+<!--more-->
 Developers more often are faced with problems of resource management, where the machines freeze or hang when all the available resources have been consumed.
 
 Albeit, it's possible to monitor these resources using, let's say Windows task manager and Linux's system monitor, this has proven to be a hurdle in a shared hosting.
@@ -367,3 +381,6 @@ We have extensively discussed the various main resources to be monitored in Lara
 -  Database traffics
 
 Happy Coding!
+
+---
+Peer Review Contributions by: [Miller Juma](/engineering-education/authors/miller-juma/)
