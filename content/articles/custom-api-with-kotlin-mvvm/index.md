@@ -6,21 +6,19 @@ url: /custom-api-with-kotlin-mvvm/
 title: Custom Django API with Kotlin MVVM
 description: In this article, we will build an authentication API using the Django rest framework and consume the API in an android application following the MVVM pattern.
 author: jerim-kaura
-date: 2022-04-25T00:00:00-09:00
-topics: [API, Mobile]
+date: 2022-05-31T00:00:00-09:00
+topics: [API]
 excerpt_separator: <!--more-->
 images:
 
  - url: /engineering-education/custom-api-with-kotlin-mvvm/hero.png
    alt: Custom Django API with Kotlin MVVM example image
 ---
-
 Django rest framework is a powerful tool for developing web APIs. It provides developers with great flexibility and abstraction that achieves great functionalities; in just a few lines of code. As a result, developers currently adopt it with the added advantage of providing the browsable API.
 <!--more-->
 Model-View-ViewModel (MVVM) is a design pattern that separates the program logic from the user interface operations. The pattern is adapted for its ease in unit testing, modularity and code organization for comfort in debugging.
 
-In this article, we will build an authentication API using the Django rest framework and consume the API in an android application following the MVVM pattern.
-
+In this article, we will build an authentication API using the Django rest framework and consume the API in an Android application following the MVVM pattern.
 
 ### Prerequisites
 To follow along with this article, the reader should have the following:
@@ -37,18 +35,18 @@ This tutorial is relatively long, but I made it to cover what I thought was best
 - The code snippet for the API is in [this repository](https://github.com/jerimkaura/auth-project), while the code for the mobile application is [here](https://github.com/jerimkaura/Authy).
 
 ### Building the API
-An Application Programming Interface(API) is how an application can communicate with another application. For instance, we use an API if we have a back-end application that we wish to send and receive data from another back-end or front-end application.
+An Application Programming Interface (API) is how an application can communicate with another application. For instance, we use an API if we have a back-end application that we wish to send and receive data from another back-end or front-end application.
 
 We will use Django and REST Framework to build an authentication API whose data will be consumed in the Kotlin application.
 
 To start, create a virtual environment and a new Django application. I called my application  `Authy`.
-You can read the entire procedure of creating a Django application [here.](https://docs.djangoproject.com/en/4.0/intro/tutorial01/)
+You can read the entire procedure of creating a Django application [here](https://docs.djangoproject.com/en/4.0/intro/tutorial01/).
 
 ```bash
 Django-admin start project authy
 ```
 
-A Django project can have multiple applications within it. For instance, our tutorial will cover the authentication part, which we can call an independent application( Who knows, a second part might come where we use a second application 😊)
+A Django project can have multiple applications within it. For instance, our tutorial will cover the authentication part, which we can call an independent application( Who knows, a second part might come where we use a second application 😊).
 
 To create a new application in a Django project, run the following command in the terminal.
 
@@ -71,7 +69,7 @@ The command above creates a new directory with the folder structure as shown bel
 │   └── views.py
 ```
 
-In the `settings.py` file in the initial directory,  add the created application under the installed apps as shown below:
+In the `settings.py` file in the initial directory, add the created application under the installed apps as shown below:
 
 ```py
 # Application definition
@@ -103,12 +101,11 @@ You can use `pip` to install poetry, but the most recommended way is the one sho
 Next, create a file in the root folder of the application folder called `pyproject.toml`. 
 
 We will install the following dependencies:
-
 - **djangorestframework**. To build a scalable authentication API.
 - **psycopg2**. To connect to the Postgres database.
 - **Python-dotenv**. To configure the environmental variables.
 - **python-decouple**. To work with the environment variables so that we do not have to re-deploy the application every time we change an environment variable.
-- **djangorestframework-simplejwt** . To provide authentication tokens for user authentication.
+- **djangorestframework-simplejwt**. To provide authentication tokens for user authentication.
 
 If you need to install a dependency, you use the command `poetry add dependency name`. For instance, we will run the following command to install `djangorestframework`:
 
@@ -398,7 +395,6 @@ from accounts.serializers import ChangePasswordSerializer, LoginSerializer, Upda
 
 We will create views corresponding to each of the serializers we created earlier. 
 
-
 #### User registration view
 This view provides the user with an interface to submit registration data in JSON format for creating a new account. It takes the user models and the `UserSerializer` to convert the data into an object storable in the Postgres Database.
 
@@ -470,7 +466,7 @@ class LoginView(TokenObtainPairView):
 ### Working on the URLs
 URLs specify what view should handle a given request. Therefore, each request sent must be channelled to a specific URL to be directed to a view.
 
-In the `urls.py` of the `accounts` folder, add the following snipets.
+In the `urls.py` of the `accounts` folder, add the following snippets.
 ```py
 from Django.URLs import path
 
@@ -489,7 +485,7 @@ urlpatterns = [
 
 ```
 
-Then, in the main project folder, add the following line of code to access the `accounts` application Urls from the main project URLs.
+Then, in the main project folder, add the following line of code to access the `accounts` application URLs from the main project URLs.
 
 ```py
 from Django.contrib import admin
@@ -504,12 +500,15 @@ urlpatterns = [
 Right now, our endpoints are working, as shown below. You can skip the API building process by 
 
 1. Register User Endpoint
+
 ![Register User Endpoint](/engineering-education/custom-api-with-kotlin-mvvm/register-endpoint.png)
 
 2. Login Endpoint
+
 ![Login Endpoint](/engineering-education/custom-api-with-kotlin-mvvm/login-endpoint.png)
 
 3. Update Update Endpoint
+
 ![Update Update Endpoint](/engineering-education/custom-api-with-kotlin-mvvm/update-profile-endpoint.png)
 
 
@@ -558,9 +557,7 @@ Next, we will install the various dependencies we need to use in this tutorial. 
     implementation 'de.hdodenhof:circleimageview:3.1.0'
 ```
 
-
 In the same file, add the following lines of code under the plugins.
-
 
 ```gradle
 plugins {
@@ -633,7 +630,7 @@ sealed class Resource<T>(val data: T? = null, val message: String? = null) {
 ```
 
 #### Toast
-We will use this class for showing toast messages to the user on the screen. Instead of writing the pieces of code every time, we abstract it like below:
+We will use this class to show toast messages to the user on the screen. Instead of writing the pieces of code every time, we abstract it like below:
 
 ```kotlin
 fun showToast(
@@ -713,10 +710,11 @@ data class LoginResponse(
     val refresh: String
 )
 ```
+
 ![Requests and responses](/engineering-education/custom-api-with-kotlin-mvvm/requests-and-responses.png)
 
 #### User Data Class
-An additional class called `User` was created When we received a `registerResponse`. This process happens when you have nested JSON objects. Android Studio creates different classes for every level of nesting as it did for the case of register response.
+An additional class called `User` was created when we received a `registerResponse`. This process happens when you have nested JSON objects. Android Studio creates different classes for every level of nesting as it did for the case of register response.
 
 ```kotlin
 data class User(
@@ -937,7 +935,7 @@ class AuthViewModel @Inject constructor(
 
 In the snippet above, we use `MutableLiveData()` to observe and set the value of the `registerState`. However, after setting the value of the `registerState` to `_registerState`, we cannot change the value. 
 
-So the `registerState` helps us observe the changes in the value of the registration state while ``_registerState` tells us the final value that we pass to the desired view. The same is done for login.
+So the `registerState` helps us observe the changes in the value of the registration state while `_registerState` tells us the final value that we pass to the desired view. The same is done for login.
 
 The `RegisterState` and `LoginState` classes are defined to show the data state in response. For example, the data may be `loading`, `error` or `success`. The classes are defined in the view package.
 
@@ -1025,7 +1023,7 @@ class AuthActivity : AppCompatActivity() {
 ```
 
 #### Registration Fragment
-Since the two fragments have almost similar code, I will explain just one because the rest work similarly. First, we need to instantiate the `authViewModel` class that we defined in the `ViewModel`.
+Since the two fragments have almost similar code, I will explain just one because the rest work similarly. We need to instantiate the `authViewModel` class that we defined in the `ViewModel`.
 
 ```kotlin
 class RegisterFragment : Fragment() {
@@ -1042,7 +1040,7 @@ class RegisterFragment : Fragment() {
 }
 ```
 
-Next, on the `onCreateView` function, we need to get the `registerButton` from the respective layout file. You can find the layout file [here.](https://github.com/jerimkaura/Authy/blob/master/app/src/main/res/layout/fragment_register.xml)
+Next, on the `onCreateView` function, we need to get the `registerButton` from the respective layout file. You can find the layout file [here](https://github.com/jerimkaura/Authy/blob/master/app/src/main/res/layout/fragment_register.xml).
 
 ```kotlin
 val registerButton = view.findViewById<Button>(R.id.register_button)
@@ -1185,6 +1183,8 @@ The following should illustrate how the custom REST api is consumed in our auth 
 
 ### Conclusion
 This tutorial walked the reader through consuming a custom Django authentication API using the Kotlin MVVM design pattern. We built an authentication API from scratch and consumed the endpoints in the Kotlin android application. Along the way, we discussed the benefits of writing clean and maintainable code.
+
+Happy coding!
 
 ---
 Peer Review Contributions by: [Mercy Meave](/engineering-education/authors/mercy-meave/)
