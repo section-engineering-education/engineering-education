@@ -3,10 +3,10 @@ layout: engineering-education
 status: publish
 published: true
 url: /chaos-cryptography/
-title: Chaos theory and its potential for cryptography
+title: Chaos Theory and its Potential for Cryptography
 description: This article will introduce the reader to a different approach to cryptography in a simplistic, palatable way.
 author: oliver-mulwa
-date: 2022-04-22T00:00:00-18:30
+date: 2022-05-31T00:00:00-18:30
 topics: [Security]
 excerpt_separator: <!--more-->
 images:
@@ -68,7 +68,7 @@ Researchers have proposed a digital signature algorithm that relies on the [quad
 ### Practical problems of chaos-based cryptography
 Many primitives use finite precision floating-point representation. There will be no issues if the same operating system, hardware platform, and mathematical representation are used in verification. It becomes difficult to verify the algorithm if there is a mismatch in these factors, making it difficult to reproduce the results.
 
-Efficiency problems may arise due to complex design algorithms meaning that most chaos cryptographic primitives are slower than conventional cryptosystems. For example, CHA-1 had a better security factor than SHA-1 but was slower.The use of weak keys is another problem. Special care needs to be taken to avoid secret vital values that will lead to non-chaotic behavior. In a cryptosystem, this would be a huge flaw.
+Efficiency problems may arise due to complex design algorithms meaning that most chaos cryptographic primitives are slower than conventional cryptosystems. For example, CHA-1 had a better security factor than SHA-1 but was slower. The use of weak keys is another problem. Special care needs to be taken to avoid secret vital values that will lead to non-chaotic behavior. In a cryptosystem, this would be a huge flaw.
 
 The lack of proper security tests via cryptanalysis is a significant problem. Most of the chaos cryptographic primitives rely on statistical tests for security justifications. Statistical tests are essential. However, they should not be the only basis for security tests. Other cryptanalytic tests should be done. These tests might be difficult to perform due to the over-complexity of the chaos cryptographic primitives.
 
@@ -86,11 +86,9 @@ Happy learning!
 
 ### Further reading
 - [Implementations and practical problems of chaos-based cryptography revisited](https://www.sciencedirect.com/science/article/abs/pii/S2214212619306544)
-
 - [New hash function based on chaos theory (CHA-1)](https://www.researchgate.net/publication/253155858_New_hash_function_based_on_chaos_theory_CHA-1)
-
 - [A New Chaos-Based Image-Encryption and Compression Algorithm](https://www.hindawi.com/journals/jece/2012/179693/) 
-
 - [A new digital signature scheme based on chaotic maps and quadratic residue problems](https://www.naturalspublishing.com/files/published/317re1c6x421q3.pdf)
+
 ---
 Peer Review Contributions by: [Briana Nzivu](/engineering-education/authors/briana-nzivu/)
