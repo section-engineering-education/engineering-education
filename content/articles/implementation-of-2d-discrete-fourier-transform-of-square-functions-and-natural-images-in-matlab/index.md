@@ -1,3 +1,19 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /implementation-of-2d-discrete-fourier-transform-of-square-functions-and-natural-images-in-matlab/
+title: Implementation of 2-D Discrete Fourier Transform of Square Functions and Natural Images in Matlab
+description: This article will look  at the background theory of the DFT and shows how to implement it in digital and natural images.
+author: peter-adongo
+date: 2022-03-09T00:00:00-01:50
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/implementation-of-2d-discrete-fourier-transform-of-square-functions-and-natural-images-in-matlab/hero.jpg
+    alt: Implementation of 2-D Discrete Fourier Transform of square functions and natural images in Matlab Hero Image
+---
 
 The discrete-time Fourier transform represents an image as a sum of complex exponential of varying magnitudes, frequency and phases. Square functions as an image representation of a square, while the natural images are the image representation with rich local covariance. We can perform DFT for all these image types to improve their qualities.
 
@@ -207,6 +223,11 @@ This is how we plot the spectrum of an image in Matlab.
 
 ### Conclusion
 Performing the discrete Fourier transform is an essential process in improving the image or signal quality. It gives a wider image view in the spatial and frequency domain that helps you process your image. Performing this process in Matlab is made easier using functions in Matlab. This feature makes Matlab efficient to solve DFT problems.
+
+Happy coding!
+
+---
+Peer Review Contributions by: [Monica Masae](/engineering-education/authors/monica-masae/)
 
 <!-- MathJax script -->
 <script type="text/javascript" async
