@@ -494,3 +494,4 @@ In this tutorial, we learned about all the functionalities of the sensor_plus pa
 
  ### Further reading
  [flutter sensors](https://pub.dev/packages/sensors_plus)
+ [git](https://github.com/KING-CYBERTON/gyroscope-configaration)
