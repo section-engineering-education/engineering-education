@@ -43,20 +43,20 @@ which include:
 
  
  ### AccelerometerEvent 
- It is used to measure the velocity of an object at rest i.e proper  acceleration. Imaine your device in your hand it may seem motion less but there is gravity acting on it  hence it tends to move down wards to the surface at a constant downward force of g ≈ 9.81 m/s2.Flutter Accelerometer simply uses accelerometer reading and tell weather the device is currently moving and if moving then in which direction it’s moving .To get more on the accelerometer[click here](https://en.wikipedia.org/wiki/Accelerometer)
+ It is used to measure the velocity of an object at rest i.e proper  acceleration. Imaine your device in your hand it may seem motion less but there is gravity acting on it  hence it tends to move down wards to the surface at a constant downward force of g ≈ 9.81 m/s2.Flutter Accelerometer simply uses accelerometer reading and tell wheather the device is currently in motion and if so it's direction .To get more on the accelerometer[click here](https://en.wikipedia.org/wiki/Accelerometer)
 
  ### UserAccelerometer Event sensor 
  This works in the same way as the accelerometerEvent but in this case gravity is ignored and uses the user motion instead.
 
  #### GyroscopeEvent.
- the gyroscope sensor is also known as angular rate sensors or angular velocity sensors, are devices that sense angular velocity. In simple terms, angular velocity is the change in rotational angle per unit of time. Angular velocity is generally expressed in deg/s (degrees per second).The data from the sensor is used to determine the orientation of the device.
-for more information on gyroscope [click here](https://en.wikipedia.org/wiki/Gyroscope)
+ The gyroscope sensor is also known as angular velocity sensors, are devices that sense angular velocity. In simple terms, angular velocity is the change in rotational angle per unit of time. Angular velocity is generally expressed in deg/s (degrees per second).The data from the sensor is used to determine the orientation of the device.
+ For more information on gyroscope [click here](https://en.wikipedia.org/wiki/Gyroscope)
 
 
 ### Flutter app
  Now that we have understood what we are about to implement lets dive right into it.
 ### Hierarchy
-for easy while coding kindly follow the file arrangement above 
+ For easy while coding kindly follow the file arrangement above 
 ![file arrangement](Images/hierarchy.png)
 
  ### Create a new flutter project
@@ -212,14 +212,14 @@ class _NavState extends State<Nav> {
 }
 
    ```
-   the  code above simply  has the main funtion that runs the whole app also it has the bottom navigation bar that is used to navigate between the  two widgets we are going to create for accelerometer and gyroscope.
- next you will need to create two new dart files in the lib file namely  accelerometer.dart and  gyroscope.dart where we are going to  write the code for the  accelerometer sensor and the gyroscope sensor respectively
+   The  code above simply  has the main funtion that runs the whole app also it has the bottom navigation bar that is used to navigate between the  two widgets we are going to create for accelerometer and gyroscope.
+   next you will need to create two new dart files in the lib file namely  accelerometer.dart and  gyroscope.dart where we are going to  write the code for the  accelerometer sensor and the gyroscope sensor respectively
 
 
    
  ### Using the accerolemeter sensor
  
-First your we going to create an initState() method that will sending data as soon as the application starts 
+ First your we going to create an initState() method that will sending data as soon as the application starts 
  
 
  ```dart
@@ -403,7 +403,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Similarly the gyro scope has three events that are accessed  through double datatypes x ,y ,z that we will have to initialize
 
   the data retrieved is then taken through  if loop  to calculate the orientation of the device 
-after the calculation has been done we display the results using a container widget  on the screen
+ after the calculation has been done we display the results using a container widget  on the screen
 
 ```dart
  Container( 
@@ -490,7 +490,7 @@ class _HomeState extends State<Home> {
 ```
 
 ### Conclusion
-In this tutorial, we learned about all the functionalities of the sensor_plus package.Don’t forget to try out the examples yourself to fully understand how they work.
+ In this tutorial, we learned about all the functionalities of the sensor_plus package.Don’t forget to try out the examples yourself to fully understand how they work.
 
  ### Further reading
  [flutter sensors](https://pub.dev/packages/sensors_plus)
