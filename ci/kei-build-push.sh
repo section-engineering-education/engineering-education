@@ -14,7 +14,7 @@ main() {
 }
 
 beta() {
-  bash docker-update-build-push.sh ../ Dockerfile.kei.beta section-enged beta
+  bash docker-update-build-push.sh ../ Dockerfile.kei.beta section-enged -beta
   
   setCluster
 }

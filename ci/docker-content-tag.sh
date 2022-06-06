@@ -68,7 +68,7 @@ EOF
     LC_ALL=C sort -k1.67 | # 67 is the offset of the filename after the hash
     sha256sum -b |
     cut -c-5 |
-    sed "s/$/-${versionTag}/"
+    sed "s/$/${versionTag}/"
 }
 
 main "$@"
