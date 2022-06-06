@@ -19,7 +19,7 @@ set -o errexit
 #    and use explicitly versioned references to external dependencies otherwise.
 
 main () {
-  local image_dir=$1 dockerfilename=$2 dockerfile_override iid
+  local image_dir=$1 dockerfilename=$2 versionTag=$3 dockerfile_override iid
 
   if [ -z "${image_dir}" ]
   then
@@ -67,7 +67,8 @@ EOF
   docker container run --rm "${iid}" |
     LC_ALL=C sort -k1.67 | # 67 is the offset of the filename after the hash
     sha256sum -b |
-    cut -c-5
+    cut -c-5 |
+    sed "s/$/${versionTag}/"
 }
 
 main "$@"

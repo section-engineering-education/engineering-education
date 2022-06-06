@@ -13,6 +13,12 @@ main() {
   setCluster
 }
 
+beta() {
+  bash docker-update-build-push.sh ../ Dockerfile.kei.beta section-enged -beta
+  
+  setCluster
+}
+
 setCluster() {
   # Configure kubectl to talk to Kei
   
@@ -32,9 +38,6 @@ setCluster() {
   kubectl config use-context my-section-application
 
   kubectl version
-
-  # Apply the yamls
-  kubectl apply -k ../k8s/base
 }
 
 "$@"
