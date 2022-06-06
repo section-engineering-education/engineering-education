@@ -15,7 +15,7 @@ main () {
   local script_root=$(pwd)
   cd "${_pwd}"
 
-  local this=$0 image_dir=$1 dockerfilename=$2 tag full_image_name
+  local this=$0 image_dir=$1 dockerfilename=$2 versionTag=$3 tag full_image_name
   shift 1 || true
 
   if [ -z "${image_dir}" ]
@@ -51,7 +51,7 @@ main () {
     fi
   fi
   
-  tag=$(bash "${script_root}/docker-content-tag.sh" "${image_dir}" "${dockerfilename}")
+  tag=$(bash "${script_root}/docker-content-tag.sh" "${image_dir}" "${dockerfilename}" "${versionTag}")
   full_image_name="${registry}/$(basename "$2"):${tag}"
   
   # Look for YAMLs in the component k8s directory
