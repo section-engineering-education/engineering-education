@@ -7,7 +7,6 @@ IMAGE_NAME_BETA=section-enged.beta
 all: build generate
 
 build:
-	docker image prune -f
 	docker build --tag $(IMAGE_NAME) .
 
 build-beta:
@@ -37,6 +36,9 @@ deploy:
 	@env | grep ^AWS > .env
 	docker run --env-file .env --rm --volume "$$(pwd)/public:/src/public" $(IMAGE_NAME) aws s3 sync --acl public-read --delete --exclude "docs/*" public/ s3://section-enged.section.io/
 	@rm .env
+
+deployKEI:
+	bash ./ci/kei-build-push.sh main
 
 deploy-beta:
 	@# capture AWS environment variables from the environment, and inject them into the container
