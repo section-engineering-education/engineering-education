@@ -15,12 +15,11 @@ main () {
   local script_root=$(pwd)
   cd "${_pwd}"
 
-  local this=$0 image_dir=$1 dockerfilename=$2 versionTag=$3 tag full_image_name
-  shift 1 || true
+  local this=$0 image_dir=$1 dockerfilename=$2 containerName=$3 versionTag=$4 tag full_image_name
 
   if [ -z "${image_dir}" ]
   then
-    printf 'Usage: %s <image_dir>\n' "$0" >&2
+    printf 'Usage: %s <image_dir>\n' "${image_dir}" >&2
     return 1
   fi
 
@@ -52,14 +51,17 @@ main () {
   fi
   
   tag=$(bash "${script_root}/docker-content-tag.sh" "${image_dir}" "${dockerfilename}" "${versionTag}")
-  full_image_name="${registry}/$(basename "$2"):${tag}"
+  full_image_name="${registry}/$(basename "${containerName}"):${tag}"
+
+  printf 'tag: "%s"' "${tag}"
+  printf 'full_image_name: "%s"' "${full_image_name}"
   
   # Look for YAMLs in the component k8s directory
   cd "${image_dir}/k8s/base"
 
-  grep --recursive --include "*.yml" --files-with-matches "$2" . | while read -r file ; do
+  grep --recursive --include "*.yml" --files-with-matches "${containerName}" . | while read -r file ; do
 
-    sed -i "s#hborrelli12/$2:.*#${full_image_name}#" "${file}"
+    sed -i "s#hborrelli12/${containerName}:.*#${full_image_name}#" "${file}"
   done
 
 

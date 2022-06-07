@@ -11,12 +11,17 @@ main() {
   bash docker-update-build-push.sh ../ Dockerfile.kei section-enged
   
   setCluster
+  kubectl apply -k ../k8s/base
 }
 
 beta() {
-  bash docker-update-build-push.sh ../ Dockerfile.kei.beta section-enged -beta
+  local tagValue=$1 
+  tagValue="${tagValue:--prod}"
+
+  bash docker-update-build-push.sh ../ Dockerfile.kei.beta section-enged "-beta"
   
   setCluster
+  kubectl apply -k ../k8s/beta
 }
 
 setCluster() {
