@@ -1,5 +1,21 @@
-Video conferencing has become part of our life as we all rely on it regularly. Video conferencing is used in holding meetings, WhatsApp calls, and many more.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /creating-a-video-conferencing-app-with-100ms-sdk-in-android/
+title: Creating a Video Conferencing App with 100ms SDK in Android
+description: This tutorial will guide the reader on how to create a video conferencing app with 100ms SDK in Android using Jetpack Compose. 
+author: tom-leposo
+date: 2022-06-07T00:00:00-16:01
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/creating-a-video-conferencing-app-with-100ms-sdk-in-android/hero.png
+    alt: Creating a Video Conferencing App with 100ms SDK in Android
+---
+Video conferencing has become part of our life as we all rely on it regularly. Video conferencing is used in holding meetings, WhatsApp calls, and many more.
+<!--more-->
 In this tutorial, we will use the **100ms Android SDK** and **Jetpack compose** to create a video conferencing app.
 
 ### Table of content
@@ -711,3 +727,6 @@ In this tutorial, we have learned what is 100ms SDK and its pricing. We have the
 
 ### Further reading
 - [100ms Android Docs](https://www.100ms.live/docs/android/v2/foundation/Basics)
+
+---
+Peer Review Contributions by: [Eric Gacoki](/engineering-education/authors/eric-gacoki/)
