@@ -390,9 +390,9 @@ In your `AndroidManifest.xml` file, add the name of the class that you have crea
         android:name=".ConferencingApp"
         ...
 
-    </application> 
+    </application>
 
-</manifest>       
+</manifest>
 ```
 
 In the `di` package, create an app module and provide the following dependencies:
