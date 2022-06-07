@@ -1,5 +1,4 @@
-### Introduction
-The nested scroll is one of the relatively technical features to implement in an app. With Jetpack Compose, we can achieve this by combining scrollable components with different orientations as items of the other or by making use of the NestedScroll API offered by Compose.
+The nested scroll is one of the relatively technical features to implement in an app. With Jetpack Compose, we can achieve this by combining scrollable components with different orientations. This approach uses items as children of other items. Alternatively, we can make use of the NestedScroll API offered by Compose.
 
 ### Goal
 In this tutorial, we'll learn how to implement a nested scroll functionality in a simple music player app using the earlier mentioned approach as it is easier to implement, customize and handle states.
@@ -109,10 +108,10 @@ fun MusicItem() {
 
 This item shows a music icon and a title along with the artist of the song. This function can be modified to receive a song object as an input (parameter).
 
-> You can get the icons and images from [this GitHub](https://github.com/nonimdiana/ComposeNestedScrollPlayer) repo.
+> You can get the icons and images from [this GitHub](https://github.com/nonimdiana/ComposeNestedScrollPlayer) repository.
 
 ### Implementing nested scroll
-Switch to `MainActivity.kt` file and add the following code inside the `Surface` scope. You can decide to paste it directly in the `setContent` scope.
+Switch to `MainActivity.kt` file and add the following code inside the `Surface` scope. Alternatively you can paste it directly in the `setContent` scope.
 
 ```kotlin
 val state = rememberLazyListState()
@@ -146,7 +145,7 @@ LazyColumn(modifier = Modifier.fillMaxSize(fraction = 0.8F), state = state) {
 }
 ```
 
-As mentioned earlier, to create a nested scroll, we need to entangle the composables with the body of a scrollable component. This is made possible by the fact that the `item` and `items` functions are overloads of the `LazyRow` and `LazyColumn` functions that can hold other composables including scrollable ones.
+As mentioned earlier, to create a nested scroll, we need to entangle the composables within the body of a scrollable component. This is made possible by the fact that the `item` and `items` functions are overloads of the `LazyRow` and `LazyColumn` functions that can hold other composables including scrollable ones.
 
 The hierarchy/level of nesting is determined by the number of elements that are passed to the `item` or `items` functions. However, to achieve a smooth scrolling effect, it is advisable to **avoid** nesting too many items.
 
@@ -168,7 +167,7 @@ We can provide a media file from different sources such as the local storage of 
 Create a `raw` file within the `resources` folder and add an audio file of your choice.
 
 #### Instantiating the MediaPlayer
-Here, we need to reference and play the audio file from the raw folder. Create a function that creates an instance of the MediaPlayer as shown below:
+Here, we need to reference and play the audio file from the raw folder. Create a function that generates an instance of the MediaPlayer as shown below:
 
 ```kotlin
 @Composable
@@ -177,7 +176,7 @@ fun PlaySampleAudio(context: Context) {
         mutableStateOf(
             MediaPlayer.create(
                 context,
-                R.raw.sample_song
+                R.raw.sample_song // your audio file
             )
         )
     } // track the playing state
@@ -188,13 +187,13 @@ fun PlaySampleAudio(context: Context) {
 ```
 
 #### Adding the media control
-The following code snippet adds a round-shaped card with a button to play or pause the audio. Paste it in the `PlaySampleAudio` function.
+The following code adds a round-shaped card with a button to play or pause the audio. Paste it in the `PlaySampleAudio` function.
 
 ```kotlin
 Card( // Icon and button holder
     modifier = Modifier
         .padding(8.dp)
-        .clip(RoundedCornerShape(8.dp)) // round shape
+        .clip(RoundedCornerShape(8.dp))
         .fillMaxWidth()
 ) {
     // this is similar to the MusicItem properties
@@ -265,7 +264,7 @@ Card( // Icon and button holder
 }
 ```
 
-The above code allows us to play or pause the audio based on the value of the `isPlaying` state variable.
+The above code allows us to play or pause the audio based on the value of the `isPlaying` state.
 
 #### Running the app
 Call the `PlaySampleAudio` function below the scrollable list and run the app. You should expect it to look like the one below:
