@@ -41,7 +41,7 @@ deployKEI:
 	bash ./ci/kei-build-push.sh main
 
 deployKEIBeta:
-	bash ./ci/kei-build-push.sh beta -beta
+	bash ./ci/kei-build-push.sh beta
 
 deploy-beta:
 	@# capture AWS environment variables from the environment, and inject them into the container
