@@ -8,15 +8,20 @@ cert=/etc/ssl/certs/ca-certificates.crt
 
 main() {
   # Build new image with hash and push to docker
-  bash docker-update-build-push.sh ../ Dockerfile.kei section-enged
+  bash docker-update-build-push.sh ../ Dockerfile.kei section-enged "-prod" "k8s/base"
   
   setCluster
+  kubectl apply -k ../k8s/base
 }
 
 beta() {
-  bash docker-update-build-push.sh ../ Dockerfile.kei.beta section-enged -beta
+  local tagValue=$1 
+  tagValue="${tagValue:--prod}"
+
+  bash docker-update-build-push.sh ../ Dockerfile.kei.beta section-enged "-beta" "k8s/beta"
   
   setCluster
+  kubectl apply -k ../k8s/beta
 }
 
 setCluster() {

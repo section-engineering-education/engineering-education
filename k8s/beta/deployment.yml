@@ -1,22 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: section-enged-deployment
+  name: section-enged-beta-deployment
   labels:
-    app: section-enged
+    app: section-enged-beta
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: section-enged
+      app: section-enged-beta
   template:
     metadata:
       labels:
-        app: section-enged
+        app: section-enged-beta
     spec:
       containers:
-        - name: section-enged
-          image: hborrelli12/section-enged:d0444section-enged
+        - name: section-enged-beta
+          image: hborrelli12/section-enged:adf4dsection-enged
           imagePullPolicy: Always
           ports:
           - containerPort: 80

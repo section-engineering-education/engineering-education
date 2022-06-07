@@ -32,7 +32,6 @@ pipeline {
               chmod +x ./kubectl && \
               mv ./kubectl /usr/local/bin/kubectl'
           sh 'make deployKEIBeta'
-          sh 'kubectl apply -k ./k8s/base'
         }
       }
     }

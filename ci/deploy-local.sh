@@ -19,6 +19,6 @@ test -n "${DOCKER_HOST}" || eval $(${ci_dir}/minikube-docker-env.sh)
 
 echo Building images...
 
-skip_push="true" "${ci_dir}/docker-update-build-push.sh" ../ Dockerfile.kei section-enged
+skip_push="true" "${ci_dir}/docker-update-build-push.sh" ../ Dockerfile.kei section-enged "-dev" "k8s/base"
 
 kubectl apply -k ../k8s/overlays/dev
