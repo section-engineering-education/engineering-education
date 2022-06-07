@@ -15,7 +15,7 @@ main () {
   local script_root=$(pwd)
   cd "${_pwd}"
 
-  local this=$0 image_dir=$1 dockerfilename=$2 containerName=$3 versionTag=$4 tag full_image_name
+  local this=$0 image_dir=$1 dockerfilename=$2 containerName=$3 versionTag=$4 k8sDir=$5 tag full_image_name
 
   if [ -z "${image_dir}" ]
   then
@@ -57,7 +57,7 @@ main () {
   printf 'full_image_name: "%s"' "${full_image_name}"
   
   # Look for YAMLs in the component k8s directory
-  cd "${image_dir}/k8s/base"
+  cd "${image_dir}/${k8sDir}"
 
   grep --recursive --include "*.yml" --files-with-matches "${containerName}" . | while read -r file ; do
 
