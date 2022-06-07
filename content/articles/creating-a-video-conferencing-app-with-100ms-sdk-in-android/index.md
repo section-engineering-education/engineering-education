@@ -1,10 +1,10 @@
-Video conferencing has become part of our daily lives as we all rely on it daily. Video conferencing is used in holding meetings, WhatsApp calls, and many more.
+Video conferencing has become part of our life as we all rely on it regularly. Video conferencing is used in holding meetings, WhatsApp calls, and many more.
 
-In this tutorial, we will use the 100ms Android SDK and Jetpack compose to create a video conferencing app.
+In this tutorial, we will use the **100ms Android SDK** and **Jetpack compose** to create a video conferencing app.
 
 ### Table of content
 - [Prerequisites](#prerequisites)
-- [What is 100ms SDK?](#what-is-100ms-sdk?)
+- [What is 100ms SDK?](#what-is-100ms-sdk)
 - [Definitions](#definitions)
 - [Pricing](#pricing)
 - [Creating an account on the 100ms SDK](#step-1---creating-an-account-on-the-100ms-sdk)
@@ -12,19 +12,19 @@ In this tutorial, we will use the 100ms Android SDK and Jetpack compose to creat
 - [Setting up the project](#step-3---setting-up-the-project)
 - [Getting access token](#step-4---getting-access-token)
 - [Adding functions to the repository](#step-5---adding-functions-to-the-repository)
-- [Viewmodel](#step-6---viewmodel)
+- [Creating the ViewModel](#step-6---creating-the-viewmodel)
 - [Dependency injection](#step-7---dependency-injection)
-- [Designing the user interfaces](#step-8---designing-the-user-interfaces)
+- [Designing the user interface](#step-8---designing-the-user-interface)
 - [Setting up navigation](#step-9---setting-up-navigation)
 - [Demo](#demo)
 - [Conclusion](#conclusion)
-- [Reference](#reference)
+- [Further reading](#further-reading)
 
 ### Prerequisites
-To follow along with this tutorial, you should have:
+To follow along with this tutorial, you should have knowledge on:
 - Using the MVVM pattern.
-- Dependency injection with Dagger Hilt.
-- Knowledge in using Jetpack compose in creating declarative UIs.
+- Dependency injection with Dagger-Hilt.
+- Using Jetpack Compose in creating declarative UI.
 - Kotlin Coroutines.
 - Making network calls with Retrofit.
 
@@ -32,8 +32,8 @@ To follow along with this tutorial, you should have:
 100ms offers a video conferencing infrastructure that provides web and mobile — native iOS and Android SDKs, to add live video & audio conferencing to your applications.
 
 ### Definitions
-- Room - this is the object that holds peers who are in a call (audio or video).
 - Peer - this is an object that contain the details of a person in a room.
+- Room - this is the object that holds peers who are in a call (audio or video).
 - Track - represents either audio or video being published from a peer.
 - Roles - represents permissions for peers.
 
@@ -47,14 +47,14 @@ Conferencing - $8 (HD)/ $4 (SD), recording -$20 (HD)/ $10 (SD) and RTMP Out -$24
 Conferencing - $1, recording -$3 and RTMP Out - $4
 
 ### Step 1 - Creating an account on the 100ms SDK
-To use the 100ms SDK in our project, we first need to visit the offical[100ms Dashboard](https://dashboard.100ms.live/login) and sign up.
+To use the 100ms SDK in our project, we first need to visit the official[100ms Dashboard](https://dashboard.100ms.live/login) and sign up.
 
 We then need to set up the account by:
-- Choose a subdomain.
+- Choosing a subdomain.
 
 ![subdomain](/engineering-education/creating-a-video-conferencing-app-with-100ms-sdk-in-android/subdomain.png)
 
-- Some details about usage and location.
+- Details about usage and location.
 
 ![details](/engineering-education/creating-a-video-conferencing-app-with-100ms-sdk-in-android/details.png)
 
@@ -72,8 +72,9 @@ On your IDE, create an empty compose project and name it accordingly.
 ![new-project](/engineering-education/creating-a-video-conferencing-app-with-100ms-sdk-in-android/new-project.png)
 
 ### Step 3 - Setting up the project
-In `settings.gradle`, add the following repository:
-```gradle
+Add the following repository in the `settings.gradle` file:
+
+```bash
 repositories {
     ...
 
@@ -82,7 +83,8 @@ repositories {
 ```
 
 In the app-level `build.gradle`, add the following dependencies:
-```gradle
+
+```bash
 // Coroutines
 implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.0'
 implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.0'
@@ -90,7 +92,7 @@ implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.0'
 // Coroutine Lifecycle Scopes
 implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.1"
 
-//Dagger - Hilt
+//Dagger-Hilt
 implementation "com.google.dagger:hilt-android:2.38.1"
 kapt "com.google.dagger:hilt-android-compiler:2.37"
 implementation "androidx.hilt:hilt-lifecycle-viewmodel:1.0.0-alpha03"
@@ -110,18 +112,34 @@ implementation 'com.jakewharton.timber:timber:5.0.1'
 implementation 'io.github.raamcosta.compose-destinations:core:1.3.1-beta'
 ksp 'io.github.raamcosta.compose-destinations:ksp:1.3.1-beta'
 
-// Permissions
+// Accompanist permissions
 implementation "com.google.accompanist:accompanist-permissions:0.21.1-beta"
 ```
 
-> Don't forget to add the `Hilt` classpath and plugin id
+Don't forget to add the `Hilt` classpath and the plugin id:
 
-As the project will be using the MVVM pattern, it is good that you create packages as shown below:
+```bash
+dependencies {
+    ...
+    classpath('com.google.dagger:hilt-android-gradle-plugin:2.40.1')
+}
+```
+
+```bash
+plugins {
+    ...
+    id 'dagger.hilt.android.plugin'
+}
+```
+
+Since the project will be using the MVVM pattern, it is good that you create packages as shown below:
 
 ![packages](/engineering-education/creating-a-video-conferencing-app-with-100ms-sdk-in-android/packages.png)
 
+
 ### Step 4 - Getting access token
-In the 'model' package, create a data class to hold the token request.
+In the `model` package, create a data class to hold the token request:
+
 ```kotlin
 data class TokenRequest(
     @SerializedName("room_id")
@@ -133,7 +151,8 @@ data class TokenRequest(
 )
 ```
 
-Also, create another data class to hold the token response.
+Also, create another data class to hold the token response:
+
 ```kotlin
 data class Token(
     @SerializedName("token")
@@ -141,7 +160,8 @@ data class Token(
 )
 ```
 
-Inside the 'data' package, create a new `Interface` which contains the function to request the access token.
+Inside the `data` package, create a new `Interface` that contains the function to request the access token:
+
 ```kotlin
 interface TokenApi {
     @POST("api/token")
@@ -150,14 +170,17 @@ interface TokenApi {
 ```
 
 ### Step 5 - Adding functions to the repository
-In the 'data' package, create a sub-directory and name it 'repository'. Inside the package create `CallRepository`. We will inject the token APi and 100ms HMSSDK with dagger hilt. 
+In the `data` package, create a sub-directory and name it `repository`. Inside the package create `CallRepository`. We will inject the token API and 100ms HMS SDK with dagger hilt:
+
 ```kotlin
 class CallRepository @Inject constructor(private val tokenApi: TokenApi, private val HmsSdk: HMSSDK) {
     val localMic: MutableState<Boolean> = mutableStateOf(true)
     ...
 }
+```
 
-Inside the class, create a function to get the access token
+Inside the class, create a function to get the access token:
+
 ```kotlin
 suspend fun getAccessToken(name: String, roomId: String = "622ff63144ae04b51cb01484") : Token {
     return tokenApi.requestAccessToken(
@@ -170,7 +193,8 @@ suspend fun getAccessToken(name: String, roomId: String = "622ff63144ae04b51cb01
 }
 ```
 
-Then let's define a function to join a video room where other peers are present and also a function to leave the room.
+Then let's define a function to join a video room where other peers are present and also a function to leave the room:
+
 ```kotlin
 fun joinRoom(userName: String, authToken: String, updateListener: HMSUpdateListener) {
     val info = JsonObject().apply { addProperty("name", userName) }
@@ -187,7 +211,8 @@ fun leaveRoom() {
 }
 ```
 
-For toggling the state of the microphone of the local peers, let's add the following functions to the class.
+For toggling the state of the microphone of the local peers, let's add the following functions:
+
 ```kotlin
 fun setLocalAudioEnabled() {
     HmsSdk.getLocalPeer()?.audioTrack?.apply {
@@ -202,20 +227,22 @@ private fun isLocalAudioEnabled(): Boolean {
 }
 ```
 
-Then when it comes to toggling (turning on and off) the video of the local peer, define the following functions
+When it comes to toggling (turning on and off) the video of the local peer, define the following functions:
+
 ```kotlin
 fun setLocalVideoEnabled() {
     HmsSdk.getLocalPeer()?.videoTrack?.apply {
         setMute(!isLocalVideoEnabled())
     }
 }
-    
+   
 private fun isLocalVideoEnabled(): Boolean {
     return HmsSdk.getLocalPeer()?.videoTrack?.isMute == true
 }
 ```
 
-Finally, lets create a function to help the user switch the camera (front and back)
+Finally, let's create a function to help the user switch the camera (front and back):
+
 ```kotlin
 fun switchCamera(){
     try {
@@ -226,8 +253,8 @@ fun switchCamera(){
 }
 ```
 
-### Step 6 - Viewmodel
-In this step, we will create a `ViewModel` for calling the repository functions.
+### Step 6 - Creating the ViewModel
+In this step, we will create a `ViewModel` for calling the repository functions:
 
 ```kotlin
 @HiltViewModel
@@ -263,7 +290,7 @@ class CallViewModel @Inject constructor(private val repository: CallRepository) 
             val token = repository.getAccessToken(name).token
 
             repository.joinRoom(
-                name,
+                name, 
                 token,
                 object : HMSUpdateListener {
                     override fun onChangeTrackStateRequest(details: HMSChangeTrackStateRequest) {
@@ -287,7 +314,7 @@ class CallViewModel @Inject constructor(private val repository: CallRepository) 
                     override fun onPeerUpdate(type: HMSPeerUpdate, peer: HMSPeer) {
                         Timber.d("There was a peer update: $type")
 
-                        // Handle peer updates.
+                        // Handle peer updates
                         when (type) {
                             HMSPeerUpdate.PEER_JOINED -> _peers.value =
                                 _peers.value.plus(peer)
@@ -335,9 +362,9 @@ We will be using Dagger Hilt for dependency injection. On your root package, cre
 class ConferencingApp : Application()
 ```
 
-In your `AndroidManifest.xml` file and the name of the class that you have created and also add the following permissions:
+In your `AndroidManifest.xml` file, add the name of the class that you have created and add the following permissions:
 
-```manifest
+```xml
 <manifest
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.CAMERA"/>
@@ -345,7 +372,6 @@ In your `AndroidManifest.xml` file and the name of the class that you have creat
 
     <application
         android:name=".ConferencingApp"
-
         ...
 
     </application> 
@@ -353,14 +379,13 @@ In your `AndroidManifest.xml` file and the name of the class that you have creat
 </manifest>       
 ```
 
-In the 'di' package, create an app module and provide the following dependencies:
+In the `di` package, create an app module and provide the following dependencies:
 
 ```kotlin
 @Provides
 @Singleton
 fun provideHMSSDK(context: Application) : HMSSDK{
-    return HMSSDK.Builder(context)
-        .build()
+    return HMSSDK.Builder(context).build()
 }
 
 @Provides
@@ -383,11 +408,12 @@ fun provideCallRepository(hmsSdk: HMSSDK, api: TokenApi) : CallRepository{
 }
 ```
 
-### Step 8 - Designing the user interfaces
-Our 'screens' package will contain all our user interfaces:
+### Step 8 - Designing the user interface
+Our `screens` package will contain all our user interfaces:
 
 #### LoginScreen
-Inside the package, create a new Kotlin file and name it `LoginScreen`. This screen will have a `TextField` that a user can enter their name that they will use the call.
+Inside the package, create a new Kotlin file and name it `LoginScreen`. This screen will have a `TextField` where a user can enter their name that will be used in the call:
+
 ```kotlin
 @Destination(start = true)
 @Composable
@@ -426,8 +452,7 @@ fun LoginScreen(
         Spacer(modifier = Modifier.height(16.dp))
 
         Button(
-            modifier = Modifier
-                .fillMaxWidth(),
+            modifier = Modifier.fillMaxWidth(),
             onClick = {
                 navigator.navigate(CallScreenDestination(text))
             },
@@ -444,7 +469,7 @@ fun LoginScreen(
 }
 ```
 
-Still in the same package, create a new screen called `CallScreen`. 
+Still in the same package, create a new screen called `CallScreen`:
 
 #### Person item composable
 Inside the `CallScreen` file, create a `PersonItem` composable. This composable function will take in a `HMSPeer` and will display the video of the user.
@@ -489,7 +514,7 @@ fun PersonItem(peer: HMSPeer) {
 ```
 
 #### Bottom buttons composable
-Also, create another composable function that will have the switch camera, toggle video, toggle microphone, and the end call buttons.
+Create another composable function that will have the switch camera, toggle video, toggle microphone, and the end call buttons:
 
 ```kotlin
 @Composable
@@ -574,7 +599,7 @@ private fun CallBottomButtons(
 }
 ```
 
-Finally, let's use these two composables functions that we have created inside the `CallScreen`.
+Finally, let's use these two composable functions that we have created inside the `CallScreen`:
 
 ```kotlin
 @OptIn(ExperimentalFoundationApi::class)
@@ -644,7 +669,7 @@ fun CallScreen(
 ```
 
 ### Step 9 - Setting up navigation
-Finally, let us conclude by setting up navigation in `MainActivity`. Inside the `onCreate` function add the following code. 
+Let us conclude by setting up navigation in `MainActivity`. Inside the `onCreate` function add the following code:
 
 ```kotlin
 val navController = rememberNavController()
@@ -672,10 +697,8 @@ Scaffold(
 }
 ```
 
-> Don't forget to include code to request the audio and camera permissions.
-
 ### Demo
-When you finally run the app, your output should be as follows:
+When you run the app, your output should be as follows:
 
 ![demo1](/engineering-education/creating-a-video-conferencing-app-with-100ms-sdk-in-android/demo1.png)
 
@@ -684,7 +707,7 @@ When you finally run the app, your output should be as follows:
 ![demo3](/engineering-education/creating-a-video-conferencing-app-with-100ms-sdk-in-android/demo3.png)
 
 ### Conclusion
-In this tutorial, we have learned what is 100ms SDK and its pricing. We then went ahead and created a video conferencing app with the SDK. Please take a look at the final app in this Github repository - [Conferencing app demo](https://github.com/tomleposo/ConferencingAppDemo)
+In this tutorial, we have learned what is 100ms SDK and its pricing. We have then went ahead and created a video conferencing app with the SDK. Please take a look at the final app in this Github repository - [Conferencing app demo](https://github.com/tomleposo/ConferencingAppDemo)
 
 ### Further reading
 - [100ms Android Docs](https://www.100ms.live/docs/android/v2/foundation/Basics)
