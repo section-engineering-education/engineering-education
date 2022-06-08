@@ -1,5 +1,19 @@
-### Introduction
+---
+layout: engineering-education
+status: publish
+published: true
+url: /implementation-of-pattern-matching-in-the-building-of-type-driven-algorithms/
+title: Implementation of pattern matching in the building of type driven algorithms
+description: This tutorial will help the reader to implement the pattern matching in the building of type driven algorithms.
+author: Dinah Anyango
+date: 2022-06-8T00:00:00-09:00
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/implementation-of-pattern-matching-in-the-building-of-type-driven-algorithms/hero.jpg
+    alt: Implementation of pattern matching in the building of type driven algorithms Hero Image
+---
 This article is going to explore various functionalities of the C# programming language and how it is used in implementing various concepts, but to be more specific, the article covers the use of pattern matching.
 
 ### Table of contents
@@ -282,3 +296,5 @@ In conclusion, we have discussed how the C# programming language aids in impleme
 After completing this article, it will always be advisable to read ahead and explore more about C# programming because it contains many coverage areas that are important to a programmer.
 
 **Happy Coding!**
+---
+Peer Review Contributions by: [Mohamed Alghadban](/engineering-education/authors/mohamed-alghadban/)
