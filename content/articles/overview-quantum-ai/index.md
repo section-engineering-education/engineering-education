@@ -2,16 +2,16 @@
 layout: engineering-education
 status: publish
 published: true
-url: /quantum-ai/
+url: /overview-quantum-ai/
 title: Overview of Quantum AI
 description: This article will discuss quantum computing and how quantum AI works to make human work more manageable.
 author: carlos-kaharu
 date: 2022-03-16T00:00:00-09:30
-topics: [Artificial Intelligence]
+topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/quantum-ai/hero.jpg
+  - url: /engineering-education/overview-quantum-ai/hero.jpg
     alt: Overview of Quantum AI Hero Image
 ---
 As the name suggests, Quantum Artificial intelligence (AI) applies quantum technology to machine learning procedures. Quantum technology and machine learning are game-changing innovations that will make problem-solving easier.

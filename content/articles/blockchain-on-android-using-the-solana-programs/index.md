@@ -7,7 +7,7 @@ title: How to Implement the Solana Blockchain Concept in Android
 description: This tutorial will guide the reader on how to build an Android Blockchain wallet using Solana.
 author: moses-chege
 date: 2022-05-20T00:00:00-11:30
-topics: [Blockchain, Android]
+topics: [Blockchain]
 excerpt_separator: <!--more-->
 images:
 
