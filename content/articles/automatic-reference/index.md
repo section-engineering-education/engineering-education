@@ -17,7 +17,7 @@ Automatic Reference Counting (ARC) is a memory management attribute used to moni
 - [Further reading](#further-reading)
 
 ### Key Takeaways
-A reader should be able to understand the following at the end of this tutorial:
+The reader should be able to understand the following at the end of this tutorial:
 1. What is ARC, its functions, and how it works.
 2. The reference cycles.
 3. How to use Xcode to detect reference cycles.
@@ -28,12 +28,12 @@ Deinitialization is the process of deallocating class instances when they are no
 1. `init()` creates new classes and ARC allocates a block of memory to keep the information in the new classes.
 2. When the class instance is used up, the `deinit()` function frees up memory for future class instance caching and recovery.
 3. ARC maintains and manages track of the attributes, constants, and variables that are presently referenced by class instances. It is done so that `deinit()` is only done to those that aren't being utilized.
-4. To prevent deallocation of classes once the class instance is running, ARC keeps a 'strong reference' to such class instance properties, constants, and variables.
+4. To prevent the deallocation of classes once the class instance is running, ARC keeps a 'strong reference' to such class instance properties, constants, and variables.
 
 ### How ARC Works
 ARC allocates a portion of memory space to hold data on a new instance of a class whenever one is created. The memory contains data on the instance's type, as well as the contents of all stored attributes connected with it.
 
-Furthermore, when an instance becomes obsolete, ARC releases the space utilized by that instance, allowing it to be used for other reasons. This prevents class instances from taking up memory once they're no longer required.
+When an instance becomes obsolete, ARC releases the space utilized by that instance, allowing it to be used for other reasons. This prevents class instances from taking up memory once they're no longer required.
 
 Below is an example of how ARC works. The example begins with the class `Student` that is used to define a stored constant `score`.
 ``` class Student {
@@ -80,7 +80,7 @@ When working with class-type variables, Swift provides two methods for resolving
 
 #### Weak References Cycles
 A weak reference does not maintain a strong hold on the object it refers to. When it does so, it does not prevent ARC from discarding it. This action keeps the reference from forming a strong reference cycle. The `weak` term precedes a variable declaration to denote a weak reference.
-Since a weak reference does not maintain a firm hold on the instance it links to, the instance can be deallocated whereas the weak reference is already pointing to it. As a result, once the instance it refers to is deallocated, ARC immediately changes a weak reference to `nil`. Weak references are often stated as variables instead of constants of an arbitrary kind, since their values might be altered to `nil` at execution.
+Since a weak reference does not maintain a firm hold on the instance it links to, the instance can be deallocated whereas the weak reference is already pointing to it. As a result, once the instance it refers to is deallocated, ARC immediately changes a weak reference to `nil`. Weak references are often stated as variables instead of constants of an arbitrary kind since their values might be altered to `nil` at execution.
 Below is the process of breaking a strong reference cycle using weak references. `Goals` is a variable property defined by the `Player` class. The `goals` property is optional and is implicitly unwrapped. A constant property of type `Player` is defined in the `Goals` class. It also has an initializer that takes a `Player` instance as a parameter.
 
 ```class Player {
@@ -180,7 +180,7 @@ However, there is a serious flaw in the project: A reference cycle hidden some
 
 ![](/section/engineering-education/arc3.png)
 
-**Step five:** Pick one of the affected contact objects in the navigator. The cycle in between is brought out. By referencing each other, the contact and number objects retain one another. This means there is a strong reference cycle between the two. These problems should prompt a user to examine the code. Observe the fact that a contact variable can exist without a variable number. On the other hand, a number would not exist without a contact.
+**Step five:** Pick one of the affected contact objects in the navigator. The cycle in between is brought out. By referencing each other, the contact and number objects retain one another. This means there is a strong reference cycle between the two. These problems should prompt a user to examine the code. Observe the fact that a contact variable can exist without a variable number. On the other hand, a number would not exist without contact.
 ### Conclusion
 When an object or an instance of a class is no longer required, it must be deallocated. The memory held by an object is released when it is deallocated hence creating more space. This is critical for the system's performance and efficiency. ARC allows this hence smooth running of iOS applications.
 
