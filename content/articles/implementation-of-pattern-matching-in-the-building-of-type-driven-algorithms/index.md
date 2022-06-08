@@ -1,6 +1,6 @@
 ### Introduction
 
-This article is going to explore various functionalities of the C# programming language and how it is used in the implementation of various concepts but to be more specific, the article covers the use of pattern matching.
+This article is going to explore various functionalities of the C# programming language and how it is used in implementing various concepts, but to be more specific, the article covers the use of pattern matching.
 
 ### Table of contents
 
@@ -19,7 +19,7 @@ To carry on with this article, you will be required to download Visual Studio an
 Pattern designs
 Toll calculationsgeeks.org/setting-environment-c-sharp/) and follow the guidelines on installation.
 
-One should also have some knowledge about C# programming language.
+One should also have some knowledge about the C# programming language.
 
 ### Pattern matching
 
@@ -130,8 +130,8 @@ vehicle switch
     MiniBus => 5.00m,
 };
 ```
-Any number of passengers in the delivery vehicles is unimportant to the toll authority. Furthermore, the class in which the weight of the vehicle lies is what is considered when change is needed.
-- Lorries weighing more than 4500 pounds will be charged an additional $4.35.
+Many passengers in the delivery vehicles are unimportant to the toll authority. The class in which the weight of the vehicle lies in what is considered when change is needed.
+- Lorries weighing over 4500 pounds will be charged an additional $4.35.
 - Light lorries weighing less than 2500 pounds receive a $1.85 discount.
 The following code is used to implement that rule.
 ```c#
@@ -142,7 +142,7 @@ vehicle switch
     Lorry => 10.00m,
 };
 ```
-The `when` clause in the example description does not compute the equality on a function but rather it computes the circumstances. After the completion, something similar to this below should be your result.
+The `when` clause in the example description does not compute the equality on a function, but it computes the circumstances. After the completion, something similar to this below should be your result.
 ```c#
 vehicle switch 
 {
@@ -203,12 +203,11 @@ public float CalculateTollX(object vehicle) =>
 };
 ```
 ### Addition of the pricing
-
 In concluding on the features, the authority wants to fix a charge at a specific time, during the mid-morning and late in the evening.
 
 On weekdays, the charge is increased by 35%, but the charge remains unchanged on weekends.
 
-The toll rises by 45 percent (or more) throughout the weekdays. Charges are decreased by 15 percent late and very early in the morning but the charge remains the same. A series of if, if, and else statements could be used to describe the following code.
+The toll rises by 45 percent (or more) throughout the weekdays. Charges are decreased by 15 percent late and very early in the morning, but the charge remains the same. A series of if, if, and else statements could describe the following code.
 
 ```c#
 public classExample
@@ -243,9 +242,9 @@ public classExample
     }
 }
 ```
-The code described above works as required though it's not very clear and to make it as clear as possible to a reader, one must hover through the nested if statements and the input scenarios, and in conjunction with several techniques, pattern matching does it best.
+The code described above works as required, though it's not very clear, and to make it as clear as possible to a reader, one must hover through the nested if statements and the input scenarios, and with several techniques, pattern matching does it best.
 
-As an outcome, the expressions become more difficult which as a result more unreadable and accuracy is never achieved. Instead, through the combination of operations, a tuple of values encompassing the states can be formed. Therefore, if the individual methods are brought together as one, then pattern matching is applied and solves the toll calculations.
+As an outcome, the expressions become more difficult, which, as a result, is more unreadable and accuracy is never achieved. Instead, through the combination of operations, a tuple of values encompassing the states can be formed. Therefore, if the individual methods are brought together as one, then pattern matching is applied and solves the toll calculations.
 
 The time when the charge was collected is saved in a DateTime structure by the system that collects the charge. Below is an example description.
 ```c#
@@ -277,11 +276,9 @@ private static TimeBand GetTimeBand(DtTime timeOfCharge) => // Get what time wha
     }; 
 ```
 ### Conclusion
-
-In conclusion, we have discussed how C# programming language aids in the implementation of various functionalities, and in our case in this article, pattern matching.
+In conclusion, we have discussed how the C# programming language aids in implementing various functionalities, and in our case in this article, pattern matching.
 
 ### What Next
-
 After completing this article, it will always be advisable to read ahead and explore more about C# programming because it contains many coverage areas that are important to a programmer.
 
 **Happy Coding!**
