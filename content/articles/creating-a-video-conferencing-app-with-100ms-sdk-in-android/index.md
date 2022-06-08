@@ -14,7 +14,7 @@ images:
   - url: /engineering-education/creating-a-video-conferencing-app-with-100ms-sdk-in-android/hero.png
     alt: Creating a Video Conferencing App with 100ms SDK in Android
 ---
-Video conferencing has become part of our life as we all rely on it regularly. Video conferencing is used in holding meetings, WhatsApp calls, and many more.
+Video conferencing has become part of our life as we all rely on it regularly. Video conferencing is used when holding meetings, on WhatsApp calls, and much more.
 <!--more-->
 In this tutorial, we will use the **100ms Android SDK** and **Jetpack compose** to create a video conferencing app.
 
@@ -37,7 +37,7 @@ In this tutorial, we will use the **100ms Android SDK** and **Jetpack compose** 
 - [Further reading](#further-reading)
 
 ### Prerequisites
-To follow along with this tutorial, you should have knowledge on:
+To follow along with this tutorial, the reader should have knowledge on:
 - Using the MVVM pattern.
 - Dependency injection with Dagger-Hilt.
 - Using Jetpack Compose in creating declarative UI.
@@ -48,22 +48,22 @@ To follow along with this tutorial, you should have knowledge on:
 100ms offers a video conferencing infrastructure that provides web and mobile — native iOS and Android SDKs, to add live video & audio conferencing to your applications.
 
 ### Definitions
-- Peer - this is an object that contain the details of a person in a room.
-- Room - this is the object that holds peers who are in a call (audio or video).
-- Track - represents either audio or video being published from a peer.
-- Roles - represents permissions for peers.
+- Peer: this is an object that contain the details of a person in a room.
+- Room: this is the object that holds peers who are in a call (audio or video).
+- Track: represents either audio or video being published from a peer.
+- Roles: represents permissions for peers.
 
 ### Pricing
 The platform gives you 10,000 FREE minutes every month.
 
 #### Video and audio
-Conferencing - $8 (HD)/ $4 (SD), recording -$20 (HD)/ $10 (SD) and RTMP Out -$24 (HD)/ $12 (SD)
+Conferencing - $8 (HD)/ $4 (SD), recording - $20 (HD)/ $10 (SD) and RTMP Out - $24 (HD)/ $12 (SD).
 
 #### Audio only
-Conferencing - $1, recording -$3 and RTMP Out - $4
+Conferencing - $1, recording - $3 and RTMP Out - $4.
 
 ### Step 1 - Creating an account on the 100ms SDK
-To use the 100ms SDK in our project, we first need to visit the official[100ms Dashboard](https://dashboard.100ms.live/login) and sign up.
+To use the 100ms SDK in our project, we first need to visit the official [100ms Dashboard](https://dashboard.100ms.live/login) and sign up.
 
 We then need to set up the account by:
 - Choosing a subdomain.
@@ -78,9 +78,9 @@ We then need to set up the account by:
 
 ![template](/engineering-education/creating-a-video-conferencing-app-with-100ms-sdk-in-android/template.png)
 
-Once you get to your dashboard, you will be able to see the different credentials that we are going to use. Click on the developer option and copy the "Token endpoint" as we will be using it for our project. You can securely add the Url in your `gradle.properties` file and then add it to `gitignore`.
+Once you get to your dashboard, you will be able to see the different credentials that we are going to use. Click on the developer option and copy the "Token endpoint" as we will be using it for our project. You can securely add the URL in your `gradle.properties` file and then add it to `gitignore`.
 
-![dashboard](/engineering-education/creating-a-video-conferencing-app-with-100ms-sdk-in-android/dashboard.png)
+![dashboard](/engineering-education/creating-a-video-conferencing-app-with-100ms-sdk-in-android/dashboard.jpg)
 
 ### Step 2 - Creating a compose project
 On your IDE, create an empty compose project and name it accordingly.
@@ -257,7 +257,7 @@ private fun isLocalVideoEnabled(): Boolean {
 }
 ```
 
-Finally, let's create a function to help the user switch the camera (front and back):
+Now we can create a function to help the user switch the camera (front and back):
 
 ```kotlin
 fun switchCamera(){
@@ -723,7 +723,9 @@ When you run the app, your output should be as follows:
 ![demo3](/engineering-education/creating-a-video-conferencing-app-with-100ms-sdk-in-android/demo3.png)
 
 ### Conclusion
-In this tutorial, we have learned what is 100ms SDK and its pricing. We have then went ahead and created a video conferencing app with the SDK. Please take a look at the final app in this Github repository - [Conferencing app demo](https://github.com/tomleposo/ConferencingAppDemo)
+In this tutorial, we have learned what is 100ms SDK and its pricing. We then went ahead and created a video conferencing app with the SDK. Please take a look at the final app in this Github repository - [Conferencing app demo](https://github.com/tomleposo/ConferencingAppDemo)
+
+Happy coding!
 
 ### Further reading
 - [100ms Android Docs](https://www.100ms.live/docs/android/v2/foundation/Basics)
