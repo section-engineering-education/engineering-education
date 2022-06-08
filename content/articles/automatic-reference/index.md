@@ -1,6 +1,19 @@
-### Automatic Reference Counting in Swift
+---
+layout: engineering-education
+status: publish
+published: true
+url: /automatic-reference-counting-in-swift/
+title: Automatic Reference Counting in Swift
+description: This tutorial will introduce the reader to automatic reference counting in Swift.
+author: Amayo Allan
+date: 2022-06-8T00:00:00-09:00
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
 
-### Introduction
+  - url: /engineering-education/automatic-reference-counting-in-swift/hero.jpg
+    alt: Automatic Reference Counting in Swift Hero Image
+---
 Automatic Reference Counting (ARC) is a memory management attribute used to monitor and manage an application's memory usage. Swift memory management works automatically without control. It automatically allocates or de-allocates memory to allow efficient running of applications. 
 
 ### Table of Contents
@@ -187,3 +200,5 @@ When an object or an instance of a class is no longer required, it must be dea
 ### Further Reading
 - [Automatic Referencing in Swift](https://docs.swift.org/swift-book/LanguageGuide/AutomaticReferenceCounting.html)
 - [Retain Cycles and Memory management](https://betterprogramming.pub/retain-cycles-and-memory-management-in-swift-fb6226165b17)
+---
+Peer Review Contributions by: [Mohamed Alghadban](/engineering-education/authors/mohamed-alghadban/)
