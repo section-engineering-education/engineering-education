@@ -7,7 +7,7 @@ title: Implementing Offline Caching In Room For Data Fetched From Firebase Using
 description: In this tutorial, we will learn how to implement offline caching in Firebase with the Room persistence library.
 author: stephen-odhiambo
 date: 2022-05-04T00:00:00-12:58
-topics: [Android]
+topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
