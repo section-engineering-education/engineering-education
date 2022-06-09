@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /ethers-vs-web3/
+url: /web3js-vs-ethersjs/
 title: Ethers vs. Web3
 description: This article will help the reader learn the difference between the ethers library and the web3js library.
 author: chigozie-oduah
@@ -11,7 +11,7 @@ topics: [Blockchain, Node.js]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/ethers-vs-web3/hero.jpg
+  - url: /engineering-education/web3js-vs-ethersjs/hero.jpg
     alt: Ethers vs web3 Hero Image
 ---
 The Web3js and the Ethers are two major libraries for utilizing the Ethereum network in JavaScript. The two have different ways they interact with smart contracts and process transactions on the network. 
@@ -30,7 +30,7 @@ To get the full benefits of this article, the reader needs to have the following
     - [Blockchain](#blockchain)
     - [Smart contracts](#smart-contracts)
 - [Installations](#installations)
-- [Comparism](#installations)
+- [Comparison](#installations)
     - [Size of code created](#size-of-code-created)
     - [Size of library](#size-of-library)
     - [Community](#community)
@@ -70,7 +70,7 @@ Or.
 ```bash
 npm install ethers@5.5.4
 ```
-### Comparism
+### Comparison
 While the two libraries can do the same operation, they both have different ways they are used, which give them strengths and weaknesses in different situations.
 
 #### Size of code created
