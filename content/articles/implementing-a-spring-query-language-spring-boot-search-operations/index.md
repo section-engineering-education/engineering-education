@@ -6,7 +6,7 @@ url: /implementing-a-spring-query-language-spring-boot-search-operations/
 title: Implementing a Spring Query Language Spring Boot Search
 description: In this article we will look at what Spring Boot query language and how to implement search operations in Spring Boot
 author: ayemobola-tolulope
-date: 2022-05-09T00:00:00-14:40
+date: 2022-06-09T00:00:00-14:40
 topics: [API]
 excerpt_separator: <!--more-->
 images:
