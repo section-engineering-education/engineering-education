@@ -2,40 +2,38 @@
 layout: engineering-education
 status: publish
 published: true
-url: /building-a-studio-landing-page-with-javascript-and-gsaps-scrolltrigger/
-title: Building a Studio Landing Page with JavaScript and GSAP's scrollTrigger plugin
-description: This article helps the reader understand how to build a studio landing page that uses GSAP for animations and ScrollTrigger to trigger actions. 
+url: /building-studio-landing-page-javascript-gsaps-scrolltrigger/
+title: Building a Studio Landing Page with JavaScript and GSAP's ScrollTrigger Plugin
+description: This article will help the reader understand how to build a studio landing page that uses GSAP for animations and ScrollTrigger to trigger actions. 
 author: muhammed-umar
-date: 2022-05-13T00:00:00-02:33
+date: 2022-06-09T00:00:00-10:33
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-- url: /engineering-education/building-a-studio-landing-page-with-javascript-and-gsaps-scrolltrigger/hero.jpg
+- url: /engineering-education/building-studio-landing-page-javascript-gsaps-scrolltrigger/hero.jpg
   alt: a studio landing page with Javascript and GSAP's scrollTrigger plugin Hero Image
 ---
-Animations enhance the appeal of a site, as well as improve the user experience while navigating the website.
+Animations enhance the appeal of a site, as well as improve the user experience while navigating the website. The Greensock Animation platform, popularly known as GSAP is a JavaScript animation library that can animate DOM elements, canvas, SVG, CSS properties, generic JavaScript objects, and so much more. 
 <!--more-->
-The Greensock Animation platform popularly known as GSAP is a JavaScript animation library that can animate DOM elements, canvas, SVG, CSS properties, generic JavaScript objects, and so much more. 
+Popular websites such as Codesandbox, Drupal, Nvidia, Gitlab, and many others use this tool for their animations. GSAP introduced a plugin called ScrollTrigger for creating scroll interactions.
 
-Popular websites such as Codesandbox, Drupal, Nvidia, Gitlab, and a lot more others use this tool for their animations.
-
-GSAP introduced a plugin called ScrollTrigger for creating scroll interactions. The ScrollTrigger library is an improvement of scroll-driven animation. However, it's flexible, user-friendly, and supports vertical and horizontal scrolling.
+The ScrollTrigger library is an improvement of scroll-driven animation. However, it's flexible, user-friendly, and supports vertical and horizontal scrolling.
 
 In this tutorial, we will build a studio landing page that uses GSAP for animations and ScrollTrigger to trigger animations. 
 
 The goal is to learn about the GSAP ScrollTrigger plugin and its properties, as well as how to use it to trigger animations.
 
 ### Prerequisites
-To follow along, you need:
-- A code editor installed e.g VS Code.
+To follow along, the reader will need:
+- A code editor installed (such as VS Code).
 - Basic knowledge of GSAP.
 - A good knowledge of HTML, CSS, and JavaScript.
 
 ### Table of contents
 - [Why use the GSAP scrollTrigger plugin](#why-use-the-gsap-scrolltrigger-plugin)
 - [Creating the project](#creating-the-project)
-- [Adding content to the Html file](#adding-content-to-the-html-file)
+- [Adding content to the HTML file](#adding-content-to-the-html-file)
 - [Styling the landing page](#styling-the-landing-page)
 - [Animating the website using GSAP and ScrollTrigger](#animating-the-website-using-gsap-and-scrolltrigger)
 - [Conclusion](#conclusion)
@@ -44,13 +42,13 @@ To follow along, you need:
 ### Why use the GSAP ScrollTrigger Plugin
 GSAP makes it possible to animate anything on your webpage as long as JavaScript is enabled. Let's say you decide to animate the three cubes as shown in the image below:
 
-![Codepen](/engineering-education/building-a-studio-landing-page-with-javascript-and-gsaps-scrolltrigger/codepen.png)
+![Codepen](/engineering-education/building-studio-landing-page-javascript-gsaps-scrolltrigger/codepen.png)
 
-You'd notice that the animations work perfectly fine. It's a group of tweens, each enabling the square to rotate at 360 degrees horizontally. 
+Youll notice that the animations work perfectly fine. It's a group of tweens, each enabling the square to rotate at 360 degrees horizontally. 
 
 You can read more about GSAP [here](https://greensock.com/).
 
-A problem arises when an object is off-screen. You'd notice that the animation is played before you scroll to that section, which prevents you from seeing it.
+A problem arises when an object is off-screen. You'll notice that the animation is played before you scroll to that section, which prevents you from seeing it.
 
 ScrollTrigger plugin fixes this issue while enabling you to control when the animations should start.
 
@@ -65,11 +63,9 @@ This scrollTrigger property shows the point where we want the animation to begin
 In this case, the trigger should be denoted as `trigger: square`. From the Codepen, the third square only animates when we are in the third square's ('.yellow') viewport.
 
 #### Start
-The ScrollTrigger activates when the top of the animated object enters the bottom of the viewport or scroller. 
+The ScrollTrigger activates when the top of the animated object enters the bottom of the viewport or scroller. You can change the start position using the `start` property. 
 
-You can change the start position using the `start` property. It takes values such as `top`, `bottom`, `center`. In the Codepen demo, it was assigned as `start: 'top center'`
-
-This tells the animation to start when the `top` of the third square hits the `center` of the viewport.
+It takes values such as `top`, `bottom`, `center`. In the Codepen demo, it was assigned as `start: 'top center'`. This tells the animation to start when the `top` of the third square hits the `center` of the viewport.
 
 #### End
 The animation deactivates when the bottom of the animated object hits the top of the viewport by default.
@@ -90,14 +86,14 @@ Examples of possible values it can take include: `play, pause, restart, resume, 
 
 Here, you want the animation to play when it enters the screen/viewport (onEnter). When we scroll past the viewport(onLeave) it pauses, but notice that it resumes when we enter back into the viewport(onEnterBack) - it unfreezes the paused animation. 
 
-The final position is set to handle when we scroll back beyond the viewport (onLeaveBack), We set this to pause.
+The final position is set to handle when we scroll back beyond the viewport (onLeaveBack), we set this to pause.
 
 A `toggleAction` property improves the performance by animating only views visible on the screen.
 
 ### Creating the project
 Create a folder on your desktop and label it as GSAPlandingpage. Open the folder in VS code and create `index.html`, `style.css`, and `index.js` files. 
 
-Next, create a folder titled `images` to hold all the pictures that we will be using. You can find the entire files and images in this [Github Repo](https://github.com/deverten/GSAP-Studio-Landing-Page)
+Next, create a folder titled `images` to hold all the pictures that we will be using. You can find the entire files and images in this [GitHub Repo](https://github.com/deverten/GSAP-Studio-Landing-Page).
 
 ### Adding content to the HTML file
 Add the following contents to the HTML file that you created:
@@ -701,19 +697,15 @@ gsap.to(".box", 1, {
 });
 ```
 
-GSAP's `stagger` property is used above to create a start time lag between each `.box` class animation. 
-
-The `.box` class which contains the image is reduced in `scale` from `1` to `0.3`. It moves down the `y-axis` by `50px`. 
+GSAP's `stagger` property is used above to create a start time lag between each `.box` class animation. The `.box` class which contains the image is reduced in `scale` from `1` to `0.3`. It moves down the `y-axis` by `50px`. 
 
 The `yoyo: true` and `repeat: -1` properties ensure that each `box` image animation waits for the entire animation to complete before restarting the whole sequence. It `eases` gently and then moves faster and a `delay` time of 2 seconds is set. 
 
-The `stagger` property as an object, takes in `amount: 1.5` which is the total time that is split between staggers. 
-
-In this case, `1.5/8 = 0.187 seconds` is the time between each image's animation, `grid: auto` automatically calculates the rows and columns for responsive layouts.
+The `stagger` property as an object, takes in `amount: 1.5` which is the total time that is split between staggers. In this case, `1.5/8 = 0.187 seconds` is the time between each image's animation, `grid: auto` automatically calculates the rows and columns for responsive layouts.
 
 The `from: center` command indicates that you want the animation to begin from the center. Reload the website to see the beautiful animation.
 
-The last step is to animate the metaverse images. We will put some color over the `metaverse images` when one scroll down. 
+The last step is to animate the metaverse images. We will put some color over the `metaverse images` when one scrolls down. 
 
 To do this, add the following code to the *index.js* file:
 
@@ -729,16 +721,18 @@ gsap.utils.toArray(".layer").forEach((layer, i) => {
 });
 ```
 
-From the code above, you'd notice all the `metaverse images` have a class of `layer`. GSAP makes an array off this class and allows looping through it using the `forEach` method. 
+From the code above, you'll notice all the `metaverse images` have a class of `layer`. GSAP makes an array off this class and allows looping through it using the `forEach` method. 
 
 For each layer, a scrollTrigger is created and the animation kicks off when the element reaches the top of the viewport. The current layer is pinned on top of the previous `pin: true` and the spacing between them is set to false.
 
-The demo website can be found on this [link](https://deverten.github.io/GSAP-Studio-Landing-Page/)
+The demo website can be found with this [link](https://deverten.github.io/GSAP-Studio-Landing-Page/).
 
 ### Conclusion
 In this tutorial, we learned and applied the fundamental properties of GSAP'S scrollTrigger plugin by building a landing page. 
 
 You can, therefore, use this knowledge to craft other beautiful applications. 
+
+Happy coding!
 
 ### Further reading
 - [Greensock Docs](https://greensock.com/docs/)
