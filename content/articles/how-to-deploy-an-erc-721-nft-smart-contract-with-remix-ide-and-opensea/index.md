@@ -1,5 +1,5 @@
 ### How to Deploy an ERC-721 NFT Smart Contract with Remix IDE and OpenSea
-An NFT is a unique asset with different values and properties. A unit of an NFT can not be valued as another unit of the same asset, that is they are not mutually interchangeable. This article will cover and illustrate from a hands-on approach how to deploy an ERC-721 token.
+An NFT is a unique asset with different values and properties. A unit of an NFT can not be valued as another unit of the same asset, as they are not mutually interchangeable. This article will cover and illustrate from a hands-on approach how to deploy an ERC-721 token.
 
 ### Table of Content
 - [What is an ERC-721 Token](#What-is-an-ERC-721-Token)
@@ -14,7 +14,7 @@ An NFT is a unique asset with different values and properties. A unit of an NFT 
 - [Conclusion](#conclusion)
 
 ### What is an ERC-721 Token
-Prior to the development of the ERC-721 standard, ERC being Ethereum Request For Comment(ERC); there was ERC-20 in use for minting NFTs that do not offer unique id functionality. The ERC-721 token allows the creation of a unique id for a token and the individual creation of collection NFTs.
+Prior to the development of the ERC-721 standard, ERC being Ethereum Request For Comment(ERC); there was ERC-20 in use for minting NFTs that do not offer unique id functionality. The ERC-721 token allows creating a unique id for a token and the individual creation of the NFTs collection.
 
 ### How to Deploy an ERC-721 Token
 In other to deploy an ERC-721 token (our NFT) the following is required:
@@ -29,7 +29,7 @@ With Metamask installed, create a wallet and enter the new password for your wal
 
 Next, we click on the Ethereum Mainnet and select the show/hide test networks label. This will navigate you to the settings menu, then toggle the Show Test Network button to ON. 
 
-Proceed to click on Ethereum Mainnet, and you will see the list of all test networks. In this tutoria,  we will use Rinkeby Test Network, so click on Rinkeby Test Network.
+Click on Ethereum Mainnet, and you will see the list of all test networks. In this tutorial, we will use Rinkeby Test Network, so click on Rinkeby Test Network.
 
 On the Rinkeby Test Network, we should have 0 ETH in our wallet, so we proceed to get some test ether.
 
@@ -51,14 +51,14 @@ IPFS stands for Interplanetary File System. It is a decentralized cloud storage 
 
 Next, we launch the application and we navigate to the files tab. This is where we upload/import our digital artwork. So, if you have a graphics design or a picture you would like to use as an NFT, simply upload it.
 
-For the sake of this article, I will be using this painting image below I downloaded online, it may be subject to copyright, and I claim no ownership of this art work.
+For the sake of this article, I will be using this painting image below I downloaded online, it may be subject to copyright, and I claim no ownership of this artwork.
 
 ![nft artwork](/engineering-education/how-to-deploy-an-erc-721-nft-smart-contract-with-remix-ide-and-opensea/nftart.png)
 
 Next, we import this file to our IPFS. At this time of the writing, you can access this image on IPFS cloud via this [link](https://ipfs.io/ipfs/QmRVWXPdc94bdZd1bggqRBSuJ3xk4zD6eB8c8SXJ71pauC?filename=img3.jpeg)
 
 ### Writing The NFT Smart Contract
-To write our smart contract for our NFT, we will leverage [this](https://github.com/0xcert/ethereum-erc721) Github library. We are utilizing this library to avoid writing certain components from scratch.
+To write our smart contract for our NFT, we will leverage [this](https://github.com/0xcert/ethereum-erc721) GitHub library. We are utilizing this library to avoid writing certain components from scratch.
 
 Next, we head over to [Remix IDE](https://remix.ethereum.org/#optimize=false&runs=200&evmVersion=null&version=soljson-v0.8.7+commit.e28d00a7.js) and create a new solidity file and name it NFT721.sol and we input the following code:
 
@@ -84,15 +84,15 @@ contract newNFT is NFTokenMetadata, Ownable {
 
 ```
 
-Once done, we click on Compile, if we have no error, we should see a green check button on the compiler button.
+Once done, we click on Compile. If we have no error, we should see a green check button on the compiler button.
 
 ![smart contract compile](/engineering-education/how-to-deploy-an-erc-721-nft-smart-contract-with-remix-ide-and-opensea/compile.png)
 
-Next, we proceed to deploy the NFT. To deploy our NFT, we switch the environment to Injected Web3. Once we do that, we click on the account menu, and it will redirect us to our Metamask wallet to connect our account:
+Next, we deploy the NFT. To deploy our NFT, we switch the environment to Injected Web3. Once we do that, we click on the account menu, and it will redirect us to our Metamask wallet to connect our account:
 
 ![deploy nft](/engineering-education/how-to-deploy-an-erc-721-nft-smart-contract-with-remix-ide-and-opensea/deploy.png)
 
-We accept all prompts and connect our test account. Once connected, we should be able to see the wallet address and the balance on Remix IDE. Then, we select deploy. To deploy, Metamask wallet will ask to confirm the transaction with a Gas fee.
+We accept all prompts and connect to our test account. Once connected, we should be able to see the wallet address and the balance on Remix IDE. Then, we select deploy. To deploy, Metamask wallet will ask to confirm the transaction with a Gas fee.
 
 ![metamask prompt](/engineering-education/how-to-deploy-an-erc-721-nft-smart-contract-with-remix-ide-and-opensea/metamaskprompt.png)
 
@@ -103,11 +103,11 @@ Under the mint function, we add our Metamask address, which is where we want to 
 
 ![IPFS url in Remix](/engineering-education/how-to-deploy-an-erc-721-nft-smart-contract-with-remix-ide-and-opensea/ipfs.png)
 
-Once inputted, we click on transact. We should see a notification icon on our Metamask within our browser, click on it and confirm the transaction. 
+Once inputted, we click on transact. We should see a notification icon on our Metamask within our browser, click on it, and confirm the transaction. 
 
 Next, we focus on the terminal. Once successfully minted, we can view the transaction details on Etherscan.
 
-By following the above steps without any error, you have successfully created an NFT. But hold on, we can’t see it in our wallet yet.
+By following the above steps with no error, you have successfully created an NFT. But hold on, we can’t see it in our wallet yet.
 
 
 ### Adding the Custom Token in Metamask
@@ -126,30 +126,30 @@ In the profile summary section, we can see our NFT contract address, so we copy 
 Now that we have successfully minted our NFT, how about we go ahead to list it on OpenSea.
 
 ### Listing our NFT on OpenSea
-We navigate to OpenSea market place, and we click create, then we connect our metamask wallet. By default OpenSea will know we are running metamask on a test network, hence it will pop up a menu telling us to use the testnets.opensea.io url, which is exactly what we will use.
+We navigate to OpenSea marketplace, and we click create, then we connect our metamask wallet. By default OpenSea will know we are running metamask on a test network, hence it will pop up a menu telling us to use the testnets.opensea.io URL, which is exactly what we will use.
 
-So, head to the testnets, and repeat the process. It will ask us to create a new item for our NFT, so we proceed by clicking the required fields, we upload our nft image and fill in the details. You can explore here and fill in as many details as you wish.
+So, head to the testnets, and repeat the process. It will ask us to create a new item for our NFT, so we proceed by clicking the required fields, we upload our NFT image, and filling in the details. You can explore here and fill in as many details as you wish.
 
 Within this page, an important section is the settings on unlockable content to set the original version of the NFT. You can skip this process if you have no need to set up the unlockable content.
 
 ### Setting up Unlockable Content with Pinata
-On the details page, we can enable unlockable content. What this does is that, it allows only the owner of the NFT to view the original version of this file and to enable it, we simply toggle the button.
+On the details page, we can enable unlockable content. What this does is that it allows only the owner of the NFT to view the original version of this file and to enable it, we simply toggle the button.
 
-It will request for the access key, and to get this we need to use [pinata cloud](https://www.pinata.cloud/). Proceed to creating an account on Pinata Cloud. 
+It will request the access key, and to get this we need to use [pinata cloud](https://www.pinata.cloud/). Create an account on Pinata Cloud. 
 
-Once we have an account on Pinata, we simply upload the same NFT image we uploaded except we are stating figuratively that this is the original version of the NFT. Once uploaded, it creates a CID to the image which is basically the hash of the file.
+Once we have an account on Pinata, we simply upload the same NFT image we uploaded, except we are stating figuratively that this is the original version of the NFT. Once uploaded, it creates a CID to the image which is basically the hash of the file.
 
-Next, we click on the image name in Pinata, and it will open it up in a new tab, we simply copy the url, here is [the image](https://gateway.pinata.cloud/ipfs/QmRVWXPdc94bdZd1bggqRBSuJ3xk4zD6eB8c8SXJ71pauC), and we paste it in the enter content of the unlockable content section on OpenSea. Then we click on create.
+Next, we click on the image name in Pinata, and it will open it up in a new tab, we simply copy the URL, here is [the image](https://gateway.pinata.cloud/ipfs/QmRVWXPdc94bdZd1bggqRBSuJ3xk4zD6eB8c8SXJ71pauC), and we paste it in the enter content of the unlockable content section on OpenSea. Then we click on create.
 
-Once we are done, we click on create. Once done, you should be able to share the NFT, you can access the tutorial version [on OpenSea](https://testnets.opensea.io/assets/0x88b48f654c30e99bc2e4a1559b4dcf1ad93fa656/98020886459922266481765064769542895403934176900672800528567414203879924957185/)
+Once we are done, we click on create. Once done, you should be able to share the NFT, you can access the tutorial version. [on OpenSea](https://testnets.opensea.io/assets/0x88b48f654c30e99bc2e4a1559b4dcf1ad93fa656/98020886459922266481765064769542895403934176900672800528567414203879924957185/)
 
 ![nft opensea](/engineering-education/how-to-deploy-an-erc-721-nft-smart-contract-with-remix-ide-and-opensea/opensea.png)
 
-Once done, we can click on the sell button to sell our nFT on the marketplace. We can set the amount we want and fill in the details as we wish. oNce done, it will load metamask to confirm the transaction. Then voila your item is listed for sale:
+Once done, we can click on the sell button to sell our NFT in the marketplace. We can set the amount we want and fill in the details as we wish. Once done, it will load metamask to confirm the transaction. Then voila your item is listed for sale:
 
 ![opensea listing](/engineering-education/how-to-deploy-an-erc-721-nft-smart-contract-with-remix-ide-and-opensea/listing.png)
 
 ### Conclusion
-This article walks you through the step-by-step process of launching your own NFT from end-to-end, without any details left out. The only difference is while we are running on a test network, you would have to spend real Ether to sign and confirm the transactions executed in the process of creating an NFT.
+This article walks you through the step-by-step process of launching your own NFT from end to end, with no details left out. The only difference is while we are running on a test network, you would have to spend real Ether to sign and confirm the transactions executed in the process of creating an NFT.
 
-Now, go out there and launch some test NFTs to dazzle your friends or contribute the marketplace.
+Now, go out there and launch some test NFTs to dazzle your friends or contribute to the marketplace.
