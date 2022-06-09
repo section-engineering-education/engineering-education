@@ -1,4 +1,19 @@
-### How to Deploy an ERC-721 NFT Smart Contract with Remix IDE and OpenSea
+---
+layout: engineering-education
+status: publish
+published: true
+url: /how-to-deploy-an-nft-with-remix-ide-and-opensea/
+title: How to Deploy an NFT with Remix IDE and Opensea
+description: This tutorial will show the reader how to deploy an NFT with remix IDE and opensea.
+author: adetu-ridwan
+date: 2022-06-9T00:00:00-09:00
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/how-to-deploy-an-nft-with-remix-ide-and-opensea/hero.jpg
+    alt: How to Deploy an NFT with Remix IDE and Opensea Hero Image
+---
 An NFT is a unique asset with different values and properties. A unit of an NFT can not be valued as another unit of the same asset, as they are not mutually interchangeable. This article will cover and illustrate from a hands-on approach how to deploy an ERC-721 token.
 
 ### Table of Content
@@ -153,3 +168,5 @@ Once done, we can click on the sell button to sell our NFT in the marketplace. W
 This article walks you through the step-by-step process of launching your own NFT from end to end, with no details left out. The only difference is while we are running on a test network, you would have to spend real Ether to sign and confirm the transactions executed in the process of creating an NFT.
 
 Now, go out there and launch some test NFTs to dazzle your friends or contribute to the marketplace.
+---
+Peer Review Contributions by: [Mohamed Alghadban](/engineering-education/authors/mohamed-alghadban/)
