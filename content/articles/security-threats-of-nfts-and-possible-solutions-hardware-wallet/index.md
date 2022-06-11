@@ -3,7 +3,7 @@ layout: engineering-education
 status: publish
 published: true
 url: /security-threats-of-nfts-and-possible-solutions-hardware-wallet/
-title: Security Threats of NFTS and Possible Solutions Hardware Wallet 
+title: Security Threats for NFTS and Possible Solutions
 description: This article will illustrate step-to-step threats on NFTs and implement proper possible solutions to protect their NFT.
 author: joseph-kinyua
 date: 2022-06-11T00:00:00-14:50
@@ -121,7 +121,7 @@ There are different types of wallets described as both software and hardware. Th
 
 ### Hardware wallet and cold crypto wallets
 Hardware wallets are tools that enable cold storage of your crypto and NFT. It is a method that keeps your private keys private. The following are some of the popular hardware wallets:
-- [Ledger Nano X](https://leclger.com/): The Ledger Nano X is a Bluetooth-enabled secure device that offers an extensive capacity and an easy-to-use experience for crypto owners. It works best when paired with the Ledger Live smartphone app. It can send and receive over 1300 crypto assets and supports different desktop and mobile operating systems. It stores private keys inside hardware wallets chip and stores up to 100 applications such as [Bitcoin](https://bitcoin.org/en/), [Ethereum](https://ethereum.org/en/), and [Bitcoin Cash](https://bitcoincash.org/).
+- [Ledger Nano X](https://ledger.com/): The Ledger Nano X is a Bluetooth-enabled secure device that offers an extensive capacity and an easy-to-use experience for crypto owners. It works best when paired with the Ledger Live smartphone app. It can send and receive over 1300 crypto assets and supports different desktop and mobile operating systems. It stores private keys inside hardware wallets chip and stores up to 100 applications such as [Bitcoin](https://bitcoin.org/en/), [Ethereum](https://ethereum.org/en/), and [Bitcoin Cash](https://bitcoincash.org/).
 - [Trezor One](https://trezor.io/): It currently supports over 1000 assets and works the same as Ledger Nano X. Despite the limitation on	several coins, NFTS, and lack of Bluetooth capabilities, both Trezor and Ledger Nano X have other higher-end devices. The PIN protection directs you to their start page when setting up the account. It provides even more security and prompts you to use 2-factor authentication when verifying your purchase.
 - [ELLIPAL Titan](https://www.ellipal.com/products/ellipal-titan): ELLIPAL supports 41 blockchains and over 10,000 tokens. It is also IP65 rated waterproof and dustproof. It allows you to manage your accounts and connect to exchanges through your smartphone.
 
