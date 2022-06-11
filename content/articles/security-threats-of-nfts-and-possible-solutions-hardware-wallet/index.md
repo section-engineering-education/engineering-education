@@ -2,23 +2,25 @@
 layout: engineering-education
 status: publish
 published: true
-url: /step-by-step-to-security-threats-of-nfts-and-possible-solutions-hardware-wallet/
-title: Step by step to security threats of NFTS and possible solutions hardware wallet 
+url: /security-threats-of-nfts-and-possible-solutions-hardware-wallet/
+title: Security Threats of NFTS and Possible Solutions Hardware Wallet 
 description: This article will illustrate step-to-step threats on NFTs and implement proper possible solutions to protect their NFT.
 author: joseph-kinyua
-date: 2022-04-20T00:00:00-14:50
+date: 2022-06-11T00:00:00-14:50
 topics: [Security]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/step-by-step-to-security-threats-of-nfts-and-possible-solutions-hardware-wallet/hero.jpg
-    alt: Step by step to security threats of NFTS and possible solutions hardware wallet 
+  - url: /engineering-education/security-threats-of-nfts-and-possible-solutions-hardware-wallet/hero.jpg
+    alt: Security threats of NFTS hardware wallet 
 ---
-In a world that keeps evolving and technology keeps changing. Art captioning our feeling has led a new generation that loves art. A million pieces of artwork get created annually, and 1,000,000 of that artwork get stolen.
+In a world that keeps evolving and technology keeps changing. Art captioning our feeling has led a new generation that loves art. A million pieces of artwork get created annually, and 1,000,000 of that artwork gets stolen.
 <!--more-->
 According to the [darknet](https://en.wikipedia.org/wiki/Darknet), the stolen artwork market is valued at over 6 billion dollars annually. This number is due to the digital era where big tech has led to the sending of digital artwork, memes, tweets, music, and video in the form of GIFs and MP4.
 
-Combating the losses has led to the introduction of non-fungible tokens. Non-fungible tokens (NFTs) have become a popular online investment in conjunction with Crypto-currency since they are more secure and authentic. Most people ask themselves, what are NFTS, how are they NFTs created, what are the threats to them, are they securities, or are they fraud? This article will discuss and explain all these concepts in detail.
+Combating the losses has led to the introduction of non-fungible tokens. Non-fungible tokens (NFTs) have become a popular online investment in conjunction with Crypto-currency since they are more secure and authentic. 
+
+Most people ask themselves, what are NFTS, how are NFTs created, what are some threats they may have, are they secure, or are they fraudulent? This article will discuss and explain these concepts in detail.
 
 ### Table of contents
 - [Prerequisites](#prerequisites)
@@ -33,14 +35,15 @@ Combating the losses has led to the introduction of non-fungible tokens. Non-fun
 - [Further reading](#futher-reading)
 
 ### Prerequisites
-- Basic knowledge and understanding of [Blockchain technology](https://www.investopedia.com/terms/b/blockchain.asp).
-- Basic knowledge and understanding of [Web 3.0 technology](https://en.wikipedia.org/wiki/Web3).
-- Basic knowledge and understanding of [NFT technology](https://www.theverge.com/22310188/nft-explainer-what-is-blockchain-crypto-art-faq).
+To follow along the reader should have:
+- A basic knowledge and understanding of [Blockchain technology](https://www.investopedia.com/terms/b/blockchain.asp).
+- A basic understanding of [Web 3.0 technology](https://en.wikipedia.org/wiki/Web3).
+- A basic knowledge and understanding of [NFT technology](https://www.theverge.com/22310188/nft-explainer-what-is-blockchain-crypto-art-faq).
 
 ### What is an NFT?
-[Non-fungible token](https://en.wikipedia.org/wiki/Non-fungible_token) (NFT) is a digital asset representing real-world objects like art, music, in-game items, and videos. We store NFTs in a publicly accessible [Ethereum](https://ethereum.org/en/) blockchain. NFTs cannot be traded or exchanged at equivalency compared to [cryptocurrencies](https://www.kaspersky.com/resource-center/definitions/what-is-cryptocurrency), and the tokens are unique.
+A [Non-fungible token](https://en.wikipedia.org/wiki/Non-fungible_token) (NFT) is a digital asset representing real-world objects like art, music, in-game items, and videos. We store NFTs in a publicly accessible [Ethereum](https://ethereum.org/en/) blockchain. NFTs cannot be traded or exchanged at equivalency compared to [cryptocurrencies](https://www.kaspersky.com/resource-center/definitions/what-is-cryptocurrency), and the tokens are unique.
 
-Different contents such as digital arts, movies, and music records, have been converted into NFTs. The creation of digital NFT has exploded into the mainstream leading to the creation of [Decentralized finance](https://en.wikipedia.org/wiki/Decentralized_finance) and [Decentralised autonomous organizations](https://www.forbes.com/advisor/investing/cryptocurrency/defi-decentralized-finance/). NFT allow the buyer to own the original item digitally. It contains built-in authentication, which serves as proof of ownership. NFTs owners value those digital bragging rights almost more than the item itself.
+Different contents such as digital arts, movies, and music records, have been converted into NFTs. The creation of digital NFT has exploded into the mainstream leading to the creation of [Decentralized finance](https://en.wikipedia.org/wiki/Decentralized_finance) and [Decentralised autonomous organizations](https://www.forbes.com/advisor/investing/cryptocurrency/defi-decentralized-finance/). NFT allow the buyer to own the original item digitally. It contains built-in authentication, which serves as proof of ownership. NFTs owners may value the digital bragging rights almost more than the item itself.
 
 ### The characteristics of the non-fungible tokens
 The following are some of the characteristics of the non-fungible tokens:
@@ -71,16 +74,18 @@ NFT has resulted in cybersecurity and also fraud cases. With the advancement of 
 Cases of artists having their work sold by others as an NFT without permission have significantly risen. Many scam artists have set up unauthorized customer support channels and social media accounts that pretend to be the real NFT exchange artists and sell fake NFTS with their names. They also end up stealing customer information and compromising their accounts.
 
 #### 3. Vulnerabilities in the smart contract security
-In 2021, [Cross-Chain Defi Site Poly Network](https://www.coindesk.com/markets/2021/08/10/cross-chain-defi-site-poly-network-hacked-hundreds-of-millions-potentially-lost/) was the headline. The platform Poly Network was attacked, with the alleged hacker draining roughly $610 million in crypto. According to the report released, anonymous white-hat hackers or hackers successfully stole the fund by exploiting vulnerabilities in the smart-contract code. Poly Network is an interoperability protocol for heterogeneous blockchains, which lets users swap tokens from one digital ledger to another. It is exchanged between several blockchains as users trade one cryptocurrency for another. Despite the recovery of the assets in 15 days, this incident proves that smart contracts cannot discard the risk of cyberattacks.
+In 2021, [Cross-Chain Defi Site Poly Network](https://www.coindesk.com/markets/2021/08/10/cross-chain-defi-site-poly-network-hacked-hundreds-of-millions-potentially-lost/) was the headline. The platform Poly Network was attacked, with the alleged hacker draining roughly $610 million in crypto. According to the report released, anonymous white-hat hackers or hackers successfully stole the fund by exploiting vulnerabilities in the smart-contract code. 
+
+Poly Network is an interoperability protocol for heterogeneous blockchains, which lets users swap tokens from one digital ledger to another. It is exchanged between several blockchains as users trade one cryptocurrency for another. Despite the recovery of the assets in 15 days, this incident proves that smart contracts cannot discard the risk of cyberattacks.
 
 #### 6. Editable metadata
 Metadata is structured reference data that sort and identify attributes of the information it describes. Metadata is a prefix that mostly means an underlying definition or description; therefore, NFTs are digital assets that contain metadata that defines them. Editing the metadata of an NFT may destroy the rarity aspect of the NFT and can affect its value. A collector will now have a reason not to buy the NFT collection. It is like painting on top of the famous [Mona Lisa](https://en.wikipedia.org/wiki/Mona_Lisa) a portrait painting.
 
-#### 7. Valuation Challenge
+#### 7. Valuation challenge
 Owners of an NFT may over-hype an asset to inflate the value, only to cash out. The other collectors will suffer from the subsequent decline in value.
 
 #### 8. NFT as a Security
-After the [Securities and Exchange Commission](https://www.bloomberg.com/news/articles/2022-03-02/sec-scrutinizes-nft-market-over-illegal-crypto-token-offerings)[Securities and Exchange Commission](https://www.bloomberg.com/news/articles/2022-03-02/sec-scrutinizes-nft-market-over-illegal-crypto-token-offerings) (SEC) demanded information on ceratin NFT, it created a red flag for the NFT, according to [Cointelegraph](https://cointelegraph.com/), which led to a fine of $100m issued to the crypto trading platform [BlockFi](https://blockfi.com/) for falsely labeling high-yield lending products as securities.
+After the [Securities and Exchange Commission](https://www.bloomberg.com/news/articles/2022-03-02/sec-scrutinizes-nft-market-over-illegal-crypto-token-offerings) (SEC) demanded information on ceratin NFT, it created a red flag for that NFT, according to [Cointelegraph](https://cointelegraph.com/), which led to a fine of $100m issued to the crypto trading platform [BlockFi](https://blockfi.com/) for falsely labeling high-yield lending products as securities.
 
 ### Possible NFTs security solutions (how to secure NFTs)
 The following are the possible NFTs security solutions:
