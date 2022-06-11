@@ -85,27 +85,29 @@ Metadata is structured reference data that sort and identify attributes of the i
 Owners of an NFT may over-hype an asset to inflate the value, only to cash out. The other collectors will suffer from the subsequent decline in value.
 
 #### 8. NFT as a Security
-After the [Securities and Exchange Commission](https://www.bloomberg.com/news/articles/2022-03-02/sec-scrutinizes-nft-market-over-illegal-crypto-token-offerings) (SEC) demanded information on ceratin NFT, it created a red flag for that NFT, according to [Cointelegraph](https://cointelegraph.com/), which led to a fine of $100m issued to the crypto trading platform [BlockFi](https://blockfi.com/) for falsely labeling high-yield lending products as securities.
+After the [Securities and Exchange Commission](https://www.bloomberg.com/news/articles/2022-03-02/sec-scrutinizes-nft-market-over-illegal-crypto-token-offerings) (SEC) demanded information on ceratin NFTs, it created a red flags for the NFT market.According to [Cointelegraph](https://cointelegraph.com/), this also led to a fine of $100m issued to the crypto trading platform [BlockFi](https://blockfi.com/) for falsely labeling high-yield lending products as securities.
 
 ### Possible NFTs security solutions (how to secure NFTs)
 The following are the possible NFTs security solutions:
 
 #### 1. Multi-factor authentication (MFA)
-It's an electronic authentication method where a user is granted access to an application or website only after successfully presenting two or more evidence (code or factors) to an authentication mechanism.  A hacker can easily hack an NFT user account due to a lack of multi-factor authentication. MFA tends to lower cybercriminal attacks since it protects user data from being accessed by any other unauthorized third party.
+It's an electronic authentication method where a user is granted access to an application or website only after successfully presenting two or more evidence (code or factors) to an authentication mechanism.  
+
+A hacker can easily hack an NFT user account due to a lack of multi-factor authentication. MFA tends to lower cybercriminal attacks since it protects user data from being accessed by any other unauthorized third party.
 
 #### 2. Use a unique password for your account
-Big tech companies do emphasize on use of a unique and strong password. NFT websites require you to create strong and unique passwords that are easy to memorize. For example, `Jt5e-79P-B13^qS`. To create a unique and strong password, use special characters, upper case, lower cases, and combination digits. In NFT or any website, do not use two or more similar passwords in which most of their characters are the same. 
+Big tech companies emphasize on the use of a unique and strong password. NFT websites require you to create strong and unique passwords that are easy to memorize. For example, `Jt5e-79P-B13^qS`. To create a unique and strong password, use special characters, upper case, lower cases, and combination digits. In NFT or any website, do not use two or more similar passwords in which most of their characters are the same. 
 
 For example, `Drakeyoungmoney34` or `Drake youngmoney43` makes it easier for hackers to guess and remember that if one of these passwords is compromised, then it means that all of these passwords are at risk. Do not store your password on a password retrieving website, but write down your password on a clean piece of paper. It will help you secure your NFTs and crypto-wallets.
 
 #### 3. Avoid cold emails and downloading files from strangers 
-We all have received an email promoting a company or a document. The emails usually seem too good to be true since they are unsolicited. It is best not to interact with email or QR codes sent by a stranger since they are known to contain harmful malware or viruses. It may lead to a stranger stealing your password or mirroring your screen and later compromising your account by stealing your Nft or identity.
+We all have received an email promoting a company or a document. The emails usually seem too good to be true since they are unsolicited. It is best not to interact with email or QR codes sent by a stranger since they are known to contain harmful malware or viruses. It may lead to a stranger stealing your password or mirroring your screen and later compromising your account by stealing your NFT or identity.
 
 #### 4. Smart contracts transaparency
 A smart contract is a computer program or a transaction protocol that will automatically execute, control, or document legally relevant events and actions according to the contract terms or a legal agreement. Smart contracts play a role in NFT transactions and form the building blocks of any NFT platform. They remove the outcome and third parties; hence many enterprises use smart contracts in their daily operations because they prefer smart contracts which enforce and build trust in blockchain technology
 
-#### 5. Regularly update your software.
-The future of NFT is getting brighter with time, and raising security concerns is also increasing. You must ensure the NFT software runs smoothly by regularly updating to the latest version of the software available for your device. It will fix the bugs in the driver software after the new update. It leads to reduced cyber threats.
+#### 5. Regularly update your software
+The future of NFTs is getting brighter with time, and so is the raising security concerns. You must ensure the NFT software runs smoothly by regularly updating to the latest version of the software available for your device. It will fix the bugs in the driver software after the new update. It leads to reduced cyber threats.
 
 #### 6. Secure internet connection
 Securing your internet connection at home is essential to protecting yourself from online threats and enjoying peace of mind when you go online. It lowers the risk of hackers getting in touch with your NFT accounts and your hardware wallets.
@@ -124,8 +126,9 @@ Hardware wallets are tools that enable cold storage of your crypto and NFT. It i
 - [ELLIPAL Titan](https://www.ellipal.com/products/ellipal-titan): ELLIPAL supports 41 blockchains and over 10,000 tokens. It is also IP65 rated waterproof and dustproof. It allows you to manage your accounts and connect to exchanges through your smartphone.
 
 ### What does the future hold for NFT?
-Despite the threats, people have created NFTS across the world. Many industries and even artists are hopping into the business to gain from this booming market. Metaverse galleries are coming in hot, and even [Mark Cuban](https://www.tweaktown.com/news/84424/mark-cubans-nft-company-caught-promoting-scams-for-25-000-post/index.html) wants to bring NFT ticketing to the NBA to entitle buyers to lifetime front row seats at their tours. The NFT space is fast-changing.
-With over $4.8 billion sold on [OpenSea](https://opensea.io/), the NFT market will boom and grow to greater heights. The future of NFT is full of possibilities, and the market will grow exponentially.
+Despite the threats, people have created NFTS across the world. Many industries and even artists are hopping into the business to gain from this booming market. Metaverse galleries are coming in hot, and even [Mark Cuban](https://www.tweaktown.com/news/84424/mark-cubans-nft-company-caught-promoting-scams-for-25-000-post/index.html) wants to bring NFT ticketing to the NBA to entitle buyers to lifetime front row seats at their tours. 
+
+The NFT space is fast-changing. With over $4.8 billion sold on [OpenSea](https://opensea.io/), the NFT market will boom and grow to greater heights. The future of NFT is full of possibilities, and the market will grow exponentially.
 
 ### Wrapping up
 The NFT market is still new, but it will keep growing due to the increasing demand. The investors will gain many profits in the coming years and reap the best rewards. For the newbies who want to join the NFT market, please make sure you pick the right wallet so you will be able to secure your NFTS because the market also has potential threats.
