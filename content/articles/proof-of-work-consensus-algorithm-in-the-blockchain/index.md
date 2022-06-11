@@ -6,7 +6,7 @@ url: /proof-of-work-consensus-algorithm-in-the-blockchain/
 title: Proof Of Work Consensus Algorithm In The Blockchain
 description: This article discusses the proof of work consensus, why it's needed in a blockchain network, and how it helps prevent double-spending.
 author: gregory-munene
-date: 2022-05-02T00:00:00-10:00
+date: 2022-06-11T00:00:00-10:00
 topics: [Blockchain]
 excerpt_separator: <!--more-->
 images:
@@ -14,7 +14,7 @@ images:
   - url: /engineering-education/proof-of-work-consensus-algorithm-in-the-blockchain/hero.jpg
     alt: Proof Of Work Consensus Algorithm In The Blockchain Example Image
 ---
-When Nakamoto Satoshi came up with and started executing the idea of the blockchain, he had one goal in mind- eliminating trust-less cash systems. He wanted a system where strangers could transact without facing the risk of fraud. The Proof of Work (PoW) consensus algorithm is at the center of making the blockchain more secure.
+When Nakamoto Satoshi came up with and started executing the idea of the blockchain, he had one goal in mind, eliminating trust-less cash systems. He wanted a system where strangers could transact without facing the risk of fraud. The Proof of Work (PoW) consensus algorithm is at the center of making the blockchain more secure.
 
 The Proof of Work consensus algorithm aims to achieve distributed trust in a P2P network of nodes using a voting protocol. This voting protocol relies on the concept of work performed by miners to introduce randomness into the decision-making process. It guarantees the verification of all entries, ensuring the users on these systems do not incur losses due to fraud.
 
@@ -31,10 +31,10 @@ A cryptocurrency like Bitcoin stores data logically in a chain of blocks. The sy
 
 Upon validating a given block, the miner links it with the proof of work hash. Each time a given block undergoes verification, solving mathematical equations required to access it and making any alterations becomes increasingly challenging. The chain becomes more valid as more miners solve these mathematical equations and add hashes onto the blocks. Thus, the protocol considers the longest chain as the most authentic. Because so many different miners keep verifying the blocks, it is impractical that the same miner can keep winning the same block. Thus, data alterations are almost impossible.
 
-Satoshi knew that very few individuals would even try to attack the network and alter data with such an energy-intensive process. This scenario can only happen if a mining group owns most of the total hash rate colludes to manipulate the cryptocurrency blocks. Such occurrences are rare, and this forms the basis for PoW's security, the primary purpose of blockchain.
+Satoshi knew that very few individuals would even try to attack the network and alter data with such an energy-intensive process. This scenario can only happen if a mining group owns most of the total hash rate and colludes to manipulate the cryptocurrency blocks. Such occurrences are rare, and this forms the basis for PoW's security, the primary purpose of blockchain.
 
 ### PoW and Proof of Stake (PoS)
-There are remarkable differences between PoW and PoS, and we shall be assessing them to determine which consensus algorithm is better.
+There are remarkable differences between PoW and PoS, and we will be assessing them to determine which consensus algorithm is better.
 
 #### Security
 PoW guarantees higher security than PoS. PoW's security model makes it improbable for anyone to try hacking the system and gain an unfair advantage. A great deal of electric power goes into securing the network during mining, and its time-consuming nature makes attackers less likely to overcome its security power. In comparison, PoS is less secure. Notably, entities or individuals with large crypto holdings have too much power.
