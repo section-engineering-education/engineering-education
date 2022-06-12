@@ -3,18 +3,18 @@ layout: engineering-education
 status: publish
 published: true
 url: /continuous-wavelet-transform-of-signals/
-title: Continuous wavelet transform of simple and discontinous signals in Python
-description: This tutorial will look at the background theory of the wavelet and CWT. It will also discuss the various application of this transform.
+title: Continuous wavelet transform of simple and discontinuous signals in Python
+description: This tutorial will look at the background theory of the wavelet and CWT. It will also discuss the various application of this wave transform.
 author: joseph-odhiambo
-date: 2022-04-21T00:00:00-09:50
+date: 2022-06-11T00:00:00-09:50
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/continuous-wavelet-transform-of-signals/hero.jpg
-    alt: Continuous wavelet transform of simple and discontinous signals in Python Hero Image
+    alt: Continuous wavelet transform of simple and discontinuous signals in Python Hero Image
 ---
-Continuous wavelet transform is defined as adding all the time signals and multiplying by the shift version of the wavelet. The output of the continuous wavelet transform gives the wavelet coefficients as the output. 
+Continuous wavelet transform (CWT) is defined as adding all the time signals and multiplying by the shift version of the wavelet. The output of the continuous wavelet transform gives the wavelet coefficients as the output. 
 <!--more-->
 These coefficients are functions of scale and position. This process can be performed for both simple and discontinuous signals. A discontinuous wavelet is a sine wave followed by a medium sine wave. A simple signal is a slow sine wave.
 
@@ -39,9 +39,11 @@ The plot is the magnitude plot.
 
 ### Finding CWT coefficients
 The CWT of a signal f(t) is given by the equation below:
+
 $$CWT_{(a,b)} = (f, \psi_{a,b}) = \frac{1}{\sqrt{a}}\int^{+\infin}_{-\infin}f(t).\psi*(\frac{t-b}{a})dt$$
 
 Here, $(f, \psi_{a,b})$ is the inner product.
+
 The results of the CWT are many wavelet coefficients that are a function of `a` and `b`. For different shapes of the wavelet, we compute the coefficients and plot them on the magnitude axis as shown below:
 
 ![Wavelet plot](/engineering-education/continuous-wavelet-transform-of-signals/wavelet-plot.jpg)
@@ -54,37 +56,40 @@ This arrangement of coefficients is known as a scalogram. Below is the actual pl
 ### Application of the CWT
 - CWT is mainly used for spectral analysis of signals. We can use it to study frequency breaks, time discontinuity, signal burst, signal damping, and vibration pattern.
 - CWT coefficients in the form of a scalogram can serve as image input to a deep neural network for signal classification.
+
 Sample scalogram for different signals are shown below:
 
 **1. Frequency break**
 
 ![frequency break](/engineering-education/continuous-wavelet-transform-of-signals/frequency-break.jpg)
 
-In the signal, there is a frequency break. This clear difference can be seen in a scalogram. Also, it shows at what point did the frequency changed.
+In the signal, there is a frequency break. This clear difference can be seen in a scalogram. Also, it shows at what point the frequency changed.
 
 **2. Discontinuity detection**
 
 ![Discontinuity detection](/engineering-education/continuous-wavelet-transform-of-signals/discontinuity.jpg)
 
-Here, we have a discontinuous signal. Also, we can see that the discontinuity occurred at this time moment.
+Here, we have a discontinuous signal. Also, we can see where the discontinuity occurred at a certain moment in time.
 
 ### CWT of signals using Python
-We use the `pywavelet` library to compute the CWT using Python.
-`Pywavelet` is an open-source wavelet transform software for Python. It combines a simple and high-level interface with low-level C and python performance. Moreover, it comes with Anaconda distribution. Therefore, we do not need to install it separately when using Anaconda.
-Its dependencies are; numpy, SciPy and Matplotlib(All these come with Anaconda distribution).
-The general syntax to compute the CWT is:
-```Python
+We use the `pywavelet` library to compute the CWT using Python.`Pywavelet` is an open-source wavelet transform software for Python. It combines a simple and high-level interface with low-level C and Python performance. Moreover, it comes with the Anaconda distribution. Therefore, we do not need to install it separately when using Anaconda.
+
+Its dependencies are; `numpy`, `SciPy`, and `Matplotlib` (all these libraries come with Anaconda distribution).
+
+The general syntax to compute the CWT is:\
+
+```python
 coefs, freqs = pywt.cwt(signal, scales, wavelets)
 ```
-Where;
+where;
 - `Signal`: is the signal in the array form.
-- `Scales`: Is the scales to be used for the CWT in the array form.
-- `Wavelets`: Is the name of the wavelet used.
-- `Coefs`: Is the CWT coefficients.
+- `Scales`: is the scales to be used for the CWT in the array form.
+- `Wavelets`: is the name of the wavelet used.
+- `Coefs`: is the CWT coefficients.
 - `Freqs`: Frequencies corresponding to the scale in the array form.
 
 There are some other optional parameters. It means you do not have to define them. These are such as;
-- `Method`: The methods are such as convolution(`conv`) or fast Fourier transform(`fft`).
+- `Method`: The methods are such as convolution (`conv`) or fast Fourier transform (`fft`).
 - `Sampling period`: It is the seconds taken for the output frequency.
 
 The supported wavelets and their corresponding syntax to use in python are such as:
@@ -98,13 +103,15 @@ The supported wavelets and their corresponding syntax to use in python are such 
 
 ### Python code for CWT of 1-D signal
 We begin by first importing some libraries. These libraries are shown below:
-```Python
+
+```python
 import pywt
 import numpy as np
 import matplotlib.pyplot as plt
 ```
 `Pywt` is used to compute the CWT, `numpy` for the numerical calculations, and `matplotlib` is for plotting the output.
-We then define the time-space, signal and scale to be used.
+We then define the time-space, signal, and scale to be used.
+
 ```python
 t = np.linspace(0, 1, 200)
 
@@ -112,13 +119,17 @@ t = np.linspace(0, 1, 200)
 signal = np.cos(2 * np.pi * 7 * t) + np.real(np.exp(-7 * (t-0.4)**2)*np.exp(1j*2*np.pi*2*(t-0.4)))
 scales = np.arange(1, 31)  # No. of scales
 ```
-In the time-space, it ranges from 0-1. The `linspace()` function separates the axis equal to 200points. The number of scales used here is 31.
+The time-space ranges from 0 to 1. The `linspace()` function separates the axis equal to 200 points. The number of scales used here is 31.
+
 Now, we use the `pywt.cwt()` function to compute the CWT as shown below:
+
 ```python
 coef, freqs = pywt.cwt(signal, scales, 'gaus1')  # Finding CWT using gaussian wavelet
 ```
 This function uses a signal, scales, and the wavelet type as the arguments. We get the CWT coefficients stored in the `coef` variable when executing this function. The other output from this function is the corresponding frequency stored in the `freqs` variable.
+
 Let us plot the CWT coefficient in the form of a scalogram
+
 ```python
 # Plotting scalogram
 plt.figure(figsize=(15, 10))
@@ -130,7 +141,9 @@ plt.xticks(np.arange(0, 201, 10))
 plt.show()
 ```
 Here, we plot the scalogram by assuming the matrix is an image. This is why we use the `imshow()` function. The `abs()` function gives the absolute value of the coefficient `coefs`. Other parameters that we use are such as `interpolation`. It is used to soften the plot. `cmap` gives the colormap. `Yticks` and `xticks` give the `x` and `y` axis, and `plt.show()` shows the output plot.
+
 For visualization of our signal, we can also plot it using the commands below:
+
 ```python
 # Plotting
 plt.figure(figsize=(15, 10))
@@ -148,12 +161,14 @@ The corresponding signal is shown below:
 
 ### Python code for CWT of discontinuous signals
 We first import the required libraries.
-```Python
+
+```python
 import pywt
 import numpy as np
 import matplotlib.pyplot as plt
 ```
 We then define our signal.
+
 ```python
 Fs = 44100.0  #Samples per second
 tclip = 10e-3
@@ -162,14 +177,17 @@ tpoints = np.linspace(0, 10e-3, nos) #Time points
 x = np.cos(2*np.pi*500*tpoints)  #cos(2*pi*f*t) signal
 ```
 Here, our signal `Fs` sampling frequency is 44100, and the signal duration is 10ms. To get the number of samples, we get the product of samples per second `Fs` and the duration of the signal `tclip`. If the product is not an integer, the function `int()` rounds it to the nearest integer. Also, we define the time points `tpoints` and the signal `x`. Finally, we have a cosine signal defined by the `cos()` function.
+
 Let us introduce discontinuity to our signal. It is done by forcing the signal to be 0 at a given point as shown below:
+
 ```python
 scales = np.arange(1, 21, 1)  #No. of scales=20
 x[87:89] = 0  #Giving discontinuity
 x[307:309] = 0  #Giving discontinuity
 ```
 We are forcing the signal to go to zero at the defined points. We then use the same function `pywt.cwt()` to compute the CWT for this signal and the similar commands to plot the scalogram as shown below:
-```Python
+
+```python
 coef, freqs = pywt.cwt(x, scales, 'gaus4')  # Finding CWT using gaussian wavelet
 
 # Plotting scalogram
@@ -198,9 +216,12 @@ As we can see, the signal has a discontinuity at 2ms and 7ms, respectively. The 
 If you look at the scalogram, we can see at what point was the breakpoints. So it shows the strength of CWT in the analysis of the signal.
 
 ### Conclusion
-Performing the CWT is a very important process for analyzing the various signals. This process is widely used in the various fields we discussed before. The scalogram view of the signal gives detailed visual information about the signal. It means by just looking at the scalogram, you can see the behaviour of the signal.
+Performing the CWT is a very important process for analyzing various signals. This process is widely used in the various fields we discussed before. The scalogram view of the signal gives detailed visual information about the signal. It means by just looking at the scalogram, you can see the behavior of the signal.
 
 Happy coding!
+
+---
+Peer Review Contributions by: [Willies Ogola](/engineering-education/authors/willies-ogola/)
 
 <!-- MathJax script -->
 <script type="text/javascript" async
@@ -230,6 +251,3 @@ Happy coding!
     TeX: { equationNumbers: { autoNumber: "AMS" } }
     });
   </script>
-
----
-Peer Review Contributions by: [Willies Ogola](/engineering-education/authors/willies-ogola/)
