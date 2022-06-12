@@ -3,16 +3,16 @@ layout: engineering-education
 status: publish
 published: true
 url: /univariate-time-series-using-recurrent-neural-networks/
-title: Univariate time series using Recurrent Neural Networks
+title: Univariate Time Series using Recurrent Neural Networks
 description: This tutorial will show a reader how to build a univariate time series model that predicts monthly milk production using a Recurrent Neural Network (RNN).
 author: james-maingi
-date: 2022-05-02T00:00:00-21:00
+date: 2022-06-12T00:00:00-12:00
 topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/univariate-time-series-using-recurrent-neural-networks/hero.png
-    alt: Univariate time series using Recurrent Neural Networks Hero Image 
+    alt: Univariate time series Recurrent Neural Networks Hero Image 
 ---
 A time series consists of various data points sequentially organized in equal intervals over time. A model will analyze the complex patterns and relationships in the time series and predict future values.
 <!--more-->
@@ -20,11 +20,10 @@ A time series model can perform various tasks: weather forecasting, stock price 
 
 A univariate time series has only a single variable that trains the model. For example, a weather forecast model uses past recorded temperature values to predict future temperatures. We will build a univariate time series model that predicts monthly milk production. We will implement the model using a Recurrent Neural Network (RNN). 
 
-There are various [types of RNN](https://www.simplilearn.com/tutorials/deep-learning-tutorial/rnn). We will focus on Long Short-Term Memory(LSTM), which is best suited for time series modeling.
+There are various [types of RNN](https://www.simplilearn.com/tutorials/deep-learning-tutorial/rnn). We will focus on Long Short-Term Memory (LSTM), which is best suited for time series modeling.
 
-### Prerequisites]
+### Prerequisites
 - A reader should have the basic knowledge and understanding of the following before implementing the time series model:
-
 - [Time series terms and concepts](/engineering-education/introduction-to-time-series/)
 - A brief introduction to [neural networks architecture and concepts](/engineering-education/introduction-to-neural-networks/)
 - Know how to build an [artificial neural network with Keras](/engineering-education/build-ann-with-keras/)
@@ -47,7 +46,9 @@ There are various [types of RNN](https://www.simplilearn.com/tutorials/deep-lear
 - [References](#references)
 
 ### Getting started with Recurrent Neural Network (RNN)
-A Recurrent Neural Network is a variant of the typical artificial neural network that can model sequential data. Sequential data depends on historical/past data points to make future predictions. Recurrent neural networks use an internal memory that helps them to store information retrieved from the previous data points and use the information to generate other data points. Recurrent neural networks implement a feedback loop within the hidden layers that distinguish them from the traditional artificial neural networks.
+A Recurrent Neural Network is a variant of the typical artificial neural network that can model sequential data. Sequential data depends on historical/past data points to make future predictions. 
+
+RNNs use an internal memory that helps them to store information retrieved from the previous data points and use the information to generate other data points. Recurrent neural networks implement a feedback loop within the hidden layers that distinguish them from the traditional artificial neural networks.
 
 The image below shows the distinction between a traditional artificial neural network and a recurrent neural network:
 
@@ -61,7 +62,7 @@ A long-term dependency problem occurs when the sequential memory of the recurren
 
 The RNN will not remember the information for a long time and therefore lose track of the order of the inputs and how the data points depend on each other. It can not process and analyze the dataset that has longer-term dependencies. 
 
-The solution of this problem is to introduce the Long Short-Term Memory(LSTM). The image below shows the basic structure of an LSTM.
+The solution to this problem is to introduce the Long Short-Term Memory (LSTM). The image below shows the basic structure of an LSTM.
 
 ![LSTM structure](/engineering-education/univariate-time-series-using-recurrent-neural-networks/lstm-structure.png)
 
@@ -108,7 +109,7 @@ To import the Matplotlib library, apply this command:
 ```python
 import matplotlib.pyplot as plt
 ```
-We then plot the monthly milk production dataset, apply this code:
+We can then plot the monthly milk production dataset, by applying this code:
 
 ```python
 df.plot(figsize=(12,6))
@@ -185,7 +186,9 @@ The code displays the following scaled points:
 The output shows the scaled data points that lie between 0 and 1.
 
 ### Format the scaled data points into batches 
-We have to take the scaled data points and break them into batches. The batches are a sequence of values that the LSTMS will use as inputs during the training phase. We use the `TimeseriesGenerator` class to generate the dataset batches. We import this necessary library as follows:
+We have to take the scaled data points and break them into batches. The batches are a sequence of values that the LSTM will use as inputs during the training phase. We use the `TimeseriesGenerator` class to generate the dataset batches. 
+
+We can import this necessary library as follows:
 
 ```python
 from keras.preprocessing.sequence import TimeseriesGenerator
@@ -206,7 +209,9 @@ generated_batches = TimeseriesGenerator(scaled_train_dates, scaled_test_dates, l
 The code will apply the class function to both the training and testing dates. Each batch will have a specific size.
 
 ### Building the time series model
-We will build a sequential time series model using LSTM. A sequential model will enable us to add multiple layers one after the other (layer by layer). The LSTM will be the input layer of the sequential model. We will import the LSTM from [Keras](https://keras.io/) and add it directly as the input layer of the sequential model. We will then add the output layer of the sequential model using the `Dense` layer. Let's import the LSTM, Sequential model, and the Dense layer from Keras.
+We will build a sequential time series model using LSTM. A sequential model will enable us to add multiple layers one after the other (layer by layer). The LSTM will be the input layer of the sequential model. 
+
+We will import the LSTM from [Keras](https://keras.io/) and add it directly as the input layer of the sequential model. We will then add the output layer of the sequential model using the `Dense` layer. Let's import the LSTM, Sequential model, and the Dense layer from Keras.
 
 ```python
 from keras.layers import LSTM
@@ -223,7 +228,9 @@ After this, we add the `LSTM` layer as follows:
 ```python
 lstm_model.add(LSTM(100, activation='relu', input_shape=(n_input, n_features)))
 ```
-The LSTM layer will have 100 neurons. It uses `relu` as an activation function because the output of this layer will be between 0 and infinite positive time series values. It uses the generated dataset batches as inputs. The model will then use the `Dense` layer to output the predicted time series values. Let's add the `Dense` layer as follows:
+The LSTM layer will have 100 neurons. It uses `relu` as an activation function because the output of this layer will be between 0 and infinite positive time series values. It uses the generated dataset batches as inputs. The model will then use the `Dense` layer to output the predicted time series values. 
+
+Let's add the `Dense` layer as follows:
 
 ```python
 lstm_model.add(Dense(1))
@@ -238,9 +245,9 @@ lstm_model.compile(optimizer='adam', loss='mse')
 ```
 We compile the sequential time series model using the `compile` function. For the compilation process to work, we have passed the following parameters.
 
-- optimizer - it will improve and enhance the performance of the sequential time series model. We pass `adam` as the optimizer for the model compilation process to work.
+- optimizer: It will improve and enhance the performance of the sequential time series model. We pass `adam` as the optimizer for the model compilation process to work.
 
-- loss - it will keep track and calculate all the model errors. We pass `mse` as the parameter value.
+- loss: It will keep track and calculate all the model errors. We pass `mse` as the parameter value.
 
 ### Printing the summary of the sequential time series model
 To print the sequential time series model summary, apply this code:
@@ -252,9 +259,7 @@ The code displays the following:
 
 ![Summary](/engineering-education/univariate-time-series-using-recurrent-neural-networks/compiled-model-summary.png)
 
-The summary shows the layers in the compiled sequential time series model and the parameters.
-
-Let's fit the sequential model to the generated batches.
+The summary shows the layers in the compiled sequential time series model and the parameters. Let's fit the sequential model to the generated batches.
 
 ### Fitting the sequential model to the generated batches
 To fit the sequential model, apply this code:
@@ -262,14 +267,16 @@ To fit the sequential model, apply this code:
 ```python
 lstm_model.fit(generated_batches,epochs=100)
 ```
-The generated batches will train and test the sequential model. We apply 100 epochs to reduce the errors (loss) of the sequential model. The sequential model will run 100 times through the generated batches. The code above will give the following output:
+The generated batches will train and test the sequential model. We apply 100 epochs to reduce the errors (loss) of the sequential model. The sequential model will run 100 times through the generated batches. 
+
+The code above will give the following output:
 
 ![The sequential model](/engineering-education/univariate-time-series-using-recurrent-neural-networks/fitting-the-sequential-model.png)
 
 We have trained the sequential model using the generated batches. From the output, the model loss has reduced with time. Let's use the trained sequential model to make predictions.
 
 ### Using the trained sequential model to make predictions
-The trained sequential model will use the testing dates to predict the monthly milk consumption. We have first to reshape the scaled test time series values to have the original format.
+The trained sequential model will use the testing dates to predict the monthly milk production. We have to reshape the scaled test time series values to have the original format.
 
 ```python
 prediction_result = []
@@ -322,7 +329,9 @@ In this tutorial, we have built a univariate time series that predicts monthly m
 
 We explained the difference between RNN and LSTM and how the LSTM solves the long-term dependency problem. We imported LSTM from Keras and used it to build the sequential time series model. We finally used the line graph to evaluate the performance of the sequential time series model.
 
-Please check out the complete Python Code for the univariate time series model [here](https://colab.research.google.com/drive/1E5ltGDf_WJpAE7piaNLr_fZ-BhpsfJMV?usp=sharing)
+Please check out the complete Python Code for the univariate time series model [here](https://colab.research.google.com/drive/1E5ltGDf_WJpAE7piaNLr_fZ-BhpsfJMV?usp=sharing).
+
+Happy coding!
 
 ### References
 - [TimeSeriesGenerator](https://www.tensorflow.org/api_docs/python/tf/keras/preprocessing/sequence/TimeseriesGenerator)
