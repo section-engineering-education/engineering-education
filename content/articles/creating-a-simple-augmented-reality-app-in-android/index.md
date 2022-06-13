@@ -3,22 +3,23 @@ layout: engineering-education
 status: publish
 published: true
 url: /creating-a-simple-augmented-reality-app-in-android/
-title: Creating a Simple Augmented Reality app in Android
+title: Creating a Simple Augmented Reality App in Android
 description: This tutorial will guide the reader on how to create a simple augmented reality (AR) app in Android. AR allows people to process the physical and digital simultaneously, eliminating the need to mentally bridge the two.
 author: Kirwa-Elyjah
-date: 2022-05-18T00:00:00-16:20
+date: 2022-06-13T00:00:00-10:20
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/creating-a-simple-augmented-reality-app-in-android/hero.png
-    alt: Creating a Simple Augmented Reality app in Android
+    alt: Creating Augmented Reality app in Android
 ---
-In this tutorial, we'll learn how to create an Augmented Reality App in Kotlin to keep up with the quickly evolving tech world. This application will allow you to add properties to an image using your phone's camera.
+In this tutorial, we will learn how to create an Augmented Reality App in Kotlin to keep up with the quickly evolving tech world. This application will allow you to add properties to an image using your phone's camera.
 <!--more-->
 
 ### Prerequisites
-- You should have the latest version of [Android Studio](https://developer.android.com/studio) installed on your machine.
+To follow along the reader should have the following:
+- The latest version of [Android Studio](https://developer.android.com/studio) installed on your machine.
 - You should have knowledge of the Kotlin programming language.
 - Have a physical device that is supported by Google Play Services for AR. 
 
@@ -33,7 +34,7 @@ By the end of this tutorial, the reader will have learned the following:
 ### What is Augmented Reality (AR)?
 This is a technologically augmented version of the real world. It is created by the use of synthetic graphic elements, music, or other sensory stimulation.
 
-It is a new technology that merges digital elements with real-world objects. Mobile phone users can interact with their environments using their smartphones. With AR, we can bend reality in how we want, which is like an extension of reality, or, we can say, re-evaluating the future. 
+It is a new technology that merges digital elements with real-world objects. Mobile phone users can interact with their environments using their smartphones. With AR, we can bend reality how we want, which is like an extension of reality, or, we can say, re-evaluating the future. 
 
 ### Creating an Android project
 Launch Android Studio and create a new project.
@@ -42,7 +43,7 @@ Launch Android Studio and create a new project.
 
 >NOTE: The minimum SDK version should be API 24: Android 7 (Nougat).
 
-After the project is ready, we will need to add the `Sceneform` plugin. This plugin is necessary for supporting Augmented Reality.
+After the project is ready, we will need to add the `Sceneform` plugin. This plugin is necessary to support Augmented Reality.
 
 On the Android Studio menu, click on `File` then `Settings` and a new window will open. On the right tab, click `Plugins`, and search for `Sceneform` on the marketplace. Click install and apply. Restart Android Studio for the changes to take effect.
 
@@ -56,7 +57,7 @@ After the IDE restarts, you might notice an error that pops up. This error reads
 
 You can solve this error by using Sceneform SDK v1.16.0. Also, you can set up everything manually.
 
-### Setting up manually is done as follows:
+### Setting up manually
 1. Download the Sceneform files from [here](https://drive.google.com/file/d/1D4NFEC2TGaILhJfnKC6L0kEtFhim9yfU/view?usp=sharing). Extract these files into your app's folder and head to the next step.
 
 2. Go to Gradle and open `gradle.settings` and add the following lines:
@@ -87,7 +88,7 @@ In this tutorial, we'll use a ready-made model which can be downloaded from [her
 
 After you download the model, go to Android Studio and on the `res` folder, right-click and create a new `Android Resource Directory`. Change the resource type to `raw` and click on OK. Inside this directory, paste the `model.glb` file you just downloaded.
 
-### Enabling Permissions
+### Enabling permissions
 Open the `Manifest` and add the following permissions:
 
 ```xml
@@ -140,7 +141,7 @@ To solve this, open `build.gradle` app level and add the following dependency an
 implementation 'com.google.ar.sceneform.ux:sceneform-ux:1.17.1'
 ```
 
-### Implementing Apps main logic
+### Implementing apps main logic
 Open `ActivityMain.kt` file and first create a function that checks if a device supports ARcore. The function should be as follows:
 
 ```kotlin
@@ -302,13 +303,13 @@ class MainActivity : AppCompatActivity() {
 }
 ```
 
-### Running the App
+### Running the app
 To run the app, first, make sure you have an active internet connection on your device. Run the app and focus on a surface. Google AR will start by detecting a surface, and after it detects tap on the screen to place our object there. You can then try this on different surfaces as you explore.
 
 ### Conclusion
 In this tutorial, we have learned how we can create an Augmented Reality app and place objects in a scene. AR does more than this. Keep exploring more about Augmented Reality by reading more articles on this topic.
 
-Happy Coding :)
+Happy coding :)
 
 ---
 Peer Review Contributions by: [Eric Gacoki](/engineering-education/authors/eric-gacoki/)
