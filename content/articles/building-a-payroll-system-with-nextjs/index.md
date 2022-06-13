@@ -1,29 +1,25 @@
-# Next.js basics with payroll system
+In this tutorial, we learn basics of Next.js and how we can use them effectively to build a payroll system. 
 
-This tutorial will equip you with the basic arithmetic operators in Next.js and how to effectively use them in functions, for calculations needed in software programming.
-
-
-### Table of Content
-- [Next.js basics with payroll system](#nextjs-basics-with-payroll-system)
-    - [Table of Content](#table-of-content)
-    - [Prerequisites](#prerequisites)
-    - [Next.js Environment Setup](#nextjs-environment-setup)
-    - [Introduction to Payroll System](#introduction-to-payroll-system)
-    - [Payroll Arithmetic Calculations](#payroll-arithmetic-calculations)
-    - [Creating a JSON File and Functions in Next.js](#creating-a-json-file-and-functions-in-nextjs)
-    - [Fetching Payroll Data and Computing Calculations in Next.js](#fetching-payroll-data-and-computing-calculations-in-nextjs)
-    - [Conclusion](#conclusion)
-    - [Reference](#reference)
+### Table of contents
+- [Table of contents](#table-of-contents)
+- [Prerequisites](#prerequisites)
+- [Next.js environment setup](#nextjs-environment-setup)
+- [Introduction to Payroll System](#introduction-to-payroll-system)
+- [Payroll Arithmetic Calculations](#payroll-arithmetic-calculations)
+- [Creating a JSON File and Functions in Next.js](#creating-a-json-file-and-functions-in-nextjs)
+- [Fetching Payroll Data and Computing Calculations in Next.js](#fetching-payroll-data-and-computing-calculations-in-nextjs)
+- [Conclusion](#conclusion)
+- [Reference](#reference)
 
 ### Prerequisites
-In order to follow along, you will need to have the following:
-1. Basic knowledge of Javascript.
-2. Basic knowledge of React.js and Next.js.
-3. Fully set development environment.
+To follow along, the reader should have the following:
+- Basic knowledge of Javascript.
+- Basic knowledge of React.js and Next.js.
+- Fully set development environment.
 
+### Next.js environment setup
+In this tutorial, we will use Node.js will be needed for the javascript runtime needed.
 
-### Next.js Environment Setup
-In this tutorial we will use Next.js, Node.js will be needed for the javascript runtime needed.
 You can download Node.js [here](https://nodejs.org/en/download/) if you don't have it installed.
 Type this in a fresh command-line interface to install Next.js.
 
