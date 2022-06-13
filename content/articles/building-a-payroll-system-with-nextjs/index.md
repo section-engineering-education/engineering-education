@@ -4,14 +4,16 @@ This tutorial will equip you with the basic arithmetic operators in Next.js and 
 
 
 ### Table of Content
-- [Prerequisites](#Prerequisites)
-- [Next.js Environment Setup](#Next.js-Environment-Setup)
-- [Introduction to Payroll System](#Introduction-to-Payroll-System)
-- [Payroll Arithmetic Calculations](#payroll-Arithmetic-Calculations)
-- [Creating a JSON File and Functions in Next.js](#Creating-a-JSON-File-and-Functions-in-Next.js)
-- [Fetching Payroll Data and Computing Calculations in Next.js](#Fetching-Payroll-Data-and-Computing-Calculations-in-Next.js)
-- [Conclusion](#Conclusion)
-- [Reference](#Reference)
+- [Next.js basics with payroll system](#nextjs-basics-with-payroll-system)
+    - [Table of Content](#table-of-content)
+    - [Prerequisites](#prerequisites)
+    - [Next.js Environment Setup](#nextjs-environment-setup)
+    - [Introduction to Payroll System](#introduction-to-payroll-system)
+    - [Payroll Arithmetic Calculations](#payroll-arithmetic-calculations)
+    - [Creating a JSON File and Functions in Next.js](#creating-a-json-file-and-functions-in-nextjs)
+    - [Fetching Payroll Data and Computing Calculations in Next.js](#fetching-payroll-data-and-computing-calculations-in-nextjs)
+    - [Conclusion](#conclusion)
+    - [Reference](#reference)
 
 ### Prerequisites
 In order to follow along, you will need to have the following:
@@ -57,7 +59,7 @@ The net pay is calculated by deducting all authorized withholdings and pay deduc
 
 This is the project workspace created earlier.
 
-![VSWorkspace](/engineering-education/next.js-basics-with-payroll-system./image-one.png)
+![VSWorkspace](/engineering-education/building-a-payroll-system-with-nextjs/folder-structure.png)
 
 We need timesheet data but in our case, we are going to create it locally and store it in our file system.
 In a real system, the data will come from a database either from an external timekeeping system or inbuilt.
@@ -244,7 +246,7 @@ The getServerSideprops data fetching method is offered by Nextjs check [here](ht
 In the function We have created a store for our url component that points to the api and passed it to the json() method which is a better text format for websites, if the employees data is not present then notFound will be returned and employees data will be returned if present.
 The key attribute is very important when creating a list, it should be unique in each element of data in the array. The JSX inside the return is legal to use  '<h3><h2></h2></h3>', the code output should be similar to this.
 
-![Browser output](/engineering-education/next.js-basics-with-payroll-system./image-two.png)
+![Browser output](/engineering-education/building-a-payroll-system-with-nextjs/demo.png)
 
 At this point, we have our gross pay and net pay displayed on the web. Click [here](https://github.com/unholydisaster/payroll) for complete source code.
 
