@@ -65,7 +65,7 @@ A continuous probability density is a probability distribution where the random 
 ### 1. Uniform distribution
 Uniform distribution is a probability distribution where every possible outcome has an equal chance of occurring. The probability density function of this distribution is of the form:
 
-![formula](engineering-education/probability-distributions/uniform.png)
+![formula](/engineering-education/probability-distributions/uniform.png)
 
 To generate random samples from this distribution, we use the `runif()` method in R. This method takes three parameters, *n, a, b*, where `n` is the number of samples we want to generate, and `a` and `b` is the lower and upper bound of the distribution respectively.
 
@@ -85,12 +85,12 @@ hist(U4, main="Sample size 100000")
 ```
 This code returns:
 
-![polts](engineering-education/probability-distributions/plot.png)
+![polts](/engineering-education/probability-distributions/plot.png)
 
 ### 2. Normal distribution
 This is a probability distribution in which values are symmetrically distributed around the mean. The normal distribution has a pdf of the form:
 
-![formula](engineering-education/probability-distributions/normal.png)
+![formula](/engineering-education/probability-distributions/normal.png)
 
 We use the `rnorm()` method to generate random variables from this distribution. This method takes three parameters: ' n` for the number of the random variables we want to generate, the mean value, and the standard deviation.
 
@@ -116,7 +116,7 @@ lines(density(d))
 ```
 Output:
 
-![plot](engineering-education/probability-distributions/plot2.png)
+![plot](/engineering-education/probability-distributions/plot2.png)
 
 As we see from the above plot, the random sample generated follows a normal distribution.
 
@@ -132,7 +132,7 @@ The probability that X is at least 84 can be expressed as $$P(X \ge84)$$
 
 We then standardize this probability distribution, i.e.,
 
-![image](engineering-education/probability-distributions/standardised-pdf.png)
+![image](/engineering-education/probability-distributions/standardised-pdf.png)
 
 The solution value for this can be read from the standard normal table.
 
@@ -204,7 +204,7 @@ Now, let's look at another type of continuous distribution.
 ### 3. Chi-Square distribution
 A chi-square distribution is a probability distribution used to describe the distribution of the sum of squared random variables. It has a *v* degree of freedom and is denoted as $\,\large\chi^2_{(v)}$. Furthermore, it takes a pdf of the form:
 
-![image](engineering-education/probability-distributions/chi-square.png)
+![image](/engineering-education/probability-distributions/chi-square.png)
 
 To calculate the [p-value](https://www.investopedia.com/terms/p/p-value.asp) of a Chi-Square, we use the `pchisq()` method. This method takes two parameters, the number of samples and the degree of freedom. Let's consider the following code.
 
@@ -222,7 +222,7 @@ Output:
 
 ### 4. Student t distribution
 The pdf of the Student t distribution is of the form:
-![formula](engineering-education/probability-distributions/t-students.png)
+![formula](/engineering-education/probability-distributions/t-students.png)
 
 To obtain the tabulated t-values, one can use the command:
 ```r
@@ -261,7 +261,7 @@ Now that we know how to generate random variables from the exponential distribut
 
 By hand, we would have solved this problem as follows:
 
-![formula](engineering-education/probability-distributions/exponential.png)
+![formula](/engineering-education/probability-distributions/exponential.png)
 
 Instead, in R, we only need to execute the following command.
 
@@ -332,7 +332,7 @@ Output:
 ### 2. Poisson distribution
 The pmf of a poisson is given by:
 
-![formula](engineering-education/probability-distributions/poisson.png)
+![formula](/engineering-education/probability-distributions/poisson.png)
 
 To generate random variables from this distribution, we use the command:
 rpois(n, lambda)
