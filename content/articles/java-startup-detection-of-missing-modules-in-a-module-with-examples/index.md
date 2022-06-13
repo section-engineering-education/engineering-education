@@ -14,9 +14,9 @@ images:
   - url: /engineering-education/java-startup-detection-of-missing-modules-in-a-module-with-examples/hero.jpg
     alt: Java startup detection of missing modules in a module with examples
 ---
-Java 9, the latest java release, introduced java modules to the world of programming. Earlier versions of java used packages and access modifiers to associate related classes and hide certain classes and packages from other classes.
+Java 9, the latest java release, introduced java modules to the programming world. Earlier versions of java used packages and access modifiers to associate related classes and hide certain classes and packages from others.
 <!--more-->
-The problem arose when explicit dependencies declared using import statements were called at runtime time. The application could not detect missing modules until runtime, when the application would call the missing module. Dependencies are compiled at compile time, making room for a missing module to be reported early compared to when the application is at runtime.
+The problem arose when explicit dependencies declared using import statements were called at runtime. The application could not detect missing modules until runtime when the application would call the missing module. Dependencies are compiled at compile-time, allowing for a missing module to be reported early compared to when the application is at runtime.
 
 This article introduces Java modules used in Java programming. We will make use of easy-to-learn module codes.
 
@@ -40,23 +40,23 @@ A **java module** is a package-like mechanism that contains the java code and in
 
 As mentioned above, java modules were introduced in the latest java release, java 9, through the JPMS (Java Platform Module System) for the following reasons:
 - Improve on a configuration where java modules enable explicit dependency declaration making it easier for the modules to be recognizable at compile time and runtime
-- Strengthen encapsulation (binding code elements to hide implementation details of a module). A java module must determine which internal modules are visible to external modules.
+- Strengthen encapsulation (binding code elements to hide module implementation details). A java module must determine which internal modules are visible to external modules.
 - Stabilize abstraction (hide essential details of a module from the user). We can do it by using interfaces only to show the modularity function.
 
 ### Java module categories
 There are four different java modules in java 9. They include:
-- Application modules which are used by developers when building application modules. They contain module-info class, explicit dependent modules, and packages needed in the application. Application modules cannot access unnamed modules.
+- Application modules are used by developers when building application modules. They contain module-info class, explicit dependent modules, and packages needed in the application. Application modules cannot access unnamed modules.
 - Unnamed modules. The JAR file or class is not added on the module path in unnamed modules but rather on the classpath; therefore, it does not have any name. Hence it cannot export or read all modules.
-- Automatic modules which are placed on the module path, but they lack the module-info class. They can access all modules. 
+- Automatic modules are placed on the module path but lack the module-info class. They can access all modules.
 
 Let us look at how to write modular code.
 
->Note: The Java Development Kit provides platform/Java SE/JDK  modules.
+> Note: The Java Development Kit provides platform/Java SE/JDK modules.
 
-#### Step one: Creating a java module
+#### Creating a java module
 The above content introduces you to java modules. Now we can write a modular code using [NetBeans Integrated Development Environment](https://netbeans.apache.org/download/index.html). The following steps will walk you through creating and later writing a java modular code.
 
-##### 1. Create a modular java project
+##### Step one: Create a modular java project
 
 ![project](/engineering-education/java-startup-detection-of-missing-modules-in-a-module-with-examples/project.png)
 
@@ -64,13 +64,11 @@ In this step, we will create a java project to house our java modules. Creating 
 
 ![project2](/engineering-education/java-startup-detection-of-missing-modules-in-a-module-with-examples/project2.png)
 
-##### 2. Create a new java module
+##### Step two: Create a new java module
 
 ![module](/engineering-education/java-startup-detection-of-missing-modules-in-a-module-with-examples/module.png)
 
 Java modules should have a unique name and should only contain full stops. The module creates a default package that contains the module-info.java class. The module-info.class is used to declare the dependencies within our java module project.
-
-- Create a java package
 
 ![package](/engineering-education/java-startup-detection-of-missing-modules-in-a-module-with-examples/package.png)
 
@@ -83,7 +81,7 @@ Repeat the above process from creating a new model under the Java Module project
 
 ![structure](/engineering-education/java-startup-detection-of-missing-modules-in-a-module-with-examples/strucure.png)
 
-### Writing Modular Code
+### Step three: Writing modular code
 We can now write our java modular code using the above java modules.
 
 ```java
@@ -135,7 +133,7 @@ We leave the Learner.java class blank. This class will be used to call the `welc
 
 Both hellolearner and leaner modules are currently independent.
 
-### Exporting Packages and Importing Modules
+### Step four: Exporting packages and importing modules
 Above, we mentioned that java modules could use explicitly mentioned packages from other modules. The packages are exported using the `export` statement. The `requires` statement includes the imported module and shows the dependency.  
 
 ```java
@@ -177,7 +175,7 @@ Hello learner. Welcome to section engineering java module tutorial.
 
 Now we can use the HelloLearner.java class inside the Learner.java class. `HelloLearner.welcomelearner();` calls the `welcomelearner()` function imported from the `HelloLearner.java` class. The above result is the output.
 
-### Missing module scenario
+### Step five: Missing module scenario
 Above, we mentioned how earlier versions of java encountered problems when explicit dependencies declared using `import` statements were called at runtime time. When the application tried using a module and discovered that it was missing, it would raise an error and crash. Java 9 made things much easier when dealing with java modules.
 
 Suppose we failed to import the `hellolearner` module and intended to use the `HelloLearner.welcomelearner()` function in the `Learner.java` class. The compiler would throw an error package `com.javamodule.demo` is not visible.
@@ -186,3 +184,5 @@ Suppose we failed to import the `hellolearner` module and intended to use the `H
 Modules have many benefits, as seen above. They mainly come in handy when the developer comes across non-modular applications.
 
 Happy Coding!
+---
+Peer Review Contributions by: [Briana Nzivu](/engineering-education/authors/briana-nzivu/)
