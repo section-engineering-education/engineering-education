@@ -18,7 +18,7 @@ testimonials:
     location: New York City, New York
     profileUrl: /authors/sophia-raji/
   - name: Femi-ige M.
-    testimonial: The EngEd program has been extremely instrumental in my technical writing career. Being able to see my total views on each article helped me convince other publications about my writing prowess.
+    testimonial: The EngEd program has been extremely instrumental in my technical writing career. Being able to see my total page views on each article helped me convince other publications about my writing ability.
     image: /authors/femi-ige-muyiwa-oladele/avatar.jpg
     roles: ["Contributor"]
     location: Minna, Nigeria
@@ -29,3 +29,4 @@ testimonials:
     roles: ["Contributor"]
     location: Lagos, Nigeria
     profileUrl: /authors/shuaib-oseni/
+    
