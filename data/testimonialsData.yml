@@ -17,3 +17,16 @@ testimonials:
     roles: ["Contributor", "Section Intern"]
     location: New York City, New York
     profileUrl: /authors/sophia-raji/
+  - name: Femi-ige M.
+    testimonial: The EngEd program has been extremely instrumental in my technical writing career. Being able to see my total page views on each article helped me convince other publications about my writing ability.
+    image: /authors/femi-ige-muyiwa-oladele/avatar.jpg
+    roles: ["Contributor"]
+    location: Minna, Nigeria
+    profileUrl: /authors/femi-ige-muyiwa-oladele/
+  - name: Shuaib O.
+    testimonial: Section has been a huge part of my success story. The EngEd program contributed immensely to my technical writing journey, allowing me to move from zero knowledge about technical writing to being comfortable writing technical content.
+    image: /authors/shuaib-oseni/Avatar.jpg
+    roles: ["Contributor"]
+    location: Lagos, Nigeria
+    profileUrl: /authors/shuaib-oseni/
+    
