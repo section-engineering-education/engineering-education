@@ -524,5 +524,5 @@ This article has built a web API on top of the [Twilio SMS API](https://www.twil
 
 Note that you can only send messages only to the number you register on your Twilio account.
 
-You can check out the source code of this article [here](https://github.com/Sodiq-123/messageAPI) and also follow me on [Github](https://github.com/Sodiq-123). The published documentation is also available here if you want to see the process of testing the API. You can reach me on [Twitter](https://twitter.com/sodiq_dev) if you have any questions.
+You can check out the source code of this article [here](https://github.com/Sodiq-123/messageAPI) and also follow me on [Github](https://github.com/Sodiq-123). The published documentation is also available [here](https://documenter.getpostman.com/view/14459384/UzBgwAce) if you want to see the process of testing the API. You can reach me on [Twitter](https://twitter.com/sodiq_dev) if you have any questions.
 
