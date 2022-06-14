@@ -3,10 +3,10 @@ layout: engineering-education
 status: publish
 published: true
 url: /generating-data-for-a-random-walk-using-python/
-title: Generating data for a random walk using Python
-description: This tutorial will teach us what a random walk us, how it is applicable in real-life, and how it can be implemented and visualized using Python.
+title: Generating Data for a Random Walk using Python
+description: This tutorial will teach the reader what a random walk is, how it is applicable in real-life, and how it can be implemented and visualized using Python.
 author: duncan-ndegwa
-date: 2022-05-04T00:00:00-22:35
+date: 2022-06-14T00:00:00-11:35
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -19,15 +19,13 @@ A random walk is a route with no predefined way that is determined by a sequence
 In this article, we will use Python to collect data for a random walk and use matplotlib to visualize the results.
 
 ### Prerequisites
-As a prerequisite, the reader must have the following:
+As a prerequisite, the reader should have the following:
 - Have some basic knowledge of [Python programming language](https://docs.microsoft.com/en-us/windows/python/beginners).
 - Have [Python](https://www.journaldev.com/30076/install-python-windows-10) and [Matplotlib](https://www.tutorialspoint.com/how-to-install-matplotlib-in-python) installed on your machine.
 - Have some basic understanding of [Matplotlib](https://www.simplilearn.com/tutorials/python-tutorial/matplotlib).
 
 ### Application of random walks
-Random walks have practical applications in nature, physics, biology, chemistry, and economics.
-
-For example, a pollen grain floating on a drop of water moves across the surface of the water because it is constantly being pushed around by water molecules.
+Random walks have practical applications in nature, physics, biology, chemistry, and economics. For example, a pollen grain floating on a drop of water moves across the surface of the water because it is constantly being pushed around by water molecules.
 
 The molecular motion of a water drop is random, so the path a pollen grain traces out on the surface is a random walk. The code we are about to write models many real-world situations.
 
@@ -98,7 +96,7 @@ In the above code:
 - If the results for `x_move` are +ve, the route pushes the walk to the right, and for -ve to the left, 0 indicates an upright step.
 - If the results for `y_move` are +ve, it indicates the move upwards, while -ve implies move downwards, and 0 implies a horizontal move.
 - The path pauses when both `x_move` and `y_move` are `0`, but we keep the loop `continuing` to avoid this.
-- We calculate the value in `y_move` to the last value supplied in `yvalues` to get the `succeeding_y` value for our trek, and we do the same for the xvalues. We attach these data to `xvalues` and `yvalues` soon we obtain them.
+- We calculate the value in `y_move` to the last value supplied in `yvalues` to get the `succeeding_y` value for our trek, and we do the same for the xvalues. We attach these data to `xvalues` and `yvalues` as soon we obtain them.
 
 ### Plot the random walk
 Here, we will create a new file and name it `visual_rw.py` and save it in the same directory as shown:
@@ -114,9 +112,9 @@ pylt.scatter(rwalk.xvalues, rwalk.yvalues, s=14) # s is size of dots
 pylt.show()
 ```
 
-Here, the first step here is to import `pyplot` and `RWalk`. Then, we make a random trek and save it in `rwalk`, ensuring to call `fil_walk()` on it.
+Here, the first step is to import `pyplot` and `RWalk`. Then, we make a random trek and save it in `rwalk`, ensuring to call `fil_walk()` on it.
 
-Finally, we provide the `x` and `y` values from the walk to `scatter()` and select a suitable dot diameter.
+Now we provide the `x` and `y` values from the walk to `scatter()` and select a suitable dot diameter.
 
 When we execute the file `visual_rw.py` we should be able to see something like the figure below:
 
@@ -143,7 +141,7 @@ p_numbers = list(range(rwalk.number_of_points)) #point numbers
 pylt.show()
 ```
 
-First, we build a list of values corresponding to the number of points in the path using the `range()` function. Then, we put them in a list called `p_numbers` that we'll use to color every spot on the trek.
+We need to build a list of values corresponding to the number of points in the path using the `range()` function. Then, we put them in a list called `p_numbers` that we'll use to color every spot on the trek.
 
 We use the `Blues` colormap, supply `p_numbers` to the `c` parameter, and then `edgecolor=none` to remove the black accent around every spot.
 
@@ -156,7 +154,7 @@ Once the main sequence has been mapped, we can map the initial and last spots se
 
 To ensure the terminal points stand out, we'll enlarge them broader and color them distinctively, as illustrated below.
 
-Put this code just above the `pylt.show()` in the file `visual_rw.py`
+Put this code just above the `pylt.show()` in the file `visual_rw.py`.
 
 ```python
 # map the initial and terminal points.
@@ -192,7 +190,7 @@ This sample generates a random walk with `50,000` spots and depicts every spot w
 ![50000 points walk](/engineering-education/generating-data-for-a-random-walk-using-python/feathery.png)
 
 ### Conclusion
-In this tutorial we have learned how to:
+In this tutorial we learned how to:
 - Create the RWalk() class
 - Choose directions
 - Plot the random walk
@@ -202,12 +200,12 @@ In this tutorial we have learned how to:
  
 The full source code used in this project can be found [here](https://github.com/duncandegwa/PYTHON-MADE-EASY/blob/main/randomwalk.md).
 
+Happy coding!
+
 ### Further reading
 For more information about the random walks in Python, see the links below:
 - [Generating data for random walks in Python](https://www.codingem.com/random-walk-in-python/)
 - [Visualizing random walks in Python](https://towardsdatascience.com/animated-visualization-of-random-walks-in-python-dc18f01ef15e)
-
-Happy coding!
 
 ---
 Peer Review Contributions by: [Srishilesh P S](/engineering-education/authors/srishilesh-p-s/)
