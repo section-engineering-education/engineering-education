@@ -10,7 +10,6 @@ date: 2022-04-30T00:00:00-12:14
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
-
   - url: /engineering-education/growth-model-in-python/hero.jpg
     alt: A Gentle Introduction to Exponential Regression in Python
 ---
