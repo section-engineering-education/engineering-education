@@ -2,4 +2,4 @@
 title: Oyedele Temitope
 type: authors
 ---
-oyedele temitope is web developer and technical writer, he likes to write about things he's learned and experienced.
+Oyedele Temitope is web developer and technical writer, he likes to write about things he's learned and experienced.
