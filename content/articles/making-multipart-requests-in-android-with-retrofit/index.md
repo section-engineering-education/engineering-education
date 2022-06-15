@@ -3,10 +3,10 @@ layout: engineering-education
 status: publish
 published: true
 url: /making-multipart-requests-in-android-with-retrofit/
-title: How to make Multipart Requests in Android with Retrofit
+title: How to Make Multipart Requests in Android with Retrofit
 description: This tutorial will help the reader understand how to make a multipart request in Android using Kotlin and Retrofit.
 author: esther-wanjiru
-date: 2022-04-21T00:00:00-11:00
+date: 2022-06-15T00:00:00-16:00
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -16,23 +16,21 @@ images:
 ---
 A multipart request is an HTTP request that HTTP clients create to send files and data to an HTTP server.
 <!--more-->
-A multipart message is made up of several parts. A part consists of a header and a body. The body can be any type of media and can contain text or binary data. A multipart media type can be included in a part.
+A multipart message is made up of several parts. One part consists of a header and a body. The body can be any type of media and can contain text or binary data. A multipart media type can be included in a part.
 
 Retrofit supports requests that are in parts. In this tutorial, we will make a basic multipart request to a *Ktor* backend that accepts user profiles. 
 
 ### Prerequisites
-To follow along with this tutorial, you need:
+To follow along with this tutorial, the reader will need:
 - A solid understanding of how to create and run Android apps.
 - Android Studio installed.
-- Basic knowledge of the Kotlin programming language.
-- Using Retrofit to make network requests. 
+- Some basic knowledge of the Kotlin programming language.
+- How to use Retrofit to make network requests. 
 
 ### What is a multipart request
-MIME, an Internet standard that extends the format of emails, is the source of multipart.
+MIME, an Internet standard that extends the format of emails, is the source of multipart. Multipart requests combine one or more sets of data into a single, boundary-separated body. 
 
-Multipart requests combine one or more sets of data into a single, boundary-separated body. These requests are typically used for file uploads and transferring multiple types of data in a single request (for example, a file along with a JSON object).
-
-A multipart request is an HTTP request that HTTP clients create to send files and data to an HTTP server. Browsers and HTTP clients frequently use it to upload files to the server. 
+These requests are typically used for file uploads and transferring multiple types of data in a single request (for example, a file along with a JSON object). A multipart request is an HTTP request that HTTP clients create to send files and data to an HTTP server. Browsers and HTTP clients frequently use it to upload files to the server. 
 
 ### Getting started
 In this tutorial, we will try and simulate how a user registers in an app. A user usually selects a profile image and enters some details to register. This data is then uploaded to a server where the user is authenticated.
@@ -95,9 +93,9 @@ fun Route.registerAccount(
 ```
 
 PartData which represents form-data entry which could be:
-- FormItem - Represents a multipart form item e.g user input data.
-- FileItem - Represents a file content e.g a picture, document, etc.
-- BinaryItem - Represents a binary item.
+- FormItem: Represents a multipart form item e.g user input data.
+- FileItem: Represents a file content e.g a picture, document, etc.
+- BinaryItem: Represents a binary item.
 
 ### Step 1 - Creating the project
 Open Android Studio and create an empty project as shown below: 
@@ -123,7 +121,7 @@ implementation("io.coil-kt:coil-compose:1.4.0")
 ```
 
 ### Step 3 - Defining the multipart request
-First, we need to define the response that we are going to retrieve, as shown below:
+We will need to define the response that we are going to retrieve, as shown below:
 
 ```kotlin
 data class BasicApiResponse<T>(
@@ -242,7 +240,12 @@ From here, create your screen and call the `ViewModel` `register` function, pars
 ### Conclusion
 In this brief tutorial, we have learned what a multipart request is and what it looks like in a Ktor backend route. 
 
-We also went ahead and created a multipart request to the route using the Retrofit library. Check out this Github repository for the full implementation of this tutorial - [MultipartRequestDemo](https://github.com/essy-shiro/MultipartRequestDemo)
+We also went ahead and created a multipart request to the route using the Retrofit library. Check out this GitHub repository for the full implementation of this tutorial.
+
+- [MultipartRequestDemo](https://github.com/essy-shiro/MultipartRequestDemo)
+
+
+Happy coding!
 
 ### Further reading 
 - [Retrofit Documention](https://square.github.io/retrofit/2.x/retrofit/index.html?retrofit2/http/Part.html)
