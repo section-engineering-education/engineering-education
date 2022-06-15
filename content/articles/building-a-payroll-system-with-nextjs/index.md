@@ -176,17 +176,16 @@ In reference to our earlier formulas, below are the calculations.
 
 ```javascript
 
-         const bsicPay=data.Hoursworked*data.Basicpay
+const bsicPay=data.Hoursworked*data.Basicpay
 
-         const totalAllowance= data.houseAllowance + data.conveyanceAllowance + data.childrenEducationAllowance
+const totalAllowance= data.houseAllowance + data.conveyanceAllowance + data.childrenEducationAllowance
+const totalReimbursement=data.fuelReimbursements +data.driverReimbursements
+const totalDeduction=data.healthInsurance +data.taxIncome
 
-         const totalReimbursement=data.fuelReimbursements +data.driverReimbursements
-         const totalDeduction=data.healthInsurance +data.taxIncome
+const grossPay=basicPay + totalAllowance + totalReimbursement
+const grossPay=basicPay + totalallowance + totalReimbursement
 
-         const grossPay=basicPay + totalAllowance + totalReimbursement
-         const grossPay=basicPay + totalallowance + totalReimbursement
-
-         const netPay=grosspay-totalDeduction
+const netPay=grosspay-totalDeduction
 
   ```
 Now let's add the following arithmetic expressions to our .map function for the calculations to take place effectively. This is possible by writing them just before the return() in .map() function. This consists of the fetching method offered by Next.js
