@@ -1,7 +1,6 @@
 # Next.js basics with payroll system
-
-This tutorial will equip you with the basic arithmetic operators in Next.js and how to effectively use them in functions, for calculations needed in software programming.
-
+Welcome to Next.js, the React framework thats meant for Production because only the needed CSS and Javascript are loaded by the users browser making it extreamly fast. Next.js unlike React.js needs zero setup for the creation of an API by using the file system this saves alot of development time and cost.
+This tutorial will equip you with the basic arithmetic operators in Next.js and how to effectively use them in functions, for calculations needed in software programming. 
 
 ### Table of Content
 - [Prerequisites](#Prerequisites)
@@ -21,13 +20,15 @@ In order to follow along, you will need to have the following:
 
 
 ### Next.js Environment Setup
-In this tutorial we will use Next.js, Node.js will be needed for the javascript runtime needed.
+In this tutorial we will use Next.js, Node.js will also be needed for creation of a server which provides a runtime environment which is essential to program debugging and development.
 You can download Node.js [here](https://nodejs.org/en/download/) if you don't have it installed.
 Type this in a fresh command-line interface to install Next.js.
 
 ```bash
 npx create-next-app@latest
 ```
+![Installation](/engineering-education1/content/articles/next.js-basics-with-payroll-system/image-three.png)
+
 The installation will begin and you will be asked to name the application, let's call it payroll.
 Now type this to enter the project folder and start the server.
 
@@ -57,7 +58,7 @@ The net pay is calculated by deducting all authorized withholdings and pay deduc
 
 This is the project workspace created earlier.
 
-![VSWorkspace](/engineering-education/next.js-basics-with-payroll-system./image-one.png)
+![VSWorkspace](/engineering-education1/content/articles/next.js-basics-with-payroll-system/image-one.png)
 
 We need timesheet data but in our case, we are going to create it locally and store it in our file system.
 In a real system, the data will come from a database either from an external timekeeping system or inbuilt.
@@ -68,59 +69,59 @@ employees.js
 import React from 'react'
 
 export const Employed=[{
-  Fullname:"Kevin Kimanthi",
-  Nationalid:39403458,
-  Hoursworked:40,
-  Basicpay:18,
-  Houseallowance:50,
-  Conveyanceallowance:40,
-  Childreneducationallowance:50,
-  FuelReimbursements:50,
-  DriverReimbursements:100,
-  HealthInsurance:10,
-  Taxincome:10
+  "fullName":"Kevin Kimanthi",
+  "NationalId":39403458,
+  "hoursWorked":40,
+  "basicPay":18,
+  "houseAllowance":50,
+  "conveyanceAllowance":40,
+  "childrenEducationAllowance":50,
+  "fuelReimbursements":50,
+  "driverReimbursements":100,
+  "healthInsurance":10,
+  "taxIncome":10
 },
 {
-  Fullname:"Dennis Kimeu",
-  Nationalid:39456782,
-  Hoursworked:45,
-  Basicpay:25,
-  Houseallowance:50,
-  Conveyanceallowance:40,
-  Childreneducationallowance:50,
-  FuelReimbursements:50,
-  DriverReimbursements:100,
-  HealthInsurance:10,
-  Taxincome:10
+  "fullName":"Dennis Kimeu",
+  "NationalId":39456782,
+  "hoursWorked":45,
+  "basicPay":25,
+  "houseAllowance":50,
+  "conveyanceAllowance":40,
+  "childrenEducationAllowance":50,
+  "fuelReimbursements":50,
+  "driverReimbursements":100,
+  "healthInsurance":10,
+  "taxIncome":10
 },
 {
-  Fullname:"Gideon Abangi",
-  Nationalid:37594213,
-  Hoursworked:45,
-  Basicpay:30,
-  Houseallowance:50,
-  Conveyanceallowance:40,
-  Childreneducationallowance:50,
-  FuelReimbursements:50,
-  DriverReimbursements:0,
-  HealthInsurance:10,
-  Taxincome:10
+  "fullName":"Gideon Abangi",
+  "NationalId":37594213,
+  "hoursWorked":45,
+  "basicPay":30,
+  "houseAllowance":50,
+  "conveyanceAllowance":40,
+  "childrenEducationAllowance":50,
+  "fuelReimbursements":50,
+  "driverReimbursements":0,
+  "healthInsurance":10,
+  "taxIncome":10
 },
 {
-  Fullname:"Jack mahui",
-  Nationalid:37804215,
-  Hoursworked:45,
-  Basicpay:25,
-  Houseallowance:50,
-  Conveyanceallowance:40,
-  Childreneducationallowance:50,
-  FuelReimbursements:50,
-  DriverReimbursements:100,
-  HealthInsurance:10,
-  Taxincome:10
+  "fullName":"Jack mahui",
+  "NationalId":37804215,
+  "hoursWorked":45,
+  "basicPay":25,
+  "houseAllowance":50,
+  "conveyanceAllowance":40,
+  "childrenEducationAllowance":50,
+  "fuelReimbursements":50,
+  "driverReimbursements":100,
+  "healthInsurance":10,
+  "taxIncome":10
 }]
 ```
-In order for this to work as planned, we will have to create an API route for data fetching. Navigate to the Pages folder and open the API folder that contains a hello.js file, edit the file by erasing all its contents and copy this code.
+In order for this to work as planned, we will have to create an API route for data fetching. Navigate to the Pages folder and open the API folder that contains a hello.js file. We are going to create GET and POST HTTP methods, GET is applied while requesting information from a particular source in this case it will be from our employees file while POST is used to insert or update the data. Lets Edit the file by erasing all its contents and copy the code below.
 
 hello.js
 ```javascript
@@ -128,6 +129,7 @@ import { Employed } from "../employees"
 
 export default function handler(req, res) {
 const {method}=req;
+
 if(method==="GET"){
     return res.status(200).json(Employed)
 }
@@ -140,7 +142,7 @@ if(method === "POST"){
 }
 
 ```
-This creates an API route with methods that are able to send and receive "GET" and "POST" requests for our body that we created earlier by importing it and sending it as a response to our required file.
+This creates an API route with methods that are able to send a request and receive a response of our body that we created earlier.
 
 After dealing with the API route, we are going to create a function that computes all this data by automatically linking it to the arithmetic calculations.
 We are going to use a .map() function to iterate our data and create a list from this data.
@@ -174,15 +176,18 @@ In reference to our earlier formulas, below are the calculations.
 
 ```javascript
 
-  const Basicpay=Data.Hoursworked*Data.Basicpay
-  const Totalallowance= Data.Houseallowance + Data.Conveyanceallowance + Data.Childreneducationallowance
+         const bsicPay=data.Hoursworked*data.Basicpay
 
-  const TotalReimbursement=Data.FuelReimbursements +Data.DriverReimbursements
+         const totalAllowance= data.houseAllowance + data.conveyanceAllowance + data.childrenEducationAllowance
 
-  const Totaldeduction=Data.HealthInsurance +Data.Taxincome
+         const totalReimbursement=data.fuelReimbursements +data.driverReimbursements
+         const totalDeduction=data.healthInsurance +data.taxIncome
 
-  const Grosspay=Basicpay + Totalallowance + TotalReimbursement
-  const Netpay=Grosspay-Totaldeduction
+         const grossPay=basicPay + totalAllowance + totalReimbursement
+         const grossPay=basicPay + totalallowance + totalReimbursement
+
+         const netPay=grosspay-totalDeduction
+
   ```
 Now let's add the following arithmetic expressions to our .map function for the calculations to take place effectively. This is possible by writing them just before the return() in .map() function. This consists of the fetching method offered by Next.js
 
@@ -193,33 +198,32 @@ import React from "react"
 
 
 const Payroll=({employees})=>{
-    return(
-      <>
-       {employees.map(Data=> {
+  return(
+    <>
+       {employees.map(data=> {
+         const bsicPay=data.Hoursworked*data.Basicpay
 
-  const Basicpay=Data.Hoursworked*Data.Basicpay
-  const Totalallowance= Data.Houseallowance + Data.Conveyanceallowance + Data.Childreneducationallowance
+         const totalAllowance= data.houseAllowance + data.conveyanceAllowance + data.childrenEducationAllowance
 
-  const TotalReimbursement=Data.FuelReimbursements +Data.DriverReimbursements
+         const totalReimbursement=data.fuelReimbursements +data.driverReimbursements
+         const totalDeduction=data.healthInsurance +data.taxIncome
 
-  const Totaldeduction=Data.HealthInsurance +Data.Taxincome
+         const grossPay=basicPay + totalAllowance + totalReimbursement
+         const grossPay=basicPay + totalallowance + totalReimbursement
 
-  const Grosspay=Basicpay + Totalallowance + TotalReimbursement
-  const Netpay=Grosspay-Totaldeduction
-                 return(
-                <>
-                <div key={Data.Fullname}>
-                <Link href={`/${Data._Fullname}`} passHref>
-                <a>{Data.Fullname}</a>
-                </Link>
-                <h2>${Grosspay}</h2>
-                <h2>${Netpay}</h2>
-                </div>
-                </>
-                 )
-              })}
-      </>       
-    )
+         const netPay=grosspay-totalDeduction
+         return(
+           <>
+           <ul key={data.fullName}>
+             <li>{data.fullName}</li>
+             <li>${grossPay}</li>
+             <li>${netPay}</li>
+           </ul>
+           </>
+           )
+           })}
+           </>
+  )
 }
 export async function getServerSideProps(){
     
@@ -241,10 +245,14 @@ export async function getServerSideProps(){
 export default Payroll
 ```
 The getServerSideprops data fetching method is offered by Nextjs check [here](https://nextjs.org/learn/basics/data-fetching), the asynchronous  getServerSideProps function enables preparation of the page in advance through pre-rendering of pages.
-In the function We have created a store for our url component that points to the api and passed it to the json() method which is a better text format for websites, if the employees data is not present then notFound will be returned and employees data will be returned if present.
-The key attribute is very important when creating a list, it should be unique in each element of data in the array. The JSX inside the return is legal to use  '<h3><h2></h2></h3>', the code output should be similar to this.
+In the function We have created a store for our url component called data that points to the api and passed it to the json() method which is a better text format for websites, the data now is stored in our store called employed.
+The if statement means that:
+- if the employees data is not present then notFound will be returned as true.
+- else employed will be passed as props called employees.
 
-![Browser output](/engineering-education/next.js-basics-with-payroll-system./image-two.png)
+The key attribute is very important when creating a list, it should be unique in each element of data in the array. The code output should be similar to this.
+
+![Browser output](/engineering-education1/content/articles/next.js-basics-with-payroll-system/image-two.png)
 
 At this point, we have our gross pay and net pay displayed on the web. Click [here](https://github.com/unholydisaster/payroll) for complete source code.
 
