@@ -3,18 +3,18 @@ layout: engineering-education
 status: publish
 published: true
 url: /page-transition-in-react-using-framer-motion/
-title: Page transistions in ReactJS using Framer Motion
-description: This tutorial will be an introduction to Framer motion. We will walk through what framer-motion is, and why and when we should use it. We will also be building a simple website to demonstrate page transistions using framer-motion.
+title: Page Transistions in React.js using Framer Motion
+description: This tutorial will be an introduction to Framer motion. What framer-motion is, and why and when we should use it. We will build a simple website to demonstrate page transistions using framer-motion.
 author: oyedele-temitope
-date: 2022-05-12T00:00:00-01:00
+date: 2022-06-15T00:00:00-11:00
 topics: []
 excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/page-transition-in-react-using-framer-motion/hero.jpg
-    alt: Page transistions in ReactJS using Framer Motion Hero Image
+    alt: Page transistions in ReactJS Framer Motion Hero Image
 ---
-React.js framework allows us to create single-page applications (commonly referred to as SPA). SPA is an application in which the pages would not reload for in-page actions like clicking a hyperlink or clicking a button.
+React.js framework allows us to create single-page applications (commonly referred to as SPA). A SPA is an application in which the pages do not reload for in-page actions like clicking a hyperlink or clicking a button.
 <!--more-->
 The webpage transition is so quick that it's difficult to notice when the DOM content changes, thus improving the application's user experience.
 
@@ -30,7 +30,7 @@ Framer motion is an animation library that helps us create animations. Its simpl
 
 It is an open-source, production-ready React motion library. Framer motion's animations are used on over 99 percent of websites.
 
-You can check out their website [here](https://www.framer.com/motion/) to learn more about the library. You can also other cool websites that are built with framer motion at [awwards](https://www.awwwards.com/websites/framer-motion/).
+You can check out their website [here](https://www.framer.com/motion/) to learn more about the library. You can also check out these other cool websites that are built with framer motion at [awwards](https://www.awwwards.com/websites/framer-motion/).
 
 The `motion` component in the framer motion core API can be related to an HTML element. To understand them better, let's build a project from scratch.
 
@@ -63,7 +63,7 @@ To animate the webpage, we use `framer-motion`:
 npm install framer-motion
 ```
 
-Finally, we start the application:
+Now we can start the application:
 
 ```bash
 npm start
@@ -80,7 +80,7 @@ We will be using the `Home.js`, `About.js`, and `Contact.js` to show the transit
 
 Let’s create a folder inside our `src` folder called `pages`. Inside this folder, create a file `Home.js` with the following code:
 
-```javascript
+```JavaScript
 import React from "react";
 import { motion } from "framer-motion";
 import React from "react";
@@ -105,7 +105,7 @@ Here, we created a sample homepage with some dummy content.
 
 Let’s move on to build other components. Now, create a file named `About.js`:
 
-```javascript
+```JavaScript
 import React from "react";
 
 function About() {
@@ -128,7 +128,7 @@ export default About;
 
 Next, we create a file called `Contact.js` and paste this in:
 
-```javascript
+```JavaScript
 import React from "react";
 
 function Contact() {
@@ -151,7 +151,7 @@ export default Contact;
 
 Let's also create our `Navbar` with:
 
-```javascript
+```JavaScript
 import React from "react";
 import { Link } from "react-router-dom";
 
@@ -212,7 +212,7 @@ In the above code:
 
 Next, we create a file called `AnimatedRoutes` and paste this:
 
-```javascript
+```JavaScript
 import React from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 import Home from "./Home";
@@ -247,7 +247,7 @@ The next thing we want to do is go back to our previous pages and update them as
 
 `Home.js`
 
-```javascript
+```JavaScript
 import React from "react";
 import { motion } from "framer-motion";
 
@@ -276,7 +276,7 @@ export default Home;
 
 `About.js`
 
-```javascript
+```JavaScript
 import React from "react";
 import { motion } from "framer-motion";
 
@@ -306,7 +306,7 @@ export default About;
 
 `Contact.js`
 
-```javascript
+```JavaScript
 import React from "react";
 import { motion } from "framer-motion";
 
@@ -334,7 +334,7 @@ function Contact() {
 export default Contact;
 ```
 
-In the above code:
+In the code above:
 - We import `motion` from `framer-motion` into all three pages. `motion` allows us to define how our animation will run.
 - We add some properties to `motion` like:
   - `initial`: This defines an element's initial state.
@@ -346,7 +346,7 @@ These are some of the extra props that we talked about earlier in the article.
 
 The last thing we’ll be doing is to return `Navbar` and `AnimatedRoutes`. In our `App.js`, paste this
 
-```javascript
+```JavaScript
 import { BrowserRouter as Router } from "react-router-dom";
 import Navbar from "./pages/Navbar";
 import AnimatedRoutes from "./pages/AnimatedRoutes";
@@ -354,7 +354,7 @@ import AnimatedRoutes from "./pages/AnimatedRoutes";
 
 Here, we imported our router. We’ll return our `navbar` and `AnimatedRoutes` by wrapping them inside our `Router` as shown:
 
-```javascript
+```JavaScript
 <Router>
   <Navbar />
   <AnimatedRoutes />
@@ -375,6 +375,8 @@ In this tutorial, we learned about framer motion as a tool for making page trans
 You can check out the source code [here](https://github.com/oyedeletemitope/page-transition-in-react-using-framer-motion).
 
 To learn more about framer-motion, it is suggested to go through [their documentation](https://www.framer.com/docs/examples/).
+
+Happy coding!
 
 ---
 Peer Review Contributions by: [Srishilesh P S](/engineering-education/authors/srishilesh-p-s/)
