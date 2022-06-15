@@ -1,4 +1,3 @@
-<<<<<<< HEAD:content/articles/next.js-basics-with-payroll-system/index.md
 # Next.js basics with payroll system
 Welcome to Next.js, the React framework thats meant for Production because only the needed CSS and Javascript are loaded by the users browser making it extreamly fast. Next.js unlike React.js needs zero setup for the creation of an API by using the file system this saves alot of development time and cost.
 This tutorial will equip you with the basic arithmetic operators in Next.js and how to effectively use them in functions, for calculations needed in software programming. 
@@ -12,35 +11,16 @@ This tutorial will equip you with the basic arithmetic operators in Next.js and 
 - [Fetching Payroll Data and Computing Calculations in Next.js](#Fetching-Payroll-Data-and-Computing-Calculations-in-Next.js)
 - [Conclusion](#Conclusion)
 - [Reference](#Reference)
-=======
-In this tutorial, we learn basics of Next.js and how we can use them effectively to build a payroll system. 
-
-### Table of contents
-- [Table of contents](#table-of-contents)
-- [Prerequisites](#prerequisites)
-- [Next.js environment setup](#nextjs-environment-setup)
-- [Introduction to Payroll System](#introduction-to-payroll-system)
-- [Payroll Arithmetic Calculations](#payroll-arithmetic-calculations)
-- [Creating a JSON File and Functions in Next.js](#creating-a-json-file-and-functions-in-nextjs)
-- [Fetching Payroll Data and Computing Calculations in Next.js](#fetching-payroll-data-and-computing-calculations-in-nextjs)
-- [Conclusion](#conclusion)
-- [Reference](#reference)
->>>>>>> cfec1073cf7d82e25ccce56452bacfa2d7bbf13a:content/articles/building-a-payroll-system-with-nextjs/index.md
 
 ### Prerequisites
-To follow along, the reader should have the following:
-- Basic knowledge of Javascript.
-- Basic knowledge of React.js and Next.js.
-- Fully set development environment.
+In order to follow along, you will need to have the following:
+1. Basic knowledge of Javascript.
+2. Basic knowledge of React.js and Next.js.
+3. Fully set development environment.
 
-### Next.js environment setup
-In this tutorial, we will use Node.js will be needed for the javascript runtime needed.
 
-<<<<<<< HEAD:content/articles/next.js-basics-with-payroll-system/index.md
 ### Next.js Environment Setup
 In this tutorial we will use Next.js, Node.js will also be needed for creation of a server which provides a runtime environment which is essential to program debugging and development.
-=======
->>>>>>> cfec1073cf7d82e25ccce56452bacfa2d7bbf13a:content/articles/building-a-payroll-system-with-nextjs/index.md
 You can download Node.js [here](https://nodejs.org/en/download/) if you don't have it installed.
 Type this in a fresh command-line interface to install Next.js.
 
@@ -78,11 +58,7 @@ The net pay is calculated by deducting all authorized withholdings and pay deduc
 
 This is the project workspace created earlier.
 
-<<<<<<< HEAD:content/articles/next.js-basics-with-payroll-system/index.md
 ![VSWorkspace](/engineering-education1/content/articles/next.js-basics-with-payroll-system/image-one.png)
-=======
-![VSWorkspace](/engineering-education/building-a-payroll-system-with-nextjs/folder-structure.png)
->>>>>>> cfec1073cf7d82e25ccce56452bacfa2d7bbf13a:content/articles/building-a-payroll-system-with-nextjs/index.md
 
 We need timesheet data but in our case, we are going to create it locally and store it in our file system.
 In a real system, the data will come from a database either from an external timekeeping system or inbuilt.
@@ -274,13 +250,9 @@ The if statement means that:
 - if the employees data is not present then notFound will be returned as true.
 - else employed will be passed as props called employees.
 
-<<<<<<< HEAD:content/articles/next.js-basics-with-payroll-system/index.md
 The key attribute is very important when creating a list, it should be unique in each element of data in the array. The code output should be similar to this.
 
 ![Browser output](/engineering-education1/content/articles/next.js-basics-with-payroll-system/image-two.png)
-=======
-![Browser output](/engineering-education/building-a-payroll-system-with-nextjs/demo.png)
->>>>>>> cfec1073cf7d82e25ccce56452bacfa2d7bbf13a:content/articles/building-a-payroll-system-with-nextjs/index.md
 
 At this point, we have our gross pay and net pay displayed on the web. Click [here](https://github.com/unholydisaster/payroll) for complete source code.
 
@@ -295,6 +267,4 @@ Happy coding!
 ### Reference
 - [Introduction to Next.js](https://Nextjs.org)
 - [Payroll system](https://www.betterplace.co.in/blog/3-stages-of-payroll-processing/amp)
-
-
 
