@@ -26,13 +26,15 @@ pipeline {
         string(credentialsId: 'www.section.io-kei-user-token',
           variable: 'KEI_USER_TOKEN')
         ]) {
-          // echo "KEI_USER_TOKEN: ${env.KEI_USER_TOKEN}"
           sh 'echo "$DOCKER_PASSWORD" | docker login --username=$DOCKER_USERNAME --password-stdin'
           sh 'curl -LO https://storage.googleapis.com/kubernetes-release/release/v1.19.6/bin/linux/amd64/kubectl && \
               chmod +x ./kubectl && \
               mv ./kubectl /usr/local/bin/kubectl'
           sh 'make deployKEI'
         }
+      }
+      steps {
+        build quietPeriod: 180000, job: 'purge-enged-varnish-cache'
       }
     }
   }
