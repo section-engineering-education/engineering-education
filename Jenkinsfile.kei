@@ -32,7 +32,7 @@ pipeline {
               mv ./kubectl /usr/local/bin/kubectl'
           sh 'make deployKEI'
         }
-        build quietPeriod: 180000, job: 'purge-enged-varnish-cache'
+        build quietPeriod: 15, job: 'purge-enged-varnish-cache'
       }
     }
   }
