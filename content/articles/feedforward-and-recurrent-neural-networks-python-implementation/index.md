@@ -4,10 +4,10 @@ status: publish
 published: true
 url: /feedforward-and-recurrent-neural-networks-python-implementation/
 title: Feed-forward and Recurrent Neural Networks Python Implementation
-description: In this article, we will learn about feed-forward neural network and recurrent neural network. Also, we will learn to implement both using Python.
+description: In this article we will learn about feed-forward neural network and recurrent neural network using Python.
 author: vincent-kimanzi
-date: 2022-05-25T00:00:00-23:10
-topics: [Machine Learning]
+date: 2022-06-16T00:00:00-12:10
+topics: [Machine Learning, Languages]
 excerpt_separator: <!--more-->
 images:
 
@@ -19,8 +19,9 @@ A computational learning system that understands and translates data inputs in o
 In this tutorial, we will discuss feed-forward and recurrent neural networks. We'll work our way up to the recurrent neural network starting with the feed-forward neural network. Both networks will be implemented in python, and their differences will be examined. 
 
 ### Prerequisites
+To follow along the reader should have the following:
 - Have a basic knowledge of [Python](https://www.python.org/).
-- Have the python environment of your choice installed.
+- Have the Python environment of your choice installed.
 
 ### Table of contents
 - [Prerequisites](#prerequisites)
@@ -50,8 +51,9 @@ Neural networks mimic the human brain's ability to spot patterns in a dataset. W
 In this tutorial, we will be discussing:
 - Recurrent Neural Networks (RNN)
 - Feed-forward neural network (FFN)
+
 ### Importance of neural networks 
-Complex problems such as pattern recognition and facial recognition are solved with neural networks. Handwriting recognition for check processing, signal processing,  data analysis, speech-to-text transcription, and weather forecasting are a few other examples.
+Complex problems such as pattern recognition and facial recognition are solved with neural networks. Handwriting recognition for check processing, signal processing, data analysis, speech-to-text transcription, and weather forecasting are a few other examples.
 
 You can learn more about them [here](https://mindmajix.com/neural-network-in-artificial-intelligence).
 
@@ -125,6 +127,7 @@ d3 = q2.dot(a3) + c3
 
 probs = num.exp(d3) / num.sum(num.exp(d3), axis=1, keepdims=True)
 ```
+
 > How the weighted sum of the input is transformed into an output from a layer of the network is defined by an activation function.
 
 In the above code:
@@ -167,6 +170,7 @@ from sklearn.metrics import mean_squared_error#Mean squared error regression los
 import math#Mathematical functions must be applied to any functions that you employ.
 from pandas import read_csv#will be used to return a new DataFrame with the data and labels from the CSV file.
 ```
+
 #### Create a simple RNN and define weights
 Below we create a model that includes a SimpleRNN layer and a Dense layer. Afterward, they are utilized to learn sequential data.
 
@@ -234,7 +238,7 @@ Computational Prediction [[-4.47498683]]
 ```
 
 In the above code:
-- We provide the network with an input of $x$ and let it generate output for three-time steps.
+- We provided the network with an input of $x$ and let it generate output for three-time steps.
 - We then figured out what the hidden units were doing at each of the first three points in time. 
 - The zero vector is used to set the value of $d0$. $d3$ and $x3$ are used to calculate $c3$. We don't need an activation function because we work with linear units.
 
@@ -316,13 +320,13 @@ Output:
 ![Plot](/engineering-education/feedforward-and-recurrent-neural-networks-python-implementation/plot.png)
 
 
-> The red line Separates the training and test examples.
+> The red line separates the training and test examples.
 
-In the above codeL
+In the above code:
 - You read the data from an URL to get a percentage of the data for the test, and then you can divide that percentage by the percentage of train data. The train and test data are returned as single-dimensional arrays once the data has been scaled.
 - We begin by creating rows of non-overlapping time steps for Keras model training. This is done in preparation for training with time-series data.
 - We create the RNN model and train.
-- Afterward, we calculate the mean square error, which measures how far the actual values deviate from the forecast ones.
+- Afterward, we calculate the mean square error, which measures how far the actual values deviate from the forecasted ones.
 - In the end, we plot the result using `plot_result()` method.
 
 You can run the above code [here](https://colab.research.google.com/drive/12qCImoXnP-WesLZXJZzRqZ0FMlsvEjwc?usp=sharing).
@@ -330,10 +334,10 @@ You can run the above code [here](https://colab.research.google.com/drive/12qCIm
 ### Difference between RNN and Feed-forward neural network
 - In contrast to feedforward networks, recurrent neural networks feature a single weight parameter across all network layers. Reinforcement learning can still be achieved by adjusting these weights using backpropagation and gradient descent.
 - Unlike recurrent neural networks, which continuously feed information from input to output, feedforward neural networks constantly feed data back into the input for further processing and final output.
-- Recurrent neural networks contain a feedback loop that allows data to be recycled back into the input before being forwarded again for further processing and final output, whereas feedforward neural networks just forward data from input to output. Data can only flow in one direction in feedforward neural networks. Data from prior levels can't be saved because of this forward traveling pattern; hence there is no internal state or memory. RNN, on the other hand, uses a loop for cycling through the data, allowing it to keep track of both old and new information.
+- Recurrent neural networks contain a feedback loop that allows data to be recycled back into the input before being forwarded again for further processing and final output. Whereas feedforward neural networks just forward data from input to output. Data can only flow in one direction in feedforward neural networks. Data from prior levels can't be saved because of this forward traveling pattern; hence there is no internal state or memory. RNN, on the other hand, uses a loop for cycling through the data, allowing it to keep track of both old and new information.
 
 ### Conclusion
-In this tutorial, we learned about both feed-forward and recurrent neural networks. We also learned about their implementations using python language, and in addition, we covered their difference. 
+In this tutorial, we learned about both feed-forward and recurrent neural networks. We also learned about their implementations using Python language, and in addition, we covered their difference. 
 
 Find the whole code for this tutorial [here](https://github.com/vincentkims49/NeuralNetworks.git).
 
