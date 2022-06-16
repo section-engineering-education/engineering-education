@@ -3,37 +3,36 @@ layout: engineering-education
 status: publish
 published: true
 url: /expose-localhost-urls-with-signed-certificate/
-title: Securing Localhost URLs using Ngrok and self-signed Certificates in Django
-description: This article aims to build a custom Django application that exposes endpoints and configures a self-signed SSL certificate to secure the endpoints. Finally, it will direct the reader on how to expose the secured endpoint using Ngrok.
+title: Securing Localhost URLs using Ngrok and Self-Signed Certificates in Django
+description: This article aims to build a custom Django application that exposes endpoints and configures a self-signed SSL certificate to secure the endpoints. This article will direct the reader on how to expose the secured endpoint using Ngrok.
 author: phina-kersly
-date: 2022-05-25T00:00:00-16:15
-topics: [API, Languages]
+date: 2022-06-16T00:00:00-11:45
+topics: [Security]
 excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/expose-localhost-urls-with-signed-certificate/hero.jpg
-    alt:  Securing Localhost URLs using Ngrok and self-signed Certificates in Django Image
+    alt:  Securing Localhost URLs Ngrok self-signed Certificates Django Image
 ---
-
-Developing application locally is fast and reliable in response time and debugging processes as it does not need an internet connection. However, it comes with some challenges though. 
+Developing applications locally is fast and reliable in response time and debugging processes as it does not need an internet connection. However, it comes with some challenges though. 
 <!--more-->
-For instance, let us say you want to build an API that uploads images to a server and an android application that consumes your API  on a mobile phone with your computer as a server. Then, it is efficient to use Ngrok to expose the endpoints.
+For instance, let us say you want to build an API that uploads images to a server and an Android application that consumes your API on a mobile phone with your computer as a server. Then, it is efficient to use Ngrok to expose the endpoints.
 
-When the images are uploaded to a static file folder in your application, the application constructs a static URL that can be used to access the images automatically. However, the URL appears in the format `http://localhost/media.imagename.png`, but the android studio cannot work with `HTTP` resources. So instead, it uses `HTTPS` resources.
+When the images are uploaded to a static file folder in your application, the application constructs a static URL that can be used to access the images automatically. However, the URL appears in the format `http://localhost/media.imagename.png`, but Android studio cannot work with `HTTP` resources. So instead, it uses `HTTPS` resources.
 
 This tutorial aims at going around this problem by creating a self-signed certificate and making our site a trusted source so that when Ngrok exposes our endpoint to the public, our images appear as if they have come to form a trusted source.
 
 We will build a Django Posts API and test the scenarios using REST frameworks browsable API.
 
 ### Prerequisites
-- A good understanding of [Django.](https://www.djangoproject.com/)
-- Knowledge of [Python programming.](https://www.python.org/)
+To follow along the reader should have the following:
+- A good understanding of [Django](https://www.djangoproject.com/).
+- Knowledge of [Python programming](https://www.python.org/).
 - Working with [REST Framework](https://www.django-rest-framework.org/).
-- A code editor, most preferably [VS Code](https://code.visualstudio.com/) or Pycharm
+- A code editor, most preferably [VS Code](https://code.visualstudio.com/) or Pycharm.
 
-### Getting Started
-To get started, create a virtual environment and install Django. Django is a Python framework for building scalable applications.
-
+### Getting started
+To get started, create a virtual environment and install Django. Django is a Python framework used for building scalable applications.
 
 ```bash
 pip install Django 
@@ -81,7 +80,6 @@ INSTALLED_APPS = [
 ]
 ```
 
-
 #### Models
 Models are like data classes that specify how the data is stored in the database. For example, they specify fields in a record regarding data type and space it occupies in memory.
 
@@ -97,8 +95,9 @@ class Article(models.Model):
     def __str__(self):
         return self.title
 ```
+
 #### Serializers
-Create a file called `serializers.py` in the same folder as `models.py`. This file contains the logic for converting the data classes to JSON that other applications can consume
+Create a file called `serializers.py` in the same folder as `models.py`. This file contains the logic for converting the data classes to JSON that other applications can consume.
 
 In the `serializers.py` file, add the following code snippets:
 
@@ -163,7 +162,6 @@ In this section, we will set our media URL so that the application can reconstru
 
 In the setting.py file, add the following snippet.
 
-
 ```py
 MEDIA_URL = "/media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
@@ -204,7 +202,6 @@ Right now, if we navigate to the `http://127.0.0.1:8000/blogblog/`, we can creat
 
 ```
 
-
 However, the post image URL is not secure. We need to make sure that our images are secure so that we have something of this sort:
 
 ```bash
@@ -214,7 +211,7 @@ However, the post image URL is not secure. We need to make sure that our images 
 ```
 
 ### Generating a self-signed certificate
-To generate a self-signed SLL certificate, run the following command in the terminal.
+To generate a self-signed SSL certificate, run the following command in the terminal.
 
 ```bash
 brew install mkcert
@@ -232,7 +229,7 @@ Now we need to generate the certificate for our local application. In the root f
 mkcert -cert-file cert.pem -key-file key.pem localhost 127.0.0.1
 ```
 
-Next, we need to set up Django to run with the HTTPS server. First, execute the command below, then add the `sslserver` to the installed apps list.
+Next, we need to set up Django to run with the HTTPS server. Execute the command below, then add the `sslserver` to the installed apps list.
 
 ```bash
 pip install django-sslserver
@@ -265,9 +262,9 @@ ngrok http https://localhost:8000
 
 This command will generate a URL on the terminal that will be secured when pasted on the browser. However, it would be best to allow either connection from all hosts or the specific URL generated by ngrok.
 
-![Ngrok Generated URL](/engineering-education/expose-localhost-urls-with-signed-certificatengrok-generated-url.png)
+![Ngrok Generated URL](/engineering-education/expose-localhost-urls-with-signed-certificate/ngrok-generated-url.png)
 
-Open the settings.py file, add the url or use `*` to allow connections from all hosts in the ALLOWED_HOSTS section.
+Open the settings.py file, add the URL or use `*` to allow connections from all hosts in the ALLOWED_HOSTS section.
 
 ```py
 ALLOWED_HOSTS = ['*']
@@ -277,8 +274,12 @@ The images are rendered as secure if we head over to the browser, as shown below
 
 ![Secure endpoint images](/engineering-education/expose-localhost-urls-with-signed-certificate/secure-endpoint-images.png)
 
-### Conclsuion
-We wrote a Django REST API using the Django REST framework in this article. Then, we tested our API locally and later exposed it using Ngrok. Next, we installed a custom Certificate Authority in our local machines and then generated a self-signed certificate to secure our localhost endpoints. Lastly, we tested the secured endpoints to see if they were secured.  
+### Conclusion
+We wrote a Django REST API using the Django REST framework in this article. Then, we tested our API locally and later exposed it using Ngrok. 
+
+Next, we installed a custom Certificate Authority in our local machines and then generated a self-signed certificate to secure our localhost endpoints. Lastly, we tested the secured endpoints to see if they were secured.  
+
+Happy coding!
 
 ---
 Peer Review Contributions by: [Jerim Kaura](/engineering-education/authors/jerim-kaura/)
