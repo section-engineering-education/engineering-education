@@ -222,8 +222,10 @@
   // On page load, handle insights, comments and pageviews.
   document.addEventListener("DOMContentLoaded", async function() {
     const getPageViews = (urls) => {
+      // Filter out empty strings.
       const filteredUrls = urls.filter(item => item);
 
+      // Return out of function if array is empty.
       if (!filteredUrls.length) {
         return;
       }
@@ -231,6 +233,7 @@
       let totalNumPageViews = 0;
       const urlRegex = /(http:\/\/localhost:1313\/)|(https:\/\/beta.section.io\/engineering-education\/)|(https:\/\/www.section.io\/engineering-education\/)/gi;
       const trimmedUrls = urls.map(url => url.replace(urlRegex, ''));
+
       const handleError = response => {
         if (!response.ok) {
           throw Error(response.statusText);
@@ -250,22 +253,23 @@
         .then(data => {
           if (data.length) {
             data.forEach(item => {
+              // Add pageviews to the sum.
               totalNumPageViews += parseInt(item.pageViews);
-              const numPageViews = parseInt(item.pageViews).toLocaleString();
 
+              // Prettify and display number of page views for each article.
+              const numPageViews = parseInt(item.pageViews).toLocaleString();
               const pageViewsEl = document.querySelector(`[data-slug="${item.url.substring(1)}"]`);
               const parentElement = pageViewsEl.closest('.page-views');
               pageViewsEl.innerText = numPageViews;
               parentElement.classList.add('visible');
             })
-            
+
             // Add totalNumPageViews.
             const totalPageViewsElement = document.getElementById('totalPageViews');
             totalPageViewsElement.innerText = totalNumPageViews.toLocaleString();
           }
         })
         .catch(err => console.log('err:', err));
-
     }
 
     // Request all article data from Hyvor talk - this will allow us to use 
