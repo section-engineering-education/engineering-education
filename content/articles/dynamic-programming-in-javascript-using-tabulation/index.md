@@ -1,5 +1,5 @@
 ### Dynamic Programming In Javascript Using Tabulation
-Tabulation is a technique used to solve dynamic programming problems. You first fill up a table and then compute the solution to the problem based on the result on the table. It is a Bottom-Up method. We start solving the problems from the base cases (bottom) and gathering answers to the top. Tabulation implementation is iterative in nature.
+Tabulation is one of the ways used when solving dynamic programming problems. You start by filling up a table and then figure out the solution to the problem based on the result on the table. It is a Bottom-Up method. We start solving the problems from the base cases (bottom) and gathering answers to the top. Tabulation implementation is iterative.
 
 The advantage of using tabulation is that It‘s fast as we directly access previous states from the table. If all sub-problems must be solved once, tabulation is better because all the entries must be filled one by one.
 
@@ -8,10 +8,8 @@ To effectively understand the tutorial the reader will need the following:
 - A basic understanding of Javascript.
 - A suitable IDE such as js complete or VS Code.
 - Basic understanding of Dynamic programming.
+> NB: After writing your code in js complete, in your chrome browser click on the navigation menu on the top right side of the browser, navigate to more tools then select developer tools to open the console. The console displays the output.
 
-> NB:After writting your code in js complete, in your chrome browser click on the navigation menu on the top right side of the browser, navigate to more tools then select developer tools to open the console.The console displays the output.
-
- 
 ### Key takeaways
 - What is tabulation?
 - What is iteration?
@@ -22,7 +20,7 @@ To effectively understand the tutorial the reader will need the following:
 - Writing tabulation code.
 
 ### Visualizing the problem
-You have to comprehend the problem first before tackling it. In this tutorial, we will be working with a grid traveler problem. For example, GridTraveler (1,1) should return one because there is only one way to travel as shown below:
+You have to comprehend the problem first before tackling it. In this article, we will be solving a grid traveler problem. For example, GridTraveler (1,1) should return one because there is only one way to travel as shown below:
 
 |1,1 |
 |:---:|
@@ -36,14 +34,13 @@ As shown above you can travel using these ways:
 - Right, Down, Right
 - Down, Right, Right
 
-You have to visualize your grid traveler problem as a table. The table should be related to the input size.
-When creating a 2-dimensional table to illustrate the grid, figure out the scope of your table based on the problem input. Then initialize the values within the table. Make sure to select compatible types e.g if your problem asks you to return an integer, then initialize the values of your table with integers.
+You have to visualize your grid traveler problem as a table. The table should be related to the input size. When creating a 2-dimensional table to illustrate the grid, figure out the scope of your table based on the problem input. Then initialize the values within the table. Make sure to select compatible types e.g if your problem asks you to return an integer, then initialize the values of your table with integers.
 
 After initializing the table with default values select a significant seed value. The selected seed value should guide you in filling the rest of the table. In our grid traveler table, we will begin with a one-by-one grid where the answer is obvious, that will be the foundation upon which we fill the table.
 
 Then iterate through the table. First, look at the problem to figure out the logic that fills other positions of the table according to the current position.
 
-In our grid traveler problem, we are looking at the right or the unit downside of our current position. It's up to us to figure out the logic of our problem.
+In our grid traveler problem, we are looking at the right or the downside grid of our current position. This will enable us to compute the logic of our problem.
 
 Concentrate on the choices you have in any case of the problem. For example, do you move rightward? Or do you move downward? In our grid.
 
@@ -54,24 +51,24 @@ We will be going through a grid traveler of a two-by-two grid, hence our output 
 
 After setting the dimensions for our table. We will figure out the seed values to use. We will count the number of ways to travel through the grid by beginning in the top left corner of the grid.
 
-The initial value to pick is usually zero. Zero by zero will be zero. This is because if any of our sides contains zero, that means our grid contains nothing.Let's fillour grid with zero to make it simple to work with.
+The initial value to pick is usually zero. Zero by zero will be zero. This is because if any of our sides contains zero, that means our grid contains nothing. Let's fill our grid with zero to make it simple to work with.
 
-Index one by one should return 1 as shown in the grid. This will give us a basis to implement our algorithm. What we want to do now is iterate via this table and produce the logic that merges the values in the table, basically merging distinct sub-problems to solve our problem.
+Index one by one should return 1 as shown in the grid. This will give us a basis to implement our algorithm. What we want to do now is iterate via this table and produce the logic that merges the values in the table, basically merging distinct sub-problems to solve our problem. 
+
 ![Iteration](iteration.jpeg)
 
+We will now take this one and then add it to our right and down neighbor. That turns them both into one as shown below. hence we will encode that on our table. We can only move to the right or downward contributing our current element to them. 
 
-We will now take this one and then add it to our right and down neighbor. That turns them both  into one as shown below. hence we will encode that on our table. We can only move to the right or downward contributing our current element to them.
 ![Iteration1](iteration1.jpeg)
 
+When we do the iterations it helps us to have consistent logic. We will continue adding them that way to fill up our table. In the last position, both neighbors will contribute one adding up to two.
 
-When we do the iterations it helps us to have consistent logic. We will continue adding them up that way until we fill up the whole table. In the last position, both neighbors will contribute one adding up to two.
-
-We have completed iterating via the whole grid. How can you move through a two-by-two grid? Well, there are actually two different ways you could do that.
+We have completed iterating via the whole grid. Hence, we can move through a two-by-two grid using two different ways:
 - Right,Down
 - Down,Right
-### Time and space complexity
 
-Before we implement the code, you can already predict its complexity. The complexity is determined by the dimensions of the table, The table has k rows and n columns. When we iterate via the table, it will take `O(kn)` time and a space for the 2d array, which is still `O(kn)` space.
+### Time and space complexity
+Before we implement the code, you can already predict its complexity. The complexity is determined by the dimensions of the table, The table has k rows and n columns. When we iterate via the table, it will take O(kn) time and a space for the 2d array, which is still O(kn) space.
 
 ### Code Implementation
 Let's work on implementing this grid traveler tabulation code. So we'll start by initializing our table. Then we will create the correct number of rows by calling Array. We will then add the dimensions.
@@ -80,40 +77,43 @@ const gridTraveller=(k,n)=>{
 const table=Array(k+1)
 ```
 We should then make sure the elements inside the array are sub-arrays. We will do that by calling fill on the array we just created. And thereafter, we will map over it.
+
 ```js
 .fill()
 .map(()=>Array(n+1));
 console.log(table);
 };
 ```
-When we map over the array, this ensures that every single element of the array is a new array. Now we have roughly k rows and n columns.
-When we print out, two by three:`console.log(gridTraveller(2,3));` and run the code above, it looks like we have a four-by-three array,This is because we increased our initial dimensions by one.
+When we map over the array, this ensures that every single element of the array is a new array. Now we have roughly k rows and n columns. When we print out, two by three:console.log(gridTraveller(2,3)); and run the code above, it looks like we have a four-by-three array, This is because we increased our initial dimensions by one.
 
-Now that we have the correct shape of our table, we need to insert some good starting /seed values. For now, we will fill the entire table with zeros. So let’s make a new sub-array by adding `.fill(0))` before `.map(()=>Array(n+1);`.When we run our [code](https://jscomplete.com/playground/s822954), we will have a table with zeros. Which will be neat compared to an empty table.
+Now that we have the correct shape of our table, we need to insert some good starting /seed values. For now, we will fill the entire table with zeros. So let’s make a new sub-array by adding .fill(0)) before .map(()=>Array(n+1);.When we run our [code](https://jscomplete.com/playground/s822954), we will have a table with zeros. Which will be neat compared to an empty table.
 
-When we add the code below, we will see the table at position one, one with exactly one. this is our base case.
+When we add the code below, the table at position `1,1` will be one. this is our base case.
+
 ```js
 table[1][1]=1;
 ```
-There's definitely only one way to travel through a one-by-one grid. Now we have the elements of one in position. We need to iterate through our table and fill in other parts. We will use nested loops for this.
+There's only one way to travel through a one-by-one grid. As demonstrated, now we have the elements of one in place. Let’s iterate through our grid to fill other parts. We will use nested loops for this.
+
 ```js
 for (let i = 0; i <= k; i++) {
 for (let j = 0; j <= n; j++) {
 ```
-We will now take our current element `i` and `j` at the table , and add it into our right and down neighbor.If our row is `i` and our column is `j`, we will perform some calculations on i and j. If we want to increment our right neighbor, we will look at the table at position `i, j +1`, which would be direct to our right.
+We will now take our current element `i` and `j` at the table , and add it into our right and down neighbor.If our row is i and our column is j, we will perform some calculations on i and j. If we want to increment our right neighbor, we will look at the table at position `i, j +1`, which would be direct to our right.
+
 ```js
 const current =table[i][j];
 table[i][j+1]+=current;//add to the right neighbor
 table[i+1][j]+=current;//adds to the down neighbor
 ```
-At this point, we have to be aware of what happens at the borders of our table, we know that if we're at the last position of a row if we do `j+1`, we are going to go out of bounds. And so to make sure we don't step out, on these increment expressions, we will need some conditional statements.
+Now, we should keep in mind what is going on  at the borders of our grid, if we're at the last part of a row and we do j+1, we will go out of our border. For us not to go out, on the increment expressions, let's add conditional statements.
 
-So, `if( j +1<= n)`, then we will increment to the end. Likewise,`if( i+1<= k)`, we will also increment. Hence `j` should use `n` because that's the number of columns and then `i` should use `k` because that is the number of rows.
+So, `if( j +1<= n)`, then we will increment to the end. Likewise,`if( i+1<= k)`, we will also increment. Hence j should use n because that's the number of columns and then i should use k because that is the number of rows.
 
-We are iterating through every area of our table, and we are going to take the elements at our current position, and add them into our right neighbor, as well as our down neighbor, only if they exist. Once we are done filling up the table, our final answer should be at position k, and right just the very bottom right corner.
+We are iterating through every area of our table, and we are going to take the elements at our current position, and add them into our right neighbor, as well as our down neighbor, only if they exist. After we  finish filling  the table, our final solution will be at point k at the  bottom right corner.
 
-Lastly `return table [k][n];`this stops the execution of our function and returns our value, then print 2 by 3, 3 by 3, 3 by 2,1 by 1, 4 by 4 and 2 by2 using 
-the code below and run your code:
+Lastly `return table [k][n]`;this stops the execution of our function and returns our value, then print 2 by 3, 3 by 3, 3 by 2,1 by 1, 4 by 4 and 2 by2 using the code below and run your code:
+
 ```js
 console.log(gridTraveller(2,3));
 console.log(gridTraveller(3,3));
