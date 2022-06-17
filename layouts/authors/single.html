@@ -64,13 +64,17 @@
           {{ $articleUrlsList = delimit $articleUrlsList ", "}}
 
           <div class="insights-section">
-            <div class="insight page-views" data-before="Total Number of Articles Written">
+            <div class="insight total-num-articles" data-before="Total Number of Articles Written">
               <img src="{{ if eq $.Site.Params.env "local" }}/{{ else }}/engineering-education/{{ end }}images/total-articles-icon.png" alt="Total Number of Articles Icon" />
               <p>{{ $numberOfArticles }}</p>
             </div>
             <div class="insight total-article-likes" data-before="Total Number of Article Likes">
               <img src="{{ if eq $.Site.Params.env "local" }}/{{ else }}/engineering-education/{{ end }}images/clapping-icon.png" alt="Total Number of Articles Icon" />
               <p id="totalArticleLikes">0</p>
+            </div>
+            <div class="insight total-page-views" data-before="Total Number of Article Page Views">
+              <img src="{{ if eq $.Site.Params.env "local" }}/{{ else }}/engineering-education/{{ end }}images/page-views-icon.png" alt="Total Number of Article Page Views" />
+              <p id="totalPageViews">0</p>
             </div>
           </div>
           
@@ -218,6 +222,15 @@
   // On page load, handle insights, comments and pageviews.
   document.addEventListener("DOMContentLoaded", async function() {
     const getPageViews = (urls) => {
+      // Filter out empty strings.
+      const filteredUrls = urls.filter(item => item);
+
+      // Return out of function if array is empty.
+      if (!filteredUrls.length) {
+        return;
+      }
+
+      let totalNumPageViews = 0;
       const urlRegex = /(http:\/\/localhost:1313\/)|(https:\/\/beta.section.io\/engineering-education\/)|(https:\/\/www.section.io\/engineering-education\/)/gi;
       const trimmedUrls = urls.map(url => url.replace(urlRegex, ''));
 
@@ -240,12 +253,20 @@
         .then(data => {
           if (data.length) {
             data.forEach(item => {
+              // Add pageviews to the sum.
+              totalNumPageViews += parseInt(item.pageViews);
+
+              // Prettify and display number of page views for each article.
               const numPageViews = parseInt(item.pageViews).toLocaleString();
-              const pageViewsEl = document.querySelector(`[data-slug="${item.url}"]`);
+              const pageViewsEl = document.querySelector(`[data-slug="${item.url.substring(1)}"]`);
               const parentElement = pageViewsEl.closest('.page-views');
               pageViewsEl.innerText = numPageViews;
               parentElement.classList.add('visible');
             })
+
+            // Add totalNumPageViews.
+            const totalPageViewsElement = document.getElementById('totalPageViews');
+            totalPageViewsElement.innerText = totalNumPageViews.toLocaleString();
           }
         })
         .catch(err => console.log('err:', err));
