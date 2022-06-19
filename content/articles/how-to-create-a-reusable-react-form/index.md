@@ -32,11 +32,13 @@ npx create-react-app my-form
 ```
 
 Then press enter to install.
-After installing, type `cd my-form` to go into my-form folder.
-Type `npm start` to start the development server. The React website can be seen on `http://localhost:3000/` in your system browser.
-When we create a react app with npx, there are some pre-defined codes installed from react by default that needs to be changed. Go to `http://localhost:3000/` in your browser app, A site displaying React logo will appear.
-
-Let's modify the react code. Open the `app.js` file in your visual studio code editor, we then delete all code within the div tag and add the following codes below.
+Then, we type in our terminal `cd my-form` to go into my-form folder.
+Next we type `npm start` to start our development server.Our React application can be seen on `http://localhost:3000`.
+We then need to change the pre-defined React code gotten by installation.
+Go to `http://localhost:3000` in your browser, A website showing the React logo will appear.
+Let's change the React code. 
+First we open the `app.js` file in our visual studio code editor,
+next we delete all code within the div tag and add the following codes below.
 
 ```javascript
 import React from 'react'; //for React and EJX
@@ -44,7 +46,7 @@ import './App.css' // for styles
 
 const App = () => {
   return (
-    <div className="App">
+    <div className={/*style name*/}>
       {/*Our codes wii be added here */}
     </div>
   );
@@ -137,7 +139,7 @@ We then define a function that will hold the dispatch that will trigger a change
 ```
 We then add a new property to our input called onChange and pass changeHandler to it.
 
-A screenshot of our Input.js file:
+Our Input.js file:
 ![Input](/engineering-education/how-to-create-a-reusable-react-form/input.png)
 
 #### step 3 - Creating a React hook component
@@ -376,24 +378,23 @@ A screenshot of our auth.js file:
 #### Step 5 - Adding Routes to show our contents
 We need to add Routes to our application. In order to see our components since we don't want to have our sign up and contact components on the home page, we need to create a route for the Auth file while the contact gets rendered in the App.js file.
 
-To add Route to our App.js file, we need to install and import it from react-router-dom into our `app.js` file
+To add Routes to our App.js file, we first need to install and import it from react-router-dom into our `app.js` file
 To install react-router-dom, we write in our terminal 
 `npm install react-router-dom`
  then press enter to install it
 
-Next we import BrowserRouter, Routes and Route from react-router-dom.
+Next we then import BrowserRouter, Routes and Route from react-router-dom.
 We wrap BrowserRouter in opening and closing tags, within it we wrap Routes also with opening and closing tags and wrap the Route with a self closing tag.
-We can't use Route without wrapping it with Routes, we'll get an error in our code if we do so.
-Within the Route tag we add two properties called path and element, the path accepts the location we want our component to be rendered and the element accepts the component we want to render to the DOM.
-We can see this below
+We can't render our element in Route without wrapping it with Routes.
+When rendering Route we need to add two properties called element and path, the element accepts the component we want to render to the DOM and the path accepts the location we want our component to be rendered.
+As shown below.
 
 ```javascript
-import './App.css';
-import { BrowserRouter, Routes, Route} from 'react-router-dom';
+import {Route, BrowserRouter, Routes} from 'react-router-dom';
 
 const App = () => {
   return (
-    <div className="App">
+    <div className={/*style name*/}>
       <BrowserRouter>
         <Routes>
             <Route/>
@@ -406,17 +407,16 @@ const App = () => {
 export default App;
 ```
 Then we import our Auth.js and Contact file into the App.js file and render it within the return bracket.
-IN our browser DOM when we visit `localhost:3000` we'll see the Contact page amd when we visit `localhost:3000/auth` we'll see the Auth page.
+In our browser DOM when we visit `localhost:3000` we'll see the Contact page amd when we visit `localhost:3000/auth` we'll see the Auth page.
 
 Our App.js file should look like this below
 
 ```javascript
-import './App.css';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import {Route, BrowserRouter, Routes} from 'react-router-dom';
 
 const App = () => {
   return (
-    <div className="App">
+    <div className={/*style name*/}>
       <BrowserRouter>
         <Routes>
             <Route path='/auth' element={<Auth/>}/>
@@ -430,8 +430,8 @@ const App = () => {
 export default App;
 ```
 ![App](/engineering-education/how-to-create-a-reusable-react-form/app.png)
-#### Conclusion
-In this tutorial, we learned:
+#### Summary
+In this lecture/tutorial, we learned:
 - React Forms.
 - How to create a reusable form.
 - How to create a custom React hook.
