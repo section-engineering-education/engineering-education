@@ -3,33 +3,32 @@ layout: engineering-education
 status: publish
 published: true
 url: /feature-selection-weka-python/
-title: Feature selection in Weka using Python
+title: Feature Selection in Weka using Python
 description: This tutorial will walk the reader through perfoming feature selection in weka using Python.
 author: paul-romans
-date: 2022-05-25T00:00:00-03:15
-topics: [Languages]
+date: 2022-06-19T00:00:00-10:15
+topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/feature-selection-weka-python/hero.jpg
     alt: Feature selection in Weka using Python Image
 ---
-
 Weka is a collection of machine learning algorithms for data mining tasks. Most of the operations on Weka are performed on the Graphical User Interface. However, this limits the users from the programming experience and understanding of the behind the scenes operations.
 <!--more-->
-This is the inspiration for this article, which sets to illustrate feature selection in WekaW by actually writing the python code for the implementation. 
+This is the inspiration for this article, which sets to illustrate feature selection in Weka by actually writing the Python code for the implementation. 
 
-### What is Feature Selection
+### What is feature selection
 Feature selection is a method of reducing the number of inputs supplied to a machine learning model such that only the relevant inputs are used. The technique is applied to improve the accuracy of the machine learning model. 
 
-### Types of Feature Selection
+### Types of feature selection
 There are three feature selection techniques; wrapper, filter, and embedded methods. The wrapper feature selection method creates several models with different subsets of the input features. It then selects the best performing model based on a performing matrix preset before the selection. 
 
-The filter feature selection takes the value of the relationship between each input variable and the target output. Then, the scores of each relationship are used to choose what attributes to be included in the dataset.
+The filter feature selection takes the value of the relationship between each input variable and the target output. Then, the scores of each relationship are used to choose what attributes are to be included in the dataset.
 
 The embedded method leverages the benefits of both wrapper and filter methods. In addition, it carefully selects the most critical attributes that contributed to the results of a particular training iteration.
 
-### Benefits of Feature Selection?
+### Benefits of feature selection?
 Feature selection is applied to improve the machine learning process and accelerate the speed at which the prediction is made. Since it only selects the essential variables, the time to utilise all the attributes in the data set is minimised. It also eliminates redundant and irrelevant features, which would have taken even more time.
 
 ### Prerequisites
@@ -38,7 +37,7 @@ To follow along with this tutorial, you should have the following:
 - Python Weka Wrapper
 - Open JDK 8
 
-### Setting up an Environment for Feature Selection
+### Setting up an environment for feature selection
 Fiets create a virtual environment using the command below:
 
 ```bash
@@ -53,7 +52,7 @@ source venv/bin/activate
 
 To set up the environment for the development, you need to install the following packages.
 
-```txt
+```bash
 cycler==0.11.0
 fonttools==4.30.0
 joblib==1.1.0
@@ -67,13 +66,14 @@ six==1.16.0
 tomli==2.0.1
 weka==1.0.6
 ```
+
 The easiest way to install them is by creating a `requirements.txt` file in the root directory where the virtual environment was created, then executing the command below:
 
 ```bash
 pip install -r requirements.txt
 ```
 
-Lastly, in this step, create a file named `feature-selection.py` and then import the required libraries as shown below. We will see how each library is used as we proceed.
+In this step, create a file named `feature-selection.py` and then import the required libraries as shown below. We will see how each library is used as we proceed.
 
 ```py
 import traceback
@@ -87,8 +87,8 @@ from weka.core.converters import Loader
 from weka.filters import Filter
 ```
 
-### Reading the Dataset
-We will start by reading the dataset. We will use the Diabetes Disease dataset, which you can find from [this link.](https://www.kaggle.com/datasets/mathchi/diabetes-data-set)
+### Reading the dataset
+We will start by reading the dataset. We will use the Diabetes Disease dataset, which you can find using [this link](https://www.kaggle.com/datasets/mathchi/diabetes-data-set).
 
 To load the dataset, use the code snippet below:
 
@@ -99,7 +99,7 @@ def load_dataset():
     return dataset
 ```
 
-### selection of the attributes
+### Selection of the attributes
 This step will first set a list of classifier algorithms we will use in the procedure. Then, these algorithms will be used to evaluate the model accuracy and determine which features give the most accurate classification.
 
 ```py
@@ -157,7 +157,7 @@ for classifier, result in results.items():
 return results
 ```
 
-### Working  on the main function
+### Working on the main function
 The main function is where all other functions are called for executions. The first thing here is to call the read data function to read the dataset we intend to use.
 
 ```py
@@ -209,7 +209,7 @@ def print_results(result_type, result):
 ```
 
 ### The driver code
-We need to specify the primary function that calls the JVM since the weka library needs JVM to operate. Create the function below, which will start the JVM when execution is needed and stop it once it is finished.
+We need to specify the primary function that calls the JVM since the Weka library needs JVM to operate. Create the function below, which will start the JVM when execution is needed and stop it once it is finished.
 
 ```py
 if __name__ == "__main__":
@@ -262,9 +262,11 @@ Attribute importance (heuristic):
 ```
 
 ### Conlcusion
-In this tutorial, we used the Weka wrapper library to demonstrate how to conduct feature selection using the python programming language. First, we loaded the data and used three algorithms to determine the most critical features in classifying the Diabetes dataset. Then, we finally showed the essential features selected by our program.
+In this tutorial, we used the Weka wrapper library to demonstrate how to conduct feature selection using the Python programming language. First, we loaded the data and used three algorithms to determine the most critical features in classifying the Diabetes dataset. Then, we showed the essential features selected by our program.
 
 You can find the code [here](https://replit.com/@paulromans/Feature-Selection#main.py), but you must set up the libraries to run it on your local machine.
+
+Happy coding!
 
 ---
 Peer Review Contributions by: [Jerim Kaura](/engineering-education/authors/jerim-kaura/)
