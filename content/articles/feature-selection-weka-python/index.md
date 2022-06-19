@@ -261,7 +261,7 @@ Attribute importance (heuristic):
     age: 6552.0908
 ```
 
-### Conlcusion
+### Conclusion
 In this tutorial, we used the Weka wrapper library to demonstrate how to conduct feature selection using the Python programming language. First, we loaded the data and used three algorithms to determine the most critical features in classifying the Diabetes dataset. Then, we showed the essential features selected by our program.
 
 You can find the code [here](https://replit.com/@paulromans/Feature-Selection#main.py), but you must set up the libraries to run it on your local machine.
