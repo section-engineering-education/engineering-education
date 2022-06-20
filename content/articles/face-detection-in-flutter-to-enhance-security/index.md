@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /using-dace-detection-in-flutter-to-enhance-security/
+url: /face-detection-in-flutter-to-enhance-security/
 title: Using face detection in flutter to enhance security
 description: This article will introduce the reader to Flutter face dection plugin and how to use it to enhance security
 author: naomi-wangari
@@ -11,7 +11,7 @@ topics: [Android]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/using-face-detection-in-flutter-to-enhance-security/hero.jpg
+  - url: /engineering-education/face-detection-in-flutter-to-enhance-security/hero.jpg
     alt: Using face detection in flutter to enhance security Hero Image
 ---
 
