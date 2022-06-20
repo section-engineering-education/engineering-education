@@ -2,8 +2,8 @@
 title: Mwaniki Njagi
 type: authors
 authors: mwaniki-njagi
-github: 'https://github.com/MwanikiNjagi'
-linkedin: 'https://www.linkedin.com/in/mwanikii-njagi-8560631b8/'
+github: https://github.com/MwanikiNjagi
+linkedin: https://www.linkedin.com/in/mwanikii-njagi-8560631b8/
 images:
 -url: /engineering-education/authors/mwaniki-njagi/avatar.jpg
 skills:["Python", "CAD", "SQL", "C++"]
