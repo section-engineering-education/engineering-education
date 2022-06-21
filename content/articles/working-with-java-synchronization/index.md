@@ -159,50 +159,59 @@ Let us look at an example program that uses synchronized blocks.
 Save it as `TestSynchronizedBlock1.java`
 
 ```java
-class Table
-{
-    void printTable(int n){
-        synchronized(this){//synchronized block
-            for(int i=1;i<=5;i++){
-                System.out.println(n*i);
-                try{
-                    Thread.sleep(10);
-                }catch(Exception e){System.out.println(e);}
-            }
-        }
-    }//end of the method
-}
-
-class MyThread1 extends Thread{
-    Table t;
-    MyThread1(Table t){
-        this.t=t;
-    }
-    public void run(){
-        t.printTable(5);
-    }
-
-}
-class MyThread2 extends Thread{
-    Table t;
-    MyThread2(Table t){
-        this.t=t;
-    }
-    public void run(){
-        t.printTable(100);
-    }
-}
-
-public class TestSynchronizedBlock1{
-    public static void main(String[] args){
-        Table obj = new Table();//only one object
-        MyThread1 t1=new MyThread1(obj);
-        MyThread2 t2=new MyThread2(obj);
-        t1.start();
-        t2.start();
-    }
-}
-```
+import java.util.concurrent.ExecutionException;
+ import java.util.concurrent.ScheduledThreadPoolExecutor;
+ import java.util.concurrent.TimeUnit;
+ 
+ class Table
+ {
+     void printTable(int n){
+         synchronized(this){//synchronized block
+             for(int i=1;i<=5;i++){
+                 System.out.println(n*i);
+                 try{
+                     Thread.sleep(10);
+                 }catch(Exception e){System.out.println(e);}
+             }
+         }
+     }//end of the method
+ }
+ class MyThread1 extends Thread{
+     Table t;
+     MyThread1(Table t){
+         this.t=t;
+     }
+     public void run(){
+         t.printTable(5);
+     }
+ }
+ class MyThread2 extends Thread{
+     Table t;
+     MyThread2(Table t){
+         this.t=t;
+     }
+     public void run(){
+         t.printTable(100);
+     }
+ }
+ public class TestSynchronizedBlock1{
+     public static void main(String[] args) throws ExecutionException, InterruptedException {
+         ScheduledThreadPoolExecutor scheduler = new ScheduledThreadPoolExecutor(2);
+         Table obj = new Table();//only one object
+         MyThread1 t1=new MyThread1(obj);
+         MyThread2 t2=new MyThread2(obj);
+         /*
+         Forcing the execution order of the threads by setting a delay of when they may run.
+         Even though we synchronized so that only one thread can access the critical section
+         at a time (using the synchronized block/method), the scheduling order of the threads
+         is still unpredictable
+          */
+         scheduler.schedule(t1, 0, TimeUnit.MILLISECONDS);
+         scheduler.schedule(t2, 20, TimeUnit.MILLISECONDS);
+         scheduler.shutdown();
+     }
+ }
+ ```
 The above code will output the following
 
 ```
@@ -236,48 +245,56 @@ First, a thread with the lock on the object must execute any synchronized method
 Let's look at an example program:
 
 ```java
-class Synchronization {
+package SynchImp;
 
-	public synchronized void greet(String tag) {
-		int x;
-		for (x = 1; x <= 2; x++) {
-			System.out.println("Hello : ");
-			try {
-				Thread.sleep(10);
-			} catch (InterruptedException ignored) {
-
-			}
-			System.out.println(tag);
-		}
-	}
-
-}
-
-class OurThreadExample extends Thread {
-	Synchronization b;
-	String tag;
-
-	public OurThreadExample(Synchronization b, String tag) {
-		super();
-		this.b = b;
-		this.tag = tag;
-	}
-
-	public void run() {
-		b.greet(tag);
-	}
-}
-
-public class SynchImp {
-	public static void main(String[] args) {
-		Synchronization b1 = new Synchronization();
-		OurThreadExample mt1 = new OurThreadExample(b1, "SECTION");
-		OurThreadExample mt2 = new OurThreadExample(b1, "ENGINEERING");
-		mt1.start();
-		mt2.start();
-	}
-}
-```
+import java.util.concurrent.ScheduledThreadPoolExecutor;
+ import java.util.concurrent.TimeUnit;
+ 
+ class Synchronization {
+    public synchronized void greet(String tag) {
+       int x;
+       for (x = 1; x <= 2; x++) {
+          System.out.println("Hello : ");
+          try {
+             Thread.sleep(10);
+          } catch (InterruptedException ignored) {
+          }
+          System.out.println(tag);
+       }
+    }
+ }
+ 
+ class OurThreadExample extends Thread {
+    Synchronization b;
+    String tag;
+    public OurThreadExample(Synchronization b, String tag) {
+       super();
+       this.b = b;
+       this.tag = tag;
+    }
+    public void run() {
+       b.greet(tag);
+    }
+ }
+ 
+ public class SynchImp {
+    public static void main(String[] args) {
+       ScheduledThreadPoolExecutor scheduler = new ScheduledThreadPoolExecutor(2);
+       Synchronization b1 = new Synchronization();
+       OurThreadExample mt1 = new OurThreadExample(b1, "SECTION");
+       OurThreadExample mt2 = new OurThreadExample(b1, "ENGINEERING");
+       /*
+         Forcing the execution order of the threads by setting a delay of when they may run.
+         Even though we synchronized so that only one thread can access the critical section
+         at a time (using the synchronized block/method), the scheduling order of the threads
+         is still unpredictable
+          */
+       scheduler.schedule(mt1, 0, TimeUnit.MILLISECONDS);
+       scheduler.schedule(mt2, 20, TimeUnit.MILLISECONDS);
+       scheduler.shutdown();
+    }
+ }
+ ```
 
 The code will output:
 
