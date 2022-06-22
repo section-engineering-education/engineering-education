@@ -4,7 +4,6 @@ type: authors
 authors: reuben-sunday
 github: 'https://github.com/OfficialRuby'
 linkedin: 'https://linkedin.com/in/reuben-sunday-98314115b'
-website: 'https://reubensunday.com'
 twitter: 'https://twitter.com/rubie_shell'
 images:
   - url: /engineering-education/authors/reuben-sunday/avatar.jpg
