@@ -66,11 +66,12 @@ Below is an example of how ARC works. The example begins with the class `Student
 }
 ```
 An initializer in the `Student` class creates the instance's `score` property and produces a signal to indicate that initialization is in progress. When an instance of the `Student` class is deallocated, it has a deinitializer that outputs a message for the deallocation operation.
-### Reference Cycles
+
+### Reference cycles
 A reference cycle is just one or more elements that refer to each other in such a way that if written on paper with arrows denoting their dependencies, they will have a "cycle".
 There are three types of reference cycles in ARC; strong, weak, and unowned references
 
-### Strong References Cycles
+### Strong references cycles
 A strong reference is an object whose deallocation is not done by ARC. A strong reference cycle is a group of class instances that can keep strong links to each other and keep other instances running.
  
 ```bash
@@ -91,16 +92,18 @@ var anderson : Player? = Player(inName: "Anderson", inEmdid: "100", inTitle: "St
 anderson = nil    
 ```
 
-The code above defines a class titled `Player` with the ivars `name`, `empid`, and `title`. We construct an example of class `Player` named `anderson` and provide all of the class's data to it. By doing so, it gives `anderson` a strong reference to the object.
-ARC memory management does not deallocate any objects with strong references. 
-Finally, we nil the reference to the object `anderson`, which deallocates the object it was referencing; this is how the `deinit()` function of the class `Player` is called before it deallocates the object.
+The code above defines a class titled `Player` with the vars `name`, `empid`, and `title`. We construct an example of class `Player` named `anderson` and provide all of the class's data to it. By doing so, it gives `anderson` a strong reference to the object.
+
+ARC memory management does not deallocate any objects with strong references. Next, we nil the reference to the object `anderson`, which deallocates the object it was referencing; this is how the `deinit()` function of the class `Player` is called before it deallocates the object.
 
 #### Breaking a strong reference cycle
 When working with class-type variables, Swift provides two methods for resolving strong reference cycles. The use of weak and unowned references. These reference types allow one instance in a reference cycle to link to another without maintaining a stronghold on the latter. A strong reference cycle will not be formed even though the instances refer to each other. 
 
 #### Weak references cycles
 A weak reference does not maintain a strong hold on the object it refers to. When it does so, it does not prevent ARC from discarding it. This action keeps the reference from forming a strong reference cycle. The `weak` term precedes a variable declaration to denote a weak reference.
+
 Since a weak reference does not maintain a firm hold on the instance it links to, the instance can be deallocated whereas the weak reference is already pointing to it. As a result, once the instance it refers to is deallocated, ARC immediately changes a weak reference to `nil`. Weak references are often stated as variables instead of constants of an arbitrary kind since their values might be altered to `nil` at execution.
+
 Below is the process of breaking a strong reference cycle using weak references. `Goals` is a variable property defined by the `Player` class. The `goals` property is optional and is implicitly unwrapped. A constant property of type `Player` is defined in the `Goals` class. It also has an initializer that takes a `Player` instance as a parameter.
 
 ```bash
@@ -155,6 +158,7 @@ class Goals {
 
 #### Unowned reference cycles
 The behavior of unowned references is identical to that of weak references. They do not, however, raise the retained count by one. Unowned, unlike weak references, do not need to be an option since they are not changed to nil upon deallocation. You should only use unowned references when you know for sure that the object won't be nil after it has been set.
+
 In the previous example, we had a strong reference cycle. An instance of a `player` maintains a strong reference to `goals`, and `goals` maintain a strong link to the `player`. Keep in mind that attributes are strong by default. The strong reference cycle can be broken by making the `Goals` class's player property **unowned**.
 
 ```bash
@@ -186,10 +190,9 @@ Unowned references are always assumed to be valuable. The `Goals` instance that 
 ### How to detect reference cycles using Xcode visualization tools
 Developers utilize Xcode to create applications for Apple's numerous platforms. It can also be used when you want to identify reference cycles in Apple's software. Below is a process used to identify reference cycles.
 
-
 **Step one:** In Xcode, launch the Starter project in the Contacts directory. Create and run the project and the following should be seen.
 
-![](/section/engineering-education/arc1.png)
+![](/engineering-education/automatic-reference-counting-in-swift/arc1.png)
 
 The above screenshot shows a contacts app. 
 
@@ -199,11 +202,11 @@ However, there is a serious flaw in the project: A reference cycle hidden some
 
 **Step three:** Scroll to the bottom of Xcode and select the Debug Memory Graph option as the program is still operating.
 
-![](/section/engineering-education/arc2.png)
+![](/engineering-education/automatic-reference-counting-in-swift/arc2.png)
 
 **Step four:** In the Debug Navigator, check the Runtime Problems. They're identified by purple squares having white exclamation points within, like the ones shown here:
 
-![](/section/engineering-education/arc3.png)
+![](/engineering-education/automatic-reference-counting-in-swift/arc3.png)
 
 **Step five:** Pick one of the affected contact objects in the navigator. The cycle in between is brought out. By referencing each other, the contact and number objects retain one another. This means there is a strong reference cycle between the two. These problems should prompt a user to examine the code. Observe the fact that a contact variable can exist without a variable number. On the other hand, a number would not exist without contact.
 
