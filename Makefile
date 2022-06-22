@@ -38,6 +38,7 @@ deploy:
 	@rm .env
 
 deployKEI:
+	docker system prune -f
 	bash ./ci/kei-build-push.sh main
 
 deployKEIBeta:
