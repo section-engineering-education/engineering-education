@@ -192,26 +192,28 @@ Developers utilize Xcode to create applications for Apple's numerous platforms. 
 
 **Step one:** In Xcode, launch the Starter project in the Contacts directory. Create and run the project and the following should be seen.
 
-![](/engineering-education/automatic-reference-counting-in-swift/arc1.png)
+![Arc 1](/engineering-education/automatic-reference-counting-in-swift/arc1.png)
 
 The above screenshot shows a contacts app. 
 
-However, there is a serious flaw in the project: A reference cycle hidden somewhere. Because the leaking items are tiny, a user will not notice the problem for a long time, and their size causes the leak much more difficult to track. Xcode 10 includes an in-built tool that can assist users in finding even the tiniest leaks.
+However, there is a serious flaw in the project: A reference cycle is hidden somewhere. Because the leaking items are tiny, a user will not notice the problem for a long time, and their size causes the leak to be much more difficult to track. Xcode 10 includes an in-built tool that can assist users in finding even the tiniest leaks.
 
 **Step two:** Re-build and launch the program. By sliding two or three contacts to the left to delete them or just tap delete, you can delete three contacts. Isn't it true that they've vanished entirely?
 
 **Step three:** Scroll to the bottom of Xcode and select the Debug Memory Graph option as the program is still operating.
 
-![](/engineering-education/automatic-reference-counting-in-swift/arc2.png)
+![Arc 2](/engineering-education/automatic-reference-counting-in-swift/arc2.png)
 
 **Step four:** In the Debug Navigator, check the Runtime Problems. They're identified by purple squares having white exclamation points within, like the ones shown here:
 
-![](/engineering-education/automatic-reference-counting-in-swift/arc3.png)
+![Arc 3](/engineering-education/automatic-reference-counting-in-swift/arc3.png)
 
 **Step five:** Pick one of the affected contact objects in the navigator. The cycle in between is brought out. By referencing each other, the contact and number objects retain one another. This means there is a strong reference cycle between the two. These problems should prompt a user to examine the code. Observe the fact that a contact variable can exist without a variable number. On the other hand, a number would not exist without contact.
 
 ### Conclusion
-When an object or an instance of a class is no longer required, it must be deallocated. The memory held by an object is released when it is deallocated hence creating more space. This is critical for the system's performance and efficiency. ARC allows this hence smooth running of iOS applications.
+When an object or an instance of a class is no longer required, it must be deallocated. The memory held by an object is released when it is deallocated hence creating more space. This is critical for the system's performance and efficiency. ARC allows for a smoother running of iOS applications.
+
+Happy coding!
 
 ### Further reading
 - [Automatic Referencing in Swift](https://docs.swift.org/swift-book/LanguageGuide/AutomaticReferenceCounting.html)
