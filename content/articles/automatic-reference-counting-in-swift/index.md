@@ -5,7 +5,7 @@ published: true
 url: /automatic-reference-counting-in-swift/
 title: Automatic Reference Counting in Swift
 description: This tutorial will introduce the reader to automatic reference counting in Swift.
-author: Amayo Allan
+author: amayo-allan
 date: 2022-06-22T00:00:00-09:00
 topics: [Languages]
 excerpt_separator: <!--more-->
