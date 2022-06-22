@@ -13,6 +13,7 @@ In this tutorial, we will learn how to make requests to multiple servers.
 - [What's Axios library?](#whats-axios-library)
 - [Setting up the Vue.js application](#setting-up-the-vuejs-application)
 - [Setting up the vue store](#setting-up-the-vue-store)
+- [Conclusion](#conclusion)
 
 ### Prerequisites
 To follow along with this tutorial, you will need to have the following:
@@ -295,3 +296,86 @@ Output:
 ```
 
 > It's, however, essential to note that the above-installed version may differ depending on the installation time.
+
+Next, let's define the required setup for our store as shown below:
+```javascript
+import Vue from "vue";
+import Vuex from "vuex";
+
+Vue.use(Vuex);
+
+export default new Vuex.Store({
+  state: {},
+  mutations: {},
+  getters: {},
+  actions: {},
+  modules: {}
+});
+
+```
+Vuex is a state management tool in Vue.js just as we have Redux for React and NgRx for Angular.
+
+It has 5 key components that ensures that the state of the application is maintained in a fashionable manner.
+
+Since we want to query the Github APIs to get users, update the store as shown below:
+```js
+import call from "@/service/http";
+const BaseURL='https://api.github.com/users/';
+export default {
+    state: {
+        githubUsers : [],
+    },
+    mutations: {
+        MUTATE: (state, payload) => {
+            state[payload.state] = payload.data;
+        },
+    },
+    getters: {
+        GithubGetter: state => (setup) => state[setup],
+    },
+    actions: {
+        users: ({commit}, payload) => {
+            call('get', BaseURL, payload)
+                .then(response => {
+                    commit("MUTATE", {
+                        state: "githubUsers",
+                        data: response.data.data,
+                    });
+                })
+                .catch(error => {
+                    Event.$emit("ApiError", error.response.data.message);
+                });
+        },
+    }
+}
+
+```
+In the above store file, we define the state of our application, by first definifining an array of github users as our state. We then create our mutator since we don't want to modify our state directly.
+
+Next, we have defined our getter to access our store from anywhere in the application and an action which will make requests to the server.
+
+As you may have noticed, we use the `call()` method instead of the normal `axios` package to make requests to the remote server. ``(It's not a mistake)``.
+
+What happens is that the `client` is new instance of the axios package that we previously created. To use the client, add a file, `index.js` at the root of the `http/client` and add the following contents:
+```js
+import client from './client/client'
+
+export default async function call (requestType, url, data = null) {
+  return client[requestType](url, data)
+}
+```
+
+Now the `call(arg1,arg2,optional)` method above takes 2 parameters, with optional payload argument.
+
+When this method is invoked, it ensures that all requests leaving our application carries the authentication token and any other value added on the headers.
+
+This is one way on modifying the axios to make customized requests depending on your requirements.
+
+With this new instance, you can make requests to servers by only defining the  API base URL.
+
+### Conclusion
+In this tutorial, we have seen how we can customize the Axios package to create a interceptor.
+
+We then configured our store to make requests to the server of our choice with this newly created instance, `call()` method which takes 3 arguments.
+
+Happy Coding!
