@@ -2,17 +2,17 @@
 layout: engineering-education
 status: publish
 published: true
-url: /making-jetpack-form-builder/
-title: The Making of Jetpack Compose Form Builder Library
-description: In this article, we will discuss how we made the Form builder library, how we solved the issues with the previous idea, as well as how to use the library.
-author: linus-muema
+url: /working-with-customized-axios-for-mulitple -servers-in-vue/
+title: How to Work With Customized Axios for Multiple Servers in Vue.js
+description: 
+author: 
 date: 2022-03-18T00:00:00-02:33
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-- url: /engineering-education/making-jetpack-form-builder/hero.jpg
-  alt: Jetpack Compose Forms Hero Image
+- url: /engineering-education/working-with-customized-axios-for-mulitple -servers-in-vue/hero.png
+  alt: Multiple Servers in Vue.js Hero Image
 ---
 Working in large scale applications may require a lot of requests to the server. Axios makes it easy to make and manage these requests. 
 <!--more-->
