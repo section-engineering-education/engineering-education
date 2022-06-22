@@ -1,12 +1,26 @@
-### Introduction
-Axios is a library for making HTTP requests. It is a wrapper around the [fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API). It is a promise-based API.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /vue-axios-instance/
+title: Customizing Axios Package And Configure Interceptors Using VueJs
+description: This tutorial introduces the reader to the concepts of Axios interceptors.
+author: naomi-seint
+date: 2022-06-22T00:00:00-09:30
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/vue-axios-instance/hero.png
+    alt: Axios Vue
+---
+Axios is a library for making HTTP requests. It is a wrapper around the [fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API). It is a promise-based API.
+<!--more-->
 Working in large-scale applications may require a lot of requests from the server. Axios makes it easy to make and manage these requests. However, there might be a need to handle requests to multiple servers.
 
 In this tutorial, we will learn how to make requests to multiple servers.
 
 ### Table of contents
-- [Introduction](#introduction)
 - [Table of contents](#table-of-contents)
 - [Prerequisites](#prerequisites)
 - [Objectives](#objectives)
@@ -379,3 +393,6 @@ In this tutorial, we have seen how we can customize the Axios package to create 
 We then configured our store to make requests to the server of our choice with this newly created instance, `call()` method which takes 3 arguments.
 
 Happy Coding!
+
+---
+Peer Review Contributions by: [Miller Juma](/engineering-education/authors/miller-juma/)
