@@ -65,9 +65,9 @@ There are IPSec components that coordinate together to achieve a common goal.
 
 ### Additional resources
 
-[IPSec | Wikipedia](https://en.wikipedia.org/wiki/IPsec)
-[What is IPsec?](https://www.techtarget.com/searchsecurity/definition/IPsec-Internet-Protocol-Security)
-[Cryptography](https://en.wikipedia.org/wiki/Cryptography)
+- [IPSec | Wikipedia](https://en.wikipedia.org/wiki/IPsec)
+- [What is IPsec?](https://www.techtarget.com/searchsecurity/definition/IPsec-Internet-Protocol-Security)
+- [Cryptography](https://en.wikipedia.org/wiki/Cryptography)
 
 ---
 Peer Review Contributions by: [Mercy Meave](/engineering-education/authors/mercy-meave/)
