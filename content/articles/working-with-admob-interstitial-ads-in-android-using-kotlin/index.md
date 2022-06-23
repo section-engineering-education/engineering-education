@@ -6,7 +6,7 @@ url: /working-with-admob-interstitial-ads-in-android-using-kotlin/
 title: Working with AdMob Interstitial Google Ads in Android using Kotlin
 description: This article will discuss how to implement Admob Interstitial Google ads in Android using Kotlin.
 author: davis-maina
-date: 2022-06-22T00:00:00-02:33
+date: 2022-06-23T00:00:00-02:33
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -14,7 +14,7 @@ images:
 - url: /engineering-education/working-with-admob-interstitial-ads-in-android-using-kotlin/hero.png
   alt: Interstitial Google Ads in Android using Kotlin Hero Image
 ---
-An interstitial ad is a dialogue that pops up on the user's screen when browsing the internet or playing a game.
+An interstitial ad is a dialogue that pops up on the phone screen when browsing the internet or playing a game.
 <!--more-->
 Its primary role is to advertise a product that the application owner has made a fee contract with the production industry.
 
@@ -176,7 +176,7 @@ class MainActivity : AppCompatActivity() {
                     super.onAdShowedFullScreenContent()
                 }
 
-// When you exit the ad using the cancel button, the next activity is displayed.
+                // When you exit the ad using the cancel button, the next activity is displayed.
 
                 override fun onAdDismissedFullScreenContent() {
                     super.onAdDismissedFullScreenContent()
@@ -190,7 +190,7 @@ class MainActivity : AppCompatActivity() {
                     super.onAdImpression()
                 }
 
-// What will happen when the ad is clicked
+                // What will happen when the ad is clicked
 
                 override fun onAdClicked() {
                     //Input your code here
