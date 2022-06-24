@@ -119,6 +119,31 @@
   </section>
 </article>
 
+{{ with .Params.projects }}
+  <section class="projects-section">
+    <div class="section-container projects-listing-container">
+      <h2 class="title-3 text-blue xs-pb-20">Featured Projects</h2>
+      <div class="projects">
+        {{ range . }}
+          <div class="project">
+            <div class="meta-data">
+              <h3 class="title-5 title"><a href="{{ .url }}">{{ .title }}</a></h3>
+              <div class="bottom-row">
+                <span>{{ .role }}</span>
+                <span>{{ .date }}</span>
+              </div>
+            </div>
+            <div class="info">
+              <p class="text-16 text-color">{{ .description }}</p>
+              <a class="link-with-arrow-blue text-blue text-18-medium" href="{{ .url }}">View Project</a>
+            </div>
+          </div>
+        {{ end }}
+      </div>
+    </div>
+  </section>
+{{ end }}
+
 <section class="blog-listing-posts">
   <div class="section-container blog-listing-posts-container">
     <div class="blog-listing-posts-content">
