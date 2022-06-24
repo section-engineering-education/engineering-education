@@ -26,9 +26,24 @@ Also, keep in mind that these Enged profiles are intended to be shared and refer
 
 Add these files to the same PR (pull request).
 
-(See *screenshot* below for file structure.)
-
-![Author file structure example](/static/images/meta-image-frontmatter.png)
+Example author profile - `index.md`: 
+```
+title: Student Name // Required
+type: authors // Required
+github: GITHUB_URL
+linkedin: LINKEDIN_URL
+twitter: TWITTER_URL
+website: WEBSITE_URL
+images: 
+  - url: /engineering-education/authors/avatar.jpeg // Required
+skills: ['Skill1', 'Skill2']
+projects: 
+  - title: Project Title
+    role: Role of the project
+    date: Jan 2022 - Present
+    description: Project Description
+    url: https://URL_OF_PROJECT.com
+```
 
 ## File Structure - explained
 - title (Name of student - **Required**)
