@@ -1,5 +1,5 @@
 ### Create a dynamic component with Minze
-Teams working on a single project face the challenge of supporting many JavaScript frameworks simultaneously due to many new frameworks in the JavaScript ecosystem.
+Teams working on a single project face the challenge of supporting many JavaScript frameworks simultaneously due to many new frameworks in the JavaScript ecosystem. Devs will have to create the same component in several framework syntaxes, which increases the amount of work they will have to perform.
 
 Minze framework came into the picture to help devs create components in a single syntax. You can create components in a single syntax and use it in all the frameworks you want, e.g., React, Vue, Angular, etc.
 
@@ -20,6 +20,23 @@ In this article, we'll look at Minze, a new JavaScript framework, and how to get
 
 ### Understanding Minze
 [Minze](https://minze.dev/) is a Javascript framework for building reusable, modular, and responsive native web applications. When building a web application, you can use Minze to create a dynamic component that can be used in multiple places in your application.
+
+### Basic syntax of a component
+Just like any other framework that has a basic syntax, Minze has a basic syntax that looks like this:
+
+```JavaScript
+import {MinzeElement} from 'minze';
+export class MyComponent extends MinzeElement {
+  //add your attributes and methods here
+
+  html = () => {
+    //add your HTML here
+  }
+  css = () => {
+    //add your CSS here
+  }
+}
+```
 
 Minze syntax has the declaration section, where you declare your attributes and methods. The HTML section is where you add your HTML. The CSS section is where you add styles to beautify your component.
 
@@ -156,6 +173,16 @@ export class MinzeHome extends MinzeElement {Create a dynamic footer component w
   `
 
   css = () => `
+    :host {
+      width: 100%;
+      min-height: calc(100vh - 2rem);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
     .home {
       text-align: center;
       font-size: 1.25rem;
@@ -195,9 +222,7 @@ Finally, we can now view the project to see the result:
 
 ![footer component](/engineering-education/create-a-dynamic-footer-component-with-minze/footer-component.png)
 
-Developers will no longer have to worry about the hassle of switching framework syntaxes while using this solution.
-
-The code used in this tutorial can be found on my [GitHub Repo](https://github.com/Alicewangari/dynamic-footer-component-with-Minze).
+Developers will no longer have to worry about the hassle of switching framework syntaxes while using this solution. This project's code is available on my [GitHub](#) page.
 
 ### Conclusion
-This article has covered how to create a dynamic footer using Minze. We have also covered how to create a component and render it in the application.
+This article has covered how to create a dynamic footer using Minze. We have also covered how to create a component and render it in the application. All frameworks, including React, Vue, Svelte, and ordinary HTML, should be able to utilize this component.
