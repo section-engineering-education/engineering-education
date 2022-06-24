@@ -3,7 +3,7 @@ layout: engineering-education
 status: publish
 published: true
 url: /a-beginner-guide-to-softmax-regression-using-tensorflow/
-title: A Beginner's Guide to SoftMax Regression Using TensorFlow
+title: A Beginners Guide to SoftMax Regression Using TensorFlow
 description: In this article, we will walk through a simple example of using TensorFlow to implement a softmax regression model.
 author: ruth-ngonyo
 date: 2022-06-24T00:00:00-01:00
