@@ -64,7 +64,7 @@
     }
   }
 
-  @include mq($to: 769px) {
+  @include mq($to: 800px) {
     .projects-listing-container {
       .projects {
         columns: 2 0px;
