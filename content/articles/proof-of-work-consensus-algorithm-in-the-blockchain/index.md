@@ -3,10 +3,10 @@ layout: engineering-education
 status: publish
 published: true
 url: /proof-of-work-consensus-algorithm-in-the-blockchain/
-title: Proof Of Work Consensus Algorithm In The Blockchain
+title: Proof of Work Consensus Algorithm in the Blockchain
 description: This article discusses the proof of work consensus, why it's needed in a blockchain network, and how it helps prevent double-spending.
 author: gregory-munene
-date: 2022-06-11T00:00:00-10:00
+date: 2022-06-27T00:00:00-14:00
 topics: [Blockchain]
 excerpt_separator: <!--more-->
 images:
@@ -15,7 +15,7 @@ images:
     alt: Proof Of Work Consensus Algorithm In The Blockchain Example Image
 ---
 When Nakamoto Satoshi came up with and started executing the idea of the blockchain, he had one goal in mind, eliminating trust-less cash systems. He wanted a system where strangers could transact without facing the risk of fraud. The Proof of Work (PoW) consensus algorithm is at the center of making the blockchain more secure.
-
+<!--more-->
 The Proof of Work consensus algorithm aims to achieve distributed trust in a P2P network of nodes using a voting protocol. This voting protocol relies on the concept of work performed by miners to introduce randomness into the decision-making process. It guarantees the verification of all entries, ensuring the users on these systems do not incur losses due to fraud.
 
 This article discusses the proof of work consensus, why it's needed in a blockchain network, and how it helps prevent double-spending.
@@ -24,12 +24,16 @@ This article discusses the proof of work consensus, why it's needed in a blockch
 Suppose you understand how cryptocurrency systems like Bitcoin work, then you will also know that the processes involved are costly. They are time-consuming and difficult, yet cryptocurrencies insist on using these processes.
 
 #### Security
-PoW is a necessity to achieve the security that cryptocurrency systems target. The primary objective of these systems is to have a secure fraud-proof system where strangers can transact comfortably. PoW relies on miners who act as independent data processors to sequence a cryptocurrency's transaction history. Doing so increases the difficulty of changing data over time so that unauthorized access and alterations do not happen. A quick understanding of the basics of blockchain's mode of operation would help show why we need PoW.
+PoW is a necessity to achieve the security that cryptocurrency systems target. The primary objective of these systems is to have a secure fraud-proof system where strangers can transact comfortably. PoW relies on miners who act as independent data processors to sequence a cryptocurrency's transaction history. 
+
+Doing so increases the difficulty of changing data over time so that unauthorized access and alterations do not happen. A quick understanding of the basics of blockchain's mode of operation would help show why we need PoW.
 
 #### How blockchain operations work
 A cryptocurrency like Bitcoin stores data logically in a chain of blocks. The system usually produces a block every 10 minutes consisting of several transactions. These transactions contain data related to the transfer of Bitcoin from one account to another. The independent data processors help verify each of these transactions by solving a series of complex mathematical equations at a fee.
 
-Upon validating a given block, the miner links it with the proof of work hash. Each time a given block undergoes verification, solving mathematical equations required to access it and making any alterations becomes increasingly challenging. The chain becomes more valid as more miners solve these mathematical equations and add hashes onto the blocks. Thus, the protocol considers the longest chain as the most authentic. Because so many different miners keep verifying the blocks, it is impractical that the same miner can keep winning the same block. Thus, data alterations are almost impossible.
+Upon validating a given block, the miner links it with the proof of work hash. Each time a given block undergoes verification, solving mathematical equations required to access it and making any alterations becomes increasingly challenging. The chain becomes more valid as more miners solve these mathematical equations and add hashes onto the blocks. 
+
+Thus, the protocol considers the longest chain as the most authentic. Because so many different miners keep verifying the blocks, it is impractical that the same miner can keep winning the same block. Thus, data alterations are almost impossible.
 
 Satoshi knew that very few individuals would even try to attack the network and alter data with such an energy-intensive process. This scenario can only happen if a mining group owns most of the total hash rate and colludes to manipulate the cryptocurrency blocks. Such occurrences are rare, and this forms the basis for PoW's security, the primary purpose of blockchain.
 
@@ -50,7 +54,7 @@ PoS' frugal energy consumption makes it more scalable than PoW-dependent cryptoc
 The costs associated with running a PoW-dependent system are very high. The huge energy consumption and the need to pay the independent data processors push up the costs significantly. PoW also requires expensive advanced computer systems. For instance, miners often use supercomputers to validate the transactions. For PoS, however, there is less need for expensive machinery.
 
 #### Waste generation
-PoW-dependent cryptocurrency systems are criticized for generating large amounts of electronic waste. Ideally, PoW miners run 24/7 at full computing power, generating much waste. A study showed that Bitcoin alone generated [30.7 metric kilotons](https://www.sciencedirect.com/science/article/abs/pii/S0921344921005103#) of annual e-waste as of 2021 May. In context, this is equivalent to what the small IT equipment in the entire Holland produced. The level could rise further as more regions adopt PoW use. PoS's efficient energy use eliminates these challenges of e-waste.
+PoW-dependent cryptocurrency systems are criticized for generating large amounts of electronic waste. Ideally, PoW miners run 24/7 at full computing power, generating much waste. A study showed that Bitcoin alone generated [30.7 metric kilotons](https://www.sciencedirect.com/science/article/abs/pii/S0921344921005103#) of annual e-waste as of May 2021. In context, this is equivalent to what the IT equipment in the entire country of Holland produced. The level could rise further as more regions adopt PoW use. PoS's efficient energy use eliminates these challenges of e-waste.
 
 #### Immutability
 PoW offers the best immutability level. It takes about 10 minutes to mine every block. Once an independent data processor validates the transactions of a given block, it becomes increasingly difficult and costly to alter data in that blockchain. In comparison, PoS lacks immutability. There is a higher risk of data alteration in PoS than in PoW.
