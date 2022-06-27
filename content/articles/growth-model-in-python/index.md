@@ -3,8 +3,8 @@ layout: engineering-education
 status: publish
 published: true
 url: /growth-model-in-python/
-title: A Gentle Introduction to Exponential Regression in Python
-description: This article will discuss the basics of exponential regression and how to use it to predict a company's growth using Python.
+title: Getting Started with Growth Model in Python
+description: This article will discuss the basics of the growth model and how to use it to predict a childs growth using Python.
 author: sumba-elvis
 date: 2022-06-27T00:00:00-13:14
 topics: [Languages]
