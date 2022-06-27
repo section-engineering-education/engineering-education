@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
   - url: /engineering-education/growth-model-in-python/hero.jpg
-    alt: A Gentle Introduction to Exponential Regression in Python
+    alt: Exponential Regression in Python hero image
 ---
 Growth models are common in scientific fields and have been used and successfully modeled for various problems.
 <!--more-->
