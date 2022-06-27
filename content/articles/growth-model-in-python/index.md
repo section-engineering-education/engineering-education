@@ -6,14 +6,15 @@ url: /growth-model-in-python/
 title: A Gentle Introduction to Exponential Regression in Python
 description: This article will discuss the basics of exponential regression and how to use it to predict a company's growth using Python.
 author: sumba-elvis
-date: 2022-04-30T00:00:00-12:14
+date: 2022-06-27T00:00:00-13:14
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
   - url: /engineering-education/growth-model-in-python/hero.jpg
     alt: A Gentle Introduction to Exponential Regression in Python
 ---
-
+Growth models are common in scientific fields and have been used and successfully modeled for various problems.
+<!--more-->
 ### Table of Contents
 - [Table of Contents](#table-of-contents)
 - [Introduction to Growth Model](#introduction-to-growth-model)
@@ -26,7 +27,9 @@ images:
 - [Conclusion](#conclusion)
 
 ### Introduction to Growth Model
-Growth models are common in scientific fields and have been used and successfully modelled for various problems. Some of the areas where these models have been used explain how something grows with changes in the predictor variable, which often is time. A real-life example is modelling the time it takes until the business grows, understanding how the population grows over time, etc. Growth models take the form:
+Some of the areas where these models have been used explain how something grows with changes in the predictor variable, which often is time. A real-life example is modeling the time it takes until the business grows, understanding how the population grows over time, etc. 
+
+Growth models take the form:
 
 $${\Large y = \frac{a}{(1 + be^{ −cx})}},$$
 
@@ -34,14 +37,16 @@ Where a, b and c are unknown constants of the model.
 
 At *x = 0* , $\large y = \frac{a}{(1+b)}$, and as $x → ∞$ , $y → a$.
 
-### Prerequisite:
+### Prerequisite
 To comfortably follow along, the reader needs to have some knowledge on:
-1. Python programming knowledge
-2. Partial Differential Calculus for optimization purposes
-3. [Ralphson Newton Method](https://brilliant.org/wiki/newton-raphson-method)
+1. Python programming knowledge.
+2. Partial Differential Calculus for optimization purposes.
+3. [Ralphson Newton Method](https://brilliant.org/wiki/newton-raphson-method).
 
-### Establishing an optimization problem for the Growth model
-To establish an optimization function, we need to develop a function that the goal is to minimize or maximize. Since the goal is to minimize the error, that is, the predicted values should be as close to the true values as possible, we develop an error function as follows: The error at each data point $x_i$ is defined as:
+### Establishing an optimization problem for the growth model
+To establish an optimization function, we need to develop a function that the goal is to minimize or maximize. Since the goal is to minimize the error, that is, the predicted values should be as close to the true values as possible, we develop an error function as follows: 
+
+The error at each data point $x_i$ is defined as:
 $$\Large E_i=y_i - \frac{a}{(1 + be^{ −cx})}$$
 
 Summing all these errors over the entire dataset, we obtain the *Cost function*, which is of the form:
@@ -79,11 +84,7 @@ We want to determine the values for a, b, and c. If we use the bisection method 
 
 ![optimization curve](/engineering-education/growth-model-in-python/optimize.png)
 
-by solving the lost function using the Newton Raphson method
-
-We need initial guesses of the roots to get the iterative process started to find the root of
-those equations. Suppose we use three of the given data points such as (0, 20), (12,
-60) and (18, 70) to find the initial guesses of roots; we have
+By solving the lost function using the Newton Raphson method. We need initial guesses of the roots to get the iterative process started to find the root of those equations. Suppose we use three of the given data points such as (0, 20), (12,60) and (18, 70) to find the initial guesses of roots; we have
 
 $$\large 20 = \frac{a}{1 + be^{-c(0)}}$$
 $$\large 60 = \frac{a}{1 + be^{-c(12)}}$$
@@ -112,7 +113,9 @@ $$\large H = \frac{7.4321 × 10^1}{1 + {2.8233}e^{-2.1715 × 10^{− 1}t}}$$
 ### Making the prediction using the growth model
 Suppose we are required to determine the height of an individual in 30 years to come.
 
-Now, in our model, we only need to plag in the value of $t = 30$ and evaluate the value of *H*. That is;
+Now, in our model, we only need to plug in the value of $t = 30$ and evaluate the value of *H*. 
+
+That is:
 
 $$\large H = \frac{7.4321 × 10^1}{1 + {2.8233}e^{-2.1715 × 10^{− 1}×(30)}}$$
 
@@ -130,6 +133,7 @@ import numpy as np # for matrix operations
 import matplotlib.pyplot as plt # for visualization
 
 ```
+
 Create a dataset.
 
 ```python
@@ -147,6 +151,7 @@ plt.title("Scatter Plot")
 plt.show()
 
 ```
+
 Output:
 
 ![growth curve output](/engineering-education/growth-model-in-python/growth-curve.png)
@@ -186,11 +191,43 @@ Output:
 Hight =  74.321
 
 ```
+
 Manually we had found the height of an individual aged 30 is 74. With our model, this is the case. Thus we have implemented and made predictions using our model.
 
 ### Conclusion
-In this session, we look at the Growth model. First, we saw how the growth model hypothesis is stated and went a step further to determine a set of its unknown parameters. Then, using our model, we were able to make predictions manually. Later we implemented this model in Python.
+In this session, we looked at the growth model. We saw how the growth model hypothesis is stated and went a step further to determine a set of its unknown parameters. Then, using our model, we were able to make predictions manually. Later we implemented this model in Python.
 
+Happy coding!
 
 ---
 Peer review contribution by: [Odhiambo Paul](/engineering-education/authors/odhiambo-paul/)
+
+
+<!-- MathJax script -->
+<script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      displayMath: [['$$','$$']],
+      processEscapes: true,
+      processEnvironments: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+      TeX: { equationNumbers: { autoNumber: "AMS" },
+           extensions: ["AMSmath.js", "AMSsymbols.js"] }
+    }
+    });
+    MathJax.Hub.Queue(function() {
+      // Fix <code> tags after MathJax finishes running. This is a
+      // hack to overcome a shortcoming of Markdown. Discussion at
+      // https://github.com/mojombo/jekyll/issues/199
+      var all = MathJax.Hub.getAllJax(), i;
+      for(i = 0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+    MathJax.Hub.Config({
+    // Autonumbering by mathjax
+    TeX: { equationNumbers: { autoNumber: "AMS" } }
+    });
+  </script>
