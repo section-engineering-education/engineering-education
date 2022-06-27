@@ -3,21 +3,21 @@ layout: engineering-education
 status: publish
 published: true
 url: /implementation-of-pattern-matching-in-the-building-of-type-driven-algorithms/
-title: Implementation of pattern matching in the building of type driven algorithms
+title: Implementation of Pattern Matching in the Building of Type Driven Algorithms
 description: This tutorial will help the reader to implement the pattern matching in the building of type driven algorithms.
-author: Dinah Anyango
-date: 2022-06-8T00:00:00-09:00
+author: dinah-anyango
+date: 2022-06-27T00:00:00-13:00
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/implementation-of-pattern-matching-in-the-building-of-type-driven-algorithms/hero.jpg
-    alt: Implementation of pattern matching in the building of type driven algorithms Hero Image
+    alt: Implementation of pattern matching building type driven algorithms Hero Image
 ---
 This article is going to explore various functionalities of the C# programming language and how it is used in implementing various concepts, but to be more specific, the article covers the use of pattern matching.
+<!--more-->
 
 ### Table of contents
-
 - [Prerequisite](#prerequisite)
 - [Pattern matching](#pattern-matching)
 - [Pattern-appropriate designs](#pattern-appropriate-designs)
@@ -28,20 +28,15 @@ This article is going to explore various functionalities of the C# programming l
 - [What next](#what-next)
 
 ### Prerequisite
-
-To carry on with this article, you will be required to download Visual Studio and have it installed on your machine. You can click [here](https://www.geeksforching
-Pattern designs
-Toll calculationsgeeks.org/setting-environment-c-sharp/) and follow the guidelines on installation.
-
-One should also have some knowledge about the C# programming language.
+To carry on with this article, you will be required to download Visual Studio and have it installed on your machine. You can click [here](https://www.geeksforchinggeeks.org/setting-environment-c-sharp/). One should also have some knowledge about the C# programming language.
 
 ### Pattern matching
-
 Today's development involves various techniques which include how one perceives data and many more factors.
 
 A programming team may lack the capability to have access to the incoming data. Every data type can be represented in its unique fashion in an object-oriented environment.
 
 Once you develop an application, it will have virtual functions, new types, and abstraction and in doing so the code that will be written will be less.
+
 ```c#
 namespace ConsumerBikeReg1
 {
@@ -73,16 +68,15 @@ namespace LiveryReg
     }
 }
 ```
-### Pattern-appropriate designs
 
+### Pattern-appropriate designs
 Solving the following is easier using pattern matching.
 - The stuff you will have to deal with is not organized logically for your objectives. You can work with classes from a variety of different systems.
--If you buy a new car, you'll have to pay more tolls than you would for an older model. In this case, the method used will not be an exact sliver of the abstract class. The toll charge is calculated for each vehicle if it is treated as an individual.
+- If you buy a new car, you'll have to pay more tolls than you would for an older model. In this case, the method used will not be an exact sliver of the abstract class. The toll charge is calculated for each vehicle if it is treated as an individual.
 
 The implementation of C-Sharp pattern matching attributes is much more quickly when the activities to be executed are not linked to its structure.
 
-### Calculation of Tolls that are calculated at a Basic Level
-
+### Calculation of tolls that are calculated at a basic level
 When Tolls are being calculated, the type of the vehicle provides the toll amount.
 - $1.10 for a Car.
 - $1.99 for a tuk-tuk.
@@ -117,8 +111,7 @@ namespace TollCalc_description1
 ```
 A switch expression (different from the switch statement) computes the declaration pattern present in the code. Our variable is the vehicle and then the switch statement and its content inside the curly braces.
 
-### Add in the cost of occupancy.
-
+### Add in the cost of occupancy
 An extra charge is instilled for occupancy of the vehicle changes.
 - A $0.35 surcharge is added to cars and tuk-tuks with no passengers.
 - A $1.00 discount is given to cars and tuk-tuks carrying three or more people.
@@ -135,6 +128,7 @@ vehicle switch
     Car                 => 2.00m - 0.99m,
 };
 ```
+
 Expound the cases for minibusses to utilize the occupancy restrictions.
 ```c#
 vehicle switch
@@ -144,6 +138,7 @@ vehicle switch
     MiniBus => 5.00m,
 };
 ```
+
 Many passengers in the delivery vehicles are unimportant to the toll authority. The class in which the weight of the vehicle lies in what is considered when change is needed.
 - Lorries weighing over 4500 pounds will be charged an additional $4.35.
 - Light lorries weighing less than 2500 pounds receive a $1.85 discount.
@@ -156,6 +151,7 @@ vehicle switch
     Lorry => 10.00m,
 };
 ```
+
 The `when` clause in the example description does not compute the equality on a function, but it computes the circumstances. After the completion, something similar to this below should be your result.
 ```c#
 vehicle switch 
@@ -184,7 +180,7 @@ vehicle switch
 };
 ```
 In this scenario, the code may be repetitive, so nested switches are used to overcome the issue. In the previous cases, both the Car and the Tuktuk had four independent arms.
- ```c#
+```c#
 public float CalculateTollX(object vehicle) =>
     vehicle switch
     {
