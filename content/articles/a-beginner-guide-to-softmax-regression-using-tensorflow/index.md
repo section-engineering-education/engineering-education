@@ -58,25 +58,25 @@ To define our model:
 
 **The x feature matrix is defined as:**
 
-![xfeature](/engineering-education/a-beginner-guide-to-softmax-regression-using-tensorflow/xfeature.png)
+![xfeature](/engineering-education/a-beginner-guide-to-softmax-regression-using-tensorflow/xfeature.PNG)
 
 x<sub>ij</sub> signifies j<sup>th</sup> feature value for the i<sup>th</sup> observation. The matrices dimension is;
 
-![Xmatrix](/engineering-education/a-beginner-guide-to-softmax-regression-using-tensorflow/xmatrix.png)
+![Xmatrix](/engineering-education/a-beginner-guide-to-softmax-regression-using-tensorflow/xmatrix.PNG)
 
 *The w weight matrix is defined as:*
 
-![wfeature](/engineering-education/a-beginner-guide-to-softmax-regression-using-tensorflow/wfeature.png)
+![wfeature](/engineering-education/a-beginner-guide-to-softmax-regression-using-tensorflow/wfeature.PNG)
 
 w<sub>ij</sub> signifies the weight labeled to i<sup>th</sup> feature for the j<sup>th</sup> class. The matrices dimension is:
   
-![wmatrix](/engineering-education/a-beginner-guide-to-softmax-regression-using-tensorflow/wmatrix.png)
+![wmatrix](/engineering-education/a-beginner-guide-to-softmax-regression-using-tensorflow/wmatrix.PNG)
 
 **Logic score matrix:**
 
 We now define our logic score (net input) matrix `z` as `z=xw`. The matrices dimension is;
 
-![logicmatrix](/engineering-education/a-beginner-guide-to-softmax-regression-using-tensorflow/logicmatrix.png)
+![logicmatrix](/engineering-education/a-beginner-guide-to-softmax-regression-using-tensorflow/logicmatrix.PNG)
 
 The logic matrix 'z' signifies the probability of label `j` for the i<sup>th</sup> observation.
 
@@ -90,13 +90,13 @@ Training the model using score values becomes hard since differentiating is chal
 
 The softmax function helps convert the 'z' score matrix to probabilities. For a vector y<sub>i</sub> the softmax function s<sub>(y)</sub> can be defined as;
 
-![softmaxmatrix](/engineering-education/a-beginner-guide-to-softmax-regression-using-tensorflow/softmaxmatrix.png)
+![softmaxmatrix](/engineering-education/a-beginner-guide-to-softmax-regression-using-tensorflow/softmaxmatrix.PNG)
 
 The softmax function converts all scores to probabilities and then sums up the probabilities to 1.
 
 Our sofmax function computes the probabiliuty that the i<sup>th</sup> training sample is from the <sub>j</sub> class for the logic vector z<sub>(i)</sub> as;
   
-![logicvector](/engineering-education/a-beginner-guide-to-softmax-regression-using-tensorflow/logicvector.png)
+![logicvector](/engineering-education/a-beginner-guide-to-softmax-regression-using-tensorflow/logicvector.PNG)
 
 We will denote the softmax probability for the i<sup>th</sup> observation as s<sub>i</sub>
 
@@ -104,7 +104,7 @@ We will denote the softmax probability for the i<sup>th</sup> observation as s<s
 
 One-hot encoding occurs when a target vector corresponds to each observation comprising 0's and 1's, with 1 being a correct label. The diagram below shows how one-hot encoding happens:
 
-![one-hot-encoding](/engineering-education/a-beginner-guide-to-softmax-regression-using-tensorflow/one-hot-encoding.png)
+![one-hot-encoding](/engineering-education/a-beginner-guide-to-softmax-regression-using-tensorflow/one-hot-encoding.PNG)
 
 We can denote T<sub>i</sub> as one-hot encoding vector for the i<sup>th</sup> observation.
 
@@ -114,25 +114,25 @@ The cross-entropy concept (variates two probability distribution measures) can b
 
 The cross entropy function, D(S<sub>i</sub>,T<sub>i</sub>) for the i<sup>th</sup> observation  with the softmax vector probability , S<sub>i</sub> and one=hot target vector can be defined as:
 
-![cost-function](/engineering-education/a-beginner-guide-to-softmax-regression-using-tensorflow/cost-function.png)
+![cost-function](/engineering-education/a-beginner-guide-to-softmax-regression-using-tensorflow/cost-function.PNG)
 
 The average cross-entropy defines the cost function <sub>j</sub> as:
   
-![cross-entropy](/engineering-education/a-beginner-guide-to-softmax-regression-using-tensorflow/cross-entropy.png)
+![cross-entropy](/engineering-education/a-beginner-guide-to-softmax-regression-using-tensorflow/cross-entropy.PNG)
 
 **Gradient descent algorithm**
 
 We now compute two gradient descent derivatives, 
 
-![g1](/engineering-education/a-beginner-guide-to-softmax-regression-using-tensorflow/g1.png)
+![g1](/engineering-education/a-beginner-guide-to-softmax-regression-using-tensorflow/g1.PNG)
 
-![g2](/engineering-education/a-beginner-guide-to-softmax-regression-using-tensorflow/g2.png)
+![g2](/engineering-education/a-beginner-guide-to-softmax-regression-using-tensorflow/g2.PNG)
 
 To train our softmax model, the gradient descent derivatives can be used to improve the biases and weights contrary to the gradients, 
   
-![weight1](/engineering-education/a-beginner-guide-to-softmax-regression-using-tensorflow/weight1.png)
+![weight1](/engineering-education/a-beginner-guide-to-softmax-regression-using-tensorflow/weight1.PNG)
 
-![weight2](/engineering-education/a-beginner-guide-to-softmax-regression-using-tensorflow/weight2.png) 
+![weight2](/engineering-education/a-beginner-guide-to-softmax-regression-using-tensorflow/weight2.PNG) 
   
 For every instance of class <sub>j</sub>, that is, (1,2,3,...,k) with alpha being the `learning rate`.
 
