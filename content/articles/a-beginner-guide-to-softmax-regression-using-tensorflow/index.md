@@ -31,7 +31,7 @@ Logistic regression can be termed a supervised classification algorithm. It is a
 
 Python comes with various libraries that one can use to implement logistic regression.
 
-### Table of Contents
+### Table of contents
 - [Prerequisite](#prerequisite)
 - [Overview of Softmax Regression](#overview-of-softmax-regression)
 - [Softmax regression implementation on the MNIST handwritten digit dataset using Tensorflow](#softmax-regression-implementation-on-the-mnist-handwritten-digit-dataset-using-tensorflow)
@@ -52,31 +52,31 @@ In a binomial/binary logistic regression, we target a variable that can only tak
 
 Let's consider a scenario where the target variable takes in two or more class labels, such that for i<sup>th</sup> observation, x<sub>i</sub> belongs to the range between 0 and 9. Softmax/multinomial logistic regression would be appropriate in such a scenario.
 
-To define our model.
+To define our model:
 
 - We first give our dataset 'n' features, 'm' observations, and 'z' class labels, such that each observation can be classified as a 'k' possible target value. For example, suppose we have a dataset of 100, 28x28 vector size handwritten digit images, we get *n=100, m=28x28=784, and k=10*.
 
 **The x feature matrix is defined as:**
 
-![xfeature](/engineering-education/a-beginner-guide-to-softmax-regression-using-tensorflow/xfeature.PNG)
+![xfeature](/engineering-education/a-beginner-guide-to-softmax-regression-using-tensorflow/xfeature.png)
 
 x<sub>ij</sub> signifies j<sup>th</sup> feature value for the i<sup>th</sup> observation. The matrices dimension is;
 
-![xmatrix](/engineering-education/a-beginner-guide-to-softmax-regression-using-tensorflow/xmatrix.PNG)
+![Xmatrix](/engineering-education/a-beginner-guide-to-softmax-regression-using-tensorflow/xmatrix.png)
 
 *The w weight matrix is defined as:*
 
-![wfeature](/engineering-education/a-beginner-guide-to-softmax-regression-using-tensorflow/wfeature.PNG)
+![wfeature](/engineering-education/a-beginner-guide-to-softmax-regression-using-tensorflow/wfeature.png)
 
 w<sub>ij</sub> signifies the weight labeled to i<sup>th</sup> feature for the j<sup>th</sup> class. The matrices dimension is:
   
-![wmatrix](/engineering-education/a-beginner-guide-to-softmax-regression-using-tensorflow/wmatrix.PNG)
+![wmatrix](/engineering-education/a-beginner-guide-to-softmax-regression-using-tensorflow/wmatrix.png)
 
 **Logic score matrix:**
 
 We now define our logic score (net input) matrix `z` as `z=xw`. The matrices dimension is;
 
-![logicmatrix](/engineering-education/a-beginner-guide-to-softmax-regression-using-tensorflow/logicmatrix.PNG)
+![logicmatrix](/engineering-education/a-beginner-guide-to-softmax-regression-using-tensorflow/logicmatrix.png)
 
 The logic matrix 'z' signifies the probability of label `j` for the i<sup>th</sup> observation.
 
@@ -90,13 +90,13 @@ Training the model using score values becomes hard since differentiating is chal
 
 The softmax function helps convert the 'z' score matrix to probabilities. For a vector y<sub>i</sub> the softmax function s<sub>(y)</sub> can be defined as;
 
-![softmaxmatrix](/engineering-education/a-beginner-guide-to-softmax-regression-using-tensorflow/softmaxmatrix.PNG)
+![softmaxmatrix](/engineering-education/a-beginner-guide-to-softmax-regression-using-tensorflow/softmaxmatrix.png)
 
 The softmax function converts all scores to probabilities and then sums up the probabilities to 1.
 
 Our sofmax function computes the probabiliuty that the i<sup>th</sup> training sample is from the <sub>j</sub> class for the logic vector z<sub>(i)</sub> as;
   
-![logicvector](/engineering-education/a-beginner-guide-to-softmax-regression-using-tensorflow/logicvector.PNG)
+![logicvector](/engineering-education/a-beginner-guide-to-softmax-regression-using-tensorflow/logicvector.png)
 
 We will denote the softmax probability for the i<sup>th</sup> observation as s<sub>i</sub>
 
@@ -104,7 +104,7 @@ We will denote the softmax probability for the i<sup>th</sup> observation as s<s
 
 One-hot encoding occurs when a target vector corresponds to each observation comprising 0's and 1's, with 1 being a correct label. The diagram below shows how one-hot encoding happens:
 
-![one-hot-encoding](/engineering-education/a-beginner-guide-to-softmax-regression-using-tensorflow/one-hot-encoding.PNG)
+![one-hot-encoding](/engineering-education/a-beginner-guide-to-softmax-regression-using-tensorflow/one-hot-encoding.png)
 
 We can denote T<sub>i</sub> as one-hot encoding vector for the i<sup>th</sup> observation.
 
@@ -114,25 +114,25 @@ The cross-entropy concept (variates two probability distribution measures) can b
 
 The cross entropy function, D(S<sub>i</sub>,T<sub>i</sub>) for the i<sup>th</sup> observation  with the softmax vector probability , S<sub>i</sub> and one=hot target vector can be defined as:
 
-![cost-function](/engineering-education/a-beginner-guide-to-softmax-regression-using-tensorflow/cost-function.PNG)
+![cost-function](/engineering-education/a-beginner-guide-to-softmax-regression-using-tensorflow/cost-function.png)
 
 The average cross-entropy defines the cost function <sub>j</sub> as:
   
-![cross-entropy](/engineering-education/a-beginner-guide-to-softmax-regression-using-tensorflow/cross-entropy.PNG)
+![cross-entropy](/engineering-education/a-beginner-guide-to-softmax-regression-using-tensorflow/cross-entropy.png)
 
 **Gradient descent algorithm**
 
 We now compute two gradient descent derivatives, 
 
-![g1](/engineering-education/a-beginner-guide-to-softmax-regression-using-tensorflow/g1.PNG)
+![g1](/engineering-education/a-beginner-guide-to-softmax-regression-using-tensorflow/g1.png)
 
-![g2](/engineering-education/a-beginner-guide-to-softmax-regression-using-tensorflow/g2.PNG)
+![g2](/engineering-education/a-beginner-guide-to-softmax-regression-using-tensorflow/g2.png)
 
 To train our softmax model, the gradient descent derivatives can be used to improve the biases and weights contrary to the gradients, 
   
-![weight1](/engineering-education/a-beginner-guide-to-softmax-regression-using-tensorflow/weight1.PNG)
+![weight1](/engineering-education/a-beginner-guide-to-softmax-regression-using-tensorflow/weight1.png)
 
-![weight2](/engineering-education/a-beginner-guide-to-softmax-regression-using-tensorflow/weight2.PNG) 
+![weight2](/engineering-education/a-beginner-guide-to-softmax-regression-using-tensorflow/weight2.png) 
   
 For every instance of class <sub>j</sub>, that is, (1,2,3,...,k) with alpha being the `learning rate`.
 
