@@ -2,17 +2,17 @@
 layout: engineering-education
 status: publish
 published: true
-url: /vue-axios-instance/
+url: /customized-axios-for-mulitple-servers-in-vue/
 title: Customizing Axios Package And Configure Interceptors Using VueJs
 description: This tutorial introduces the reader to the concepts of Axios interceptors.
 author: naomi-seint
-date: 2022-06-22T00:00:00-09:30
+date: 2022-06-28T00:00:00-11:30
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/vue-axios-instance/hero.png
-    alt: Axios Vue
+  - url: /engineering-education/customized-axios-for-mulitple-servers-in-vue/hero.png
+    alt: Axios Vue hero image
 ---
 Axios is a library for making HTTP requests. It is a wrapper around the [fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API). It is a promise-based API.
 <!--more-->
