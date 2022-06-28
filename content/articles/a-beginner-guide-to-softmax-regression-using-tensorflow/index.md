@@ -31,7 +31,7 @@ Logistic regression can be termed a supervised classification algorithm. It is a
 
 Python comes with various libraries that one can use to implement logistic regression.
 
-### Table of Contents
+### Table of contents
 - [Prerequisite](#prerequisite)
 - [Overview of Softmax Regression](#overview-of-softmax-regression)
 - [Softmax regression implementation on the MNIST handwritten digit dataset using Tensorflow](#softmax-regression-implementation-on-the-mnist-handwritten-digit-dataset-using-tensorflow)
@@ -52,7 +52,7 @@ In a binomial/binary logistic regression, we target a variable that can only tak
 
 Let's consider a scenario where the target variable takes in two or more class labels, such that for i<sup>th</sup> observation, x<sub>i</sub> belongs to the range between 0 and 9. Softmax/multinomial logistic regression would be appropriate in such a scenario.
 
-To define our model.
+To define our model:
 
 - We first give our dataset 'n' features, 'm' observations, and 'z' class labels, such that each observation can be classified as a 'k' possible target value. For example, suppose we have a dataset of 100, 28x28 vector size handwritten digit images, we get *n=100, m=28x28=784, and k=10*.
 
@@ -62,7 +62,7 @@ To define our model.
 
 x<sub>ij</sub> signifies j<sup>th</sup> feature value for the i<sup>th</sup> observation. The matrices dimension is;
 
-![xmatrix](/engineering-education/a-beginner-guide-to-softmax-regression-using-tensorflow/xmatrix.png)
+![Xmatrix](/engineering-education/a-beginner-guide-to-softmax-regression-using-tensorflow/xmatrix.png)
 
 *The w weight matrix is defined as:*
 
