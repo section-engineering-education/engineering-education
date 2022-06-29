@@ -6,7 +6,7 @@ url: /controlling-web-pages-visible-to-different-users-in-php/
 title: How to Control Web Pages Visible to Different Users using PHP
 description: This article will help the reader understand how to control access to certain web pages or files using PHP.
 author: david-okoth
-date: 2022-05-30T00:00:00-02:33
+date: 2022-06-29T00:00:00-02:33
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -30,9 +30,8 @@ To gain more from this tutorial, you will need:
 - XAMPP.
 - Bootstrap 5
 
-### Step 1: Creating the project folder
-
-On your computer, browse for a folder called *xampp* in your root partition (Assuming you installed Xampp).
+### Step 1 - Creating the project folder
+On your computer, search for a folder called *xampp* in your root partition (Assuming you installed Xampp).
 
 Open this folder then browse and locate another directory called *htddocs*. Inside *htdocs*, create another folder and add your project's name. In this tutorial, I named the folder *fruits-store*.
 
@@ -42,18 +41,17 @@ Inside the *fruits-store*, create another directory and name it *css*. Inside *C
 
 ![Bootstrap added](/engineering-education/controlling-web-pages-visible-to-different-users-in-php/bootstrap_added.jpg)
 
-### Step 2: Ensuring that XAMPP is working correctly
+### Step 2 - Ensuring that XAMPP is working correctly
 Double-click on the XAMPP application and start Apache and MySQL services. Ensure that these services are running normally without any errors.
 
 ![Xampp working correctly](/engineering-education/controlling-web-pages-visible-to-different-users-in-php/xampp_correct.jpg)
 
-### Step 3: Opening the project folder in your editor
+### Step 3 - Opening the project folder in your editor
 We can now open the project folder in a code editor such as VS code
 
 ![Code Editor](/engineering-education/controlling-web-pages-visible-to-different-users-in-php/code_editor.jpg)
 
-### Step 4: Creating a Home page
-
+### Step 4 - Creating a Home page
 In your root folder, create a new file named *home.php*: Add the following code to the generated file:
 
 ```html
@@ -124,12 +122,14 @@ In your root folder, create a new file named *home.php*: Add the following code 
 </html>
 ```
 
-### Step 5: Creating a Contact page
-
+### Step 5 - Creating a Contact page
 Create a *contact.php* file and then add the following code:
 
 ```php
-<?php include 'protect.php'?>
+<?php 
+include 'protect.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -169,11 +169,13 @@ Create a *contact.php* file and then add the following code:
 </html>
 ```
 
-### Step 6: Creating an About page
-Create a new file named *about.php*. Then add the following code:
+### Step 6 - Creating an About page
+Create a new file named *about.php* then add the following code:
 
 ```php
-<?php include 'protect.php'?>
+<?php 
+include 'protect.php'
+?>
 
 <!DOCTYPE html>
 
@@ -206,7 +208,7 @@ Create a new file named *about.php*. Then add the following code:
 </html>
 ```
 
-### Step 7: Creating a registration form
+### Step 7 - Creating a Registration form
 The registration form will be used to store users' information in the database. This information is used when the user wants to log in to the system. Create a new file and name it *register.php*.
 
 Ensure that the *form action* points to the action in the same file i.e., *register.php*, and the form method to be *POST* as it is a secure way to send data.
@@ -289,7 +291,7 @@ include 'connect.php';
 </html>
 ```
 
-### Step 8: Creating a database
+### Step 8 - Creating a database
 On your browser type localhost and navigate to *phpMyAdmin*. Next, click on *new*
 then enter *database name* i.e., *fruits-store*, then *create*.
 
@@ -325,7 +327,7 @@ Create a variable called *con* that will be used to store the connection. We wil
 ?>
 ```
 
-### Step 9: Creating a Navigation bar
+### Step 9 - Creating a Navigation bar
 
 Navigation plays a very important role since it will help determine the pages which will be visible to different users. 
 
@@ -371,7 +373,7 @@ Include this file in all the pages, right after the body tag in your HTML.
     </div>
 </nav>
 ```
-### STEP 10: Creating a Login form
+### Step 10 - Creating a Login form
 In this step, we now want to implement login so that it will be used to control user access. Certain pages will not be accessible before logging into the system while others will be visible even before logging into
 the system.
 
@@ -435,7 +437,7 @@ To get started with the login form paste the following code into your *login.php
 
 </html>
 ```
-### Step 11: Implementing Login functionality
+### Step 11 - Implementing Login functionality
 Now, let's implement the login form's functionality that will fetch the login details of the user from the database and verify if its correct before allowing the user to view certain web pages.
 
 Create a file and name it *login.php*. In this file, add the code below:
@@ -495,7 +497,7 @@ a cookie*/
 
 To this point, the login should work perfectly.
 
-### Step 12: Protecting files from unauthorized access
+### Step 12 - Protecting files from unauthorized access
 Create a new file and name as *protect.php*. This file checks if the session exists meaning that the user has already logged in. If the session is not found this file will redirect the user to the login page.
 
 This file also protects certain pages from being accessed by unauthorized users. In this case, you cannot access a page if you are not logged in.
@@ -523,7 +525,7 @@ When we want to protect a page, we will import/include this file at the start of
 <?php include 'protect.php'?>
 ```
 
-### Step 13: Creating a Logout page
+### Step 13 - Creating a Logout page
 Create a *logout.php* file and then add the following code:
 
 ```php
@@ -536,7 +538,7 @@ session_destroy();
 header("location:login.php");
 ```
 
-### Step 14: Hiding certain web pages
+### Step 14 - Hiding certain web pages
 We need to include an *if* statement in our *nav.php* file which will ensure that a user cannot access certain pages if they are not logged in.
 
 Assuming that you have created all the pages you need for your website, in our case, we have a *home, login, logout, register, contact, and about page*. 
@@ -559,7 +561,9 @@ In the *nav.php* file, **contact.php, about.php, and logout.php** should be encl
         <li class="nav-item">
           <a class="nav-link link-primary" href="logout.php">logout</a>
         </li>
-<?php endif; ?>
+<?php 
+endif; 
+?>
 ```
 
 Furthermore, if the session is not set, we will direct the user to the *login.php* page. Modify *nav.php* under *login.php* by enclosing it in an *if* statement as follows:
