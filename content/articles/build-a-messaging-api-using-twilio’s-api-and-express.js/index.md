@@ -5,7 +5,7 @@ published:
 url: /build-a-messaging-api-using-twilio's-api-and-express.js/
 title: Build a Messaging API Using Twilio's API and Express
 description:  In this tutorial, we will build a messaging API using Twilio's API and Express.
-author: sodiq-augunbiade
+author: sodiq-agunbiade
 date: 2022-06-13T07:44:44.462Z
 topics: [Languages]
 excerpt_separator: <!--more-->
