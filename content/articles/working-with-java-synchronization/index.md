@@ -1,4 +1,23 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /working-with-java-synchronization/
+title: Working with Java Synchronization
+description: This article explains the concept of synchronization in the context of Java along with its implementation.
+author: grace-wanjiru
+date: 2022-06-28T00:00:00-18:00
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
+
+ - url: /engineering-education/working-with-java-synchronization/hero.jpg
+   alt: working with synchronization in Java
+---
+
 Synchronization in computing is the practice of keeping a group of data or files identical across many locations. It enables several threads to access a common resource such as external files, class variables, and database information. Synchronization is common in multithreaded code. It enables your code to execute on a single thread uninterrupted.
+
+<!--more-->
 
 ### Table of contents
 - [An insight into synchronization in Java](#an-insight-into-synchronization-in-java)
@@ -311,3 +330,6 @@ ENGINEERING
 Synchronization is required to ensure that only one thread may access resources at a time. We have looked at how to work with synchronization and the various aspects of this concept.
 
 Happy learning!
+
+---
+Peer Review Contributions by: [John Amiscaray](/engineering-education/authors/john-amiscaray/)
