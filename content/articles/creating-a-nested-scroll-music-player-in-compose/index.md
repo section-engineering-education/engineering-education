@@ -6,7 +6,7 @@ url: /creating-a-nested-scroll-music-player-in-compose/
 title: Creating a Nested Scroll Music Player App in Jetpack Compose
 description: This tutorial will guide the reader on how to create a nested scroll music player app in Jetpack Compose.
 author: noni-diana
-date: 2022-06-07T00:00:00-17:00
+date: 2022-06-29T00:00:00-11:00
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
