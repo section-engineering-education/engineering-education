@@ -7,22 +7,22 @@ title: Creating a Nested Scroll Music Player App in Jetpack Compose
 description: This tutorial will guide the reader on how to create a nested scroll music player app in Jetpack Compose.
 author: noni-diana
 date: 2022-06-29T00:00:00-11:00
-topics: [Languages]
+topics: [Languages, API]
 excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/creating-a-nested-scroll-music-player-in-compose/hero.jpg
-    alt: Creating a Nested Scroll Music Player App in Jetpack Compose
+    alt: Nested Scroll Music Player App in Jetpack Compose
 ---
-The nested scroll is one of the relatively technical features to implement in an app. With Jetpack Compose, we can achieve this by combining scrollable components with different orientations.
+The nested scroll is one of the technical features one can implement in an app. With Jetpack Compose, we can achieve this by combining scrollable components with different orientations.
 <!--more-->
 This approach uses items as children of other items. Alternatively, we can make use of the NestedScroll API offered by Compose.
 
 ### Goal
-In this tutorial, we'll learn how to implement a nested scroll functionality in a simple music player app using the earlier mentioned approach as it is easier to implement, customize and handle states.
+In this tutorial, we'll learn how to implement a nested scroll functionality in a simple music player app using the earlier mentioned approach as it is easier to implement, customize, and handle states.
 
 ### Prerequisites
-To follow along with this guide, you need:
+To follow along with this guide, the reader will need:
 - Android Studio IDE installed on your machine.
 - A good understanding of the Jetpack Compose core concepts.
 - A physical device or an emulator running Android 8 or greater.
@@ -37,13 +37,12 @@ To follow along with this guide, you need:
 - [What's beyond this tutorial?](#whats-beyond-this-tutorial)
 - [Conclusion](#conclusion)
 
-### Creating the Project
+### Creating the project
 Launch the IDE and start a new empty Compose project and fill the parameters as shown below:
 
 ![New Compose Project](/engineering-education/creating-a-nested-scroll-music-player-in-compose/new-compose-project.png)
 
 ### Setting up the project
-
 #### Changing the Compose and Kotlin versions
 Head to your `build.gradle`(project) file and change `compose_version` to `1.1.1`. This is the latest version at the time of writing this tutorial.
 
@@ -290,12 +289,12 @@ Call the `PlaySampleAudio` function below the scrollable list and run the app. Y
 ![Player](/engineering-education/creating-a-nested-scroll-music-player-in-compose/player.png)
 
 ### What's beyond this tutorial?
-This project can be extended to include more features such as listing the songs on the device, indicating the current playing song, showing notifications, and so on. This would require a foreground service implementation for smooth user interaction and resources consumption.
+This project can be extended to include more features such as listing the songs on the device, indicating the current playing song, showing notifications, and so on. This would require a foreground service implementation for a smoother user interaction and resources consumption.
 
 You can learn more about services in Compose in [this guide](https://androidexample365.com/foreground-service-jetpack-compose/)
 
 ### Conclusion
-In this tutorial, we have learned what nested scroll is and how to implement it using entangled items. We have also covered the basics of loading and playing audio in Compose using the MediaPlayer API. Continue exploring to learn more about playing media in jetpack Compose.
+In this tutorial, we learned what a nested scroll is and how to implement it using entangled items. We have also covered the basics of loading and playing audio in Compose using the MediaPlayer API. Continue exploring to learn more about playing media in Jetpack Compose.
 
 Happy coding!
 
