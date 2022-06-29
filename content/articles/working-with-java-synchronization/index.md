@@ -160,8 +160,8 @@ Save it as `TestSynchronizedBlock1.java`
 
 ```java
 import java.util.concurrent.ExecutionException;
- import java.util.concurrent.ScheduledThreadPoolExecutor;
- import java.util.concurrent.TimeUnit;
+import java.util.concurrent.ScheduledThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
  
  class Table
  {
@@ -171,7 +171,7 @@ import java.util.concurrent.ExecutionException;
                  System.out.println(n*i);
                  try{
                      Thread.sleep(10);
-                 }catch(Exception e){System.out.println(e);}
+                 }catch(Exception e){System.out.println(e.getMessage());}
              }
          }
      }//end of the method
@@ -245,10 +245,8 @@ First, a thread with the lock on the object must execute any synchronized method
 Let's look at an example program:
 
 ```java
-package SynchImp;
-
 import java.util.concurrent.ScheduledThreadPoolExecutor;
- import java.util.concurrent.TimeUnit;
+import java.util.concurrent.TimeUnit;
  
  class Synchronization {
     public synchronized void greet(String tag) {
