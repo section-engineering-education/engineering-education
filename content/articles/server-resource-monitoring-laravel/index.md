@@ -2,19 +2,19 @@
 layout: engineering-education
 status: publish
 published: true
-url: /server-monitor/
-title: Getting started with the resource monitoring in Laravel 9
+url: /server-resource-monitoring-laravel/
+title: Getting Started with Resource Monitoring in Laravel 9
 description: This article introduces the reader through the concepts of resource management and monitoring.
 author: odiwuor-amos
-date: 2022-05-31T00:00:00-07:40
+date: 2022-06-29T00:00:00-13:40
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/server-monitor/hero.png
+  - url: /engineering-education/server-resource-monitoring-laravel/hero.png
     alt: Server monitor image 
 ---
-Most systems already exist that provides us with a way to monitor the CPU and memory usage of the system. However, they might not be very flexible to support our daily needs.
+Most systems already exist that provide us with a way to monitor the CPU and memory usage of the system. However, they might not be very flexible to support our daily needs.
 <!--more-->
 Developers more often are faced with problems of resource management, where the machines freeze or hang when all the available resources have been consumed.
 
@@ -34,7 +34,7 @@ In this tutorial, we will learn how to build a Laravel system that has the abili
 - [Conclusion](#conclusion)
 
 ### Prerequisites
-To be able to understand and follow this tutorial, the reader should have atleast the following knowledge:
+To be able to understand and follow this tutorial, the reader should have at least the following knowledge:
 - Basic knowledge in Laravel. In this tutorial, we will be using Laravel 9.
 - Basic knowledge in object oriented programming in PHP.
 - Composer should be locally installed to be able to download and install third party packages.
@@ -70,7 +70,7 @@ php artisan serve
 
 The above command starts the Laravel application on the default port of `http://localhost:8000`.
 
-It's however important to note that the above port only works if it's not in use. 
+It's important to note that the above port only works if it's not in use. 
 
 You can change the port by running the following command:
 ```bash
@@ -200,10 +200,10 @@ return [
 ```
 
 In the above file, we have added the following checks:
-- The `diskspace`: This check will check the disk space of the system.
-- The `elasticsearch`: This check will check the elastic search server.
-- The `memcached`: This check will check the memcached server.
-- The `mysql`: This check will check the mysql database.
+- The `diskspace`: This will check the disk space of the system.
+- The `elasticsearch`: This will check the elastic search server.
+- The `memcached`: This will check the memcached server.
+- The `mysql`: This will check the mysql database.
 
 ### Adding the controllers
 With server monitor setup complete, let's now proceed and add a few controllers to our application.
@@ -218,7 +218,7 @@ We want our controllers to be able to handle the following:
 
 Therefore, we need to create 4 controller for each of the tasks above.
 
-> The reason we're creating the 4 controllers instead of the  1 controller with multiple methods is because the package installed has an interface which only takes a single method.
+> The reason we're creating the 4 controllers instead of 1 controller with multiple methods is because the package installed has an interface which only takes a single method.
 
 Run the following commands to add the controllers:
 ```bash
@@ -324,7 +324,7 @@ Now that we have controllers defined, next run the following commands to add the
 
 Output:
 ```bash
-Let's add a host!
+Lets add a host!
 
  What is the name of the host:
  > section.io
@@ -371,16 +371,16 @@ section.io: performing check `diskspace`...
 ....
 ```
 
-You notice that the above check is specific to `diskspace` since we selected that check in our host configuration.
+You'll notice that the above check is specific to `diskspace` since we selected that check in our host configuration.
 
 ### Conclusion
-In this tutorial, we have learned how to build a resource manager for your Laravel system.
+In this tutorial, we learned how to build a resource manager for your Laravel system.
 
-We have extensively discussed the various main resources to be monitored in Laravel. In this tutorial, we have covered the following: This includes, but not limited to:
+We have extensively discussed the various main resources to be monitored in Laravel. In this tutorial, we covered the following:
 -  CPU usage
 -  Database traffics
 
-Happy Coding!
+Happy coding!
 
 ---
 Peer Review Contributions by: [Miller Juma](/engineering-education/authors/miller-juma/)
