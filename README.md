@@ -39,7 +39,7 @@ We also have an EngEd Article Submission Process that allows our contributors to
 
 This is in an effort to provide students a medium to showcase their skills, profiles, and contributed works to any potential employers. 
 
-Students are expected to contribute fully polished and ready to be published (by *fully polished and ready to be published articles* we mean pull request that are submitted in FINAL form draft. Pull requests that require **moderate to major review/revision will either be CLOSED or will not recieve payout upon being published**) articles will be eligible to recieve payouts. 
+Students are expected to contribute fully polished and ready to be published (by *fully polished and ready to be published articles* we mean pull request that are submitted in FINAL form draft. Pull requests that require **moderate to major review/revision will either be CLOSED**.
 
 ### Submission Instructions
 1. To submit an article for consideration, be sure to first check [published content](https://www.section.io/engineering-education/) to ensure relevance and prevent overlap. **Hint**: Use the this EngEd Content Suggestion form to propose article topic for approval and get feedback on topic ideas. [*View content form here*](https://github.com/section-io/engineering-education/issues/new?assignees=&labels=topic+suggestion&template=enged-content-idea-suggestion.md&title=)
