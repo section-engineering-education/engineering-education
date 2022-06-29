@@ -29,4 +29,23 @@ testimonials:
     roles: ["Contributor"]
     location: Lagos, Nigeria
     profileUrl: /authors/shuaib-oseni/
+  - name: Bravin W.
+    testimonial: I would like to thank the EngEd program for helping me land my first job as a ML engineer. A recruiter invited me for an interview with a great company, because of an article I published on the EngEd platform. This a great way to be noticed out there [in the workforce].
+    image: /authors/bravin-wasike/avatar.jpg
+    roles: ["Contributor"]
+    location: Nairobi, Kenya
+    profileUrl: /authors/bravin-wasike/
+  - name: Miller J.
+    testimonial: Being part of the EngEd community has added significant value to my portfolio as a technical writer and a developer. I have been able to learn new technologies, as well as connect with peers and potential employers who enjoy my articles.
+    image: /authors/miller-juma/avatar.jpeg
+    roles: ["Peer Reviewer", "Contributor"]
+    location: Nairobi, Kenya
+    profileUrl: /authors/miller-juma/
+  - name: Willies B.
+    testimonial: I'm so honored to be a part of the EngEd community. I have learned a lot through this program (both in my technical writing and my software development) and I am looking forward to enriching the community with the knowledge I've gained over the years. It's been such an amazing experience so far!
+    image: /authors/willies-ogola/avatar.jpg
+    roles: ["Peer Reviewer", "Contributor"]
+    location: Nairobi, Kenya
+    profileUrl: /authors/willies-ogola/
+
     
