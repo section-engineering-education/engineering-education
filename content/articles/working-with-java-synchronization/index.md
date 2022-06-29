@@ -6,7 +6,7 @@ url: /working-with-java-synchronization/
 title: Working with Java Synchronization
 description: This article explains the concept of synchronization in the context of Java along with its implementation.
 author: grace-wanjiru
-date: 2022-06-28T00:00:00-18:00
+date: 2022-06-29T00:00:00-13:40
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -14,10 +14,9 @@ images:
  - url: /engineering-education/working-with-java-synchronization/hero.jpg
    alt: working with synchronization in Java
 ---
-
-Synchronization in computing is the practice of keeping a group of data or files identical across many locations. It enables several threads to access a common resource such as external files, class variables, and database information. Synchronization is common in multithreaded code. It enables your code to execute on a single thread uninterrupted.
-
+Synchronization in computing is the practice of keeping a group of data or files identical across many locations. It enables several threads to access a common resource such as external files, class variables, and database information. 
 <!--more-->
+Synchronization is common in multithreaded code. It enables your code to execute on a single thread uninterrupted.
 
 ### Table of contents
 - [An insight into synchronization in Java](#an-insight-into-synchronization-in-java)
@@ -30,8 +29,9 @@ Synchronization in computing is the practice of keeping a group of data or files
 ### An insight into synchronization in Java
 Several threads querying the same resource might lead to unexpected results. Synchronization is required to prevent several threads from accessing a resource allowing only one thread at a time. Java's synchronized blocks, denoted by the `synchronized` keyword, allow you to handle several threads at once. In each case, a thread must acquire and release a lock on the method or block.
 
-Controlling problems with mutual exclusion in a multithreading system is the goal of synchronization. Take note of the following:
+Controlling problems with mutual exclusion in a multithreading system is the goal of synchronization. 
 
+Take note of the following:
 - Immutable objects in Java do not need synchronization.
 - Variables cannot be synchronized in Java. This will cause a compilation error.
 
@@ -43,9 +43,9 @@ Below are the two forms of synchronization:
 2. **Thread Synchronization**: This synchronization ensures that only one thread may access a shared resource at a time.
 
 ### The race condition
-A race condition may occur in Java due to the use of several threads to implement applications concurrently. In some ways, the race condition resembles deadlock since it is caused by multi-threading and may lead to serious consequences. Threads that are working on the same object or data without sufficient synchronization might result in overlapping operations on each other, which is what causes race conditions.
+A race condition may occur in Java due to the use of several threads to implement applications concurrently. In some ways, the race condition resembles deadlock since it is caused by multi-threading and may lead to serious consequences. 
 
-To understand further let's first look at the types of race conditions:
+Threads that are working on the same object or data without sufficient synchronization might result in overlapping operations, which is what causes race conditions. To better understand let's first look at the types of race conditions:
 
 There are several different sorts of racing situations. `Critical` and `non-critical` are two categories that characterize the impact of a race condition on a system:
 
@@ -56,7 +56,7 @@ Electronics and programming aren't the only critical and non-critical race condi
 
 Let us now look at possible error scenarios involving race conditions:
 
-1. **Read-modify-write condition:** This happens when two threads/processes read a program's value and write it back. It frequently results in a software flaw. Like in the previous example, the two threads/processes are expected to happen sequentially: the first process produces a value, and the second reads it and returns another.
+1. **Read-modify-write condition:** This happens when two threads/processes read a program's value and write it back. It frequently results in a software flaw. Like in the previous example, the two threads/processes are expected to happen sequentially. The first process produces a value, and the second reads it and returns another.
 
 For example, if checks against a checking account are processed consecutively, the system will first check for sufficient money to process check A, then check again for sufficient funds to process check B. If the two checks are processed simultaneously, the system may interpret the same account balance for both transactions producing an overdraft.
 
@@ -98,7 +98,7 @@ public class Example {
 }
 ```
 
-```
+```bash
 The output of the thread is : Thread-0 - 3
 The output of the thread is : Thread-1 - 3
 The output of the thread is : Thread-2 - 3
@@ -108,7 +108,9 @@ The output of the thread is : Thread-3 - 4
 
 As shown above, the threads are chosen in an unpredictable order, and the value is incorrect. The value should rise by 1 but that is not the case. Usually, the output is 3. Threads 0, 1, and 2 share the same value thus showing a race condition. After understanding what a race condition is, let's now look at how to refrain from it.
 
-It is evident that the crucial element (code that changes shared resources) must be limited. Additionally, with Java's `synchronized` keyword we can synchronize access to the shared resource. This prevents thread interference during atomic operations. The term *atomic operation* refers to a set of operations that are always performed in unison. All of the atomic actions must be completed at the same time, or none of them can be completed at all.
+It is evident that the crucial element (code that changes shared resources) must be limited. Additionally, with Java's `synchronized` keyword we can synchronize access to the shared resource. 
+
+This prevents thread interference during atomic operations. The term *atomic operation* refers to a set of operations that are always performed in unison. All of the atomic actions must be completed at the same time, or none of them can be completed at all.
 
 Synchronizing the method call should avoid the race problem:
 
@@ -147,7 +149,7 @@ public class Example2 {
 }
 ```
 
-```
+```bash
 The output of the thread is : Thread-0 - 2
 The output of the thread is : Thread-4 - 3
 The output of the thread is : Thread-3 - 4
@@ -155,14 +157,13 @@ The output of the thread is : Thread-2 - 5
 The output of the thread is : Thread-1 - 6
 ```
 
-From the results of the threads above, no thread shares a value. Our aim of avoiding a race condition is fulfilled.
+From the results of the threads above, no thread shares a value. Our aim of avoiding a race condition was fulfilled.
 
 ### Understanding synchronized methods and synchronized blocks
 To understand the two, let us first look at each separately:
 
 #### Synchronized methods
 These consist of the following properties:
-
 - A synchronized method locks down the whole object. No other thread may access synchronized methods in the object while the method is executing. With static methods, they are locked by their class.
 - Synchronized methods need locks on the current object or, in the case of static methods, the whole class. This is because the lock is obtained when the thread enters and released when the thread quits (naturally or by throwing an exception).
 - Synchronized methods keep the lock for the method scope.
@@ -171,7 +172,7 @@ These consist of the following properties:
 #### Synchronized blocks
 The synchronized block may be used to perform synchronization on any specified resource of the method.
 
-Suppose we have 100 lines of code in our method, but we want to synchronize only 10 lines, in such cases, we can use synchronized block. If we put all the codes of the method in the synchronized block, it will work same as the synchronized method.
+Suppose we have 100 lines of code in our method, but we want to synchronize only 10 lines, in such cases, we can use synchronized block. If we put all the codes of the method in the synchronized block, it will work the same as the synchronized method.
 
 Let us look at an example program that uses synchronized blocks.
 
@@ -233,7 +234,7 @@ import java.util.concurrent.TimeUnit;
  ```
 The above code will output the following
 
-```
+```bash
 5
 10
 15
@@ -247,7 +248,6 @@ The above code will output the following
 ```
 
 The following is all that it entails:
-
 - The synchronized keyword is used to identify blocks that are part of a synchronized thread in Java. In Java, a synchronized block is one that is tied to a specific object. There can only be one thread operating in all synchronized blocks synchronized on the same object. When the synchronized block is exited, all subsequent threads trying to enter it are stalled until that thread quits.
 - Synchronized blocks utilize the object as a lock. When a method is marked as synchronized, the thread owns the monitor or lock object. In this case, you are blocked until the other thread releases the monitor.
 - Using a synchronized block enables you to fine-tune lock control by mutually excluding important section code.
@@ -259,7 +259,9 @@ The following is all that it entails:
 ### Implementing synchronization in Java
 To provide internal synchronization, Java's lock concept is employed. In Java, each object has its own lock. In this case, the lock idea will be brought into play anytime we utilize the synchronized keyword.
 
-First, a thread with the lock on the object must execute any synchronized methods on it. Post-lock, a thread may invoke any synchronized method on the object. Upon successful completion of the synchronized method, the thread is responsible for releasing the lock. No other threads may perform synchronized methods on the same object while a thread is executing one. However, any non-synchronized procedure may be executed concurrently by the remaining threads. Note that this idea of a lock may be applied on the object level rather than the method level.
+A thread with the lock on the object must execute any synchronized methods on it. Post-lock, a thread may invoke any synchronized method on the object. Upon successful completion of the synchronized method, the thread is responsible for releasing the lock. 
+
+No other threads may perform synchronized methods on the same object while a thread is executing one. However, any non-synchronized procedure may be executed concurrently by the remaining threads. Note that this idea of a lock may be applied on the object level rather than the method level.
 
 Let's look at an example program:
 
@@ -315,7 +317,7 @@ import java.util.concurrent.TimeUnit;
 
 The code will output:
 
-```
+```bash
 Hello : 
 SECTION
 Hello : 
@@ -329,7 +331,7 @@ ENGINEERING
 ### Conclusion
 Synchronization is required to ensure that only one thread may access resources at a time. We have looked at how to work with synchronization and the various aspects of this concept.
 
-Happy learning!
+Happy coding!
 
 ---
 Peer Review Contributions by: [John Amiscaray](/engineering-education/authors/john-amiscaray/)
