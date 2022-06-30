@@ -1,5 +1,5 @@
 ### EngEd Content Program Overview
-Welcome to Section's Engineering Education (EngEd) Program, the program was created to promote and cultivate relevant career building/skill enrichment resources, a community for students to share their knowledge with peers around the world, and to help catapult their careers.”
+Welcome to Section's Engineering Education (EngEd) Program, the program was created to promote and cultivate relevant career building/skill enrichment resources, a community for students to share their knowledge with peers around the world, and to help catapult their careers.
 
 Let's begin by creating your [EngEd profile](https://github.com/section-engineering-education/engineering-education/blob/master/new_contributors/enged-author-profile-guidelines.md). This profile can be used as a valuable reference to share with peers, potential employers, and the broader technology community. It is important to update it and keep it presentable.
 
@@ -27,6 +27,8 @@ Here's a list of our contributor documentation to help you get started on your f
 - [Upload Instructions](https://github.com/section-engineering-education/engineering-education/blob/master/new_contributors/UPLOAD_INSTRUCTIONS.md): a guide on how to submit your article for review
 
 - [Example Article Submission](https://github.com/section-engineering-education/engineering-education/blob/master/new_contributors/example_article_submission.md): An example of a history of technology article
+
+- [Enged Author Profile Guidelines](https://github.com/section-engineering-education/engineering-education/blob/master/new_contributors/enged-author-profile-guidelines.md): Guidelines on how to get started with your EngEd contributor profile.
 
 - [Getting Started](https://github.com/section-engineering-education/engineering-education/blob/master/new_contributors/getting-started.md): a much briefer introduction to the program with links to our more specific and detailed docs.
 
