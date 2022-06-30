@@ -1,57 +1,77 @@
-### Introduction
+---
+layout: engineering-education
+status: publish
+published: true
+url: /file-upload-compression-and-encryption-using-aes-algorithm-in-flutter-applications/
+title: Handling File Upload, Compression, and Encryption using AES Algorithm in Flutter Applications 
+description: This tutorial will guide the reader on how to create a simple Flutter mobile application that receives, compresses, and encrypts different file formats.
+author: ian-masae
+date: 2022-06-30T00:00:00-02:30
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
 
-File compression is the process of reducing the logical size of a file to save disk space and network optimization of files for transfer over the internet. On the other hand, file encryption is a way of encoding files, including the sensitive data they contain, to send them securely. This prevents unauthorized access and tampering.
+- url: /engineering-education/file-upload-compression-and-encryption-using-aes-algorithm-in-flutter-applications/hero.jpg
+  alt: File Upload, Compression, and Encryption using AES Algorithm in Flutter Hero Image
+---
+File compression is the process of reducing the logical size of a file to save disk space. It also involves network optimization of files for easier transfer over the internet.
+<!--more-->
+On the other hand, file encryption is a way of encoding files, including the sensitive data they contain, to send them securely. This prevents unauthorized access and tampering.
 
 ### Goal
-
-This tutorial will guide the reader on how to create a simple Flutter mobile application that will be able to: accept files such as images, videos, or documents from the phone's local storage, compress them without losing their quality and encrypt the files using the AES encryption algorithm before uploading the file to Firebase storage.
+This tutorial will guide the reader on how to create a simple Flutter mobile application that will be able to:
+- Accept files such as images, videos, or documents from the phone's local storage.
+- Compress the files without losing their quality.
+- Encrypt the files using the AES encryption algorithm before uploading the file to Firebase storage.
 
 ### Prerequisites
-
 - A solid understanding of the [Dart](https://dart.dev/) programming language.
 - Knowledge of working with [Flutter widgets](https://docs.flutter.dev/development/ui/widgets).
-- An IDE that supports Flutter such as; [Visual Studio Code](https://code.visualstudio.com/). This tutorial uses [Android Studio](https://developer.android.com/studio) with the Flutter plugin installed.
+- An IDE that supports Flutter such as [Visual Studio Code](https://code.visualstudio.com/). This tutorial uses [Android Studio](https://developer.android.com/studio) with the Flutter plugin installed.
 
 We will be using Flutter version 2.10.4 in this tutorial. If you do not have Flutter SDK installed, visit [Flutter Docs](http://docs.flutter.dev/get-started/install/) for the installation process.
 
 ### Project overview
-
 Open Android Studio and create a new Flutter application with the name `flutter-app-demo`.
-After the project has been initialized, we will create our project structure. Our project will have four routes. We will go to the `lib` folder of our project and create a new folder called `screens` and here, we will add our routes.
+After the project has been initialized, we will create our project structure. 
+
+The project will have four routes. We will go to the `lib` folder of our project and create a new folder called `screens` and here, we will add our routes.
 
 The routes are as follows:
 
-- Home screen - which will be our startup page when the application loads. It will go by the name, `home.screen.dart`.
-- Image screen - this page will be called `image.screen.dart`. It will allow the user to pick and upload an image.
-- Video screen - this page will be called `video.screen.dart`. It will allow the user to pick a video and upload it to firebase storage.
-- Document screen - which will be called `document.screen.dart`. It will allow the user to pick a document and manipulate it.
+- Home screen - This will be our startup page when the application loads. It will go by the name, `home.screen.dart`.
+- Image screen - This page will be called `image.screen.dart`. It will allow the user to pick and upload an image.
+- Video screen - This page will be called `video.screen.dart`. It will allow the user to pick a video and upload it to Firebase storage.
+- Document screen - This will be called `document.screen.dart`. It will allow the user to pick a document and manipulate it.
 
 Next, we will create another folder under the `lib` folder called `services`. This folder will contain the APIs that we will use for the functionality of our application.
+
 We will create the following APIs:
 
 - A Firebase API - It will contain the code that will enable us to upload files to Firebase storage.
-- File picker API - this API will enable us to pick files from the local storage.
-- File compression API - this APi will enable us to compress images and videos picked from the gallery.
-- File encryption API - this API will enable us to encrypt a file.
+
+- File picker API - This API will enable us to pick files from the local storage.
+
+- File compression API - This APi will enable us to compress images and videos picked from the gallery.
+
+- File encryption API - This API will enable us to encrypt a file.
 
 ### Setting up Firebase
-
 To set up Firebase go to the [Firebase Console](https://console.firebase.google.com/u/0/) and follow the step-by-step process to create your Firebase project.
 
-After successfully creating your Firebase Android app. Go to the menu in the dashboard and select `Storage` and select `Get Started` as shown below:
+After successfully creating your Firebase Android app. Navigate to the menu in the dashboard and select `Storage` and then `Get Started` as shown below:
 
-![Getting started with Firebase Storage](\engineering-education\content\articles\file-upload-compression-and-encryption-using-aes-algorithm-in-flutter-applications\get-started.png)
+![Getting started with Firebase Storage](/engineering-education/file-upload-compression-and-encryption-using-aes-algorithm-in-flutter-applications/get-started.png)
 
-Select to start in test mode and select the location of your Firebase server and click done.
+Next, select to start in test mode and specify the location of your Firebase server and then click done.
 
-After the process is complete, go to the `Rules` tab and the change the rules as shown below:
+After the process is complete, navigate to the `Rules` tab and then change the rules, as shown below:
 
-![Firebase Storage Rules](\engineering-education\content\articles\file-upload-compression-and-encryption-using-aes-algorithm-in-flutter-applications\Firebase-Storage-Rules.png)
+![Firebase Storage Rules](/engineering-education/file-upload-compression-and-encryption-using-aes-algorithm-in-flutter-applications/firebase-storage-rules.png)
 
-This rule is not recommended when on production mode. It makes your data insecure.
+> Note that this rule is not recommended when in production mode because it makes your data insecure.
 
 ### Adding dependencies
-
 Go to the `pubspec.yaml` file and add the following dependencies:
 
 ```dart
@@ -66,25 +86,24 @@ dependencies:
   file_saver: ^0.1.0
 ```
 
-- `firebase_storage` and `firebase_core` - These dependencies help us to access our Firebase storage where we will store our files.
-- `flutter_native_image` this one helps us to compress images that we pick from the local storage.
-- `video_compress` this one enables us to compress videos.
-- `gallery_saver` this one provides an easier way to save images or videos to the gallery.
-- `file_saver` provides us an easier way to save document files to the local storage
-- `file_picker` this one enables us to pick from the local storage.
-- `encrypt` this one enables us to encrypt and decrypt files using the AES algorithm.
+- `firebase_storage` and `firebase_core` help us to access our Firebase storage where we will store our files.
+- `flutter_native_image` helps us to compress images that we pick from the local storage.
+- `video_compress` enables us to compress videos.
+- `gallery_saver` provides an easier way to save images or videos to the gallery.
+- `file_saver` provides us an easier way to save document files to the local storage.
+- `file_picker` enables us to pick from the local storage.
+- `encrypt` allows us to encrypt and decrypt files using the AES algorithm.
 
-### Creating the APIs
+### Creating APIs
+We will create four APIs which we will use to build the functionality of our application. 
 
-We will create four APIs which we will use to build the functionality of our application. These APIs are as follows:
+These APIs are as follows:
 
-### 1. File Picker API
-
+#### 1. File Picker API
 In this API we create methods for the functions that the program will perform, i.e., picking images and videos from the local storage. These functions are as follows:
 
-#### a. Picking an image
-
-It is as shown below:
+##### a. Picking an image
+This function is shown below:
 
 ```dart
 class FilePickerApi {
@@ -105,9 +124,8 @@ class FilePickerApi {
 }
 ```
 
-#### b. Picking a video
-
-It is as shown below:
+##### b. Picking a video
+This will be done using the following code:
 
 ```dart
 // Picking a video from the local storage
@@ -128,8 +146,7 @@ static Future<File?> pickVideo() async {
 
 This is the function for picking a video from the local storage.
 
-#### c. Picking a document
-
+##### c. Picking a document
 It is as shown below:
 
 ```dart
@@ -149,12 +166,13 @@ Future<File?> pickDocument() async {
 }
 ```
 
-The function above will enable us to pick documents from the gallery. We will only be able to select `.pdf` document files from the local storage. This is because we have set only PDF files as the only allowed document type but more could be added.
+The function above will enable us to pick documents from the gallery. We will only be able to select `.pdf` document files from the local storage. 
 
-### 2. File compression API
+This is because we have set PDF files as the only allowed document format but more could be added.
 
-#### a. Compressing an image
+#### 2. File compression API
 
+##### a. Compressing an image
 It is as shown below:
 
 ```dart
@@ -174,8 +192,7 @@ class FileCompressionApi {
 
 From the function above, the picked image is passed as an argument. We have used the `flutter-native-image` package to compress the image and return a new compressed file.
 
-#### b. Compressing a video
-
+##### b. Compressing a video
 It is as shown below:
 
 ```dart
@@ -194,11 +211,14 @@ static Future<MediaInfo?> compressVideo(File file) async {
 }
 ```
 
-From the above function, we pass the picked video as an argument. We will then use the `video_compress` package to compress the image. The final output is a file with media information. We will use the media information to get the actual file which is our compressed video.
+From the above function, we pass the picked video as an argument. We will then use the `video_compress` package to compress the image. 
 
-### 3. Firebase API
+The final output is a file with media information. We will use the media information to get the actual file which is our compressed video.
 
-The functionality of the Firebase API is to enable the user to upload files to the Firebase storage. We have created a class called `firebase.api.dart`. Here is the code for the Firebase file uploading:
+#### 3. Firebase API
+The function of the Firebase API is to enable the user to upload files to the Firebase storage. 
+
+We have created a class called `firebase.api.dart`. Here is the code for the Firebase file uploading:
 
 ```dart
 class FirebaseApi {
@@ -216,7 +236,7 @@ class FirebaseApi {
 
 Here, we will pass the file we want to upload, and the path where will store the file in the Firebase storage bucket.
 
-### 4. File Encryption API
+#### 4. File Encryption API
 
 ```dart
 import 'dart:typed_data';
@@ -235,14 +255,15 @@ class FileEcryptionApi {
 }
 ```
 
-Here, we set the encryption algorithm to AES, and we have created a key variable. It contains an encryption key that is randomly generated containing 16 characters. `iv` represents an `Initialization Vector` key which is used to initialize the encryption process.
+Here, we set the encryption algorithm to AES, and we have created a key variable. It contains an encryption key that is randomly generated containing 16 characters. 
+
+`iv` represents an `Initialization Vector` key which is used to initialize the encryption process.
 
 Finally, we have passed the data which we want to encrypt which is the list of bytes that we want to encrypt.
 
 ### User Interface
 
 #### Home Screen
-
 This page will be the main screen of our application. It is the root page that we will use to navigate to other pages in the application.
 
 This is the code for our home screen:
@@ -311,10 +332,9 @@ class _HomeScreenState extends State<HomeScreen> {
 ```
 
 #### Image Screen
-
 This is the page where we will be able to select an image, compress it, save it to the gallery or upload it to firebase.
 
-This is the code for our image screen:
+This is the code for our Image screen:
 
 ```dart
 import 'dart:io';
@@ -485,7 +505,7 @@ class _ImageScreenState extends State<ImageScreen> {
 }
 ```
 
-We derive the name of the file that we pick and store it in the variable `fileName` as shown below:
+We derive the name of the file that we pick and store it in the variable `fileName`, as shown below:
 
 ```dart
 final fileName = image != null ? (image!.path.split('/').last) : "No Image Selected";
@@ -504,8 +524,7 @@ final fileSize = image != null
 ```
 
 #### Uploading an image to Firebase
-
-We have created a function `uploadImage()` this function will enable us to upload the image to Firebase storage with the help of the Firebase API that we created. It is as shown below:
+We have created a function `uploadImage()` which will enable us to upload the image to Firebase storage with the help of the Firebase API that we created, as demonstrated below:
 
 ```dart
 Future uploadImage() async {
@@ -518,15 +537,14 @@ Future uploadImage() async {
 }
 ```
 
-We first get the name of the compressed image from its path. We then set the destination, which is a required argument by the Firebase API function, `uploadFile()`.
+We first retrieve the name of the compressed image from its path. We then set the destination, which is a required argument by the Firebase API function, `uploadFile()`.
 
 The destination is the path in the Firebase storage bucket where the file will be stored. In our case, we will store images, videos, and documents in different folders.
 
 Finally, we will call the function, `uploadFile()` from the Firebase API and pass the required arguments, i.e., the destination of the file and the file itself as shown in the code above.
 
 #### Saving an image to the gallery
-
-We have created a function to save the compressed image to the local storage. We have used the `gallery_saver` package to achieve that. It is as shown below:
+We have created a function to save the compressed image to the local storage. We have used the `gallery_saver` package to achieve that, as shown below:
 
 ```dart
 String url = compressedImage!.path;
@@ -535,12 +553,8 @@ GallerySaver.saveImage(url, albumName: "Flutter App Demo")
 
 A new album is created by the name provided and the image is saved there.
 
-This is the final output when we run the application:
-
-![Image Screen](\engineering-education\content\articles\file-upload-compression-and-encryption-using-aes-algorithm-in-flutter-applications\image-screen.gif)
 
 #### Video Screen
-
 The video screen is almost similar to the image screen. We have only added a few extra functions that we will use for manipulating our video files such as video compressing.
 
 This is the code for the video screen:
@@ -702,7 +716,9 @@ class _VideoScreenState extends State<VideoScreen> {
 
 ```
 
-When we compress a video a `MediaInfo` file containing the media information is returned. It contains the path to the file, the file size, title, author, duration e.t.c. For our case, we will only use the file path. From here the picked video will be replaced with the new compressed video as shown below:
+When we compress a video a `MediaInfo` file containing the media information is returned. It contains the path to the file, the file size, title, author, duration e.t.c. 
+
+For our case, we will only use the file path. From here the picked video will be replaced with the new compressed video:
 
 ```dart
 setState(() {
@@ -720,27 +736,22 @@ setState(() {
 });
 ```
 
-We store the media information which is returned when the compression is successful in the `MediaInfo` variable we created earlier shown below:
+We store the media information which is returned when the compression is successful in the `MediaInfo` variable that we created earlier:
 
 ```dart
 MediaInfo? compressedVideoInfo;
 ```
 
-From the media information, we derive the file path of the compressed video. The new video file will be the compressed video. As shown below:
+From the media information, we derive the file path of the compressed video. The new video file will be the compressed video:
 
 ```dart
 videoFile = File(result.file!.path);
 ```
 
-This is the final output when we run the application:
-
-![Video Screen](\engineering-education\content\articles\file-upload-compression-and-encryption-using-aes-algorithm-in-flutter-applications\video-screen.gif)
-
 #### Document Screen
+We maintained a consistent user interface for all the screens. In the document screen, we will be able to pick a document from the phone storage, encrypt the document and then upload it to Firebase storage.
 
-We maintained a consistent user interface for all the screens. In the document screen, we will be able to pick a document from the phone storage, encrypt the document and then be able to upload it to Firebase storage.
-
-It is as shown below:
+This is demonstrated below:
 
 ```dart
 import 'dart:io';
@@ -869,11 +880,12 @@ class _DocumentScreenState extends State<DocumentScreen> {
 }
 ```
 
-#### Document File Encryption
+#### Document File encryption
+When encrypting the file, we first get the file we want to encrypt. For our case, we will use the document that we pick from the local storage. 
 
-When encrypting the file, we first get the file we want to encrypt. For our case, we will use the document that we pick from the local storage. The file is read and changed into a list of bytes which is the required format to be able to encrypt the file.
+The file is read and changed into a list of bytes which is the required format to be able to encrypt the file.
 
-Once we have successfully changed the file into a list of bytes, the file is encrypted using the AES algorithm. This is done by calling the File Encryption API that we created earlier on.
+Once we have successfully changed the file into a list of bytes, the file is encrypted using the AES algorithm. This is done by calling the File Encryption API that we created earlier.
 
 ```dart
 final result = await FileEcryptionApi.encryptFile(doc!.readAsBytesSync()); //Changing the file into a list of bytes
@@ -885,15 +897,10 @@ Once the encryption is complete, the encrypted file is saved to the local storag
 await FileSaver.instance.saveAs(fileName, result!, "aes", MimeType.OTHER); //Saving the encrypted file to the local storage
 ```
 
-This is the final output when we run the application:
-
-![Document Screen](\engineering-education\content\articles\file-upload-compression-and-encryption-using-aes-algorithm-in-flutter-applications\document-screen.gif)
-
 #### main.dart
-
 The `main.dart` is the root of the application from where all other widgets form the widget tree.
 
-First, for our main function we will initialize our Firebase app as shown below:
+For our main function we will initialize our Firebase app as follows:
 
 ```dart
 import 'package:firebase_core/firebase_core.dart'; // Make sure this package is imported.
@@ -905,7 +912,7 @@ void main() async {
 }
 ```
 
-Next, we will set the home page to be our home screen which we have created earlier on as shown below:
+Next, we will set the home page to be the home screen that we created earlier:
 
 ```dart
 class MyApp extends StatelessWidget {
@@ -925,10 +932,14 @@ class MyApp extends StatelessWidget {
 }
 ```
 
-### Conclution
+### Conclusion
+In this article, we have gone through how to pick different types of files from the local storage and manipulate them. 
 
-In this article, we have gone through how to pick different types of files from the local storage and manipulate them. We were able to pick videos and images from the gallery and compress them to achieve a smaller image and video size. This is a way of optimizing data usage when uploading such files to cloud storage.
+We were able to pick videos and images from the gallery and compress them to achieve a smaller image and video size. This is a way of optimizing data usage when uploading such files to cloud storage.
 
-We have also gone through the process of encrypting documents and the process uploading videos, images, and document files to Firebase storage. I do hope this article is useful.
+We have also gone through the process of encrypting documents and uploading videos, images, and document files to Firebase storage. I do hope this article is useful.
 
 Happy coding!
+
+---
+Peer Review Contributions by: [Wanja Mike](/engineering-education/authors/michael-barasa/)
