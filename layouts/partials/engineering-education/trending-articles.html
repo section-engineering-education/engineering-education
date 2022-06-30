@@ -1,7 +1,94 @@
+<script defer type="text/javascript">
+  const openTab = (evt, cityName) => {
+    // Declare all variables
+    let i, tabcontent, tablinks;
+  
+    // Get all elements with class="tabcontent" and hide them
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+      tabcontent[i].style.display = "none";
+    }
+  
+    // Get all elements with class="tablinks" and remove the class "active"
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+      tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+  
+    // Show the current tab, and add an "active" class to the button that opened the tab
+    document.getElementById(cityName).style.display = "block";
+    evt.currentTarget.className += " active";
+  }
+</script>
+
+{{ with .context.Site.GetPage "/customized-axios-for-mulitple-servers-in-vue" }}
+  {{ .Params.author }}
+{{ end }}
+
+
 <section class="trending-articles-wrapper xs-pt-50 xs-pb-50 xs-mt-50 xs-mb-50">
   <div class="content-margins">
     <div class="trending-articles-header text-center">
       <h2 class="title-3 xs-mb-20">Trending Articles</h2>
+
+    </div>
+    <div class="trending-articles-tabs">
+      <button class="tablinks" onclick="openTab(event, 'trending30Days')" id="defaultOpen">Last 30 Days</button>
+      <button class="tablinks" onclick="openTab(event, 'allTime')">All Time</button>
+    </div>
+    <div class="tab-body">
+      <div id="trending30Days" class="tabcontent">
+        <table>
+          <thead>
+              <tr>
+                  <th>Rank</th>
+                  <th>Article Title</th>
+                  <th># Page Views</th>
+              </tr>
+          </thead>
+          <tbody id="trending30DaysTableBody">
+            {{ $dataJ := getJSON "http://localhost:3000/trending-articles/" }}
+
+            {{ with $dataJ }}
+              {{ range $index, $el := . }}
+              <tr>
+                <td class="rank-col">{{ add $index 1 }}.</td>
+                <td class="article-col">
+                  {{ $articleUrl := print (substr (replace $el.url "/engineering-education/" "/") 0 -1) }}
+                  {{ $authorName := "" }}
+
+                  {{ with $.site.GetPage $articleUrl }}
+                    {{ $authorSlug := print .Params.author}}
+                    {{ $articleSlug := print .Params.url}}
+                    {{ print .Params }}
+
+                    {{ with $.site.GetPage $authorSlug }}
+                      {{ $authorName = .Params.title }}
+                      {{ $authorImage := index .Params.images 0 }}
+
+                      <div class="avatar">
+                        <img src="{{ if eq $.site.Params.env "local" }}{{ replace $authorImage.url "/engineering-education/" "/" }}{{ else }}{{ $authorImage.url }}{{ end }}" alt="">
+                      </div>
+
+                    {{ end }}
+                    <div class="content">
+                      <a class="title title-5" href="{{ $articleSlug }}">{{ .Params.title }}</a>
+                      <div class="author-link text-15">by: <a class="text-15-medium" href="/authors/{{ .Params.author }}/">{{ $authorName }}</a></div>
+                    </div>
+                  {{ end }}
+                </td>
+                <td class="page-views-col">{{ lang.FormatNumberCustom 0 $el.pageViews "- . ," }}</td>
+              </tr>
+                
+              {{ end }}
+            {{ end }}
+          </tbody>
+      </table>
+      </div>
+      
+      <div id="allTime" class="tabcontent">
+        <h3>All Time</h3>
+      </div>
     </div>
   </div>
 </section>
@@ -9,21 +96,7 @@
 <script defer type="text/javascript">
 
   document.addEventListener("DOMContentLoaded", async function() {
-    const handleError = response => {
-      if (!response.ok) {
-        throw Error(response.statusText);
-      } else {
-        return response.json();
-      }
-    }
-
-    const getTrendingArticles = () => {
-      return fetch('{{ if eq site.Params.env "local" }}http://localhost:3000/trending-articles/{{ else }}https:\/\/api.www.section.io/trending-articles/{{ end }}')
-        .then(handleError)
-        .then(data => {
-          console.log("trendArts:", data)
-        });
-    }
-    getTrendingArticles();
+    // Get the element with id="defaultOpen" and click on it
+    document.getElementById("defaultOpen").click();
   })
 </script>
