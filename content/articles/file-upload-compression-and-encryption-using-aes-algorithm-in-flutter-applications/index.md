@@ -67,7 +67,7 @@ Next, select to start in test mode and specify the location of your Firebase ser
 
 After the process is complete, navigate to the `Rules` tab and then change the rules, as shown below:
 
-![Firebase Storage Rules](/engineering-education/file-upload-compression-and-encryption-using-aes-algorithm-in-flutter-applications/firebase-storage-rules.png)
+![Firebase Storage Rules](/engineering-education/file-upload-compression-and-encryption-using-aes-algorithm-in-flutter-applications/firebasestorage-rules.png)
 
 > Note that this rule is not recommended when in production mode because it makes your data insecure.
 
