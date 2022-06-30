@@ -6,7 +6,7 @@ url: /controlling-web-pages-visible-to-different-users-in-php/
 title: How to Control Web Pages Visible to Different Users using PHP
 description: This article will help the reader understand how to control access to certain web pages or files using PHP.
 author: david-okoth
-date: 2022-06-29T00:00:00-02:33
+date: 2022-06-30T00:00:00-01:30
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
