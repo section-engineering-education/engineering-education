@@ -46,7 +46,7 @@
                   <th># Page Views</th>
               </tr>
           </thead>
-          <tbody id="trending30DaysTableBody">
+          <tbody id="trending30DaysTableBody" class="table-body">
             {{ $dataJ := getJSON "http://localhost:3000/trending-articles/" }}
 
             {{ with $dataJ }}
@@ -60,7 +60,7 @@
                   {{ with $.site.GetPage $articleUrl }}
                     {{ $authorSlug := print .Params.author}}
                     {{ $articleSlug := print .Params.url}}
-                    {{ print .Params }}
+                    {{/*  {{ print .Params }}  */}}
 
                     {{ with $.site.GetPage $authorSlug }}
                       {{ $authorName = .Params.title }}
@@ -72,12 +72,12 @@
 
                     {{ end }}
                     <div class="content">
-                      <a class="title title-5" href="{{ $articleSlug }}">{{ .Params.title }}</a>
+                      <a class="title text-18-medium" href="{{ $articleSlug }}">{{ .Params.title }}</a>
                       <div class="author-link text-15">by: <a class="text-15-medium" href="/authors/{{ .Params.author }}/">{{ $authorName }}</a></div>
                     </div>
                   {{ end }}
                 </td>
-                <td class="page-views-col">{{ lang.FormatNumberCustom 0 $el.pageViews "- . ," }}</td>
+                <td class="page-views-col title-5">{{ lang.FormatNumberCustom 0 $el.pageViews "- . ," }}</td>
               </tr>
                 
               {{ end }}

@@ -52,55 +52,72 @@
             color: #fff;
         }
 
-        .rank-col,
-        .page-views-col,
-        .article-col {
-          padding: 8px;
+        .table-body {
+          tr {
+            &:nth-child(odd) {
+              background-color: $fill-enged-bg;
+            }
+          }
+
+          .rank-col,
+          .page-views-col,
+          .article-col {
+            padding: 8px;
+          }
+  
+          .article-col {
+            display: flex;
+            flex-flow: wrap;
+  
+            .avatar {
+              border-radius: 50%;
+              overflow: hidden;
+              width: 40px;
+              height: 40px;
+              
+              img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+  
+              }
+            }
+  
+            .content {
+              width: 100%;
+              max-width: calc(100% - 40px);
+              display: flex;
+              flex-direction: column;
+              padding-left: 10px;
+  
+              .title, 
+              .author-link a {
+                text-decoration: none;
+                color: $text-title;
+  
+                &:hover {
+                  text-decoration: underline;
+                }
+              }
+  
+              .title {
+                line-height: 22px;
+              }
+  
+              .author-link  {
+                &, a {
+                  color: $text-dark-20;
+                  // font-weight: 600;
+                  // font-style: italic;
+                }
+              }
+            }
+          }
         }
 
-        .article-col {
-          display: flex;
-          flex-flow: wrap;
 
-          .avatar {
-            border-radius: 50%;
-            overflow: hidden;
-            width: 50px;
-            height: 50px;
-            
-            img {
-              width: 100%;
-              height: 100%;
-              object-fit: cover;
-
-            }
-          }
-
-          .content {
-            width: 100%;
-            max-width: calc(100% - 50px);
-            display: flex;
-            flex-direction: column;
-            padding-left: 10px;
-
-            .title, 
-            .author-link a {
-              text-decoration: none;
-              color: $text-title;
-
-              &:hover {
-                text-decoration: underline;
-              }
-            }
-
-            .author-link  {
-              &, a {
-                color: $text-dark-20;
-                // font-weight: 600;
-                // font-style: italic;
-              }
-            }
-          }
+        .page-views-col {
+          color: $fill-blue;
         }
       }
     }
