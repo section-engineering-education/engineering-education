@@ -1,4 +1,16 @@
 ### EngEd Content Program Overview
+Welcome to Section's Engineering Education (EngEd) Program, the program was created to promote and cultivate relevant career building/skill enrichment resources, a community for students to share their knowledge with peers around the world, and to help catapult their careers.”
+
+Let's begin by creating your [EngEd profile](https://github.com/section-engineering-education/engineering-education/blob/master/new_contributors/enged-author-profile-guidelines.md). This profile can be used as a valuable reference to share with peers, potential employers, and the broader technology community. It is important to update it and keep it presentable.
+
+We also want to make sure you receive credit for all your hard work.
+
+Be sure to include a short Author Biography and Headshot image. Please include the files in the authors folder within the GitHub repo.
+
+The Section team will monitor and manage the overall Program.
+
+EngEd community content can be found at https://section.io/engineering-education.
+
 The main criteria that we're using to evaluate the incoming requests include:
 - Polish and depth of the description and key takeaways provided - Grammar, readability, and substance are all being reviewed. Be sure to treat your topic suggestion as the best representation of your writing.
 - Originality - We're looking for unique content that isn't readily available through existing documentation and wikipedia definitions. Consider applying concepts to unique projects.
