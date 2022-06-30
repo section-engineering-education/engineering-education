@@ -12,7 +12,7 @@ excerpt_separator: <!--more-->
 images:
 
 - url: /engineering-education/creating-a-dynamic-footer-component-with-minze/hero.jpg
-  alt: Jetpack Compose Forms Hero Image
+  alt: How to Create a Dynamic Footer Component with Minze Hero Image
 ---
 Minze framework helps developers create components in a single syntax. You can then utilize these components in other JavaScript frameworks such as React, Vue, and Angular.
 <!--more-->
