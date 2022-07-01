@@ -25,6 +25,7 @@
   {{ .Params.author }}
 {{ end }}
 
+{{ $apiUrl := cond (eq .context.Site.Params.env "local") "http://localhost:3000/trending-articles/" "https://api.www.section.io/trending-articles/" }}
 
 <section class="trending-articles-wrapper xs-pt-50 xs-pb-50 xs-mt-50 xs-mb-50">
   <div class="content-margins">
@@ -47,9 +48,10 @@
               </tr>
           </thead>
           <tbody id="trending30DaysTableBody" class="table-body">
-            {{ $dataJ := getJSON "http://localhost:3000/trending-articles/" }}
+            
+            {{ $dataTrending30Days := getJSON (print $apiUrl) }}
 
-            {{ with $dataJ }}
+            {{ with $dataTrending30Days }}
               {{ range $index, $el := . }}
               <tr>
                 <td class="rank-col text-18-medium">{{ add $index 1 }}.</td>
@@ -95,10 +97,11 @@
                   <th class="page-views-header text-16-tall"># Page Views</th>
               </tr>
           </thead>
-          <tbody id="trending30DaysTableBody" class="table-body">
-            {{ $dataJ := getJSON "http://localhost:3000/trending-articles/" }}
+          <tbody id="trendingAllTimeTableBody" class="table-body">
+            {{ $apiUrl := cond (eq .context.Site.Params.env "local") "http://localhost:3000/trending-articles/" "https://api.www.section.io/trending-articles/" }}
+            {{ $dataTrendingAllTime := getJSON (print $apiUrl) }}
 
-            {{ with $dataJ }}
+            {{ with $dataTrendingAllTime }}
               {{ range $index, $el := . }}
               <tr>
                 <td class="rank-col text-18-medium">{{ add $index 1 }}.</td>
