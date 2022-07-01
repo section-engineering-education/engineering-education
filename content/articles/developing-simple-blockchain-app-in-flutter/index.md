@@ -6,19 +6,19 @@ url: /developing-simple-blockchain-app-in-flutter/
 title: How to Develop a Simple Blockchain App in Flutter
 description: This article will help the reader understand how to create a simple blockchain application in Flutter.
 author: johnnie-mbugua
-date: 2022-06-30T00:00:00-02:48
-topics: [Languages]
+date: 2022-07-01T00:00:00-10:48
+topics: [Blockchain, Languages]
 excerpt_separator: <!--more-->
 images:
  - url: /engineering-education/developing-simple-blockchain-app-in-flutter/hero.jpg
    alt: Developing Simple Blockchain App in Flutter Hero Image
 ---
-Flutter is used to create cross-platform applications that run on iOS, Android, and the web. It is an advanced framework that supports fast prototyping and high performance.
+Flutter is used to create cross-platform applications that run on iOS, Android, and on the web. It is an advanced framework that supports fast prototyping and high performance.
 <!--more--> 
 Flutter utilizes Google's Skia library to draw UI widgets on the screen. In this tutorial, we will learn how to create a Dart blockchain for a simple Flutter application.
 
 ### Prerequisites
-To follow along, you need to:
+To follow along, the reader will need to:
 - Have Visual Studio Code installed.
 - Be familiar with the Flutter framework and Dart language.
 - Have some knowledge about blockchain technology.
@@ -32,7 +32,7 @@ Once you have installed the Flutter SDK. You can create a `new project` by runni
 flutter create my-blockchain-app
 ```
 
-Now that our project is created, let's open it in a code editor.  I will be using Visual Studio Code for this tutorial.
+Now that our project is created, let's open it in a code editor. I will be using Visual Studio Code for this tutorial.
 
 ### Creating blocks
 Blocks are the main nodes of the blockchain. Create a new file in the `lib` folder or the folder of your choice according to your project setup. Then add the following code:
@@ -64,7 +64,7 @@ class Block {
 }
 ```
 
-The above `block` class contains various data. `Index` tells the number of blocks on the blockchain. `Timestamp` is used to sign every block. A list of the transactions that took place between that time(timestamps). `Previous hash` that links the current block to the previous block and proves that it's valid.
+The above `block` class contains various data. `Index` tells the number of blocks on the blockchain. `Timestamp` is used to sign every block. A list of the transactions that took place between that time (timestamps). `Previous hash` that links the current block to the previous block and proves that it's valid.
 
 ### Creating Transaction class
 Create a new file called `transaction.dart`. Optionally, you can create this class in the `block` class. The `Transaction class` is responsible for all the records. It contains data on all transfers and other related information. 
@@ -95,7 +95,7 @@ class Transaction {
 
 This class contains various sets of data including the sender, the receiver, or the recipient of the assets. The amount specifies how much or how many assets are being sent. Proof of the transaction is valid, a previous hash of the previous block for reference. 
 
-### Creating the blockchain.
+### Creating the blockchain
 This is the main class of our logic. It holds the most important part of this application. It has various methods defined in it. Remember to first import the necessary files that we created above.
 
 ```dart
