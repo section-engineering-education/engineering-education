@@ -41,9 +41,9 @@
         <table>
           <thead>
               <tr>
-                  <th>Rank</th>
-                  <th>Article Title</th>
-                  <th># Page Views</th>
+                  <th></th>
+                  <th class="article-title-header text-16-tall">Article Title</th>
+                  <th class="page-views-header text-16-tall"># Page Views</th>
               </tr>
           </thead>
           <tbody id="trending30DaysTableBody" class="table-body">
@@ -52,7 +52,7 @@
             {{ with $dataJ }}
               {{ range $index, $el := . }}
               <tr>
-                <td class="rank-col">{{ add $index 1 }}.</td>
+                <td class="rank-col text-18-medium">{{ add $index 1 }}.</td>
                 <td class="article-col">
                   {{ $articleUrl := print (substr (replace $el.url "/engineering-education/" "/") 0 -1) }}
                   {{ $authorName := "" }}
@@ -83,11 +83,56 @@
               {{ end }}
             {{ end }}
           </tbody>
-      </table>
+        </table>
       </div>
       
       <div id="allTime" class="tabcontent">
-        <h3>All Time</h3>
+        <table>
+          <thead>
+              <tr>
+                  <th></th>
+                  <th class="article-title-header text-16-tall">Article Title</th>
+                  <th class="page-views-header text-16-tall"># Page Views</th>
+              </tr>
+          </thead>
+          <tbody id="trending30DaysTableBody" class="table-body">
+            {{ $dataJ := getJSON "http://localhost:3000/trending-articles/" }}
+
+            {{ with $dataJ }}
+              {{ range $index, $el := . }}
+              <tr>
+                <td class="rank-col text-18-medium">{{ add $index 1 }}.</td>
+                <td class="article-col">
+                  {{ $articleUrl := print (substr (replace $el.url "/engineering-education/" "/") 0 -1) }}
+                  {{ $authorName := "" }}
+
+                  {{ with $.site.GetPage $articleUrl }}
+                    {{ $authorSlug := print .Params.author}}
+                    {{ $articleSlug := print .Params.url}}
+                    {{/*  {{ print .Params }}  */}}
+
+                    {{ with $.site.GetPage $authorSlug }}
+                      {{ $authorName = .Params.title }}
+                      {{ $authorImage := index .Params.images 0 }}
+
+                      <div class="avatar">
+                        <img src="{{ if eq $.site.Params.env "local" }}{{ replace $authorImage.url "/engineering-education/" "/" }}{{ else }}{{ $authorImage.url }}{{ end }}" alt="">
+                      </div>
+
+                    {{ end }}
+                    <div class="content">
+                      <a class="title text-18-medium" href="{{ $articleSlug }}">{{ .Params.title }}</a>
+                      <div class="author-link text-15">by: <a class="text-15-medium" href="/authors/{{ .Params.author }}/">{{ $authorName }}</a></div>
+                    </div>
+                  {{ end }}
+                </td>
+                <td class="page-views-col title-5">{{ lang.FormatNumberCustom 0 $el.pageViews "- . ," }}</td>
+              </tr>
+                
+              {{ end }}
+            {{ end }}
+          </tbody>
+        </table>
       </div>
     </div>
   </div>

@@ -19,14 +19,25 @@
         color: $text-title;
         cursor: pointer;
         padding: 14px 16px;
-        transition: 0.3s;
         width: 50%;
         border-radius: 8px 8px 0 0;
+        border: 1px solid $fill-blue;
+        border-bottom: none;
+        @include font-smoothing;
+        @include gt-medium;
+        font-size: 18px;
+        line-height: 26px;
         
         &.active {
           color: #fff;
           background-color: $fill-blue;
           padding-top: 25px;
+          border: none;
+          @include font-smoothing;
+          @include gt-medium;
+          line-height: 30px;
+          font-size: 22px;
+
           &:before {
             content: unset;
           }
@@ -37,19 +48,44 @@
     .tab-body {
       .tabcontent {
         display: none;
-        padding: 6px 12px;
-        border: 1px solid #ccc;
         border-top: none;
 
         table,
         td {
-            border: 1px solid #333;
+          border: 1px solid $fill-blue;
         }
 
-        thead,
-        tfoot {
-            background-color: #333;
-            color: #fff;
+        table {
+          border-top: unset;
+        }
+
+        thead {
+          background-color: $fill-blue;
+          color: #fff;
+
+          tr {
+            th {
+              border-right: 1px solid $fill-enged-bg;
+              border-left: 1px solid $fill-enged-bg;
+              border-top: 2px solid $fill-enged-bg;
+              padding: 10px;
+
+              &:first-of-type {
+                border-left: unset;
+              }
+              
+              &:last-of-type {
+                border-right: unset;
+              }   
+            }
+
+            .page-views-header {
+              text-align: center;
+            }
+            .article-title-header {
+              padding-left: 60px;
+            }
+          }
         }
 
         .table-body {
@@ -60,9 +96,14 @@
           }
 
           .rank-col,
-          .page-views-col,
-          .article-col {
+          .article-col,
+          .page-views-col {
             padding: 8px;
+          }
+
+          .rank-col {
+            text-align: right;
+            padding: 8px 10px;
           }
   
           .article-col {
@@ -113,11 +154,12 @@
               }
             }
           }
-        }
 
-
-        .page-views-col {
-          color: $fill-blue;
+          .page-views-col {
+            color: $fill-blue;
+            text-align: center;
+            text-shadow: 1px 1px 5px rgba(0,0,0,0.13);
+          }
         }
       }
     }
