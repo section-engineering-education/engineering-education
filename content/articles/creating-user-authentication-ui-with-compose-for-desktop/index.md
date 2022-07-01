@@ -6,7 +6,7 @@ url: /creating-user-authentication-ui-with-compose-for-desktop/
 title: Creating User Authentication UI with Compose for Desktop
 description: This tutorial will help the reader create a user authentication UI with compose for Desktop.
 author: collince-okeyo
-date: 2022-07-14T00:00:00-11:00
+date: 2022-07-01T00:00:00-14:30
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -27,13 +27,13 @@ Kotlin multi-platform also allows users to build Compose Web Applications, as we
 - [Getting started](#getting-started)
 - [Step 1 - Creating project](#step-1-creating-project)
 - [Step 2 - Understanding Compose Desktop Application Project Structure](#step-2-understanding-compose-desktop-application-project-structure)
-- [Step 3 - User Login Class](#step-3-user-login-class)
-- [Step 4 - User Registration Class](#step-4-user-registration-class)
-- [Step 5 - Main Class](#step-5-main-class)
+- [Step 3 - User Login class](#step-3-user-login-class)
+- [Step 4 - User Registration class](#step-4-user-registration-class)
+- [Step 5 - Main class](#step-5-main-class)
 - [Conclusion](#conclusion)
 
 ### Prerequisites
-To best understand this tutorial, you must have:
+To best understand this tutorial, the reader must have:
 - [IntelliJ](https://www.jetbrains.com/idea/download/#section=windows) IDEA installed.
 - [JDK version 11](https://www.oracle.com/java/technologies/downloads/) or later installed.
 - Basic knowledge in [Jetpack Compose](https://developer.android.com/jetpack/compose).
@@ -45,13 +45,12 @@ IntelliJ IDEA has built-in Kotlin plugins and Compose for Desktop libraries. The
 
 ### Step 1 - Creating the project
 To create a Compose Desktop application, open your IntelliJ IDEA then follow the steps below:
-
- 1. Right-click on `Files`.
- 2. Select `New Project`.
- 3. Choose `Kotlin` programming language on the left pane.
- 4. Assign a name to your project. 
- 5. Select `Compose Desktop Application` in the `Project Template`.
- 6. Click the `Next` button.
+1. Right-click on `Files`.
+2. Select `New Project`.
+3. Choose `Kotlin` programming language on the left pane.
+4. Assign a name to your project. 
+5. Select `Compose Desktop Application` in the `Project Template`.
+6. Click the `Next` button.
 
 ![creating project](/engineering-education/creating-user-authentication-ui-with-compose-for-desktop/creating-project1.png)
 
@@ -62,11 +61,11 @@ To create a Compose Desktop application, open your IntelliJ IDEA then follow the
 ### Step 2 - Understanding Compose Desktop application project structure
 To get us started, we will first look at the project structure of a typical Compose project. After you have created the app successfully, you will realize that JetBrains compose plugins and libraries are included in the `build.gradle.kts` file by default.
 
-```gradle
+```bash
 id("org.jetbrains.compose") version "1.0.0"
 ```
 
-You will also realize that a directory is created with the name that you assigned to your project. Inside the directory, there exists various sub-directories like `.gradle`, `.idea`, `build`, `gradle` and `src`. These directories contain libraries for building a Compose desktop app.
+You will also realize that a directory is created with the name that you assigned to your project. Inside the directory, there are various sub-directories like `.gradle`, `.idea`, `build`, `gradle` and `src`. These directories contain libraries useful when building a Compose desktop app.
 
 The `src` directory is where we will write our code. This directory has a sub-directory `main` that has two sub-directories which are `kotlin` and `test`. 
 
@@ -95,7 +94,7 @@ fun main() = application {
 }
 ```
 
-### Step 3 - User Login Class
+### Step 3 - User Login class
 In this step, we will learn how to create a Compose Desktop screen with views. Right-click on the `kotlin` folder then select `New` and then `Kotlin Class/File` to create a new class and name it `LoginScreen`. 
 
 This class will act as our login screen interface where the user can enter login details.
@@ -188,7 +187,7 @@ These Composable have different functions that allow unique actions when trigger
 
 ![login-screen](/engineering-education/creating-user-authentication-ui-with-compose-for-desktop/login-screen.png)
 
-### Step 4 - User Registration Class
+### Step 4 - User Registration class
 In this class, we will create a Composable function `RegisterScreen` to implement the register screen interface.
 
 ```kotlin
@@ -325,7 +324,7 @@ The Register class implementation is just the same as the `LoginScreen` but with
 
 ![register-screen](/engineering-education/creating-user-authentication-ui-with-compose-for-desktop/register-screen.png)
 
-#### Step 5 - Main Class
+#### Step 5 - Main class
 In this class, we will create the objects of our classes and use the objects to invoke the composable methods.
 
 ```kotlin
@@ -353,12 +352,18 @@ Kotlin is considered a multi-platform language. This means you can build an app 
 This project can be downloaded from this [GitHub repository](https://github.com/Collince-Okeyo/UserAuthentication).  
 
 ### Conclusion
-In this tutorial, you have learned how to build desktop apps using Jetpack Compose and Kotlin.
+In this tutorial, we learned how to build desktop apps using Jetpack Compose and Kotlin.
 
-To supplement the content from this article read more on *Getting Started with Compose Multiplatform* [here](https://github.com/JetBrains/compose-jb/tree/master/tutorials/Getting_Started). 
+To supplement the content from this article you can follow up on some of the links listed below.
+
+Happy coding!
 
 ### Further reading
-- [Jetpack Compose](https://github.com/JetBrains/compose-jb/tree/master/tutorials/Getting_Started).
+- [Jetpack Compose](https://github.com/JetBrains/compose-jb/tree/master/tutorials/Getting_Started)
+- [Getting Started with Jetpack Compose](/engineering-education/getting-started-with-jetpack-compose-in-android/)
+- [How to Create a Collapsible Bottom Navigation Bar using Jetpack Compose](/engineering-education/collapsible-bottom-navigation-bar-using-jetpack-compose-navigation/)
+- [Building Scrollable and Lazy Components in Jetpack Compose](/engineering-education/building-scrollable-and-lazy-components-in-jetpack-compose/)
+- [Advanced Form Operations in Jetpack Compose](/engineering-education/jetpack-compose-forms/)
 
 ---
 Peer Review Contributions by: [Wanja Mike](/engineering-education/authors/michael-barasa/)
