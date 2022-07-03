@@ -28,7 +28,7 @@ Type this in a fresh command-line interface to install Next.js.
 ```bash
 npx create-next-app@latest
 ```
-![Installation](/engineering-education1/content/articles/next.js-basics-with-payroll-system/image-three.png)
+![Installation](/engineering-education1/next.js-basics-with-payroll-system/image-three.png)
 
 The installation will begin and you will be asked to name the application, let's call it payroll.
 Now type this to enter the project folder and start the server.
@@ -59,7 +59,7 @@ The net pay is calculated by deducting all authorized withholdings and pay deduc
 
 This is the project workspace created earlier.
 
-![VSWorkspace](/engineering-education1/content/articles/next.js-basics-with-payroll-system/image-one.png)
+![VSWorkspace](/engineering-education1/next.js-basics-with-payroll-system/folder-structure.png)
 
 We need timesheet data but in our case, we are going to create it locally and store it in our file system.
 In a real system, the data will come from a database either from an external timekeeping system or inbuilt.
@@ -274,7 +274,7 @@ The if statement means that:
 
 The key attribute is very important when creating a list, it should be unique in each element of data in the array. The code output should be similar to this. We are also going to need the Link component so that we can move from home page to the payslip page when a name is clicked.
 
-![Browser output](/engineering-education1/content/articles/next.js-basics-with-payroll-system/image-two.png)
+![Browser output](/engineering-education1/next.js-basics-with-payroll-system/demo.png)
 
 At this point, we have our employees, gross pay and net pay displayed on the web.
 
