@@ -1,4 +1,4 @@
-# Next.js basics with payroll system
+# Building a payroll system with next.js
 Welcome to Next.js, the React framework thats meant for Production because only the needed CSS and Javascript are loaded by the users browser making it extreamly fast. Next.js unlike React.js needs zero setup for the creation of an API by using the file system this saves alot of development time and cost.
 This tutorial will equip you with the basic arithmetic operators in Next.js and how to effectively use them in functions, for calculations needed in software programming. 
 
@@ -9,6 +9,7 @@ This tutorial will equip you with the basic arithmetic operators in Next.js and 
 - [Payroll Arithmetic Calculations](#payroll-Arithmetic-Calculations)
 - [Creating a JSON File and Functions in Next.js](#Creating-a-JSON-File-and-Functions-in-Next.js)
 - [Fetching Payroll Data and Computing Calculations in Next.js](#Fetching-Payroll-Data-and-Computing-Calculations-in-Next.js)
+- [Dynamic pages for payslip generation](#Dynamic-pages-for-payslip-generation)
 - [Conclusion](#Conclusion)
 - [Reference](#Reference)
 
@@ -62,15 +63,13 @@ This is the project workspace created earlier.
 
 We need timesheet data but in our case, we are going to create it locally and store it in our file system.
 In a real system, the data will come from a database either from an external timekeeping system or inbuilt.
-in the workspace got to the Pages folder and create a new file and call it employees.js, here we will create a store in the form of an object with data in it.
+in the current working directory create a folder and call it data, in it create a new file and call it employees.json. Here we will create a store in the form of an object with data in it.
 
-employees.js
+employees.json
 ```javascript
-import React from 'react'
-
-export const Employed=[{
+[{
   "fullName":"Kevin Kimanthi",
-  "NationalId":39403458,
+  "_id":39403458,
   "hoursWorked":40,
   "basicPay":18,
   "houseAllowance":50,
@@ -83,33 +82,7 @@ export const Employed=[{
 },
 {
   "fullName":"Dennis Kimeu",
-  "NationalId":39456782,
-  "hoursWorked":45,
-  "basicPay":25,
-  "houseAllowance":50,
-  "conveyanceAllowance":40,
-  "childrenEducationAllowance":50,
-  "fuelReimbursements":50,
-  "driverReimbursements":100,
-  "healthInsurance":10,
-  "taxIncome":10
-},
-{
-  "fullName":"Gideon Abangi",
-  "NationalId":37594213,
-  "hoursWorked":45,
-  "basicPay":30,
-  "houseAllowance":50,
-  "conveyanceAllowance":40,
-  "childrenEducationAllowance":50,
-  "fuelReimbursements":50,
-  "driverReimbursements":0,
-  "healthInsurance":10,
-  "taxIncome":10
-},
-{
-  "fullName":"Jack mahui",
-  "NationalId":37804215,
+  "_id":39456782,
   "hoursWorked":45,
   "basicPay":25,
   "houseAllowance":50,
@@ -121,28 +94,76 @@ export const Employed=[{
   "taxIncome":10
 }]
 ```
-In order for this to work as planned, we will have to create an API route for data fetching. Navigate to the Pages folder and open the API folder that contains a hello.js file. We are going to create GET and POST HTTP methods, GET is applied while requesting information from a particular source in this case it will be from our employees file while POST is used to insert or update the data. Lets Edit the file by erasing all its contents and copy the code below.
 
-hello.js
+In order for this to work as planned, we will have to create an API route for data fetching. Navigate to the Pages folder and open the api folder that contains a hello.js file. We are going to create GET and POST HTTP methods. GET is applied while requesting information from a particular source, in this case it will be from our employees.json file while POST is used to insert or update the data. Lets delete the hello.js file and create a new folder employees and add index.js in it.
+
+index.js
 ```javascript
-import { Employed } from "../employees"
+import fs from "fs"
+import path from "path"
+
+function getData(){
+    const filePath=path.join(process.cwd(),"data", "employees.json")
+    const fileData=fs.readFileSync(filePath)
+    const data=JSON.parse(fileData)
+    return data
+}
 
 export default function handler(req, res) {
-const {method}=req;
+  const {method}=req;
+  if(method==="GET"){
+    const data=getData()
+    return res.status(200).json({employees:data})
 
-if(method==="GET"){
-    return res.status(200).json(Employed)
-}
 
-if(method === "POST"){
-  const {body}=req;
-  Employed.push({ ...body, id:Employed.length +1});
-  return res.status(200).json(Employed);
-}
+}else if(req.method==="POST"){
+  const {
+    fullName,
+    _id,
+    hoursWorked,
+    basicPay,
+    houseAllowance,
+    conveyanceAllowance,
+    childrenEducationAllowance,
+    fuelReimbursements,
+    driverReimbursements,
+    healthInsurance,
+    taxIncome}=req.body
+    
+    const data=getData()
+
+
+    const newEmployees={
+      fullName,
+      _id,
+      hoursWorked,
+      basicPay,
+      houseAllowance,
+      conveyanceAllowance,
+      childrenEducationAllowance,
+      fuelReimbursements,
+      driverReimbursements,
+      healthInsurance,
+      taxIncome
+        }
+
+        data.push(newEmployees)
+        const filePath=path.join(process.cwd(),"data","employees.json")
+        fs.writeFileSync(filePath,JSON.stringify(data))
+        return res.status(201).json({message:"Added",employees:newEmployees})
+    }
+
 }
 
 ```
-This creates an API route with methods that are able to send a request and receive a response of our body that we created earlier.
+
+We will first import file system and path module to help us manage data stored in our files.
+The getData function will get the data for our api using the file stytem:
+- the store filePath contains path.join() method, this joins the specified paths in which the data is stored, process.cwd() means current working directory.
+- the store fileData contains our file reading method fs.readFileSync() that reads the data in our specified path.
+- the data is then parsed in JSON format to our api handler function.
+
+The handler function uses methods that are able to send a request and receive a response of our body that we created earlier and then send it to our api route as json body.
 
 After dealing with the API route, we are going to create a function that computes all this data by automatically linking it to the arithmetic calculations.
 We are going to use a .map() function to iterate our data and create a list from this data.
@@ -214,7 +235,9 @@ const Payroll=({employees})=>{
          return(
            <>
            <ul key={data.fullName}>
-             <li>{data.fullName}</li>
+           <Link href={`/${data._id}`} passHref>
+             <a>{data.fullName}</a>
+           </Link> 
              <li>${grossPay}</li>
              <li>${netPay}</li>
            </ul>
@@ -226,7 +249,7 @@ const Payroll=({employees})=>{
 }
 export async function getServerSideProps(){
     
-    const data=await fetch(`http://localhost:3000/api/hello/`);
+    const data=await fetch(`http://localhost:3000/api/employees/`);
     const employed=await data.json()
 
     if(!employed){
@@ -249,17 +272,112 @@ The if statement means that:
 - if the employees data is not present then notFound will be returned as true.
 - else employed will be passed as props called employees.
 
-The key attribute is very important when creating a list, it should be unique in each element of data in the array. The code output should be similar to this.
+The key attribute is very important when creating a list, it should be unique in each element of data in the array. The code output should be similar to this. We are also going to need the Link component so that we can move from home page to the payslip page when a name is clicked.
 
 ![Browser output](/engineering-education1/content/articles/next.js-basics-with-payroll-system/image-two.png)
 
-At this point, we have our gross pay and net pay displayed on the web. Click [here](https://github.com/unholydisaster/payroll) for complete source code.
+At this point, we have our employees, gross pay and net pay displayed on the web.
+
+### Dynamic pages for payslip generation
+We are going to create another api endpoint in our api folder, lets create a new file in employees and call it [id].js and create a new api route handling function. Dynamic routes and pages are named using the block parathesis, Lets add this code to our file.
+
+[id].js
+```javascript
+
+import fs from "fs"
+import path from "path"
+
+function getData(){
+    const filePath=path.join(process.cwd(),"data", "employees.json")
+    const fileData=fs.readFileSync(filePath)
+    const data=JSON.parse(fileData)
+    return data
+}
+
+export default function handler(req, res){
+     const{
+       query:{id},
+       method
+       }=req;
+       if(method==="GET"){
+         const data=getData()
+         const employeById=data.findById(id);
+         res.status(200).json({success:true,employee:employeById});
+}
+}
+```
+Here we first define how we get the data from our file system using our getData() function, then create our api route handler thats going to help us get data by the employees id.
+
+In the if statement with method set to "GET":
+- the store data is assigned the function getData().
+- the employedById store is assigned a value of data according to the id off the employee using the method findById().
+- a response is sent as json to the api routes body.
+
+Lets go back to our pages folder and create a dynamic page for our payslips, create a file and call it [id].js and add this code in it.
+
+[id].js
+```javascript
+
+import { withApiUrl } from "next-api-url";
+
+export default function Employee({employees}){
+
+    return(
+        <>
+         {note.map(employee=>{
+           return(
+            <ul key={employee.fullName}>
+             <li>{employee.fullName}</li>
+             <li>{employee._id}</li>
+             <li>{employee.hoursWorked}</li>
+             <li>{employee.basicPay}</li>
+             <li>{employee.houseAllowance}</li>
+             <li>{employee.conveyanceAllowance}</li>
+             <li>{employee.childrenEducationAllowane}</li>
+             <li>{employee.fuelReimbursements}</li>
+             <li>{employee.driverReimbursements}</li>
+             <li>{employee.healthInsurance}</li>
+             <li>{employee.taxIncome}</li>
+            </ul>
+           )
+         })}
+        </>
+    )
+}
+
+export const getServerSideProps = withApiUrl(async ({query:{id}}, url) =>{
+    // get the current environment
+    const {data}= await (await fetch(`${url}/employees/${id}`)).json();
+     // extract the data
+  
+    return {
+        props: {
+            employees:data
+        },
+    };
+  
+})
+
+```
+In the getServerSideProps() data fetching method we are going to use next-api-url module, a quick solution to the Server Error: "Only absolute URLs are supported" encountered while deploying next.js web apps to the cloud. The package is a helper to quickly get the absolute URL to use in Next.js data fetching methods.
+
+install it by typing this command in your terminal.
+```bash
+
+npm i next-api-url
+
+```
+for more information on next-api-url package click [here](https://www.npmjs.com/package/next-api-url),
+in our case we just have to simply provide the query parameters to the getServerSideProps function as id and the base url
+from the server.
+
+We then assign our data fetching method to an object store as const data and pass the data as props to our functional component as employees. Our data is now mapped to our page ready as our payslip information.
+
+When we click employees name on home page we immediately get directed to his parsonal payslip, here we can decide and add a download button and style the payslip as we want.
 
 
 ### Conclusion
-This tutorial has given us a foundation for doing arithmetic operations in Next.js and an introduction to the payroll system.
-Handling payroll involves sending out payslips to employees and a styled view of an application.
-In our next tutorial we are going to create pages for payslips and send payments to our employees.
+This tutorial has given us a foundation for doing arithmetic operations in Next.js and an introduction to the payroll system. In our next tutorial we are going to create a tool that generates financial statements in an organization.
 
 Happy coding!
 
