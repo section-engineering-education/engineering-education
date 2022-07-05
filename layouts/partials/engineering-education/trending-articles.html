@@ -79,7 +79,9 @@
                     </div>
                   {{ end }}
                 </td>
-                <td class="page-views-col title-5">{{ lang.FormatNumberCustom 0 $el.pageViews "- . ," }}</td>
+                {{ with $el }}
+                  <td class="page-views-col title-5">{{ lang.FormatNumberCustom 0 .pageViews "- . ," }}</td>
+                {{ end }}
               </tr>
                 
               {{ end }}
