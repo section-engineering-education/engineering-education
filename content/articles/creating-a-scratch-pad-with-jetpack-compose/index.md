@@ -6,7 +6,7 @@ url: /creating-a-scratch-pad-with-jetpack-compose/
 title: Creating a Scratchpad with Jetpack Compose
 description: This tutorial will guide the reader on how to use different aspects and concepts of composing graphics to come up with a scratchpad from scratch.
 author: anne-sogoli
-date: 2022-07-05T00:00:00-13:40
+date: 2022-07-05T00:00:00-10:40
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -30,13 +30,13 @@ To follow along with this tutorial, you need to have a basic understanding of:
 This article will walk the reader through the concept of creating a custom scratchpad in jetpack compose that implements classes such as Path state and drawing tool classes.
 
 ### Introduction to Compose graphics concepts
-In jetpack compose, graphics like `Canvas` and `Path` are used to make the creation of graphics more enjoyable, easy, and interesting. 
+In Jetpack compose, graphics like `Canvas` and `Path` are used to make the creation of graphics more enjoyable, easy, and interesting. 
 
-Canvas is composable which is part of the UI component library. It gives the power and ability to draw 2D objects on android screens. The path is a Jetpack compose class that is used in conjunction with canvas to show compound geometric pathways made up of straight-line segments, quadratic curves, and cubic curves.
+Canvas is composable which is part of the UI component library. It gives the power and ability to draw 2D objects on Android screens. The path is a Jetpack compose class that is used in conjunction with canvas to show compound geometric pathways made up of straight-line segments, quadratic curves, and cubic curves.
 
 ### Advantages of Jetpack Compose in creating graphics
 - Compose avoids the problem of state programming by reducing the size of state graphics.
-- Anything draw is always a composable function as expected.
+- Anything drawn is always a composable function as expected.
 - The creation and release of objects in compose are done by graphics APIs.
 
 ### Getting started 
@@ -56,17 +56,18 @@ This composable gives the capability to choose the color of interest when drawin
 
 [Gist](https://gist.github.com/anne-sogoli/4a3bc2de8d43ba08ff3f7a655aad2ea8)
 
-### Step 3 - Creating the path state.
+### Step 3 - Creating the path state
 Initially, we talked about the path and said, the path is a Jetpack compose class that is used in conjunction with canvas to show compound geometric pathways made up of straight-line segments, quadratic curves, and cubic curves. Path state is a data class that holds the variables path, color, and stroke used in the implementation of the scratchpad.
 
 ![path state](/engineering-education/creating-a-scratch-pad-with-jetpack-compose/path-state.png)
 
 ### Step 4 - Creating a scratchpad in the main activity 
-There are several composables used to create a scratchpad. Let us dive deep into each composable used.
+There are several composables used to create a scratchpad. Let us dive deeper into each composable used.
 
 A `TopAppBar` composable is used to create the app bar with the app name and an icon which is used for deleting errors. The paint body is used to define all the components used in drawing, that is the drawing canvas and drawing tool all placed in a layout box.
+The composable uses the path of type `PathState` to listen to all the drawings done on the screen. 
 
-The composable uses the path of type `PathState` to listen to all the drawings done on the screen. The last composable used is drawing Canvas which is used to listen to all the movements. Using the states of path color and brush it can detect movements from current to the next state. It uses the composable `Canvas` with the modifier property `pointerInteropFilter` which is used to detect down and upward movement of the path across the XY axis.
+The last composable used is drawing Canvas which is used to listen to all the movements. Using the states of path color and brush it can detect movements from current to the next state. It uses the composable `Canvas` with the modifier property `pointerInteropFilter` which is used to detect down and upward movement of the path across the XY axis.
 
 ```kotlin 
 @Composable
@@ -209,15 +210,15 @@ class MainActivity : ComponentActivity() {
 ![demo](/engineering-education/creating-a-scratch-pad-with-jetpack-compose/demo.gif)
 
 ### Conclusion
-In this tutorial, we have talked about the concept of creating a custom scratchpad in jetpack compose and all the classes implemented such as Path state and drawing tool classes. We have also covered the composable used in the main activity.
+In this tutorial, we talked about the concept of creating a custom scratchpad in Jetpack compose and all the classes implemented such as Path state and drawing tool classes. We also covered the composable used in the main activity.
 
-### Further Reading 
+Happy coding!
+
+### Further reading 
 - [The Power of Drawing](https://medium.com/google-developer-experts/exploring-jetpack-compose-canvas-the-power-of-drawing-8cc60815babe)
 - [Jetpack Compose Canva](https://medium.com/falabellatechnology/jetpack-compose-canvas-8aee73eab393)
 - [Path in Jetpack Compose](https://developer.android.com/reference/kotlin/androidx/compose/ui/graphics/Path)
 - [Path Tracing](https://rahulrav.com/blog/path_tracing_compose.html)
-
-Happy coding!
 
 ---
 Peer Review Contributions by: [Eric Gacoki](/engineering-education/authors/eric-gacoki/)
