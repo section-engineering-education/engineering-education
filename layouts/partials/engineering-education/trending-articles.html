@@ -25,7 +25,7 @@
   {{ .Params.author }}
 {{ end }}
 
-{{ $apiUrl := cond (eq .context.Site.Params.env "local") "http://localhost:3000/trending-articles/" "https:\/\/api.www.section.io/trending-articles/" }}
+{{ $apiUrl := cond (eq .context.Site.Params.env "local") "http://localhost:3000/trending-articles/" "https://api.www.section.io/trending-articles/" }}
 
 <section class="trending-articles-wrapper xs-pt-50 xs-pb-50 xs-mt-50 xs-mb-50">
   <div class="content-margins">
