@@ -1,12 +1,29 @@
-### Getting Started with Kernel PCA in Python
-We often deal with datasets with 1,000s or even millions of features when building machine learning models. Although this allows us to capture more information in the data,  these features are often redundant. Due to the Curse of dimensionality, it's important to limit our data only to capture the key signal in the data and drop the noise.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /kernel-pca-in-python/
+title: Getting Started with Kernel PCA in Python
+description: In this article, we will learn how we can reduce the dimensionality of nonlinear data using the kernel PCA.
+author: lalithnarayan-c
+date: 2022-07-05T00:00:00-10:30
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/kernel-pca-in-python/hero.jpg
+    alt: Kernel PCA in Python example image
+---
+We often deal with datasets with 1,000s or even millions of features when building machine learning models.
+<!--more-->
+Although this allows us to capture more information in the data, these features are often redundant. Due to the Curse of dimensionality, it's important to limit our data only to capture the key signal in the data and drop the noise.
 
 Dimensionality reduction is a technique we use to reduce the dimensionality of the
 features space so that we end up with a lower feature space that maintains most of the information in the data.
 
-There are various methods used in dimensionality reduction. The Principal Component Analysis (PCA) is the method that the Kernel PCA generalizes on nonlinear data. Being a dimensionality reduction technique, the PCA takes high dimensional data and finds new coordinates, principal components, that are orthogonal to each other and explain most of the variance in the data. The problem with this method is that it's linear. Therefore, the PCA can only guarantee dimensionality reduction quality only if the data is linear. For nonlinear data, it fails to capture the key features of the data.
+There are various methods used in dimensionality reduction. The Principal Component Analysis (PCA) is the method that the Kernel PCA generalizes on nonlinear data. Being a dimensionality reduction technique, the PCA takes high dimensional data and finds new coordinates, principal components, that are orthogonal to each other and explain most of the variance in the data. The problem with this method is that it's linear. 
 
-In this article, we will learn how we can reduce the dimensionality of nonlinear data using the kernel PCA.
+Therefore, the PCA can only guarantee dimensionality reduction quality only if the data is linear. For nonlinear data, it fails to capture the key features of the data. In this article, we will learn how we can reduce the dimensionality of nonlinear data using the kernel PCA.
 
 ### Prerequisites:
 - In this section, you need a dataset, download [here](https://github.com/felixMuia/dataset/blob/main/dataset.csv).
