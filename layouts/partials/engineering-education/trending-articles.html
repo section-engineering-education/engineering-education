@@ -21,9 +21,9 @@
   }
 </script>
 
-{{ with .context.Site.GetPage "/customized-axios-for-mulitple-servers-in-vue" }}
+{{/*  {{ with .context.Site.GetPage "/customized-axios-for-mulitple-servers-in-vue" }}
   {{ .Params.author }}
-{{ end }}
+{{ end }}  */}}
 
 {{ $apiUrl := cond (eq .context.Site.Params.env "local") "http://localhost:3000/trending-articles/" "https://api.www.section.io/trending-articles/" }}
 
@@ -79,8 +79,8 @@
                     </div>
                   {{ end }}
                 </td>
-                {{ with $el }}
-                  <td class="page-views-col title-5">{{ lang.FormatNumberCustom 0 .pageViews "- . ," }}</td>
+                {{ with $el.pageViews }}
+                  <td class="page-views-col title-5">{{ (lang.FormatNumberCustom 0 . "- . ,") }}</td>
                 {{ end }}
               </tr>
                 
