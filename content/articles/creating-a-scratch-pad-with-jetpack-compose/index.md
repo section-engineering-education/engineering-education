@@ -21,7 +21,7 @@ This could be as simple as placing a box or a circle in the exact right spot on 
 In this tutorial, we are going to use different aspects and concepts of composing graphics to come up with a scratchpad from scratch.
 
 ### Prerequisites
-To follow along with is the tutorial, you need to have a basic understanding of:
+To follow along with this tutorial, you need to have a basic understanding of:
 - The Kotlin programming language.
 - Android development.
 - Jetpack Compose.
