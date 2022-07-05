@@ -6,7 +6,7 @@ url: /creating-user-authentication-ui-with-compose-for-desktop/
 title: Creating User Authentication UI with Compose for Desktop
 description: This tutorial will help the reader create a user authentication UI with compose for Desktop.
 author: collince-okeyo
-date: 2022-07-01T00:00:00-14:30
+date: 2022-07-04T00:00:00-19:30
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -185,7 +185,7 @@ These Composable have different functions that allow unique actions when trigger
 
 > Note: The function is annotated by the `@Composable` that shows that we are using JetBrains compose for desktop.
 
-![login-screen](/engineering-education/creating-user-authentication-ui-with-compose-for-desktop/login-screen.png)
+![login-screen](/engineering-education/creating-user-authentication-ui-with-compose-for-desktop/login-screen.jpg)
 
 ### Step 4 - User Registration class
 In this class, we will create a Composable function `RegisterScreen` to implement the register screen interface.
@@ -322,7 +322,7 @@ class RegisterScreen {
 
 The Register class implementation is just the same as the `LoginScreen` but with more text fields. We will, therefore, use the same explanation.
 
-![register-screen](/engineering-education/creating-user-authentication-ui-with-compose-for-desktop/register-screen.png)
+![register-screen](/engineering-education/creating-user-authentication-ui-with-compose-for-desktop/register-screen.jpg)
 
 #### Step 5 - Main class
 In this class, we will create the objects of our classes and use the objects to invoke the composable methods.
