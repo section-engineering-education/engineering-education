@@ -30,7 +30,7 @@ testimonials:
     location: Minna, Nigeria
     profileUrl: /authors/femi-ige-muyiwa-oladele/
   - name: Briana N.
-    testimonial: I really enjoy the EngEd program because as a Peer Reviewer I get the opportunity to learn something new to every single day.
+    testimonial: I really enjoy the EngEd program because as a Peer Reviewer I get the opportunity to learn something new to every single day. I get to learn from my peers and I get to share what I have learned with the community.
     image: /authors/briana-nzivu/avatar.jpg
     roles: ["Contributor", "Peer Reviewer"]
     location: Nairobi, Kenya
@@ -108,12 +108,8 @@ testimonials:
     location: Nairobi, Kenya
     profileUrl: /authors/michael-barasa/   
   - name: Sandra M.
-    testimonial: Being part of the EngEd program has taught me how to perform extensive research, great teamwork/collaboration, and more different web technologies.
+    testimonial: Being part of the EngEd program has taught me how to perform extensive research, great teamwork/collaboration, and more about different web technologies.
     image: /authors/sandra-moringa/avatar.jpeg
     roles: ["Contributor"]
     location: Ruiru, Kenya
     profileUrl: /authors/sandra-moringa/
-          
-
-
-    
