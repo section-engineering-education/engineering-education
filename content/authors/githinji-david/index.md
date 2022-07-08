@@ -7,4 +7,4 @@ images:
   - url: /engineering-education/authors/githinji-david/avatar.jpg
 skills: ["Kotlin", "Android" "React JS", "PostMan" "SQL", "C#"]
 ---
-Githinji David is a undergraduate Information Technology at Meru University of Science and Technology. He is passionate about augmenting mobile development technologies into our daily lives for the improvement of society. When he is not in his computer, he likes reading economic novels and watching nature TV shows.
+Githinji David is an undergraduate Information Technology student at Meru University of Science and Technology. He is passionate about augmenting mobile development technologies into our daily lives for the improvement of society. When he is not in his computer, he likes reading economic novels and watching nature TV shows.
