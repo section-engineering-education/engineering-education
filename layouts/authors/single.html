@@ -1,5 +1,10 @@
 {{ define "main" }}
 
+{{ $featureToggle := resources.Get "js/featureToggle.js" }}
+{{ $author := path.Base .Permalink}}
+
+<script defer language="javascript" type="text/javascript" src="{{ $featureToggle.Permalink }}"></script>
+
 <article>
   <section class="hero-blocks xs-pt-50 xs-pb-50 sm-pt-100 sm-pb-100 -blue-blocks">
     <div class="hero-blocks-mobile">
@@ -44,6 +49,41 @@
           {{ end }}
 
           {{ .Content }}
+
+          {{/*  Insights Section  */}}
+          {{ $allArticles := (where (where .Site.Pages "Params.layout" "engineering-education") ".Params.author" $author) }}
+          {{ $numberOfArticles := len $allArticles }}
+
+          {{/*  Need to capture all article urls then asynchronousel fetch the data due to Googles Data API limits.*/}}
+          {{ $articleUrlsList := slice }}
+
+          {{ range $allArticles }}
+            {{ $articleUrlsList = $articleUrlsList | append .Permalink }}
+          {{ end }}
+
+          {{ $articleUrlsList = delimit $articleUrlsList ", "}}
+
+          <div class="insights-section">
+            <div class="insight total-num-articles" data-before="Total Number of Articles Written">
+              <img src="{{ if eq $.Site.Params.env "local" }}/{{ else }}/engineering-education/{{ end }}images/total-articles-icon.png" alt="Total Number of Articles Icon" />
+              <p>{{ $numberOfArticles }}</p>
+            </div>
+            <div class="insight total-article-likes" data-before="Total Number of Article Likes">
+              <img src="{{ if eq $.Site.Params.env "local" }}/{{ else }}/engineering-education/{{ end }}images/clapping-icon.png" alt="Total Number of Articles Icon" />
+              <p id="totalArticleLikes">0</p>
+            </div>
+            <div class="insight total-page-views" data-before="Total Number of Article Page Views">
+              <img src="{{ if eq $.Site.Params.env "local" }}/{{ else }}/engineering-education/{{ end }}images/page-views-icon.png" alt="Total Number of Article Page Views" />
+              <p id="totalPageViews">0</p>
+            </div>
+          </div>
+          
+          {{ with .Params.skills }} 
+            <div class="author-skills">
+              <h4>Skills/Languages</h4>
+              <p class="skills">{{ delimit . " | " }}</p>
+            </div>
+          {{ end }}  
         </div>
 
         <div class="section-rich-text-leading bio">
@@ -79,19 +119,55 @@
   </section>
 </article>
 
+{{ with .Params.projects }}
+  <section class="projects-section">
+    <div class="section-container projects-listing-container">
+      <h2 class="title-3 text-blue xs-pb-20">Featured Projects</h2>
+      <div class="projects">
+        {{ range . }}
+          <div class="project">
+            <div class="meta-data">
+              <h3 class="title-5 title"><a href="{{ .url }}">{{ .title }}</a></h3>
+              <div class="bottom-row">
+                <span>{{ .role }}</span>
+                <span>{{ .date }}</span>
+              </div>
+            </div>
+            <div class="info">
+              <p class="text-16 text-color">{{ .description }}</p>
+              <a class="link-with-arrow-blue text-blue text-18-medium" href="{{ .url }}">View Project</a>
+            </div>
+          </div>
+        {{ end }}
+      </div>
+    </div>
+  </section>
+{{ end }}
+
 <section class="blog-listing-posts">
   <div class="section-container blog-listing-posts-container">
     <div class="blog-listing-posts-content">
-      <h1 class="title-3 text-blue xs-pb-20">Contributed articles</h1>
+      <h2 class="title-3 text-blue xs-pb-20">Contributed articles</h2>
    
       <ul class="list-unstyled xs-mb-80">
 
-        {{ $author := path.Base .Permalink}}
-
-        {{ range (where (where .Site.Pages "Params.layout" "engineering-education") ".Params.author" $author) }}
+        {{ $hyvorId := $.Site.Params.hyvorId }}
         
-        <li class="blog-listing-posts-item mix {{ with .Params.tags }}{{ range . }}{{ lower . }} {{ end }}{{ end }}">
-          <a class="decoration-none xs-pb-40 xs-pt-40 prl-25 flex flex-wrap" href="{{.Permalink}}">
+        {{ range $elem_index, $elem_val := (where (where .Site.Pages "Params.layout" "engineering-education") ".Params.author" $author) }}
+        
+        {{ $articlePermalink := "" }}
+        {{ if eq $.Site.Params.env "local" }}
+          {{ $articlePermalink = .Permalink }}
+        {{ else if eq $.Site.Params.env "staging" }}
+          {{ $articlePermalink = replace .Permalink "beta" "www" }}
+        {{ else }}
+          {{ $articlePermalink = .Permalink }}
+        {{ end }}
+
+        {{ $articleSlug := replaceRE "(https://www.section.io/)|(http://localhost:1313/)|(https://beta.section.io/)" "" $articlePermalink }}
+
+        <li class="blog-listing-posts-item mix {{ with .Params.tags }}{{ range . }}{{ lower . }} {{ end }}{{ end }}" data-id="{{ $articlePermalink }}">
+          <a class="decoration-none xs-pb-40 xs-pt-40 pl-25 flex flex-wrap" href="{{.Permalink}}">
 
             <div class="blog-listing-posts-item-image">
               {{ if isset .Params "images" }}
@@ -113,11 +189,22 @@
 
               <p class="text-18-regular text-color">{{ .Summary | plainify | truncate 210 "..." }}</p>
 
+              <div id="insightsData-{{ $elem_index }}" class="blog-listing-posts-item-insights-data">
+                <div class="data-point">
+                  <p><img class="icon" src="{{ if eq $.Site.Params.env "local" }}/{{ else }}/engineering-education/{{ end }}images/clapping-icon.png" alt="Article Likes" /></p><span class="likes-count" id="likes-count-{{ $elem_index }}">0</span>
+                </div>
+                <div class="data-point">
+                  <p><img class="icon" src="{{ if eq $.Site.Params.env "local" }}/{{ else }}/engineering-education/{{ end }}images/comment-icon.png" alt="Article Comments" /></p><span class="comment-count" id="comments-count-{{ $elem_index }}">0</span>
+                </div>
+                <div class="data-point page-views page-views-icon-{{ $elem_index }}">
+                  <p><img class="icon" src="{{ if eq $.Site.Params.env "local" }}/{{ else }}/engineering-education/{{ end }}images/page-views-icon.png" alt="Page Views" /></p>
+                  <span data-slug="{{ if eq $.Site.Params.env "local" }}engineering-education/{{ $articleSlug }}{{ else }}{{ $articleSlug }}{{ end }}" id="page-views-count-{{ $elem_index }}">0</span>
+                </div>
+              </div>
             </div>
 
           </a>
         </li>
-
 
        {{ end }}
       </ul>
@@ -144,4 +231,119 @@
     </div>
   </div>
 </section>
+
+<script defer type="text/javascript">
+  
+  const toggleToolTip = (el) => {
+    el.classList.toggle('tooltip');
+  }
+  
+  // Add touch event listener for mobile.
+  const insightItems = document.getElementsByClassName("insight");
+  for (let i = 0; i < insightItems.length; i++) {
+    insightItems[i].addEventListener("touch", () => toggleToolTip(insightItems[i]))
+  }
+
+  // On page load, handle insights, comments and pageviews.
+  document.addEventListener("DOMContentLoaded", async function() {
+    const getPageViews = (urls) => {
+      // Filter out empty strings.
+      const filteredUrls = urls.filter(item => item);
+
+      // Return out of function if array is empty.
+      if (!filteredUrls.length) {
+        return;
+      }
+
+      let totalNumPageViews = 0;
+      const urlRegex = /(http:\/\/localhost:1313\/)|(https:\/\/beta.section.io\/engineering-education\/)|(https:\/\/www.section.io\/engineering-education\/)/gi;
+      const trimmedUrls = urls.map(url => url.replace(urlRegex, ''));
+
+      const handleError = response => {
+        if (!response.ok) {
+          throw Error(response.statusText);
+        } else {
+          return response.json();
+        }
+      }
+
+      return fetch('{{ if eq $.Site.Params.env "local" }}http://localhost:3000/pageviews/{{ else }}https:\/\/api.www.section.io/pageviews/{{ end }}', { 
+        "method": "POST",
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "body": JSON.stringify(trimmedUrls)
+      })
+        .then(handleError)
+        .then(data => {
+          if (data.length) {
+            data.forEach(item => {
+              // Add pageviews to the sum.
+              totalNumPageViews += parseInt(item.pageViews);
+
+              // Prettify and display number of page views for each article.
+              const numPageViews = parseInt(item.pageViews).toLocaleString();
+              const pageViewsEl = document.querySelector(`[data-slug="${item.url.substring(1)}"]`);
+              const parentElement = pageViewsEl.closest('.page-views');
+              pageViewsEl.innerText = numPageViews;
+              parentElement.classList.add('visible');
+            })
+
+            // Add totalNumPageViews.
+            const totalPageViewsElement = document.getElementById('totalPageViews');
+            totalPageViewsElement.innerText = totalNumPageViews.toLocaleString();
+          }
+        })
+        .catch(err => console.log('err:', err));
+    }
+
+    // Request all article data from Hyvor talk - this will allow us to use 
+    // one request per page, instead of separare requests for each article.
+    const requestArticlesData = async (articleUrls) => {
+      let totalNumberOfLikes = 0;
+
+      const url = new URL('https://talk.hyvor.com/api/v1/pages/'); 
+      const params = {
+        'page_identifiers': JSON.stringify(articleUrls),
+        'website_id': {{ $hyvorId }},
+        'limit': 250
+      }
+      Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
+
+      fetch(url)
+        .then(response => response.json())
+        .then(data => {
+          // Map through each data item
+          // Add number of comments and likes to each article by data-id.
+          if (data.status === true && data.data.length) {
+            data.data.forEach(item => {
+              const articleElement = document.querySelector(`[data-id='${item.page_identifier}']`);
+              const commentCountElement = articleElement.querySelector('.comment-count');
+              const likesCountElement = articleElement.querySelector('.likes-count');
+
+              // Add comment count and number of likes
+              commentCountElement.innerText = item.comments_count;
+              likesCountElement.innerText = item.reactions[0];
+              totalNumberOfLikes += item.reactions[0]
+            })
+
+            // Add totalArticleLikes.
+            const totalArticleLikesElement = document.getElementById('totalArticleLikes');
+            totalArticleLikesElement.innerText = totalNumberOfLikes;
+          }
+        })
+        .catch(error => console.log("error: ", error))
+    }
+
+    const urlsOfArticles = '{{ $articleUrlsList }}';
+    const articlesArr = urlsOfArticles.split(', ');
+    
+    // Apply page views to each article.
+    getPageViews(articlesArr);
+  
+    // Fetch article data from HyvorTalk
+    requestArticlesData(articlesArr);
+  });
+  
+</script>
 {{ end }}

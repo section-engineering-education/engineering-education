@@ -1,5 +1,6 @@
 ---
 title: Linchez Maina
-type: authors 
+type: authors
 ---
-linchez Maina is an undergraduate student who is interested in artificial intelligence and machine learning but has a passion for web development. He like to spend his leisure watching documentaries and loves to connect with people. 
+Linchez Maina is a undergraduate student at the Jomo Kenyatta University of Agriculture and Technology. He likes adventures and exploration and is always interested in Web Development and Artificial Inteligence. Currently, he is learning Java Programming.
+

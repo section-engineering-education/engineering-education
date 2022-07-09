@@ -1,0 +1,15 @@
+name: Auto Comment
+on: [issues]
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: wow-actions/auto-comment@v1
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          issuesOpenedReactions: 'hooray, +1'
+          issuesOpenedComment: |
+            👋 @{{ author }}
+            Good afternoon and thank you for submitting your topic suggestion.
+            Your topic form has been entered into our queue and should be reviewed (for approval) as soon as a content moderator is finished reviewing the ones in the queue before it.
+          

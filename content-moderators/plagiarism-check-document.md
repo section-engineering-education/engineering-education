@@ -1,6 +1,6 @@
 ### Plagiarism checker 3rd party solution
 We are currently using Copyleaks to run our 3rd party plagiarism checks on incoming PRs. 
-(You should recieve an email to be added to the review "team"). Follow the instructions to sign-up and join up.
+(You should receive an email to be added to the review "team"). Follow the instructions to sign-up and join up.
 
 ![CopyLeaks main page](/static/images/screen_capture.JPG)
 
