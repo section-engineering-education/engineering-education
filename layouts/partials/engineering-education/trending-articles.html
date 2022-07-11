@@ -25,7 +25,8 @@
   {{ .Params.author }}
 {{ end }}  */}}
 
-{{ $apiUrl := cond (eq .context.Site.Params.env "local") "http://localhost:3000/trending-articles/" "https://api.www.section.io/trending-articles/" }}
+{{ $trending30DaysUrl := cond (eq .context.Site.Params.env "local") "http://localhost:3000/trending-articles/30days/" "https://api.www.section.io/trending-articles/30days/" }}
+{{ $trendingAllTimeUrl := cond (eq .context.Site.Params.env "local") "http://localhost:3000/trending-articles/allTime/" "https://api.www.section.io/trending-articles/allTime/" }}
 
 <section class="trending-articles-wrapper xs-pt-50 xs-pb-50 xs-mt-50 xs-mb-50">
   <div class="content-margins">
@@ -49,7 +50,7 @@
           </thead>
           <tbody id="trending30DaysTableBody" class="table-body">
             
-            {{ $dataTrending30Days := getJSON (print $apiUrl) }}
+            {{ $dataTrending30Days := getJSON (print $trending30DaysUrl) }}
 
             {{ with $dataTrending30Days }}
               {{ range $index, $el := . }}
@@ -100,8 +101,7 @@
               </tr>
           </thead>
           <tbody id="trendingAllTimeTableBody" class="table-body">
-            {{ $apiUrl := cond (eq .context.Site.Params.env "local") "http://localhost:3000/trending-articles/" "https://api.www.section.io/trending-articles/" }}
-            {{ $dataTrendingAllTime := getJSON (print $apiUrl) }}
+            {{ $dataTrendingAllTime := getJSON (print $trendingAllTimeUrl) }}
 
             {{ with $dataTrendingAllTime }}
               {{ range $index, $el := . }}
@@ -110,11 +110,10 @@
                 <td class="article-col">
                   {{ $articleUrl := print (substr (replace $el.url "/engineering-education/" "/") 0 -1) }}
                   {{ $authorName := "" }}
-
+                  
                   {{ with $.site.GetPage $articleUrl }}
                     {{ $authorSlug := print .Params.author}}
                     {{ $articleSlug := print .Params.url}}
-                    {{/*  {{ print .Params }}  */}}
 
                     {{ with $.site.GetPage $authorSlug }}
                       {{ $authorName = .Params.title }}
