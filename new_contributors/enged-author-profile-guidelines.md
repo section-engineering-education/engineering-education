@@ -48,7 +48,6 @@ projects:
 ## File Structure - explained
 - title (Name of student - **Required**)
 - type (Authors file - **Required**)
-- authors (Authors RSS File - author's folder name - Optional)
 - github (GitHub URL - Optional)
 - linkedin (LinkedIn URL - Optional)
 - twitter (Twitter URL - Optional)
