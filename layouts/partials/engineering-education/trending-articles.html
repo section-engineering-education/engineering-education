@@ -110,7 +110,7 @@
                 <td class="article-col">
                   {{ $articleUrl := print (substr (replace $el.url "/engineering-education/" "/") 0 -1) }}
                   {{ $authorName := "" }}
-                  
+
                   {{ with $.site.GetPage $articleUrl }}
                     {{ $authorSlug := print .Params.author}}
                     {{ $articleSlug := print .Params.url}}
