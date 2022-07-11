@@ -164,4 +164,20 @@
       }
     }
   }
+
+  @include mq($to: 550px) {
+    .content-margins {
+      .tab-body {
+        .tabcontent {
+          .table-body {
+            .rank-col,
+            .article-col .content .title,
+            .page-views-col {
+              font-size: 15px;
+            }
+          }
+        }
+      }
+    }
+  }
 }
