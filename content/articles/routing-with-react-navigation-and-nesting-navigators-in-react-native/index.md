@@ -7,43 +7,41 @@ title: Routing with React Navigation and Nesting Navigators in React Native
 description: In this article we will learn about feed-forward neural network and recurrent neural network using Python.
 author: vincent-kimanzi
 date: 2022-07-13T00:00:00-12:10
-topics: [Machine Learning, Languages]
+topics: [Languages, Node.js]
 excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/routing-with-react-navigation-and-nesting-navigators-in-react-native/hero.png
     alt: Feed-forward and Recurrent Neural Networks Python Implementation Hero Image
 ---
-Changing between screens is a requirement in nearly all mobile applications. React Native's `react-navigation` library is stunning and simple to use. It's a well-known library for React Native application routing and navigation. 
+Changing between screens is a requirement in nearly all mobile applications. React Native's `react-navigation` library is stunning and simple to use. It is a well-known library for React Native application routing and navigation. 
 <!--more-->
+In this tutorial, we will add multiple screens to a basic React Native application. Using nested react navigators, we will design a method for navigating between displays. We will also use React Context to provide a way for screens to share data.
 
-Multiple screens will be added to a basic React Native application in this tutorial. Using nested react navigators, we will design a method for navigating between displays. We will also use React Context to provide a way for screens to share data.
-
-### Table of Content
-- [Developing a simple react native application ](#developing-a-simple-react-native-application )
-  - [First Step- Application development and module installation](#first-step--application-development-and-module-installation)
-  - [Second Step- Creating screens ](#econd-step--creating-screens )
-  - [Third Step - Navigating React screens using nested navigators](third-step--navigating-react-screens-using-nested-navigators)
-  - [Fourth Step- Adding buttons ](#fourth-step--adding-buttons)
-  - [Fifth Step- passing data to other screens using context](#fifth-step--passing-data-to-other-screens-using-context)
+### Table of contents
+- [Developing a simple React Native application](#developing-a-simple-react-native-application)
+  - [First Step-Application development and module installation](#first-step-application-development-and-module-installation)
+  - [Second Step-Creating screens](#second-step-creating-screens)
+  - [Third Step-Navigating React screens using nested navigators](third-step-navigating-react-screens-using-nested-navigators)
+  - [Fourth Step-Adding buttons](#fourth-step-adding-buttons)
+  - [Fifth Step-Passing data to other screens using context](#fifth-step-passing-data-to-other-screens-using-context)
 - [Conclusion](#conclusion)
 - [Reference](#reference)
 
 ### Prerequisites
-You'll require the following to follow along with this tutorial:
+The reader will require the following to follow along with this tutorial:
+1. An on-disk Node.js development environment. Make a Local Development Environment with Node.js by following this [installation guide](https://www.digitalocean.com/community/tutorial_series/how-to-install-node-js-and-create-a-local-development-environment).
 
-1. An on-disk Node.js development environment. Make a Local Development Environment with Node.js by following this [Installation Guide.](https://www.digitalocean.com/community/tutorial_series/how-to-install-node-js-and-create-a-local-development-environment)  
+2. Another advantage for this project is familiarity with the iOS or Android simulators and setting up a new [React Native environment](https://reactnative.dev/docs/environment-setup) in your development environment.
 
-2. An advantage for this project is familiarity with the iOS or Android simulators and setting up a new [React Native environment](https://reactnative.dev/docs/environment-setup) in your development environment.
-
-### Developing a simple react native application 
+### Developing a simple React Native application 
 When you nest navigators, the screens of one navigator are rendered inside the screens of another. If there is a stack, switching to a different screen will cause a new screen to be displayed.
 
 Navigators are in charge of making the switch between different screens. Numerous navigation types are supported by react-navigation, including stack, drawer, and tab navigators. In addition to navigating between screens, we can transfer information between them.
 
 There will be several steps that we will walk through to achieve our goal in this tutorial.
 
-### First Step- Application development and module installation
+### First Step-Application development and module installation
 
 1. Use the command below to create a new project.
 
@@ -63,7 +61,7 @@ $ cd react-navigation-routing
 npm install –save react-navigation react-navigation-stack react-native-reanimated react-native-gesture-handler react-native-screens react-native-vector-icons
 ```
 
-4. Open the iOS or Android application, depending on your device respectively, using the following code:
+4. Open the iOS or Android application, depending on your device, using the following code:
 
 ```bash
 $ npm run ios
@@ -71,10 +69,10 @@ $ npm run ios
 $ npm run android
 ```
 
-### Second Step- Creating screens 
+### Second Step-Creating screens 
 We will create two screens:
 - Home screen 
-- Workers screen: Contains names of workers.
+- Workers screen: Will contain the names of the workers.
 
 It will be necessary for your app to start with the `HomeScreen` and another screen that we will name `WorkersScreen`. These two screens will be essential for us to navigate through.
 
@@ -121,12 +119,12 @@ class WorkersScreen extends React.Component {
 export default WorkersScreen;
 ```
 
-### Third Step - Navigating react screens using nested navigators
+### Third Step-Navigating react screens using nested navigators
 Nesting navigators are the same as standard nesting components in that it renders a navigator within a screen of another navigator. Nesting numerous navigators are frequently required to get the desired UI behaviour.
 
 You'll utilize a StackNavigator inside a tab navigator to move between screens. In this regard, a StackNavigator is similar to a call stack in functionality. As you move through the screens, the one before it rises to the top of the stack of screens.
 
-We need to open the `app.js` and then replace its content. The content that we'll replace with includes two screens that we created.
+We need to open the `app.js` and then replace its content. The content that we'll replace it with includes the two screens that we created.
 
 ```js
 import 'react-native-gesture-handler';
@@ -237,15 +235,15 @@ export default function Navigation() {
 
 ```
 
-In the above code:
+In the code above:
 - In our `App.js`, we'll find that we added `NavigationContainer`, `TabNavigator` and `StackNavigator` to ease and allow navigation from one screen to another. 
 - We also added the two screens: `HomeScreen` and `WorkersScreen`. 
 - The stack navigator is nested in the tab navigator.
 
-### Fourth Step- Adding buttons 
+### Fourth Step-Adding buttons 
 We will add buttons to switch between the two screens, if necessary. Many of its useful attributes will be transmitted down to our screen as long as the navigation object is included in the stack navigator.
 
-Add the following code in the `HomeScreen.js`. This will add a button to the home screen. Repeat the same way to add another button in the `WorkersScreen.js.`
+Add the following code in the `HomeScreen.js`. This will add a button to the home screen. Repeat it the same way to add another button in the `WorkersScreen.js.`
 
 ```js
 <Button
@@ -257,7 +255,7 @@ Add the following code in the `HomeScreen.js`. This will add a button to the hom
 
 ```
 
-Now, in `WorkersScreen.js`, add a button for `Home Screen`:
+Now, in `WorkersScreen.js`, add a button for the `Home Screen`:
 
 ```js
 <Button
@@ -266,7 +264,7 @@ Now, in `WorkersScreen.js`, add a button for `Home Screen`:
 />
 ```
 
-### Fifth Step- passing data to other screens using context
+### Fifth Step-Passing data to other screens using context
 Let's create an array of potential workers, for example, Jeff, Kim, and Cal, and an empty array of the already existing workers. In addition, we will implement a feature that allows users to add new workers to their existing list of workers.
 
 Add the possible workers and current workers to the component’s state in the `WorkersScreen.js`: 
@@ -326,10 +324,10 @@ class App extends React.Component {
 }
 ```
 
-#### Adding `WorkersContext` to `App`
+#### Adding 'WorkersContext' to 'App'
 To see our workers on `HomeScreen.js`, you'll need to add them to `WorkersScreen.js` first. 
 
-First, we create a new `WorkersContext` file and export it.
+We need to create a new `WorkersContext` file and export it.
 
 ```js
 import React from 'react';
@@ -381,7 +379,7 @@ class App extends React.Component {
 
 `HomeScreen` and `WokersScreen` can now refer to `current workers` and `possible workers` in the event of any context changes.
 
-#### Adding `WorkersContext` to `HomeScreen`
+#### Adding 'WorkersContext' to 'HomeScreen'
 This step will set the application to display the current number of workers.
 
 ```js
@@ -397,7 +395,7 @@ HomeScreen.contextType = WorkersContext;
 //...
 ```
 
-The `Class.contextType` allows access context in our screens. For instance, let’s make our `HomeScreen` display how many current Workers we have:
+The `Class.contextType` allows access context in our screens. For instance, let’s make our `HomeScreen` display how many current workers we have:
 
 ```js
 import React from 'react';
@@ -428,8 +426,9 @@ Output:
  You have 0 workers!.
 ```
 
-#### Adding `WorkersContext` to `WokersScreen`
+#### Adding 'WorkersContext' to 'WokersScreen'
 This step will set up the application to display the possible workers and provide buttons for adding them to the current workers.
+
 ```js
 import React from 'react';
 import { StyleSheet, Text, View, Button } from 'react-native';
@@ -468,9 +467,10 @@ WorkersScreen.contextType = WorkersContext;
 ```
 
 ### Conclusion
-In this tutorial, we build a multi-screen React Native app. We figured out how to navigate between screens using React Navigation. We also created a mechanism for transferring data between screens using React Context.
+In this tutorial, we built a multi-screen React Native app. We figured out how to navigate between screens using React Navigation. We also created a mechanism for transferring data between screens using React Context.
 
 Happy coding!
+
 ### References
 - [Introduction to nested navigators](https://medium.com/@vkim20/an-introduction-to-nested-navigation-in-react-native-4695fda86974).
 - [Nested React Native navigators](https://blog.logrocket.com/nested-react-native-navigators/).
