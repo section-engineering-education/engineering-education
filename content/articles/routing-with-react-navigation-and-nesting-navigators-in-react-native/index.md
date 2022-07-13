@@ -1,4 +1,21 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /routing-with-react-navigation-and-nesting-navigators-in-react-native/
+title: Routing with React Navigation and Nesting Navigators in React Native
+description: In this article we will learn about feed-forward neural network and recurrent neural network using Python.
+author: vincent-kimanzi
+date: 2022-07-13T00:00:00-12:10
+topics: [Machine Learning, Languages]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/routing-with-react-navigation-and-nesting-navigators-in-react-native/hero.png
+    alt: Feed-forward and Recurrent Neural Networks Python Implementation Hero Image
+---
 Changing between screens is a requirement in nearly all mobile applications. React Native's `react-navigation` library is stunning and simple to use. It's a well-known library for React Native application routing and navigation. 
+<!--more-->
 
 Multiple screens will be added to a basic React Native application in this tutorial. Using nested react navigators, we will design a method for navigating between displays. We will also use React Context to provide a way for screens to share data.
 
