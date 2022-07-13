@@ -2,7 +2,7 @@
 title: Eric Gacoki
 type: authors
 github: https://github.com/Ericgacoki
-linkedIn: https://www.linkedin.com/in/eric-gacoki/
+linkedin: https://www.linkedin.com/in/eric-gacoki/
 images:
   - url: /engineering-education/authors/eric-gacoki/avatar.jpg
 skills: ["Android Development (Kotlin)", "IOS Development (Swift)", "Backend Development (Node.js)"]
