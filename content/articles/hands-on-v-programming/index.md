@@ -1,57 +1,78 @@
-# Getting Started with V programming
+---
+layout: engineering-education
+status: publish
+published: true
+url: /hands-on-v-programming/
+title: Getting Started with V programming
+description: This tutorial will help the ...
+author:
+date: 2022-07-04T00:00:00-19:30
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
 
-Languages now are being developed not only to solve problems but to also create fast softwares. V programming is a programming language that is used to create interactive software in the visual programming environment. it was released in July 2019 by ALexander Medvednikov as an open source language. It has been recognized by many software developers especially backend developers. It has been labeled as Vlang and goes with an abbreviation of V. It is one of the statically typed programming languages which extra features. It has an added advantage of no global state and also a hot reloading feature. Moreover, one of the added feature which most developers have been anticipating finally is here. V has been the only language which is in a position to load even the no dependencies. It is able to load with any libraries attached like other languages do. Despite its simplicity, V gives the developer a lot of power and may be utilized in a wide range of fields. These fields includes systems programming, web development, game development, GUI development, mobile (wip), science, embedded programming, tooling, and many fields. 
+  - url: /engineering-education/creating-user-authentication-ui-with-compose-for-desktop/hero.jpg
+    alt: Creating User Authentication UI with Compose for Desktop Hero Image
+---
+Today, programming languages are being developed not only to solve problems but to also create fast softwares. V programming is a programming language that is used to create interactive software in the visual programming environment. 
+<!--more-->
+It was released in July 2019 by ALexander Medvednikov as an open source language. It has been recognized by many software developers, especially working on the backend. It has been labeled as Vlang and goes with an abbreviation of V. 
 
+Vlang is one of the statically typed programming languages. It has an added advantage of no global state and also a hot reloading feature. V can load any libraries just like other languages. 
+
+Despite its simplicity, V gives the developer a lot of power and may be utilized in a wide range of fields including systems programming, web development, game development, GUI development, mobile (wip), science, embedded programming, and tooling. 
 
 ### Table of contents
-
 - [Introduction](#what-is-v-programming)
 - [Getting Started with V programming](#no-null)
-- [Tableofcontents](#table-of-contents)
-- [Prerequisite](#Prerequisite)
-- [Installation](#Installation)
+- [Prerequisites](#prerequisites)
+- [Installation](#installation)
 - [V Syntax](V-Syntax)
 - [Data types](#v-programming-data-types)
-- [Variables](#Variables)
-- [Fundamentals of V programming](#Fundamentals-of-V-programming)
+- [Variables](#variables)
+- [Fundamentals of V programming](#fundamentals-of-V-programming)
 - [No undefined behaviour](#no-undefined-behavior)
-- [Package manager](#Package-manager)
+- [Package manager](#package-manager)
 - [Memory Managemnt](#memory-management)
 - [Conclusion](#conclusion)
 
-## Prerequisite
-V programming is a language which can be used for all purposes. It is good for large programs which require compilations. It helps to overcome the crunchy library loading memory.Vlang is one of the languages which do utilise memory. This is the major reason to why it is reffered to as a fast compiling language when it comes to speed and efficiency. 
+## Prerequisites
+V programming can be used for different purposes including in large programs that require compilations. Vlang is one of the languages that utilize little memory. This is why it is reffered to as a fast compiling language when it comes to speed and efficiency. 
 
 ## Installation
-To install V in your machine visit [vlang.io](https://vlang.io/) then download the vlang zip file. Depending on the operating system you're using extract and install. run on the terminal to confirm the version. Alternatively, you can clone the github repo and install from there. click [here](https://github.com/vlang/v) to clone it. 
-here is the entire steps if you're cloning into your machine.
-first ensure you have github installed. 
-```
+To install Vlang on your machine visit [vlang.io](https://vlang.io/) then download the vlang zip file. Depending on your operating system, you will need to extract and install it. 
+
+Run on the terminal to confirm the version. Alternatively, you can clone the [GitHub repo](https://github.com/vlang/v) and install from there.
+
+Here are the entire steps to clone the repository.
+
+Firstly, ensure that you have GitHub installed.
+
+```bash
 git clone https://github.com/vlang/v
 cd v
 make
 ```
-For Windows users here is the instruction
+For Windows users, use the commands below:
 
-```
+```bash
 git clone https://github.com/vlang/v
 cd v
 make.bat -tcc
-
 ```
 
-on MacOS to add the path
+To add the path in MacOS"
 
 ```bash
 sudo ./v symlink
-
 ```
 
-to confirm the version of V installed run this on the shell or terminal. 
-```v
+To confirm the version of V installed run the following command on the shell or terminal:
+
+```bash
 v --version
 ```
-This will give an output on the version of the v installed. Let get started with our first program in V programming.
+This will show the vlang version that is installed. Let get started with our first program in V programming.
 To get started with V programming you can use any editor of your choice but i would prefer using Vscode for this tutorial. Alongside i will install a Vlang extension [here](https://marketplace.visualstudio.com/items?itemName=vlanguage.vscode-vlang).
 
 
@@ -277,3 +298,6 @@ Memory management has been the big language in the mouth of programmers. writing
 ### Conclusion
 Vlang is still growing and we can not classify it as it in in alpha stage. some organizations have started implementing it to develop their products. in a span of less than a year it has managed to collect almost 50k stars and forks on people who are working on to make it better daily. having learnt above on how it has been contributing and possesing all the basics of programming it is easy to learn and use it. this [documentation](https://github.com/vlang/v/blob/master/doc/docs.md) offers a good simpler and task to orient new users on grasping what is all about v programming. 
 V is also open source and gives the alternative for anyone to contribute. it also gives the advantage to write it in almost all the programming dynamics ranging from android to web development.
+
+---
+Peer Review Contributions by: [Wanja Mike](/engineering-education/authors/michael-barasa/)
