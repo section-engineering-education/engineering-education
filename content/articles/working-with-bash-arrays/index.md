@@ -268,6 +268,6 @@ Although its syntax is different and may seem complex, with constant usuage, you
 
 The scope of this tutorial is just the basics you can dive deep into other automation you can execute using bash arrays and other bash operations.
 
-I hope you had learning!
+I hope you had a good time learning!
 
 Happy coding!🙂
