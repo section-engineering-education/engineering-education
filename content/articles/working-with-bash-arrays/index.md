@@ -15,9 +15,9 @@ images:
     alt: Bash image
 ---
 
-As a programmer, you have probably come across or used the command line for building an application, a tool, or scripting. Bash is likely one of the most common command-line interpreters used for writing scripts.
+As a programmer, you have probably come across or used the command line for building a tool, or for scripting. Bash is one of the most common command-line interpreters used for writing scripts.
 
-Bash scripting, just like with other programming languages and scripting tools allows you to create variables, run for loops, apply conditional logic, and more importantly, you can work with arrays which are our focus in the tutorial. Arrays in bash scripting are quite powerful for storing multiple data and fundamental data structures.
+You can create variables, run for loops, work with arrays, etc with bashing scripting. However, we will focus on working with arrays in bash. Arrays in bash scripting are quite powerful for storing multiple data and fundamental data structures.
 
 In this tutorial, we will walk you through what bash arrays are, the distinction between bash arrays and other concepts, and how to perform key operations on them with detailed examples.
 
@@ -111,11 +111,7 @@ declare -a new_array=("orange", "pear", "grape", "apple")
 new_array=("Fruits")
 
 # Add a new variable
-new_array[4]=("Apple")
-```
-
-```bash
-
+new_array[3]=("Apple")
 ```
 
 For **indexed arrays**, we can also add an element by adding it to the end of the array, using the += operator. Example,
@@ -135,9 +131,6 @@ new_array+=(Apple)
 
 An element in an array can be referenced by adding the index of the element. For example, to reference an element in the array below:
 
-```bash
-
-```
 
 ```bash
 # Declare the array
