@@ -131,5 +131,10 @@ testimonials:
     roles: ["Contributor"]
     location: Lagos, Nigeria
     profileUrl: /authors/frank-joseph/
-    
+  - name: Jethro M.
+    testimonial: Joining the EngEd community has granted me access to lots of exclusive opportunities and offers. It also allowed me to teach other student developers what I am most passionate about.
+    image: /authors/jethro-magaji/avatar.jpg
+    roles: ["Contributor"]
+    location: Kaduna, Nigeria
+    profileUrl: /authors/jethro-magaji/    
 
