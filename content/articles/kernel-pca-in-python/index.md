@@ -5,52 +5,56 @@ published: true
 url: /kernel-pca-in-python/
 title: Getting Started with Kernel PCA in Python
 description: In this article, we will learn how we can reduce the dimensionality of nonlinear data using the kernel PCA.
-author: lalithnarayan-c
-date: 2022-07-05T00:00:00-10:30
-topics: []
+author: 
+date: 2022-07-15T00:00:00-14:30
+topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/kernel-pca-in-python/hero.jpg
     alt: Kernel PCA in Python example image
 ---
-We often deal with datasets with 1,000s or even millions of features when building machine learning models.
+We often deal with datasets with 1,000s or even millions of features when building machine learning models. Although this allows us to capture more information in the data, these features are often redundant.
 <!--more-->
-Although this allows us to capture more information in the data, these features are often redundant. Due to the Curse of dimensionality, it's important to limit our data only to capture the key signal in the data and drop the noise.
+Due to the Curse of dimensionality, it's important to limit our data only to capture the key signal in the data and drop the noise.
 
 Dimensionality reduction is a technique we use to reduce the dimensionality of the
 features space so that we end up with a lower feature space that maintains most of the information in the data.
 
-There are various methods used in dimensionality reduction. The Principal Component Analysis (PCA) is the method that the Kernel PCA generalizes on nonlinear data. Being a dimensionality reduction technique, the PCA takes high dimensional data and finds new coordinates, principal components, that are orthogonal to each other and explain most of the variance in the data. The problem with this method is that it's linear. 
+There are various methods used in dimensionality reduction. The Principal Component Analysis (PCA) is the method that the Kernel PCA generalizes on nonlinear data. Being a dimensionality reduction technique. PCA takes high dimensional data and finds new coordinates, principal components, that are orthogonal to each other and explains most of the variance in the data. The problem with this method is that it's linear. 
 
 Therefore, the PCA can only guarantee dimensionality reduction quality only if the data is linear. For nonlinear data, it fails to capture the key features of the data. In this article, we will learn how we can reduce the dimensionality of nonlinear data using the kernel PCA.
 
 ### Prerequisites:
-- In this section, you need a dataset, download [here](https://github.com/felixMuia/dataset/blob/main/dataset.csv).
-- An access to the Jupyter notebook or the Google Colab.
-- Python programming skills
+To follow along with this section, the reader will need:
+- A sample dataset, which can be downloaded [here](https://github.com/felixMuia/dataset/blob/main/dataset.csv).
+- Access to the Jupyter notebook or the Google Colab.
+- Python programming skills.
   
 ### Introduction to Kernel PCA
 There are many reasons why we may need to reduce the dimensionality of a dataset. Some of the importance of dimensionality reduction include.
-- Less computational power and training time
+- Less computational power and training time.
 - Ability to visualize the dataset in lower-dimensional space, which was impossible in higher-dimensional space.
-- To escape the [Curse of dimensionality](https://en.wikipedia.org/wiki/Curse_of_dimensionality)
+- To escape the [curse of dimensionality](https://en.wikipedia.org/wiki/Curse_of_dimensionality).
 
 As we previously saw, the ordinary PCA fails to capture critical nonlinearity components when reducing the data dimensionality. This shortcoming is what the kernel PCA comes in to address.
 
-The kernel principal component analysis, usually abbreviated as the kernel PCA, is an extension of principal component analysis (PCA) to nonlinear data where it makes use of kernel methods. One way to reduce a nonlinear data dimension would be to map the data to high dimensional space p, where $p >> n$, and apply the ordinary PCA there. Then, mapping the extracted principal components back to the original dimensional space would be as if we learned them while in the original data space. However, it turns out that this approach is sometimes computationally impractical. Sometimes, mapping the dataset to a higher dimensional space than its original space so that we can apply the PCA can be computationally costly. One of the goals for dimensionality reduction is to reduce computational power need. Thus it's not economical to map the data in higher dimensional space as this can lead it to exist in infinite-dimensional space, which is impossible to deal with.
+The kernel PCA is an extension of principal component analysis (PCA) to nonlinear data where it makes use of kernel methods. One way to reduce a nonlinear data dimension would be to map the data to high dimensional space p, where $p >> n$, and apply the ordinary PCA there. 
 
- Now, how can we escape this challenge and still enjoy the benefits of higher mapping? The kernel PCA is the answer to this. Since we're only interested in the relationship, linear combinations, of the features in the high space, through the kernel, we can obtain these while in the original data space without the need to visit the mapping space. Using the original feature's space, the kernel techniques use the inner product to achieve their goal. Thus, less processing power.
+Then, mapping the extracted principal components back to the original dimensional space would be as if we learned them while in the original data space. However, it turns out that this approach is sometimes computationally impractical. Sometimes, mapping the dataset to a higher dimensional space than its original space so that we can apply the PCA can be computationally costly. 
 
- There are various types of kernel functions that we can use to achieve our goal. To learn more about kernel methods in machine learning, I recommend you read this [blog](https://www.educba.com/kernel-methods/).
+One of the goals for dimensionality reduction is to reduce computational power need. Thus it's not economical to map the data in higher dimensional space as this can lead it to exist in infinite-dimensional space, which is impossible to deal with. Now, how can we escape this challenge and still enjoy the benefits of higher mapping? The kernel PCA is the answer to this. 
+
+We're only interested in the relationship, linear combinations, of the features in the high space, through the kernel. We can obtain these while in the original data space without the need to visit the mapping space. Using the original feature's space, the kernel techniques use the inner product to achieve their goal. Thus, less processing power.
+
+There are various types of kernel functions that we can use to achieve our goal. To learn more about kernel methods in machine learning, I recommend you read this [blog](https://www.educba.com/kernel-methods/).
 
 
 Now in this article, we will see how we reduce the dimension of a multivariate dataset using the kernel PCA in the Scikit learn library. Let's get started.
 
 ### Python Implementation
-
-### Step 1: Data Cleaning
-In this phase, we will first do some basic data cleaning before we can later. First, we import the required libraries and the dataset we will work on in this section. The link to download the data was provided in the prerequisite section. So, make sure you downloaded it.
+#### Step 1: Data cleaning
+In this phase, we will do some basic data cleaning. We need to import the required libraries and the dataset that we will work on in this section. The link to download the data was provided in the prerequisite section. Make sure you downloaded it.
 
 ```python
 # import necessary libraries
@@ -63,8 +67,9 @@ dataset = pd.read_csv("/content/drive/MyDrive/dataset (1).csv")
 dataset.head()
 
 ```
+
 Output
-![dataset](engineering-education/kernel-pca-in-python/head.png)
+![dataset](/engineering-education/kernel-pca-in-python/head.png)
 
 Next, we separate the features from the study variable and continue to split our data into the training set and the test sets before we scale up our features set.
 
@@ -83,8 +88,11 @@ XTrain = stndS.fit_transform(XTrain)
 XTest = stndS.transform(XTest)
 
 ```
+
 ### Step 2: Implementing the Kernel PCA and a Logistic Regression
-We will apply the Radial Basis Kernel to lower the dimensions of our data into two principal components. Using these components, we shall fit a logistic regression on them and check its performance using the confusion matrix. We accomplish this as follows:
+We will apply the Radial Basis Kernel to lower the dimensions of our data into two principal components. Using these components, we shall fit a logistic regression on them and check its performance using the confusion matrix. 
+
+We can accomplish this as follows:
 
 ```python
 # Import the Kernel PCA class
@@ -114,6 +122,7 @@ print(confusn)
 accuracy_score(YTest, Yprd) 
 
 ```
+
 This code outputs:
 
 ```bash
@@ -123,12 +132,15 @@ This code outputs:
 1.0
 
 ```
-As we can see, reducing the dimensionality of our dataset from thirteen features to two key components that we implemented our model on resulted in a very well-performing model. In addition, our model didn't misclassify any data on prediction.
 
-Now, the last thing to do is to visualize how data points were classified for both the training and the test set. Let's do that.
+Reducing the dimensionality of our dataset from thirteen features to two key components resulted in a very well-performing model. In addition, our model didn't misclassify any data on prediction.
 
-### Step 4: Visualizing the Training set.
-We will implement a listed colourmap with a scatter plot of the training set to visualise this. Let's do that:
+Now, we need to visualize how data points were classified for both the training and the test set. Let's do that.
+
+### Step 4: Visualizing the training set
+We will implement a listed colormap with a scatter plot of the training set to visualise this. 
+
+You can see that below:
 
 ```python
 from matplotlib.colors import ListedColormap
@@ -158,12 +170,13 @@ plt.legend()
 plt.show() 
 
 ```
+
 Output:
-![plot-1](engineering-education/kernel-pca-in-python/colormap0.png)
+![plot-1](/engineering-education/kernel-pca-in-python/colormap0.png)
 
 The plot shows no misclassification.
 
-### Step 5: Visualizing the Test set
+### Step 5: Visualizing the test set
 We shall use our test set here. The implementation of this visualization is as follows:
 
 ```python
@@ -196,11 +209,15 @@ plt.show()
 ```
 
 Output:
-![plot-2](engineering-education/kernel-pca-in-python/colormap1.png)
+![plot-2](/engineering-education/kernel-pca-in-python/colormap1.png)
 
-As we can see from the test set, the model still correctly classifies all the data points.
+As we can see from the test set, the model correctly classifies all the data points.
 
 ### Conclusion
-In this article, we introduced the concept of dimensionality reduction and its importance. We briefly discussed the PCA method and its limitations of being unable to capture nonlinearity in nonlinear data. This was the key problem that the Kernel PCA came to address. As we discussed, the kernel PCA uses kernel methods to reduce the dimensionality of nonlinear data with less processing power.
+In this article, we introduced the concept of dimensionality reduction and its importance. We briefly discussed the PCA method and its limitations of how it is unable to capture nonlinearity in nonlinear data. 
 
-Finally, we showed how we implement the Kernel PCA in python using the scikit learn library.
+This was the key problem that the Kernel PCA came to address. As we discussed, the kernel PCA uses kernel methods to reduce the dimensionality of nonlinear data with less processing power. Finally, we showed how we implement the Kernel PCA in Python using the scikit learn library.
+
+---
+
+##### Written by: Felix Muia
