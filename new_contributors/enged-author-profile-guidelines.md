@@ -40,7 +40,7 @@ skills: ['Skill1', 'Skill2']
 projects: 
   - title: Project Title
     role: Role of the project
-    date: Jan 2022 - Present
+    date: Jan 2022
     description: Project Description
     url: https://URL_OF_PROJECT.com
 ```
@@ -54,5 +54,12 @@ projects:
 - website (Author website URL - Optional)
 - images (Author avatar image - **Required**)
 - skills (Author skills/languages - an array of strings - Optional)
+- projects:
+-   - title: Project Title
+-     role: (optional)
+      date: Date project was created
+      description: Project Description
+      url: https://URL_OF_PROJECT.com
+-   
 
 Congratulations! Your EngEd profile is now ready to be reviewed and created. If you have an article/tutorial ready to be submitted attach it to that pull request (otherwise create a new pull request) & we'll be happy to review it.
