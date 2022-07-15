@@ -26,7 +26,7 @@ Also, keep in mind that these Enged profiles are intended to be shared and refer
 
 Add these files to the same PR (pull request).
 
-Example author profile - `index.md`: 
+### Example author profile - `index.md`: 
 ```
 title: Student Name // Required
 type: authors // Required
