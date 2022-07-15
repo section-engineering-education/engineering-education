@@ -101,6 +101,12 @@ testimonials:
     roles: ["Contributor", "Peer Reviewer", "Content Moderator"]
     location: Juja, Kenya
     profileUrl: /authors/peter-kayere/
+  - name: Valentine G.
+    testimonial: The Eng-Ed program has helped me improve my writing skills. I get to learn more about different technologies and work with new technologies along the journey.
+    image: /authors/valentine-gatwiri/avatar.jpg
+    roles: ["Contributor"]
+    location: Nairobi, Kenya
+    profileUrl: /authors/valentine-gatwiri/    
   - name: Michael B.
     testimonial: I have learned a lot from the articles submitted by other EngEd contributors, specifically in Machine Learning, Backend technologies, and AI.
     image: /authors/michael-barasa/avatar.png
@@ -113,3 +119,17 @@ testimonials:
     roles: ["Contributor"]
     location: Ruiru, Kenya
     profileUrl: /authors/sandra-moringa/
+  - name: Joel K.
+    testimonial: The EngEd program has been a great community to me. This is where I wrote my 1st tech article. EngEd gave me the opportunity to explore and learn new things while sharing my knowledge w/ other developers through writing. These tech articles have really boosted my portfolio.
+    image: /authors/joel-kanyi/avatar.jpg
+    roles: ["Contributor"]
+    location: Bungoma, Kenya
+    profileUrl: /authors/joel-kanyi/
+  - name: Frank J.
+    testimonial: I am very thankful to be a part of the Engineering Education program at Section. This community gave me the platform and opportunity to start my journey as a technical writer.
+    image: /authors/frank-joseph/avatar.jpg
+    roles: ["Contributor"]
+    location: Lagos, Nigeria
+    profileUrl: /authors/frank-joseph/
+    
+
