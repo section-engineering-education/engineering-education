@@ -1,83 +1,63 @@
----
-layout: engineering-education
-status: publish
-published: true
-url: /hands-on-v-programming/
-title: Getting Started with V programming
-description: This tutorial will help the ...
-author:
-date: 2022-07-04T00:00:00-19:30
-topics: [Languages]
-excerpt_separator: <!--more-->
-images:
 
-  - url: /engineering-education/creating-user-authentication-ui-with-compose-for-desktop/hero.jpg
-    alt: Creating User Authentication UI with Compose for Desktop Hero Image
----
-Today, programming languages are being developed not only to solve problems but to also create fast softwares. V programming is a programming language that is used to create interactive software in the visual programming environment. 
-<!--more-->
-It was released in July 2019 by ALexander Medvednikov as an open source language. It has been recognized by many software developers, especially working on the backend. It has been labeled as Vlang and goes with an abbreviation of V. 
+# Getting Started with V programming
 
-Vlang is one of the statically typed programming languages. It has an added advantage of no global state and also a hot reloading feature. V can load any libraries just like other languages. 
+Languages now are being developed not only to solve problems but to also create fast softwares. V programming is a programming language that is used to create interactive software. They are used in the visual programming environment. It was released in July 2019 by ALexander Medvednikov as an open source language. It has been recognized by many software developers especially backend developers. Also, it has been labeled as Vlang and goes with an abbreviation of V.  It is one of the statically typed programming languages which extra features. It has an added advantage of no global state and also a hot reloading feature. Moreover, one of the added feature which most developers have been anticipating finally is here. V has been the only language which is in a position to load even the no dependencies. It is able to load with any libraries attached like other languages do. Despite its simplicity, V gives the developer a lot of power and may be utilized in a wide range of fields. These fields includes systems programming, web development, game development. It also supports GUI development, mobile, science, embedded programming, tooling, and many fields. 
 
-Despite its simplicity, V gives the developer a lot of power and may be utilized in a wide range of fields including systems programming, web development, game development, GUI development, mobile (wip), science, embedded programming, and tooling. 
 
 ### Table of contents
+
 - [Introduction](#what-is-v-programming)
 - [Getting Started with V programming](#no-null)
-- [Prerequisites](#prerequisites)
-- [Installation](#installation)
-- [V Syntax](V-Syntax)
+- [Tableofcontents](#table-of-contents)
+- [Prerequisite](#Prerequisite)
+- [Installation](#Installation)
+- [V Syntax](#V-Syntax)
 - [Data types](#v-programming-data-types)
-- [Variables](#variables)
-- [Fundamentals of V programming](#fundamentals-of-V-programming)
+- [Variables](#Variables)
+- [Fundamentals of V programming](#Fundamentals-of-V-programming)
 - [No undefined behaviour](#no-undefined-behavior)
-- [Package manager](#package-manager)
-- [Memory Managemnt](#memory-management)
+- [Package manager](#Package-manager)
+- [Memory Management](#memory-management)
 - [Conclusion](#conclusion)
 
-## Prerequisites
-V programming can be used for different purposes including in large programs that require compilations. Vlang is one of the languages that utilize little memory. This is why it is reffered to as a fast compiling language when it comes to speed and efficiency. 
+## Prerequisite
+V programming is a language which can be used for all purposes. It is good for large programs which need compilations. It helps to overcome the crunchy library loading memory. Vlang is one of the languages which do utilise memory. This is the major reason to why it is reffered to as a fast compiling language when it comes to speed and efficiency. 
 
 ## Installation
-To install Vlang on your machine visit [vlang.io](https://vlang.io/) then download the vlang zip file. Depending on your operating system, you will need to extract and install it. 
-
-Run on the terminal to confirm the version. Alternatively, you can clone the [GitHub repo](https://github.com/vlang/v) and install from there.
-
-Here are the entire steps to clone the repository.
-
-Firstly, ensure that you have GitHub installed.
-
-```bash
+To install V in your machine visit [vlang.io](https://vlang.io/) then download the vlang zip file. Depending on the operating system you're using extract and install. Run on the terminal to confirm the version. Or, you can clone the github repo and install from there. Click [here](https://github.com/vlang/v) to clone it. 
+Here is the entire steps if you're cloning into your machine.
+- First ensure you have github installed. 
+```
 git clone https://github.com/vlang/v
 cd v
 make
 ```
-For Windows users, use the commands below:
+For Windows users here is the instruction
 
-```bash
+```
 git clone https://github.com/vlang/v
 cd v
 make.bat -tcc
+
 ```
 
-To add the path in MacOS"
+On MacOS to add the path
 
 ```bash
 sudo ./v symlink
+
 ```
-
-To confirm the version of V installed run the following command on the shell or terminal:
-
-```bash
+to confirm the version of V installed run this on the shell or terminal. 
+```v
 v --version
 ```
-This will show the vlang version that is installed. Let get started with our first program in V programming.
-To get started with V programming you can use any editor of your choice but i would prefer using Vscode for this tutorial. Alongside i will install a Vlang extension [here](https://marketplace.visualstudio.com/items?itemName=vlanguage.vscode-vlang).
+This will give an output on the version of the v installed. Let get started with our first program in V programming.
+To get started with V programming, you can use any editor of your choice. B  ut i would prefer using Vscode for this tutorial. Install  Vlang extension [here](https://marketplace.visualstudio.com/items?itemName=vlanguage.vscode-vlang).
 
 
 ## Getting Started
-### V syntax
+**### V syntax**
+
 Fire up your visual studio and lets write our first program. 
 
 ```v
@@ -86,22 +66,24 @@ fn main() {
 }
 
 ```
-save this code snippet as helloworld.v and open your time. Run the program 
+Save this code snippet as helloworld.v and open your time. Run the program
+
 ```bash
 v run helloworld.v
 ``` 
+
 ###  V Output
 it should generate the output below 
 
 ```bash
 Hello world this is my first v program
 ```
-Hurray!!! you just wrote your first article in v programming. in the above program 
-- fn is a function declaration. main form the entry point of the code while the output is printed using print. println is an inbuilt funtion which prints the value requested. if you're having a rough time to use the editor mybe you can use an online editor. use [this playground](https://vlang.io/play) to run your codes and test.
+Hurray!!! You just wrote your first article in v programming. in the above program 
+- fn is a function declaration. Main form the entry point of the code while the output is printed using print. Println is an inbuilt funtion which prints the value requested. If you're having a rough time to use the editor mybe you can use an online editor. Use [this playground](https://vlang.io/play) to run your codes and test.
  
  ## comments
-comments are used to help understand code. However, they are not printed but remain part of the code. 
-there are two ways to write comments.
+Comments are used to help understand code. But, they are not printed but remain part of the code. 
+There are two ways to write comments.
 ```comment
 // I am a single line comment.
 /*
@@ -109,22 +91,22 @@ I am a multiline comment.
    /* It can be nested. */
 */
 ```
-this is the difference between a single comment and multiline comment. 
+This is the difference between a single comment and multiline comment. 
 
 ### Variables
-data values in programming are store in containers called variables. variables are determined by the data types. 
+Data values in programming are store in containers called variables. variables are determined by the data types. 
 ### Declaring variables
 
 ```
 type variableName := value;
 ```
-example
+Example
 ```
 int myNum := 15
 ```
-assigning existing variable is not easy unless when using a mut keyword.
+Assigning existing variable is not easy unless when using a mut keyword.
 ## V programming data types.
-Just like other languages Vlang supports almost all data types. Among the data types supported by V programming includes; strings, boolean, integers, arrays,numbers, float and double. V is statically typed. below is a list of primitive types in v.
+Just like other languages Vlang supports almost all data types. V programming has data types. They include; strings, boolean, integers, arrays,numbers, float and double. V is statically typed. below is a list of primitive types in v.
 
 ```v
 bool
@@ -142,7 +124,7 @@ any_int, any_float // internal intermediate types of number literals
 
 byteptr, voidptr, charptr, size_t // these are mostly used for C interoperability
 
-any // similar to C's void* and Go's interface{}
+any // like C's void* and Go's interface{}
 
 ```
 Interpolation
@@ -153,7 +135,7 @@ println('Hello, $name!') // Hello, RoyWanyoike
 
 ```
 ### V constants
-constants in v are declared with the keyword const. However, this is only possible outside the function. Constants also cannot be changed. 
+Constants in v are declared with the keyword const. But, this is only possible outside the function. Constants also cannot be changed. 
 ```
 const vlang = 3
 ```
@@ -218,7 +200,7 @@ Assignment Operators
 >>=  <<=  >>>=
 ```
 ### String in V
-strings are only read-only array of bytes. the characters are encoded in UTF-8 format. However, they are mutable.
+Strings are only read-only array of bytes. the characters are encoded in UTF-8 format. Yet, they are mutable.
 ```
 name := 'joy'
 assert name.len == 3       // will print 3
@@ -247,12 +229,12 @@ assert star_str == '\xe2\x98\x85' // UTF-8 can be specified this way too.
 ## Fundamentals of V programming
 
 ### Safety
-V allows one to write good and clean code. It is one of the easier programming languages for developers to learn and understand easy. However, it is very strict when it comes to writing secure code structure. It is also fast and good for memory handling. variables are immutable by default in Vlang. example, 
+V allows one to write good and clean code. It is one of the easier programming languages to learn,understand it's easy. But, it is very strict when it comes to writing secure code structure. It is also fast and good for memory handling. Variables are immutable by default in Vlang. example, 
 ```v
 name := 'Roy'
 println(name) //Roy
 ```
-to mutate the varibale one can only use the mut keyword.
+To mutate the varibale one can only use the mut keyword.
 ```
 mut name := 'Roy'
 name = 'Wanyoike'
@@ -260,9 +242,9 @@ println('name')
 ```
 
 ## No global variables
-Languages  are always expected to come up with a program which will aid be extended later. v eliminates global variables to help come up with a clear program. global variables makes programs less clear while they increases the software size. when one has no goo
+Languages  are always expected to come up with a program which will aid be extended later. V eliminates global variables to help come up with a clear program. global variables makes programs less clear while they increases the software size. 
 ## Error Handling
-as usual in almost all programming languages one has to write the trial and error catch block. this exception is used to handle errors in the code. when having a large code base it ends up having a long list of trial and error catch block. This is different in V since it combines the entire error into one block and displays as output. 
+As usual in almost all programming languages one has to write the trial and error catch block. This exception is used to handle errors in the code. When having a large code base it ends up having a long list of trial and error catch block. This is different in V since it combines the entire error into one block and displays as output. 
 ```
 fn (r Repo) find_user_by_id(id int) ?User {
 	for user in r.users {
@@ -277,27 +259,22 @@ fn (r Repo) find_user_by_id(id int) ?User {
 ```
 
 ## No undefined behavior
-v comes with no defined behaviours and thus you're the master to drive your own steering wheel. You have no limitation on what to do. 
+V comes with no defined behaviours and thus you're the master to drive your own steering wheel. You have no limitation on what to do. 
 Other strict behaviours in v include;
 - Undefined Values
 - State Behaviors
 - Variable Shadowing in Vlang
 - Bound Checking
 ## Package manager
-v supports package management just like other languanges does. it has its own package manager vpm. you can install this package manager using the above lines in terminal.
+V supports package management like other languanges does. It has its own package manager vpm. You can install this package manager using the above lines in terminal.
 ```bash
 v install [package]
 ```
 ## Memory management
 
-Memory management has been the big language in the mouth of programmers. writing a big packaged software gives a lot of headache. to overcome this vlang has come up with a method to overcome this issue. it uses value types and string butters to handle memory management. its possible to edit this to manual memory freeing.
-
-
+Memory management has been the big language in the mouth of programmers. Writing a big packaged software gives a lot of headache. To overcome this vlang has come up with a method to overcome this issue. It uses value types and string butters to handle memory management. Its possible to edit this to manual memory freeing.
 
 
 ### Conclusion
-Vlang is still growing and we can not classify it as it in in alpha stage. some organizations have started implementing it to develop their products. in a span of less than a year it has managed to collect almost 50k stars and forks on people who are working on to make it better daily. having learnt above on how it has been contributing and possesing all the basics of programming it is easy to learn and use it. this [documentation](https://github.com/vlang/v/blob/master/doc/docs.md) offers a good simpler and task to orient new users on grasping what is all about v programming. 
-V is also open source and gives the alternative for anyone to contribute. it also gives the advantage to write it in almost all the programming dynamics ranging from android to web development.
-
----
-Peer Review Contributions by: [Wanja Mike](/engineering-education/authors/michael-barasa/)
+Vlang is still growing and we can not classify it as it in in alpha stage. Some organizations have started implementing it to develop their products.  Less than a year it has managed to collect almost 50k stars and forks. There is a group of people who are working on to make it better daily. It is easy to learn and use vlang. This [documentation](https://github.com/vlang/v/blob/master/doc/docs.md) is simple to learn. 
+V is also open source and gives the alternative for anyone to contribute. It also gives the advantage to write it in almost all the programming dynamics.  They all range from android to web development.
