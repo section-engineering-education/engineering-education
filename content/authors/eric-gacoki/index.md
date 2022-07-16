@@ -1,10 +1,10 @@
 ---
 title: Eric Gacoki
 type: authors
-interests: Android, Kotlin & Go-lang
-email: gacokieric@gmail.com
-twitter: https://twitter.com/eric_gacoki  
+github: https://github.com/Ericgacoki
+linkedin: https://www.linkedin.com/in/eric-gacoki/
 images:
-  - url: /engineering-education/authors/eric-gacoki/avatar.jpg 
+  - url: /engineering-education/authors/eric-gacoki/avatar.jpg
+skills: ["Android Development (Kotlin)", "IOS Development (Swift)", "Backend Development (Node.js)"]
 ---
-Eric Gacoki is a 2nd-year undergraduate student pursuing computer science. He is a self-taught and solution-driven Android software developer. Currently, he’s doubling up as a co-lead in Android Stack under Developer Students’ clubs (sponsored by Google) in his university. He enjoys teaming up with all levels of developers to solve complex problems and learning from each other.
+Eric is a talented and passionate Software Developer with a strong background in Mobile development (Android). He loves engaging with other Android Developers and enjoys working and contributing to Open Source Projects.
