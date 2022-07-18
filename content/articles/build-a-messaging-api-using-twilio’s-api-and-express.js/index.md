@@ -15,11 +15,8 @@ images:
    alt: Build a Messaging API Using Twilio's API and Express
 ---
 
-
-
 <!-- more -->
-
-
+### Introduction
 Twilio has a couple of APIs that allow you to send and receive a high volume of SMS messages anywhere in the world. Once you get your registered Twilio phone number, you can use the APIs to manage outbound messages (“sending”) and inbound messages (“receiving”).
 
 In this article, you will learn how to send SMS messages using the Twilio API with Node.js and Express and save the sent messages in a MongoDB database.
@@ -28,13 +25,13 @@ We'll build an API to create contacts for users, send SMS to user-saved contact 
 
 You can extend the application we're building here to reply to incoming SMS messages or include more complex, interactive elements and give you a head start building autoresponders for your SMS needs, depending on your needs.
 
-Briefly about Twilio and its Message API
+### Briefly about Twilio and its Message API
 
 Twilio is a customer engagement platform used by a whole lot of businesses and millions of developers worldwide to build unique and personalized experiences for their respective customers.
 
 Twilio's Programmable SMS API helps you add robust messaging capabilities to your applications. Using this REST API, you can send and receive SMS messages, track the delivery of sent messages, schedule SMS messages to send at a later time, and retrieve and modify message history.
 
-Prerequisites
+### Prerequisites
 
 * Nodejs
 * Npm or Yarn
@@ -42,7 +39,7 @@ Prerequisites
 * Twilio account
 * A knowledge of Expressjs
 
-Getting Started
+### Getting Started
 
 If you don’t have Node.js installed just head on to the official [Node.js website](https://nodejs.org/en/) to get Nodejs on your Pc. Once you install Nodejs, you will automatically have npm installed and then you can head over to [Twilio](https://www.twilio.com/try-twilio) now to get an account in less than a minute.
 
@@ -64,7 +61,7 @@ npm install express bcrypt jsonwebtoken mongoose twilio dotenv
 
 You can also install other dependencies using the command structure as follows as you need them `npm install [package name]`
 
-Structure of our API
+### Structure of our API
 
 ![](https://lh5.googleusercontent.com/Td6h-JOoKA7sH6pqzD8il-FfxRzDOfInCn91Vl-n5MBjfPvtD6i4xQo5G2NzfYKnyQA6yAKmB-UGjLzDhe0YdOdqpw_oCDQvyQoW6MLSQm2ftISD1K9ziYuAcAwP9mPwIXxQidhTxJc)
 
@@ -74,37 +71,37 @@ In the source folder, we have controllers (this is where the functionality of ev
 
 ![](https://lh5.googleusercontent.com/xcDFFQUzz7uzI520XpoKNboZqvmW5PF1WvEkKS_RN1U2jigjQDS7j9OLifYy2rALpdU5-Kj3oTkp7C4unix8FM1XYMtQaIwMF9PYKmHLyirLzbLrJ5XkAjZez09do8C7BnS0TRwLTV4)
 
-A .env.sample file
+                    A .env.sample file 
 
 Above is what our API requires in the .env file (i.e environment variables needed to run the API). The Twilio values are provided in your Twilio account.
 
 ![](https://lh5.googleusercontent.com/KVEC1JBJIGVzkgIBXvlwrrpBdbxmiljc0cHN0ZPD0vjrHxKRCV6EYotEb329BGvhNGUP9XG1IKTqn_sFYvyrAtdlEhuBEextyjcN7KSS-7NLWq29ZjMScEFFMsirUPFDrRlhJt2_RQ0)
 
-Index.js file
+                         Index.js file
 
 ![](https://lh6.googleusercontent.com/ScUpMYbGYd8_hv9eWix2J-53puS6SJ9ea9DJ7M7QvpdYTT9FWU4b_5JmnFaDqdCu1EBFv6W9-RWBIU4ZCb-Unz6XP-w4zMS7WiRy80EmbeqGfoRUyEbqWyOg4_iL8tk7EsDWevfStZk)
 
-App.js file
+                          App.js file
 
-Exploring the features/functionality of our API
+### Exploring the features/functionality of our API
 
 Firstly, we’ll talk about the structure of the database structure of our API and what it looks like.
 
 We connect to our MongoDB database in the Index.js file from the image above using mongoose ORM as seen below:
 
-1. Users Model
+## 1. Users Model
 
 ![](https://lh6.googleusercontent.com/N2_y9n1B16P6xfgfW7sr4aE5onA_3HflvVZr_DTVG4lrTARuYI7whn4FgGjToHVKEh8_H5_xlb3NhoBFJPrYKA77CMynE8CbE6WR3Cscu4ZNbugxq4AwXA2k8h3TdG92PrG-dYPfWVY)
 
 This model takes only user details which consist of name, email, password and date (when the user created an account/signed up) as we can see in the image.
 
-2. Messages Model
+### 2. Messages Model
 
 ![](https://lh6.googleusercontent.com/H9LeHAJgGPhu9lCTq5C2jZe5Ww0rMoYtAa9jHzDJKiuidC6R6V_vJmGq2NsRmxmYaGOwohE0KIKcdxIRnkHosWvExvLw_P1E8emZ6gqp1ZpKUgeGevMWPQKQD98RMJjKocouFrd8iYc)
 
 From what we can see above, it has: from (a reference to the sender of a message), to (the receiver of the message), message (the content of the message sent) and date (when the date was sent).
 
-3. Contacts Model
+### 3. Contacts Model
 
 ![](https://lh3.googleusercontent.com/ExHZCPWVFb3VILusolgfUXdzs3UB4M5RnbKc2IW0MhvaA9UYuhn7KL_xQmwxbNGDrGjO1wLsIWOwVL8EUm0VXV5XlGzy7q_6tbXjv-gpDCusSXVqe2_eYkXOrUvMLHv5sEFE9XYRCgs)
 
@@ -112,22 +109,22 @@ In the contacts model, we have the name of a contact, phone number, UserId (the 
 
 Now, let’s talk about the routes we have in our API. We basically have three main endpoints. We have the user route, the message route and the contact routes.
 
-1. The user route contains
+1. The <b>user route</b> contains
 * The authentication routes (sign-up, sign-in/login) for signing up and signing/logging in a user.
 * delete-account route for a user to delete their account.
 * get-sent-messages route for a user to get all the messages that have been sent by the user.
 
 ![](https://lh4.googleusercontent.com/rgwVi7wDg3RyfLGtIP_j1jMpaHDSOi4fo0eJ2Az_c-Z2xanXSRL4TgEM2f_EVyHLPZxZVxS6bmdRw0AOGmcV_gUji0PWOHCoAZNyC9sGZmdFW1TxDCW9xEJOJC0j5QE3uBKPOaIQ40U)
 
-users.js route file
+                     users.js route file
 
-2. The message route file has only one endpoint which is the route to send a message(s) to a saved contact.
+2. The <b>message route</b> file has only one endpoint which is the route to send a message(s) to a saved contact.
 
 ![](https://lh4.googleusercontent.com/Dd3EyMGwVrUnjGIvxak1veExsSnbo5F6cOPlD6YQ_5ABBLoauS1KPqziR9HyMRN1AGDkqGra4yWtW8Qq-hTtaXm13S3j_bCXSuVrgbGhMqxM8EvN57_rXW1KgZpayTAFOFLqNuzW2Wg)
 
-messages.js route file
+                    messages.js route file
 
-3. The contact route file contains five endpoints for you to:
+3. The <b>contact route</b> file contains five endpoints for you to:
 * Create contacts for a user
 * Get a contact by name
 * Delete a contact by name
@@ -136,26 +133,26 @@ messages.js route file
 
 ![](https://lh6.googleusercontent.com/CY0Rhvx5j9Lt-sqDBMVLSchBwmB2S0uFBvjh1hq7tnt2KYYQL_Yh9iOfF6_-BjYHUUrR8bSFuBqfX5nc2DaIyl4RkJOElOwGXMjPVT97ArTWOK0xDDUxGyzjtQqPkbVdbqJmVoNB4p8)
 
-contacts.js route file
+                    contacts.js route file
 
 As we can see in all the route images, there is a `verifyToken` in the route parameter. It is called middleware as we discussed above. Our authentication middleware is passed to an authenticated route (a route that requires a user to log in) to verify if the token used to log in is valid.
 
-We can see the implementation in the image below
+We can see the implementation in the image below:
 
 ![](https://lh6.googleusercontent.com/1sBlL5hL3MMEujauXTzyEHpRMpuw0xAK74ktDheYPZzxiW0AD8dL4WUS-SrpiqtBhfNhOpdiq3IGaY-5b4TMArr72uA2zjkxNvDjQJMOIRXDTM6DJyx5Ehe-2mYx_xnRI2j5nklS4NU)
 
-auth.js middleware file
+                    auth.js middleware file
 
 Lastly, we’ll talk about our controllers which we talked about above.
 
-1. The user controller: We have four endpoints for the users, so we, therefore, have four controllers where each endpoint functionality is written.
+1. <b>The user controller</b>: We have four endpoints for the users, so we, therefore, have four controllers where each endpoint functionality is written.
 
 In this controller, we have four functions which are ‘createUser’, ‘loginUser’, ‘deleteUserAccount’ and ‘getMessages’.
 
-* createUser: This function creates/signs a user up by passing the user’s name, password and email in the body of the request sent to the endpoint. The values passed in the body of the request are validated to be strings before a user can be successfully created. The password of the user is hashed using ‘bcrypt’ before saving it to the database.
-* loginUser: This logs an available user in. It gives it a unique signed token using the package ‘jsonwebtoken’ when the user is logged in. This gives the user the leverage to access other routes that require a logged-in user (authenticated routes).
-* deleteUserAccount: This allows or gives the user the leverage to delete their account.
-* getMessages: Allows a user to get all their sent messages.
+* <b>createUser</b>: This function creates/signs a user up by passing the user’s name, password and email in the body of the request sent to the endpoint. The values passed in the body of the request are validated to be strings before a user can be successfully created. The password of the user is hashed using ‘bcrypt’ before saving it to the database.
+* <b>loginUser</b>: This logs an available user in. It gives it a unique signed token using the package ‘jsonwebtoken’ when the user is logged in. This gives the user the leverage to access other routes that require a logged-in user (authenticated routes).
+* <b>deleteUserAccount</b>: This allows or gives the user the leverage to delete their account.
+* <b>getMessages</b>: Allows a user to get all their sent messages.
 
 The user controller looks like this:
 
@@ -302,7 +299,7 @@ exports.getMessages = async (req, res) => {
 
 ```
 
-2. The messages controller: There is only one function in this controller as there is only one endpoint for messages. The function is what’s responsible for sending messages to a saved contact(s) using the Twilio API and then it saves the messages for the user as sent messages in the Messages model.
+2. <b>The messages controller</b>: There is only one function in this controller as there is only one endpoint for messages. The function is what’s responsible for sending messages to a saved contact(s) using the Twilio API and then it saves the messages for the user as sent messages in the Messages model.
 
 Here’s how the messages controller looks like:
 
@@ -372,17 +369,17 @@ exports.sendMessageToContact = async (req, res) => {
 
 ```
 
-3. The contacts controller: This contacts controller contains five functions for each of the respective five endpoints available for contacts.
+3. <b>The contacts controller</b>: This contacts controller contains five functions for each of the respective five endpoints available for contacts.
 
 The functions available for contacts controllers are:
 
 ‘createContact’, ‘getContactByName’, ‘deleteContact’, ‘getContacts’, ‘updateContact’.
 
-* createContact: This function creates a contact for a user by passing the name and phone number of the contact in the body of the request sent to the endpoint. Note that it’s an authenticated route and there requires the user to be logged in to be able to access the endpoint.
-* getContactByName: This function allows a user to search for their contacts by name by passing the contacts name as parameter sent to the endpoint.
-* deleteContact: A function that deletes a user's contact by also passing the contact's name in the parameter sent to the endpoint.
-* getContacts: This function is to get all contacts of a user.
-* updateContact: A function to update a user’s contact.
+* <b>createContact</b>: This function creates a contact for a user by passing the name and phone number of the contact in the body of the request sent to the endpoint. Note that it’s an authenticated route and there requires the user to be logged in to be able to access the endpoint.
+* <b>getContactByName</b>: This function allows a user to search for their contacts by name by passing the contacts name as parameter sent to the endpoint.
+* <b>deleteContact</b>: A function that deletes a user's contact by also passing the contact's name in the parameter sent to the endpoint.
+* <b>getContacts</b>: This function is to get all contacts of a user.
+* <b>updateContact</b>: A function to update a user’s contact.
 
 The contacts controller is shown below:
 
@@ -513,12 +510,12 @@ exports.updateContact = async (req, res) => {
 
 ```
 
-References
+### References
 
 * [What does Twilio do](https://www.twilio.com/blog/what-does-twilio-do)
 * [About Twilio messaging service](https://console.twilio.com/us1/develop/sms/try-it-out/get-set-up?frameUrl%3D%252Fconsole%252Fsms%252Fget-setup%253Fx-target-region%253Dus1)
 
-Conclusion
+### Conclusion
 
 This article has built a web API on top of the [Twilio SMS API](https://www.twilio.com/docs/sms/quickstart) that allows users to sign up and create an account, allows users to create contacts and send messages to saved contacts using the Twilio API, the messages sent by a user are also saved. You’ll also learn how to implement third party APIs and how to use MongoDB in your Nodejs project.
 
