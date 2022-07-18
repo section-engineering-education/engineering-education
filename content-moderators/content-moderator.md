@@ -26,7 +26,7 @@ They will:
 
 ### What is in it for the Moderator?
 *update 12/12/21*
-- $225 a week retainer (~12-15 hours a week time commitment per CM)
+- (~12-15 hours a week time commitment per CM)
 - will be able to approve future content steward (peer reviewers)
 - moderator role in the Peer Review Channel & EngEd Channel (Slack) - be able to respond and communicate messages to the EngEd community.
 - help create the next phases of the EngEd program
