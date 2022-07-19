@@ -17,9 +17,9 @@ The following are custom decorators that will be created:
 
 ### Prerequisites
 To follow along, it’s important that:
-- You have a basic knowledge of python and Django Web Framework
+- You have a basic knowledge of [python](https://docs.python.org/) and [Django](https://docs.djangoproject.com/) Web Framework
 - You have a basic understanding of decorators in python as well. If you don’t, [this article](https://www.section.io/engineering-education/python-decorators/) should be of help.
-- You have Pipenv installed
+- You have [Pipenv](https://pipenv.pypa.io/en/latest/install/#installing-pipenv) installed
 
 ### Building Django Application
 Initial Set up
@@ -347,12 +347,10 @@ Go to your browser and navigate to http://127.0.0.1:8000/
 Check the image below
 ![Authentication Decorators in Action](custom-decorators-in-django/authdec.gif)
 
-
 - A link or an OTP should be sent to the user's email address in order to verify his / her email account and activate the user. I have kept this tutorial simple that the admin should make the user active.
-> The default authentication backend does not return a user object for in active users. So if a user who created an account using the register.html won't be able to login unless the admin makes the user active.
+> The default authentication backend does not return a user object for inactive users. So a user who created an account using the 'register.html' won't be able to login unless the admin makes the user active.
 
-Now to implement the xhr_request_only decorator created earlier.
-Inside posts/views.py
+Now to implement the 'xhr_request_only' decorator created earlier, add the following code inside 'posts/views.py'
 ```py
 from django.http import JsonResponse
 from django.shortcuts import get_object_or_404, render
@@ -388,7 +386,7 @@ In the above code,
 
 - Line 3 is to import xhr_request_only from the decorators module.
 - Line 4 is to import verification_required from the decorators module in the accounts application.
-- The built-in require_POST decorator has been used on the post_vote_view to ensure  that it only accepts the POST request method.
+- The built-in require_POST decorator has been used on the 'post_vote_view' to ensure  that it only accepts the 'POST' request method.
 - Our custom decorators; verification_required & xhr_request_only have also been used to serve their purpose.
 - You can see that multiple decorators can be stacked, i.e use more than one decorator for a single view.
 - request.body returns a byte. We will need to decode the byte inorder to get the dictionary. The decoding process returns a string and json.loads converts it to a dictionary. Hence, the reason why we import json in line 8 and make use of json.loads in line 18.
@@ -406,7 +404,7 @@ In order to test out our decorator.
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
   </head>
   <body>
-    {% with post_id as post.id %}  
+    {% with post_id=post.id %}  
     <div class="card" style="width: 18rem;">
         <div class="card-body">
           <h5 class="card-title">First Post</h5>
