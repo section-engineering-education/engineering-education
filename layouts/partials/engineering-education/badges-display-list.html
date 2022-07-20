@@ -1,7 +1,7 @@
 {{ range .studentBadges }}
   {{ $title := .}}
   <div class="badge">
-    <img class="badge-img" src="{{ (index $.site.Data.badgesData.badges $title).url }}" alt="{{ (index $.site.Data.badgesData.badges $title).title }}" />
+    <img class="badge-img" src="{{ if eq $.site.Params.env "local" }}/{{ else }}/engineering-education/{{ end }}{{ (index $.site.Data.badgesData.badges $title).url }}" alt="{{ (index $.site.Data.badgesData.badges $title).title | markdownify }}" />
     <p>{{ (index $.site.Data.badgesData.badges $title).title | markdownify }}</p>
   </div>
 {{ end }}
