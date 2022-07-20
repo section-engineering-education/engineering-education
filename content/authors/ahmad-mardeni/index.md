@@ -6,5 +6,6 @@ github: https://github.com/ahmadmardeni1
 images:
   - url: /engineering-education/authors/ahmad-mardeni/avatar.jpg 
 skills: ["Machine Learning", "CyberSecurity", "Web Scraping", "SQL Database Development", "Data Analysis", "Data Visualization", "Flask and Django Backend Development"]  
+badges: ["peer_reviewer", "content_moderator"]
 ---
 Ahmad is a passionate Software Engineer. He has experience in Machine Learning and Data Science. He won multiple Hackathons and programming competitions. He believes that Web3 underpins the internet of value and gives the user the control back.

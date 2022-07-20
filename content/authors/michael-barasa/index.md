@@ -6,5 +6,6 @@ linkedin: https://www.linkedin.com/in/wanja-mike-426683127/
 images:
   - url: /engineering-education/authors/michael-barasa/avatar.png
 skills: ["Android Development", "Kotlin", "JavaScript", "Java", "Flutter", "React", "PHP", "Python", "C++"]
+badges: ["peer_reviewer", "content_moderator", "hackathon_participant_22", "hackathon_winner_22"]
 ---
 A lover of technology. An upright individual not afraid of getting out of the comfort zone and trying out new things.

@@ -6,5 +6,6 @@ linkedin: https://www.linkedin.com/in/eric-gacoki/
 images:
   - url: /engineering-education/authors/eric-gacoki/avatar.jpg
 skills: ["Android Development (Kotlin)", "IOS Development (Swift)", "Backend Development (Node.js)"]
+badges: ["peer_reviewer"]
 ---
 Eric is a talented and passionate Software Developer with a strong background in Mobile development (Android). He loves engaging with other Android Developers and enjoys working and contributing to Open Source Projects.
