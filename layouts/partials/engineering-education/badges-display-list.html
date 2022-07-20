@@ -1,14 +1,7 @@
 {{ range .studentBadges }}
-  {{ . }}
+  {{ $title := .}}
+  <div class="badge">
+    <img class="badge-img" src="{{ (index $.site.Data.badgesData.badges $title).url }}" alt="{{ (index $.site.Data.badgesData.badges $title).title }}" />
+    <p>{{ (index $.site.Data.badgesData.badges $title).title | markdownify }}</p>
+  </div>
 {{ end }}
-<div class="badge">
-
-  
-  {{/*  <img src="{{ .Site.Data.badgesData.badges }}" alt="" />  */}}
-  {{/*  <p>{{ .site.Data.badgesData.badges.badge.title }}</p>
-  <p>{{ .site.Data.badgesData.badges.badge.url }}</p>  */}}
-  {{/*  {{ .badge }}  */}}
-  {{/*  {{ .site.Data.badgesData.badges }}  */}}
-  {{/*  {{ print .studentBadges}}  */}}
-</div>
-

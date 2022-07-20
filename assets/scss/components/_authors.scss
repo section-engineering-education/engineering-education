@@ -50,4 +50,60 @@
       }
     }
   }
+
+}
+
+.author-badges {
+  .badges {
+    display: flex;
+    flex-flow: wrap;
+    justify-content: space-between;
+    
+    .badge {
+      width: 30%;
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+
+      .badge-img {
+        max-width: 60px;
+        max-height: 58px;
+        margin-right: 20px;
+        margin-bottom: 0px;
+      }
+
+      p {
+        margin: 0;
+        font-size: 16px;
+        line-height: 24px;
+      }
+    }
+  }
+
+  @include mq($to: 640px ) {
+    .badges {
+      .badge {
+        width: 50%;
+      }
+    }
+  }
+  
+  @include mq($to: 420px ) {
+    .badges {
+      .badge {
+        width: 50%;
+        flex-direction: column;
+        margin-bottom: 30px;
+
+        .badge-img {
+          margin-right: 0;
+          max-width: 68px;
+          max-height: 65px;
+        }
+        p {
+          text-align: center;
+        }
+      }
+    }
+  }
 }

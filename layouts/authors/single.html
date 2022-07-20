@@ -84,12 +84,7 @@
             <div class="author-badges">
               <h4>EngEd Community Badges</h4>
               <div class="badges">
-                {{/*  {{ range . }}  */}}
-                  {{/*  {{ $badgeTitle := .}}  */}}
-                  {{ partial "engineering-education/badges-display-list.html" (dict "studentBadges" . "site" $.Site) }}
-                  {{/*  <img src="/images/badges/{{ .Site.Data.badgesData.badges.$badgeTitle }}" alt=""/>  */}}
-                  {{/*  {{ .Site.Data.globals.enged_cta.url }}  */}}
-                {{/*  {{ end }}  */}}
+                {{ partial "engineering-education/badges-display-list.html" (dict "studentBadges" . "site" $.Site) }}
               </div>
             </div>
           {{ end }}
