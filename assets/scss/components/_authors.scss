@@ -54,13 +54,16 @@
 }
 
 .author-badges {
+  margin-bottom: 40px; 
+
   .badges {
     display: flex;
     flex-flow: wrap;
-    justify-content: space-between;
+    justify-content: flex-start;
+    padding-top: 10px;
     
     .badge {
-      width: 30%;
+      width: 33.3%;
       display: flex;
       align-items: center;
       margin-bottom: 20px;
@@ -80,7 +83,7 @@
     }
   }
 
-  @include mq($to: 640px ) {
+  @include mq($to: 694px ) {
     .badges {
       .badge {
         width: 50%;
@@ -88,7 +91,7 @@
     }
   }
   
-  @include mq($to: 420px ) {
+  @include mq($to: 500px ) {
     .badges {
       .badge {
         width: 50%;
