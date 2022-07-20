@@ -63,3 +63,11 @@ projects:
 -   
 
 Congratulations! Your EngEd profile is now ready to be reviewed and created. If you have an article/tutorial ready to be submitted attach it to that pull request (otherwise create a new pull request) & we'll be happy to review it.
+
+### EngEd Badge Info
+1. Content Moderator Badge: This badge is awarded to any students who have successfully completed Peer Reviewer training and Content Moderator training.
+2. Peer Reviewer Badge: This badge is awarded to any students who have completed Peer Reviewer training (and reviewed articles successfully).
+3. CCC Contributor: This badge is awarded to any students who have submitted a CCC (community code contribution) to the EngEd program that was reviewed and merged. 
+4. Hackathon Participants: This badge is awarded to any students who have successfully submitted a project to an EngEd hackathon.
+5. Hackathon Winner(s) by year: This badge is awarded to any students who have won an EngEd hackathon.
+6. Community builder badge: This badge is awarded to any students who have created (or co-created/moderated) a sub-channel community.
