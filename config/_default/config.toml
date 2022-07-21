@@ -6,6 +6,7 @@ enableRobotsTXT = true
 enableEmoji = true
 paginate = 5
 disableKinds = [ "taxonomyTerm" ]
+ignoreErrors = ["error-remote-getjson"]
 pygmentsCodeFences = true
 pygmentsStyle = "monokai"
 [taxonomies]

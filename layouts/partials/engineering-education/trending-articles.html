@@ -45,10 +45,7 @@
             </tr>
           </thead>
           <tbody id="trending30DaysTableBody" class="table-body">
-
-            {{ $dataTrending30Days := getJSON (print $trending30DaysUrl) }}
-
-            {{ with $dataTrending30Days }}
+            {{ with getJSON (print $trending30DaysUrl) }}
               {{ range $index, $el := . }}
               <tr>
                 <td class="rank-col text-18-medium">{{ add $index 1 }}.</td>
@@ -81,6 +78,8 @@
               </tr>
 
               {{ end }}
+            {{ else }}
+              <p>No data available. Request failed.</p>
             {{ end }}
           </tbody>
         </table>
@@ -96,9 +95,7 @@
             </tr>
           </thead>
           <tbody id="trendingAllTimeTableBody" class="table-body">
-            {{ $dataTrendingAllTime := getJSON (print $trendingAllTimeUrl) }}
-
-            {{ with $dataTrendingAllTime }}
+            {{ with getJSON (print $trendingAllTimeUrl) }}
               {{ range $index, $el := . }}
               <tr>
                 <td class="rank-col text-18-medium">{{ add $index 1 }}.</td>
@@ -129,6 +126,8 @@
               </tr>
 
               {{ end }}
+            {{ else }}
+              <p>No content available. Request failed.</p>
             {{ end }}
           </tbody>
         </table>
