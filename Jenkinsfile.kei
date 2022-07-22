@@ -1,5 +1,11 @@
 #!groovy
 
+// Build once a day
+CRON_SETTINGS = '''H H * * *'''
+
+// Multi-branch pipeline. Build once a day from a "master" branch only
+CRON_SETTINGS = BRANCH_NAME == "master" ? '''H H * * *'''
+
 pipeline {
   agent { 
     label 'docker'
@@ -11,6 +17,10 @@ pipeline {
 
   environment {
     AWS_DEFAULT_REGION = 'ap-southeast-2'
+  }
+
+  triggers {
+    cron(CRON_SETTINGS)
   }
 
   stages {
