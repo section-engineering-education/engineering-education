@@ -63,8 +63,6 @@
 
           {{ $articleUrlsList = delimit $articleUrlsList ", "}}
 
-          <h4>Author Insights</h4>
-
           <div class="insights-section">
             <div class="insight total-num-articles" data-before="Total Number of Articles Written">
               <img src="{{ if eq $.Site.Params.env "local" }}/{{ else }}/engineering-education/{{ end }}images/total-articles-icon.png" alt="Total Number of Articles Icon" />
@@ -80,8 +78,6 @@
             </div>
           </div>
 
-          {{ partial "engineering-education/badges-display-list.html" (dict "studentBadges" . "site" $.Site "relpermalink" $.RelPermalink) }}
-          
           {{ with .Params.skills }} 
             <div class="author-skills">
               <h4>Skills/Languages</h4>
