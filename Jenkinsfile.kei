@@ -1,15 +1,8 @@
 #!groovy
 
-// Multi-branch pipeline. Build once a day from a "master" branch only
-CRON_SETTINGS = BRANCH_NAME == "master" ? '''0 0 * * *'''
-
 pipeline {
   agent { 
     label 'docker'
-  }
-
-  triggers {
-    cron(CRON_SETTINGS)
   }
 
   options {
