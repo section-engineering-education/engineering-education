@@ -1,7 +1,7 @@
 #!groovy
 
 // Multi-branch pipeline. Build once a day from a "master" branch only
-CRON_SETTINGS = BRANCH_NAME == "master" ? '''H H * * *'''
+CRON_SETTINGS = BRANCH_NAME == "master" ? '''0 0 * * *'''
 
 pipeline {
   agent { 
