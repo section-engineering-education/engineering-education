@@ -60,6 +60,16 @@ Your folder should look similar to this:
 
 Once your files are properly uploaded and organized, add, commit, and push your changes to your forked remote Github repository either using the command line or the Github tools within your text editor.
 
+### Check your changes locally
+We recommend running the development server locally to test your changes before submitting a pull request. Follow the instructions below to run the development server.
+
+**Prerequisites** 
+- Install [hugo v0.101.0_extended](https://github.com/gohugoio/hugo/releases/tag/v0.101.0) for your operating system.
+
+1. In the terminal navigate to your project directory.
+2. Start up the development server by running the command `hugo server -D`. 
+3. Navigate to `http://localhost:1313` in your browser.
+
 ### Create pull request
 Open Github. You should see a message indicating your pushed changes with a button to 'Compare & pull request'.
 
