@@ -80,14 +80,7 @@
             </div>
           </div>
 
-          {{ with .Params.badges }}
-            <div class="author-badges">
-              <h4>EngEd Community Badges</h4>
-              <div class="badges">
-                {{ partial "engineering-education/badges-display-list.html" (dict "studentBadges" . "site" $.Site) }}
-              </div>
-            </div>
-          {{ end }}
+          {{ partial "engineering-education/badges-display-list.html" (dict "studentBadges" . "site" $.Site "relpermalink" $.RelPermalink) }}
           
           {{ with .Params.skills }} 
             <div class="author-skills">
