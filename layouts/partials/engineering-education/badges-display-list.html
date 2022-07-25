@@ -1,0 +1,25 @@
+{{ $badgesContent := slice }}
+
+{{/*  Loop through badges and determine if student name exisist in the 
+  students array on the badge data. */}}
+{{ range $elem_index, $elem_value := $.site.Data.badgesData.badges }}
+  {{ range $student_index, $student_value := $elem_value.students }}
+    {{ if in $.relpermalink $student_value }}
+      {{ $badgesContent = $badgesContent | append $elem_index }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+
+{{ with $badgesContent }}
+  <div class="author-badges">
+    <h4>EngEd Community Badges</h4>
+    <div class="badges">
+      {{ range $elem_index, $elem_value := . }}
+        <div class="badge">
+          <img class="badge-img" src="{{ if eq $.site.Params.env "local" }}/{{ else }}/engineering-education/{{ end }}{{ (index $.site.Data.badgesData.badges $elem_value).url }}" alt="{{ (index $.site.Data.badgesData.badges $elem_value).title | markdownify }}" />
+          <p>{{ (index $.site.Data.badgesData.badges $elem_value).title | markdownify }}</p>
+        </div>
+      {{ end }}
+    </div>
+  </div>
+{{ end }}
