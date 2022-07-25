@@ -1,24 +1,31 @@
 ## Contribution Guidelines
-Welcome to Section’s Engineering Education program. This program is dedicated to providing a community that provides students/contributors a friendly and inviting place to contribute to, build up their skills, while growing their professional portfolios/profiles (upon entering the DEV career space). 
+Welcome to Section’s Engineering Education program. This program is dedicated to creating a community that provides students/contributors a friendly and inviting place to contribute to, build up their skills, while growing their professional portfolios/profiles (upon entering the DEV career space). 
 
-- Students can contribute to the EngEd community generated pool of educational content that is useful for engineers of every level. 
+- Students can contribute content, blogs, articles, tutorials, video, audio, or code contributions, and of course ideas via discussion to the EngEd community. 
 
-To begin, we’d recommend reviewing our most recently published content [here](www.section.io/engineering-education/) to get a sense of:
+All articles and blogs are published and added to the EngEd generated pool of educational content that is useful for engineers of every level. 
 
-- Article structures
-- Quality of articles we are looking for
-- Type of content that has been contributed (to help avoid topic overlap)
-- Topics you can begin working on
+We’d recommend reviewing our most recently published content [here](www.section.io/engineering-education/) to get a sense of:
+
+- Article structures and format.
+- Quality of articles we are looking for.
+- Type of content that has been contributed (to help avoid topic overlap).
+- Topics you can begin working on.
+- Find topics you'd like to build or expand upon.
 
 Articles do not need to be Section-specific or strongly Section-related. This is not necessarily about Section or Edge Compute directly, but rather an effort to provide educational value to software developers within the diverse ecosystem of web technologies. 
 
-We are looking to create a pool of content will be unique from what is already readily available through the official docs. We need to be sure that the content is providing unique value that addresses a specific use case or challenge that developers face. 
+We are looking to create a pool of content that will be unique from what is already readily available (through the official docs & other blog sites). 
+
+We need to be sure that any incoming content is providing unique value that addresses a specific use case or challenge that developers face. 
 
 **Articles should be a minimum of 750 words.**
 
 In order to participate in the program, all members will be required to agree to established [terms and conditions](https://www.section.io/legal-stuff/engineering-education-terms/). (Agreement is included as part of the enrollment process.)
 
-In order to achieve a level of consistent style and increasingly elevated quality, we have created this document to help new contributors. Let's start by reviewing what's needed. (Please ensure to only have ONE open issue + linked pull request at a time. This will ensure a steady output of EngEd articles and that they are completed in a timely manner from inception to publishing).
+In order to achieve a level of consistent style and increasingly elevated quality, we have created this document to help new contributors. Let's start by reviewing what's needed. 
+
+>NOTE: (Please ensure to only have ONE open issue + linked pull request at a time. This will ensure a steady output of EngEd articles and that they are completed in a timely manner from inception to publishing).
 
 ## Requirements for New Contributors
 - GitHub account (Please be sure to have a basic understanding of [GitHub and Gitflows.](https://www.youtube.com/watch?v=MnUd31TvBoU&t=510s) Eg: Pull requests, commits, merge, etc.
@@ -56,9 +63,24 @@ Before submitting your article, we request that you place your article through a
 
 We suggest using [Quetext this is a free tool](https://www.quetext.com/) and has a daily limit. 
 
-**We typically accept articles with 10% or less.**
+**We typically accept articles with 10% (plagiarism report %) or less.**
 
 These guidelines are intended to help EngEd contributors grow as authors and to enrich the larger engineering community as a whole by continuing to create higher quality educational articles, tutorials, how-to’s,technology reviews, etc. 
+
+## Communicating your key takeaways
+Articles should be clear, accurate, and fully explained. We are more interested in substance than length, and supporting examples are always encouraged. At the same time, articles that include mostly code with very little narrative lack sufficient depth and guidance for the audience to fully grasp important concepts.
+
+We suggest you think about what is most important to your article or any pain point you are addressing. Assume the audience is smart but has no prior exposure to the common terminology in your article.
+
+```
+For example:
+If your article is about serving ML models with Django, then the reader should have a decent understanding of something like: 
+
+1) The structure of a django app
+2) How to use such an app to serve a model for inference
+
+The details your article gives should help further grow the readers’ skills as they practice on their own projects.
+```
 
 ## EngEd Community Contribution Initiative
 One of our primary goals for the EngEd community is to provide students/contributors a friendly and inviting place to contribute to real-world projects to help students build up their professional portfolios and profiles (upon entering the DEV career space).
@@ -75,21 +97,9 @@ This Contribution Initiative is strictly restricted to the EngEd community.
 3. Suggestions will be reviewed by the Section team for relevance, and quality. 
 4. Once suggested features have been incorporated into our backlog, the Section team will approve your issue and create a pull request to be worked on by the EngEd community.
 
-## Communicating your key takeaways
-Articles should be clear, accurate, and fully explained. We are more interested in substance than length, and supporting examples are always encouraged. At the same time, articles that include mostly code with very little narrative lack sufficient depth and guidance for the audience to fully grasp important concepts.
 
-We suggest you think about what is most important to your article or any pain point you are addressing. Assume the audience is smart but has no prior exposure to the common terminology in your article.
-
-```
-For example:
-If your article is about serving ML models with Django, then the reader should have a decent understanding of something like: 
-
-1) The structure of a django app
-2) How to use such an app to serve a model for inference
-
-The details your article gives should help further grow the readers’ skills as they practice on their own projects.
-```
-## Review process
+## Extra Information
+### Review process
 Once you have opened a PR with your fully prepared article and accompanying images (according to the provided instructions), it enters a queue of articles to be reviewed by our technical review committee. Any required edits will be requested via comments within the PR in GitHub.  Articles will either be approved (for publishing) or sent back with requested revisions. 
 
 Note: Articles requiring very few edits will be given priority in the review queue, and **we reserve the right to refuse any articles that do not adhere to quality standards.** PRs with no response from members (comments, edits) after a period of 10 days will be closed (but are able to be reopened if needed).
@@ -98,16 +108,13 @@ As a community, we are continually striving to add value to our content pool thr
 
 Updated to continue increasing that level of quality and value for the community - we’d like to notify everyone of an update in the payout structure. *3/3/21*
 
-
-
-
-Updates to review processes:
+### Updates to review processes:
 We are introducing an [improved topic suggestion form](https://github.com/section-engineering-education/engineering-education/issues/new?assignees=&labels=topic+suggestion&template=enged-content-idea-suggestion.md&title=) that will gather more developed details of your content idea.
 Acceptance of article ideas will consider originality, expected value for readers, overlap with existing content, and quality of the topic outline provided.
 
 Articles are expected to be clearly understood, well-written, pre-checked for English grammatical issues, and technically accurate (with code tested).
 
-## We request articles to be cross-checked for readability. 
+### We request articles to be cross-checked for readability. 
 All submitted articles should be BOLD & CLEAR, free of any lengthy, complex sentences, and/or common errors.
 
 (We may waive for 1st-time contributors - to help them get familiar with the process, style, and quality we expect.)
@@ -117,7 +124,7 @@ All other formats payout will be as follows:
 - Articles with (little to no extra revisions needed) payout will be $100.00 USD ($150.00 USD for tutorials)
 - Articles with (2+) and up rounds of revisions we will consider closing the PR 
 
-## What counts as a round of revision? 
+### What counts as a round of revision? 
 - Any extra (major) steps that take a reviewer away from the actual revision process (revising, editing, and proofreading) and causes a shift towards content creation. 
 - Any (major) incorrect code snippets (all code should be tested - contributors should take advantage of free tools such as repl.it).
 - Instances when the content is too difficult to understand.
@@ -137,7 +144,7 @@ Please do not hesitate to reach out at any time  - we’re always happy to help.
 
 ---
 
-## Example Format Structure 
+### Example Format Structure 
 
 Content can include:
 - How-to guides
@@ -157,7 +164,7 @@ Suggested topic areas (but certainly not limited to):
 - Docker
 - Cloud Native Technologies
 
-## How-To (use) Guides:
+### How-To (use) Guides:
 #### What is the Scope and Purpose of the Guide
 
 Introduce the audience to the software or tech you are writing about and explain what is its purpose, and be sure to highlight any of its main benefits and features.
@@ -179,7 +186,7 @@ When needed, reference related processes and corresponding sources
 
 (You may choose to include a process flow diagram to accompany the text. Consider including images and/or diagrams throughout your guide to introduce the audience to new workflows)
 
-## Tutorials Format:
+### Tutorials Format:
 To ensure the audience is getting the best experience - make sure you research other tutorials on the subject - this will help make you write a more complete and unique tutorial with a higher chance of being found and helping someone out. This also helps to narrow your focus as you research and begin to write. A bit of history about the technology being referenced or talked about might be helpful for the beginner audience.
 
 
@@ -197,7 +204,7 @@ Don’t forget to get the audience involved by asking for feedback - or leave a 
 
 For some more information on how to write software documentation [watch this video](https://youtu.be/t4vKPhjcMZg?t=536).
 
-## Tutorial Format Example
+### Tutorial Format Example
 
 - Title
 - Introduction
@@ -208,7 +215,7 @@ For some more information on how to write software documentation [watch this vid
 - Step n — What to do last
 - Conclusion
 
-## Software Reviews:
+### Software Reviews:
 #### Detailed Code Review Checklist
 
 - Be Fair: When comparing software(s) - be sure to include both the advantages and disadvantages of the software being compared or reviewed
@@ -218,14 +225,14 @@ For some more information on how to write software documentation [watch this vid
 - Coding best practices & Proper code formatting: While writing your software review, check the code formatting to help improve readability and ensure that there are no barriers for the audience to get started:
 - Non Technical requirements: (Readability is very important) Get a feel of a story reading while reading through the software review. 
 
-## New Tech Introductions Reviews:
+### New Tech Introductions Reviews:
 - What new and exciting technology are you going to research and write about?
 - Why are you introducing the EngEd community to this new technology - what is exciting about it?
 - Who will be the most exciting about this new tech - who is the ideal audience in your mind that would benefit from the review?
 - Layout any needed background information on the new tech being introduced.
 - Include any needed background on the situation, industry, or in the literature to best explain the new technology.
 
-## New Tech Introductions Review Format Example:
+### New Tech Introductions Review Format Example:
 - BRIEF SUMMARY- Your tech introduction should be a self-contained topic and must be an accurate interpretation of what is presented.
 - INTRODUCTION of the NEW TECHNOLOGY – a short introduction/description of the technology that is being reviewed.	 The introduction should contain all needed technical detail for the audience to replicate themselves and it should give the reader a clear understanding of how the technology works.
 - POSSIBLE APPLICATIONS  of the new tech – explain how you have used this technology or how this technology may be used in the future.
@@ -239,7 +246,7 @@ Other subject matter samples:
 - https://www.section.io/blog/varnish-cache-503-error-guru-meditation/
 
 ---
-## Example Article Submission
+### Example Article Submission
 
 title: A Brief History of Container Technology
 
