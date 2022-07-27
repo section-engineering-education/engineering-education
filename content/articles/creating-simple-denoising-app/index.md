@@ -1,9 +1,25 @@
-### Creating a simple App that denoises 2-D signals using App Designer in Matlab
-### Introduction
+---
+layout: engineering-education
+status: publish
+published: true
+url: /creating-simple-denoising-app/
+title: Creating a Simple Denoising App
+description: This article will show you how to create responsive web pages using Material UI and Next.js. The website will adjust to different screen sizes and devices.
+author: 
+date: 2021-07-27T00:00:00-03:41
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/creating-simple-denoising-app/hero.png
+    alt: Creating Responsive Layouts with Material UI and Next.js
+---
 Signal denoising is the process of removing the available noise in a signal. Signal denoising application is widely used in various fields. Using an app designer, we can create an app that does this. 
+<!--more-->
 
 App Designer is a development environment with an interactive user interface for the layout design and programming of the behaviour of apps. In addition, it has a layout grid manager. It allows you to organize your components sensibly. Also, it has automatic reflow options that detect and make changes to your application depending on the screen size.
 
+### Introduction
 This tutorial will look at how we can use an app designer to create a simple app. First, we will look at the various components used by the in-app designer and how to write their callback function. Finally, we will use their methods to create an App to denoise input 2-D signals and view the outputs.
 
 ### Prerequisites
@@ -14,12 +30,13 @@ For proper understanding and moving along with this tutorial, you will require:
 
 ### Understanding App Designer environment
 App designer is a readily available toolbox in Matlab. You can create interactive Apps using this toolbox. To access App Designer in Matlab, you execute the command below in the command window:
+
 ```Matlab
 app designer
 ```
 This command opens the interface that you will use in the design of your App. The interface is as shown below:
 
-![App designer interface](App-Interface.png)
+![App designer interface](/engineering-education/creating-simple-denoising-app/app-interface.png)
 
 The interface is divided into sections. These sections are as shown in the image above. Let us look at every one of them.
 
