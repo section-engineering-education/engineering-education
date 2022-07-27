@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/creating-simple-denoising-app/hero.png
+  - url: /engineering-education/creating-simple-denoising-app/hero.jpg
     alt: Creating Responsive Layouts with Material UI and Next.js
 ---
 Signal denoising is the process of removing the available noise in a signal. Signal denoising application is widely used in various fields. Using an app designer, we can create an app that does this. 
