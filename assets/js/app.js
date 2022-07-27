@@ -160,7 +160,7 @@ var app = (function() {
     slidesToShow: 2,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 7000,
+    autoplaySpeed: 9000,
     prevArrow: "<div class='prev'><img src='/engineering-education/images/right-chevron-icon.png' alt='Previous Testimonial'></div>",
     nextArrow: "<div class='next'><img src='/engineering-education/images/right-chevron-icon.png' alt='Next Testimonial'></div>",
     responsive: [
