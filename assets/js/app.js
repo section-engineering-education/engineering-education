@@ -154,7 +154,6 @@ var app = (function() {
     return this;
   };
 
-
   $('.testimonials-slider').randomize().slick({
     infinite: true,
     slidesToShow: 2,
