@@ -3,7 +3,8 @@ layout: engineering-education
 status: publish
 published: true
 url: /creating-simple-denoising-app/
-title: CreatiThis tutorial will look at how we can use an app designer to create a simple app. We will use their methods to create an App to denoise input 2-D signals and view the outputs.
+title: Creating a Simple Denoising App
+description: This tutorial will look at how we can use an app designer to create a simple app. We will use their methods to create an App to denoise input 2-D signals and view the outputs.
 author: florence-akinyi
 date: 2021-07-27T00:00:00-03:41
 topics: [Languages]
