@@ -2,79 +2,83 @@
 layout: engineering-education
 status: publish
 published: true
-url: /custom-api-with-kotlin-mvvm/
+url: /custom-decorators-in-django/
 title: Creating and Utilizing Decorators in Django
-description: In this article, we will build an authentication API using the Django rest framework and consume the API in an android application following the MVVM pattern.
-author: jerim-kaura
+description: In this article, we will learn how to develop custom decorators similar to the built-in decorators such as login_required, require_http_methods, csrf_exempt used in real-world applications. 
+author: 
 date: 2022-07-28T00:00:00-13:00
 topics: [API]
 excerpt_separator: <!--more-->
 images:
 
- - url: /engineering-education/custom-api-with-kotlin-mvvm/hero.png
+ - url: /engineering-education/custom-decorators-in-django/hero.png
    alt: Creating and Utilizing Decorators in Django example image
 ---
 In Python, a decorator is a function that takes another function as an argument and adds functionality or augments the function without changing it. Django, as a Python web framework, comes with a large number of built-in decorators.
 <!--more-->
-
-These built-in decorators are used for decorating function-based views. However, the real-world application you're working on may require custom checks or validations that django doesn't supply out of the box.
+These built-in decorators are used when decorating function-based views. However, the real-world application you're working on may require custom checks or validations that Django doesn't supply out of the box.
 
 ### Introduction
-In software development, situations like the one mentioned above are unavoidable. When such a situation happens while developing a Django application, the default option for the normal programmer is to conduct the checks or validations in the view. This method is straightforward, however, it is inefficient, and it goes against software development best practices and principles such as DRY (Don't Repeat Yourself). This is because, as the program expands in size, the same check or validation must be performed in many views. As a result, the identical code is repeated across the application.
+In software development, situations like the one mentioned above are unavoidable. When such a situation happens while developing a Django application, the default option for the normal programmer is to conduct the checks or validations in the view. 
+
+This method is straightforward, however, it is inefficient, and it goes against software development best practices and principles such as DRY (Don't Repeat Yourself). This is because, as the program expands in size, the same check or validation must be performed in many views. As a result, the identical code is repeated across the application.
 
 In this article, you'll learn how to develop custom decorators similar to the built-in decorators (such as login_required, require_http_methods, csrf_exempt) used in real-world applications. 
 
-### Key Takeaways
+### Key takeaways
 We will build a Quora-like website to illustrate it. 
 The following are custom decorators that will be created:
-
-1. authentication_not_required: Logged in users will be unable to access a view as a result of this decorator. This is useful for login and registration views.
-1. verification_required: Users who haven't verified their email address or phone number will be unable to access a view as a result of this.
-1. xhr_request_only: This ensures only request via fetch, XHR(XMLHttpRequest) or AJAX(Asynchronously Javascript and XML) is allowed.
+- authentication_not_required: Logged in users will be unable to access a view as a result of this decorator. This is useful for login and registration views.
+- verification_required: Users who haven't verified their email address or phone number will be unable to access a view as a result of this.
+- xhr_request_only: This ensures only request via fetch, XHR(XMLHttpRequest) or AJAX(Asynchronously Javascript and XML) is allowed.
 
 
 ### Prerequisites
 To follow along, it’s important that:
-- You have a basic knowledge of [python](https://docs.python.org/) and [Django](https://docs.djangoproject.com/) Web Framework
-- You have a basic understanding of decorators in python as well. If you don’t, [this article](https://www.section.io/engineering-education/python-decorators/) should be of help.
-- You have [Pipenv](https://pipenv.pypa.io/en/latest/install/#installing-pipenv) installed
+- You have a basic knowledge of [Python](https://docs.python.org/) and [Django](https://docs.djangoproject.com/) Web Framework
+- You have a basic understanding of decorators in Python as well. If you don’t, [this article](/engineering-education/python-decorators/) should be of help.
+- & you have [Pipenv](https://pipenv.pypa.io/en/latest/install/#installing-pipenv) installed.
 
-### Building Django Application
-Initial Set up
+### Building Django application
 
+#### Initial set up
 To get started, navigate to your preferred directory and create a new folder to use for this project. You must first create a virtual environment before proceeding to install the project dependencies.
-Run this command to create a virtual environment
+
+Run this command to create a virtual environment:
 ```bash
 pipenv shell 
 ```
-![Pipenv shell terminal](custom-decorators-in-django/pipenv.jpg)
+![Pipenv shell terminal](/engineering-education/custom-decorators-in-django/custom-decorators-in-django/pipenv.jpg)
 
-> Pipenv is a python package that makes creating and managing virtual environments and project dependencies easier in a deterministic way. It’s like npm and yarn used in Nodejs.
+> Pipenv is a Python package that makes creating and managing virtual environments and project dependencies easier in a deterministic way. It’s like npm and yarn used in Node.js.
 
 To prevent conflicts between project dependencies, it is advisable that you first create a virtual environment.
 
-Installing project dependencies
-```
+Installing project dependencies:
+```bash
 pipenv install django==4.0
 ```
-After a successful installation of django in the virtual environment, you will see a Pipfile.lock in your project directory.
 
-Starting django project
+After a successful installation of Django in the virtual environment, you will see a Pipfile.lock in your project directory.
+
+Starting django project:
 ```bash
 django-admin startproject config .
 ```
-I prefer calling my django project `config` as all it contains are configuration files that are used in setting up the application we will be creating subsequently.
+
+I prefer calling my Django project `config` as all it contains are configuration files that are used in setting up the application we will be creating subsequently.
 
 The dot added after `config` ensures that an additional folder is not created but instead the config folder & manage.py file are created in the root directory.
 
-Since the default user model in django does not have an is_verified field we will make use of the is_active fields. Also, we will make the email address required when creating an account. The simple approach to achieve this is by creating a custom user model subclassing the AbstractUser model and then making the email field required.
+Since the default user model in django does not have an is_verified field we will make use of the is_active fields. We will also make the email address required when creating an account. 
 
-Create a new application called accounts to handle the users' accounts.
+The simple approach to achieve this is by creating a custom user model subclassing the AbstractUser model and then making the email field required. Create a new application called accounts to handle the users' accounts.
 
 ```bash
 python manage.py startapp accounts
 ```
-Inside the accounts/models.py file, paste the below code inside
+
+Inside the accounts/models.py file, paste the below code inside:
 ```py
 from django.db import models
 from django.contrib.auth.models import AbstractUser
@@ -83,13 +87,15 @@ from django.contrib.auth.models import AbstractUser
 class User(AbstractUser):
     email = models.EmailField(verbose_name='Email Address' ,blank=False, unique=True)
 ```
-Go to settings.py and include this
+
+Go to settings.py and include this:
 ```py
 AUTH_USER_MODEL = ‘accounts.User’
 ```
+
 Here, the code included above enforces that the active user model in this project is the custom user model we have created. It is recommended that you build a custom user model early on in a project because doing so later, after database tables have been created and relationships have been established, is more challenging.
 
-Creating a new application to handle quora post
+Creating a new application to handle quora posts:
 ```bash
 python manage.py startapp posts
 ```
@@ -103,7 +109,8 @@ INSTALLED_APPS = [
      … 
    ]
 ```
-Inside the posts/models.py, paste the following code inside
+
+Inside the posts/models.py, paste the following code inside:
 ```py
 from django.db import models
 from django.contrib.auth import get_user_model
@@ -126,26 +133,27 @@ class Post(models.Model):
         return self.downvote_users.count()
 ```
 
-In the above code,
+In the code above,
 
 - We import get_user_model to get the currently active user model in the project and use it as the model in the foreign key field. It implies that a user can create several posts, but only one user can be associated with each post (many to one relationship).
 - The post model has upvote_users and downvote_users fields which have many-to-many relationships to the user model. This means that a post may receive many upvotes and downvotes from users, and vice versa.
 - get_no_of_upvote & get_no_of_downvote methods return the number of users who have upvoted and downvoted a post respectively. We will use these two methods in our template in the next section.
 
-Run these commands to create migrations files and sync the changes to the database to create the tables in the database
+Run these commands to create migrations files and sync the changes to the database to create the tables in the database.
+
 ```bash
 python manage.py makemigrations
 python manage.py migrate
 ```
-### Creating Custom Decorators
 
+### Creating custom decorators
 Now that we have our project set up, let’s dive into creating our custom decorators.
 
 Authentication_not_required decorator
 
 Navigate to the account folder and create a new file called `decorators.py`. This decorators.py file will contain all the decorators related to authentication.
 
-Inside the file copy and paste the code below
+Inside the file copy and paste the code below:
 ```py
 import functools
 from django.shortcuts import redirect
@@ -166,13 +174,15 @@ def authentication_not_required(view_func, redirect_url="accounts:profile"):
         return redirect(redirect_url)
     return wrapper
 ```
+
 In the above code,
 
-- A conditional statement checks if the user making the request is logged in, if the user isn’t logged in we call the view function and otherwise redirect the user to the redirect_url.
+- A conditional statement checks if the user making the request is logged in, if the user isn’t logged in we will call the view function and otherwise redirect the user to the redirect_url.
 - The messages framework is used to notify the user if the user’s intended action wasn’t granted. The message is also shown in the terminal / cmd using the print statement.
 - The @functools.wraps(view_func) copies the view_func meta data (including __doc__, __name__) to the wrapper function.
 
-Verification_required
+Verification_required:
+
 ```py
 def verification_required(view_func, verification_url="accounts:activate_email"):
     """
@@ -189,15 +199,16 @@ def verification_required(view_func, verification_url="accounts:activate_email")
         return redirect(verification_url)  
     return wrapper
 ```
-In the above code,
 
-- A conditional statement checks if the user is active or not. The view function in which the decorator is being used on is called if the user is active and redirects the user to the verification_url if otherwise while showing a message using the message framework on the template and in the terminal or cmd using the print statement.
+In the code above,
+
+- A conditional statement checks if the user is active or not. The view function in which the decorator is being used on is called if the user is active. This redirects the user to the verification_url if otherwise while showing a message using the message framework on the template and in the terminal or cmd using the print statement.
 
 xhr_request_only
 
-The xhr_request_only decorator required would be created in the posts folder as it related to the posts application. We will use it to decorate the view that will handle upvoting and downvoting of posts in the next section.
+The xhr_request_only decorator required would be created in the posts folder as it is related to the posts application. We will use it to decorate the view that will handle upvoting and downvoting of posts in the next section.
 
-Navigate to the posts directory and create a new file called decorators.py file
+Navigate to the posts directory and create a new file called decorators.py file.
 ```py
 import functools
 from django.shortcuts import redirect
@@ -218,15 +229,19 @@ def xhr_request_only(view_func):
 ```
 In the code above,
 
-- We access the request headers to know what is being used to generate the request a user makes. And if the request is being made with XMLHttpRequest we call the view function and if otherwise a bad request response will be returned to the user. 
+- We access the request headers to know what is being used to generate the request a user makes. And if the request is being made with XMLHttpRequest we call the view function and otherwise a bad request response will be returned to the user. 
+
 > Bad request response has a status code of 400.
  
-> If you are using a previous version of django, say version 3.2 or earlier, the request has a method called is_ajax which returns True if the request is made via XMLHttpRequest and otherwise returns false. So the check will just be 
+> If you are using a previous version of Django, say version 3.2 or earlier, the request has a method called is_ajax which returns True if the request is made via XMLHttpRequest and otherwise returns false. 
+
+So the check will just be: 
 ```py
 if request.is_ajax():
     ...
 ```
-### Utilizing the Custom Decorators
+
+### Utilizing the custom decorators
 Now it’s time to start using the custom decorators you have created in the previous section with the view functions.
 
 Navigate to accounts/forms.py and write the following lines of code.
@@ -255,14 +270,15 @@ class LoginForm(forms.Form):
     username = forms.CharField()
     password = forms.CharField(widget=forms.PasswordInput, min_length=6)
 ```
+
 In the above code,
 
-- We created two forms; a form for login and registration
+- We created two forms; a form for login and registration.
 - In the registration form, the clean_password2 method checks to make sure the characters entered in the first password field and confirm password field are the same.
 
-> If you want to know more about working with model forms in django, you should check out [this article](https://www.section.io/engineering-education/working-with-forms-in-django/).
+> If you want to know more about working with model forms in django, you should check out [this article](/engineering-education/working-with-forms-in-django/).
 
-Navigate to accounts/views.py
+Navigate to accounts/views.py:
 ```py
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
@@ -318,15 +334,16 @@ def login(request):
 def profile(request):
     return render(request, 'accounts/profile.html')
 ```
+
 Let’s have a brief overview of what is happening in the above code,
 
-- In line 3, we import auth to use the default authentication function for getting a user object from their username and password.
+- In line 3, we import auth to use the default authentication function when getting a user object from their username and password.
 - In line 4, we import the LoginForm & RegisterForm from forms.py file to render in the template and users to fill.
 - In the register view, the newly created user has been made inactive intentionally to illustrate the verificaton_required decorator.
 - authentication_not_required decorator has been applied on the register & login view to perform their purpose.
 - In the profile view, we simply render a template named profile.html to the user. The profile.html displays the text profile and the message in the messages framework from our view.
 
-templates/accounts/profile.html
+templates/accounts/profile.html:
 ```html
 {% for message in messages %}
     <p>{{ message }}</p>
@@ -341,6 +358,7 @@ templates/accounts/register.html
     <input type="submit" value="Register">
 </form>
 ```
+
 The login.html file is the same as the register.html, just replace register with login.
 Create a new file called `urls.py` to map the route / path to the right view function
 ```py
@@ -354,21 +372,27 @@ urlpatterns = [
     path('profile', profile, name="profile"),
 ]
 ```
+
 Testing the application written so far…
-Create a superuser and then start your server
+Create a superuser and then start your server.
+
 ```bash
 python manage.py createsuperuser
 python manage.py runserver
 ```
-Go to your browser and navigate to http://127.0.0.1:8000/
 
-Check the image below
-![Authentication Decorators in Action](custom-decorators-in-django/authdec.gif)
+Go to your browser and navigate to: `http://127.0.0.1:8000/`
 
-- A link or an OTP should be sent to the user's email address in order to verify his / her email account and activate the user. I have kept this tutorial simple that the admin should make the user active.
+Check the image below:
+
+![Authentication Decorators in Action](/engineering-education/custom-decorators-in-django/custom-decorators-in-django/authdec.gif)
+
+- A link or an OTP should be sent to the user's email address in order to verify his/her email account and activate the user. In order to keep this tutorial simple, the admin can make the user active.
+
 > The default authentication backend does not return a user object for inactive users. So a user who created an account using the 'register.html' won't be able to login unless the admin makes the user active.
 
-Now to implement the 'xhr_request_only' decorator created earlier, add the following code inside 'posts/views.py'
+Now to implement the 'xhr_request_only' decorator created earlier, add the following code inside 'posts/views.py'.
+
 ```py
 from django.http import JsonResponse
 from django.shortcuts import get_object_or_404, render
@@ -400,7 +424,8 @@ def post_vote_view(request):
         post.downvote_users.add(request.user)
     return JsonResponse({"message": action})
 ```
-In the above code,
+
+In the code above,
 
 - Line 3 is to import xhr_request_only from the decorators module.
 - Line 4 is to import verification_required from the decorators module in the accounts application.
@@ -408,9 +433,14 @@ In the above code,
 - Our custom decorators; verification_required & xhr_request_only have also been used to serve their purpose.
 - You can see that multiple decorators can be stacked, i.e use more than one decorator for a single view.
 - request.body returns a byte. We will need to decode the byte inorder to get the dictionary. The decoding process returns a string and json.loads converts it to a dictionary. Hence, the reason why we import json in line 8 and make use of json.loads in line 18.
-- If the action is upvote we ensure the user is removed from the downvote_users and add the user to upvote_users field. And if the action is downvote we ensure the user is removed from the upvote_users as well and add the user to downvote_users field. Doing it this way ensures that a user can only upvote or downvote and not both for a post. You might be pondering over what happens if the user isn’t in the field and we are trying to remove the user. The answer is very simple, the remove manager does not return an error if the user does not exist there. Likewise the add manager does not duplicate the user inside the related object if the user already exists there.
+- If the action is upvote we ensure the user is removed from the downvote_users and add the user to upvote_users field. If the action is downvote we ensure the user is removed from the upvote_users as well and add the user to downvote_users field. 
 
-Create a templates/posts directory within the posts app and create a file named detail.html
+Doing it this way ensures that a user can only upvote or downvote and not both for a post. You might be pondering over what happens if the user isn’t in the field and we are trying to remove the user. 
+
+The answer is very simple, the remove manager does not return an error if the user does not exist there. Likewise the add manager does not duplicate the user inside the related object if the user already exists there.
+
+Create a templates/posts directory within the posts app and create a file named detail.html.
+
 In order to test out our decorator.
 ```html
 <!doctype html>
@@ -469,16 +499,17 @@ In order to test out our decorator.
 </body>
 </html>
 ```
-In the above code,
+In the code above,
 
 - The `with` template tag creates a variable called post_id which stores the value of the post id. The fields of the post are also rendered within the template. There are two buttons, one for upvote and another for downvote. We also call the get_no_upvote and get_no_of_downvote methods to display the number of upvotes and downvotes a post has.
 - Within the script tag, we get the URL for voting a post using the url template tag instead of hard coding it. We also selected the upvote & downvote buttons to listen to a click event on each of them. When any of the two buttons is being clicked the vote function gets called.
-- The vote function sends a POST request to the voteUrl using the fetch api in javascript. It sends the action (i.e either upvote or downvote) and the post id to the backend as well as the csrftoken alongside with the request. We console log the response from the backend.
-> Data sent using fetch can be accessed in request.body and not request.POST
+- The vote function sends a POST request to the voteUrl using the fetch API in JavaScript. It sends the action (i.e either upvote or downvote) and the post id to the backend as well as the csrftoken alongside with the request. We console log the response from the backend.
+
+> Data sent using fetch can be accessed in request.body and not request.POST.
 
 > The above code makes use of bootstrap to make the page attractive.
 
-Create a urls.py file in the posts directory and copy the code below inside
+Create a urls.py file in the posts directory and copy the code below inside:
 ```py
 from django.urls import path
 from .views import post_detail_view, post_vote_view
@@ -488,11 +519,12 @@ urlpatterns = [
     path('vote', post_vote_view, name="post_vote"),
 ]
 ```
-Below is a gif of the xhr_request_only decorator in action
 
-![Xhr_request_only decorator in Action](custom-decorators-in-django/xhrdec.gif)
+Below is a gif of the xhr_request_only decorator in action.
 
-### Decorating Class-Based Views
+![Xhr_request_only decorator in Action](/engineering-education/custom-decorators-in-django/custom-decorators-in-django/xhrdec.gif)
+
+### Decorating class-based views
 A Django application always uses class-based views because of their simplicity. But using decorators with class-based views is not as straightforward as function-based views. Luckily, Django provides a utility decorator called method_decorator to achieve that.
 
 To add a decorator function to every instance of a class-based view, you need to decorate the class definition itself. To do this, you pass the name of the method to be decorated as the keyword argument name:
@@ -511,5 +543,8 @@ It is advisable to create custom decorators for your views if you find that you 
 
 As you have seen above, you'll agree that utilizing a decorator is far preferable to writing the if statement alongside the too many conditional statements already in a function-based view.
 
-Happy Coding!!!
+Happy coding!!!
+
+---
+Peer Review Contributions by: [Collince Okeyo](/engineering-education/authors/collince-okeyo)
 
