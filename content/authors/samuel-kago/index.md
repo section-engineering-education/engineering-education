@@ -11,3 +11,6 @@ images:
 I am a Junior software developer with robust problem-solving skills and proven experience in creating and designing software .
 I pose a growth mindset ready to learn and face challenges .
 l have interest in cloud Computing and Solutions architect.
+
+
+skills: ['Nodejs', 'Python']
