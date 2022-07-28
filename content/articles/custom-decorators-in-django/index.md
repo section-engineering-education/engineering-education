@@ -5,7 +5,7 @@ published: true
 url: /custom-decorators-in-django/
 title: Creating and Utilizing Decorators in Django
 description: In this article, we will learn how to develop custom decorators similar to the built-in decorators such as login_required, require_http_methods, csrf_exempt used in real-world applications. 
-author: 
+author: boluwatife-fayemi
 date: 2022-07-28T00:00:00-13:00
 topics: [API]
 excerpt_separator: <!--more-->
