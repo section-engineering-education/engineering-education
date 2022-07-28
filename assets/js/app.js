@@ -137,10 +137,29 @@ var app = (function() {
     });
   }
 
-  $('.testimonials-slider').slick({
+  // jQuery function to randomize the slick slider slides on refresh.
+  $.fn.randomize = function (selector) {
+    let $elems = selector ? $(this).find(selector) : $(this).children(),
+        $parents = $elems.parent();
+
+    $parents.each(function () {
+      $(this).children(selector).sort(function (childA, childB) {
+        // * Prevent last slide from being reordered
+        if($(childB).index() !== $(this).children(selector).length - 1) {
+          return Math.round(Math.random()) - 0.5;
+        }
+      }).detach().appendTo(this);
+    });
+
+    return this;
+  };
+
+  $('.testimonials-slider').randomize().slick({
     infinite: true,
     slidesToShow: 2,
     slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 9000,
     prevArrow: "<div class='prev'><img src='/engineering-education/images/right-chevron-icon.png' alt='Previous Testimonial'></div>",
     nextArrow: "<div class='next'><img src='/engineering-education/images/right-chevron-icon.png' alt='Next Testimonial'></div>",
     responsive: [
