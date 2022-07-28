@@ -6,7 +6,7 @@ url: /probability-predictions-on-multi-class-labels/
 title: Guide to Probability Predictions on Multi-class Labels
 description: In this tutorial, the reader will learn about probability predictions on multi-class labels.
 author: mwaniki-njagi
-date: 2021-07-28T00:00:00-11:00
+date: 2022-07-28T00:00:00-11:00
 topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
