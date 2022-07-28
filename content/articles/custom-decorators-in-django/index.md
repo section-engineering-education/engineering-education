@@ -11,7 +11,7 @@ topics: [API]
 excerpt_separator: <!--more-->
 images:
 
- - url: /engineering-education/custom-decorators-in-django/hero.png
+ - url: /engineering-education/custom-decorators-in-django/hero.jpg
    alt: Creating and Utilizing Decorators in Django example image
 ---
 In Python, a decorator is a function that takes another function as an argument and adds functionality or augments the function without changing it. Django, as a Python web framework, comes with a large number of built-in decorators.
