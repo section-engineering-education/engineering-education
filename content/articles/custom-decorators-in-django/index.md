@@ -1,7 +1,25 @@
-## Creating and Utilizing Decorators in Django
-### Introduction
-In Python, a decorator is a function that takes another function as an argument and adds functionality or augments the function without changing it. Django, as a Python web framework, comes with a large number of built-in decorators. These built-in decorators are used for decorating function-based views. However, the real-world application you're working on may require custom checks or validations that django doesn't supply out of the box.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /custom-api-with-kotlin-mvvm/
+title: Creating and Utilizing Decorators in Django
+description: In this article, we will build an authentication API using the Django rest framework and consume the API in an android application following the MVVM pattern.
+author: jerim-kaura
+date: 2022-07-28T00:00:00-13:00
+topics: [API]
+excerpt_separator: <!--more-->
+images:
 
+ - url: /engineering-education/custom-api-with-kotlin-mvvm/hero.png
+   alt: Creating and Utilizing Decorators in Django example image
+---
+In Python, a decorator is a function that takes another function as an argument and adds functionality or augments the function without changing it. Django, as a Python web framework, comes with a large number of built-in decorators.
+<!--more-->
+
+These built-in decorators are used for decorating function-based views. However, the real-world application you're working on may require custom checks or validations that django doesn't supply out of the box.
+
+### Introduction
 In software development, situations like the one mentioned above are unavoidable. When such a situation happens while developing a Django application, the default option for the normal programmer is to conduct the checks or validations in the view. This method is straightforward, however, it is inefficient, and it goes against software development best practices and principles such as DRY (Don't Repeat Yourself). This is because, as the program expands in size, the same check or validation must be performed in many views. As a result, the identical code is repeated across the application.
 
 In this article, you'll learn how to develop custom decorators similar to the built-in decorators (such as login_required, require_http_methods, csrf_exempt) used in real-world applications. 
