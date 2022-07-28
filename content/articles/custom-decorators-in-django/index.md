@@ -6,7 +6,7 @@ url: /custom-decorators-in-django/
 title: Creating and Utilizing Decorators in Django
 description: In this article, we will learn how to develop custom decorators similar to the built-in decorators such as login_required, require_http_methods, csrf_exempt used in real-world applications. 
 author: boluwatife-fayemi
-date: 2021-07-28T00:00:00-13:00
+date: 2022-07-28T00:00:00-13:00
 topics: [API]
 excerpt_separator: <!--more-->
 images:
@@ -48,7 +48,7 @@ Run this command to create a virtual environment:
 ```bash
 pipenv shell 
 ```
-![Pipenv shell terminal](/engineering-education/custom-decorators-in-django/custom-decorators-in-django/pipenv.jpg)
+![Pipenv shell terminal](/engineering-education/custom-decorators-in-django/pipenv.JPG)
 
 > Pipenv is a Python package that makes creating and managing virtual environments and project dependencies easier in a deterministic way. It’s like npm and yarn used in Node.js.
 
@@ -385,7 +385,7 @@ Go to your browser and navigate to: `http://127.0.0.1:8000/`
 
 Check the image below:
 
-![Authentication Decorators in Action](/engineering-education/custom-decorators-in-django/custom-decorators-in-django/authdec.gif)
+![Authentication Decorators in Action](/engineering-education/custom-decorators-in-django/authdec.gif)
 
 - A link or an OTP should be sent to the user's email address in order to verify his/her email account and activate the user. In order to keep this tutorial simple, the admin can make the user active.
 
@@ -522,7 +522,7 @@ urlpatterns = [
 
 Below is a gif of the xhr_request_only decorator in action.
 
-![Xhr_request_only decorator in Action](/engineering-education/custom-decorators-in-django/custom-decorators-in-django/xhrdec.gif)
+![Xhr_request_only decorator in Action](/engineering-education/custom-decorators-in-django/xhrdec.gif)
 
 ### Decorating class-based views
 A Django application always uses class-based views because of their simplicity. But using decorators with class-based views is not as straightforward as function-based views. Luckily, Django provides a utility decorator called method_decorator to achieve that.
