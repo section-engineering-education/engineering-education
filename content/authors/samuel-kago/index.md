@@ -2,6 +2,9 @@
 title: Samuel Kago
 type: authors
 twitter: https://twitter.com/samkb420
+github: https://github.com/samkb420
+linkedin: https://www.linkedin.com/in/samuel-kago/
+website: https://www.samuel-kago.tech/
 images:
   - url: /engineering-education/authors/samuel-kago/avatar.jpeg 
 ---
