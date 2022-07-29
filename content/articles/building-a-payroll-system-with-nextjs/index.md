@@ -3,10 +3,10 @@ layout: engineering-education
 status: publish
 published: true
 url: /building-a-payroll-system-with-nextjs/
-title: Building a payroll system with next.js
+title: Building a Payroll System with Next.js
 description: This tutorial will walk the reader with the basic arithmetic operators in Next.js and how to effectively use them in functions, for calculations needed in software programming. 
 author: 
-date: 2022-07-29T00:00:00-12:20
+date: 2021-07-29T00:00:00-12:20
 topics: [Languages, Node.js]
 excerpt_separator: <!--more-->
 images:
@@ -19,7 +19,7 @@ Welcome to my Next.js tutorial. Next.js is the React framework that is meant for
 
 This tutorial will walk the reader with the basic arithmetic operators in Next.js and how to effectively use them in functions, for calculations needed in software programming. 
 
-### Table of Content
+### Table of contents
 - [Prerequisites](#Prerequisites)
 - [Next.js environment setup](#nextjs-environment-setup)
 - [Introduction to payroll system](#introduction-to-payroll-system)
@@ -48,7 +48,7 @@ Type this in a fresh command-line interface to install Next.js.
 npx create-next-app@latest
 ```
 
-![Installation](/engineering-education/building-a-payroll-system-with-nextjs/image-three.png)
+![Installation](/engineering-education/building-a-payroll-system-with-nextjs/Image-three.png)
 
 The installation will begin and you will be asked to name the application, let's call it payroll.
 
