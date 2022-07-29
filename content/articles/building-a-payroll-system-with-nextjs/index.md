@@ -5,7 +5,7 @@ published: true
 url: /building-a-payroll-system-with-nextjs/
 title: Building a Payroll System with Next.js
 description: This tutorial will walk the reader with the basic arithmetic operators in Next.js and how to effectively use them in functions, for calculations needed in software programming. 
-author: 
+author: eli-musa
 date: 2021-07-29T00:00:00-12:20
 topics: [Languages, Node.js]
 excerpt_separator: <!--more-->
