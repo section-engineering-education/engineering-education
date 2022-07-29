@@ -1,5 +1,22 @@
-# Building a payroll system with next.js
+---
+layout: engineering-education
+status: publish
+published: true
+url: /building-a-payroll-system-with-nextjs/
+title: Building a payroll system with next.js
+description: This tutorial gives a 
+author: 
+date: 2022-07-29T00:00:00-12:20
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/building-a-payroll-system-with-nextjs/hero.jpg
+    alt: Building a Password Strength Classifier Model Using Machine Learning Hero Image
+---
 Welcome to Next.js, the React framework thats meant for Production because only the needed CSS and Javascript are loaded by the users browser making it extreamly fast. Next.js unlike React.js needs zero setup for the creation of an API by using the file system this saves alot of development time and cost.
+<!--more-->
+
 This tutorial will equip you with the basic arithmetic operators in Next.js and how to effectively use them in functions, for calculations needed in software programming. 
 
 ### Table of Content
