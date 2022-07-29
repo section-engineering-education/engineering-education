@@ -51,39 +51,37 @@ npx create-next-app@latest
 ![Installation](/engineering-education/building-a-payroll-system-with-nextjs/image-three.png)
 
 The installation will begin and you will be asked to name the application, let's call it payroll.
+
 Now type this to enter the project folder and start the server.
 
 ```bash
 cd payroll
 npm run dev
 ```
+
 The server will start at port 3000, click on the provided link to view it on the browser.
- 
 
+### Introduction to payroll system
+A payroll system is a process of calculating employees' pay for work performed during a specific period. Int is a timekeeping system that is required to approve the hours worked, overtime and wages. This information is needed for the calculation of personal gross pay and net pay.
 
-### Introduction to Payroll System
-A payroll system is a process of calculating employees' pay for work performed during a specific period. In search a system, a timekeeping system is required to approve the hours worked, Overtime and wages.
-This information is needed for the calculation of personal gross pay and net pay.
+### Payroll arithmetic calculations
+When calculating the gross pay we need to multiply the wage rates of individual employees by the number of hours worked plus all allowances earned.
 
-### Payroll Arithmetic Calculations
-In calculating the gross pay we need to multiply the wage rates of individual employees by the number of hours worked plus all allowances earned.
-
- `Gross pay=wages * hours worked + allowances`
+`Gross pay=wages * hours worked + allowances`
 
 The net pay is calculated by deducting all authorized withholdings and pay deductions from the gross pay.
 
 `Net pay=Gross pay - Income tax - Health insurance`
 
 
-### Creating a JSON File and Functions in Next.js
-
+### Creating a JSON file and functions in Next.js
 This is the project workspace created earlier.
 
 ![VSWorkspace](/engineering-education/building-a-payroll-system-with-nextjs/folder-structure.png)
 
-We need timesheet data but in our case, we are going to create it locally and store it in our file system.
-In a real system, the data will come from a database either from an external timekeeping system or inbuilt.
-in the current working directory create a folder and call it data, in it create a new file and call it employees.json. Here we will create a store in the form of an object with data in it.
+We need timesheet data but in our case, we are going to create it locally and store it in our file system. In a real system, the data will come from a database either from an external timekeeping system or one that is inbuilt.
+
+In the current working directory create a folder and call it data, in it create a new file and call it employees.json. Here we will create a store in the form of an object with data in it.
 
 employees.json
 ```javascript
@@ -115,7 +113,9 @@ employees.json
 }]
 ```
 
-In order for this to work as planned, we will have to create an API route for data fetching. Navigate to the Pages folder and open the api folder that contains a hello.js file. We are going to create GET and POST HTTP methods. GET is applied while requesting information from a particular source, in this case it will be from our employees.json file while POST is used to insert or update the data. Lets delete the hello.js file and create a new folder employees and add index.js in it.
+In order for this to work as planned, we will have to create an API route for data fetching. Navigate to the Pages folder and open the API folder that contains a hello.js file. We are going to create GET and POST HTTP methods. 
+
+GET is applied while requesting information from a particular source, in this case it will be from our employees.json file while POST is used to insert or update the data. Lets delete the hello.js file and create a new folder employees and add index.js in it.
 
 index.js
 ```javascript
@@ -177,18 +177,19 @@ export default function handler(req, res) {
 
 ```
 
-We will first import file system and path module to help us manage data stored in our files.
-The getData function will get the data for our api using the file stytem:
-- the store filePath contains path.join() method, this joins the specified paths in which the data is stored, process.cwd() means current working directory.
-- the store fileData contains our file reading method fs.readFileSync() that reads the data in our specified path.
-- the data is then parsed in JSON format to our api handler function.
+We will first import the file system and path module to help us manage data stored in our files.
 
-The handler function uses methods that are able to send a request and receive a response of our body that we created earlier and then send it to our api route as json body.
+The getData function will get the data for our API using the file stytem:
+- The store filePath contains path.join() method, this joins the specified paths in which the data is stored, process.cwd() means current working directory.
+- The store fileData contains our file reading method fs.readFileSync() that reads the data in our specified path.
+- The data is then parsed in JSON format to our API handler function.
+
+The handler function uses methods that are able to send a request and receive a response of our body that we created earlier and then send it to our API route as json body.
 
 After dealing with the API route, we are going to create a function that computes all this data by automatically linking it to the arithmetic calculations.
 We are going to use a .map() function to iterate our data and create a list from this data.
 
-In the pages folder, open the index.js file and edit it by deleting all its contents, then add the following code to create a Payroll application. This is called a functional component.  
+In the pages folder, open the index.js file and edit it by deleting all its contents, then add the following code to create a payroll application. This is called a functional component.  
 
 index.js
 ```javascript
@@ -210,10 +211,8 @@ export default Payroll
 The .map() function first receives the data and a callback function is created inside the braces and 'Data' is formed as the new response.
 
 
-### Fetching Payroll Data and Computing Calculations in Next.js
-
-After creating the .map() function we will need to do the calculations inside the function for effective linking of data to their arithmetic operators.
-In reference to our earlier formulas, below are the calculations.
+### Fetching payroll data and computing calculations in Next.js
+After creating the .map() function we will need to do the calculations inside the function for effective linking of data to their arithmetic operators. In reference to our earlier formulas, below are the calculations.
 
 ```javascript
 
@@ -228,7 +227,8 @@ const grossPay=basicPay + totalallowance + totalReimbursement
 
 const netPay=grosspay-totalDeduction
 
-  ```
+```
+
 Now let's add the following arithmetic expressions to our .map function for the calculations to take place effectively. This is possible by writing them just before the return() in .map() function. This consists of the fetching method offered by Next.js
 
 index.js
@@ -286,20 +286,25 @@ export async function getServerSideProps(){
 
 export default Payroll
 ```
-The getServerSideprops data fetching method is offered by Nextjs check [here](https://nextjs.org/learn/basics/data-fetching), the asynchronous  getServerSideProps function enables preparation of the page in advance through pre-rendering of pages.
-In the function We have created a store for our url component called data that points to the api and passed it to the json() method which is a better text format for websites, the data now is stored in our store called employed.
+
+The getServerSideprops data fetching method is offered by Next.js, you can check [here](https://nextjs.org/learn/basics/data-fetching). The asynchronous getServerSideProps function enables preparation of the page in advance through pre-rendering of pages.
+
+In the function we have created a store for our URL component called data that points to the API and passed it to the json() method. This is a better text format for websites, the data is now stored in our store called employed.
+
 The if statement means that:
 - if the employees data is not present then notFound will be returned as true.
 - else employed will be passed as props called employees.
 
-The key attribute is very important when creating a list, it should be unique in each element of data in the array. The code output should be similar to this. We are also going to need the Link component so that we can move from home page to the payslip page when a name is clicked.
+The key attribute is very important when creating a list, it should be unique in each element of data in the array. The code output should be similar to this. We are also going to need the link component so that we can move from home page to the payslip page when a name is clicked.
 
 ![Browser output](/engineering-education/building-a-payroll-system-with-nextjs/demo.png)
 
 At this point, we have our employees, gross pay and net pay displayed on the web.
 
 ### Dynamic pages for payslip generation
-We are going to create another api endpoint in our api folder, lets create a new file in employees and call it [id].js and create a new api route handling function. Dynamic routes and pages are named using the block parathesis, Lets add this code to our file.
+We are going to create another API endpoint in our API folder, lets create a new file in employees and call it [id].js and create a new API route handling function. Dynamic routes and pages are named using the block parathesis.
+
+Lets add this code to our file:
 
 [id].js
 ```javascript
@@ -326,12 +331,13 @@ export default function handler(req, res){
 }
 }
 ```
-Here we first define how we get the data from our file system using our getData() function, then create our api route handler thats going to help us get data by the employees id.
+
+Here we first define how we get the data from our file system using our getData() function, then create our API route handler thats going to help us get data by the employees id.
 
 In the if statement with method set to "GET":
 - the store data is assigned the function getData().
 - the employedById store is assigned a value of data according to the id off the employee using the method findById().
-- a response is sent as json to the api routes body.
+- a response is sent as json to the API routes body.
 
 Lets go back to our pages folder and create a dynamic page for our payslips, create a file and call it [id].js and add this code in it.
 
@@ -379,29 +385,29 @@ export const getServerSideProps = withApiUrl(async ({query:{id}}, url) =>{
 })
 
 ```
+
 In the getServerSideProps() data fetching method we are going to use next-api-url module, a quick solution to the Server Error: "Only absolute URLs are supported" encountered while deploying next.js web apps to the cloud. The package is a helper to quickly get the absolute URL to use in Next.js data fetching methods.
 
-install it by typing this command in your terminal.
+Install it by typing this command in your terminal.
+
 ```bash
 
 npm i next-api-url
 
 ```
-for more information on next-api-url package click [here](https://www.npmjs.com/package/next-api-url),
-in our case we just have to simply provide the query parameters to the getServerSideProps function as id and the base url
-from the server.
+
+For more information on next-api-url package click [here](https://www.npmjs.com/package/next-api-url), in our case we just have to simply provide the query parameters to the getServerSideProps function as id and the base URL from the server.
 
 We then assign our data fetching method to an object store as const data and pass the data as props to our functional component as employees. Our data is now mapped to our page ready as our payslip information.
 
-When we click employees name on home page we immediately get directed to his parsonal payslip, here we can decide and add a download button and style the payslip as we want.
-
+When we click any employees name on home page we immediately get directed to his/her personal payslip. Here we can decide and add a download button and style the payslip as needed.
 
 ### Conclusion
-This tutorial has given us a foundation for doing arithmetic operations in Next.js and an introduction to the payroll system. In our next tutorial we are going to create a tool that generates financial statements in an organization.
+This tutorial has given us a foundation for doing arithmetic operations in Next.js while creating an example payroll system. In our next tutorial we are going to create a tool that generates financial statements in an organization.
 
 Happy coding!
 
-### Reference
+### References
 - [Introduction to Next.js](https://Nextjs.org)
 - [Payroll system](https://www.betterplace.co.in/blog/3-stages-of-payroll-processing/amp)
 
