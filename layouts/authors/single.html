@@ -116,6 +116,12 @@
               <a href="{{ . }}" target="_blank">Visit website</a>
             </li>
             {{ end }}
+            {{ with .Params.resume }}
+            <li>
+              <i class="resume"></i>
+              <a href="{{ . }}" target="_blank">Resume</a>
+            </li>
+            {{ end }}
           </ul>
         </div>
       </div>
