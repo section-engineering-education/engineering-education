@@ -36,6 +36,7 @@ twitter: TWITTER_URL
 website: WEBSITE_URL
 images: 
   - url: /engineering-education/authors/avatar.jpeg // Required
+resume: RESUME_URL
 skills: ['Skill1', 'Skill2']
 projects: 
   - title: Project Title
@@ -52,6 +53,7 @@ projects:
 - linkedin (LinkedIn URL - Optional)
 - twitter (Twitter URL - Optional)
 - website (Author website URL - Optional)
+- resume (link to a resume - optional)
 - images (Author avatar image - **Required**)
 - skills (Author skills/languages - an array of strings - Optional)
 - projects:
