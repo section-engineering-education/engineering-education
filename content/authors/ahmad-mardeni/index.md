@@ -3,7 +3,6 @@ title: Ahmad Mardeni
 type: authors
 linkedin: https://www.linkedin.com/in/ahmad-mardeni-369b3019b/
 github: https://github.com/ahmadmardeni1
-resume: https://www.google.com
 images:
   - url: /engineering-education/authors/ahmad-mardeni/avatar.jpg 
 skills: ["Machine Learning", "CyberSecurity", "Web Scraping", "SQL Database Development", "Data Analysis", "Data Visualization", "Flask and Django Backend Development"]  
