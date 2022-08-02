@@ -256,7 +256,7 @@ var search = (function() {
         }
       },
       
-      template: "
+      template: `
         <div>
           <article>
             <header>
@@ -315,7 +315,7 @@ var search = (function() {
             </div>
           </section>
         </div>
-      "
+      `
     })
   }
 
@@ -382,12 +382,12 @@ var search = (function() {
           this.$refs.searchButton.click();
         }
       },
-      template: "
+      template: `
       <div class='blog-listing-search-form flex flex-wrap'>
         <input v-on:keyup.enter='searchExecute' v-model='searchTerm' :placeholder='inputPlaceholder' type='search' class='xs-pl-30 sm-pl-60 xs-mb-20 sm-mb-0'>
         <a v-bind:href='searchURL' :class='inputButtonClass' ref='searchButton'>Search</a>
       </div>
-      "
+      `
     })
   }
 

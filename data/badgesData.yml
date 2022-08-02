@@ -1,0 +1,75 @@
+badges:
+  "peer_reviewer": 
+    title: Peer </br>Reviewer
+    url: images/badges/peer-reviewer-badge.png
+    students: [
+      "louise-findlay",
+      "mike-white",
+      "gregory-manley",
+      "lalithnarayan-c",
+      "michael-barasa",
+      "linus-muema",
+      "peter-kayere",
+      "willies-ogola",
+      "daniel-katungi",
+      "srishilesh-p-s",
+      "saiharsha-balasubramaniam",
+      "odhiambo-paul",
+      "mohan-raj",
+      "briana-nzivu",
+      "adrian-murage",
+      "geoffrey-mungai",
+      "miller-juma",
+      "jerim-kaura",
+      "jethro-magaji",
+      "eric-gacoki",
+      "dawe-daniel",
+      "john-amiscaray",
+      "collins-ayuya",
+      "onesmus-mbaabu",
+      "mohamed-alghadban",
+      "monica-masae",
+      "wilkister-mumbi",
+      "mercy-meave",
+      "eric-kahuha",
+    ]
+  "content_moderator": 
+    title: Content </br>Moderator
+    url: images/badges/content-moderator-badge.png
+    students: [
+      "louise-findlay",
+      "lalithnarayan-c",
+      "michael-barasa",
+      "peter-kayere",
+      "ahmad-mardeni"
+    ]
+  "code_contributor": 
+    title: Code </br>Contributor
+    url: images/badges/code-contributor-badge.png
+    students: [
+      "louise-findlay",
+      "lalithnarayan-c"
+    ]
+  "hackathon_participant_22":
+    title: Hackathon </br>Participant 2022
+    url: images/badges/hackathon-participant-22-badge.png
+    students: [
+      "miller-juma",
+      "jerim-kaura",
+      "louise-findlay",
+      "briana-nzivu",
+      "michael-barasa",
+      "odhiambo-paul"
+    ]
+  "hackathon_winner_22":  
+    title: Hackathon </br>Winner 2022
+    url: images/badges/hackathon-winner-22-badge.png
+    students: [
+      "louise-findlay",
+      "michael-barasa",
+      "briana-nzivu"
+    ]
+  "community_builder":
+    title: Community </br>Builder
+    url: images/badges/community-builder-badge.png
+    students: []

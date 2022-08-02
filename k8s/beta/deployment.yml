@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: section-enged-beta-deployment
+  labels:
+    app: section-enged-beta
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: section-enged-beta
+  template:
+    metadata:
+      labels:
+        app: section-enged-beta
+    spec:
+      containers:
+        - name: section-enged-beta
+          image: hborrelli12/section-enged:adf4dsection-enged
+          imagePullPolicy: Always
+          ports:
+          - containerPort: 80
+          resources:
+            requests:
+              memory: "1Gi"
+              cpu: "1000m"
+            limits:
+              memory: "1Gi"
+              cpu: "1000m"
+          livenessProbe:
+            httpGet:
+              path: /engineering-education/
+              port: 80
+            periodSeconds: 5
+            initialDelaySeconds: 5
+          readinessProbe:
+            httpGet:
+              path: /engineering-education/
+              port: 80
+            periodSeconds: 10
+            initialDelaySeconds: 5

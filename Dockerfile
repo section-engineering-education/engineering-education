@@ -12,7 +12,7 @@ RUN apt-get update && \
     update-ca-certificates
 
 # Hugo
-ENV HUGO_VERSION=0.69.2
+ENV HUGO_VERSION=0.101.0
 RUN wget https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_Linux-64bit.tar.gz -O hugo.tar.gz && \
     tar -xzf hugo.tar.gz && \
     rm hugo.tar.gz && \

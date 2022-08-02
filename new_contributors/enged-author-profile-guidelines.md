@@ -26,19 +26,50 @@ Also, keep in mind that these Enged profiles are intended to be shared and refer
 
 Add these files to the same PR (pull request).
 
-(See *screenshot* below for file structure.)
-
-![Author file structure example](/static/images/meta-image-frontmatter.png)
+### Example author profile - `index.md`: 
+```
+title: Student Name // Required
+type: authors // Required
+github: GITHUB_URL
+linkedin: LINKEDIN_URL
+twitter: TWITTER_URL
+website: WEBSITE_URL
+images: 
+  - url: /engineering-education/authors/avatar.jpeg // Required
+resume: RESUME_URL
+skills: ['Skill1', 'Skill2']
+projects: 
+  - title: Project Title
+    role: Role of the project
+    date: Jan 2022
+    description: Project Description
+    url: https://URL_OF_PROJECT.com
+```
 
 ## File Structure - explained
 - title (Name of student - **Required**)
 - type (Authors file - **Required**)
-- authors (Authors RSS File - author's folder name - Optional)
 - github (GitHub URL - Optional)
 - linkedin (LinkedIn URL - Optional)
 - twitter (Twitter URL - Optional)
 - website (Author website URL - Optional)
+- resume (link to a resume - optional)
 - images (Author avatar image - **Required**)
 - skills (Author skills/languages - an array of strings - Optional)
+- projects:
+-   - title: Project Title
+-     role: (optional)
+      date: Date project was created
+      description: Project Description
+      url: https://URL_OF_PROJECT.com
+-   
 
 Congratulations! Your EngEd profile is now ready to be reviewed and created. If you have an article/tutorial ready to be submitted attach it to that pull request (otherwise create a new pull request) & we'll be happy to review it.
+
+### EngEd Badge Info
+1. Content Moderator Badge: This badge is awarded to any students who have successfully completed Peer Reviewer training and Content Moderator training.
+2. Peer Reviewer Badge: This badge is awarded to any students who have completed Peer Reviewer training (and reviewed articles successfully).
+3. CCC Contributor: This badge is awarded to any students who have submitted a CCC (community code contribution) to the EngEd program that was reviewed and merged. 
+4. Hackathon Participants: This badge is awarded to any students who have successfully submitted a project to an EngEd hackathon.
+5. Hackathon Winner(s) by year: This badge is awarded to any students who have won an EngEd hackathon.
+6. Community builder badge: This badge is awarded to any students who have created (or co-created/moderated) a sub-channel community.

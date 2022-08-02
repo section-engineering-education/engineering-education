@@ -63,8 +63,10 @@
 
           {{ $articleUrlsList = delimit $articleUrlsList ", "}}
 
+          <h4>Author Insights</h4>
+
           <div class="insights-section">
-            <div class="insight page-views" data-before="Total Number of Articles Written">
+            <div class="insight total-num-articles" data-before="Total Number of Articles Written">
               <img src="{{ if eq $.Site.Params.env "local" }}/{{ else }}/engineering-education/{{ end }}images/total-articles-icon.png" alt="Total Number of Articles Icon" />
               <p>{{ $numberOfArticles }}</p>
             </div>
@@ -72,7 +74,13 @@
               <img src="{{ if eq $.Site.Params.env "local" }}/{{ else }}/engineering-education/{{ end }}images/clapping-icon.png" alt="Total Number of Articles Icon" />
               <p id="totalArticleLikes">0</p>
             </div>
+            <div class="insight total-page-views" data-before="Total Number of Article Page Views">
+              <img src="{{ if eq $.Site.Params.env "local" }}/{{ else }}/engineering-education/{{ end }}images/page-views-icon.png" alt="Total Number of Article Page Views" />
+              <p id="totalPageViews">0</p>
+            </div>
           </div>
+
+          {{ partial "engineering-education/badges-display-list.html" (dict "studentBadges" . "site" $.Site "relpermalink" $.RelPermalink) }}
           
           {{ with .Params.skills }} 
             <div class="author-skills">
@@ -108,12 +116,43 @@
               <a href="{{ . }}" target="_blank">Visit website</a>
             </li>
             {{ end }}
+            {{ with .Params.resume }}
+            <li>
+              <i class="resume"></i>
+              <a href="{{ . }}" target="_blank">Resume</a>
+            </li>
+            {{ end }}
           </ul>
         </div>
       </div>
     </div>
   </section>
 </article>
+
+{{ with .Params.projects }}
+  <section class="projects-section">
+    <div class="section-container projects-listing-container">
+      <h2 class="title-3 text-blue xs-pb-20">Featured Projects</h2>
+      <div class="projects">
+        {{ range . }}
+          <div class="project">
+            <div class="meta-data">
+              <h3 class="title-5 title"><a href="{{ .url }}">{{ .title }}</a></h3>
+              <div class="bottom-row">
+                <span>{{ .role }}</span>
+                <span>{{ .date }}</span>
+              </div>
+            </div>
+            <div class="info">
+              <p class="text-16 text-color">{{ .description }}</p>
+              <a class="link-with-arrow-blue text-blue text-18-medium" href="{{ .url }}">View Project</a>
+            </div>
+          </div>
+        {{ end }}
+      </div>
+    </div>
+  </section>
+{{ end }}
 
 <section class="blog-listing-posts">
   <div class="section-container blog-listing-posts-container">
@@ -218,6 +257,15 @@
   // On page load, handle insights, comments and pageviews.
   document.addEventListener("DOMContentLoaded", async function() {
     const getPageViews = (urls) => {
+      // Filter out empty strings.
+      const filteredUrls = urls.filter(item => item);
+
+      // Return out of function if array is empty.
+      if (!filteredUrls.length) {
+        return;
+      }
+
+      let totalNumPageViews = 0;
       const urlRegex = /(http:\/\/localhost:1313\/)|(https:\/\/beta.section.io\/engineering-education\/)|(https:\/\/www.section.io\/engineering-education\/)/gi;
       const trimmedUrls = urls.map(url => url.replace(urlRegex, ''));
 
@@ -240,12 +288,20 @@
         .then(data => {
           if (data.length) {
             data.forEach(item => {
+              // Add pageviews to the sum.
+              totalNumPageViews += parseInt(item.pageViews);
+
+              // Prettify and display number of page views for each article.
               const numPageViews = parseInt(item.pageViews).toLocaleString();
-              const pageViewsEl = document.querySelector(`[data-slug="${item.url}"]`);
+              const pageViewsEl = document.querySelector(`[data-slug="${item.url.substring(1)}"]`);
               const parentElement = pageViewsEl.closest('.page-views');
               pageViewsEl.innerText = numPageViews;
               parentElement.classList.add('visible');
             })
+
+            // Add totalNumPageViews.
+            const totalPageViewsElement = document.getElementById('totalPageViews');
+            totalPageViewsElement.innerText = totalNumPageViews.toLocaleString();
           }
         })
         .catch(err => console.log('err:', err));
@@ -259,7 +315,8 @@
       const url = new URL('https://talk.hyvor.com/api/v1/pages/'); 
       const params = {
         'page_identifiers': JSON.stringify(articleUrls),
-        'website_id': {{ $hyvorId }}
+        'website_id': {{ $hyvorId }},
+        'limit': 250
       }
       Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
 

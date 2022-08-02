@@ -1,0 +1,84 @@
+.projects-section {
+  margin-bottom: 75px;
+  padding: 50px 0px;
+  background-color: $fill-enged-bg;
+
+  .projects-listing-container {
+    max-width: 75rem;
+    padding: 0 50px;
+
+    .projects {
+      columns: 3 0px;
+      column-gap: 1rem;
+
+      .project {
+        margin: 0 1rem 1rem 0;
+        display: inline-block;
+        width: 100%;
+        border: $enged-project-border-color solid 1px;
+        border-top: unset;
+        border-radius: 8px;
+        background-color: #fff;
+
+        .meta-data {
+          background-color: $enged-meta-text;
+          padding: 15px 15px 4px;
+          border-bottom: $enged-project-border-color solid 1px;
+          border-top: $enged-project-border-color solid 1px;
+          border-radius: 8px 8px 0 0;
+
+          .title {
+            margin-bottom: 15px;
+            line-height: 25px !important;
+            
+            a {
+              color: $text-color;
+              text-decoration: none;
+
+              &:hover {
+                text-decoration: underline;
+              }
+            }
+          }
+
+          .bottom-row {
+            display: flex;
+            justify-content: space-between;
+
+            span {
+              font-size: .7rem;
+              color: $enged-light-gray;
+            }
+          }
+        }
+        
+        .info {
+          padding: 15px;
+
+          p {
+            line-height: 22px;
+            margin-bottom: 30px;
+          }
+        }
+      }
+    }
+  }
+
+  @include mq($to: 800px) {
+    .projects-listing-container {
+      .projects {
+        columns: 2 0px;
+      }
+    }
+  }
+
+  @include mq($to: 580) {
+    .projects-listing-container {
+      padding: 0 30px;
+      
+      .projects {
+        columns: 1 0px;
+      }
+    }
+  }
+}
