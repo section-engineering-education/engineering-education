@@ -2,6 +2,7 @@
 title: Louise Findlay
 type: authors
 linkedin: https://linkedin.com/in/louise-findlay23
+github: https://github.com/louisefindlay23
 website: https://spyrath.dev
 images:
   - url: /engineering-education/authors/louise-findlay/avatar.jpeg 
