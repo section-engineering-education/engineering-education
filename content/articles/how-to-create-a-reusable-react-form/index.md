@@ -444,6 +444,18 @@ export default App;
 
 ![App](/engineering-education/how-to-create-a-reusable-react-form/app.png)
 
+#### Conclusion
+How to create a Reusable React Form.
+Forms are important in every website or application, we can use them for many things in our application.
+React is all about components, we created a component to handle our HTML codes
+and a useForm hook component to handle our state change.
+In this tutorial, we created a reusable react form which can be used or rendered in any part of our application.
+We used useReducer, which is a React hook that accept two arguments, a reducer and an initialState.
+The reducer contains your state logic, kinda like setState while the initialState is your initial state. useReducer also returns your current state and also a dispatch method which is used to trigger the state logic.
+This ensures we get the values of our input where ever it is rendered.
+By doing this tutorial, we were able to create a reusable form component which can be used in any part of our application or project.
+React make our coding work less stressful, being able to use a component over over is just so amazing, we only need to make sure each of our component can be reusable and we are good to go.
+
 #### Summary
 In this tutorial, we learned:
 - React Forms.
