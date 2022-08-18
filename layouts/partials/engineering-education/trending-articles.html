@@ -118,7 +118,7 @@
                     {{ end }}
                     <div class="content">
                       <a class="title text-18-medium" href="{{ $articleSlug }}">{{ .Params.title }}</a>
-                      <div class="author-link text-15">by: <a class="text-15-medium" href="/authors/{{ .Params.author }}/">{{ $authorName }}</a></div>
+                      <div class="author-link text-15">by: <a class="text-15-medium" href="{{ if eq $.site.Params.env "local" }}/authors/{{ .Params.author }}/{{ else }}/engineering-education/authors/{{ .Params.author }}/{{ end }}">{{ $authorName }}</a></div>
                     </div>
                   {{ end }}
                 </td>

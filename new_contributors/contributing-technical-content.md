@@ -1,14 +1,14 @@
 ### Welcome to the EngEd Program
 First of all we would like to welcome you to the EngEd Program!
 
-The Engineering Education Program at Section was created as a community to provide students a friendly and inviting place to enhance their skills, connect with like-minded students, and help build up their professional portfolios and profiles (upon entering the DEV career space). 
+The Engineering Education Program (EngEd) at Section was created as a community to provide students a friendly and inviting place to enhance their skills, connect with like-minded students, and help build up their professional portfolios and profiles (upon entering the DEV career space). 
 
 We also offer students the opportunity to write content about related and approved topics about Information Technology Web-related services. (Could be something you are learning currently or a write-up on any EngEd Community Contribution you may have built and contributed).
 
 ### Getting started with creating technical content
 To get started **we recommend you begin by going over the most recently published student** articles at the link provided to get ideas on [potential topics](https://www.section.io/engineering-education/) and get a better sense of style, quality, and tonality.
 
-#### Courses 
+#### Suggested courses 
 For any new contributors that may need extra assitance on technical writing, please go over these [technical writing courses](https://developers.google.com/tech-writing/overview). 
 
 There is a [Technical Writing One introduction](https://developers.google.com/tech-writing/one) that teaches you how to write clearer technical documentation.
