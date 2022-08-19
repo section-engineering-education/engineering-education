@@ -292,7 +292,7 @@ public class VideoController {
 ```
 
 > ### Code Update (August 2022)
-> At the time of writing this, a reader has brought to my attention that there were couple of  problems here. For one, many video uploads would fail due to the file size limit being too small. We can fix this with the following config for our `application.properties` file:
+> At the time of writing this, a reader has brought to my attention that there were couple of problems here. For one, many video uploads would fail due to the file size limit being too small. We can fix this with the following config for our `application.properties` file:
 > ```properties
 > spring.servlet.multipart.max-file-size=50MB
 > spring.servlet.multipart.max-request-size=50MB
