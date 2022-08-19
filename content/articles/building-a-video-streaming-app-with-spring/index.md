@@ -21,14 +21,20 @@ In this guide, we will cover how we can build a video streaming functionality us
 We will also discuss what our client and server are doing behind the scenes to make this possible. Finally, as a bonus, we will see how we can write automated tests for our backend.
 
 ### Table of contents
+- [Table of contents](#table-of-contents)
 - [Prerequisites](#prerequisites)
 - [A high-level overview of the application](#a-high-level-overview-of-the-application)
+  - [Design specifications](#design-specifications)
+  - [Client-side architecture](#client-side-architecture)
+  - [Server-side architecture](#server-side-architecture)
 - [Initializing the backend](#initializing-the-backend)
 - [Creating our video entity and repository](#creating-our-video-entity-and-repository)
 - [Creating and exposing our video service](#creating-and-exposing-our-video-service)
 - [Building the client application](#building-the-client-application)
-- [Writing unit tests for our application](#writing-unit-tests-for-our-backend)
-- [Writing integration tests for our application](#writing-integration-tests-for-our-backend)
+- [Writing unit tests for our backend](#writing-unit-tests-for-our-backend)
+  - [Unit testing our video service](#unit-testing-our-video-service)
+- [Writing integration tests for our backend](#writing-integration-tests-for-our-backend)
+  - [Integration testing our video service](#integration-testing-our-video-service)
 - [Conclusion](#conclusion)
 
 ### Prerequisites
@@ -284,6 +290,24 @@ public class VideoController {
    }
 }
 ```
+
+> ### Code Update (August 2022)
+> At the time of writing this, a reader has brought to my attention that there were couple of  problems here. For one, many video uploads would fail due to the file size limit being too small. We can fix this with the following config for our `application.properties` file:
+> ```properties
+> spring.servlet.multipart.max-file-size=50MB
+> spring.servlet.multipart.max-request-size=50MB
+> ```
+> Moreover, we noticed that the video streaming didn't work on Google chrome but it did on Firefox. Based on a console error, it seemed to be an issue with the content type being interpreted by the browser as JSON instead of bytes. To fix this, we need to update the `getVideoByName` method to explicitly state the content type:
+> ```java
+>    @GetMapping("{name}")
+>    public ResponseEntity<Resource> getVideoByName(@PathVariable("name") String name){
+>        return ResponseEntity
+>                .status(HttpStatus.OK)
+>                .contentType(MediaType.APPLICATION_OCTET_STREAM)
+>                .body(new ByteArrayResource(videoService.getVideo(name).getData()));
+>    }
+> ```
+> Special thanks to Burak Tezcan for bringing this to my attention.
 
 ### Building the client application
 For our client application, we will have all the functionality on a single HTML file to make things simple.
