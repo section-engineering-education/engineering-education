@@ -21,8 +21,8 @@
   }
 </script>
 
-{{ $trending30DaysUrl := cond (eq .context.Site.Params.env "local") "http://localhost:3000/trending-articles/30days/" "https://api.www.section.io/trending-articles/30days/" }}
-{{ $trendingAllTimeUrl := cond (eq .context.Site.Params.env "local") "http://localhost:3000/trending-articles/allTime/" "https://api.www.section.io/trending-articles/allTime/" }}
+{{ $trending30DaysUrl := "https://api.www.section.io/trending-articles/30days/" }}
+{{ $trendingAllTimeUrl := "https://api.www.section.io/trending-articles/allTime/" }}
 
 <section class="trending-articles-wrapper xs-pt-50 xs-pb-50 xs-mt-50 xs-mb-50">
   <div class="content-margins">
