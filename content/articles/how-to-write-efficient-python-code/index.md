@@ -267,7 +267,7 @@ print(sum_of_nums)
 45
 ```
 
-Here, you're using the `reduce` function to add up all the data in the list.
+Here, you're using the `reduce` function to add up all the data in the list. The `reduce` function takes as argument the **function** which could be a regular function or a lambda function and the **iterable**, which in this case is a list.
 
 > 📝 **Note:** You have to import `reduce` from `functools` before it can be used.
 
