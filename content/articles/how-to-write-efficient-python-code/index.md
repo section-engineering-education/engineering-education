@@ -14,26 +14,32 @@ images:
   - url: /engineering-education/how-to-write-efficient-python-code/hero.jpg
     alt: Python example image
 ---
-As a beginner programmer, writing efficient python code is not the main goal but rather to learn the basic syntax, the flow of the language, and how to think like a programmer. But things get interesting when you are trying to advance to an intermediate-level developer and become a true nerd, no pun intended.
+As a developer starting your programming journey, writing efficient code might not be your immediate goal but rather learning the basic syntax and flow of the language, as well as how to think like a programmer. However, things start to get interesting when moving from a newbie to an intermediate-level developer.
 <!--more-->
 
-Writing efficient python code is one way a beginner programmer can advance to become an intermediate programmer and appreciate code readability coupled with the productivity of a developer.
+One of the ways of advancing in your programming journey is to write efficient code. Here, efficient code entails code readability and writing code in a much quicker way.
 
-This tutorial is focused on teaching you how to write efficient python code. By the end of this tutorial, you will be equipped with the tools needed to improve your productivity as a developer. Tools we would use include `list comprehension`, `lambda`, etc.
+This tutorial focuses on teaching you how to write efficient [Python](https://www.python.org/) code. At the end of going through this tutorial, you'll be equipped with the tools needed to improve your productivity as a Python developer. 
 
-### Prerequisites
-To follow along with this tutorial, a basic understanding of python is required. And a python interpreter should be installed in your local environment.
+Topics covered in this tutorial include List comprehension, Lambda functions, Map, Filter, and Reduce.
+
+### Prerequisite
+
+To follow along with this tutorial, a basic understanding of the Python programming language is required. Also, [download](https://www.python.org/downloads/) and install the latest version of python.
 
 ### List comprehension
-List comprehension is a technique of creating a list containing data with a single line of code. It's common in various programming languages, including Python. 
 
-Let's go over the syntax of list comprehension:
+List comprehension in Python enables you to create a list that contains data with a single line of code. This technique is common in various programming languages.
 
-**result** = [**transform** **iteration** **filter**]
+Let's go over the syntax:
 
-The *result* would be the final list containing our data, the *transform* is the value of each data in our list, it keeps on changing as the value of the iterator changes. The *iteration* is a loop that helps populate our list with the required amount of data. Finally, the *filter* (optional) is used to filter out the data that we don't want.
+```bash
+result = [transform iteration filter]
+```
 
-Before we take a look at an example of list comprehension, let's take a look at the traditional way of generating a list with data so we can compare the two ways:
+The **result** is the name of the list to be created, and **transform** is the value of each data in the list; it keeps on changing as the value of the **iterator** changes. The **iteration** is a loop that populates the list with the specified number of data. And finally, the **filter** is optional; as the name suggests, it is used to filter out unwanted data.
+
+Below is an example of generating a list containing data without the use of list comprehension.
 
 ```python
 nums = []
@@ -48,7 +54,8 @@ print(nums)
 ```bash
 [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 ```
-It took us about 3 lines of code. Let's try to be more efficient using `list comprehension`:
+
+This took about 3 lines of code. Let's create the same list using list comprehension.
 
 ```python
 nums = [x for x in range(10)]
@@ -62,9 +69,9 @@ print(nums)
 [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 ```
 
-Voilà, just one line of code to achieve the earlier result. It is way quicker to write once you understand the syntax and flow of `list comprehension`.
+This took one line of code to achieve the earlier result. Hence, using this approach can lead to code efficiency.
 
-Let's take a look at two more complex examples by adding *filters*:
+Let's take a look at another example.
 
 ```python
 nums = [x for x in range(20) if x % 2 != 0]
@@ -78,12 +85,14 @@ print(nums)
 [1, 3, 5, 7, 9, 11, 13, 15, 17, 19]
 ```
 
-Another example:
+Here, you're using **filter**, which checks and adds only odd numbers to the list starting from 0 to 20.
+
+__Another Example:__
 
 ```python
 nums = ['True' if x % 2 == 0 else 'False' for x in range(10)]
 
-print(nums)
+print (nums)
 ```
 
 **Output:**
@@ -92,23 +101,29 @@ print(nums)
 ['True', 'False', 'True', 'False', 'True', 'False', 'True', 'False', 'True', 'False']
 ```
 
-With these two examples above, we added the ability to use the `if/else` statement in our list comprehension. It should be noted that the `elif` statement can't be used within list comprehension.
+Here, you added an `if/else`  statement, that gives a default value for each true or false condition.
 
-In this section, we learned about using list comprehension to generate a list with data. In the next section, we will take a look at `lambda` functions.
-
+> 📝 __Note:__ `elif` statement cannot be used within a list comprehension.
 
 ### Lambda functions
-`Lambda` functions is a technique in Python to write our functions on a single line. They are regarded as anonymous (nameless) functions. They are also not suited for complex functions. Just like with list comprehension, they make our code small and concise.
+
+The Lambda function is a technique in Python that can be used to create single-line functions. It is usually regarded as an anonymous/nameless function. 
+
+> 📝 **Note:** Lambda functions are not suited for complex functions. Also, just like list comprehension, they make your code small and concise.
 
 Let's take a look at the syntax:
 
-**lambda arguments: expression**
+```bash
+lambda arguments: expression
+```
 
-The value at the left is referred to as the arguments, while the values at the right are the expression. Let's break the syntax further:
+The value at the left is referred to as the argument, while the value at the right is the expression. Let's break the syntax further:
 
-*lambda* arguments: value_to_return *if* condition *else* value_to_return
+```bash
+lambda arguments: value_to_return if condition else value_to_return
+```
 
-Before we take a look at an example of lambda functions, let's take a look at an example of a regular function in Python so we can compare the two ways:
+Below is an example of creating a function in Python without the use of a `lambda` function.
 
 ```python
 def even_or_odd(n):
@@ -126,23 +141,10 @@ print(even_or_odd(10))
 Even
 ```
 
-This took us about five lines of code to write, with `lambdas` I'm happy to say that it'll only take one line:
+This took about five lines of code. Let's now use a `lambda` function to achieve the same result:
 
 ```python
-print((lambda n: "Even" if n % 2 == 0 else "Odd")(9))
-```
-
-**Output:**
-
-```bash
-Odd
-```
-
-We can also store them inside variables:
-
-```python
-even_or_odd = lambda n: "Even" if n % 2 == 0 else "Odd"
-even_or_odd(8)
+print((lambda n: "Even" if n % 2 == 0 else "Odd")(10))
 ```
 
 **Output:**
@@ -151,19 +153,37 @@ even_or_odd(8)
 Even
 ```
 
-If we store them inside a variable, we don't need to wrap parenthesis around the `lambda` function and the argument. The variable serves as the identifier to call the function.
+It only took you one line of code.
 
-In this section, we looked at `lambdas` which is a very quick way of writing a function. They don't work well for very complex functions. In the next section, we'll take a look at three very useful functions named `map`, `filter`, and `reduce`.
-
-### Map, Filter and Reduce
-When you are working with a list filled with data, `map`, `filter`, and `reduce` give you the ability to perform common list manipulation tasks.
-
-The first on the list is `map`. With the `map` function we can modify our list however we want. 
-
-Let's take a look at an example:
+The lambda function definition can be assigned to a variable, as shown below. You can then use that variable to call the function.
 
 ```python
-# Example of a map function
+even_or_odd = lambda n: "Even" if n % 2 == 0 else "Odd"
+
+print(even_or_odd(10))
+```
+
+**Output:**
+
+```bash
+Even
+```
+
+By storing the `lambda` function inside a variable, you don't need to wrap parenthesis around it and the argument. 
+
+> 📝 **Note:** The variable serves as the identifier to call the function.
+
+### Map, filter and Reduce
+
+When working with a list that contains data; the `map`, `filter` and `reduce` functions give you the ability to perform common list manipulation tasks.
+
+#### Map
+
+Using the `map` function, your list can be modified in many ways.
+
+For instance:
+
+```python
 nums = [1, 2, 3, 4, 5]
 
 squared_nums = list(map(lambda x: x * x, nums))
@@ -177,18 +197,37 @@ print(squared_nums)
 [1, 4, 9, 16, 25]
 ```
 
-The map function takes two arguments, the function that would modify the data, and the data itself. In our example, we used the lambda function but we can use it without lambdas.
+The `map` function takes two arguments:
 
-The `map` function coupled with the lambda function allows us to modify our list with just one line of code.
+1. The function that would modify the list 
+2. The list itself
 
-Note that we used the `list` function to convert map objects back to a list.
+Here `x` represents the value of each data in the list, and we are multiplying the value by itself.
 
-The second one is `filter`, the `filter` function is used to filter out unwanted data from our list.
-
-Let's take a look at an example:
+> 📝 **Note:** In this example, you're using a `lambda` function. However, you could have used a regular function as shown below.
 
 ```python
-# Example of a filter function
+nums = [1, 2, 3, 4, 5]
+
+def square_num(n):
+    return n * n
+
+squared_nums = list(map(square_num, nums))
+
+print(squared_nums)
+```
+
+The `map` function coupled with the `lambda` function allows you to modify your list with just one line of code.
+
+> 💡 **Information:** A `list` function was used to convert the `map` object back to a list.
+
+#### Filter
+
+The `filter` function is used to remove unwanted data from the list.
+
+For example:
+
+```python
 nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
 even_nums = list(filter(lambda x: True if x % 2 == 0 else False, nums))
@@ -202,17 +241,20 @@ print(even_nums)
 [2, 4, 6, 8, 10]
 ```
 
-In our example, we are filtering out the odd numbers.
+Here, you're filtering out odd numbers from the initial list. 
 
-The `reduce` function helps to reduce the items in our list to just one value.
+> 📝 **Note:** The value that returns `True` would be inserted in the list.
 
-Let's take a look at an example:
+#### Reduce
+
+Using the `reduce` function, the items in the list can be manipulated to a single aggregate value.
+
+For instance:
 
 ```python
-# Example of a reduce function
 from functools import reduce
 
-nums = [5 ,6 , 7 ,8 , 9, 10]
+nums = [5, 6, 7, 8, 9, 10]
 
 sum_of_nums = reduce(lambda a,b: a + b, nums)
 
@@ -225,14 +267,15 @@ print(sum_of_nums)
 45
 ```
 
-In our example, we used the `reduce` function to add up all the data in our list.
+Here, you're using the `reduce` function to add up all the data in the list. The `reduce` function takes as argument the **function** which could be a regular function or a lambda function and the **iterable**, which in this case is a list.
 
-Note that we have to import `reduce` from `functools` before we can use it.
+> 📝 **Note:** You have to import `reduce` from `functools` before it can be used.
 
-The `map`, `filter`, and `reduce` save us time from creating our list manipulation function. They are useful for many common cases.
+> 💡 **Information:** The `map`, `filter` and `reduce`, can save you time from creating your list manipulation function. They are useful for many common use cases.
 
 ### Conclusion
-I am glad that you have reached the end of this article, I encourage you to use the concepts you have been introduced within your next Python project and check out how it improves your efficiency as a developer.
+
+This tutorial introduced you to several functions/techniques that can give you the ability to write concise code as well as more code in a shorter amount of time. Use the concepts introduced in this tutorial in your next Python project, and this will improve your efficiency as a Python developer.
 
 Happy coding!
 

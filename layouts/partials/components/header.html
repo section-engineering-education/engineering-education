@@ -1,11 +1,7 @@
 <nav id="sectionNav" class="section-nav">
   <div class="section-nav-inner flex align-center justify-space-between">
     <div class="section-nav-primary flex align-center">
-      {{ if not .IsHome }}
       <a href="/" class="section-logo decoration-none">
-      {{ else }}
-      <span href="/" class="section-logo decoration-none">
-      {{ end }}
         <svg width="117" height="40" aria-label="Section Logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
           <defs>
             <path id="logoc" d="M0 39.174h116.87V.437H0z"/>
@@ -23,34 +19,26 @@
             </g>
           </g>
         </svg>
-        {{ if not .IsHome }}
       </a>
-      {{ else }}
-      </span>
-      {{ end }}
       <div style="position: relative;" class="section-nav-primary-uncollapsed">
         {{ if not (eq .Layout "lp-slim") }}
         <ul class="section-nav-main list-flex">
-          <li><a href="{{ .Site.BaseURL }}docs/" class="text-16 text-link decoration-none">Docs</a></li>
+          <li><a href="https://www.section.io/docs/" class="text-16 text-link decoration-none">Docs</a></li>
           <li class="has-dropdown relative"><a class="text-16 text-link decoration-none"><span>Resources</span></a>
-            <ul class="section-nav-main-dropdown list-unstyled fill-white xs-pt-10 xs-pb-5 xs-pl-10 xs-pr-30 absolute flex xs-flex-column">
-              <li class="xs-mb-10"><a class="decoration-none text-15 text-color" href="/blog/">Blog</a></li>
-              <li class="xs-mb-10"><a class="decoration-none text-15 text-color" href="/edge-compute-content-resources/">Content Library</a></li>
-              <li class="xs-mb-10"><a class="decoration-none text-15 text-color" href="/engineering-education/">Engineering Education</a></li>
-              <li class="xs-mb-10"><a class="decoration-none text-15 text-color" href="/about/">About Section</a></li>
+            <ul class="section-nav-main-dropdown list-unstyled fill-white xs-pt-10 xs-pb-5 absolute flex xs-flex-column">
+              <li class="xs-mb-10"><a class="decoration-none text-15 text-color" href="/blog/?utm_source=enged&utm_campaign=article&utm_medium=organic">Blog</a></li>
+              <li class="xs-mb-10"><a class="decoration-none text-15 text-color" href="/edge-compute-content-resources/?utm_source=enged&utm_campaign=article&utm_medium=organic">Content Library</a></li>
+              <li class="xs-mb-10"><a class="decoration-none text-15 text-color" href="/engineering-education/?utm_source=enged&utm_campaign=article&utm_medium=organic">Engineering Education</a></li>
+              <li class="xs-mb-10"><a class="decoration-none text-15 text-color" href="/about/?utm_source=enged&utm_campaign=article&utm_medium=organic">About</a></li>
             </ul>
           </li>
-          <li><a href="{{ .Site.BaseURL }}pricing/" class="text-16 text-link decoration-none">Pricing</a></li>
+          <li><a href="https://www.section.io/pricing/?utm_source=enged&utm_campaign=article&utm_medium=organic" class="text-16 text-link decoration-none">Pricing</a></li>
         </ul>
         {{ end }}
       </div>
     </div>
     {{ if not (eq .Layout "lp-slim") }}
     <div class="section-nav-secondary flex align-center">
-      <div class="button-group">
-        <a class="button-light button-small-nav text-link xs-mr-30" href="https://aperture.section.io/">Log In</a>
-        <a id="header-cta" class="button button-nav button-white button-outline" href="/request-demo/">Get Started</a>
-      </div>
     </div>
     {{ end }}
     <div class="section-nav-triggers">
@@ -97,7 +85,7 @@
     </div>
     <div class="section-nav-mobile-inner">
       <ul class="section-nav-mobile-inner-main list-unstyled pt-5">
-  <li class="has-dropdown xs-mb-20"><span class="text-white decoration-none title-4-menu xs-pb-20 section-nav-mobile-inner-main-noclick"><span>Resources</span></span>
+      <li class="has-dropdown xs-mb-20"><span class="text-white decoration-none title-4-menu xs-pb-20 section-nav-mobile-inner-main-noclick"><span>Resources</span></span>
         <div class="section-nav-mobile-dropdown xs-mt-10 pr-10">
             <div class="pointer-wrapper">
               <div class="pointer-object -flip">
@@ -108,24 +96,18 @@
             </div>
           </div>
           <ul class="section-nav-mobile-drop list-unstyled fill-white xs-pt-20 xs-pb-10 xs-mt-10">
-            <li class="xs-mb-10"><a class="text-20-regular text-color decoration-none" href="/blog/">Blog</a></li>
-            <li class="xs-mb-10"><a class="text-20-regular text-color decoration-none" href="/edge-compute-content-resources/">Content Library</a></li>
-            <li class="xs-mb-10"><a class="text-20-regular text-color decoration-none" href="/engineering-education/">Engineering Education</a></li>
-            <li class="xs-mb-10"><a class="text-20-regular text-color decoration-none" href="/about/">About Section</a></li>
+            <li class="xs-mb-10"><a class="text-20-regular text-color decoration-none" href="/blog/?utm_source=enged&utm_campaign=article&utm_medium=organic">Blog</a></li>
+            <li class="xs-mb-10"><a class="text-20-regular text-color decoration-none" href="/edge-compute-content-resources/?utm_source=enged&utm_campaign=article&utm_medium=organic">Content Library</a></li>
+            <li class="xs-mb-10"><a class="text-20-regular text-color decoration-none" href="/engineering-education/?utm_source=enged&utm_campaign=article&utm_medium=organic">Engineering Education</a></li>
+            <li class="xs-mb-10"><a class="text-20-regular text-color decoration-none" href="/about/?utm_source=enged&utm_campaign=article&utm_medium=organic">About Section</a></li>
           </ul>
         </li>
 
         <li class="xs-mb-20">
           <a href="https://www.section.io/docs/" class="text-white decoration-none xs-pb-20 title-4-menu"><span>Docs</span></a>
         </li>
-        <li class="xs-mb-20"><a href="/pricing/" class="text-white decoration-none title-4-menu xs-pb-20"><span>Pricing</span></a></li>
-        <li class="xs-mb-20"><a href="https://aperture.section.io/" class="text-white decoration-none title-4-menu xs-pb-20"><span>Log In</span></a></li>
+        <li class="xs-mb-20"><a href="https://section.io/pricing/?utm_source=enged&utm_campaign=article&utm_medium=organic" class="text-white decoration-none title-4-menu xs-pb-20"><span>Pricing</span></a></li>
       </ul>
-      <div class="button-group-mobile prl-5 xs-pt-40">
-        <a class="button button-medium button-outline-white title-4" href="/request-demo/">Get Started</a>
-      </div>
     </div>
   </div>
 </nav>
-
-
