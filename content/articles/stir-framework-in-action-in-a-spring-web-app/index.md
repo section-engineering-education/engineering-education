@@ -472,7 +472,7 @@ public class ViewController {
     private WebClient client = WebClient.create("http://localhost:8080");
 
 		@GetMapping(value="/new", produces= MediaType.TEXT_HTML_VALUE)
-    public String postTodoPage(){
+        public String postTodoPage(){
 
         HTMLDocument doc = HTMLDocument.builder()
                 .title("Create New Todo")
@@ -510,7 +510,7 @@ Now that we have a view to add to-do items, let’s go ahead and create a view t
 @GetMapping(value="/all", produces=MediaType.TEXT_HTML_VALUE)
 public String getAllTodos(){
 
-		// Sends a GET request to retrieve all our todos
+	// Sends a GET request to retrieve all our todos
     PagedModel<Todo> todoPagedModel = client.get()
             .uri("todos")
             .retrieve()
@@ -561,8 +561,8 @@ public class Todo {
     private String description;
     @TableData(columnName = "Due Date")
     private Date dueDate;
-		@TableData(columnName = "Is Complete")
-		private Boolean isComplete;
+	@TableData(columnName = "Is Complete")
+	private Boolean isComplete;
 
     public Todo(String title, String description, Date dueDate) {
         this.title = title;
@@ -607,8 +607,8 @@ public class Todo {
     private String description;
     @TableData(columnName = "Due Date")
     private Date dueDate;
-		@TableData(columnName = "Is Complete")
-		private Boolean isComplete;
+	@TableData(columnName = "Is Complete")
+	private Boolean isComplete;
 
     public Todo(String title, String description, Date dueDate) {
         this.title = title;
