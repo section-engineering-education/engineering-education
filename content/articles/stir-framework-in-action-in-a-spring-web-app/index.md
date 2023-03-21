@@ -1,3 +1,21 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /stir-framework-in-action-in-a-spring-web-app/
+title: Stir Framework in Action in a Spring Web App
+description: This article helps you implement the Stir framework in a Spring web application.
+author: john-amiscaray
+date: 2023-03-21T00:00:00-10:00
+topics: [Languages]
+excerpt_separator: <!--more-->
+images: 
+
+  - url: /engineering-education/stir-framework-in-action-in-a-spring-web-app/hero.png
+    alt: Stir Framework hero image
+---
+In this tutorial, I will show Stir in action by creating a simple to-do application with Spring. In the process, we will see the features of Stir, the advantages of using it, and the proper usage of it for your next project.
+<!--more-->
 January 26th, 2023 saw the release of Stir version 1.0.0 to Maven central, an open-source Java framework I’ve developed over the past two months. Stir is a feature-rich server-side rendering framework that allows you to generate HTML on the fly. With its developer-friendly API and extensive documentation, you can get started with it right away and use it as the templating solution for your next backend project.
 
 In this tutorial, I’ll show Stir in action by creating a simple to-do application with Spring. In the process, we’ll see the significant features of Stir, the advantages of using it, and the proper usage of it for your next project. By the end of this guide, you will have everything you need to know to use Stir for server-side development.
@@ -67,7 +85,7 @@ As we’ll see throughout this guide, Stir is a templating engine perfect for se
 
 and more. As we begin to build our to-do application, we’ll start to see most (if not all) of these features in action in a fairly realistic scenario.
 
-### Initializing Our To-do Application
+### Initializing our To-do Application
 
 To start our application, go to the [Spring initializr](http://start.spring.io). For this project, I selected the following:
 
@@ -88,7 +106,6 @@ Along with the following dependencies:
 - Spring Reactive Web (for the `WebClient` class)
 
 > Note that Stir is built off of Java version 15 so any version lower than that will likely not be compatible.
-> 
 
 Then, once the project is built and you set up your preferred coding environment, we need to add the following Maven dependency to integrate Stir into our application:
 
@@ -111,7 +128,7 @@ To keep things simple and keep the focus on Stir, we’ll try to keep the backen
 
 and more, all following the REST conventions you’ll see in a typical API. Then, we’ll have view endpoints that consume this REST API and show the appropriate view that we’ll generate via Stir. For this guide, we’ll only implement the views necessary for listing the to-dos, posting new ones, and making minor updates for the sake of time and brevity.
 
-### Building Our To-do Database
+### Building our To-do Database
 
 To begin, we’ll start by creating the to-do hibernate entity:
 
@@ -150,7 +167,7 @@ public class Todo {
 }
 ```
 
-Then, we’ll create our corresponding to-do repository:
+Then, we'll create our corresponding to-do repository:
 
 ```java
 package io.johnamiscaray.stirtodoapp.repository;
@@ -251,9 +268,11 @@ With that, we’ll end up with a JSON structure for fetching all our to-dos that
 }
 ```
 
-### Building Our View Controller
+### Building our View Controller
 
-Now that we have our REST API created for managing our to-do database, let’s start making a controller for the to-do views. To begin, we’ll build a page for submitting new to-dos so we can build up our database before we can start viewing them. The approach I’ll take to building this view is to start with a less ideal solution just to show you some of the foundations of Stir and start to improve upon it incrementally. This way, you’ll get a more holistic understanding of what Stir is capable of and see how I’d recommend you use the framework.
+Now that we have our REST API created for managing our to-do database, let’s start making a controller for the to-do views. To begin, we’ll build a page for submitting new to-dos so we can build up our database before we can start viewing them. 
+
+The approach I’ll take to building this view is to start with a less ideal solution just to show you some of the foundations of Stir and start to improve upon it incrementally. This way, you’ll get a more holistic understanding of what Stir is capable of and see how I’d recommend you use the framework.
 
 To start, let’s set up the controller class for our views:
 
@@ -273,7 +292,9 @@ public class ViewController {
 }
 ```
 
-In the class declaration, we specified the root URL for this controller as `/views/todo`. You’ll also notice that we annotated the class with `@RestController` instead of the usual `@Controller` you see when creating view endpoints. Instead of returning the name of a page in our resources folder as you would traditionally do with Spring, Stir will generate a raw HTML string for us that we need to return in our endpoints. Thus, with `@RestController`, we’re specifying that our request mapping methods will return a response body rather than a page name. Finally, we created a `WebClient` instance for sending HTTP requests to our API at `localhost:8080`.  
+In the class declaration, we specified the root URL for this controller as `/views/todo`. You’ll also notice that we annotated the class with `@RestController` instead of the usual `@Controller` you see when creating view endpoints. 
+
+Instead of returning the name of a page in our resources folder as you would traditionally do with Spring, Stir will generate a raw HTML string for us that we need to return in our endpoints. Thus, with `@RestController`, we’re specifying that our request mapping methods will return a response body rather than a page name. Finally, we created a `WebClient` instance for sending HTTP requests to our API at `localhost:8080`.  
 
 With that, I’ll jump straight in and show you how we could build this endpoint and generate the view using Stir:
 
@@ -339,7 +360,9 @@ public class ViewController {
 
 Let’s first break down the annotations on our method. With the `@GetMapping` annotation, our value parameter maps the URL this method corresponds to (i.e., `"/new"`). But since we have the `@RequestMapping("/views/todo)` line on our controller, the `"/new"` route will be under the `"/views/todo"` route for a URL of `"http://localhost:8080/views/todo/new"`. We also have the `produces` argument to specify that our endpoint is returning raw HTML.
 
-Regarding the HTML generation itself using Stir, we’re just building a ton of simple objects using [builders](https://refactoring.guru/design-patterns/builder) or constructors. Stir defines a ton of simple classes each representing different HTML elements that it will convert to HTML code. The classes hold fields that represent things like HTML attributes, inner text content, and child elements. Using instances of these classes, we can add them to an HTML document using the `HTMLDocument` builder’s `element` method. Elements passed to this method are added within the HTML body in a first-in-first-out order. In the above code, we pass a `Header` object and then a `Form` object to the `element` function. Thus, because we ordered it in this way, the header object appears first in the HTML body. You’ll also notice that we called a `child` method of the `Header` builder with a `Heading` instance. Here, we’re instantiating a heading of level 1 (h1) with the content *”Create New Todo”* and adding it as a child element of the `Header` instance. Similarly, with the `Form` builder, we added child `Input` instances using our call to the `field` method.
+Regarding the HTML generation itself using Stir, we’re just building a ton of simple objects using [builders](https://refactoring.guru/design-patterns/builder) or constructors. Stir defines a ton of simple classes each representing different HTML elements that it will convert to HTML code. The classes hold fields that represent things like HTML attributes, inner text content, and child elements. Using instances of these classes, we can add them to an HTML document using the `HTMLDocument` builder’s `element` method. Elements passed to this method are added within the HTML body in a first-in-first-out order. 
+
+In the above code, we pass a `Header` object and then a `Form` object to the `element` function. Thus, because we ordered it in this way, the header object appears first in the HTML body. You’ll also notice that we called a `child` method of the `Header` builder with a `Heading` instance. Here, we’re instantiating a heading of level 1 (h1) with the content *”Create New Todo”* and adding it as a child element of the `Header` instance. Similarly, with the `Form` builder, we added child `Input` instances using our call to the `field` method.
 
 You’ll also see in the code calls to other functions like `headerScript`, `footerScript`, `linkedStyle`, etc. With the `headerScript` function, we’re adding a script tag to the `head` tag of the HTML document. Similarly, the `footerScript` function adds a script tag to the bottom of the HTML’s `body` tag, and the `linkedStyle` function adds a `link` tag to link a stylesheet. In our example, we’re linking to the following `post-todo.js` file located in the `/resources/static` folder:
 
@@ -371,7 +394,7 @@ form.submit(e => {
 });
 ```
 
-as well as this `styles.css` file in the same folder:
+As well as this `styles.css` file in the same folder:
 
 ```css
 :root {
@@ -393,7 +416,7 @@ form {
 
 Lastly, you’ll notice a call to `withBootStrap` with an argument of `true`. This adds the necessary style and script to integrate bootstrap on our page.
 
-### Simplifying Using Document Templating
+### Simplifying using Document Templating
 
 With that, let’s see how we can simplify this solution further using Stir’s document templating:
 
@@ -446,7 +469,9 @@ public class ViewController {
 }
 ```
 
-Here, we’re using our own template for the HTML body using custom markup within a [text block](https://www.baeldung.com/java-multiline-string) (delimited with `"""`). You’ll also see further down we have a call to `isFormatForBody` with an argument of true. This specifies that the format we pass to the `format` method is for the inner content of the HTML body. Otherwise, Stir will assume the format is for the entire HTML page. The content surrounding the HTML body will then be handled by Stir. Within the HTML body, you’ll notice a peculiar syntax within the `h1` element: `<& str_title &>`. In Stir’s document templating, content surrounded by `<&` and `&>` is read by the templating engine as particular keywords representing content passed in the builder, or element descriptors (something we’ll cover soon). These are known as *templating blocks*. **In our example, we use the keyword `str_title` to denote the title we passed in the `title` method. This title will also be used as the title in the HTML meta in the header. For a complete list of all the Stir keywords for use in a templating block, refer to [this section of the documentation](https://www.baeldung.com/java-multiline-string).
+Here, we’re using our own template for the HTML body using custom markup within a [text block](https://www.baeldung.com/java-multiline-string) (delimited with `"""`). You’ll also see further down we have a call to `isFormatForBody` with an argument of true. This specifies that the format we pass to the `format` method is for the inner content of the HTML body. Otherwise, Stir will assume the format is for the entire HTML page. The content surrounding the HTML body will then be handled by Stir. Within the HTML body, you’ll notice a peculiar syntax within the `h1` element: `<& str_title &>`. 
+
+In Stir’s document templating, content surrounded by `<&` and `&>` is read by the templating engine as particular keywords representing content passed in the builder, or element descriptors (something we’ll cover soon). These are known as *templating blocks*. **In our example, we use the keyword `str_title` to denote the title we passed in the `title` method. This title will also be used as the title in the HTML meta in the header. For a complete list of all the Stir keywords for use in a templating block, refer to [this section of the documentation](https://www.baeldung.com/java-multiline-string).
 
 ### Simplifying Further With Element Descriptors
 
@@ -875,5 +900,9 @@ $('.toggle-complete').on('change', function (e) {
 Here, we’re leveraging jquery’s `data` method to extract the value of our custom `data-todo-id` attribute using the call to `$(this).data("todo-id")` (here the `this` keyword refers to the element we queried for). From there, we check the completion status of the to-do based on whether the HTML checked property on our checkbox is true. Using this info, we query for the to-do component (whose id we set in the form of `#todo-{todoId}`) and toggle the `todo-complete` CSS class.
 
 ### Conclusion
+In this tutorial, we covered all the functionality of a simple Stir to-do app that I wanted to cover in this guide. In the process, we learned about Stir’s representation of HTML elements as objects, document templating, element descriptors, table generation, and custom components. 
 
-With that, we covered all the functionality of a simple Stir to-do app that I wanted to cover in this guide. In the process, we learned about Stir’s representation of HTML elements as objects, document templating, element descriptors, table generation, and custom components. With that, you should now be ready to use Stir in your next backend project! As an exercise to deepen your understanding, try fully fleshing out the project yourself from [the final code](https://github.com/john-amiscaray/StirExamples). Also, feel free to request new features or file bug reports in [Stir's GitHub repository](https://github.com/john-amiscaray/Stir) which I will be maintaining.
+With that, you should now be ready to use Stir in your next backend project! As an exercise to deepen your understanding, try fully fleshing out the project yourself from [the final code](https://github.com/john-amiscaray/StirExamples). Also, feel free to request new features or file bug reports in [Stir's GitHub repository](https://github.com/john-amiscaray/Stir) which I will be maintaining.
+
+---
+Peer Review Contributions by: [Wanja Mike](/engineering-education/authors/michael-barasa/)
