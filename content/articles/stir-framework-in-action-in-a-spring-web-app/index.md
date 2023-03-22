@@ -554,7 +554,7 @@ public String getAllTodos(){
 
 With that, we’ll generate a simple HTML page with a table that looks like this:
 
-![Stir Generated Table](/stir-framework-in-action-in-a-spring-web-app/stir-table.png)
+![Stir Generated Table](/engineering-education/stir-framework-in-action-in-a-spring-web-app/stir-table.png)
 
 As you can see, Stir can look through the fields of our `Todo` class, extract the names as table headers, then put the values of the fields of each object in the cells of the table. The question you may be asking at this point is: how can I change the names of the table headers to a nicer format? Stir provides annotations to fix this exact problem. Let’s go back and annotate our `Todo` entity with these annotations:
 
@@ -600,7 +600,7 @@ public class Todo {
 
 With that, it should now title our table columns more nicely:
 
-![Stir Table With Custom Column Names](/stir-framework-in-action-in-a-spring-web-app/stir-table-pretty.png)
+![Stir Table With Custom Column Names](/engineering-education/stir-framework-in-action-in-a-spring-web-app/stir-table-pretty.png)
 
 If we wanted to remove the `id` attribute from the table display, we would use the `@TableIgnore` annotation added to version 1.2.0:
 
@@ -807,7 +807,7 @@ public String getAllTodos(){
 
 After adding a couple of to-do items (whether you’re using our view or an API call with Postman), we’ll see a page that looks like this:
 
-![Stir To-do List](/stir-framework-in-action-in-a-spring-web-app/todo-items.png)
+![Stir To-do List](/engineering-education/stir-framework-in-action-in-a-spring-web-app/todo-items.png)
 
 While this may not look much nicer than the table (excuse my lack of design skills) we were able to leverage Stir to dynamically generate this content on the server. 
 
