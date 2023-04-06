@@ -1,10 +1,28 @@
-GraphQL is a query language for APIs used to communicate data between a client and a server. This allows you to structure data-driven applications much more flexibly and efficiently than the [REST AND SOAP approach](https://www.techtic.com/blog/comprehensive-guide-to-soap-rest-graphql-web-protocols/#:~:text=GraphQL%20is%20used%20to%20leverage,and%20REST%20represent%20data%20resources.). GraphQL provides a complete and understandable description of the data in your API. It gives clients the power to ask for exactly what they need and nothing more.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /create-in-browser-graphiql-tool-with-reactjs/
+title: How to Create a Basic Browser GraphiQL Tool using React.js, Node.js and MongoDB
+description: This article helps you learn how to create a GraphiQL tool using Node.js, React.js, and Mongo DB.
+author: catherine-macharia
+date: 2023-04-05T00:00:00-03:30
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/create-in-browser-graphiql-tool-with-reactjs/hero.png
+    alt: Create a Basic Browser GraphiQL Tool using React.js, Node.js and MongoDB
+---
+GraphQL is a query language for APIs used to communicate data between a client and a server. This allows you to structure data-driven applications much more flexibly and efficiently than the REST and SOAP approach.
+<!--more-->
+GraphQL provides a complete and understandable description of the data in your API. It gives clients the power to ask for exactly what they need and nothing more.
 
 This makes it easier to evolve APIs over time and enables powerful developer tools. It also gives developers more control over how they use data in their apps.
 
-GraphiQL is an interactive development environment. It's a tool built into many GraphiQL graphical services that allow you to interact with your app data and GraphQL APIs.
+GraphQL is an interactive development environment, featuring many GraphiQL graphical services that allow you to interact with your app data and GraphQL APIs.
 
-We will create a basic browser GraphiQL tool featuring React.js, Node.js, and MongoDB.
+We will create a basic browser GraphIQL tool featuring `React.js`, `Node.js`, and `MongoDB`.
 
 ### Table of contents
 
@@ -23,26 +41,26 @@ We will create a basic browser GraphiQL tool featuring React.js, Node.js, and Mo
 
 ### Prerequisites
 
-It is important to have the following to follow along with this tutorial:
+To follow along, you need:
 
-- A [Node.js runtime](https://nodejs.org/en/download/) is installed on your local machine. We need Node.js to create React application.
-- A MongoDB database setup. This can be locally installed [MongoDB Compass](https://www.mongodb.com/try/download/compass) or use the cloud [MongoDB Atlas](https://www.mongodb.com/atlas/database). MongoDB is the most popular NoSQL database. We will use it to save data that React will communicate with.
+- A [Node.js runtime](https://nodejs.org/en/download/) installed on your local machine.
+- A MongoDB database setup. This can be locally installed [MongoDB Compass](https://www.mongodb.com/try/download/compass) or use the cloud [MongoDB Atlas](https://www.mongodb.com/atlas/database). 
 
-### An overview
+### Overview
 
-Whenever you create a GraphQL API, GraphQL provides an extendable playground to execute and a GraphQL schema for the created API. However, take a scenario where you have a CMS such as WordPress. You need to generate API data to separate the presentation layer.
+Whenever you create a GraphQL API, GraphQL provides an extendable playground to execute and a GraphQL schema for the generated API. However, take a scenario where you have a CMS such as WordPress. You need to generate API data to separate the presentation layer.
 
-In this case, an API plays a big role in helping users fetch data from the CMS. Therefore, you need to create a GraphQL interface that will allow these users to generate GraphQL-based queries using GraphiQL.
+In this case, an API plays a big role in helping users fetch data from the CMS. Therefore, you need to create a GraphQL interface that will allow these users to generate GraphQL-based queries.
 
-This helps bridge modern frontend stacks with content management with systems such as CMS. GraphQL queries allow you to have access to multiple root resources with a single request. Below is a basic example of a GraphiQL tool.
+This helps bridge modern frontend stacks with content management systems. GraphQL queries also allow you to access multiple root resources with a single request. Below is a basic example of a GraphQL tool.
 
-![query-posts-example](query-posts.jpg)
+![query-posts-example](/engineering-education/create-in-browser-graphiql-tool-with-reactjs/query-posts.jpg)
 
-We will build such a GraphiQL tool with React.js and demonstrate how to use it with a GraphQL API. Therefore, we need to create a GraphQL API that GraphiQL will use.
+In this tutorial, we will build a similar GraphQL tool with React.js and demonstrate how to use it with a GraphQL API. Therefore, we need to create a GraphQL API that GraphiQL will use.
 
 In this guide, we will create a simple GraphiQL using Node.js and MongoDB. A GraphQL API can be implemented using different technologies. If you have one running, you can skip this step.
 
-### Create a Simple Node.js MongoDB GraphQL API
+### Creating a Simple Node.js MongoDB GraphQL API
 
 Create a [Node.js `server` folder](https://levelup.gitconnected.com/set-up-and-run-a-simple-node-server-project-38b403a3dc09) and change the directory to it:
 
@@ -50,7 +68,7 @@ Create a [Node.js `server` folder](https://levelup.gitconnected.com/set-up-and-r
 cd server
 ```
 
-Then initialize a Node.js project using `npm init -y`. To create this API, we need some npm packages. These are:
+Then initialize the Node.js project using `npm init -y`. To create this API, we need the following npm packages:
 
 - **[Express](https://www.npmjs.com/package/express)** - A Node.js web framework for creating minimalistic HTTP servers.
 - **[GraphQL](https://www.npmjs.com/package/graphql)** - Used to build GraphQL type schema and serve GraphQL queries.
@@ -65,9 +83,11 @@ To install these packages, run the following command inside the server folder:
 npm install express graphql express-graphql body-parser mongoose cors
 ```
 
-### Model the GraphQL data
+### Modeling the GraphQL data
 
-To use a GraphQL API, we need to model the data using the mongoose. This will set up the schema needed by the API to interact with the MongoDB database. Create a `post.js` file inside the `server` folder and create a post schema as follows:
+To use a GraphQL API, we need to model the data using `mongoose`. This will set up the schema needed by the API to interact with the MongoDB database. 
+
+Create a `post.js` file inside the `server` folder and gete a post schema as follows:
 
 ```js
 const mongoose = require("mongoose");
@@ -88,11 +108,11 @@ const Post = mongoose.model("Post", PostSchema);
 module.exports = Post;
 ```
 
-#### Create a GraphQL Post Schema
+#### Creating a GraphQL Post Schema
 
 A GraphQL Schema defines GraphQL queries and mutations. A query in GraphQL is used to fetch data from the server, while mutation is used to manipulate data from the server. Mutations involve operations such as adding a post, updating post values, and deleting a post.
 
-To create these GraphQL Post Schema, create a `schema.js` inside the `server` folder. Add the post model and the GraphQL entities required to create a GraphQL API.
+To create the GraphQL Post Schema, create a `schema.js` inside the `server` folder. Add the `post model` and the GraphQL entities required to create a GraphQL API.
 
 ```js
 const graphql = require('graphql');
@@ -107,9 +127,9 @@ const {
 } = graphql;
 ```
 
-Set the GraphQL Object for the post. This represents how the posts will be defined in the database.
+Set the `GraphQL Object` for the `post`. This represents how `posts` will be defined in the database.
 
-```JS
+```js
 const Post = new GraphQLObjectType({
     name: 'Post',
     fields: {
@@ -126,7 +146,7 @@ const Post = new GraphQLObjectType({
 });
 ```
 
-Create a query to get posts from the database.
+Create a `query` to get `posts` from the database.
 
 ```js
 const RootQuery = new GraphQLObjectType({
@@ -168,7 +188,7 @@ const Mutation = new GraphQLObjectType({
 
 You can add other mutations for updating and deleting the post using the `addPosts` mutation as a reference.
 
-Export the query and mutation so that we can use them within the server.
+Export the `query` and `mutation` so that we can use them within the server.
 
 ```js
 module.exports = new GraphQLSchema({
@@ -177,7 +197,7 @@ module.exports = new GraphQLSchema({
 });
 ```
 
-#### Create the server
+#### Creating the server
 
 To server, the above query and mutation, create a basic Node.js server. Create a `server.js` file inside the `server` folder and set up the server as follows:
 
@@ -281,15 +301,15 @@ app.listen(4000, () => {
 
 To test the server, you can open the GraphQL playground `http://localhost:4000/graphql`. Or use API testing utilities such as PostMan to send GET and Post requests to `http://localhost:4000/post`.
 
-Using the PostMan Post method, ahead a few posts to the database as follows:
+Using the PostMan Post method, add a few posts to the database as follows:
 
-![data](data.jpg)
+![data](/engineering-education/create-in-browser-graphiql-tool-with-reactjs/data.jpg)
 
 You can confirm if the data was successfully added to the database.
 
-![database](database.jpg)
+![database](/engineering-education/create-in-browser-graphiql-tool-with-reactjs/database.jpg)
 
-### Create React App
+### Creating the React App
 
 We will use the above GraphQL API to integrate with a React GraphiQL tool. Let's dive in and create GraphiQL using React.js. First, we need to create a basic React app using the `create-react-app` command as follows:
 
@@ -311,14 +331,14 @@ npm start
 
 You can now view the created React app in the browser `http://localhost:3000`.
 
-![react-app](react-app.jpg)
+![react-app](/engineering-education/create-in-browser-graphiql-tool-with-reactjs/react-app.jpg)
 
-#### Install Frontend packages
+#### Installing Frontend packages
 
 To create a GraphiQL tool, we need the following packages:
 
 - **[GraphQL](https://www.npmjs.com/package/graphql)** - Used to build GraphQL type schema and serve GraphQL queries.
-- **[GraphiQL](https://www.npmjs.com/package/graphiql)** - It allows to create in-browser GraphQL IDE to create interactive GraphQL components for frontend frameworks.
+- **[GraphiQL](https://www.npmjs.com/package/graphiql)** - It allows you to create in-browser GraphQL IDE to generate interactive GraphQL components for frontend frameworks.
 
 Run the following command to install these packages.
 
@@ -447,7 +467,7 @@ catch (error) {
 
 - Render the GraphQL data on the browser. This references the `_graphiql` and fetches the execute the GraphQL requests from the server.
 
-Additionally, you can add the Prettify, History, and Explorer toolbar to GraphiQL. Here they are represented as dummies. Go ahead and implement them if your GraphiQL needs such functionalities.
+Additionally, you can add the `Prettify`, `History`, and `Explorer` toolbar to GraphiQL. Here they are represented as dummies. Go ahead and implement them if your GraphiQL needs such functionalities.
 
 ```js
 render() {
@@ -491,7 +511,7 @@ Let's test if this tool is working as expected. At this point:
 - Enure your Node.js server is running and described in the previous steps
 - Ensure the React app is running and open the app in the browser using the URL `http://localhost:3000`. You will be served with the GraphiQL tool we have just created.
 
-![graphiql-tool](graphiql-tool.jpg)
+![graphiql-tool](/engineering-education/create-in-browser-graphiql-tool-with-reactjs/graphiql-tool.jpg)
 
 Let's test if the React GraphiQL tool can interact with the API data. We will execute a query to fetch posts from the database as follows:
 
@@ -506,11 +526,11 @@ query Query {
 
 Add this query to the GraphiQL tool.
 
-![query](query.jpg)
+![query](/engineering-education/create-in-browser-graphiql-tool-with-reactjs/query.jpg)
 
-Then hit the play button.
+Then press the `play` button.
 
-![query-data](query-data.jpg)
+![query-data](/engineering-education/create-in-browser-graphiql-tool-with-reactjs/query-data.jpg)
 
 And there you have it. The frontend tool you created can directly interact with your server, deploy it, and allow users to interact with the content managed by your API.
 
@@ -518,4 +538,7 @@ And there you have it. The frontend tool you created can directly interact with 
 
 GraphQL uses a mechanism that queries data and then displays that data with the GraphQL schema. This uses GraphiQL. You might want to query data from your application. A good example is how WordPress uses [wpGraphQL](https://www.wpgraphql.com/) to fetch WordPress-driven data.
 
-This guide helped you create a GraphiQL tool to perform such GraphQL tasks. This provides extendable GraphQL features within your application.
+In this guide, we learned how to create a GraphiQL tool to perform diffrent GraphQL tasks. This provides extendable GraphQL features within your application.
+
+---
+Peer Review Contributions by: [Wanja Mike](/engineering-education/authors/michael-barasa/)
