@@ -40,7 +40,7 @@ By the end of this tutorial, the user will understand how to:
 4. A local administrator account to be used by the server hosting DPA.
 5. Updated operating system.
 6. Open the following ports on the server and firewall: `8124`, `8123`, `8127`, `443`, `80`, and `587`.
-7. Exclude the DPA folder directory from antivirus scanning to ensure a smooth installation.
+7. Optional Step - Exclude the DPA folder directory from antivirus scanning to ensure a smooth installation. **Note - SolarWinds, does not recommend whitelisting or excluding folders from antivirus scanning
 
 ### Installing the DPA on Windows
 - If you're installing a trial version, [click here](https://www.solarwinds.com/database-performance-analyzer) or the SolarWinds Customer Portal to get the installation file.
