@@ -7,7 +7,8 @@
     display: flex;
     align-items: center;
     position: relative;
-    padding: 20px 20px 20px 0;
+    padding: 20px 10px 20px 0;
+    margin-right: 30px;
     
     img {
       max-width: 32px;
@@ -46,6 +47,64 @@
     &.tooltip {
       &:before {
         display: block;
+      }
+    }
+  }
+}
+
+.author-badges {
+  margin-bottom: 40px; 
+
+  .badges {
+    display: flex;
+    flex-flow: wrap;
+    justify-content: flex-start;
+    padding-top: 10px;
+    
+    .badge {
+      width: 33.3%;
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+
+      .badge-img {
+        max-width: 60px;
+        max-height: 58px;
+        margin-right: 20px;
+        margin-bottom: 0px;
+      }
+
+      p {
+        margin: 0;
+        font-size: 16px;
+        line-height: 24px;
+      }
+    }
+  }
+
+  @include mq($to: 694px ) {
+    .badges {
+      .badge {
+        width: 50%;
+      }
+    }
+  }
+  
+  @include mq($to: 500px ) {
+    .badges {
+      .badge {
+        width: 50%;
+        flex-direction: column;
+        margin-bottom: 30px;
+
+        .badge-img {
+          margin-right: 0;
+          max-width: 68px;
+          max-height: 65px;
+        }
+        p {
+          text-align: center;
+        }
       }
     }
   }

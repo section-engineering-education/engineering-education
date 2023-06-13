@@ -28,10 +28,10 @@
 
 {{ $style := resources.Get "scss/styles.scss" | resources.ToCSS | resources.Minify }}
 {{ $secureStyle := $style | resources.Fingerprint "sha512" }}
-<link rel="stylesheet" href="{{ $secureStyle.Permalink }}" integrity="{{ $secureStyle.Data.Integrity }}">
+<link rel="stylesheet" href="{{ $secureStyle.RelPermalink }}" integrity="{{ $secureStyle.Data.Integrity }}">
 
 <!-- Sajari SDK -->	
-<script src="https://unpkg.com/@sajari/sdk-js/dist.iife/index.js"></script>	
+<script src="https://unpkg.com/@sajari/sdk-js@^2/dist/sajarisdk.umd.production.min.js"></script>
 <!-- End Sajari SDK -->
 
 <script>
@@ -45,5 +45,8 @@
 </script>
 
 {{- if eq (getenv "HUGO_ENV") "production" | or (eq $.Site.Params.env "production") -}}
-{{ partial "head-scripts" }}
+{{ partialCached "head-scripts" . }}
 {{- end -}}
+
+<!-- Slick Slider -->
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>

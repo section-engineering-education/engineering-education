@@ -1,37 +1,37 @@
 .engEd-banner {
   display: block;
-  padding: 15px 30px;
-  
+  padding: 32px;
+
   .copy {
-    display: flex;
-    align-items: center;
-    width: 100%;
-    max-width: 1000px;
+    max-width: 49.375rem;
     margin: 0 auto;
+    position: relative;
 
     h2 {
-      width: 25%;
-      @include gt-medium;
-      font-size: 22px;
+      font-size: 32px;
+      margin-bottom: 16px;
     }
 
     p {
-      width: 75%;
+      line-height: $line-height-3;
+
+      &:last-of-type {
+        margin-top: 16px;
+      }
 
       a {
-        color: #fff;
-      }
-    }
+        color: $fill-dark;
+        font-weight: 500;
+        text-decoration: none;
+        line-height: 1.25;
+        background: $fill-green;
+        padding: 0.375rem 1rem;
+        border-radius: 0.4rem;
+        transition: background 200ms cubic-bezier(0.08,0.52,0.52,1);
 
-    @include mq($to: 880px) {
-      flex-direction: column;
-
-      h2, p {
-        width: 100%;
-      }
-      h2 {
-        margin-bottom: 10px;
-        text-align: center;
+        &:hover {
+          background: #00b976;
+        }
       }
     }
   }

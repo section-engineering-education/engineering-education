@@ -2,7 +2,7 @@
 title: Felix Vaati
 type: authors
 interests: PHP & Kotlin
-twitter: https://twitter.com/DyrstiuAppdh
+twitter: https://twitter.com/Dyrstiu
 images:
   - url: /engineering-education/authors/felix-vaati/avatar.png 
 ---

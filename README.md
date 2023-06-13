@@ -1,14 +1,12 @@
 # engineering-education
 “Section's Engineering Education (EngEd) Program is dedicated to offering a unique quality community experience for computer science university students." 
 
- Our EngEd published content can be found at [https://www.section.io/engineering-education/](https://www.section.io/engineering-education/).
-
 [ENROLL HERE](https://docs.google.com/forms/d/e/1FAIpQLSfTbj3kqvEJEb5RLjqJurfbHa8ckzQx0CjRzaizblue9ZOK5A/viewform?usp=sf_link)
 
 ### Program Purpose
-Our program was created to promote and cultivate relevant career building/skill enrichment resources, a community for students to share their knowledge with peers around the world, and to help catapult their careers.”
+The program was created to promote and cultivate relevant career building/skill enrichment resources, a community for students to share their knowledge with peers around the world, and to help catapult their careers.”
 
-Our community content can be found at [https://section.io/engineering-education](https://section.io/engineering-education).
+EngEd community content can be found at [https://section.io/engineering-education](https://section.io/engineering-education).
 
 The Section team will monitor and manage the overall Program.
 
@@ -21,7 +19,14 @@ To join the program, we ask that students be part of a university level CS class
 - Be sure to sign up to the Section Community Slack Channel at [slack.section.io](https://sectionio-community.slack.com/). Once signed up, join the **#eng-ed** channel for ongoing program communications.
 
 ### EngEd Community Contribution Initiative
-One of our main goals for the EngEd community is to provide students/contributors a friendly and inviting place to contribute to real-world projects to help students better build up their professional portfolios and profiles (upon entering the DEV career space). We would like to allow our EngEd community the opportunity to increase and build upon the skills they have by allowing them to help build the features/enhancements the community members want to see in the EngEd program. This Contribution Initiative is strictly restricted to the EngEd community.  
+One of our primary goals for the EngEd community is to provide students/contributors a friendly and inviting place to contribute to real-world projects to help students build up their professional portfolios and profiles (upon entering the DEV career space). 
+
+We have created a process for the EngEd community to suggest, contribute, add, and build features for the EngEd community. 
+By allowing the community to build the features/enhancements they want to see in the EngEd program, we can create the best community.
+
+This initiative works on increasing and building upon the skills the community already has in a real world setting, and having a place to showcase those achievements and accomplishments (via the EngEd content program). 
+
+This Contribution Initiative is strictly restricted to the EngEd community. 
 
 ### EngEd Community Contribution Submission Process
 1. To submit an EngEd feature contribution for consideration, be sure to first check [past feature suggestons](https://github.com/section-engineering-education/engineering-education/issues?q=is%3Aopen+is%3Aissue+label%3Aenhancement) to ensure relevance and prevent overlap. **Hint**: Use the this EngEd Content Suggestion form to propose article topic for approval and get feedback on topic ideas. [*View content form here*](https://github.com/section-engineering-education/engineering-education/issues/new?assignees=&labels=enhancement&template=enged-feature-suggestion.md&title=Feature+suggestion)
@@ -34,7 +39,7 @@ We also have an EngEd Article Submission Process that allows our contributors to
 
 This is in an effort to provide students a medium to showcase their skills, profiles, and contributed works to any potential employers. 
 
-Students are expected to contribute fully polished and ready to be published (by *fully polished and ready to be published articles* we mean pull request that are submitted in FINAL form draft. Pull requests that require **moderate to major review/revision will either be CLOSED or will not recieve payout upon being published**) articles will be eligible to recieve payouts. 
+Students are expected to contribute fully polished and ready to be published (by *fully polished and ready to be published articles* we mean pull request that are submitted in FINAL form draft. Pull requests that require **moderate to major review/revision will either be CLOSED**.
 
 ### Submission Instructions
 1. To submit an article for consideration, be sure to first check [published content](https://www.section.io/engineering-education/) to ensure relevance and prevent overlap. **Hint**: Use the this EngEd Content Suggestion form to propose article topic for approval and get feedback on topic ideas. [*View content form here*](https://github.com/section-io/engineering-education/issues/new?assignees=&labels=topic+suggestion&template=enged-content-idea-suggestion.md&title=)

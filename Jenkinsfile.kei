@@ -1,0 +1,39 @@
+#!groovy
+
+pipeline {
+  agent { 
+    label 'docker'
+  }
+
+  options {
+    ansiColor('xterm')
+  }
+
+  environment {
+    AWS_DEFAULT_REGION = 'ap-southeast-2'
+  }
+
+  stages {
+
+    stage('Deploy') {
+      steps {
+        withCredentials([
+        [
+          $class: 'AmazonWebServicesCredentialsBinding',
+          credentialsId: 'jenkins-section-website',
+        ],
+        usernamePassword(credentialsId: 'HARRY_DOCKER_HUB_USER', usernameVariable: 'DOCKER_USERNAME', passwordVariable: 'DOCKER_PASSWORD'),
+        string(credentialsId: 'www.section.io-kei-user-token',
+          variable: 'KEI_USER_TOKEN')
+        ]) {
+          sh 'echo "$DOCKER_PASSWORD" | docker login --username=$DOCKER_USERNAME --password-stdin'
+          sh 'curl -LO https://storage.googleapis.com/kubernetes-release/release/v1.19.6/bin/linux/amd64/kubectl && \
+              chmod +x ./kubectl && \
+              mv ./kubectl /usr/local/bin/kubectl'
+          sh 'make deployKEI'
+        }
+        build quietPeriod: 15, job: 'purge-enged-varnish-cache'
+      }
+    }
+  }
+}

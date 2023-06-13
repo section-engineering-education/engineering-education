@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: section-enged-beta-service
+  name: section-enged-beta-service
+  namespace: default
+spec:
+  ports:
+  - name: 80-80
+    port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+    app: section-enged-beta
+  sessionAffinity: None
+  type: ClusterIP
+status:
+  loadBalancer: {}

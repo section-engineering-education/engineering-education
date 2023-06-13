@@ -7,7 +7,7 @@ title: Getting Started With Debugging in Android Using Chucker
 description: In this tutorial, we will discuss how to debug android applications using chucker. Debugging is the process of analyzing the code in software to detect and remove potential errors that might cause your app to crash.
 author: hepatrique-okeyo
 date: 2022-03-25T00:00:00-03:50
-topics: [Android]
+topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 

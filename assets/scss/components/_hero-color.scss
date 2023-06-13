@@ -1,4 +1,4 @@
-.hero-color.fill-blue {
+.hero-color.fill-dark {
   min-height: pxem(252);
   overflow: hidden;
 
@@ -152,6 +152,7 @@
   }
 
   .hero-color-middle {
+    padding: 32px;
     text-align: left;
     overflow: hidden;
     min-height: pxem(252);
@@ -165,8 +166,32 @@
       text-align: center;
     }
 
+    h1 {
+      line-height: 1;
+      margin-bottom: 16px;
+    }
+
     p {
-      max-width: pxem(563);
+      line-height: $line-height-3;
+
+      &:last-of-type {
+        margin-top: 16px;
+      }
+
+      a {
+        color: $fill-dark;
+        font-weight: 500;
+        text-decoration: none;
+        line-height: 1.25;
+        background: $fill-green;
+        padding: 0.375rem 1rem;
+        border-radius: 0.4rem;
+        transition: background 200ms cubic-bezier(0.08,0.52,0.52,1);
+
+        &:hover {
+          background: #00b976;
+        }
+      }
     }
 
     &-right-stripes {
@@ -394,10 +419,6 @@
 
     @include mq($from: 420px ) {
       text-align: center;
-    }
-
-    p {
-      max-width: pxem(563);
     }
 
     a {
@@ -635,10 +656,6 @@
       text-align: center;
     }
 
-    p {
-      max-width: pxem(563);
-    }
-
     &-right-stripes {
       position: absolute;
       display: block;
@@ -864,10 +881,6 @@
 
     @include mq($from: 420px ) {
       text-align: center;
-    }
-
-    p {
-      max-width: pxem(563);
     }
 
     &-right-stripes {

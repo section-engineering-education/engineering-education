@@ -18,6 +18,15 @@ JavaScript has an inbuilt `Date` object that can be used for various application
 <!--more-->
 Date and time are crucial parts of our day-to-day lives. Knowing how to work with them is very important when developing applications or software.
 
+### Table of contents
+- [Table of contents](#table-of-contents)
+- [Prerequisites](#prerequisites)
+- [Getting the day of the week from a date](#1-getting-the-day-of-the-week-from-a-date)
+- [Calculating the number of days between two dates](#2-calculating-the-number-of-days-between-two-dates)
+- [Calculating the number of workdays between two dates](#3-calculating-the-number-of-workdays-between-two-dates-excluding-weekends)
+- [Building a simple countdown timer](#4-building-a-simple-countdown-timer)
+- [Conclusion](#conclusion)
+
 ### Prerequisites
 To follow this tutorial smoothly, we will need:
 - Fundamental knowledge in JavaScript and HTML

@@ -63,12 +63,24 @@
 
           {{ $articleUrlsList = delimit $articleUrlsList ", "}}
 
+          <h4>Author Insights</h4>
+
           <div class="insights-section">
-            <div class="insight page-views" data-before="Total Number of Articles Written">
+            <div class="insight total-num-articles" data-before="Total Number of Articles Written">
               <img src="{{ if eq $.Site.Params.env "local" }}/{{ else }}/engineering-education/{{ end }}images/total-articles-icon.png" alt="Total Number of Articles Icon" />
               <p>{{ $numberOfArticles }}</p>
             </div>
+            <div class="insight total-article-likes" data-before="Total Number of Article Likes">
+              <img src="{{ if eq $.Site.Params.env "local" }}/{{ else }}/engineering-education/{{ end }}images/clapping-icon.png" alt="Total Number of Articles Icon" />
+              <p id="totalArticleLikes">0</p>
+            </div>
+            <div class="insight total-page-views" data-before="Total Number of Article Page Views">
+              <img src="{{ if eq $.Site.Params.env "local" }}/{{ else }}/engineering-education/{{ end }}images/page-views-icon.png" alt="Total Number of Article Page Views" />
+              <p id="totalPageViews">0</p>
+            </div>
           </div>
+
+          {{ partial "engineering-education/badges-display-list.html" (dict "studentBadges" . "site" $.Site "relpermalink" $.RelPermalink) }}
           
           {{ with .Params.skills }} 
             <div class="author-skills">
@@ -104,12 +116,43 @@
               <a href="{{ . }}" target="_blank">Visit website</a>
             </li>
             {{ end }}
+            {{ with .Params.resume }}
+            <li>
+              <i class="resume"></i>
+              <a href="{{ . }}" target="_blank">Resume</a>
+            </li>
+            {{ end }}
           </ul>
         </div>
       </div>
     </div>
   </section>
 </article>
+
+{{ with .Params.projects }}
+  <section class="projects-section">
+    <div class="section-container projects-listing-container">
+      <h2 class="title-3 text-blue xs-pb-20">Featured Projects</h2>
+      <div class="projects">
+        {{ range . }}
+          <div class="project">
+            <div class="meta-data">
+              <h3 class="title-5 title"><a href="{{ .url }}">{{ .title }}</a></h3>
+              <div class="bottom-row">
+                <span>{{ .role }}</span>
+                <span>{{ .date }}</span>
+              </div>
+            </div>
+            <div class="info">
+              <p class="text-16 text-color">{{ .description }}</p>
+              <a class="link-with-arrow-blue text-blue text-18-medium" href="{{ .url }}">View Project</a>
+            </div>
+          </div>
+        {{ end }}
+      </div>
+    </div>
+  </section>
+{{ end }}
 
 <section class="blog-listing-posts">
   <div class="section-container blog-listing-posts-container">
@@ -131,27 +174,9 @@
           {{ $articlePermalink = .Permalink }}
         {{ end }}
 
-        {{ $articleSlug := .Permalink | relURL | anchorize }}
+        {{ $articleSlug := replaceRE "(https://www.section.io/)|(http://localhost:1313/)|(https://beta.section.io/)" "" $articlePermalink }}
 
-        <script defer type="text/javascript">
-          document.addEventListener("DOMContentLoaded", async function() {
-            fetch('https://talk.hyvor.com/api/v1/page/?page_identifier={{ $articlePermalink }}&website_id={{ $hyvorId }}')
-              .then(response => response.json())
-              .then(data => {
-                if (data.status === true) {
-                  if (!data.data.comments_count) {
-                    document.getElementById('comments-count-{{ $elem_index }}').innerText = 0;
-                  } else {
-                    document.getElementById('comments-count-{{ $elem_index }}').innerText = data.data.comments_count;
-                  }
-                  document.getElementById('likes-count-{{ $elem_index }}').innerText = data.data.reactions[0];
-                }
-              })
-              .catch(err => console.log('Error: ', err));
-          });
-        </script>
-        
-        <li class="blog-listing-posts-item mix {{ with .Params.tags }}{{ range . }}{{ lower . }} {{ end }}{{ end }}">
+        <li class="blog-listing-posts-item mix {{ with .Params.tags }}{{ range . }}{{ lower . }} {{ end }}{{ end }}" data-id="{{ $articlePermalink }}">
           <a class="decoration-none xs-pb-40 xs-pt-40 pl-25 flex flex-wrap" href="{{.Permalink}}">
 
             <div class="blog-listing-posts-item-image">
@@ -176,13 +201,14 @@
 
               <div id="insightsData-{{ $elem_index }}" class="blog-listing-posts-item-insights-data">
                 <div class="data-point">
-                  <p><img class="icon" src="{{ if eq $.Site.Params.env "local" }}/{{ else }}/engineering-education/{{ end }}images/clapping-icon.png" alt="Article Likes" /></p><span id="likes-count-{{ $elem_index }}">0</span>
+                  <p><img class="icon" src="{{ if eq $.Site.Params.env "local" }}/{{ else }}/engineering-education/{{ end }}images/clapping-icon.png" alt="Article Likes" /></p><span class="likes-count" id="likes-count-{{ $elem_index }}">0</span>
                 </div>
                 <div class="data-point">
-                  <p><img class="icon" src="{{ if eq $.Site.Params.env "local" }}/{{ else }}/engineering-education/{{ end }}images/comment-icon.png" alt="Article Comments" /></p><span id="comments-count-{{ $elem_index }}">0</span>
+                  <p><img class="icon" src="{{ if eq $.Site.Params.env "local" }}/{{ else }}/engineering-education/{{ end }}images/comment-icon.png" alt="Article Comments" /></p><span class="comment-count" id="comments-count-{{ $elem_index }}">0</span>
                 </div>
                 <div class="data-point page-views page-views-icon-{{ $elem_index }}">
-                  <p><img class="icon" src="{{ if eq $.Site.Params.env "local" }}/{{ else }}/engineering-education/{{ end }}images/page-views-icon.png" alt="Page Views" /></p><span id="page-views-count-{{ $elem_index }}">0</span>
+                  <p><img class="icon" src="{{ if eq $.Site.Params.env "local" }}/{{ else }}/engineering-education/{{ end }}images/page-views-icon.png" alt="Page Views" /></p>
+                  <span data-slug="{{ if eq $.Site.Params.env "local" }}engineering-education/{{ $articleSlug }}{{ else }}{{ $articleSlug }}{{ end }}" id="page-views-count-{{ $elem_index }}">0</span>
                 </div>
               </div>
             </div>
@@ -222,16 +248,26 @@
     el.classList.toggle('tooltip');
   }
   
+  // Add touch event listener for mobile.
   const insightItems = document.getElementsByClassName("insight");
-
   for (let i = 0; i < insightItems.length; i++) {
     insightItems[i].addEventListener("touch", () => toggleToolTip(insightItems[i]))
   }
 
+  // On page load, handle insights, comments and pageviews.
   document.addEventListener("DOMContentLoaded", async function() {
-    const getPageView = (url, currentUrl) => {
+    const getPageViews = (urls) => {
+      // Filter out empty strings.
+      const filteredUrls = urls.filter(item => item);
+
+      // Return out of function if array is empty.
+      if (!filteredUrls.length) {
+        return;
+      }
+
+      let totalNumPageViews = 0;
       const urlRegex = /(http:\/\/localhost:1313\/)|(https:\/\/beta.section.io\/engineering-education\/)|(https:\/\/www.section.io\/engineering-education\/)/gi;
-      const trimmedUrl = url.replace(urlRegex, '');
+      const trimmedUrls = urls.map(url => url.replace(urlRegex, ''));
 
       const handleError = response => {
         if (!response.ok) {
@@ -241,32 +277,82 @@
         }
       }
 
-      return fetch(`https:\/\/api.www.section.io/pageviews/${trimmedUrl}`)
+      return fetch('{{ if eq $.Site.Params.env "local" }}http://localhost:3000/pageviews/{{ else }}https:\/\/api.www.section.io/pageviews/{{ end }}', { 
+        "method": "POST",
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "body": JSON.stringify(trimmedUrls)
+      })
         .then(handleError)
         .then(data => {
-          if (data.pageViews) {
-            const numPageViews = parseInt(data.pageViews).toLocaleString();
-            const pageViewsEl = document.querySelector(`#page-views-count-${currentUrl}`);
-            const parentElement = document.querySelector(`.page-views-icon-${currentUrl}`);
-            pageViewsEl.innerText = numPageViews;
-            parentElement.classList.add('visible');
+          if (data.length) {
+            data.forEach(item => {
+              // Add pageviews to the sum.
+              totalNumPageViews += parseInt(item.pageViews);
+
+              // Prettify and display number of page views for each article.
+              const numPageViews = parseInt(item.pageViews).toLocaleString();
+              const pageViewsEl = document.querySelector(`[data-slug="${item.url.substring(1)}"]`);
+              const parentElement = pageViewsEl.closest('.page-views');
+              pageViewsEl.innerText = numPageViews;
+              parentElement.classList.add('visible');
+            })
+
+            // Add totalNumPageViews.
+            const totalPageViewsElement = document.getElementById('totalPageViews');
+            totalPageViewsElement.innerText = totalNumPageViews.toLocaleString();
           }
         })
         .catch(err => console.log('err:', err));
     }
 
-    const applyPageViews = async (urls) => {
-      let currentUrl = 0;
+    // Request all article data from Hyvor talk - this will allow us to use 
+    // one request per page, instead of separare requests for each article.
+    const requestArticlesData = async (articleUrls) => {
+      let totalNumberOfLikes = 0;
 
-      while (currentUrl <= urls.length - 1) {
-        await getPageView(urls[currentUrl], currentUrl);
-        currentUrl++;
+      const url = new URL('https://talk.hyvor.com/api/v1/pages/'); 
+      const params = {
+        'page_identifiers': JSON.stringify(articleUrls),
+        'website_id': {{ $hyvorId }},
+        'limit': 250
       }
+      Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
+
+      fetch(url)
+        .then(response => response.json())
+        .then(data => {
+          // Map through each data item
+          // Add number of comments and likes to each article by data-id.
+          if (data.status === true && data.data.length) {
+            data.data.forEach(item => {
+              const articleElement = document.querySelector(`[data-id='${item.page_identifier}']`);
+              const commentCountElement = articleElement.querySelector('.comment-count');
+              const likesCountElement = articleElement.querySelector('.likes-count');
+
+              // Add comment count and number of likes
+              commentCountElement.innerText = item.comments_count;
+              likesCountElement.innerText = item.reactions[0];
+              totalNumberOfLikes += item.reactions[0]
+            })
+
+            // Add totalArticleLikes.
+            const totalArticleLikesElement = document.getElementById('totalArticleLikes');
+            totalArticleLikesElement.innerText = totalNumberOfLikes;
+          }
+        })
+        .catch(error => console.log("error: ", error))
     }
 
-    const urlsOfArticles = "{{ $articleUrlsList }}";
+    const urlsOfArticles = '{{ $articleUrlsList }}';
     const articlesArr = urlsOfArticles.split(', ');
-    applyPageViews(articlesArr);
+    
+    // Apply page views to each article.
+    getPageViews(articlesArr);
+  
+    // Fetch article data from HyvorTalk
+    requestArticlesData(articlesArr);
   });
   
 </script>

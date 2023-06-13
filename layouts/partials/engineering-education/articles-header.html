@@ -1,3 +1,5 @@
+
+
 <!-- Sajari ping-back code -->
 <script type="text/javascript">
   var _sj = _sj || [];
@@ -7,7 +9,7 @@
     var sj = document.createElement('script');
     sj.type = 'text/javascript';
     sj.async = true;
-    sj.src = '//cdn.sajari.com/js/sj.js';
+    sj.src = '//cdn.sajari.net/v2/js/sj.js';
     var s = document.getElementsByTagName('script')[0];
     s.parentNode.insertBefore(sj, s);
   })();
@@ -16,25 +18,15 @@
 
 <article>
   <header>
-    <section class='hero-color flex align-center justify-center fill-blue'>
-      <div class="hero-color-left relative">
-        <div class="hero-color-left-large-stripe"></div>
-        <div class="hero-color-left-small-color"></div>
-        <div class="hero-color-left-small-stripe"></div>
-      </div>
+    <section class='hero-color flex align-center justify-center fill-dark'>
       <div class="hero-color-middle flex align-center justify-center relative">
-        <div class="hero-color-middle-left-stripes"></div>
         <div class="prl-5">
-          <h1 class="title-2 text-white xs-pb-10">EngEd Program</h1>
-          <p class="text-16 text-white" style="text-align: left;">
-          <span class="justify-center">Section's Engineering Education (EngEd) Program fosters a community of university students in Computer Science related fields of study to connect, and enrich their skills as they enter the workforce. You can find more information and program guidelines in the <a style="text-decoration: none;" href="https://github.com/section-io/engineering-education"><span class="text-white" style="text-decoration: underline;">GitHub repository</span></a>. If you're currently enrolled in a Computer Science related field of study and are interested in participating in the program, please complete <a style="text-decoration: none;" href="https://docs.google.com/forms/d/e/1FAIpQLSfTbj3kqvEJEb5RLjqJurfbHa8ckzQx0CjRzaizblue9ZOK5A/viewform?usp=sf_link"><span class="text-white" style="text-decoration: underline;">this form</span></a>.</span>
+          <h1 class="title-2 text-white">Deploy your apps to a supercloud in a few clicks</h1>
+          <p class="text-16 text-white">This Engineering Education program is supported by Section. Instantly deploy your GitHub apps, Docker containers or K8s namespaces to a supercloud.</p>
+          <p class="text-16 text-white">
+            <a href="https://www.section.io?utm_source=enged&utm_campaign=article&utm_medium=organic">Try It For Free</a>
           </p>
         </div>
-        <div class="hero-color-middle-right-stripes"></div>
-      </div>
-      <div class="hero-color-right relative">
-        <div class="hero-color-right-large-stripe"></div>
-        <div class="hero-color-right-small-color"></div>
       </div>
     </section>
   </header>
@@ -69,6 +61,9 @@
       <span class="text-18-medium"><a href="/engineering-education/authors/" class="decoration-none link-with-arrow-blue">View All EngEd Contributors</a></span>
     </p>
   </section>
+
+  {{ partial "engineering-education/testimonials-slider" (dict "component" . "context" . "site" .Site) }}
+  {{ partial "engineering-education/trending-articles" (dict "component" . "context" . "site" .Site) }}
 
   <div class="section enged-listing-search flex align-center xs-pb-20 xs-pt-40 sm-pb-300 sm-pt-60">
     <div class="section-container enged-listing-search-container xs-mb-20">

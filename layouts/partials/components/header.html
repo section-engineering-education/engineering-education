@@ -21,59 +21,26 @@
         </svg>
       </a>
       <div style="position: relative;" class="section-nav-primary-uncollapsed">
+        {{ if not (eq .Layout "lp-slim") }}
         <ul class="section-nav-main list-flex">
-
-          <li class="has-dropdown relative"><a class="text-16 text-link decoration-none"><span>Platform</span></a>
-            <ul class="section-nav-main-dropdown list-unstyled fill-white xs-pt-10 xs-pb-30 xs-pl-10 xs-pr-30 absolute flex xs-flex">
-
-              <ul class="flex xs-flex-column xs-pb-30 xs-pl-10 xs-pr-80">
-                <h3 class="text-18-medium xs-mb-10 text-green -endpoints"><i class="material-icons">gps_fixed</i> Section Edge Platform</h3>
-                <ul class="list-unstyled xs-mt-10 xs-mb-15">
-                  <li class="xs-mb-10"><a href="/kubernetes-edge-interface/" class="text-15 text-color decoration-none">Kubernetes Edge Interface (KEI)</a></li>
-                  <li class="xs-mb-10"><a href="/adaptive-edge-engine/" class="text-15 text-color decoration-none">Adaptive Edge Engine (AEE)</a></li>
-                  <li class="xs-mb-10"><a href="/global-edge-network/" class="text-15 text-color decoration-none">Global Edge Network</a></li>
-                </ul>
-              </ul>
-
-              <ul class="flex xs-flex-column xs-pb-30 xs-pl-10 xs-pr-80">
-                <h3 class="text-18-medium xs-mb-10 text-orange -endpoints"><i class="material-icons">view_module</i> Core Platform Features</h3>
-                <ul class="list-unstyled xs-mt-10 xs-mb-15">
-                  <li class="xs-mb-10"><a href="/application-programming-interface/" class="text-15 text-color decoration-none">API</a></li>
-                  <li class="xs-mb-10"><a href="/security-edge-compute-platform/" class="text-15 text-color decoration-none">Security</a></li>
-                  <li class="xs-mb-10"><a href="/edge-observability/" class="text-15 text-color decoration-none">Observability</a></li>
-                </ul>
-              </ul>
-
-              <ul class="flex xs-flex-column xs-pb-30 xs-pl-10 xs-pr-80">
-                <h3 class="text-18-medium xs-mb-10 text-light-blue -modern-dev"><i class="material-icons">select_all</i> Add-On Edge Services</h3>
-
-                <ul class="list-unstyled xs-mt-10 xs-mb-15">
-                  <li class="xs-mb-10"><a href="/platform-extensions/" class="text-15 text-color decoration-none">Platform Extensions</a></li>
-                  <li class="xs-mb-10"><a href="/recommended-partners/" class="text-15 text-color decoration-none">Recommended Partners</a></li>
-                </ul>
-
-              </ul>
-
-
-
-            </ul>
-          </li>
-
           <li><a href="https://www.section.io/docs/" class="text-16 text-link decoration-none">Docs</a></li>
           <li class="has-dropdown relative"><a class="text-16 text-link decoration-none"><span>Resources</span></a>
-            <ul class="section-nav-main-dropdown list-unstyled fill-white xs-pt-10 xs-pb-5 xs-pl-10 xs-pr-30 absolute flex xs-flex-column">
-              <li class="xs-mb-10"><a class="decoration-none text-15 text-color" href="/blog/">Blog</a></li>
-              <li class="xs-mb-10"><a class="decoration-none text-15 text-color" href="/edge-compute-content-resources/">Edge Content Library</a></li>
-              <li class="xs-mb-10"><a class="decoration-none text-15 text-color" href="/solution-briefs/">Solution Briefs</a></li>
-              <li class="xs-mb-10"><a class="decoration-none text-15 text-color" href="/engineering-education/">Engineering Education</a></li>
-              <li class="xs-mb-10"><a class="decoration-none text-15 text-color" href="/about/">About Section</a><span class="text-11" style="background-color: #00a86b; color: white; margin-left: 10px; padding: 3px; font-weight: 600;">WE'RE HIRING</span></li>
+            <ul class="section-nav-main-dropdown list-unstyled fill-white xs-pt-10 xs-pb-5 absolute flex xs-flex-column">
+              <li class="xs-mb-10"><a class="decoration-none text-15 text-color" href="/blog/?utm_source=enged&utm_campaign=article&utm_medium=organic">Blog</a></li>
+              <li class="xs-mb-10"><a class="decoration-none text-15 text-color" href="/edge-compute-content-resources/?utm_source=enged&utm_campaign=article&utm_medium=organic">Content Library</a></li>
+              <li class="xs-mb-10"><a class="decoration-none text-15 text-color" href="/engineering-education/?utm_source=enged&utm_campaign=article&utm_medium=organic">Engineering Education</a></li>
+              <li class="xs-mb-10"><a class="decoration-none text-15 text-color" href="/about/?utm_source=enged&utm_campaign=article&utm_medium=organic">About</a></li>
             </ul>
           </li>
-          <li><a href="https://www.section.io/pricing/" class="text-16 text-link decoration-none">Pricing</a></li>
-
+          <li><a href="https://www.section.io/pricing/?utm_source=enged&utm_campaign=article&utm_medium=organic" class="text-16 text-link decoration-none">Pricing</a></li>
         </ul>
+        {{ end }}
       </div>
     </div>
+    {{ if not (eq .Layout "lp-slim") }}
+    <div class="section-nav-secondary flex align-center">
+    </div>
+    {{ end }}
     <div class="section-nav-triggers">
       <div class="section-nav-triggers-show pointer"><span class="text-15-semi text-black"><svg width="24" height="17" xmlns="http://www.w3.org/2000/svg">
         <g fill="#09090B" fill-rule="nonzero">
@@ -118,23 +85,7 @@
     </div>
     <div class="section-nav-mobile-inner">
       <ul class="section-nav-mobile-inner-main list-unstyled pt-5">
-        <li class="has-dropdown-mega xs-mb-20"><a href="#" class="text-white decoration-none xs-pb-20 title-4-menu"><span>Platform</span></a>
-          <div class="section-nav-mobile-dropdown xs-mt-10 drop-mega">
-              <div class="pointer-wrapper">
-                <div class="pointer-object -flip">
-                  <svg width="17" height="12" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M15.642 1.071l-7.07 8.071L1.5 1.072" fill-rule="nonzero" stroke="#FFF" stroke-width="3" fill="none"/>
-                  </svg>
-                </div>
-              </div>
-            </div>
-            {{- partial "mobile/mega" . -}}
-          </li>
-
-        <li class="xs-mb-20">
-          <a href="https://www.section.io/docs/" class="text-white decoration-none xs-pb-20 title-4-menu"><span>Docs</span></a>
-        </li>
-        <li class="has-dropdown xs-mb-20"><span class="text-white decoration-none title-4-menu xs-pb-20 section-nav-mobile-inner-main-noclick"><span>Resources</span></span>
+      <li class="has-dropdown xs-mb-20"><span class="text-white decoration-none title-4-menu xs-pb-20 section-nav-mobile-inner-main-noclick"><span>Resources</span></span>
         <div class="section-nav-mobile-dropdown xs-mt-10 pr-10">
             <div class="pointer-wrapper">
               <div class="pointer-object -flip">
@@ -145,17 +96,17 @@
             </div>
           </div>
           <ul class="section-nav-mobile-drop list-unstyled fill-white xs-pt-20 xs-pb-10 xs-mt-10">
-            <li class="xs-mb-10"><a class="text-20-regular text-color decoration-none" href="/blog/">Blog</a></li>
-            <li class="xs-mb-10"><a class="text-20-regular text-color decoration-none" href="/edge-compute-content-resources/">Content Library</a></li>
-            <li class="xs-mb-10"><a class="text-20-regular text-color decoration-none" href="/solution-briefs/">Solution Briefs</a></li>
-            <li class="xs-mb-10"><a class="text-20-regular text-color decoration-none" href="/engineering-education/">Engineering Education</a></li>
-            <li class="xs-mb-10"><a class="text-20-regular text-color decoration-none" href="/about/">About Section</a><span class="text-11" style="background-color: #00a86b; color: white; margin-left: 10px; padding: 3px; font-weight: 600;">WE'RE HIRING</span></li>
+            <li class="xs-mb-10"><a class="text-20-regular text-color decoration-none" href="/blog/?utm_source=enged&utm_campaign=article&utm_medium=organic">Blog</a></li>
+            <li class="xs-mb-10"><a class="text-20-regular text-color decoration-none" href="/edge-compute-content-resources/?utm_source=enged&utm_campaign=article&utm_medium=organic">Content Library</a></li>
+            <li class="xs-mb-10"><a class="text-20-regular text-color decoration-none" href="/engineering-education/?utm_source=enged&utm_campaign=article&utm_medium=organic">Engineering Education</a></li>
+            <li class="xs-mb-10"><a class="text-20-regular text-color decoration-none" href="/about/?utm_source=enged&utm_campaign=article&utm_medium=organic">About Section</a></li>
           </ul>
         </li>
-        <li class="xs-mb-20">
-          <a href="https://www.section.io/pricing/" class="text-white decoration-none xs-pb-20 title-4-menu"><span>Pricing</span></a>
-        </li>
 
+        <li class="xs-mb-20">
+          <a href="https://www.section.io/docs/" class="text-white decoration-none xs-pb-20 title-4-menu"><span>Docs</span></a>
+        </li>
+        <li class="xs-mb-20"><a href="https://section.io/pricing/?utm_source=enged&utm_campaign=article&utm_medium=organic" class="text-white decoration-none title-4-menu xs-pb-20"><span>Pricing</span></a></li>
       </ul>
     </div>
   </div>
