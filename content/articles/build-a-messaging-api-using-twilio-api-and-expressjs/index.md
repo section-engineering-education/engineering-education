@@ -2,11 +2,11 @@
 layout: engineering-education
 status: 
 published: 
-url: /build-a-messaging-api-using-twilio's-api-and-express.js/
-title: Build a Messaging API Using Twilio's API and Express
-description:  In this tutorial, we will build a messaging API using Twilio's API and Express.
+url: /build-a-messaging-api-using-twilio-api-and-expressjs/
+title: How to Build a Messaging API Using Twilio's API and Express
+description:  This tutorial helps you learn how to build a simple messaging API using Twilio and Express.
 author: sodiq-agunbiade
-date: 2022-06-13T07:44:44.462Z
+date: 2023-06-22T00:00:00-05:17
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -14,34 +14,34 @@ images:
  - url: /engineering-education/build-a-messaging-api-using-twilio's-api-and-express.js/hero.jpg
    alt: Build a Messaging API Using Twilio's API and Express
 ---
-
+Twilio has several APIs that allow you to send and receive a high volume of SMS messages anywhere in the world. Once you register a Twilio phone number, you can use the APIs to manage outbound and inbound messages.
 <!-- more -->
-### Introduction
-Twilio has a couple of APIs that allow you to send and receive a high volume of SMS messages anywhere in the world. Once you get your registered Twilio phone number, you can use the APIs to manage outbound messages (“sending”) and inbound messages (“receiving”).
-
 In this article, you will learn how to send SMS messages using the Twilio API with Node.js and Express and save the sent messages in a MongoDB database.
 
-We'll build an API to create contacts for users, send SMS to user-saved contact more like an example phonebook and save sent messages by a user using the Express framework in Nodejs. If you want to send and receive messages with Facebook Messenger, Viber, or WhatsApp, you can do that as well with Twilo’s Message API but our focus in this article is on sending SMS messages using the third-party Twilio message API.
+We'll build an API to create contacts for users, send SMS to user-saved contact more like an example phonebook and save sent messages using the Express framework in Nodejs. 
+
+If you want to send and receive messages with Facebook Messenger, Viber, or WhatsApp, you can do that as well with Twilo’s Message API but our focus in this article is on sending SMS messages using the third-party Twilio message API.
 
 You can extend the application we're building here to reply to incoming SMS messages or include more complex, interactive elements and give you a head start building autoresponders for your SMS needs, depending on your needs.
 
 ### Briefly about Twilio and its Message API
 
-Twilio is a customer engagement platform used by a whole lot of businesses and millions of developers worldwide to build unique and personalized experiences for their respective customers.
+Twilio is a customer engagement platform used by a whole lot of businesses and millions of developers worldwide to build unique and personalized experiences for their customers.
 
 Twilio's Programmable SMS API helps you add robust messaging capabilities to your applications. Using this REST API, you can send and receive SMS messages, track the delivery of sent messages, schedule SMS messages to send at a later time, and retrieve and modify message history.
 
 ### Prerequisites
+To follow along, you need:
 
-* Nodejs
-* Npm or Yarn
-* Code Editor (E.g. VsCode)
-* Twilio account
-* A knowledge of Expressjs
+- Node.js
+- Npm or Yarn
+- Code Editor (E.g. VsCode)
+- Twilio account
+- Knowledge of Express.js
 
-### Getting Started
+### Getting started
 
-If you don’t have Node.js installed just head on to the official [Node.js website](https://nodejs.org/en/) to get Nodejs on your Pc. Once you install Nodejs, you will automatically have npm installed and then you can head over to [Twilio](https://www.twilio.com/try-twilio) now to get an account in less than a minute.
+If you don’t have Node.js installed, head on to the official [Node.js website](https://nodejs.org/en/) to download Node.js on your PC. Once you install Node.js, you will automatically have npm installed and then you can head over to [Twilio](https://www.twilio.com/try-twilio) to create an account.
 
 Set up a Node server that provides the API for sending a message and the API structure
 
@@ -51,37 +51,43 @@ First, we need to initialise your project using npm; we do so by typing the foll
 npm init
 ```
 
-This will prompt some questions asked, you can answer them appropriately, and when this is done, a package.json file will be created for you.
+You'll have to answer some questions related to the project then a `package.json` file will be created for you.
 
-Next, we need to install the required dependencies. Type the following in your terminal to install the following packages:
+Next, we need to install the required dependencies. Type the following command in your terminal to install the following packages:
 
 ```bash
 npm install express bcrypt jsonwebtoken mongoose twilio dotenv
 ```
 
-You can also install other dependencies using the command structure as follows as you need them `npm install [package name]`
+You can also install other dependencies using the command structure below:
 
-### Structure of our API
+```bash
+npm install [package name]
+```
+
+### API struture
 
 ![](https://lh5.googleusercontent.com/Td6h-JOoKA7sH6pqzD8il-FfxRzDOfInCn91Vl-n5MBjfPvtD6i4xQo5G2NzfYKnyQA6yAKmB-UGjLzDhe0YdOdqpw_oCDQvyQoW6MLSQm2ftISD1K9ziYuAcAwP9mPwIXxQidhTxJc)
 
 In the image above, we take a look at how well our API is structured.
 
-In the source folder, we have controllers (this is where the functionality of every endpoint is defined/available for usage for the API), middleware (contains a function(s) that has access to the request object and verifies the token of a user), models (where the database structures are defined), routes (where endpoints are defined for usage be it POST, GET, etc) and utils (utility functions that can be used are here). Outside the src (source) folder, we have our index.js (where the database connection is done and our server is being run) and app.js (where our app is configured and available routes are specified) file. We also have the ‘.env’ file that contains environment variables and our ‘.gitignore’ file.
+In the source folder, we have `controllers` (this is where the functionality of every endpoint is defined/available for usage for the API), middleware (contains a function(s) that has access to the request object and verifies the token of a user), `models` (where the database structures are defined), `routes` (where endpoints are defined for usage be it POST, GET, etc) and `utils` (utility functions that can be used are here). 
+
+Outside the `src` (source) folder, we have our `index.js` (where the database connection is done and our server is being run) and `app.js` (where our app is configured and available routes are specified) file. We also have the `.env` file that contains environment variables and our `.gitignore` file.
 
 ![](https://lh5.googleusercontent.com/xcDFFQUzz7uzI520XpoKNboZqvmW5PF1WvEkKS_RN1U2jigjQDS7j9OLifYy2rALpdU5-Kj3oTkp7C4unix8FM1XYMtQaIwMF9PYKmHLyirLzbLrJ5XkAjZez09do8C7BnS0TRwLTV4)
 
-                    A .env.sample file 
+    A .env.sample file 
 
-Above is what our API requires in the .env file (i.e environment variables needed to run the API). The Twilio values are provided in your Twilio account.
+The API requires the above values to work. The Twilio values are provided in your Twilio account.
 
 ![](https://lh5.googleusercontent.com/KVEC1JBJIGVzkgIBXvlwrrpBdbxmiljc0cHN0ZPD0vjrHxKRCV6EYotEb329BGvhNGUP9XG1IKTqn_sFYvyrAtdlEhuBEextyjcN7KSS-7NLWq29ZjMScEFFMsirUPFDrRlhJt2_RQ0)
 
-                         Index.js file
+    Index.js file
 
 ![](https://lh6.googleusercontent.com/ScUpMYbGYd8_hv9eWix2J-53puS6SJ9ea9DJ7M7QvpdYTT9FWU4b_5JmnFaDqdCu1EBFv6W9-RWBIU4ZCb-Unz6XP-w4zMS7WiRy80EmbeqGfoRUyEbqWyOg4_iL8tk7EsDWevfStZk)
 
-                          App.js file
+   App.js file
 
 ### Exploring the features/functionality of our API
 
@@ -89,19 +95,19 @@ Firstly, we’ll talk about the structure of the database structure of our API a
 
 We connect to our MongoDB database in the Index.js file from the image above using mongoose ORM as seen below:
 
-## 1. Users Model
+## 1. Users model
 
 ![](https://lh6.googleusercontent.com/N2_y9n1B16P6xfgfW7sr4aE5onA_3HflvVZr_DTVG4lrTARuYI7whn4FgGjToHVKEh8_H5_xlb3NhoBFJPrYKA77CMynE8CbE6WR3Cscu4ZNbugxq4AwXA2k8h3TdG92PrG-dYPfWVY)
 
 This model takes only user details which consist of name, email, password and date (when the user created an account/signed up) as we can see in the image.
 
-### 2. Messages Model
+### 2. Messages model
 
 ![](https://lh6.googleusercontent.com/H9LeHAJgGPhu9lCTq5C2jZe5Ww0rMoYtAa9jHzDJKiuidC6R6V_vJmGq2NsRmxmYaGOwohE0KIKcdxIRnkHosWvExvLw_P1E8emZ6gqp1ZpKUgeGevMWPQKQD98RMJjKocouFrd8iYc)
 
 From what we can see above, it has: from (a reference to the sender of a message), to (the receiver of the message), message (the content of the message sent) and date (when the date was sent).
 
-### 3. Contacts Model
+### 3. Contacts model
 
 ![](https://lh3.googleusercontent.com/ExHZCPWVFb3VILusolgfUXdzs3UB4M5RnbKc2IW0MhvaA9UYuhn7KL_xQmwxbNGDrGjO1wLsIWOwVL8EUm0VXV5XlGzy7q_6tbXjv-gpDCusSXVqe2_eYkXOrUvMLHv5sEFE9XYRCgs)
 
@@ -116,13 +122,13 @@ Now, let’s talk about the routes we have in our API. We basically have three m
 
 ![](https://lh4.googleusercontent.com/rgwVi7wDg3RyfLGtIP_j1jMpaHDSOi4fo0eJ2Az_c-Z2xanXSRL4TgEM2f_EVyHLPZxZVxS6bmdRw0AOGmcV_gUji0PWOHCoAZNyC9sGZmdFW1TxDCW9xEJOJC0j5QE3uBKPOaIQ40U)
 
-                     users.js route file
+    users.js route file
 
 2. The <b>message route</b> file has only one endpoint which is the route to send a message(s) to a saved contact.
 
 ![](https://lh4.googleusercontent.com/Dd3EyMGwVrUnjGIvxak1veExsSnbo5F6cOPlD6YQ_5ABBLoauS1KPqziR9HyMRN1AGDkqGra4yWtW8Qq-hTtaXm13S3j_bCXSuVrgbGhMqxM8EvN57_rXW1KgZpayTAFOFLqNuzW2Wg)
 
-                    messages.js route file
+    messages.js route file
 
 3. The <b>contact route</b> file contains five endpoints for you to:
 * Create contacts for a user
@@ -133,7 +139,7 @@ Now, let’s talk about the routes we have in our API. We basically have three m
 
 ![](https://lh6.googleusercontent.com/CY0Rhvx5j9Lt-sqDBMVLSchBwmB2S0uFBvjh1hq7tnt2KYYQL_Yh9iOfF6_-BjYHUUrR8bSFuBqfX5nc2DaIyl4RkJOElOwGXMjPVT97ArTWOK0xDDUxGyzjtQqPkbVdbqJmVoNB4p8)
 
-                    contacts.js route file
+    contacts.js route file
 
 As we can see in all the route images, there is a `verifyToken` in the route parameter. It is called middleware as we discussed above. Our authentication middleware is passed to an authenticated route (a route that requires a user to log in) to verify if the token used to log in is valid.
 
@@ -141,7 +147,7 @@ We can see the implementation in the image below:
 
 ![](https://lh6.googleusercontent.com/1sBlL5hL3MMEujauXTzyEHpRMpuw0xAK74ktDheYPZzxiW0AD8dL4WUS-SrpiqtBhfNhOpdiq3IGaY-5b4TMArr72uA2zjkxNvDjQJMOIRXDTM6DJyx5Ehe-2mYx_xnRI2j5nklS4NU)
 
-                    auth.js middleware file
+    auth.js middleware file
 
 Lastly, we’ll talk about our controllers which we talked about above.
 
@@ -510,16 +516,16 @@ exports.updateContact = async (req, res) => {
 
 ```
 
-### References
-
-* [What does Twilio do](https://www.twilio.com/blog/what-does-twilio-do)
-* [About Twilio messaging service](https://console.twilio.com/us1/develop/sms/try-it-out/get-set-up?frameUrl%3D%252Fconsole%252Fsms%252Fget-setup%253Fx-target-region%253Dus1)
-
 ### Conclusion
 
-This article has built a web API on top of the [Twilio SMS API](https://www.twilio.com/docs/sms/quickstart) that allows users to sign up and create an account, allows users to create contacts and send messages to saved contacts using the Twilio API, the messages sent by a user are also saved. You’ll also learn how to implement third party APIs and how to use MongoDB in your Nodejs project.
+In this article, we've built a web API on top of the [Twilio SMS API](https://www.twilio.com/docs/sms/quickstart) that allows users to sign up and create an account, save contacts and send messages.
 
-Note that you can only send messages only to the number you register on your Twilio account.
+The messages sent by a user are also saved. We have also learned how to implement third party APIs and how to use MongoDB in an Node.js project.
 
-You can check out the source code of this article [here](https://github.com/Sodiq-123/messageAPI) and also follow me on [Github](https://github.com/Sodiq-123). The published documentation is also available [here](https://documenter.getpostman.com/view/14459384/UzBgwAce) if you want to see the process of testing the API. You can reach me on [Twitter](https://twitter.com/sodiq_dev) if you have any questions.
+Note that you can only send messages to registered numbers in your Twilio account.
 
+You can check out the source code of this article [here](https://github.com/Sodiq-123/messageAPI). The published documentation is also available [here](https://documenter.getpostman.com/view/14459384/UzBgwAce) if you want to see the process of testing the API. You can reach me on [Twitter](https://twitter.com/sodiq_dev) if you have any questions.
+
+
+---
+Peer Review Contributions by: [Wanja Mike](/engineering-education/authors/michael-barasa/)
