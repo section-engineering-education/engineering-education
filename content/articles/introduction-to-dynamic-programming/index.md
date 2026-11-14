@@ -36,7 +36,7 @@ In this article, we will understand how dynamic programming (popularly referred 
 ### Understanding DP
 Dynamic Programming (DP) is an algorithmic technique used when solving an optimization problem by breaking it down into simpler subproblems and utilizing the fact that the optimal solution to the overall problem depends upon the optimal solution to its subproblems. 
 
-[Design Gurus](https://www.designgurus.io/course/grokking-dynamic-programming) has a great article on DP and how it works. It sounds similar to recursion. That's because DP is just an optimized version of recursion. Before we delve into DP, let us look at the drawbacks of recursion:
+[Design Gurus](https://www.designgurus.io/course-play/grokking-dynamic-programming/doc/what-is-dynamic-programming) has a great article on DP and how it works. It sounds similar to recursion. That's because DP is just an optimized version of recursion. Before we delve into DP, let us look at the drawbacks of recursion:
 
 **It is not efficient in terms of memory:** Since recursion involves function calls, each recursive call creates an entry for all the variables and constants in the function stack. These values are kept there until the function returns. Therefore, recursion is always limited by the stack space in the system. 
 
@@ -80,7 +80,7 @@ As you can observe, fibonacci(4), fibonacci(3), fibonacci(2) are called multiple
 
 A better way to solve this would be to store all the intermediate results to calculate them once. There are two ways to do this, but in this article, we will explore one method called tabulation. The other method is called memoization, in which we store the intermediate results and return them within the function itself. 
 
-To accomplish this, we can use any data structure such as a dictionary or an array. To understand more about the other method, check out [this](https://www.designgurus.io/course/grokking-dynamic-programming) article. 
+To accomplish this, we can use any data structure such as a dictionary or an array. To understand more about the other method, check out [this](https://www.designgurus.io/course-play/grokking-dynamic-programming/doc/what-is-dynamic-programming) article. 
 
 In the tabulation method, we store the results of each function call in a data structure. Whenever an already stored value is needed, we fetch the value from the data structure instead of computing it repeatedly. For the Fibonacci example, we can use an array to store all the intermediate numbers.
 
